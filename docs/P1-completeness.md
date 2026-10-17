@@ -43,3 +43,7 @@ Core app shell, local settings, active exercise drafts, five modes, immutable fi
 - 12 new M05 contextual contrast drafts; six Duden dictionary anchors attest only to the lexical expressions. All sentence and distractor editorial checks remain unapproved.
 - Read-only CLI review packets with source links, ambiguity flags and independent reviewer checklist. No automated approval creation or CEFR scores.
 - Existing IndexedDB v3, backup format v2, legacy backup v1, offline shell and Artikelwerk unchanged.
+
+## P1 grammatical corpus expansion (2026-10-18)
+- +48 original graded DEMO_ONLY tasks: M01 +16, M02 +16, M03 +16. Total graded DEMO_ONLY now 178; 20 ungraded writing prompts separate.
+- These drafts require genuine independent linguistic review. No accepted target, CEFR tag, acceptable alternative or explanation is certified. Approved count stays zero and no diagnostic holdouts were fabricated.

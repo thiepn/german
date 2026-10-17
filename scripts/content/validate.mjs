@@ -3,7 +3,7 @@ import {fileURLToPath} from 'node:url';
 import {resolve,dirname} from 'node:path';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const read=(p)=>JSON.parse(readFileSync(resolve(root,p),'utf8'));
-const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json'),...read('content/fixtures/collocation-contrasts.demo.json'),...read('content/fixtures/nuance-grounded.demo.json')];
+const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json'),...read('content/fixtures/collocation-contrasts.demo.json'),...read('content/fixtures/nuance-grounded.demo.json'),...read('content/fixtures/advanced-precision.demo.json')];
 const production=[...read('content/fixtures/production.demo.json'),...read('content/fixtures/production-continuation.demo.json')];
 const authority=read('content/editorial/lexical-anchors.json');
 const approved=read('content/approved/approved.json');

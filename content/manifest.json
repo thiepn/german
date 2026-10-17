@@ -2,10 +2,10 @@
   "schemaVersion": 3,
   "releaseStatus": "DEMO_ONLY",
   "publishedApprovedCount": 0,
-  "demoItemCount": 130,
+  "demoItemCount": 178,
   "productionPromptCount": 20,
   "lessonApprovalCount": 0,
-  "contentPackVersion": "sg01-demo-4",
+  "contentPackVersion": "sg01-demo-5",
   "reviewedTargetP1": 350,
   "approvedItemSource": "content/approved/approved.json",
   "authoringSources": [
@@ -14,7 +14,8 @@
     "content/fixtures/collocation-contrasts.demo.json",
     "content/fixtures/production.demo.json",
     "content/fixtures/nuance-grounded.demo.json",
-    "content/fixtures/production-continuation.demo.json"
+    "content/fixtures/production-continuation.demo.json",
+    "content/fixtures/advanced-precision.demo.json"
   ],
   "editorialLedger": "content/editorial/approval-ledger.json",
   "diagnosticAAvailable": false,

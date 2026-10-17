@@ -32,6 +32,13 @@
       "count": 8,
       "status": "DEMO_ONLY",
       "editorialCheck": "Human evaluation of argument fidelity, modality, register, diverse valid rewrites required."
+    },
+    {
+      "id": "P1-ADVANCED-PRECISION-48",
+      "count": 48,
+      "status": "DEMO_ONLY",
+      "independentApprovals": 0,
+      "editorialCheck": "Qualified independent linguist must check all gender, case and valency answers plus competing alternatives, idiomatic context, register, licenses and CEFR difficulty."
     }
   ],
   "editorialApprovals": 0
