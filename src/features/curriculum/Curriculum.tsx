@@ -1,0 +1,4 @@
+import {domains} from '../../domain/content/registry';
+export default function Curriculum({onStart}:{onStart:(code:string)=>void}){
+ return <section><div className="eyebrow">Curriculum · alle Bereiche offen</div><h1 className="page-title">Was möchtest du vertiefen?</h1><p className="lead">13 Domänen von Grammatik über Nuancen bis zur Mediation. Nur G01–G03 enthalten derzeit SG-01-Demomaterial; alle anderen Bereiche sind geplant.</p><div className="grid">{domains.map(([id,label])=><article className="panel" key={id}><span className="kicker">{id}</span><h2>{label}</h2><p className="muted small">{['G01','G02','G03'].includes(id)?'Entwurfsübungen verfügbar':'Inhalt noch nicht implementiert'}</p><button className="button outline" disabled={!['G01','G02','G03'].includes(id)} onClick={()=>onStart(id)}>Üben</button></article>)}</div></section>;
+}

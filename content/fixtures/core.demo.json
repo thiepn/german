@@ -1,0 +1,1238 @@
+[
+  {
+    "id": "SG-M01-001",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "BRIDGE_C1",
+    "topic": "Gesellschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Erkenntnis.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Erkenntnis“ hat den Artikel „die“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Erkenntnis.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-002",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "BRIDGE_C1",
+    "topic": "Wissenschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Dilemma.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Dilemma“ hat den Artikel „das“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Dilemma.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-003",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "BRIDGE_C1",
+    "topic": "Alltag",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Widerspruch.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Widerspruch“ hat den Artikel „der“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Widerspruch.",
+    "reviewAnswer": "der",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-004",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "BRIDGE_C1",
+    "topic": "Wirtschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Bedürfnis.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Bedürfnis“ hat den Artikel „das“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Bedürfnis.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-005",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Gesellschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Befugnis.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Befugnis“ hat den Artikel „die“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Befugnis.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-006",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Wissenschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Ereignis.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Ereignis“ hat den Artikel „das“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Ereignis.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-007",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Alltag",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Nachteil.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Nachteil“ hat den Artikel „der“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Nachteil.",
+    "reviewAnswer": "der",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-008",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Wirtschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Voraussetzung.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Voraussetzung“ hat den Artikel „die“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Voraussetzung.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-009",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C2",
+    "topic": "Gesellschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Argument.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Argument“ hat den Artikel „das“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Argument.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-010",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C2",
+    "topic": "Wissenschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Aufwand.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Aufwand“ hat den Artikel „der“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Aufwand.",
+    "reviewAnswer": "der",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-011",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C2",
+    "topic": "Alltag",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Verhältnis.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Verhältnis“ hat den Artikel „das“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Verhältnis.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M01-012",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C2",
+    "topic": "Wirtschaft",
+    "prompt": "Ergänze den bestimmten Artikel: ___ Kenntnis.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Kenntnis“ hat den Artikel „die“.",
+    "misconception": "Genus",
+    "reviewPrompt": "Ergänze den bestimmten Artikel: ___ Kenntnis.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-001",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "BRIDGE_C1",
+    "topic": "Gesellschaft",
+    "prompt": "Ergänze beide Lücken: mit ___ ___ Konzept.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "dem",
+          "adjective": "neuen"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „dem neuen“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: mit ___ ___ Konzept.",
+    "reviewAnswer": "dem · neuen",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-002",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "BRIDGE_C1",
+    "topic": "Wissenschaft",
+    "prompt": "Ergänze beide Lücken: Wir erläutern ___ ___ Ansatz.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "den",
+          "adjective": "innovativen"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „den innovativen“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: den ___ ___ Ansatz.",
+    "reviewAnswer": "den · innovativen",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-003",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "BRIDGE_C1",
+    "topic": "Alltag",
+    "prompt": "Ergänze beide Lücken: trotz ___ ___ Einwände.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "der",
+          "adjective": "berechtigten"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „der berechtigten“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: trotz ___ ___ Einwände.",
+    "reviewAnswer": "der · berechtigten",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-004",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "BRIDGE_C1",
+    "topic": "Wirtschaft",
+    "prompt": "Ergänze beide Lücken: es bedarf ___ ___ Erklärung.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "einer",
+          "adjective": "ausführlichen"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „einer ausführlichen“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: es bedarf ___ ___ Erklärung.",
+    "reviewAnswer": "einer · ausführlichen",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-005",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Gesellschaft",
+    "prompt": "Ergänze beide Lücken: wir folgen ___ ___ Grundsatz.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "dem",
+          "adjective": "allgemeinen"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „dem allgemeinen“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: wir folgen ___ ___ Grundsatz.",
+    "reviewAnswer": "dem · allgemeinen",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-006",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Wissenschaft",
+    "prompt": "Ergänze beide Lücken: ___ ___ Urteil sorgte für Irritationen.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "ein",
+          "adjective": "überraschendes"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „ein überraschendes“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: ___ ___ Urteil sorgte für Irritationen.",
+    "reviewAnswer": "ein · überraschendes",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-007",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Alltag",
+    "prompt": "Ergänze beide Lücken: die Bedeutung ___ ___ Aussage.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "der",
+          "adjective": "zentralen"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „der zentralen“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: die Bedeutung ___ ___ Aussage.",
+    "reviewAnswer": "der · zentralen",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-008",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Wirtschaft",
+    "prompt": "Ergänze beide Lücken: er widerspricht ___ ___ Annahme.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "der",
+          "adjective": "verbreiteten"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „der verbreiteten“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: er widerspricht ___ ___ Annahme.",
+    "reviewAnswer": "der · verbreiteten",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-009",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C2",
+    "topic": "Gesellschaft",
+    "prompt": "Ergänze beide Lücken: aufgrund ___ ___ Lage.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "der",
+          "adjective": "neuen"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „der neuen“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: aufgrund ___ ___ Lage.",
+    "reviewAnswer": "der · neuen",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-010",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C2",
+    "topic": "Wissenschaft",
+    "prompt": "Ergänze beide Lücken: sie kam zu ___ ___ Schluss.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "einem",
+          "adjective": "eindeutigen"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „einem eindeutigen“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: sie kam zu ___ ___ Schluss.",
+    "reviewAnswer": "einem · eindeutigen",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-011",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C2",
+    "topic": "Alltag",
+    "prompt": "Ergänze beide Lücken: gegenüber ___ ___ Behörde.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "der",
+          "adjective": "zuständigen"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „der zuständigen“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: gegenüber ___ ___ Behörde.",
+    "reviewAnswer": "der · zuständigen",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M02-012",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C2",
+    "topic": "Wirtschaft",
+    "prompt": "Ergänze beide Lücken: angesichts ___ ___ Sachverhalts.",
+    "slots": [
+      {
+        "id": "determiner",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "determiner": "des",
+          "adjective": "komplizierten"
+        }
+      }
+    ],
+    "explanation": "In dieser Konstruktion lautet die zusammengehörige Form „des komplizierten“.",
+    "misconception": "Kasus und Flexion",
+    "reviewPrompt": "Ergänze beide Lücken: angesichts ___ ___ Sachverhalts.",
+    "reviewAnswer": "des · komplizierten",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-001",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "BRIDGE_C1",
+    "topic": "Gesellschaft",
+    "prompt": "Sie besteht ___ einer schriftlichen Antwort. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "auf",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „auf“ mit Dativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Sie besteht ___ einer schriftlichen Antwort. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "auf · Dativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-002",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "BRIDGE_C1",
+    "topic": "Wissenschaft",
+    "prompt": "Das Komitee setzt sich ___ bessere Bedingungen ein. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "für",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „für“ mit Akkusativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Das Komitee setzt sich ___ bessere Bedingungen ein. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "für · Akkusativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-003",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "BRIDGE_C1",
+    "topic": "Alltag",
+    "prompt": "Er zweifelt ___ der Aussage. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "an",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „an“ mit Dativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Er zweifelt ___ der Aussage. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "an · Dativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-004",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "BRIDGE_C1",
+    "topic": "Wirtschaft",
+    "prompt": "Das Gespräch dreht sich ___ die Reform. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "um",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „um“ mit Akkusativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Das Gespräch dreht sich ___ die Reform. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "um · Akkusativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-005",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Gesellschaft",
+    "prompt": "Die Studie bezieht sich ___ die Voruntersuchung. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "auf",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „auf“ mit Akkusativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Die Studie bezieht sich ___ die Voruntersuchung. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "auf · Akkusativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-006",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Wissenschaft",
+    "prompt": "Wir befassen uns ___ dem Vorschlag. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "mit",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „mit“ mit Dativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Wir befassen uns ___ dem Vorschlag. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "mit · Dativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-007",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Alltag",
+    "prompt": "Die Entscheidung hängt ___ mehreren Faktoren ab. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "von",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „von“ mit Dativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Die Entscheidung hängt ___ mehreren Faktoren ab. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "von · Dativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-008",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Wirtschaft",
+    "prompt": "Es mangelt ___ ausreichenden Belegen. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "an",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „an“ mit Dativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Es mangelt ___ ausreichenden Belegen. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "an · Dativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-009",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C2",
+    "topic": "Gesellschaft",
+    "prompt": "Er verzichtet ___ eine weitere Stellungnahme. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "auf",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „auf“ mit Akkusativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Er verzichtet ___ eine weitere Stellungnahme. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "auf · Akkusativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-010",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C2",
+    "topic": "Wissenschaft",
+    "prompt": "Die Behörde verfügt ___ die notwendigen Mittel. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "über",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „über“ mit Akkusativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Die Behörde verfügt ___ die notwendigen Mittel. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "über · Akkusativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-011",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C2",
+    "topic": "Alltag",
+    "prompt": "Sie warnt ___ einer vorschnellen Entscheidung. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "vor",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „vor“ mit Dativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Sie warnt ___ einer vorschnellen Entscheidung. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "vor · Dativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  },
+  {
+    "id": "SG-M03-012",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C2",
+    "topic": "Wirtschaft",
+    "prompt": "Die Argumentation läuft ___ einen Widerspruch hinaus. Gib außerdem den Kasus des folgenden Nomens an.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "auf",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die grammatische Verbindung verlangt „auf“ mit Akkusativ.",
+    "misconception": "Rektion und Präpositionen",
+    "reviewPrompt": "Die Argumentation läuft ___ einen Widerspruch hinaus. Gib außerdem den Kasus des folgenden Nomens an.",
+    "reviewAnswer": "auf · Akkusativ",
+    "status": "DEMO_ONLY",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl demo fixture; independent review pending"
+    }
+  }
+]

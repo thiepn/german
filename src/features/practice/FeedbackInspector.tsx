@@ -1,0 +1,5 @@
+import type {Exercise} from '../../domain/content/types';import type {GradeResult} from '../../domain/grading/gradeAnswer';
+export default function FeedbackInspector({item,result,answers}:{item:Exercise;result:GradeResult;answers:Record<string,string>}){
+ const correct=item.variants.map(v=>item.slots.map(s=>v.slots[s.id]).join(' · ')).join(' / ');
+ return <section className={'feedback '+(result.status==='CORRECT'?'':'incorrect')} role="status" aria-live="polite"><div className="kicker">{result.status==='CORRECT'?'Korrekt':result.status==='PARTIAL'?'Teilweise richtig':result.status==='VOID'?'Nicht bewertbar':'Noch nicht richtig'}</div><p><strong>Deine Antwort:</strong> {item.slots.map(s=>answers[s.id]||'—').join(' · ')}</p><p><strong>Vorgeschlagene Lösung (Entwurf):</strong> {correct}</p><p>{item.explanation}</p><p className="small muted">Übungsentwurf — die Musterlösung wurde noch nicht unabhängig redaktionell geprüft.</p></section>;
+}
