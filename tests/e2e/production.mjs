@@ -60,7 +60,7 @@ async function scenario(width){
   await b.getByText('0 fehlende Datensätze ergänzt',{exact:false}).waitFor();
 
   // Verify legacy v1 six-store backups, re-signed in test only, remain importable.
-  const oldRecords={...obj.records};delete oldRecords.productionEntries;
+  const oldRecords={...obj.records};delete oldRecords.productionEntries;delete oldRecords.missions;
   const body={format:obj.format,version:1,sourceDatabase:obj.sourceDatabase,createdAt:obj.createdAt,records:oldRecords};
   const hash=createHash('sha256').update(JSON.stringify(body)).digest('hex');
   await restore(b,JSON.stringify({...body,integrity:{algorithm:'SHA-256',digest:hash}}));

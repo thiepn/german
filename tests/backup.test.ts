@@ -30,6 +30,7 @@ test('v1 six-store snapshots remain readable without inventing writing history',
  const json=await buildPortableBackup(empty());const current=JSON.parse(json);
  const legacy={format:current.format,version:1,sourceDatabase:current.sourceDatabase,createdAt:current.createdAt,records:{...current.records}};
  delete legacy.records.productionEntries;
+ delete legacy.records.missions;
  const {createHash}=await import('node:crypto');
  const sha=createHash('sha256').update(JSON.stringify(legacy)).digest('hex');
  const restored=await inspectPortableBackup(JSON.stringify({...legacy,integrity:{algorithm:'SHA-256',digest:sha}}));
