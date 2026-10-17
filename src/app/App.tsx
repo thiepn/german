@@ -16,6 +16,7 @@ import PracticeRunner from '../features/practice/PracticeRunner';
 import ErrorArchive from '../features/errors/ErrorArchive';
 import ReviewQueue from '../features/review/ReviewQueue';
 import Progress from '../features/progress/Progress';
+import DataManagement from '../features/data/DataManagement';
 
 const labels:Record<Mode,string>=Object.fromEntries(availableModes.map(m=>[m,modes[m].label])) as Record<Mode,string>;
 export default function App(){
@@ -27,6 +28,7 @@ export default function App(){
  const [reviews,setReviews]=useState<ReviewEvent[]>([]);
  const [tab,setTab]=useState<Tab>('Heute');
  const [reviewPage,setReviewPage]=useState(false);
+ const [showData,setShowData]=useState(false);
  const [showDiagnostic,setShowDiagnostic]=useState(false);
  const [mode,setMode]=useState<Mode>('M01');
  const [item,setItem]=useState<Exercise|null>(null);
@@ -42,7 +44,7 @@ export default function App(){
  void offlineState().then(s=>{if(alive)setOffline(s)}).catch(()=>{});
  return ()=>{alive=false};},[]);
  const recommended=chooseSession(allItems,attempts,cards,Date.now(),1)[0];
- function selectTab(next:Tab){setTab(next);setItem(null);setReviewPage(false);setShowDiagnostic(false);setFeedback(null);}
+ function selectTab(next:Tab){setShowData(false);setTab(next);setItem(null);setReviewPage(false);setShowDiagnostic(false);setFeedback(null);}
  function start(m:Mode,id?:string,asReview=false){
   const selected=id?itemById.get(id):chooseSession(itemsForMode(m),attempts,cards,Date.now(),1)[0];
   if(!selected)return;
@@ -89,11 +91,14 @@ export default function App(){
   <div className="status">Sprachgefühl SG-01 · {settings?.entryTrack??'Ohne Profil'} · Offline: {offline==='READY'?'App-Shell vorhanden':offline==='UNINSTALLED'?'noch nicht installiert':offline==='PARTIAL'?'unvollständig':'nicht verfügbar'}</div>
   <div className="banner">DEMO_ONLY · {allItems.length} nicht freigegebene Aufgaben · 0 von 350 P1-Aufgaben redaktionell genehmigt. Kein CEFR-Zertifikat.</div>
   {error&&<div className="banner" role="alert">{error}<div><button type="button" className="button text" onClick={()=>setError('')}>Hinweis schließen</button></div></div>}
+  {showData?<DataManagement onExit={()=>setShowData(false)} onRestore={refresh}/>:<>
   {tab==='Heute'&&<Today attempts={attempts} cards={cards} recommended={recommended} onStart={()=>recommended&&start(recommended.mode,recommended.id)} onReview={()=>{setReviewPage(true);setTab('Trainieren')}} onOpenErrors={()=>selectTab('Fehler')} onDiagnostic={()=>{setShowDiagnostic(true);setTab('Lernen')}}/>}
   {tab==='Lernen'&&(showDiagnostic?<DiagnosticPanel onExit={()=>setShowDiagnostic(false)}/>:<Curriculum onStart={m=>start(m)}/>)}
   {tab==='Trainieren'&&(item?<PracticeRunner item={item} values={values} onChange={onChange} feedback={feedback} onSubmit={submit} submitting={busy} onNext={()=>start(mode)} onExit={()=>selectTab('Heute')} reviewing={reviewing} onReviewGrade={gradeReview}/>:reviewPage?<ReviewQueue cards={cards} byId={itemById} onStart={id=>{const i=itemById.get(id);if(i)start(i.mode,id,true)}}/>:<section><div className="eyebrow">Gezieltes Üben</div><h1 className="page-title">Trainieren</h1><p className="lead">Fünf Übungsformen nutzen denselben deterministischen Bewertungsmechanismus für ausdrücklich vorgegebene Zielantworten. Das hier verwendete Material ist noch nicht redaktionell freigegeben.</p><div className="grid">{availableModes.map(m=><article className="panel" key={m}><div className="kicker">{m}</div><h2>{labels[m]}</h2><p className="muted">{modes[m].description} · {itemsForMode(m).length} Demoaufgaben</p><button className="button" onClick={()=>start(m)}>Übung starten</button></article>)}</div><div className="buttonrow"><button className="button outline" onClick={()=>setReviewPage(true)}>Fällige Wiederholungen ({cards.filter(c=>c.dueAt<=Date.now()).length})</button></div></section>)}
   {tab==='Fehler'&&<ErrorArchive attempts={attempts} byId={itemById} onRetry={id=>{const i=itemById.get(id);if(i)start(i.mode,id)}}/>}
   {tab==='Fortschritt'&&<Progress attempts={attempts}/>}
-  <footer className="small muted" style={{marginTop:60}}>Deine Daten bleiben im lokalen Browser-Speicher. Keine Anmeldung, kein Tracking und keine automatische Synchronisierung. Der SG-01-Prototyp bietet noch keinen vollständigen Export/Restore-Workflow.</footer>
+  </>}
+  {!showData&&<div className="buttonrow"><button className="button outline" type="button" onClick={()=>{setItem(null);setFeedback(null);setShowData(true)}}>Daten & Sicherung</button></div>}
+  <footer className="small muted" style={{marginTop:60}}>Deine Daten bleiben im lokalen Browser-Speicher. Keine Anmeldung, kein Tracking und keine automatische Synchronisierung. Sichere deine Daten regelmäßig über »Daten & Sicherung«. Der Import ergänzt nur fehlende Datensätze.</footer>
  </MobileShell>;
 }

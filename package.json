@@ -10,7 +10,7 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "check:content": "node scripts/content/validate.mjs",
     "check": "npm run check:content && npm test && npm run typecheck && npm run build",
-    "test:browser": "node tests/e2e/sg01.mjs && node tests/e2e/p1.mjs",
+    "test:browser": "node tests/e2e/sg01.mjs && node tests/e2e/p1.mjs && node tests/e2e/backup.mjs",
     "check:release": "npm run check:content -- --release && npm run build"
   },
   "dependencies": {

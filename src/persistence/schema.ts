@@ -2,6 +2,7 @@ import type {DiagnosticSession} from '../domain/diagnostic/engine';
 import type {Attempt,ReviewCard,ReviewEvent,LearnerSettings,Draft} from '../domain/content/types';
 export const DB_NAME='sprachgefuehl-learning-v1';
 export const DB_VERSION=2;
+import type {BackupRecords, BackupStore} from './portableBackup';
 export type Snapshot={attempts:Attempt[];cards:ReviewCard[];reviewEvents:ReviewEvent[];settings:LearnerSettings|null;draft:Draft|null;};
 let singleton:Promise<IDBDatabase>|null=null;
 export function openLearnerDB():Promise<IDBDatabase>{
@@ -55,4 +56,37 @@ export async function loadDiagnosticSession(id:string):Promise<DiagnosticSession
  const db=await openLearnerDB();const tx=db.transaction('diagnosticSessions','readonly');
  const value=await new Promise<DiagnosticSession|undefined>((resolve,reject)=>{const req=tx.objectStore('diagnosticSessions').get(id);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});
  await done(tx);return value??null;
+}
+
+/** Read all six stores, including paused and historical diagnostic sessions. */
+export async function readAllRecords():Promise<BackupRecords>{
+ const db=await openLearnerDB();const stores=['attempts','cards','reviewEvents','settings','drafts','diagnosticSessions'] as BackupStore[];
+ const tx=db.transaction(stores,'readonly');const finished=done(tx);
+ const result=await Promise.all(stores.map(store=>new Promise<unknown[]>((resolve,reject)=>{
+  const q=tx.objectStore(store).getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);
+ })));
+ await finished;
+ return Object.fromEntries(stores.map((store,i)=>[store,result[i]])) as BackupRecords;
+}
+/** Merge-only restoration. A conflicting history ID rejects the whole import before any write. */
+export async function mergeBackupRecords(incoming:BackupRecords):Promise<{inserted:number;skipped:number}>{
+ const stores=['attempts','cards','reviewEvents','settings','drafts','diagnosticSessions'] as BackupStore[];
+ const current=await readAllRecords();const toInsert:Partial<Record<BackupStore,unknown[]>>={};let inserted=0,skipped=0;
+ for(const store of stores){
+  const known=new Map((current[store] as {id:string}[]).map(row=>[row.id,row]));
+  const pending:unknown[]=[];
+  for(const record of incoming[store]){
+   const old=known.get(record.id);
+   if(old){
+    if(store!=='settings'&&store!=='drafts'&&JSON.stringify(old)!==JSON.stringify(record))throw Error('Abweichender vorhandener Datensatz in '+store+': '+record.id);
+    skipped++;continue;
+   }
+   pending.push(record);inserted++;
+  }
+  toInsert[store]=pending;
+ }
+ if(inserted===0)return {inserted,skipped};
+ const db=await openLearnerDB();const tx=db.transaction(stores,'readwrite');const finished=done(tx);
+ for(const store of stores)for(const row of toInsert[store]??[])tx.objectStore(store).add(row);
+ await finished;return {inserted,skipped};
 }
