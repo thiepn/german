@@ -9,7 +9,8 @@
     "typecheck": "tsc -b",
     "test": "node --import tsx --test tests/*.test.ts",
     "check:content": "node scripts/content/validate.mjs",
-    "check": "npm run check:content && npm test && npm run typecheck && npm run build"
+    "check": "npm run check:content && npm test && npm run typecheck && npm run build",
+    "test:browser": "node tests/e2e/sg01.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -21,6 +22,7 @@
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "^5.9.3",
     "vite": "^7.1.0",
-    "tsx": "^4.20.6"
+    "tsx": "^4.20.6",
+    "playwright": "^1.55.0"
   }
 }
