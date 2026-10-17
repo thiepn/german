@@ -1,6 +1,7 @@
+import type {DiagnosticSession} from '../domain/diagnostic/engine';
 import type {Attempt,ReviewCard,ReviewEvent,LearnerSettings,Draft} from '../domain/content/types';
 export const DB_NAME='sprachgefuehl-learning-v1';
-export const DB_VERSION=1;
+export const DB_VERSION=2;
 export type Snapshot={attempts:Attempt[];cards:ReviewCard[];reviewEvents:ReviewEvent[];settings:LearnerSettings|null;draft:Draft|null;};
 let singleton:Promise<IDBDatabase>|null=null;
 export function openLearnerDB():Promise<IDBDatabase>{
@@ -14,6 +15,7 @@ export function openLearnerDB():Promise<IDBDatabase>{
    if(!db.objectStoreNames.contains('reviewEvents'))db.createObjectStore('reviewEvents',{keyPath:'id'});
    if(!db.objectStoreNames.contains('settings'))db.createObjectStore('settings',{keyPath:'id'});
    if(!db.objectStoreNames.contains('drafts'))db.createObjectStore('drafts',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('diagnosticSessions'))db.createObjectStore('diagnosticSessions',{keyPath:'id'});
   };
   req.onsuccess=()=>resolve(req.result);
   req.onerror=()=>{singleton=null;reject(req.error)};
@@ -43,4 +45,14 @@ export async function saveReview(event:ReviewEvent,card:ReviewCard):Promise<bool
  const s=tx.objectStore('reviewEvents');const existing=await new Promise<ReviewEvent|undefined>((resolve,reject)=>{const r=s.get(event.id);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
  if(existing){tx.abort();try{await done(tx)}catch{}return false;}
  s.add(event);tx.objectStore('cards').put(card);await done(tx);return true;
+}
+
+// Additive v1 -> v2 migration: existing stores and keys are never renamed or cleared.
+export async function saveDiagnosticSession(s:DiagnosticSession):Promise<void>{
+ const db=await openLearnerDB();const tx=db.transaction('diagnosticSessions','readwrite');tx.objectStore('diagnosticSessions').put(s);await done(tx);
+}
+export async function loadDiagnosticSession(id:string):Promise<DiagnosticSession|null>{
+ const db=await openLearnerDB();const tx=db.transaction('diagnosticSessions','readonly');
+ const value=await new Promise<DiagnosticSession|undefined>((resolve,reject)=>{const req=tx.objectStore('diagnosticSessions').get(id);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});
+ await done(tx);return value??null;
 }

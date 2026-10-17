@@ -1,0 +1,2246 @@
+[
+  {
+    "id": "SG-M04-001",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Die Kommission erklärte, die Ergebnisse ___ belastbar.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "seien"
+        }
+      }
+    ],
+    "explanation": "Konjunktiv I Plural von sein: seien.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die Kommission erklärte, die Ergebnisse ___ belastbar.",
+    "reviewAnswer": "seien",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-002",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Die Forscherin sagte, die Messung ___ zu wiederholen.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "sei"
+        }
+      }
+    ],
+    "explanation": "Indirekte Rede im Konjunktiv I: sei zu wiederholen.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die Forscherin sagte, die Messung ___ zu wiederholen.",
+    "reviewAnswer": "sei",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-003",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Der Gutachter betonte, die Studie ___ methodische Schwächen.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "habe"
+        }
+      }
+    ],
+    "explanation": "Konjunktiv I von haben in der dritten Person Singular: habe.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Der Gutachter betonte, die Studie ___ methodische Schwächen.",
+    "reviewAnswer": "habe",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-004",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Sie berichtete, der Ausschuss ___ nächste Woche erneut.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "tage"
+        }
+      }
+    ],
+    "explanation": "Konjunktiv I der dritten Person Singular von tagen: tage.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Sie berichtete, der Ausschuss ___ nächste Woche erneut.",
+    "reviewAnswer": "tage",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-005",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Die Präsidentin erklärte, es ___ an Belegen.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "fehle"
+        }
+      }
+    ],
+    "explanation": "Konjunktiv I Singular von fehlen: fehle.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die Präsidentin erklärte, es ___ an Belegen.",
+    "reviewAnswer": "fehle",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-006",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Wenn wir die Daten rechtzeitig erhalten ___, hätten wir früher reagieren können.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "hätten"
+        }
+      }
+    ],
+    "explanation": "Irrealer Konditionalsatz in der Vergangenheit: hätten.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Wenn wir die Daten rechtzeitig erhalten ___, hätten wir früher reagieren können.",
+    "reviewAnswer": "hätten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-007",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "BRIDGE_C1",
+    "topic": "Konjunktiv und Irrealität",
+    "prompt": "___ die Grundlage tragfähig, ließe sich das Ergebnis übertragen.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "Wäre"
+        }
+      }
+    ],
+    "explanation": "Verb-Erst-Konditionalsatz ohne wenn: Wäre die Grundlage tragfähig.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "___ die Grundlage tragfähig, ließe sich das Ergebnis übertragen.",
+    "reviewAnswer": "Wäre",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-008",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "BRIDGE_C1",
+    "topic": "Konjunktiv und Irrealität",
+    "prompt": "Ohne diese Unterstützung ___ das Vorhaben gescheitert.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "wäre"
+        }
+      }
+    ],
+    "explanation": "Irreale Folge in der Vergangenheit: wäre gescheitert.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Ohne diese Unterstützung ___ das Vorhaben gescheitert.",
+    "reviewAnswer": "wäre",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-009",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Konjunktiv und Irrealität",
+    "prompt": "Er handelt, als ___ es keinerlei Risiken.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "gäbe"
+        }
+      }
+    ],
+    "explanation": "Irrealer Vergleich: als gäbe es ...",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Er handelt, als ___ es keinerlei Risiken.",
+    "reviewAnswer": "gäbe",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-010",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Konjunktiv und Irrealität",
+    "prompt": "Wir ___ die Hypothese prüfen, sofern die Daten vorlägen.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "würden"
+        }
+      }
+    ],
+    "explanation": "Konjunktiv-II-Umschreibung zur Markierung einer hypothetischen Handlung.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Wir ___ die Hypothese prüfen, sofern die Daten vorlägen.",
+    "reviewAnswer": "würden",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-011",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Konjunktiv und Irrealität",
+    "prompt": "Hätte man die Warnung ernst genommen, ___ der Schaden vermeidbar gewesen.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "wäre"
+        }
+      }
+    ],
+    "explanation": "Vergangene hypothetische Folge: wäre vermeidbar gewesen.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Hätte man die Warnung ernst genommen, ___ der Schaden vermeidbar gewesen.",
+    "reviewAnswer": "wäre",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-012",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Konjunktiv und Irrealität",
+    "prompt": "Aufgrund der verspäteten ___ der Daten verzögerte sich die Auswertung. (übermitteln)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "Übermittlung"
+        }
+      }
+    ],
+    "explanation": "Nominalisierung: die Übermittlung von Daten.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Aufgrund der verspäteten ___ der Daten verzögerte sich die Auswertung. (übermitteln)",
+    "reviewAnswer": "Übermittlung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-013",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Nominalisierung",
+    "prompt": "Trotz der ___ Kritik hielt das Team am Entwurf fest. (anhalten)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "anhaltenden"
+        }
+      }
+    ],
+    "explanation": "Partizip I als attributives Adjektiv mit schwacher Flexion.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Trotz der ___ Kritik hielt das Team am Entwurf fest. (anhalten)",
+    "reviewAnswer": "anhaltenden",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-014",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Nominalisierung",
+    "prompt": "Die ___ der Studie wurde ausführlich begründet. (zurückziehen; substantiviert)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "Zurückziehung"
+        }
+      }
+    ],
+    "explanation": "Nominalisierung von zurückziehen: die Zurückziehung. Auch der Rückzug kann je nach Kontext verwendet werden.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die ___ der Studie wurde ausführlich begründet. (zurückziehen; substantiviert)",
+    "reviewAnswer": "Zurückziehung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-015",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Nominalisierung",
+    "prompt": "Die ___ des Vorschlags erfolgte einstimmig. (annehmen; substantiviert)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "Annahme"
+        }
+      }
+    ],
+    "explanation": "Substantivierung annehmen → Annahme.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die ___ des Vorschlags erfolgte einstimmig. (annehmen; substantiviert)",
+    "reviewAnswer": "Annahme",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-016",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Nominalisierung",
+    "prompt": "Nach ___ aller Einwände wurde der Antrag beschlossen. (prüfen; nominalisiert)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "Prüfung"
+        }
+      }
+    ],
+    "explanation": "Nominaler Ausdruck: nach Prüfung aller Einwände.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Nach ___ aller Einwände wurde der Antrag beschlossen. (prüfen; nominalisiert)",
+    "reviewAnswer": "Prüfung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-017",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Nominalisierung",
+    "prompt": "Infolge der ___ der Frist war eine erneute Prüfung nötig. (verlängern; nominalisiert)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "Verlängerung"
+        }
+      }
+    ],
+    "explanation": "Nominalisierung von verlängern → Verlängerung.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Infolge der ___ der Frist war eine erneute Prüfung nötig. (verlängern; nominalisiert)",
+    "reviewAnswer": "Verlängerung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-018",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Nominalisierung",
+    "prompt": "Der im letzten Jahr ___ Bericht bildet die Grundlage der Debatte. (veröffentlichen)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "veröffentlichte"
+        }
+      }
+    ],
+    "explanation": "Partizip II als erweitertes Attribut: der ... veröffentlichte Bericht.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Der im letzten Jahr ___ Bericht bildet die Grundlage der Debatte. (veröffentlichen)",
+    "reviewAnswer": "veröffentlichte",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-019",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Partizipialattribute",
+    "prompt": "Die durch mehrere Messungen ___ Hypothese gilt als plausibel. (stützen)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "gestützte"
+        }
+      }
+    ],
+    "explanation": "Partizip II im attributiven Gebrauch: die ... gestützte Hypothese.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die durch mehrere Messungen ___ Hypothese gilt als plausibel. (stützen)",
+    "reviewAnswer": "gestützte",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-020",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Partizipialattribute",
+    "prompt": "Die vor dem Ausschuss ___ Expertinnen widersprachen. (anhören)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "angehörten"
+        }
+      }
+    ],
+    "explanation": "Partizip-II-Attribut und Pluralflexion: die angehörten Expertinnen.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die vor dem Ausschuss ___ Expertinnen widersprachen. (anhören)",
+    "reviewAnswer": "angehörten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-021",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Partizipialattribute",
+    "prompt": "Die bislang kaum ___ Folgen könnten erheblich sein. (beachten)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "beachteten"
+        }
+      }
+    ],
+    "explanation": "Partizip-II-Attribut: die beachteten Folgen.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die bislang kaum ___ Folgen könnten erheblich sein. (beachten)",
+    "reviewAnswer": "beachteten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-022",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "topic": "Partizipialattribute",
+    "prompt": "Das unter hohem Zeitdruck ___ Gutachten enthielt Lücken. (erstellen)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "erstellte"
+        }
+      }
+    ],
+    "explanation": "Unter hohem Zeitdruck erstellte ...",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Das unter hohem Zeitdruck ___ Gutachten enthielt Lücken. (erstellen)",
+    "reviewAnswer": "erstellte",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-023",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Partizipialattribute",
+    "prompt": "Die nach Abschluss der Untersuchung ___ Ergebnisse wurden veröffentlicht. (gewinnen)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "gewonnenen"
+        }
+      }
+    ],
+    "explanation": "Das Partizip gewonnenen wird schwach flektiert im Plural.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die nach Abschluss der Untersuchung ___ Ergebnisse wurden veröffentlicht. (gewinnen)",
+    "reviewAnswer": "gewonnenen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-024",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Partizipialattribute",
+    "prompt": "___ die Berechnung korrekt ist, bleibt die Schlussfolgerung fraglich. (obwohl)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "Obwohl"
+        }
+      }
+    ],
+    "explanation": "Konzessiver Nebensatz: obwohl ...",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "___ die Berechnung korrekt ist, bleibt die Schlussfolgerung fraglich. (obwohl)",
+    "reviewAnswer": "Obwohl",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-025",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Konzessive Verbindung",
+    "prompt": "Die Theorie wurde verworfen, ___ sie zunächst plausibel erschien. (obgleich)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "obgleich"
+        }
+      }
+    ],
+    "explanation": "Ein konzessiver Nebensatz leitet einen Gegensatz ein.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die Theorie wurde verworfen, ___ sie zunächst plausibel erschien. (obgleich)",
+    "reviewAnswer": "obgleich",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-026",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Konzessive Verbindung",
+    "prompt": "So überzeugend die Begründung ___, sie klärt nicht alle Fragen. (sein)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "ist"
+        }
+      }
+    ],
+    "explanation": "Konzessive Konstruktion: So überzeugend ... ist, ...",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "So überzeugend die Begründung ___, sie klärt nicht alle Fragen. (sein)",
+    "reviewAnswer": "ist",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-027",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Konzessive Verbindung",
+    "prompt": "Die Verwaltung hielt an ihrer Entscheidung fest, ___ Kritik laut geworden war. (obwohl)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "obwohl"
+        }
+      }
+    ],
+    "explanation": "Konzessiver Zusammenhang.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die Verwaltung hielt an ihrer Entscheidung fest, ___ Kritik laut geworden war. (obwohl)",
+    "reviewAnswer": "obwohl",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-028",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Konzessive Verbindung",
+    "prompt": "Die Ergebnisse sind vorläufig, ___ sie auf einer großen Stichprobe beruhen. (obwohl)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "obwohl"
+        }
+      }
+    ],
+    "explanation": "Kontrast zwischen Datenumfang und Vorläufigkeit.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Die Ergebnisse sind vorläufig, ___ sie auf einer großen Stichprobe beruhen. (obwohl)",
+    "reviewAnswer": "obwohl",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-029",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Konzessive Verbindung",
+    "prompt": "Kaum ___ die Sitzung begonnen, wurde sie unterbrochen. (haben, Präteritum)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "hatte"
+        }
+      }
+    ],
+    "explanation": "Inversionskonstruktion: Kaum hatte ...",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Kaum ___ die Sitzung begonnen, wurde sie unterbrochen. (haben, Präteritum)",
+    "reviewAnswer": "hatte",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-030",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Satzverknüpfung",
+    "prompt": "Nicht nur die Methodik, ___ auch die Auswahl der Probanden wurde kritisiert.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "sondern"
+        }
+      }
+    ],
+    "explanation": "Korrelative Verbindung: nicht nur ... sondern auch.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Nicht nur die Methodik, ___ auch die Auswahl der Probanden wurde kritisiert.",
+    "reviewAnswer": "sondern",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-031",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Satzverknüpfung",
+    "prompt": "Je genauer die Messung erfolgt, ___ zuverlässiger wird das Ergebnis.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "desto"
+        }
+      }
+    ],
+    "explanation": "Komparativkorrelation: je ... desto.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Je genauer die Messung erfolgt, ___ zuverlässiger wird das Ergebnis.",
+    "reviewAnswer": "desto",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-032",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Satzverknüpfung",
+    "prompt": "Er hat weder die Frist eingehalten ___ eine Erklärung abgegeben.",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "noch"
+        }
+      }
+    ],
+    "explanation": "Weder ... noch verbindet zwei verneinte Alternativen.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Er hat weder die Frist eingehalten ___ eine Erklärung abgegeben.",
+    "reviewAnswer": "noch",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M04-033",
+    "version": 1,
+    "mode": "M04",
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "topic": "Satzverknüpfung",
+    "prompt": "Sie stellte den Antrag zurück, ___ die Sachlage abschließend geklärt sei. (bis)",
+    "slots": [
+      {
+        "id": "form",
+        "label": "Vorgegebene Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "form": "bis"
+        }
+      }
+    ],
+    "explanation": "Temporaler Nebensatz: bis die Sachlage geklärt sei.",
+    "misconception": "Satzbau, Form oder Register",
+    "reviewPrompt": "Sie stellte den Antrag zurück, ___ die Sachlage abschließend geklärt sei. (bis)",
+    "reviewAnswer": "bis",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-001",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Nach eingehender Beratung konnte der Ausschuss endlich einen Beschluss ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "fassen"
+        }
+      }
+    ],
+    "explanation": "Einen Beschluss fassen ist eine feste Funktionsverbverbindung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Nach eingehender Beratung konnte der Ausschuss endlich einen Beschluss ___.",
+    "reviewAnswer": "fassen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-002",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Angesichts der neuen Hinweise musste die Kommission ihre ursprüngliche Entscheidung ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "überdenken"
+        }
+      }
+    ],
+    "explanation": "Eine Entscheidung überdenken bezeichnet erneute Prüfung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Angesichts der neuen Hinweise musste die Kommission ihre ursprüngliche Entscheidung ___.",
+    "reviewAnswer": "überdenken",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-003",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Die Forschenden konnten aus den Daten keine eindeutigen Rückschlüsse ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ziehen"
+        }
+      }
+    ],
+    "explanation": "Rückschlüsse ziehen ist idiomatisch.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Forschenden konnten aus den Daten keine eindeutigen Rückschlüsse ___.",
+    "reviewAnswer": "ziehen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-004",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Der Kandidat musste zu den Vorwürfen öffentlich Stellung ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "beziehen"
+        }
+      }
+    ],
+    "explanation": "Stellung beziehen bedeutet sich positionieren.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der Kandidat musste zu den Vorwürfen öffentlich Stellung ___.",
+    "reviewAnswer": "beziehen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-005",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Mehrere Abgeordnete wollten förmlich Einspruch ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "einlegen"
+        }
+      }
+    ],
+    "explanation": "Einspruch einlegen ist die etablierte Verbindung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Mehrere Abgeordnete wollten förmlich Einspruch ___.",
+    "reviewAnswer": "einlegen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-006",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "BRIDGE_C1",
+    "topic": "Indirekte Rede",
+    "prompt": "Die Untersuchung soll mögliche Zweifel am Ergebnis ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ausräumen"
+        }
+      }
+    ],
+    "explanation": "Zweifel ausräumen heißt begründete Bedenken beseitigen.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Untersuchung soll mögliche Zweifel am Ergebnis ___.",
+    "reviewAnswer": "ausräumen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-007",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "BRIDGE_C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Mit seiner Veröffentlichung wollte er eine öffentliche Debatte ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "anstoßen"
+        }
+      }
+    ],
+    "explanation": "Eine Debatte anstoßen bedeutet initiieren.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Mit seiner Veröffentlichung wollte er eine öffentliche Debatte ___.",
+    "reviewAnswer": "anstoßen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-008",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "BRIDGE_C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Der Gutachter konnte die Behauptung anhand von Originaldaten ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "widerlegen"
+        }
+      }
+    ],
+    "explanation": "Eine Behauptung widerlegen ist eine etablierte Wortverbindung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der Gutachter konnte die Behauptung anhand von Originaldaten ___.",
+    "reviewAnswer": "widerlegen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-009",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Auch eine geringe Abweichung kann bei der Beurteilung stark ins Gewicht ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "fallen"
+        }
+      }
+    ],
+    "explanation": "Ins Gewicht fallen bedeutet relevant sein.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Auch eine geringe Abweichung kann bei der Beurteilung stark ins Gewicht ___.",
+    "reviewAnswer": "fallen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-010",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Der neue Bericht dürfte erhebliches öffentliches Interesse ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "wecken"
+        }
+      }
+    ],
+    "explanation": "Interesse wecken ist idiomatisch.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der neue Bericht dürfte erhebliches öffentliches Interesse ___.",
+    "reviewAnswer": "wecken",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-011",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Leitung beschloss, unverzüglich geeignete Maßnahmen ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ergreifen"
+        }
+      }
+    ],
+    "explanation": "Maßnahmen ergreifen = handeln.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Leitung beschloss, unverzüglich geeignete Maßnahmen ___.",
+    "reviewAnswer": "ergreifen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-012",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Parteien mussten schließlich einen tragfähigen Kompromiss ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "aushandeln"
+        }
+      }
+    ],
+    "explanation": "Einen Kompromiss aushandeln = verhandeln.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Parteien mussten schließlich einen tragfähigen Kompromiss ___.",
+    "reviewAnswer": "aushandeln",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-013",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Der Vorsitzende wollte dem Vorwurf ausdrücklich ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "entgegentreten"
+        }
+      }
+    ],
+    "explanation": "Einem Vorwurf entgegentreten verlangt Dativ; feste idiomatische Verbindung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der Vorsitzende wollte dem Vorwurf ausdrücklich ___.",
+    "reviewAnswer": "entgegentreten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-014",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Der Bericht sollte einen Beitrag zur Klärung der Frage ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "leisten"
+        }
+      }
+    ],
+    "explanation": "Einen Beitrag leisten verbindet Beitrag mit leisten.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der Bericht sollte einen Beitrag zur Klärung der Frage ___.",
+    "reviewAnswer": "leisten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-015",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die neue Regelung stieß auf breite Zustimmung und konnte schnell in Kraft ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "treten"
+        }
+      }
+    ],
+    "explanation": "In Kraft treten bezeichnet den Beginn rechtlicher Wirksamkeit.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die neue Regelung stieß auf breite Zustimmung und konnte schnell in Kraft ___.",
+    "reviewAnswer": "treten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-016",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Redaktion wollte die Behauptungen einer sorgfältigen Prüfung ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "unterziehen"
+        }
+      }
+    ],
+    "explanation": "Einer Prüfung unterziehen verlangt den Dativ der Prüfung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Redaktion wollte die Behauptungen einer sorgfältigen Prüfung ___.",
+    "reviewAnswer": "unterziehen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-017",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Expertin konnte der komplexen Frage nicht vollständig gerecht ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "werden"
+        }
+      }
+    ],
+    "explanation": "Einer Sache gerecht werden erfordert Dativ.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Expertin konnte der komplexen Frage nicht vollständig gerecht ___.",
+    "reviewAnswer": "werden",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-018",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Geschäftsführung muss gegenüber den Beteiligten Rechenschaft ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ablegen"
+        }
+      }
+    ],
+    "explanation": "Rechenschaft ablegen ist eine feste Wendung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Geschäftsführung muss gegenüber den Beteiligten Rechenschaft ___.",
+    "reviewAnswer": "ablegen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-019",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Der Ausschuss wollte die Risiken bewusst in Kauf ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "nehmen"
+        }
+      }
+    ],
+    "explanation": "Etwas in Kauf nehmen heißt Nachteile bewusst akzeptieren.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der Ausschuss wollte die Risiken bewusst in Kauf ___.",
+    "reviewAnswer": "nehmen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-020",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Maßnahme könnte in der Praxis erhebliche Folgen nach sich ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ziehen"
+        }
+      }
+    ],
+    "explanation": "Etwas nach sich ziehen bezeichnet eine Folge verursachen.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Maßnahme könnte in der Praxis erhebliche Folgen nach sich ___.",
+    "reviewAnswer": "ziehen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-021",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die neue Methode soll die bisherigen Ergebnisse infrage ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "stellen"
+        }
+      }
+    ],
+    "explanation": "Etwas infrage stellen = bezweifeln.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die neue Methode soll die bisherigen Ergebnisse infrage ___.",
+    "reviewAnswer": "stellen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-022",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die verfügbaren Mittel sollten sinnvoll zum Einsatz ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "kommen"
+        }
+      }
+    ],
+    "explanation": "Zum Einsatz kommen bedeutet eingesetzt werden.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die verfügbaren Mittel sollten sinnvoll zum Einsatz ___.",
+    "reviewAnswer": "kommen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-023",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Kommission musste dem Antrag unter den gegebenen Umständen statt ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "geben"
+        }
+      }
+    ],
+    "explanation": "Einem Antrag stattgeben ist eine feste amtssprachliche Verbindung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Kommission musste dem Antrag unter den gegebenen Umständen statt ___.",
+    "reviewAnswer": "geben",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-024",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Entscheidung war so umstritten, dass sie öffentlich Widerspruch ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "hervorrief"
+        }
+      }
+    ],
+    "explanation": "Widerspruch hervorrufen = Gegenreaktion auslösen.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Entscheidung war so umstritten, dass sie öffentlich Widerspruch ___.",
+    "reviewAnswer": "hervorrief",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-025",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Verwaltung wollte für die entstandenen Probleme schnell Abhilfe ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "schaffen"
+        }
+      }
+    ],
+    "explanation": "Abhilfe schaffen ist eine feste Formulierung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Verwaltung wollte für die entstandenen Probleme schnell Abhilfe ___.",
+    "reviewAnswer": "schaffen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-026",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Das Gesetz sieht vor, dass Unternehmen bestimmte Anforderungen ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "erfüllen"
+        }
+      }
+    ],
+    "explanation": "Anforderungen erfüllen ist idiomatisch.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Das Gesetz sieht vor, dass Unternehmen bestimmte Anforderungen ___.",
+    "reviewAnswer": "erfüllen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-027",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Stellungnahme sollte den kritischen Einwänden Rechnung ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "tragen"
+        }
+      }
+    ],
+    "explanation": "Etwas Rechnung tragen verlangt Dativ.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Stellungnahme sollte den kritischen Einwänden Rechnung ___.",
+    "reviewAnswer": "tragen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-028",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Das Ergebnis könnte schließlich den Ausschlag ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "geben"
+        }
+      }
+    ],
+    "explanation": "Den Ausschlag geben = entscheidend sein.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Das Ergebnis könnte schließlich den Ausschlag ___.",
+    "reviewAnswer": "geben",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-029",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Ausschussmitglieder wollten aus dem Vorfall konkrete Konsequenzen ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ziehen"
+        }
+      }
+    ],
+    "explanation": "Konsequenzen ziehen = Handlungsfolgen ableiten.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Ausschussmitglieder wollten aus dem Vorfall konkrete Konsequenzen ___.",
+    "reviewAnswer": "ziehen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-030",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Der Bericht sollte die wesentlichen Unterschiede deutlich zum Ausdruck ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "bringen"
+        }
+      }
+    ],
+    "explanation": "Zum Ausdruck bringen = ausdrücken.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der Bericht sollte die wesentlichen Unterschiede deutlich zum Ausdruck ___.",
+    "reviewAnswer": "bringen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-031",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Verantwortlichen mussten für ihre Entscheidungen die Verantwortung ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "übernehmen"
+        }
+      }
+    ],
+    "explanation": "Verantwortung übernehmen = sich verpflichten.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Verantwortlichen mussten für ihre Entscheidungen die Verantwortung ___.",
+    "reviewAnswer": "übernehmen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-032",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Der Antragsteller wollte auf die bestehende Regelung ausdrücklich Bezug ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "nehmen"
+        }
+      }
+    ],
+    "explanation": "Bezug nehmen auf + Akkusativ ist eine feste Konstruktion.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der Antragsteller wollte auf die bestehende Regelung ausdrücklich Bezug ___.",
+    "reviewAnswer": "nehmen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-033",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Die Mitglieder konnten sich nur mit Mühe auf eine gemeinsame Linie ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "verständigen"
+        }
+      }
+    ],
+    "explanation": "Sich auf eine gemeinsame Linie verständigen ist idiomatisch.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Die Mitglieder konnten sich nur mit Mühe auf eine gemeinsame Linie ___.",
+    "reviewAnswer": "verständigen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-034",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Der Autor wollte damit auf einen weiteren Widerspruch aufmerksam ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "machen"
+        }
+      }
+    ],
+    "explanation": "Auf etwas aufmerksam machen ist eine feste Wendung.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Der Autor wollte damit auf einen weiteren Widerspruch aufmerksam ___.",
+    "reviewAnswer": "machen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-035",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Wortverbindungen im Kontext",
+    "prompt": "Das Gericht wollte der neuen Rechtsprechung angemessen Geltung ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passendes Wort / Form"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "verschaffen"
+        }
+      }
+    ],
+    "explanation": "Einer Sache Geltung verschaffen ist idiomatisch.",
+    "misconception": "Lexikalische Wortverbindung",
+    "reviewPrompt": "Das Gericht wollte der neuen Rechtsprechung angemessen Geltung ___.",
+    "reviewAnswer": "verschaffen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl SG-01 original generated-by-author draft; external lexicographic/editorial review pending"
+    },
+    "editorial": {}
+  }
+]

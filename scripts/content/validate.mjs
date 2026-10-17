@@ -1,14 +1,48 @@
 import {readFileSync} from 'node:fs';
-const items=JSON.parse(readFileSync(new URL('../../content/fixtures/core.demo.json',import.meta.url),'utf8'));
-const ids=new Set();const counts={M01:0,M02:0,M03:0};let reviewed=0;
-for(const item of items){
- if(ids.has(item.id))throw Error('Duplicate '+item.id);ids.add(item.id);
- if(!Object.hasOwn(counts,item.mode))throw Error('Mode '+item.id);
- if(!item.prompt||!item.explanation||!item.reviewAnswer||!item.misconception||!item.skillId)throw Error('Missing text '+item.id);
- if(!item.slots.length||!item.variants.length)throw Error('Empty answer '+item.id);
- for(const variant of item.variants)for(const slot of item.slots)if(typeof variant.slots[slot.id]!=='string'||!variant.slots[slot.id].trim())throw Error('Invalid variant '+item.id);
- if(item.status==='REVIEWED'){if(item.rights?.kind==='ORIGINAL_DRAFT'||!item.rights?.reviewedBy||!item.rights?.reviewedAt)throw Error('False approval '+item.id);reviewed++;}
- else if(item.status!=='DEMO_ONLY')throw Error('Status '+item.id);
+import {fileURLToPath} from 'node:url';
+import {resolve,dirname} from 'node:path';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
+const read=(p)=>JSON.parse(readFileSync(resolve(root,p),'utf8'));
+const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json')];
+const approved=read('content/approved/approved.json');
+const ledger=read('content/editorial/approval-ledger.json');
+const manifest=read('content/manifest.json');
+const modes=new Set(['M01','M02','M03','M04','M05']);const ids=new Set();const counts=Object.fromEntries([...modes].map(m=>[m,0]));
+const approvalById=new Map(ledger.map(r=>[r.id+'@'+r.version,r]));
+if(approvalById.size!==ledger.length)throw Error('Duplicate editorial approval records');
+const normalize=s=>s.trim().normalize('NFC').toLocaleLowerCase('de-DE').replace(/\s+/g,' ');
+for(const [item,source] of [...demo.map(i=>[i,'demo']),...approved.map(i=>[i,'approved'])]){
+ if(typeof item.id!=='string'||!/^SG-M0[1-5]-\d{3}$/.test(item.id))throw Error('Unrecognized stable ID '+item.id);
+ if(ids.has(item.id))throw Error('Duplicate ID across content packages '+item.id);ids.add(item.id);
+ if(!Number.isInteger(item.version)||item.version<1)throw Error('Bad revision '+item.id);
+ if(!modes.has(item.mode)||!item.id.includes(item.mode))throw Error('Mode mismatch '+item.id);
+ if(typeof item.skillId!=='string'||!/^G\d{2}\./.test(item.skillId)||!['BRIDGE_C1','C1','C2'].includes(item.band))throw Error('Missing taxonomy '+item.id);
+ for(const k of ['prompt','explanation','misconception','reviewPrompt','reviewAnswer','topic'])if(typeof item[k]!=='string'||!item[k].trim())throw Error('Missing '+k+' '+item.id);
+ if(!item.rights?.source?.trim())throw Error('Missing source provenance '+item.id);
+ if(!Array.isArray(item.slots)||!item.slots.length||new Set(item.slots.map(s=>s.id)).size!==item.slots.length)throw Error('Invalid slots '+item.id);
+ if(!item.slots.every(s=>s.id&&s.label))throw Error('Missing slot label '+item.id);
+ if(!Array.isArray(item.variants)||!item.variants.length)throw Error('Missing alternatives '+item.id);
+ const expected=item.slots.map(s=>s.id).sort().join('|'),unique=new Set();
+ for(const variant of item.variants){
+  if(!variant.slots||Object.keys(variant.slots).sort().join('|')!==expected)throw Error('Joint alternative has incomplete or extra slots '+item.id);
+  const values=item.slots.map(s=>variant.slots[s.id]);
+  if(values.some(v=>typeof v!=='string'||!v.trim()))throw Error('Empty solution '+item.id);
+  const normalized=values.map(normalize).join('|');if(unique.has(normalized))throw Error('Duplicate normalized variant '+item.id);unique.add(normalized);
+ }
+ const solution=item.slots.map(s=>item.variants[0].slots[s.id]).join(' · ');
+ if(normalize(item.reviewAnswer)!==normalize(solution))throw Error('Review solution mismatch '+item.id);
  counts[item.mode]++;
+ if(source==='demo'){
+  if(item.status!=='DEMO_ONLY'||item.rights.kind!=='ORIGINAL_DRAFT'||item.editorial?.reviewedBy)throw Error('Demo illegally marked reviewed '+item.id);
+ }else{
+  if(item.status!=='REVIEWED'||item.rights.kind==='ORIGINAL_DRAFT'||!item.authorId)throw Error('Invalid approved item '+item.id);
+  const review=approvalById.get(item.id+'@'+item.version);
+  if(!review||review.authorId!==item.authorId||review.editorId===item.authorId||!review.editorId||!review.date||!review.sourceChecked||!review.languageChecked||!review.rightsChecked||!review.approvalReference)throw Error('Missing independent approval '+item.id);
+  if(item.editorial?.reviewId!==review.approvalReference)throw Error('Editorial record mismatch '+item.id);
+ }
 }
-console.log(JSON.stringify({valid:true,total:items.length,reviewed,demo:items.length-reviewed,counts,SG01Target:240,contentComplete:reviewed>=240},null,2));
+for(const record of ledger)if(!approved.some(a=>a.id===record.id&&a.version===record.version))throw Error('Orphan approval '+record.id);
+if(manifest.demoItemCount!==demo.length||manifest.publishedApprovedCount!==approved.length||manifest.releaseStatus!=='DEMO_ONLY')throw Error('Content manifest stale or false');
+const result={valid:true,demo:demo.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+console.log(JSON.stringify(result,null,2));
+if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

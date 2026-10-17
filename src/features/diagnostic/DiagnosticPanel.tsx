@@ -1,0 +1,6 @@
+import {DIAGNOSTIC_A_BLUEPRINT,DIAGNOSTIC_A_TOTAL,validateDiagnosticA} from '../../domain/diagnostic/engine';
+import {diagnosticAItems} from '../../domain/diagnostic/items';
+export default function DiagnosticPanel({onExit}:{onExit:()=>void}){
+ const gate=validateDiagnosticA(diagnosticAItems);
+ return <section><div className="eyebrow">Standardisierte Lernstandserhebung</div><h1 className="page-title">Diagnostik A</h1><p className="lead">Der Ablauf für die vollständige C1–C2-Erhebung ist vorbereitet. Die Einstufung bleibt gesperrt, bis alle benötigten Originalaufgaben unabhängig geprüft, passende Hördateien freigegeben und offene Antworten fachkundig bewertet werden können.</p><div className="panel"><h2>{gate.ready?'Form bereit':'Noch nicht verfügbar'}</h2><p><strong>{diagnosticAItems.length} von {DIAGNOSTIC_A_TOTAL}</strong> geprüften Aufgaben vorhanden.</p><p className="muted small">Einzelne Demoaufgaben werden bewusst nicht als offizieller Einstufungstest verwendet. Es erfolgt keine C2-Einstufung und keine Speicherung fingierter Testergebnisse.</p><div className="grid">{DIAGNOSTIC_A_BLUEPRINT.map(([id,n])=><div className="listitem" key={id}><strong>{id}</strong><div className="muted">{n} benötigte Aufgaben</div></div>)}</div></div><div className="buttonrow"><button className="button outline" onClick={onExit}>Zurück zum Lernen</button></div></section>;
+}
