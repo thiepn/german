@@ -1,44 +1,38 @@
-# Sprachgefühl — Advanced German Mastery
+# Sprachgefühl — Advanced German Learning
 
-A generalized, local-first German C1–C2 learning application under active development.
+Generalized German B2+→C1, C1→C2 and C2+ refinement platform. **Draft only, not deployed.** All available authored exercises are `DEMO_ONLY` and **none has received independent language-editor approval**.
 
-**Status:** draft implementation, not released. No public hosting or data synchronization. The current exercises are **DEMO_ONLY**, not linguistically certified or independently approved.
+## Native learner experience
 
-## Learner experience (P1 draft)
+- M01 Artikelblitz, M02 Kasus-Kette, M03 Präpositionsjagd, M04 Satzlabor, M05 Kollokationsduell with shared deterministic grading and persistent Error Archive.
+- Momentum Precision-inspired responsive Today, five-mode practice, finite resumable daily mission, 13-domain curriculum overview, spaced review and evidence-oriented Progress.
+- M04 writing studio: 20 original draft prompts; immutable first draft; structured self-check lens, guided revisions, word-level comparison, saved revision history and priority for unfinished work. Free writing has **no automatic correctness score**.
+- M05 contextual collocations with alternatives; 12 further dictionary-linked drafts. Dictionary anchors attest lexical expressions only, not the pedagogical correctness of newly written example sentences or distractors.
+- Diagnostic A (72-item plan) and a separate 50-item P1 holdout diagnostic pilot are blocked until actual independent approvals exist. No fake CEFR certification.
+- User-owned local IndexedDB (database `sprachgefuehl-learning-v1`, additive schema **v4**) and JSON backup with SHA-256 integrity, merge-only recovery and format **v3**. Legacy format v1/v2 files remain readable. Missions, writing versions and attempts retain native IDs. Exports contain personal text in plaintext.
 
-- Entry profiles for B2+ → C1, C1 → C2, and C2+ refinement, with the common curriculum open to everyone.
-- M01 Artikelblitz, M02 Kasus-Kette, M03 Präpositionsjagd, M04 Satzlabor (constrained sentence forms), M05 Kollokationsduell (contextual collocations).
-- Today recommendations, curriculum navigation across 13 domains, answer feedback, contextual Error Archive, recall scheduling, and evidence-based Progress.
-- Diagnostic A infrastructure: 72-item section blueprint, pause/resume, immutable responses and pending human assessment for open responses. **Not available to learners without independently approved full-form content and audio.**
-- IndexedDB learner records, additive database upgrade to v3 preserving old attempts; offline application-shell caching.
+## Content authority
 
-The current content inventory consists of **118 unreviewed objective demo items (12+12+12+33+49)**, 12 ungraded Satzlabor writing prompts and 10 unapproved micro-lesson drafts. Approved content: **0**. No C1/C2 outcome should be inferred from these practice items.
+- **178 objective DEMO_ONLY items** distributed across M01–M05, plus **20 ungraded DEMO_ONLY writing prompts** and 10 draft micro-lessons.
+- **0/350** independently approved P1 exercises; **0/50** approved P1 holdout items; **0/72** approved Diagnostic A items.
+- `content/manifest.json` is the authoring source list. `scripts/editorial/reviewQueue.mjs` dynamically discovers all declared candidates and prints review dossiers; it never authorizes content.
+- `content/editorial/lexical-anchors.json` records six Duden headword pages as lexical reference points only; no external example paragraphs were copied.
+- `scripts/content/validate.mjs` enforces fixture structure and editorial release gates; approved-only pack excludes all demos.
+- Never import, rename or overwrite `thiepn/artikelwerk` browser records.
 
-## Repository & safety
+## Development checks
 
-Canonical repository: `thiepn/german`. Do **not** migrate from `thiepn/artikelwerk` or reuse its data keys. Sprachgefühl database: `sprachgefuehl-learning-v1` (IndexedDB schema version 3). The database name intentionally stays unchanged during the additive schema upgrade. The app has no account system and local SHA-256-verified, owner-controlled export and merge-only restore covering seven stores (physical-device recovery not yet qualified); **do not clear site data**.
-
-All M01–M05 demo content comes from draft assets under `content/fixtures/`. The approved-only build pack at `dist/data/approved.v1.json` does not include demos. Release packaging cannot be called ready until required independent editorial records are present.
-
-## Build and qualification
-
-Prerequisites: Node.js 22+, Chromium via Playwright.
+Node.js 22+ with Chromium installed via Playwright.
 
 ```sh
 npm install --no-package-lock --no-audit --no-fund
 npm run check
+npm run check:editorial
+npm run check:release  # expected FAIL until editorial approval
 npx playwright install chromium
 npx vite preview --host 127.0.0.1 --port 4173
-# in another terminal:
+# another terminal
 npm run test:browser
 ```
 
-`npm run check:release` is intentionally **expected to fail** until 350 approved P1 items have genuine independently reviewed source/rights records. Its failure is a release protection, not a CI regression.
-
-See [content policy](docs/editorial/P1-content-policy.md) and [P1 completeness](docs/P1-completeness.md).
-
-## Non-goals and blockers
-
-No public domain, deployment, import/migration of Artikelwerk, credentials, third-party paid APIs or production writes. No fabricated audio, C2 exam grading, AI writing judgment or editorial approval. Advanced writing, speaking, listening, mediation and the full 1,600-item corpus belong to future phases.
-
-M04 now includes a user-owned, ungraded writing studio with immutable original draft and additive revisions. M05 includes 14 context-contrast drafts with explanations. Existing Momentum Precision Today styling remains authoritative. Current owner-backup format v2 includes writing history, while properly signed legacy v1 six-store backups remain importable.
+No deployment, DNS configuration, credentials, paid APIs, migrations of other apps or production data writes. PR #1 remains a draft; see `docs/P1-completeness.md` and `docs/editorial/P1-content-policy.md`.

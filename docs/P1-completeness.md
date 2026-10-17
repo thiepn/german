@@ -1,49 +1,32 @@
-# P1 feature-first completeness and next substantial batch
+# P1 product-wide completeness — source-grounded draft status
 
-## Working now
-Core app shell, local settings, active exercise drafts, five modes, immutable first attempt events, grade feedback, error archive, review scheduling, Today and curriculum, progress view, offline app shell, versioned local JSON export, SHA-256 integrity checking and non-destructive merge-only import across all seven local stores.
+## Implemented learner-facing experiences
+Five objective modes; Today and resumable bounded mission; original attempt/review history; local backup/restore; guided Error Archive; progress evidence; diagnostic UI that remains gated; Momentum Precision responsive shell; M04 unscored writing studio with immutable first drafts and explicit version comparison; M05 context choices with lexical reference links.
 
-## Content reality
-- SG01 original target: 240 independently approved M01–M03 items — current approved 0, draft 36.
-- Generalized P1 target: 350 independently approved items across M01–M05 — current approved 0, demo 118.
-- Demo counts: 12 / 12 / 12 / 33 / 49. These are separate from approved counts and cannot satisfy release gates.
-- 12 separate M04 free-writing prompts and 10 lessons are authoring drafts, not approved; the writing prompts do not count toward auto-graded exercise quotas.
+## Real content inventory
+- Objective drafts: **178** (130 before the 48-item advanced precision contribution; full breakdown in content-validation CI output).
+- Ungraded M04 prompts: **20**, each an original AI-assisted draft; ten lesson manuscripts are also unreviewed.
+- Reviewed: **0 of 350** P1 exercises, **0 of 50** P1 diagnostic holdouts, **0 of 72** full Diagnostic A items.
+- Lexical reference coverage: 12 M05 drafts link to six dictionary headwords; this is NOT editorial approval for the prompts, alternative answers or difficulty.
+- Corpus release authority remains `content/approved/approved.json` plus independent approval ledger. The trainer uses demo fixtures; the approved pack does not.
 
-## Product gaps
-- M04 restricted morphosyntactic grading is complemented by a separate genuine free-writing studio: first draft saved permanently, draft sample/criteria shown afterward and revisions appended. No automatic linguistic judgement or C2 score.
-- M05 now offers contextual fill-in and 14 two-choice contrast explanations. Editorial review must identify genuinely acceptable alternatives and remove ambiguous distractors.
-- Diagnostic A engine exists but no approved/rights-cleared items. No testing with learners possible until actual review and audio evidence.
-- Review scheduler remains a deterministic draft, not production FSRS with calibrated stability.
-- Reassessment, diagnostic B, media-first listening and richer advanced-writing workflows remain P2/P3.
-- Error archive currently stores submitted answers, but there is no full version-pinned lexical explanation archive; user-owned export/restore now exists, with physical-device and quota stress checks still outstanding.
-- Operational browser a11y audits, Android physical device and service worker upgrade across releases still needed.
+## Architecture and preservation
+- IndexedDB database `sprachgefuehl-learning-v1`, schema **v4**: attempts, cards, review events, settings, drafts, diagnostic sessions, writing entries and missions. Preserve all native keys and original history.
+- JSON/SHA-256 portable backup **v3**, includes all eight stores and accepts authentic prior v1/v2 formats. Merge-only restore; no implicit overwriting of existing historical IDs.
+- Browser offline app shell survives refresh; no published public origin or real-device installation validation.
+- Artikelwerk storage and repository remain separate.
 
-## Next implementation priority
-1. Build genuine authored advanced content in manageable reviewable batches with lexicographic corroboration and human signoff rather than filling counts.
-2. Build M04 free-production scaffolding with explicitly non-automated assessment for genuinely open-ended answers.
-3. Complete diagnostic-A source-authority system with audio licensing evidence; unlock only when the full form is qualified.
-4. User-owned seven-store backup and merge-only restore implemented and qualified in Chromium; next: physical Android and quota/multi-tab failure testing without touching Artikelwerk.
-5. Run source/test/browser checks on the same draft before claiming merge readiness.
+## Remaining significant original product gaps
+- Independent linguist verification, alternate-answer coverage, false-negative analysis, licensing records and editorial calibration are missing. CLI dossiers are only a review aid.
+- Robust diagnostic learner outcomes, approved holdouts and rights-cleared listening audio are absent; both pilots must remain gated.
+- M06–M08 and full reading/listening/speaking/mediation studios not implemented.
+- Automatic scoring of free-form writing is deliberately absent; studio assists self-review but does not assess C2 competence.
+- FSRS-grade scheduler calibration, accessible end-to-end audits, physical Android PWA, multi-tab/quota stress and service-worker upgrade rehearsals remain unqualified.
+- Word-level revision diff is a mechanical comparison, not grammar detection or textual quality evaluation.
 
-## October 18 recovery batch
-- Non-destructive data management UI, JSON/SHA-256 export, integrity/format validation, atomic merge-only restoration. All seven stores include diagnostics and writing entries; additive IndexedDB v2→v3 migration to store immutable writing versions; existing user records preserved.
-- Explicit preview/confirmation before import, error reporting, no implicit replacement of local settings or active drafts.
-- Exact-head CI includes 17 Node tests, TypeScript, production build, and Chromium desktop/mobile, fresh-context recovery, reload and tamper handling.
-- Approval remains **0 of 350**. The 72-item diagnostic remains blocked; do not substitute synthetic or demo-only evidence.
-
-## October 18 writing and contrast batch
-- 14 M05 contrast exercises and 12 distinct M04 open-writing prompts, all DEMO_ONLY, 0 editorially approved.
-- Owner-written first drafts and revisions stored separately, no auto-grading or replacement of the original.
-- SHA-256 portable backup v2 includes seven stores, with signed legacy v1 six-store imports preserved; checksums, atomic merge, duplicate imports and mobile/desktop round-trips tested.
-- The latest qualified CI run, not prior historical counts, is the source of exact test quantities.
-
-## Subsequent authored continuity batch — draft PR #1
-- 130 objective DEMO_ONLY items (12/12/12/33/61), 20 ungraded writing prompts; 0 reviewed.
-- Guided M04 rewriting lens, self-check record, persisted revision history, word-level difference inspection and next incomplete task.
-- 12 new M05 contextual contrast drafts; six Duden dictionary anchors attest only to the lexical expressions. All sentence and distractor editorial checks remain unapproved.
-- Read-only CLI review packets with source links, ambiguity flags and independent reviewer checklist. No automated approval creation or CEFR scores.
-- Existing IndexedDB v3, backup format v2, legacy backup v1, offline shell and Artikelwerk unchanged.
-
-## P1 grammatical corpus expansion (2026-10-18)
-- +48 original graded DEMO_ONLY tasks: M01 +16, M02 +16, M03 +16. Total graded DEMO_ONLY now 178; 20 ungraded writing prompts separate.
-- These drafts require genuine independent linguistic review. No accepted target, CEFR tag, acceptable alternative or explanation is certified. Approved count stays zero and no diagnostic holdouts were fabricated.
+## Next implementation priorities
+1. Recruit/organize independent editorial review, obtain human signoff of carefully sampled items and legitimate alternative responses before increasing official coverage.
+2. Integrate authentic assessed C1/C2 reading and listening with rights-cleared materials; keep assessment gate blocked until genuinely complete.
+3. Improve multi-session writing progress with user-controlled writing archives/retention and review-guided insight without fabricated fluency scores.
+4. Verify data-safe migration, PWA offline upgrades, accessibility and physical-device recovery.
+5. Preserve the draft PR and finish exact-head checks before any merge decision.

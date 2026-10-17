@@ -24,11 +24,12 @@ export function buildReviewQueue(graded,production,anchors){
  return out.sort((a,b)=>a.id.localeCompare(b.id));
 }
 export function collect(){
- return buildReviewQueue(
- [...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json'),...read('content/fixtures/collocation-contrasts.demo.json'),...read('content/fixtures/nuance-grounded.demo.json')],
- [...read('content/fixtures/production.demo.json'),...read('content/fixtures/production-continuation.demo.json')],
- read('content/editorial/lexical-anchors.json').anchors
- );
+ const manifest=read('content/manifest.json');
+ const authored=manifest.authoringSources.flatMap(p=>read(p));
+ const graded=authored.filter(i=>i.id?.startsWith('SG-M'));
+ const writing=authored.filter(i=>i.id?.startsWith('SG-P04'));
+ if(graded.length!==manifest.demoItemCount||writing.length!==manifest.productionPromptCount||graded.length+writing.length!==authored.length)throw Error('Review queue does not cover entire declared authoring manifest.');
+ return buildReviewQueue(graded,writing,read('content/editorial/lexical-anchors.json').anchors);
 }
 const isCLI=process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url);
 if(isCLI){

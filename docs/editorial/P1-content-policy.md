@@ -1,22 +1,16 @@
-# Sprachgefühl P1 editorial and licensing policy
-SG-01 fixture sets contain 104 DEMO_ONLY drafts (36 M01–M03, 33 M04, 35 M05). They are prototype assets and **not** CEFR-certified, independently reviewed, or externally licensed corpora.
+# Sprachgefühl editorial and rights authority (draft)
 
-## Authority separation
-- Demo fixtures are imported solely by the draft UI and never appear in `dist/data/approved.v1.json`.
-- Only items in `content/approved/approved.json` are eligible for approved packs.
-- Approved items must carry independent editor approval in `content/editorial/approval-ledger.json` with version, source/rights checks, language verification, and a reference recorded outside the authoring process.
-- An original draft and reviewer must be different humans; mechanical schema validation cannot prove a review was genuinely performed. Human editorial signoff remains a release requirement.
-- No generated or placeholder entry may be counted toward the 350 reviewed P1 target. Current count is **zero**.
-- Diagnostic A requires 72 independently reviewed, blueprint-matched items, with rights-cleared original audio and non-automated response review when applicable. None currently qualify.
-- 13 curriculum domains are not CEFR certification labels. Exercise bands are design targets pending separate editorial calibration.
+**No independent editorial signoff has been performed.** Training corpus: 178 objective drafts and 20 ungraded writing prompts. Ten micro-lessons remain DEMO_ONLY. Neither lexical references nor tests count as human review.
 
-## Review protocol
-1. Validate original writing and every alternative answer with a qualified German-language editor.
-2. Check clause boundaries, valency, ambiguity, idiomaticity, register, punctuation, semantic equivalence and other plausible answers against authoritative sources.
-3. Check license/source provenance and record any external text/audio permissions.
-4. Record an independent review ledger entry and copy the immutable item/version to approved content.
-5. Run `npm run check:content`, targeted tests and the explicit `npm run check:release` gate.
-6. Any revision after approval must increment the item version and repeat review; historical attempts retain original item/version IDs.
+## Source/reference distinction
+Six links in `content/editorial/lexical-anchors.json` point to genuine Duden lexical entries. The entries attest only to the existence and meaning of the specified established word combinations. The actual exercises, model rewrites, distractors and CEFR tags are newly authored unreviewed material. They require independent linguist review; no dictionary example sentences are reproduced.
 
-## Known demo-specific limitations
-M04 tests only constrained target forms—not unconstrained rewriting. M05 accepts the authored contextual collocation but may have other valid formulations. Both require editorial review of alternatives. Do not expose automatic correctness as a definitive judgement on advanced German until this is complete.
+## Human review packet
+`npm run check:editorial` checks the complete manifest-defined authoring queue and reports counts. Use `node scripts/editorial/reviewQueue.mjs --markdown --id SG-M05-050` to inspect an item; `--mode M04` to filter. The script is strictly read-only: it emits a checklist but never creates an approval artifact or alters the ledger.
+
+Independent review should test all plausible answers (including alternatives), gender/case/valency, idiomaticity, register, genuine ambiguity, semantic and epistemic fidelity in revisions, original rights, and suitability for B2+–C2. Reviewer identity must differ from author identity. Approvals require explicit authenticated records in `content/editorial/approval-ledger.json` and independently checked item versions in `content/approved/approved.json`; an edited item version needs a fresh review.
+
+## Required release and diagnostic gates
+P1: 350 reviewed items, 10 approved lessons, real source/rights attestations. Separate P1 diagnostic pilot: 50 approved unseen holdout items. Full Diagnostic A: 72 approved tasks, clear assessment rubric, rights-cleared authentic audio and human evaluation of subjective answers. Automated structure tests and a dictionary URL are NOT substitutes for any of these.
+
+No generated demo content is labeled REVIEWED. `npm run check:release` deliberately blocks unapproved publication. Real content remain unranked and no official CEFR exam outcomes are inferred.
