@@ -5,7 +5,7 @@ export const DIAGNOSTIC_A_BLUEPRINT = [
 export type DiagnosticModality='objective'|'reading'|'listening'|'writing'|'speaking'|'mediation';
 export type DiagnosticItem={id:string;version:number;section:string;form:'A';modality:DiagnosticModality;status:EditorialStatus;reviewId:string|null;approvedBy:string|null;approvedAt:string|null;authorId:string;rightsCleared:boolean;media?:{audioId:string;rightsCleared:boolean}|null;};
 export type DiagnosticResponse={itemId:string;at:number;answer:string;objectiveScore?:number;manualReview?:'PENDING'|'APPROVED'|'REJECTED'};
-export type DiagnosticSession={id:string;form:'A';formFingerprint:string;itemIds:string[];phase:'IN_PROGRESS'|'PAUSED'|'AWAITING_ASSESSMENT'|'COMPLETE';startedAt:number;updatedAt:number;responses:DiagnosticResponse[];};
+export type DiagnosticSession={id:string;form:'A'|'P1';formFingerprint:string;itemIds:string[];phase:'IN_PROGRESS'|'PAUSED'|'AWAITING_ASSESSMENT'|'COMPLETE';startedAt:number;updatedAt:number;responses:DiagnosticResponse[];};
 const sections=new Map<string,number>(DIAGNOSTIC_A_BLUEPRINT as readonly (readonly [string,number])[]);
 export const DIAGNOSTIC_A_TOTAL=[...sections.values()].reduce((a,b)=>a+b,0);
 export function validateDiagnosticA(items:readonly DiagnosticItem[]):{ready:boolean;issues:string[]}{

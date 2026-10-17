@@ -10,6 +10,7 @@ async function testLearner(viewport){
   await page.getByRole('button',{name:'Status ansehen'}).click();
   await page.getByRole('heading',{name:'Diagnostik A'}).waitFor();
   await page.getByText('0 von 72').waitFor();
+  await page.getByText('0 von 50').waitFor();
   await page.getByRole('button',{name:'Zurück zum Lernen'}).click();
   await page.getByRole('button',{name:'Trainieren',exact:true}).first().click();
   await page.locator('article').filter({hasText:'Satzlabor'}).getByRole('button',{name:'Übung starten'}).click();
