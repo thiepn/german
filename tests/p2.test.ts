@@ -6,7 +6,7 @@ import type {Exercise} from '../src/domain/content/types.ts';
 const old=JSON.parse(fs.readFileSync('content/fixtures/syntax-collocations.demo.json','utf8')) as Exercise[];
 const contrasts=JSON.parse(fs.readFileSync('content/fixtures/collocation-contrasts.demo.json','utf8')) as Exercise[];
 test('content extensions separate graded contrasts from ungraded rewriting',()=>{
- assert.equal(contrasts.length,14);assert.equal(productionPrompts.length,12);
+ assert.equal(contrasts.length,14);assert.equal(productionPrompts.length,20);
  assert.ok(contrasts.every(i=>i.mode==='M05'&&i.contrast&&i.contrast.options.includes(i.variants[0].slots.collocation)&&i.status==='DEMO_ONLY'));
  assert.ok(productionPrompts.every(p=>p.status==='DEMO_ONLY'&&p.authorship==='AI_DRAFT'&&p.reviewedBy===null));
  assert.equal(old.length,68);

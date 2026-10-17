@@ -2,18 +2,21 @@
   "schemaVersion": 3,
   "releaseStatus": "DEMO_ONLY",
   "publishedApprovedCount": 0,
-  "demoItemCount": 118,
-  "productionPromptCount": 12,
+  "demoItemCount": 130,
+  "productionPromptCount": 20,
   "lessonApprovalCount": 0,
-  "contentPackVersion": "sg01-demo-3",
+  "contentPackVersion": "sg01-demo-4",
   "reviewedTargetP1": 350,
   "approvedItemSource": "content/approved/approved.json",
   "authoringSources": [
     "content/fixtures/core.demo.json",
     "content/fixtures/syntax-collocations.demo.json",
     "content/fixtures/collocation-contrasts.demo.json",
-    "content/fixtures/production.demo.json"
+    "content/fixtures/production.demo.json",
+    "content/fixtures/nuance-grounded.demo.json",
+    "content/fixtures/production-continuation.demo.json"
   ],
   "editorialLedger": "content/editorial/approval-ledger.json",
-  "diagnosticAAvailable": false
+  "diagnosticAAvailable": false,
+  "lexicalReferences": "content/editorial/lexical-anchors.json"
 }

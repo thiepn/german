@@ -3,8 +3,9 @@ import {fileURLToPath} from 'node:url';
 import {resolve,dirname} from 'node:path';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const read=(p)=>JSON.parse(readFileSync(resolve(root,p),'utf8'));
-const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json'),...read('content/fixtures/collocation-contrasts.demo.json')];
-const production=read('content/fixtures/production.demo.json');
+const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json'),...read('content/fixtures/collocation-contrasts.demo.json'),...read('content/fixtures/nuance-grounded.demo.json')];
+const production=[...read('content/fixtures/production.demo.json'),...read('content/fixtures/production-continuation.demo.json')];
+const authority=read('content/editorial/lexical-anchors.json');
 const approved=read('content/approved/approved.json');
 const ledger=read('content/editorial/approval-ledger.json');
 const manifest=read('content/manifest.json');
@@ -44,6 +45,15 @@ for(const [item,source] of [...demo.map(i=>[i,'demo']),...approved.map(i=>[i,'ap
 }
 for(const record of ledger)if(!approved.some(a=>a.id===record.id&&a.version===record.version))throw Error('Orphan approval '+record.id);
 if(manifest.demoItemCount!==demo.length||manifest.publishedApprovedCount!==approved.length||manifest.releaseStatus!=='DEMO_ONLY')throw Error('Content manifest stale or false');
+const anchors=new Map();
+for(const a of authority.anchors){
+ if(!/^[A-Z_]+$/.test(a.id)||anchors.has(a.id)||!/^https:\/\/www\.duden\.de\/rechtschreibung\/[A-Za-z_]+$/.test(a.url)||a.editorialApproved!==false||a.referenceKind!=='DICTIONARY_LEXICAL_FORM_ONLY')throw Error('Unapproved or malformed dictionary anchor '+a.id);
+ anchors.set(a.id,a);
+}
+for(const i of demo.filter(x=>x.lexicalAuthority)){
+ const a=anchors.get(i.lexicalAuthority.anchorId);
+ if(!a||i.mode!=='M05'||i.status!=='DEMO_ONLY'||i.lexicalAuthority.editorialApproved!==false||i.lexicalAuthority.scope!=='LEXICAL_FORM_ONLY'||!i.contrast)throw Error('Invalid authority scope '+i.id);
+}
 const productionIds=new Set();
 for(const p of production){
  if(!/^SG-P04-\d{3}$/.test(p.id)||productionIds.has(p.id)||p.status!=='DEMO_ONLY'||p.authorship!=='AI_DRAFT'||p.reviewedBy!==null||p.skillId!=='G04.SYNTAX'||p.version!==1)throw Error('Unqualified production prompt '+p.id);

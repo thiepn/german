@@ -36,3 +36,10 @@ Core app shell, local settings, active exercise drafts, five modes, immutable fi
 - Owner-written first drafts and revisions stored separately, no auto-grading or replacement of the original.
 - SHA-256 portable backup v2 includes seven stores, with signed legacy v1 six-store imports preserved; checksums, atomic merge, duplicate imports and mobile/desktop round-trips tested.
 - The latest qualified CI run, not prior historical counts, is the source of exact test quantities.
+
+## Subsequent authored continuity batch — draft PR #1
+- 130 objective DEMO_ONLY items (12/12/12/33/61), 20 ungraded writing prompts; 0 reviewed.
+- Guided M04 rewriting lens, self-check record, persisted revision history, word-level difference inspection and next incomplete task.
+- 12 new M05 contextual contrast drafts; six Duden dictionary anchors attest only to the lexical expressions. All sentence and distractor editorial checks remain unapproved.
+- Read-only CLI review packets with source links, ambiguity flags and independent reviewer checklist. No automated approval creation or CEFR scores.
+- Existing IndexedDB v3, backup format v2, legacy backup v1, offline shell and Artikelwerk unchanged.
