@@ -22,5 +22,5 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Chromium desktop and mobile workflows
         run: |
-          npm run dev -- --host 127.0.0.1 --port 4173 > /tmp/sprachgefuehl-vite.log 2>&1 &
+          npx vite preview --host 127.0.0.1 --port 4173 > /tmp/sprachgefuehl-vite.log 2>&1 &
           npm run test:browser

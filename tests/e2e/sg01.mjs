@@ -35,7 +35,17 @@ async function open(viewport){
  await page.getByRole('button',{name:'Fortschritt',exact:true}).first().click();
  await page.getByText('Gespeicherte Versuche',{exact:true}).count();
  await page.reload({waitUntil:'networkidle'});
- assert.ok(await page.getByText('Versuche',{exact:true}).count()>0);
+ await page.getByRole('button',{name:'Fortschritt',exact:true}).first().click();
+ const stored=Number(await page.locator('.metric').filter({hasText:'Versuche'}).locator('strong').innerText());
+ assert.ok(stored>=4,'attempts persist across a reload');
+ // Real service-worker offline test against the production build.
+ await page.waitForFunction(()=>navigator.serviceWorker?.controller!==null,null,{timeout:15000});
+ const state=await page.evaluate(async()=>{const keys=await caches.keys();return keys.filter(k=>k.startsWith('sprachgefuehl-shell-')).length;});
+ assert.ok(state>0,'offline cache installed');
+ await context.setOffline(true);
+ await page.reload({waitUntil:'domcontentloaded'});
+ await page.getByText('Sprachgefühl SG-01',{exact:false}).first().waitFor();
+ await context.setOffline(false);
  const hasOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1);
  assert.equal(hasOverflow,false,'no horizontal overflow');
  // This checks actual persistence and rendering. Offline readiness is separately measured.
