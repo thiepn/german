@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {buildPortableBackup,inspectPortableBackup,backupCounts,type BackupRecords} from '../src/persistence/portableBackup.ts';
-const empty=():BackupRecords=>({attempts:[],cards:[],reviewEvents:[],settings:[],drafts:[],diagnosticSessions:[],productionEntries:[]});
+const empty=():BackupRecords=>({attempts:[],cards:[],reviewEvents:[],settings:[],drafts:[],diagnosticSessions:[],productionEntries:[],missions:[]});
 test('portable export/import verifies all seven stores and Unicode',async()=>{
  const x=empty();x.attempts=[{id:'s:1',itemId:'SG-M02-001',itemVersion:1,mode:'M02',skillId:'G02.TEST',at:100,slots:{a:'des großen Hauses'},score:1,correct:true,hinted:false,result:'CORRECT',sessionId:'s',variantIndex:0}];
  x.diagnosticSessions=[{id:'diag-1',form:'A',formFingerprint:'a@1',itemIds:['a'],phase:'PAUSED',startedAt:1,updatedAt:2,responses:[]}];
@@ -15,7 +15,7 @@ test('portable export/import verifies all seven stores and Unicode',async()=>{
 test('tampered, malformed or unsupported backups fail closed',async()=>{
  const json=await buildPortableBackup(empty());
  await assert.rejects(inspectPortableBackup(json.replace('"attempts": []','"attempts": [{"id":"corrupt"}]')),/Integritäts|Ungültig/);
- await assert.rejects(inspectPortableBackup(json.replace('"version": 2','"version": 99')),/Sicherungsformat/);
+ await assert.rejects(inspectPortableBackup(json.replace('"version": 3','"version": 99')),/Sicherungsformat/);
  await assert.rejects(inspectPortableBackup('{'),/JSON/);
 });
 test('duplicate keys, structurally invalid attempts and unbounded input fail',async()=>{

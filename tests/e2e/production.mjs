@@ -40,7 +40,7 @@ async function scenario(width){
   const item=await dl;const path=await item.path();assert.ok(path);
   const raw=await import('node:fs/promises').then(m=>m.readFile(path,'utf8'));
   const obj=JSON.parse(raw);
-  assert.equal(obj.version,2);assert.equal(obj.records.productionEntries.length,1);
+  assert.equal(obj.version,3);assert.equal(obj.records.productionEntries.length,1);
   assert.equal(obj.records.productionEntries[0].original,original);
   assert.equal(obj.records.productionEntries[0].revisions[0].text,rewrite);
   assert.equal(obj.records.attempts.length,1);

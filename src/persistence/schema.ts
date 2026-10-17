@@ -1,8 +1,9 @@
+import type {Mission} from '../domain/mission/mission';
 import type {ProductionEntry} from '../domain/production/types';
 import type {DiagnosticSession} from '../domain/diagnostic/engine';
 import type {Attempt,ReviewCard,ReviewEvent,LearnerSettings,Draft} from '../domain/content/types';
 export const DB_NAME='sprachgefuehl-learning-v1';
-export const DB_VERSION=3;
+export const DB_VERSION=4;
 import {BACKUP_STORES,type BackupRecords,type BackupStore} from './portableBackup';
 export type Snapshot={attempts:Attempt[];cards:ReviewCard[];reviewEvents:ReviewEvent[];settings:LearnerSettings|null;draft:Draft|null;};
 let singleton:Promise<IDBDatabase>|null=null;
@@ -19,6 +20,7 @@ export function openLearnerDB():Promise<IDBDatabase>{
    if(!db.objectStoreNames.contains('drafts'))db.createObjectStore('drafts',{keyPath:'id'});
    if(!db.objectStoreNames.contains('diagnosticSessions'))db.createObjectStore('diagnosticSessions',{keyPath:'id'});
    if(!db.objectStoreNames.contains('productionEntries'))db.createObjectStore('productionEntries',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('missions'))db.createObjectStore('missions',{keyPath:'id'});
   };
   req.onsuccess=()=>resolve(req.result);
   req.onerror=()=>{singleton=null;reject(req.error)};
@@ -109,4 +111,31 @@ export async function saveProductionEntry(entry:ProductionEntry,revisionExpected
  }
  if(!previous&&(!entry.original.trim()||entry.revisions.length!==0)){tx.abort();try{await completed}catch{}throw Error('Ungültige Erstfassung.');}
  s.put(entry);await completed;
+}
+
+/** Mission writes stay in the same original learner database. */
+export async function loadActiveMission():Promise<Mission|null>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readonly');const finished=done(tx);
+ const all=await new Promise<Mission[]>((resolve,reject)=>{const q=tx.objectStore('missions').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ await finished;return all.filter(m=>m.phase!=='COMPLETE').sort((a,b)=>b.updatedAt-a.updatedAt)[0]??null;
+}
+export async function saveMission(m:Mission):Promise<void>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readwrite');
+ tx.objectStore('missions').put(m);await done(tx);
+}
+/** Advance is atomic with a check for an immutable first attempt at the current step. */
+export async function completeMissionStep(m:Mission,now:number):Promise<Mission>{
+ const db=await openLearnerDB();
+ const tx=db.transaction(['missions','attempts','drafts'],'readwrite');const finished=done(tx);
+ const get=<T>(store:string,key:string)=>new Promise<T|undefined>((resolve,reject)=>{const q=tx.objectStore(store).get(key);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ const current=await get<Mission>('missions',m.id);
+ if(!current||current.phase!=='IN_PROGRESS'||current.index!==m.index){tx.abort();try{await finished}catch{}throw Error('Mission wurde in einem anderen Tab verändert.');}
+ const step=current.steps[current.index];
+ if(!step){tx.abort();try{await finished}catch{}throw Error('Mission ist bereits abgeschlossen.');}
+ const attempt=await get<Attempt>('attempts',current.id+':'+step.itemId);
+ if(!attempt||attempt.itemVersion!==step.itemVersion){tx.abort();try{await finished}catch{}throw Error('Zuerst Antwort dauerhaft speichern.');}
+ const index=current.index+1;
+ const next:Mission={...current,index,updatedAt:now,phase:index===current.steps.length?'COMPLETE':'IN_PROGRESS'};
+ tx.objectStore('missions').put(next);tx.objectStore('drafts').delete('active');
+ await finished;return next;
 }

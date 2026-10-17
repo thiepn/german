@@ -42,7 +42,7 @@ async function testLearner(viewport){
    const r=indexedDB.open('sprachgefuehl-learning-v1');
    return await new Promise((ok,fail)=>{r.onsuccess=()=>{const db=r.result;const names=[...db.objectStoreNames];const version=db.version;db.close();ok({names,version})};r.onerror=()=>fail(r.error)});
   });
-  assert.equal(stores.version,3);
+  assert.equal(stores.version,4);
   assert.ok(stores.names.includes('diagnosticSessions')&&stores.names.includes('attempts')&&stores.names.includes('productionEntries'));
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1),false);
  }finally{await c.close()}
