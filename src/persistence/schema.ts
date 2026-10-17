@@ -1,8 +1,9 @@
+import type {ProductionEntry} from '../domain/production/types';
 import type {DiagnosticSession} from '../domain/diagnostic/engine';
 import type {Attempt,ReviewCard,ReviewEvent,LearnerSettings,Draft} from '../domain/content/types';
 export const DB_NAME='sprachgefuehl-learning-v1';
-export const DB_VERSION=2;
-import type {BackupRecords, BackupStore} from './portableBackup';
+export const DB_VERSION=3;
+import {BACKUP_STORES,type BackupRecords,type BackupStore} from './portableBackup';
 export type Snapshot={attempts:Attempt[];cards:ReviewCard[];reviewEvents:ReviewEvent[];settings:LearnerSettings|null;draft:Draft|null;};
 let singleton:Promise<IDBDatabase>|null=null;
 export function openLearnerDB():Promise<IDBDatabase>{
@@ -17,6 +18,7 @@ export function openLearnerDB():Promise<IDBDatabase>{
    if(!db.objectStoreNames.contains('settings'))db.createObjectStore('settings',{keyPath:'id'});
    if(!db.objectStoreNames.contains('drafts'))db.createObjectStore('drafts',{keyPath:'id'});
    if(!db.objectStoreNames.contains('diagnosticSessions'))db.createObjectStore('diagnosticSessions',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('productionEntries'))db.createObjectStore('productionEntries',{keyPath:'id'});
   };
   req.onsuccess=()=>resolve(req.result);
   req.onerror=()=>{singleton=null;reject(req.error)};
@@ -60,7 +62,7 @@ export async function loadDiagnosticSession(id:string):Promise<DiagnosticSession
 
 /** Read all six stores, including paused and historical diagnostic sessions. */
 export async function readAllRecords():Promise<BackupRecords>{
- const db=await openLearnerDB();const stores=['attempts','cards','reviewEvents','settings','drafts','diagnosticSessions'] as BackupStore[];
+ const db=await openLearnerDB();const stores=[...BACKUP_STORES] as BackupStore[];
  const tx=db.transaction(stores,'readonly');const finished=done(tx);
  const result=await Promise.all(stores.map(store=>new Promise<unknown[]>((resolve,reject)=>{
   const q=tx.objectStore(store).getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);
@@ -70,7 +72,7 @@ export async function readAllRecords():Promise<BackupRecords>{
 }
 /** Merge-only restoration. A conflicting history ID rejects the whole import before any write. */
 export async function mergeBackupRecords(incoming:BackupRecords):Promise<{inserted:number;skipped:number}>{
- const stores=['attempts','cards','reviewEvents','settings','drafts','diagnosticSessions'] as BackupStore[];
+ const stores=[...BACKUP_STORES] as BackupStore[];
  const current=await readAllRecords();const toInsert:Partial<Record<BackupStore,unknown[]>>={};let inserted=0,skipped=0;
  for(const store of stores){
   const known=new Map((current[store] as {id:string}[]).map(row=>[row.id,row]));
@@ -89,4 +91,22 @@ export async function mergeBackupRecords(incoming:BackupRecords):Promise<{insert
  const db=await openLearnerDB();const tx=db.transaction(stores,'readwrite');const finished=done(tx);
  for(const store of stores)for(const row of toInsert[store]??[])tx.objectStore(store).add(row);
  await finished;return {inserted,skipped};
+}
+
+export async function loadProductionEntries():Promise<ProductionEntry[]>{
+ const db=await openLearnerDB();const tx=db.transaction('productionEntries','readonly');const completed=done(tx);
+ const records=await new Promise<ProductionEntry[]>((resolve,reject)=>{const q=tx.objectStore('productionEntries').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ await completed;return records.sort((a,b)=>b.createdAt-a.createdAt);
+}
+/** Immutable first draft. A revision appends without replacing the original text. */
+export async function saveProductionEntry(entry:ProductionEntry,revisionExpected:number):Promise<void>{
+ const db=await openLearnerDB();const tx=db.transaction('productionEntries','readwrite');const completed=done(tx);
+ const s=tx.objectStore('productionEntries');const previous=await new Promise<ProductionEntry|undefined>((resolve,reject)=>{const q=s.get(entry.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ const count=previous?.revisions.length??0;
+ if(count!==revisionExpected){tx.abort();try{await completed}catch{}throw Error('Schreibversion wurde inzwischen verändert. Bitte neu laden.');}
+ if(previous&&(previous.original!==entry.original||previous.itemId!==entry.itemId||previous.createdAt!==entry.createdAt||entry.revisions.length!==count+1||entry.revisions.slice(0,-1).some((r,i)=>JSON.stringify(r)!==JSON.stringify(previous.revisions[i])))){
+  tx.abort();try{await completed}catch{}throw Error('Gespeicherte Erstfassungen und Überarbeitungen sind unveränderlich.');
+ }
+ if(!previous&&(!entry.original.trim()||entry.revisions.length!==0)){tx.abort();try{await completed}catch{}throw Error('Ungültige Erstfassung.');}
+ s.put(entry);await completed;
 }

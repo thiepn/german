@@ -26,7 +26,7 @@ export default function DataManagement({onExit,onRestore}:{onExit:()=>void;onRes
    const result=await inspectPortableBackup(await file.text());
    setCandidate(result.records);
    const n=backupCounts(result.records);
-   setDetails('Integrität bestätigt · '+result.createdAt+' · '+n.attempts+' Versuche · '+n.reviewEvents+' Wiederholungen · '+n.diagnosticSessions+' Diagnosesitzungen. Noch nichts importiert.');
+   setDetails('Integrität bestätigt · '+result.createdAt+' · '+n.attempts+' Versuche · '+n.reviewEvents+' Wiederholungen · '+n.diagnosticSessions+' Diagnosesitzungen · '+n.productionEntries+' Schreibfassungen. Noch nichts importiert.');
   }catch(e){setError(String(e))}finally{setBusy(false)}
  }
  async function restore(){
@@ -41,7 +41,7 @@ export default function DataManagement({onExit,onRestore}:{onExit:()=>void;onRes
  return <section>
   <div className="eyebrow">Lokal · Privat · Ohne Konto</div>
   <h1 className="page-title">Daten & Sicherung</h1>
-  <p className="lead">Deine Lernhistorie liegt in diesem Browser. Eine Datei ermöglicht dir, Versuche, Wiederholungen, Entwürfe und Diagnosesitzungen selbst zu sichern.</p>
+  <p className="lead">Deine Lernhistorie liegt in diesem Browser. Eine Datei ermöglicht dir, Versuche, Wiederholungen, Entwürfe, Schreibfassungen und Diagnosesitzungen selbst zu sichern.</p>
   <div className="stack">
    <article className="panel"><h2>Sicherung exportieren</h2><p className="muted">Die Datei enthält deine originalen Antworten und kann persönliche Angaben enthalten. Keine automatische Cloud-Übertragung.</p><button type="button" className="button" onClick={()=>void exportBackup()} disabled={busy}>JSON-Sicherung herunterladen</button></article>
    <article className="panel"><h2>Daten ergänzen</h2><p>Nur fehlende Datensätze werden importiert. Unterschiedliche vorhandene Versuche, Wiederholungen oder Diagnosen mit derselben ID sperren den gesamten Import. Einstellungen und der aktuelle Entwurf bleiben bei Konflikten unverändert.</p>

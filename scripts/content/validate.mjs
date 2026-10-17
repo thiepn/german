@@ -3,7 +3,8 @@ import {fileURLToPath} from 'node:url';
 import {resolve,dirname} from 'node:path';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const read=(p)=>JSON.parse(readFileSync(resolve(root,p),'utf8'));
-const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json')];
+const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json'),...read('content/fixtures/collocation-contrasts.demo.json')];
+const production=read('content/fixtures/production.demo.json');
 const approved=read('content/approved/approved.json');
 const ledger=read('content/editorial/approval-ledger.json');
 const manifest=read('content/manifest.json');
@@ -43,6 +44,16 @@ for(const [item,source] of [...demo.map(i=>[i,'demo']),...approved.map(i=>[i,'ap
 }
 for(const record of ledger)if(!approved.some(a=>a.id===record.id&&a.version===record.version))throw Error('Orphan approval '+record.id);
 if(manifest.demoItemCount!==demo.length||manifest.publishedApprovedCount!==approved.length||manifest.releaseStatus!=='DEMO_ONLY')throw Error('Content manifest stale or false');
-const result={valid:true,demo:demo.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+const productionIds=new Set();
+for(const p of production){
+ if(!/^SG-P04-\d{3}$/.test(p.id)||productionIds.has(p.id)||p.status!=='DEMO_ONLY'||p.authorship!=='AI_DRAFT'||p.reviewedBy!==null||p.skillId!=='G04.SYNTAX'||p.version!==1)throw Error('Unqualified production prompt '+p.id);
+ productionIds.add(p.id);
+ if(!p.source?.trim()||!p.instruction?.trim()||!p.sample?.trim()||!Array.isArray(p.noticing)||p.noticing.length<3)throw Error('Incomplete production authoring '+p.id);
+}
+for(const item of demo)if(item.contrast){
+ if(item.mode!=='M05'||item.contrast.kind!=='AUTHOR_DRAFT_CHOICE'||!Array.isArray(item.contrast.options)||item.contrast.options.length<2||new Set(item.contrast.options).size!==item.contrast.options.length||!item.contrast.rationale?.trim()||!item.contrast.options.includes(item.variants[0].slots.collocation))throw Error('Invalid M05 contrast '+item.id);
+}
+if(manifest.productionPromptCount!==production.length)throw Error('Production manifest inaccurate');
+const result={valid:true,demo:demo.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

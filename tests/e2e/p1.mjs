@@ -41,8 +41,8 @@ async function testLearner(viewport){
    const r=indexedDB.open('sprachgefuehl-learning-v1');
    return await new Promise((ok,fail)=>{r.onsuccess=()=>{const db=r.result;const names=[...db.objectStoreNames];const version=db.version;db.close();ok({names,version})};r.onerror=()=>fail(r.error)});
   });
-  assert.equal(stores.version,2);
-  assert.ok(stores.names.includes('diagnosticSessions')&&stores.names.includes('attempts'));
+  assert.equal(stores.version,3);
+  assert.ok(stores.names.includes('diagnosticSessions')&&stores.names.includes('attempts')&&stores.names.includes('productionEntries'));
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1),false);
  }finally{await c.close()}
 }
@@ -76,5 +76,5 @@ try{
  await testLearner({width:1280,height:900});
  await testLearner({width:360,height:800});
  await testMigration();
- console.log('PASS: P1 M04/M05/diagnostic gate/progress+errors/IndexedDB v1→v2 desktop+mobile');
+ console.log('PASS: P1 M04/M05/diagnostic gate/progress+errors/IndexedDB v1→v3 desktop+mobile');
 }finally{await browser.close()}

@@ -1,26 +1,30 @@
 import type {Attempt, ReviewCard, ReviewEvent, LearnerSettings, Draft} from '../domain/content/types';
+import type {ProductionEntry} from '../domain/production/types';
 import type {DiagnosticSession} from '../domain/diagnostic/engine';
 import {DB_NAME} from './schema';
 
 export const BACKUP_FORMAT='sprachgefuehl-local-backup';
-export const BACKUP_VERSION=1;
+export const BACKUP_VERSION=2;
 export const MAX_BACKUP_BYTES=16*1024*1024;
-export const BACKUP_STORES=['attempts','cards','reviewEvents','settings','drafts','diagnosticSessions'] as const;
+export const LEGACY_BACKUP_STORES=['attempts','cards','reviewEvents','settings','drafts','diagnosticSessions'] as const;
+export const BACKUP_STORES=[...LEGACY_BACKUP_STORES,'productionEntries'] as const;
 export type BackupStore=typeof BACKUP_STORES[number];
 export type BackupRecords={
  attempts:Attempt[]; cards:ReviewCard[]; reviewEvents:ReviewEvent[];
- settings:LearnerSettings[]; drafts:Draft[]; diagnosticSessions:DiagnosticSession[];
+ settings:LearnerSettings[]; drafts:Draft[]; diagnosticSessions:DiagnosticSession[]; productionEntries:ProductionEntry[];
 };
-type Payload={format:typeof BACKUP_FORMAT;version:typeof BACKUP_VERSION;sourceDatabase:typeof DB_NAME;createdAt:string;records:BackupRecords};
-type Envelope=Payload & {integrity:{algorithm:'SHA-256';digest:string}};
+type LegacyRecords=Omit<BackupRecords,'productionEntries'>;
+type Payload={format:typeof BACKUP_FORMAT;version:1|2;sourceDatabase:typeof DB_NAME;createdAt:string;records:BackupRecords|LegacyRecords};
+type Envelope=Omit<Payload,'version'|'records'> & {version:2;records:BackupRecords;integrity:{algorithm:'SHA-256';digest:string}};
 const object=(v:unknown):v is Record<string,unknown>=>typeof v==='object'&&v!==null&&!Array.isArray(v);
 const nonempty=(v:unknown)=>typeof v==='string'&&v.length>0&&v.length<=2048;
 const safeId=(v:unknown)=>typeof v==='string'&&v.length>0&&v.length<=256&&!/[\u0000-\u001f]/.test(v);
 const finite=(v:unknown)=>typeof v==='number'&&Number.isFinite(v);
 const recordKey=(r:Record<string,unknown>)=>r.id;
-function validateRecords(records:unknown):asserts records is BackupRecords {
- if(!object(records)||Object.keys(records).sort().join('|')!==[...BACKUP_STORES].sort().join('|'))throw Error('Backup enthält unerwartete oder fehlende Datenspeicher.');
- for(const store of BACKUP_STORES){
+function validateRecords(records:unknown,formatVersion:1|2=2):asserts records is BackupRecords {
+ const expected=formatVersion===1?LEGACY_BACKUP_STORES:BACKUP_STORES;
+ if(!object(records)||Object.keys(records).sort().join('|')!==[...expected].sort().join('|'))throw Error('Backup enthält unerwartete oder fehlende Datenspeicher.');
+ for(const store of expected){
   const values=records[store];
   if(!Array.isArray(values)||values.length>100000)throw Error('Ungültiger Backup-Datenspeicher: '+store);
   const ids=new Set<string>();
@@ -34,6 +38,7 @@ function validateRecords(records:unknown):asserts records is BackupRecords {
    if(store==='settings'&&(item.id!=='local'||!['BRIDGE_C1','C1_C2','C2_PLUS'].includes(String(item.entryTrack))||![10,20,30,45,60].includes(Number(item.dailyMinutes))))throw Error('Ungültige Einstellungen');
    if(store==='drafts'&&(item.id!=='active'||!safeId(item.itemId)||!safeId(item.sessionId)||!object(item.slots)))throw Error('Ungültiger Lernentwurf');
    if(store==='diagnosticSessions'&&(!safeId(item.id)||!Array.isArray(item.itemIds)||!Array.isArray(item.responses)||!['IN_PROGRESS','PAUSED','AWAITING_ASSESSMENT','COMPLETE'].includes(String(item.phase))))throw Error('Ungültige Diagnosesitzung');
+   if(store==='productionEntries'&&(!safeId(item.itemId)||!finite(item.createdAt)||typeof item.original!=='string'||item.original.length>3000||!Array.isArray(item.revisions)||item.revisions.length>1000||item.evaluated!=='UNASSESSED'||item.revisions.some((r:unknown)=>!object(r)||!safeId(r.id)||!finite(r.at)||typeof r.text!=='string'||r.text.length>3000||typeof r.reflection!=='string'||r.reflection.length>1200)))throw Error('Ungültige Textversion');
   }
  }
 }
@@ -59,9 +64,9 @@ export async function inspectPortableBackup(text:string):Promise<Envelope>{
  if(new TextEncoder().encode(text).byteLength>MAX_BACKUP_BYTES*2)throw Error('Backup ist zu groß.');
  let raw:unknown;
  try{raw=JSON.parse(text);}catch{throw Error('Keine gültige JSON-Sicherung.');}
- if(!object(raw)||raw.format!==BACKUP_FORMAT||raw.version!==BACKUP_VERSION||raw.sourceDatabase!==DB_NAME||!nonempty(raw.createdAt)||!Number.isFinite(Date.parse(String(raw.createdAt)))||!object(raw.integrity)||raw.integrity.algorithm!=='SHA-256'||!nonempty(raw.integrity.digest))throw Error('Unbekanntes oder unvollständiges Sicherungsformat.');
- validateRecords(raw.records);
- const payload:Payload={format:BACKUP_FORMAT,version:BACKUP_VERSION,sourceDatabase:DB_NAME,createdAt:String(raw.createdAt),records:raw.records};
+ if(!object(raw)||raw.format!==BACKUP_FORMAT||![1,2].includes(Number(raw.version))||raw.sourceDatabase!==DB_NAME||!nonempty(raw.createdAt)||!Number.isFinite(Date.parse(String(raw.createdAt)))||!object(raw.integrity)||raw.integrity.algorithm!=='SHA-256'||!nonempty(raw.integrity.digest))throw Error('Unbekanntes oder unvollständiges Sicherungsformat.');
+ validateRecords(raw.records,raw.version as 1|2);
+ const payload:Payload={format:BACKUP_FORMAT,version:raw.version as 1|2,sourceDatabase:DB_NAME,createdAt:String(raw.createdAt),records:raw.records};
  if(await digest(canonical(payload))!==raw.integrity.digest)throw Error('Integritätsprüfung fehlgeschlagen: Die Sicherung wurde verändert oder beschädigt.');
- return {...payload,integrity:{algorithm:'SHA-256',digest:String(raw.integrity.digest)}};
+ return {...payload,version:BACKUP_VERSION,records:(raw.version===1?{...(raw.records as LegacyRecords),productionEntries:[]}:raw.records) as BackupRecords,integrity:{algorithm:'SHA-256',digest:String(raw.integrity.digest)}};
 }

@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client';
 import App from './app/App';
 import './app/styles/tokens.css';
 import './app/styles/layout.css';
+import './app/styles/learning.css';
 import {installOfflineWorker} from './offline/packageManager';
 const root=document.getElementById('root');if(!root)throw Error('root is missing');
 createRoot(root).render(<React.StrictMode><App/></React.StrictMode>);
