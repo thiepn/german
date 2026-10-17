@@ -13,7 +13,7 @@ try{
  await a.getByRole('button',{name:'Mit dem Lernen beginnen'}).click();
  await a.getByRole('button',{name:'Trainieren',exact:true}).first().click();
  await a.locator('article').filter({hasText:'Kasus-Kette'}).getByRole('button',{name:'Übung starten'}).click();
- await a.locator('input[required]').first().fill('ein Testfehler');
+ for(const input of await a.locator('input[required]').all())await input.fill('ein Testfehler');
  await a.getByRole('button',{name:'Antwort prüfen'}).click();
  await a.getByText('Noch nicht richtig').waitFor();
  await a.getByRole('button',{name:'Zur Übersicht'}).click();
