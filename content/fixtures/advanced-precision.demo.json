@@ -1110,7 +1110,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „zweifeln“ im Beispiel „an der Zuverlässigkeit“.",
+    "prompt": "Ergänze die zu „zweifeln“ passende Präposition und den Kasus für die Bedeutung: die Verlässlichkeit einer Aussage infrage stellen.",
     "slots": [
       {
         "id": "preposition",
@@ -1131,7 +1131,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert an + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „zweifeln“ im Beispiel „an der Zuverlässigkeit“.",
+    "reviewPrompt": "Ergänze die zu „zweifeln“ passende Präposition und den Kasus für die Bedeutung: die Verlässlichkeit einer Aussage infrage stellen.",
     "reviewAnswer": "an · Dativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1147,7 +1147,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „bestehen“ im Beispiel „auf einer Begründung“.",
+    "prompt": "Ergänze die zu „bestehen“ passende Präposition und den Kasus für die Bedeutung: auf einer eindeutigen Begründung beharren.",
     "slots": [
       {
         "id": "preposition",
@@ -1168,7 +1168,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert auf + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „bestehen“ im Beispiel „auf einer Begründung“.",
+    "reviewPrompt": "Ergänze die zu „bestehen“ passende Präposition und den Kasus für die Bedeutung: auf einer eindeutigen Begründung beharren.",
     "reviewAnswer": "auf · Dativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1184,7 +1184,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „verzichten“ im Beispiel „auf einen Nachweis“.",
+    "prompt": "Ergänze die zu „verzichten“ passende Präposition und den Kasus für die Bedeutung: einen zusätzlichen Nachweis bewusst nicht verlangen.",
     "slots": [
       {
         "id": "preposition",
@@ -1205,7 +1205,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert auf + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „verzichten“ im Beispiel „auf einen Nachweis“.",
+    "reviewPrompt": "Ergänze die zu „verzichten“ passende Präposition und den Kasus für die Bedeutung: einen zusätzlichen Nachweis bewusst nicht verlangen.",
     "reviewAnswer": "auf · Akkusativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1221,7 +1221,7 @@
     "skillId": "G03.VALENZ",
     "band": "C2",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „rechnen“ im Beispiel „mit einer Verzögerung“.",
+    "prompt": "Ergänze die zu „rechnen“ passende Präposition und den Kasus für die Bedeutung: eine Verzögerung als möglich erwarten.",
     "slots": [
       {
         "id": "preposition",
@@ -1242,7 +1242,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert mit + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „rechnen“ im Beispiel „mit einer Verzögerung“.",
+    "reviewPrompt": "Ergänze die zu „rechnen“ passende Präposition und den Kasus für die Bedeutung: eine Verzögerung als möglich erwarten.",
     "reviewAnswer": "mit · Dativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1258,7 +1258,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich abfinden“ im Beispiel „mit der Lage“.",
+    "prompt": "Ergänze die zu „sich abfinden“ passende Präposition und den Kasus für die Bedeutung: eine veränderte Lage widerwillig akzeptieren.",
     "slots": [
       {
         "id": "preposition",
@@ -1279,7 +1279,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert mit + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich abfinden“ im Beispiel „mit der Lage“.",
+    "reviewPrompt": "Ergänze die zu „sich abfinden“ passende Präposition und den Kasus für die Bedeutung: eine veränderte Lage widerwillig akzeptieren.",
     "reviewAnswer": "mit · Dativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1295,7 +1295,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich stützen“ im Beispiel „auf den Befund“.",
+    "prompt": "Ergänze die zu „sich stützen“ passende Präposition und den Kasus für die Bedeutung: einen Befund als Grundlage verwenden.",
     "slots": [
       {
         "id": "preposition",
@@ -1316,7 +1316,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert auf + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich stützen“ im Beispiel „auf den Befund“.",
+    "reviewPrompt": "Ergänze die zu „sich stützen“ passende Präposition und den Kasus für die Bedeutung: einen Befund als Grundlage verwenden.",
     "reviewAnswer": "auf · Akkusativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1332,7 +1332,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich aussprechen“ im Beispiel „für die Maßnahme“.",
+    "prompt": "Ergänze die zu „sich aussprechen“ passende Präposition und den Kasus für die Bedeutung: eine Maßnahme ausdrücklich befürworten.",
     "slots": [
       {
         "id": "preposition",
@@ -1353,7 +1353,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert für + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich aussprechen“ im Beispiel „für die Maßnahme“.",
+    "reviewPrompt": "Ergänze die zu „sich aussprechen“ passende Präposition und den Kasus für die Bedeutung: eine Maßnahme ausdrücklich befürworten.",
     "reviewAnswer": "für · Akkusativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1369,7 +1369,7 @@
     "skillId": "G03.VALENZ",
     "band": "C2",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „ausgehen“ im Beispiel „von einer Annahme“.",
+    "prompt": "Ergänze die zu „ausgehen“ passende Präposition und den Kasus für die Bedeutung: eine Annahme als Ausgangspunkt verwenden.",
     "slots": [
       {
         "id": "preposition",
@@ -1390,7 +1390,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert von + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „ausgehen“ im Beispiel „von einer Annahme“.",
+    "reviewPrompt": "Ergänze die zu „ausgehen“ passende Präposition und den Kasus für die Bedeutung: eine Annahme als Ausgangspunkt verwenden.",
     "reviewAnswer": "von · Dativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1406,7 +1406,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich wenden“ im Beispiel „gegen den Beschluss“.",
+    "prompt": "Ergänze die zu „sich wenden“ passende Präposition und den Kasus für die Bedeutung: einen Beschluss offen kritisieren.",
     "slots": [
       {
         "id": "preposition",
@@ -1427,7 +1427,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert gegen + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich wenden“ im Beispiel „gegen den Beschluss“.",
+    "reviewPrompt": "Ergänze die zu „sich wenden“ passende Präposition und den Kasus für die Bedeutung: einen Beschluss offen kritisieren.",
     "reviewAnswer": "gegen · Akkusativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1443,7 +1443,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich halten“ im Beispiel „an die Bedingungen“.",
+    "prompt": "Ergänze die zu „sich halten“ passende Präposition und den Kasus für die Bedeutung: vereinbarte Bedingungen konsequent befolgen.",
     "slots": [
       {
         "id": "preposition",
@@ -1464,7 +1464,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert an + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich halten“ im Beispiel „an die Bedingungen“.",
+    "reviewPrompt": "Ergänze die zu „sich halten“ passende Präposition und den Kasus für die Bedeutung: vereinbarte Bedingungen konsequent befolgen.",
     "reviewAnswer": "an · Akkusativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1480,7 +1480,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich hüten“ im Beispiel „vor einer Schlussfolgerung“.",
+    "prompt": "Ergänze die zu „sich hüten“ passende Präposition und den Kasus für die Bedeutung: eine voreilige Schlussfolgerung bewusst vermeiden.",
     "slots": [
       {
         "id": "preposition",
@@ -1501,7 +1501,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert vor + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich hüten“ im Beispiel „vor einer Schlussfolgerung“.",
+    "reviewPrompt": "Ergänze die zu „sich hüten“ passende Präposition und den Kasus für die Bedeutung: eine voreilige Schlussfolgerung bewusst vermeiden.",
     "reviewAnswer": "vor · Dativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1517,7 +1517,7 @@
     "skillId": "G03.VALENZ",
     "band": "C2",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich bemühen“ im Beispiel „um einen Ausgleich“.",
+    "prompt": "Ergänze die zu „sich bemühen“ passende Präposition und den Kasus für die Bedeutung: einen fairen Ausgleich erreichen wollen.",
     "slots": [
       {
         "id": "preposition",
@@ -1538,7 +1538,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert um + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich bemühen“ im Beispiel „um einen Ausgleich“.",
+    "reviewPrompt": "Ergänze die zu „sich bemühen“ passende Präposition und den Kasus für die Bedeutung: einen fairen Ausgleich erreichen wollen.",
     "reviewAnswer": "um · Akkusativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1554,7 +1554,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich hinwegsetzen“ im Beispiel „über die Regeln“.",
+    "prompt": "Ergänze die zu „sich hinwegsetzen“ passende Präposition und den Kasus für die Bedeutung: geltende Regeln bewusst missachten.",
     "slots": [
       {
         "id": "preposition",
@@ -1575,7 +1575,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert über + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich hinwegsetzen“ im Beispiel „über die Regeln“.",
+    "reviewPrompt": "Ergänze die zu „sich hinwegsetzen“ passende Präposition und den Kasus für die Bedeutung: geltende Regeln bewusst missachten.",
     "reviewAnswer": "über · Akkusativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1591,7 +1591,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „sich berufen“ im Beispiel „auf ein Urteil“.",
+    "prompt": "Ergänze die zu „sich berufen“ passende Präposition und den Kasus für die Bedeutung: ein Urteil als Begründung heranziehen.",
     "slots": [
       {
         "id": "preposition",
@@ -1612,7 +1612,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert auf + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „sich berufen“ im Beispiel „auf ein Urteil“.",
+    "reviewPrompt": "Ergänze die zu „sich berufen“ passende Präposition und den Kasus für die Bedeutung: ein Urteil als Begründung heranziehen.",
     "reviewAnswer": "auf · Akkusativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1628,7 +1628,7 @@
     "skillId": "G03.VALENZ",
     "band": "C1",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „abhängen“ im Beispiel „von den Umständen“.",
+    "prompt": "Ergänze die zu „abhängen“ passende Präposition und den Kasus für die Bedeutung: äußere Umstände als entscheidenden Faktor haben.",
     "slots": [
       {
         "id": "preposition",
@@ -1649,7 +1649,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert von + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „abhängen“ im Beispiel „von den Umständen“.",
+    "reviewPrompt": "Ergänze die zu „abhängen“ passende Präposition und den Kasus für die Bedeutung: äußere Umstände als entscheidenden Faktor haben.",
     "reviewAnswer": "von · Dativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
@@ -1665,7 +1665,7 @@
     "skillId": "G03.VALENZ",
     "band": "C2",
     "topic": "Verb-Rektion",
-    "prompt": "Bestimme Präposition und Kasus zu „beitragen“ im Beispiel „zu einer Verbesserung“.",
+    "prompt": "Ergänze die zu „beitragen“ passende Präposition und den Kasus für die Bedeutung: eine langfristige Verbesserung unterstützen.",
     "slots": [
       {
         "id": "preposition",
@@ -1686,7 +1686,7 @@
     ],
     "explanation": "Die angegebene Konstruktion regiert zu + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
     "misconception": "Kasus, Flexion, Genus und Kontextbezug",
-    "reviewPrompt": "Bestimme Präposition und Kasus zu „beitragen“ im Beispiel „zu einer Verbesserung“.",
+    "reviewPrompt": "Ergänze die zu „beitragen“ passende Präposition und den Kasus für die Bedeutung: eine langfristige Verbesserung unterstützen.",
     "reviewAnswer": "zu · Dativ",
     "status": "DEMO_ONLY",
     "authorId": "SG_AI_DRAFT_20261018",
