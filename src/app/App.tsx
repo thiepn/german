@@ -49,7 +49,7 @@ export default function App(){
  const refresh=async()=>{const [s,p,m]=await Promise.all([loadSnapshot(),loadProductionEntries(),loadLatestMission()]);setMission(m);setAttempts(s.attempts);setCards(s.cards);setReviews(s.reviewEvents);setSettings(s.settings);setProductions(p);};
  useEffect(()=>{let alive=true;loadSnapshot().then(s=>{if(!alive)return;setAttempts(s.attempts);setCards(s.cards);setReviews(s.reviewEvents);setSettings(s.settings);if(s.draft&&itemById.has(s.draft.itemId)){setSessionId(s.draft.sessionId);setMode(s.draft.mode);setItem(itemById.get(s.draft.itemId)!);setValues(s.draft.slots);setTab('Trainieren');}}).catch(e=>{if(alive)setError('Lokales Speichern ist nicht verfügbar: '+String(e))}).finally(()=>{if(alive)setLoading(false)});
  void loadProductionEntries().then(p=>{if(alive)setProductions(p)}).catch(e=>{if(alive)setError(String(e))});
- void loadActiveMission().then(async m=>{
+ void loadLatestMission().then(async m=>{
   if(!alive)return;setMission(m);
   if(m&&m.phase==='IN_PROGRESS'){
    const active=missionStep(m),target=active&&itemById.get(active.itemId);
@@ -95,7 +95,7 @@ export default function App(){
    setSessionId(current.id);setMode(target.mode);setItem(target);setValues(answer);
    setFeedback(previous?gradeAnswer(target,previous.slots):null);setReviewing(step.kind==='REVIEW'&&!previous);
    setReviewPage(false);setShowDiagnostic(false);setShowProduction(false);setTab('Trainieren');
-  }catch(e){setError('Mission nicht gestartet: '+String(e));setMission(await loadActiveMission().catch(()=>null))}
+  }catch(e){setError('Mission nicht gestartet: '+String(e));setMission(await loadLatestMission().catch(()=>null))}
  }
  async function nextQuestion(){
   if(!item)return;
@@ -108,7 +108,7 @@ export default function App(){
     if(!target||target.version!==step.itemVersion)throw Error('Aufgabe fehlt oder wurde verändert');
     setItem(target);setMode(target.mode);setValues({});setFeedback(null);setReviewing(step.kind==='REVIEW');
     await saveDraft({id:'active',itemId:target.id,mode:target.mode,sessionId:next.id,slots:{},updatedAt:Date.now()},next);
-   }catch(e){setError('Mission konnte nicht fortgesetzt werden: '+String(e));setMission(await loadActiveMission())}
+   }catch(e){setError('Mission konnte nicht fortgesetzt werden: '+String(e));setMission(await loadLatestMission())}
    return;
   }
   start(mode);
@@ -116,7 +116,7 @@ export default function App(){
  async function exitQuestion(){
   if(mission&&mission.phase==='IN_PROGRESS'&&sessionId===mission.id){
    try{const paused=await pauseMissionIfCurrent(mission,Date.now());setMission(paused)}
-   catch(e){setError('Mission konnte nicht pausiert werden: '+String(e));setMission(await loadActiveMission());return}
+   catch(e){setError('Mission konnte nicht pausiert werden: '+String(e));setMission(await loadLatestMission());return}
   }
   selectTab('Heute');
  }
@@ -139,7 +139,7 @@ export default function App(){
     }
     await refresh();setReviewing(false);setFeedback(result);
   }
-  catch(e){setError('Versuch wurde nicht bestätigt und wird nicht als gespeichert gezählt: '+String(e));setMission(await loadActiveMission().catch(()=>null))}
+  catch(e){setError('Versuch wurde nicht bestätigt und wird nicht als gespeichert gezählt: '+String(e));setMission(await loadLatestMission().catch(()=>null))}
   finally{busyRef.current=false;setBusy(false);}
  }
  async function gradeReview(grade:ReviewEvent['grade']){
