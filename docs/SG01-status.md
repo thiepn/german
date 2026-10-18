@@ -2,9 +2,10 @@
 
 Draft PR #1: `feature/sg01-core-learning-foundation`. **Not merged or deployed.**
 
-- Current content: **178 DEMO_ONLY objective exercises** plus **20 unscored M04 writing prompts** and ten draft lessons. Independently approved: **zero**.
-- M01–M05, Momentum Precision Today/finite mission, persisted error/review history and safe local-only owner data foundation exist.
+- Current content: **202 DEMO_ONLY objective exercises** plus **20 unscored M04 writing prompts** and ten draft lessons. Independently approved: **zero**.
+- M01–M07, Momentum Precision Today/finite mission, persisted error/review history and safe local-only owner data foundation exist.
 - M04 includes guided revision lens, human self-check prompts, immutable original and revisions, latest-version difference display, and next-unfinished writing journey.
+- M06 Wortgefühl offers 12 semantic precision decisions, M07 Stilwechsel offers 12 audience/register decisions; all are DEMO_ONLY authored choices, not automated free-text assessment.
 - M05 includes contrast exercises with nuanced explanations; 12 entries point to six externally verified dictionary headwords only. No external dictionary examples are embedded.
 - P1 independent holdout pilot requires 50 approved unseen assessment items; full Diagnostic A requires 72 independently approved multimodal items. Both remain blocked.
 - IndexedDB `sprachgefuehl-learning-v1` schema **4**, backup format **3** (v1/v2 import retained), eight stores, offline shell. No cross-app data access.

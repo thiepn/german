@@ -11,11 +11,11 @@ const read=(p:string)=>JSON.parse(readFileSync(p,'utf8'));
 const manifest=read('content/manifest.json');
 const graded:Exercise[]=manifest.authoringSources.flatMap((p:string)=>read(p)).filter((i:Exercise)=>i.id?.startsWith('SG-M'));
 const anchors=read('content/editorial/lexical-anchors.json').anchors;
-test('learner corpus is distinctly 178 objective items plus 20 ungraded writing prompts',()=>{
- assert.equal(graded.length,178);assert.equal(productionPrompts.length,20);
+test('learner corpus is distinctly 202 objective demo items plus 20 ungraded writing prompts',()=>{
+ assert.equal(graded.length,202);assert.equal(productionPrompts.length,20);
  assert.equal(graded.filter(x=>x.status==='REVIEWED').length,0);
  assert.ok(productionPrompts.every(p=>p.status==='DEMO_ONLY'&&p.reviewedBy===null));
- assert.equal(new Set(graded.map(x=>x.id)).size,178);
+ assert.equal(new Set(graded.map(x=>x.id)).size,graded.length);
 });
 test('twelve authored dictionary-linked contrasts have bounded and auditable lexical scope',()=>{
  const grounded=graded.filter(x=>x.lexicalAuthority);assert.equal(grounded.length,12);
@@ -50,7 +50,7 @@ test('continuation chooses unfinished earlier writing before new prompt, tracks 
 });
 test('editorial queue is a read-only dossier and cannot become human approval by template',()=>{
  const queue=buildReviewQueue(graded,productionPrompts,anchors);
- assert.equal(queue.length,198);
+ assert.equal(queue.length,graded.length+productionPrompts.length);
  assert.equal(queue.filter(x=>x.type==='OPEN_WRITING').length,20);
  assert.equal(queue.filter(x=>x.lexicalReference).length,12);
  assert.ok(queue.every(x=>x.status==='DEMO_ONLY'&&!x.independentEditorialApproval&&x.issues.length>=5));
