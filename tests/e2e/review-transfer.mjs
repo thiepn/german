@@ -34,6 +34,7 @@ async function run(width){
   await page.getByRole('button',{name:'Antwort prüfen'}).click();
   await page.getByText('Noch nicht richtig').waitFor();
   await page.getByRole('button',{name:'Neuen Kontext öffnen'}).click();
+  await page.waitForFunction(previous=>document.querySelector('.exercise .prompt')?.textContent?.trim()!==previous,source);
   const destination=await page.locator('.exercise .prompt').innerText();
   assert.notEqual(destination,source,'new question must differ from reviewed item');
   await page.getByLabel('Artikel',{exact:true}).fill('falsch');
