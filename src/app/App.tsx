@@ -7,6 +7,7 @@ import {gradeAnswer,type GradeResult} from '../domain/grading/gradeAnswer';
 import {chooseSession} from '../domain/recommendation/chooseSession';
 import {planMission,missionStep,type Mission} from '../domain/mission/mission';
 import {newCard,nextReview,RECALL_VERSION,dueReviewCards} from '../domain/review/scheduler';
+import {reviewTransferChoice} from '../domain/review/transfer';
 import {loadSnapshot,saveAttemptOnce,saveReviewedAttemptOnce,saveDraft,saveReview,saveSettings,loadLatestMission,startOrResumeMission,pauseMissionIfCurrent,completeMissionStep} from '../persistence/schema';
 import {offlineState,type OfflineState} from '../offline/packageManager';
 import {MobileShell,type Tab} from './layouts/MobileShell';
@@ -75,13 +76,26 @@ export default function App(){
  return ()=>{alive=false};},[]);
  const recommended=chooseSession(allItems,attempts,cards,Date.now(),1)[0];
  function selectTab(next:Tab){setShowPragmatics(false);setShowReading(false);setShowProduction(false);setShowData(false);setTab(next);setItem(null);setReviewPage(false);setShowDiagnostic(false);setFeedback(null);}
- function start(m:Mode,id?:string,asReview=false){
+ function start(m:Mode,id?:string,asReview=false,sessionOverride?:string){
   const selected=id?itemById.get(id):chooseSession(itemsForMode(m),attempts,cards,Date.now(),1)[0];
   if(!selected)return;
-  const sid=crypto.randomUUID();
+  const sid=sessionOverride??crypto.randomUUID();
   setMode(m);setItem(selected);setSessionId(sid);setValues({});setFeedback(null);setReviewing(asReview);setTab('Trainieren');setReviewPage(false);setShowDiagnostic(false);setShowProduction(false);setShowReading(false);setShowPragmatics(false);
   const draft:Draft={id:'active',itemId:selected.id,mode:m,sessionId:sid,slots:{},updatedAt:Date.now()};
   void saveDraft(draft).catch(e=>setError('Entwurf konnte nicht gespeichert werden: '+String(e)));
+ }
+ async function beginReviewTransfer(event:ReviewEvent,targetId:string){
+  setError('');
+  try{
+   // Re-evaluate using fresh persisted state: the review and first attempt must exist.
+   const snapshot=await loadSnapshot();
+   const choice=reviewTransferChoice(event,allItems,snapshot.attempts);
+   const genuine=snapshot.reviewEvents.some(e=>e.id===event.id&&e.cardId===event.cardId&&e.at===event.at);
+   if(!genuine||choice.status!=='AVAILABLE'||choice.itemId!==targetId)throw Error('Wiederholung oder neuer Kontext nicht mehr verfügbar.');
+   const target=itemById.get(targetId);
+   if(!target||target.status==='WITHDRAWN')throw Error('Zielaufgabe nicht mehr verfügbar.');
+   start(target.mode,target.id,false,choice.reviewSession);
+  }catch(e){setError('Anwendung nicht gestartet: '+String(e));await refresh().catch(()=>{})}
  }
  async function beginMission(){
   setError('');
@@ -143,7 +157,8 @@ export default function App(){
       await saveReviewedAttemptOnce(attempt,event,next,old,expected);
     }else{
       const card=result.status==='CORRECT'||result.status==='VOID'?null:newCard(item.id,item.version,at);
-      await saveAttemptOnce(attempt,card,expected);
+      const saved=await saveAttemptOnce(attempt,card,expected);
+      if(!saved)throw Error('Ein Erstversuch für diese Sitzung ist bereits gespeichert. Bitte neu laden.');
     }
     await refresh();setReviewing(false);setFeedback(result);
   }
@@ -170,7 +185,16 @@ export default function App(){
   {showData?<DataManagement onExit={()=>setShowData(false)} onRestore={refresh}/>:<>
   {tab==='Heute'&&<Today attempts={attempts} cards={cards} recommended={recommended} mission={mission} dailyMinutes={settings?.dailyMinutes??30} onStart={()=>void beginMission()} onReview={()=>{setReviewPage(true);setTab('Trainieren')}} onOpenErrors={()=>selectTab('Fehler')} onDiagnostic={()=>{setShowDiagnostic(true);setTab('Lernen')}} onProduction={()=>{setShowProduction(true);setTab('Trainieren')}} onData={()=>setShowData(true)} onReading={()=>{setShowReading(true);setTab('Lernen')}} onPragmatics={()=>{setShowPragmatics(true);setShowReading(false);setTab('Lernen')}}/>}
   {tab==='Lernen'&&(showDiagnostic?<DiagnosticPanel onExit={()=>setShowDiagnostic(false)}/>:showPragmatics?<PragmaticsStudio onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowPragmatics(false)}}/>:showReading?<ReadingStudio onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowReading(false)}} onTransfer={(m,id)=>start(m,id)} onPragmatics={()=>{setShowReading(false);setShowPragmatics(true)}}/>:<Curriculum onStart={m=>start(m)} onReading={()=>setShowReading(true)} onPragmatics={()=>setShowPragmatics(true)}/>)}
-  {tab==='Trainieren'&&(showProduction?<ProductionStudio onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowProduction(false)}}/>:item?<><div className="status" aria-live="polite">{mission&&sessionId===mission.id?'Tagesmission · Aufgabe '+(mission.index+1)+' / '+mission.steps.length+' · '+missionStep(mission)?.kind:''}</div><PracticeRunner item={item} values={values} onChange={onChange} feedback={feedback} onSubmit={submit} submitting={busy} onNext={()=>void nextQuestion()} onExit={()=>void exitQuestion()} reviewing={reviewing} onReviewGrade={gradeReview}/></>:reviewPage?<ReviewQueue cards={cards} events={reviews} attempts={attempts} byId={itemById} onStart={id=>{const i=itemById.get(id);if(i)start(i.mode,id,true)}}/>:<section><div className="eyebrow">Gezieltes Üben</div><h1 className="page-title">Trainieren</h1><p className="lead">Fünf Übungsformen nutzen denselben deterministischen Bewertungsmechanismus für ausdrücklich vorgegebene Zielantworten. Das hier verwendete Material ist noch nicht redaktionell freigegeben.</p><div className="grid">{availableModes.map(m=><article className="panel" key={m}><div className="kicker">{m}</div><h2>{labels[m]}</h2><p className="muted">{modes[m].description} · {itemsForMode(m).length} Demoaufgaben</p><button className="button" onClick={()=>start(m)}>Übung starten</button></article>)}</div><div className="buttonrow"><button className="button outline" onClick={()=>setReviewPage(true)}>Fällige Wiederholungen ({dueReviewCards(cards,Date.now()).length})</button></div><div className="grid" style={{marginTop:18}}><article className="panel"><h2>Satzlabor · Schreibwerkstatt</h2><p>20 offene Aufgaben mit Erstfassung, Kriterien und Überarbeitungsarchiv.</p><button className="button outline" onClick={()=>setShowProduction(true)}>Schreibwerkstatt öffnen</button></article><article className="panel"><h2>Kontrastduell</h2><p>Kontextbezogene Unterschiede zwischen Wortverbindungen üben.</p><button className="button outline" onClick={()=>{const first=itemsForMode('M05').find(i=>i.contrast);if(first)start('M05',first.id)}}>Kontrast üben</button></article><article className="panel"><h2>Wörterbuchgestützte Nuancen</h2><p>Neue Kontextbeispiele zu belegten Wortverbindungen; die Beispielredaktion ist noch nicht abgeschlossen.</p><button className="button outline" onClick={()=>{const first=itemsForMode('M05').find(i=>!!i.lexicalAuthority);if(first)start('M05',first.id)}}>Beleggestützte Wendungen üben</button></article></div></section>)}
+  {tab==='Trainieren'&&(showProduction?<ProductionStudio onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowProduction(false)}}/>:item?<><div className="status" aria-live="polite">{mission&&sessionId===mission.id?'Tagesmission · Aufgabe '+(mission.index+1)+' / '+mission.steps.length+' · '+missionStep(mission)?.kind:''}</div><PracticeRunner item={item} values={values} onChange={onChange} feedback={feedback} onSubmit={submit} submitting={busy} onNext={()=>void nextQuestion()} onExit={()=>void exitQuestion()} reviewing={reviewing} onReviewGrade={gradeReview}/>{feedback&&sessionId&&!sessionId.startsWith('review-transfer:')&&!(mission&&sessionId===mission.id)&&(()=>{
+ const event=reviews.find(e=>e.id===sessionId+':review:'+item.id+':'+item.version);
+ if(!event)return null;
+ const choice=reviewTransferChoice(event,allItems,attempts);
+ return choice.status==='AVAILABLE'?<div className="panel" role="region" aria-label="Wiederholung anwenden">
+  <h2>Jetzt in neuem Kontext anwenden</h2>
+  <p className="muted small">Eine neue Frage derselben Kompetenz. Dein gespeicherter Review-Termin wird nicht verändert.</p>
+  <button type="button" className="button" onClick={()=>void beginReviewTransfer(event,choice.itemId)}>Neuen Kontext öffnen</button>
+ </div>:null;
+})()}</>:reviewPage?<ReviewQueue cards={cards} events={reviews} attempts={attempts} byId={itemById} onTransfer={(event,id)=>void beginReviewTransfer(event,id)} onStart={id=>{const i=itemById.get(id);if(i)start(i.mode,id,true)}}/>:<section><div className="eyebrow">Gezieltes Üben</div><h1 className="page-title">Trainieren</h1><p className="lead">Fünf Übungsformen nutzen denselben deterministischen Bewertungsmechanismus für ausdrücklich vorgegebene Zielantworten. Das hier verwendete Material ist noch nicht redaktionell freigegeben.</p><div className="grid">{availableModes.map(m=><article className="panel" key={m}><div className="kicker">{m}</div><h2>{labels[m]}</h2><p className="muted">{modes[m].description} · {itemsForMode(m).length} Demoaufgaben</p><button className="button" onClick={()=>start(m)}>Übung starten</button></article>)}</div><div className="buttonrow"><button className="button outline" onClick={()=>setReviewPage(true)}>Fällige Wiederholungen ({dueReviewCards(cards,Date.now()).length})</button></div><div className="grid" style={{marginTop:18}}><article className="panel"><h2>Satzlabor · Schreibwerkstatt</h2><p>20 offene Aufgaben mit Erstfassung, Kriterien und Überarbeitungsarchiv.</p><button className="button outline" onClick={()=>setShowProduction(true)}>Schreibwerkstatt öffnen</button></article><article className="panel"><h2>Kontrastduell</h2><p>Kontextbezogene Unterschiede zwischen Wortverbindungen üben.</p><button className="button outline" onClick={()=>{const first=itemsForMode('M05').find(i=>i.contrast);if(first)start('M05',first.id)}}>Kontrast üben</button></article><article className="panel"><h2>Wörterbuchgestützte Nuancen</h2><p>Neue Kontextbeispiele zu belegten Wortverbindungen; die Beispielredaktion ist noch nicht abgeschlossen.</p><button className="button outline" onClick={()=>{const first=itemsForMode('M05').find(i=>!!i.lexicalAuthority);if(first)start('M05',first.id)}}>Beleggestützte Wendungen üben</button></article></div></section>)}
   {tab==='Fehler'&&<ErrorArchive attempts={attempts} byId={itemById} onRetry={id=>{const i=itemById.get(id);if(i)start(i.mode,id)}}/>}
   {tab==='Fortschritt'&&<Progress attempts={attempts} cards={cards} reviews={reviews} productions={productions} onData={()=>setShowData(true)}/>}
   </>}
