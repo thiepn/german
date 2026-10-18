@@ -43,3 +43,8 @@ Five objective modes; Today and resumable bounded mission; original attempt/revi
 - Four G09 reading-to-writing briefs, unlocked after three documented evidence questions, with immutable first response, retained revisions and audience-specific checks.
 - Read-only editorial queue expands to 226 review dossiers, all unapproved. Objective exercise demos remain 178. M04 writing prompts remain 20, G09 texts remain four with twelve questions.
 - Existing IndexedDB schema v4, backup v3, zero human approval, and Artikelwerk isolation are unchanged. See `docs/P1-pragmatic-transfer.md`.
+
+## Writing archive — latest learner continuity
+- Dedicated read-only Schreibspuren browser over existing original G04/G08/G09 writing and reading records, no duplicate storage.
+- Search, source filters, revision status/time range, original and modified versions, self-check/paragraph evidence, historical fallback, and deep links to native writers.
+- Counters reflect only saved actions; no invented proficiency/grammar grades. IndexedDB v4 and backup v3 remain unchanged. See `docs/P1-writing-archive.md`.

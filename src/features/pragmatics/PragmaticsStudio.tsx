@@ -2,9 +2,9 @@ import {useEffect,useState} from 'react';
 import {pragmaticScenarios,pragmaticId,isPragmaticEntry,pragmaticProgress,pragmaticNext,pragmaticReferences} from '../../domain/pragmatics/pragmatics';
 import {loadProductionEntries,saveProductionEntry} from '../../persistence/schema';
 import type {ProductionEntry} from '../../domain/production/types';
-export default function PragmaticsStudio({onExit}:{onExit:()=>void}){
+export default function PragmaticsStudio({onExit,initialSelection}:{onExit:()=>void;initialSelection?:string}){
  const [entries,setEntries]=useState<ProductionEntry[]>([]);
- const [selected,setSelected]=useState(pragmaticScenarios[0].id);
+ const [selected,setSelected]=useState(pragmaticScenarios.some(s=>s.id===initialSelection)?initialSelection!:pragmaticScenarios[0].id);
  const [decision,setDecision]=useState('');
  const [reason,setReason]=useState('');
  const [revision,setRevision]=useState('');

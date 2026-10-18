@@ -4,9 +4,9 @@ import {loadProductionEntries,saveProductionEntry} from '../../persistence/schem
 import type {ProductionEntry} from '../../domain/production/types';
 import type {Mode} from '../../domain/content/types';
 import {readingStudies,readingAnchors,readingProgress,studyId,isReadingEntry,nextUnanswered,transferTarget,type ReadingUnit} from '../../domain/reading/reading';
-export default function ReadingStudio({onExit,onTransfer,onPragmatics}:{onExit:()=>void;onTransfer:(mode:Mode,id:string)=>void;onPragmatics:()=>void}){
+export default function ReadingStudio({onExit,onTransfer,onPragmatics,initialSelection}:{onExit:()=>void;onTransfer:(mode:Mode,id:string)=>void;onPragmatics:()=>void;initialSelection?:string}){
  const [entries,setEntries]=useState<ProductionEntry[]>([]);
- const [selected,setSelected]=useState(readingStudies[0].id);
+ const [selected,setSelected]=useState(readingStudies.some(u=>u.id===initialSelection)?initialSelection!:readingStudies[0].id);
  const [first,setFirst]=useState('');
  const [answer,setAnswer]=useState('');
  const [evidence,setEvidence]=useState('');

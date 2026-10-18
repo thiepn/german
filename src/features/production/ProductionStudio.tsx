@@ -4,9 +4,9 @@ import type {ProductionEntry,ProductionPrompt,RevisionLens} from '../../domain/p
 import {journey,nextWritingPrompt,revisionDiff,LENSES} from '../../domain/production/continuity';
 import {loadProductionEntries,saveProductionEntry} from '../../persistence/schema';
 const lenses=Object.keys(LENSES) as RevisionLens[];
-export default function ProductionStudio({onExit}:{onExit:()=>void}){
+export default function ProductionStudio({onExit,initialSelection}:{onExit:()=>void;initialSelection?:string}){
  const [entries,setEntries]=useState<ProductionEntry[]>([]);
- const [selected,setSelected]=useState(productionPrompts[0].id);
+ const [selected,setSelected]=useState(productionPrompts.some(p=>p.id===initialSelection)?initialSelection!:productionPrompts[0].id);
  const [draft,setDraft]=useState('');
  const [revision,setRevision]=useState('');
  const [reflection,setReflection]=useState('');
