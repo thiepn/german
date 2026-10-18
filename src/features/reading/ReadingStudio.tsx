@@ -39,8 +39,7 @@ export default function ReadingStudio({onExit,onTransfer}:{onExit:()=>void;onTra
    const next:ProductionEntry={...entry,revisions:[...entry.revisions,{id:crypto.randomUUID(),at:Date.now(),text:answer.trim(),reflection:'Evidenz aus Absatz '+evidence,questionId:question.id,paragraphId:evidence}]};
    await saveProductionEntry(next,entry.revisions.length);await refresh();setAnswer('');setEvidence('');
    setRevealed(prev=>[...prev,question.id]);
-   const nextQuestion=nextUnanswered(unit,next);
-   if(nextQuestion)setChosen(nextQuestion.id);
+   // Stay on the saved answer so learners can inspect their evidence before proceeding.
   }catch(e){setError('Antwort nicht gespeichert: '+String(e))}finally{setBusy(false)}
  }
  const anchorList=unit.anchorIds.map(id=>readingAnchors.find(a=>a.id===id)).filter((x):x is (typeof readingAnchors)[number]=>!!x);
@@ -59,7 +58,7 @@ export default function ReadingStudio({onExit,onTransfer}:{onExit:()=>void;onTra
  <section className="panel"><h2>Dein ursprünglicher Leseeindruck</h2><p className="written">{entry.original}</p><p className="small muted">Gespeichert als eigener Text, nicht als richtig oder falsch bewertet.</p></section>
  <section className="panel"><h2>Belege und Deutung</h2><div className="field"><label htmlFor="reading-question">Frage auswählen</label><select id="reading-question" value={chosen} onChange={e=>{setChosen(e.target.value);setAnswer('');setEvidence('')}}>{unit.questions.map((q,i)=><option key={q.id} value={q.id}>{i+1}. {entry.revisions.some(r=>r.questionId===q.id)?'Dokumentiert':'Offen'} · {q.focus}</option>)}</select></div>
  <p className="prompt">{question.prompt}</p>
- {recorded?<><p><strong>Deine gespeicherte Antwort:</strong></p><p className="written">{recorded.text}</p><p className="small muted">Dein Beleg: {recorded.paragraphId}</p></>:<>
+ {recorded?<><p><strong>Deine gespeicherte Antwort:</strong></p><p className="written">{recorded.text}</p><p className="small muted">Dein Beleg: {recorded.paragraphId}</p>{nextUnanswered(unit,entry)&&<button className="button outline" type="button" onClick={()=>{const next=nextUnanswered(unit,entry);if(next){setChosen(next.id);setRevealed([]);setAnswer('');setEvidence('')}}}>Nächste offene Frage</button>}</>:<>
  <div className="field"><label htmlFor="reading-evidence">Welcher Absatz stützt deine Antwort?</label><select id="reading-evidence" value={evidence} onChange={e=>setEvidence(e.target.value)}><option value="">Textbeleg auswählen</option>{unit.paragraphs.map((p,i)=><option key={p.id} value={p.id}>Absatz {i+1}</option>)}</select></div>
  <div className="field"><label htmlFor="reading-answer">Deine begründete Antwort</label><textarea id="reading-answer" value={answer} onChange={e=>setAnswer(e.target.value)} rows={4} maxLength={2500}/></div>
  <button className="button" disabled={busy||!answer.trim()||!evidence} onClick={()=>void saveQuestion()}>Antwort und Beleg dokumentieren</button></>}
