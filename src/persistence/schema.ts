@@ -36,7 +36,19 @@ export async function loadSnapshot():Promise<Snapshot>{
  await done(tx);return {attempts,cards,reviewEvents,settings:settings.find(x=>x.id==='local')??null,draft:drafts.find(x=>x.id==='active')??null};
 }
 export async function saveSettings(settings:LearnerSettings):Promise<void>{const db=await openLearnerDB();const tx=db.transaction('settings','readwrite');tx.objectStore('settings').put(settings);await done(tx);}
-export async function saveDraft(draft:Draft|null):Promise<void>{const db=await openLearnerDB();const tx=db.transaction('drafts','readwrite');if(draft)tx.objectStore('drafts').put(draft);else tx.objectStore('drafts').delete('active');await done(tx);}
+export async function saveDraft(draft:Draft|null,expectedMission?:Mission):Promise<void>{
+ const db=await openLearnerDB();
+ const tx=db.transaction(expectedMission?['drafts','missions']:['drafts'],'readwrite');const completed=done(tx);
+ if(expectedMission){
+  const current=await new Promise<Mission|undefined>((resolve,reject)=>{const q=tx.objectStore('missions').get(expectedMission.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+  const step=current?.steps[current.index];
+  if(!current||current.phase!=='IN_PROGRESS'||current.index!==expectedMission.index||current.updatedAt!==expectedMission.updatedAt||!step||draft?.sessionId!==current.id||draft.itemId!==step.itemId){
+   tx.abort();try{await completed}catch{}throw Error('Mission wurde in einer anderen Registerkarte geändert. Dieser Entwurf wurde nicht überschrieben.');
+  }
+ }
+ if(draft)tx.objectStore('drafts').put(draft);else tx.objectStore('drafts').delete('active');
+ await completed;
+}
 export async function saveAttemptOnce(attempt:Attempt,card:ReviewCard|null,missionExpected?:Mission):Promise<boolean>{
  const db=await openLearnerDB();const tx=db.transaction(missionExpected?['attempts','cards','drafts','missions']:['attempts','cards','drafts'],'readwrite');const store=tx.objectStore('attempts');
  if(missionExpected){
@@ -139,6 +151,12 @@ export async function loadActiveMission():Promise<Mission|null>{
  const db=await openLearnerDB();const tx=db.transaction('missions','readonly');const finished=done(tx);
  const all=await new Promise<Mission[]>((resolve,reject)=>{const q=tx.objectStore('missions').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
  await finished;return all.filter(m=>m.phase!=='COMPLETE').sort((a,b)=>b.updatedAt-a.updatedAt)[0]??null;
+}
+/** Latest persisted session including completed ones, for a truthful recovery summary. */
+export async function loadLatestMission():Promise<Mission|null>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readonly');const finished=done(tx);
+ const all=await new Promise<Mission[]>((resolve,reject)=>{const q=tx.objectStore('missions').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ await finished;return all.sort((a,b)=>b.updatedAt-a.updatedAt||b.createdAt-a.createdAt)[0]??null;
 }
 /** Transactionally find the single unfinished mission before creating a new one.
  * A pause/resume transition increments the revision using the persisted clock.

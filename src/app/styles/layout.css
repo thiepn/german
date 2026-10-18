@@ -61,3 +61,9 @@
 }
 @media(max-width:350px){.bottomnav button{font-size:10px}.exercise{padding:16px}.mission-step{gap:7px}.today-mission{padding:16px}}
 @media(prefers-color-scheme:dark){.sidebar{background:#0d1528}.nav button.active{background:#345fac;color:white}.banner{background:#44391f}.button.outline{background:var(--panel)}}
+
+/* Mission completion uses real attempt history rather than simulated lesson duration. */
+.mission-completion{display:grid;gap:7px;padding:13px 0 18px;border-bottom:1px solid var(--line)}
+.mission-completion strong{font-size:15px}
+.mission-completion progress{display:block;width:100%;height:8px;accent-color:var(--accent)}
+.mission-completion .small{line-height:1.5}
