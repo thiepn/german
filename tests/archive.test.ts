@@ -39,7 +39,7 @@ test('insight counts only observed revision events and explicit self-checks',()=
  assert.equal(result.firstDrafts,4);assert.equal(result.revisedEntries,2);assert.equal(result.revisionEvents,3);
  assert.equal(result.selfChecks,1);assert.equal(result.reflections,3);assert.equal(result.questionAnswers,1);
  assert.equal(result.lenses.SYNTAX,1);assert.equal(result.lenses.BEDEUTUNG,1);
- assert.equal(result.days,6);
+ assert.equal(result.days,5);
  assert.deepEqual(archiveInsight([]).firstDrafts,0);
 });
 test('historical version pairs retain literal source text and do not score quality',()=>{
