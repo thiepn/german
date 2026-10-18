@@ -10,7 +10,7 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "check:content": "node scripts/content/validate.mjs",
     "check": "npm run check:content && npm run check:editorial && npm test && npm run typecheck && npm run build",
-    "test:browser": "node tests/e2e/sg01.mjs && node tests/e2e/p1.mjs && node tests/e2e/backup.mjs && node tests/e2e/production.mjs && node tests/e2e/mission.mjs && node tests/e2e/continuity.mjs && node tests/e2e/multitab.mjs && node tests/e2e/mission-complete.mjs && node tests/e2e/reading.mjs && node tests/e2e/error-repair.mjs",
+    "test:browser": "node tests/e2e/sg01.mjs && node tests/e2e/p1.mjs && node tests/e2e/backup.mjs && node tests/e2e/production.mjs && node tests/e2e/mission.mjs && node tests/e2e/continuity.mjs && node tests/e2e/multitab.mjs && node tests/e2e/mission-complete.mjs && node tests/e2e/reading.mjs && node tests/e2e/error-repair.mjs && node tests/e2e/review-adaptive.mjs",
     "check:release": "npm run check:content -- --release && npm run build",
     "check:editorial": "node scripts/editorial/reviewQueue.mjs --summary"
   },
