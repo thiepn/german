@@ -24,7 +24,10 @@ async function run(width){
   await page.getByLabel('Welcher Absatz stützt deine Antwort?').selectOption('p2');
   await page.getByLabel('Deine begründete Antwort').fill(answer);
   await page.getByRole('button',{name:'Antwort und Beleg dokumentieren'}).click();
-  await page.waitForFunction(()=>document.querySelector('#reading-question')?.value==='q2');
+  await page.getByText(answer).waitFor();
+  assert.equal(await page.locator('#reading-question').inputValue(),'q1','saved answer stays visible');
+  await page.getByRole('button',{name:'Nächste offene Frage'}).click();
+  assert.equal(await page.locator('#reading-question').inputValue(),'q2','learner advances deliberately');
   await page.locator('#reading-question').selectOption('q1');
   await page.getByText(answer).waitFor();
   await page.getByRole('button',{name:'Musterdeutung vergleichen'}).click();
