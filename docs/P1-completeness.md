@@ -37,3 +37,9 @@ Five objective modes; Today and resumable bounded mission; original attempt/revi
 - IDS grammis conceptual references only; all reading content DEMO_ONLY. See `docs/P1-reading.md`.
 - Editorial CLI expands to 214 nonapproved dossiers with manifest-aligned completeness checks; 0 approved holdouts or CEFR levels.
 - Existing IndexedDB v4, owner-backup v3 (including v1/v2 restore), missions and Artikelwerk isolation unchanged.
+
+## SG-01 G08/G09 pragmatic transfer batch
+- Eight original G08 contextual pragmatic scenarios (demo preference and effect notes, no normative correctness grade).
+- Four G09 reading-to-writing briefs, unlocked after three documented evidence questions, with immutable first response, retained revisions and audience-specific checks.
+- Read-only editorial queue expands to 226 review dossiers, all unapproved. Objective exercise demos remain 178. M04 writing prompts remain 20, G09 texts remain four with twelve questions.
+- Existing IndexedDB schema v4, backup v3, zero human approval, and Artikelwerk isolation are unchanged. See `docs/P1-pragmatic-transfer.md`.

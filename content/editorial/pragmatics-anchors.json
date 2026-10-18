@@ -1,0 +1,17 @@
+{
+  "note": "Conceptual pointers only; no CEFR certification, editorial endorsement or source text reproduction.",
+  "anchors": [
+    {
+      "id": "CEFR_SOCIOPRAGMATIC_2020",
+      "url": "https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-companion-volume-and-its-language-versions",
+      "scope": "SOCIOPRAGMATIC_BACKGROUND",
+      "editorialApproved": false
+    },
+    {
+      "id": "IDS_CONNECTORS",
+      "url": "https://grammis.ids-mannheim.de/konnektoren",
+      "scope": "CONNECTOR_BACKGROUND",
+      "editorialApproved": false
+    }
+  ]
+}

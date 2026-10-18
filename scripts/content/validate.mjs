@@ -93,6 +93,30 @@ for(const u of reading){
 }
 if(reading.length!==manifest.readingUnitCount||questionCount!==manifest.readingQuestionCount)throw Error('Reading manifest count mismatch');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const pragmatic=read(manifest.pragmaticAuthoringSource);
+const refs=read(manifest.pragmaticReferenceSource);
+if(pragmatic.length!==manifest.pragmaticScenarioCount||!Array.isArray(refs.anchors))throw Error('Pragmatics manifest mismatch');
+const sourceRefs=new Map(refs.anchors.map(r=>[r.id,r]));
+if(sourceRefs.size!==refs.anchors.length||!sourceRefs.has('CEFR_SOCIOPRAGMATIC_2020'))throw Error('Invalid pragmatics references');
+for(const ref of refs.anchors)if(ref.editorialApproved!==false||!/^https:\/\/(www\.coe\.int|grammis\.ids-mannheim\.de)\//.test(ref.url))throw Error('Unapproved authority or malformed reference');
+const pragmaticIds=new Set();
+for(const p of pragmatic){
+ if(!/^SG-G08-\d{3}$/.test(p.id)||pragmaticIds.has(p.id)||p.version!==1||p.domain!=='G08'||!['C1','C2'].includes(p.band)||p.status!=='DEMO_ONLY'||p.authorship!=='AI_DRAFT'||p.reviewedBy!==null||p.editorialApproval!==false||p.rights?.kind!=='ORIGINAL_DRAFT'||!sourceRefs.has(p.cefrReference))throw Error('Invalid pragmatic decision '+p.id);
+ pragmaticIds.add(p.id);
+ if(!p.title?.trim()||!p.context?.trim()||!p.task?.trim()||!p.rewrite?.trim()||p.context.length<30||!Array.isArray(p.options)||p.options.length!==3)throw Error('Incomplete pragmatics '+p.id);
+ const optionIds=new Set(p.options.map(o=>o.id));
+ if(optionIds.size!==3||p.options.some(o=>!o.text?.trim()||!o.effect?.trim())||!Array.isArray(p.preferredIds)||!p.preferredIds.length||p.preferredIds.some(id=>!optionIds.has(id)))throw Error('Invalid pragmatic nuance options '+p.id);
+}
+const transfers=read(manifest.readingTransferAuthoringSource);
+if(transfers.length!==manifest.readingTransferCount)throw Error('Transfer manifest mismatch');
+const seenTransfer=new Set();
+for(const x of transfers){
+ if(!/^SG-T09-\d{3}$/.test(x.id)||seenTransfer.has(x.id)||!readingIds.has(x.unitId)||x.version!==1||x.status!=='DEMO_ONLY'||x.reviewedBy!==null||x.editorialApproval!==false||x.authorship!=='AI_DRAFT'||x.rights?.kind!=='ORIGINAL_DRAFT'||!x.title?.trim()||!x.instruction?.trim()||!x.audience?.trim()||!x.register?.trim()||!Array.isArray(x.checks)||x.checks.length<3||x.checks.some(c=>!c.trim()))throw Error('Invalid G09 transfer '+x.id);
+ seenTransfer.add(x.id);
+}
+if(seenTransfer.size!==readingIds.size)throw Error('Missing transfer brief for a reading study');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

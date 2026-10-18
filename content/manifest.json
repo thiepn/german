@@ -1,11 +1,11 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "releaseStatus": "DEMO_ONLY",
   "publishedApprovedCount": 0,
   "demoItemCount": 178,
   "productionPromptCount": 20,
   "lessonApprovalCount": 0,
-  "contentPackVersion": "sg01-demo-6",
+  "contentPackVersion": "sg01-demo-7",
   "reviewedTargetP1": 350,
   "approvedItemSource": "content/approved/approved.json",
   "authoringSources": [
@@ -25,5 +25,10 @@
   "readingSources": [
     "content/fixtures/reading-studies.demo.json"
   ],
-  "readingGrammarAnchors": "content/editorial/reading-anchors.json"
+  "readingGrammarAnchors": "content/editorial/reading-anchors.json",
+  "pragmaticScenarioCount": 8,
+  "pragmaticAuthoringSource": "content/fixtures/pragmatics.demo.json",
+  "pragmaticReferenceSource": "content/editorial/pragmatics-anchors.json",
+  "readingTransferCount": 4,
+  "readingTransferAuthoringSource": "content/fixtures/reading-transfer.demo.json"
 }

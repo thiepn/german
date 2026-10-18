@@ -179,7 +179,7 @@ export async function saveProductionEntry(entry:ProductionEntry,revisionExpected
  const s=tx.objectStore('productionEntries');const previous=await new Promise<ProductionEntry|undefined>((resolve,reject)=>{const q=s.get(entry.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
  const count=previous?.revisions.length??0;
  if(count!==revisionExpected){tx.abort();try{await completed}catch{}throw Error('Schreibversion wurde inzwischen verändert. Bitte neu laden.');}
- if(previous&&(previous.original!==entry.original||previous.itemId!==entry.itemId||previous.createdAt!==entry.createdAt||entry.revisions.length!==count+1||entry.revisions.slice(0,-1).some((r,i)=>JSON.stringify(r)!==JSON.stringify(previous.revisions[i])))){
+ if(previous&&(previous.original!==entry.original||previous.itemId!==entry.itemId||previous.itemVersion!==entry.itemVersion||previous.createdAt!==entry.createdAt||previous.kind!==entry.kind||previous.sourceId!==entry.sourceId||previous.decisionId!==entry.decisionId||entry.revisions.length!==count+1||entry.revisions.slice(0,-1).some((r,i)=>JSON.stringify(r)!==JSON.stringify(previous.revisions[i])))){
   tx.abort();try{await completed}catch{}throw Error('Gespeicherte Erstfassungen und Überarbeitungen sind unveränderlich.');
  }
  if(!previous&&(!entry.original.trim()||entry.revisions.length!==0)){tx.abort();try{await completed}catch{}throw Error('Ungültige Erstfassung.');}

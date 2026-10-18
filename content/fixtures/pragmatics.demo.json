@@ -1,0 +1,314 @@
+[
+  {
+    "id": "SG-G08-001",
+    "version": 1,
+    "domain": "G08",
+    "title": "Fachlicher Widerspruch",
+    "band": "C1",
+    "context": "Eine Kollegin erklärt einen schwachen Befund für sicher. Du widersprichst im Fachgespräch.",
+    "task": "Eine respektvolle, evidenzbezogene Einwendung formulieren",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Daten erlauben meines Erachtens noch keine eindeutige Schlussfolgerung.",
+        "effect": "Markiert sachlich die Grenzen des Befundes."
+      },
+      {
+        "id": "b",
+        "text": "Das ist völlig falsch und unprofessionell.",
+        "effect": "Wertet die Person ab und behauptet ungerechtfertigte Sicherheit."
+      },
+      {
+        "id": "c",
+        "text": "Ihre Erfahrung reicht mir als Beleg.",
+        "effect": "Bestätigt den Befund ohne Evidenz."
+      }
+    ],
+    "preferredIds": [
+      "a"
+    ],
+    "rewrite": "Formuliere einen eigenen diplomatischen Widerspruch.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fictional scenario; no external dialogue reproduced."
+    },
+    "cefrReference": "CEFR_SOCIOPRAGMATIC_2020",
+    "editorialApproval": false
+  },
+  {
+    "id": "SG-G08-002",
+    "version": 1,
+    "domain": "G08",
+    "title": "Unmögliche Frist",
+    "band": "C1",
+    "context": "Ein externes Team erwartet Unterlagen am Freitag. Tatsächlich ist erst Dienstag möglich.",
+    "task": "Verbindlich und mit realistischem Alternativtermin antworten",
+    "options": [
+      {
+        "id": "a",
+        "text": "Freitag ist für uns nicht möglich. Wir können die Unterlagen bis Dienstag bereitstellen.",
+        "effect": "Klare Ablehnung und überprüfbare Alternative."
+      },
+      {
+        "id": "b",
+        "text": "Wir behalten Freitag im Blick.",
+        "effect": "Verschleiert die bereits bekannte Unmöglichkeit."
+      },
+      {
+        "id": "c",
+        "text": "Ihre Frist ist eine Zumutung.",
+        "effect": "Wertet den Wunsch des Gegenübers unnötig ab."
+      }
+    ],
+    "preferredIds": [
+      "a"
+    ],
+    "rewrite": "Schreibe eine höfliche Zwei-Satz-Antwort ohne falsche Zusagen.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fictional scenario; no external dialogue reproduced."
+    },
+    "cefrReference": "CEFR_SOCIOPRAGMATIC_2020",
+    "editorialApproval": false
+  },
+  {
+    "id": "SG-G08-003",
+    "version": 1,
+    "domain": "G08",
+    "title": "Öffentlicher Trend",
+    "band": "C2",
+    "context": "Eine Presseanfrage betrifft eine erste positive Beobachtung ohne Kausalbeleg.",
+    "task": "Beobachtung und Erklärung sprachlich trennen",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Entwicklung ist ermutigend; ihre Ursachen sind noch nicht geklärt.",
+        "effect": "Räumt Trend ein und begrenzt die Schlussfolgerung."
+      },
+      {
+        "id": "b",
+        "text": "Unsere Maßnahme hat die Verbesserung nachweislich bewirkt.",
+        "effect": "Erfindet einen Nachweis."
+      },
+      {
+        "id": "c",
+        "text": "Zu den Daten gibt es nichts zu sagen.",
+        "effect": "Unterschlägt eine zulässige Beobachtung."
+      }
+    ],
+    "preferredIds": [
+      "a"
+    ],
+    "rewrite": "Formuliere eine kurze, wahrheitsgemäße Auskunft.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fictional scenario; no external dialogue reproduced."
+    },
+    "cefrReference": "CEFR_SOCIOPRAGMATIC_2020",
+    "editorialApproval": false
+  },
+  {
+    "id": "SG-G08-004",
+    "version": 1,
+    "domain": "G08",
+    "title": "Protokoll und Beschluss",
+    "band": "C2",
+    "context": "Ein Gremium hat einen Vorschlag diskutiert, aber keine Entscheidung getroffen.",
+    "task": "Den Verfahrensstatus korrekt wiedergeben",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Vorschlag wurde erörtert; eine Entscheidung steht noch aus.",
+        "effect": "Unterscheidet Diskussion von Beschluss."
+      },
+      {
+        "id": "b",
+        "text": "Der Vorschlag fand grundsätzliche Zustimmung.",
+        "effect": "Erfindet Zustimmung."
+      },
+      {
+        "id": "c",
+        "text": "Das Gremium lehnte den Vorschlag ab.",
+        "effect": "Erfindet Ablehnung."
+      }
+    ],
+    "preferredIds": [
+      "a"
+    ],
+    "rewrite": "Schreibe einen neutralen protokollfähigen Satz.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fictional scenario; no external dialogue reproduced."
+    },
+    "cefrReference": "CEFR_SOCIOPRAGMATIC_2020",
+    "editorialApproval": false
+  },
+  {
+    "id": "SG-G08-005",
+    "version": 1,
+    "domain": "G08",
+    "title": "Sachliche Fehlerkorrektur",
+    "band": "C1",
+    "context": "Eine Kollegin hat im Protokoll versehentlich den 12. statt des 21. Mai angegeben.",
+    "task": "Um Überprüfung statt Schuldzuweisung bitten",
+    "options": [
+      {
+        "id": "a",
+        "text": "Im Protokoll steht der 12. statt des 21. Mai. Könntest du das bitte prüfen?",
+        "effect": "Benanntes Problem mit höflicher Bitte."
+      },
+      {
+        "id": "b",
+        "text": "Du hast das Datum schon wieder falsch geschrieben.",
+        "effect": "Unterstellt Wiederholung und personalisiert den Fehler."
+      },
+      {
+        "id": "c",
+        "text": "Das ganze Protokoll ist fragwürdig.",
+        "effect": "Bleibt für eine konkrete Korrektur unklar."
+      }
+    ],
+    "preferredIds": [
+      "a"
+    ],
+    "rewrite": "Verkürze die Korrekturanfrage bei gleichbleibender Höflichkeit.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fictional scenario; no external dialogue reproduced."
+    },
+    "cefrReference": "CEFR_SOCIOPRAGMATIC_2020",
+    "editorialApproval": false
+  },
+  {
+    "id": "SG-G08-006",
+    "version": 1,
+    "domain": "G08",
+    "title": "Kritische Empfehlung",
+    "band": "C2",
+    "context": "Ein Verfahren funktioniert in einer kleinen Testgruppe; größere Einrichtungen wurden nicht untersucht.",
+    "task": "Bedingte Empfehlung statt pauschaler Freigabe formulieren",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine weitere Erprobung erscheint sinnvoll; eine flächendeckende Einführung wäre verfrüht.",
+        "effect": "Anerkennt Befund und begrenzt den Geltungsbereich."
+      },
+      {
+        "id": "b",
+        "text": "Wir sollten es sofort überall einführen.",
+        "effect": "Überträgt unzulässig auf alle Kontexte."
+      },
+      {
+        "id": "c",
+        "text": "Da größere Einrichtungen nicht getestet wurden, ist das Verfahren untauglich.",
+        "effect": "Macht aus fehlender Evidenz eine Widerlegung."
+      }
+    ],
+    "preferredIds": [
+      "a"
+    ],
+    "rewrite": "Schreibe eine Verwaltungsempfehlung mit überprüfbarer Bedingung.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fictional scenario; no external dialogue reproduced."
+    },
+    "cefrReference": "CEFR_SOCIOPRAGMATIC_2020",
+    "editorialApproval": false
+  },
+  {
+    "id": "SG-G08-007",
+    "version": 1,
+    "domain": "G08",
+    "title": "Ungeklärte Zuständigkeit",
+    "band": "C2",
+    "context": "Eine Anfrage blieb unbeantwortet; unklar ist, ob sie die richtige Stelle erreichte.",
+    "task": "Nachfassen ohne Absichtsunterstellung",
+    "options": [
+      {
+        "id": "a",
+        "text": "Könnten Sie prüfen, ob die Anfrage die zuständige Stelle erreicht hat?",
+        "effect": "Klären eines überprüfbaren Vorgangs."
+      },
+      {
+        "id": "b",
+        "text": "Sie ignorieren mein Anliegen absichtlich.",
+        "effect": "Unterstellt ohne Beleg Absicht."
+      },
+      {
+        "id": "c",
+        "text": "Ohne Rückmeldung wurde mein Anliegen offenbar abgelehnt.",
+        "effect": "Interpretiert Nichtantwort als formale Ablehnung."
+      }
+    ],
+    "preferredIds": [
+      "a"
+    ],
+    "rewrite": "Bitte um Statusmeldung mit einem sachlichen Zeitrahmen.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fictional scenario; no external dialogue reproduced."
+    },
+    "cefrReference": "CEFR_SOCIOPRAGMATIC_2020",
+    "editorialApproval": false
+  },
+  {
+    "id": "SG-G08-008",
+    "version": 1,
+    "domain": "G08",
+    "title": "Kooperative Klärung",
+    "band": "C1",
+    "context": "Zwei Teams haben widersprüchliche Absprachen notiert. Beide handeln nach bestem Wissen.",
+    "task": "Ein klärendes Gespräch ohne Vorverurteilung eröffnen",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unsere Aufzeichnungen unterscheiden sich. Können wir die Punkte gemeinsam abgleichen?",
+        "effect": "Benanntes Sachproblem und gemeinsamer Lösungsweg."
+      },
+      {
+        "id": "b",
+        "text": "Eines der Teams verdreht offenbar die Wahrheit.",
+        "effect": "Unterstellt unbewiesene Täuschung."
+      },
+      {
+        "id": "c",
+        "text": "Wir sollten das Thema besser nicht ansprechen.",
+        "effect": "Verhindert notwendige Klärung."
+      }
+    ],
+    "preferredIds": [
+      "a"
+    ],
+    "rewrite": "Verfasse eine kurze Einladung zur gemeinsamen Prüfung.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fictional scenario; no external dialogue reproduced."
+    },
+    "cefrReference": "CEFR_SOCIOPRAGMATIC_2020",
+    "editorialApproval": false
+  }
+]

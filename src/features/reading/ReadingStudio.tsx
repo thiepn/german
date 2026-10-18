@@ -1,9 +1,10 @@
 import {useEffect,useMemo,useState} from 'react';
+import ReadingTransfer from './ReadingTransfer';
 import {loadProductionEntries,saveProductionEntry} from '../../persistence/schema';
 import type {ProductionEntry} from '../../domain/production/types';
 import type {Mode} from '../../domain/content/types';
 import {readingStudies,readingAnchors,readingProgress,studyId,isReadingEntry,nextUnanswered,transferTarget,type ReadingUnit} from '../../domain/reading/reading';
-export default function ReadingStudio({onExit,onTransfer}:{onExit:()=>void;onTransfer:(mode:Mode,id:string)=>void}){
+export default function ReadingStudio({onExit,onTransfer,onPragmatics}:{onExit:()=>void;onTransfer:(mode:Mode,id:string)=>void;onPragmatics:()=>void}){
  const [entries,setEntries]=useState<ProductionEntry[]>([]);
  const [selected,setSelected]=useState(readingStudies[0].id);
  const [first,setFirst]=useState('');
@@ -65,8 +66,8 @@ export default function ReadingStudio({onExit,onTransfer}:{onExit:()=>void;onTra
  <div className="buttonrow"><button className="button outline" disabled={!recorded} onClick={()=>setRevealed(v=>v.includes(question.id)?v.filter(x=>x!==question.id):[...v,question.id])}>{revealed.includes(question.id)?'Vergleich ausblenden':'Musterdeutung vergleichen'}</button></div>
  {recorded&&revealed.includes(question.id)&&<div className="feedback"><strong>Eine mögliche Deutung — nicht unabhängig geprüft</strong><p>{question.model}</p><p className="small muted">Orientierung, keine einzige richtige Antwort und keine automatische Note.</p></div>}
  </section>
- {complete&&<section className="panel"><h2>Vom Text zur eigenen Formulierung</h2><p>Alle drei Fragen dokumentiert. Nutze jetzt eine verknüpfte Übung, ohne deinen Leseverlauf zu verlieren.</p></section>}
- <section className="panel"><h2>In einer anderen Übungsform anwenden</h2><p>{unit.transfer.why}</p><button className="button outline" onClick={()=>{try{const t=transferTarget(unit);onTransfer(t.mode,t.id)}catch(e){setError(String(e))}}}>Zum passenden Sprachtraining wechseln</button><p className="small muted">Eine Transferübung ersetzt nicht den Nachweis des Textverständnisses.</p></section>
+ {complete?<ReadingTransfer key={unit.id} unitId={unit.id} entries={entries} onSaved={refresh}/>:<div className="panel"><p className="small muted">Eigene adressatengerechte Textfassung nach allen drei dokumentierten Fragen verfügbar.</p></div>}
+ <section className="panel"><h2>In einer anderen Übungsform anwenden</h2><p>{unit.transfer.why}</p><button className="button outline" onClick={()=>{try{const t=transferTarget(unit);onTransfer(t.mode,t.id)}catch(e){setError(String(e))}}}>Zum passenden Sprachtraining wechseln</button><p className="small muted">Eine Transferübung ersetzt nicht den Nachweis des Textverständnisses.</p><button className="button outline" onClick={onPragmatics}>Anschließend G08 Situationsangemessenheit üben</button></section>
  </>}
  {error&&<p role="alert" className="banner">{error}</p>}<button className="button text" onClick={onExit}>Zurück zum Curriculum</button></section>;
 }

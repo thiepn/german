@@ -48,6 +48,22 @@
       "independentApprovals": 0,
       "sourceType": "Original fictional argumentative reading passages; IDS grammis links only support grammatical concepts; no external passages reproduced",
       "editorialCheck": "Qualified human assessment of textual logic, evidence questions, multiple defensible answers, register, B2/C1/C2 calibration and link rights"
+    },
+    {
+      "id": "P1-G08-PRAGMATIC-DECISIONS",
+      "count": 8,
+      "status": "DEMO_ONLY",
+      "independentApprovals": 0,
+      "sourceType": "Original fictional workplace/institutional interaction scenarios; CEFR companion 2020 as skill taxonomy inspiration only",
+      "editorialCheck": "Independent German editor to assess contexts, multiple valid responses, politeness, cultural assumptions, nuance, register and text rights."
+    },
+    {
+      "id": "P1-G09-READING-TO-WRITING",
+      "count": 4,
+      "status": "DEMO_ONLY",
+      "independentApprovals": 0,
+      "sourceType": "Original audience-specific transfer briefs tied to SG-R09-001 through -004",
+      "editorialCheck": "Verify audience requirements, reading grounding, alternative formulations and impossible demands."
     }
   ],
   "editorialApprovals": 0
