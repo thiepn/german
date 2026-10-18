@@ -12,8 +12,9 @@ async function open(viewport){
  await page.getByText('Noch nicht richtig').waitFor();
  await page.getByRole('button',{name:'Zur Übersicht'}).click();
  await page.getByRole('button',{name:'Fehler',exact:true}).first().click();
- await page.getByText('Ursprünglich:').waitFor();
- await page.getByRole('button',{name:'Ohne Lösung wiederholen'}).first().click();
+ await page.getByRole('button',{name:'Originalantworten & Regeln'}).first().click();
+ await page.getByText('Deine Antwort:').first().waitFor();
+ await page.getByRole('button',{name:'Originalaufgabe erneut üben'}).first().click();
  await page.getByLabel('Artikel',{exact:true}).fill('die');
  await page.getByRole('button',{name:'Antwort prüfen'}).click();
  await page.getByText('Korrekt',{exact:true}).waitFor();

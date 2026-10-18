@@ -25,9 +25,10 @@ async function testLearner(viewport){
   await page.getByText('Noch nicht richtig').waitFor();
   await page.getByRole('button',{name:'Zur Übersicht'}).click();
   await page.getByRole('button',{name:'Fehler',exact:true}).first().click();
-  await page.getByLabel('Trainingsmodus').selectOption('M05');
-  await page.getByText('Ursprünglich:').first().waitFor();
-  await page.getByRole('button',{name:'Ohne Lösung wiederholen'}).first().click();
+  await page.getByLabel('Übungsmodus').selectOption('M05');
+  await page.getByRole('button',{name:'Originalantworten & Regeln'}).first().click();
+  await page.getByText('Deine Antwort:').first().waitFor();
+  await page.getByRole('button',{name:'Originalaufgabe erneut üben'}).first().click();
   await page.getByLabel('Passendes Wort / Form').fill('fassen');
   await page.getByRole('button',{name:'Antwort prüfen'}).click();
   await page.getByText('Korrekt',{exact:true}).waitFor();

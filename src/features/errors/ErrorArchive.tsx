@@ -29,7 +29,7 @@ export default function ErrorArchive({attempts,byId,onRetry}:{attempts:Attempt[]
      <p className="small"><strong>Verlauf:</strong> {statusLabel[cluster.status]}. {cluster.laterCorrect.length} spätere korrekte Antworten in anderen Aufgaben seit dem jüngsten Fehler; daraus folgt keine bestätigte Beherrschung.</p>
      <div className="buttonrow">
       {cluster.freshContextId&&<button type="button" className="button" onClick={()=>onRetry(cluster.freshContextId!)}>Neuen Kontext üben</button>}
-      {!cluster.freshContextId&&cluster.repeatItemId&&<button type="button" className="button outline" onClick={()=>onRetry(cluster.repeatItemId!)}>Originalaufgabe erneut üben</button>}
+      {cluster.repeatItemId&&<button type="button" className="button outline" onClick={()=>onRetry(cluster.repeatItemId!)}>Originalaufgabe erneut üben</button>}
       <button type="button" className="button outline" aria-expanded={open} onClick={()=>setExpanded(open?null:cluster.key)}>{open?'Details schließen':'Originalantworten & Regeln'}</button>
      </div>
      {!cluster.freshContextId&&<p className="small muted">{cluster.sourceCurrent?'Kein unversuchter Kontext zu genau diesem Thema vorhanden.':'Frühere Aufgabenfassung: ohne unveränderte Regelversion kein neuer Kontext verfügbar.'}</p>}

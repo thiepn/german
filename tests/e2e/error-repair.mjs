@@ -17,7 +17,7 @@ async function run(width){
   await page.getByRole('heading',{name:'Fehlerarchiv'}).waitFor();
   await page.getByText('1 Themen mit unsicheren Erstversuchen',{exact:false}).waitFor();
   await page.getByRole('button',{name:'Originalantworten & Regeln'}).click();
-  await page.getByText('Deine Antwort:').waitFor();
+  await page.getByText('Deine Antwort:').first().waitFor();
   await page.getByText(first).waitFor();
   const newer=page.getByRole('button',{name:'Neuen Kontext üben'});
   if(await newer.count()){
