@@ -19,6 +19,7 @@ import ReviewQueue from '../features/review/ReviewQueue';
 import Progress from '../features/progress/Progress';
 import DataManagement from '../features/data/DataManagement';
 import ProductionStudio from '../features/production/ProductionStudio';
+import ReadingStudio from '../features/reading/ReadingStudio';
 import {loadProductionEntries} from '../persistence/schema';
 import type {ProductionEntry} from '../domain/production/types';
 
@@ -34,6 +35,7 @@ export default function App(){
  const [reviewPage,setReviewPage]=useState(false);
  const [showData,setShowData]=useState(false);
  const [showProduction,setShowProduction]=useState(false);
+ const [showReading,setShowReading]=useState(false);
  const [productions,setProductions]=useState<ProductionEntry[]>([]);
  const [showDiagnostic,setShowDiagnostic]=useState(false);
  const [mode,setMode]=useState<Mode>('M01');
@@ -70,12 +72,12 @@ export default function App(){
  void offlineState().then(s=>{if(alive)setOffline(s)}).catch(()=>{});
  return ()=>{alive=false};},[]);
  const recommended=chooseSession(allItems,attempts,cards,Date.now(),1)[0];
- function selectTab(next:Tab){setShowProduction(false);setShowData(false);setTab(next);setItem(null);setReviewPage(false);setShowDiagnostic(false);setFeedback(null);}
+ function selectTab(next:Tab){setShowReading(false);setShowProduction(false);setShowData(false);setTab(next);setItem(null);setReviewPage(false);setShowDiagnostic(false);setFeedback(null);}
  function start(m:Mode,id?:string,asReview=false){
   const selected=id?itemById.get(id):chooseSession(itemsForMode(m),attempts,cards,Date.now(),1)[0];
   if(!selected)return;
   const sid=crypto.randomUUID();
-  setMode(m);setItem(selected);setSessionId(sid);setValues({});setFeedback(null);setReviewing(asReview);setTab('Trainieren');setReviewPage(false);setShowDiagnostic(false);setShowProduction(false);
+  setMode(m);setItem(selected);setSessionId(sid);setValues({});setFeedback(null);setReviewing(asReview);setTab('Trainieren');setReviewPage(false);setShowDiagnostic(false);setShowProduction(false);setShowReading(false);
   const draft:Draft={id:'active',itemId:selected.id,mode:m,sessionId:sid,slots:{},updatedAt:Date.now()};
   void saveDraft(draft).catch(e=>setError('Entwurf konnte nicht gespeichert werden: '+String(e)));
  }
@@ -160,8 +162,8 @@ export default function App(){
   <div className="banner">DEMO_ONLY · {allItems.length} nicht freigegebene Aufgaben · 0 von 350 P1-Aufgaben redaktionell genehmigt. Kein CEFR-Zertifikat.</div>
   {error&&<div className="banner" role="alert">{error}<div><button type="button" className="button text" onClick={()=>setError('')}>Hinweis schließen</button></div></div>}
   {showData?<DataManagement onExit={()=>setShowData(false)} onRestore={refresh}/>:<>
-  {tab==='Heute'&&<Today attempts={attempts} cards={cards} recommended={recommended} mission={mission} dailyMinutes={settings?.dailyMinutes??30} onStart={()=>void beginMission()} onReview={()=>{setReviewPage(true);setTab('Trainieren')}} onOpenErrors={()=>selectTab('Fehler')} onDiagnostic={()=>{setShowDiagnostic(true);setTab('Lernen')}} onProduction={()=>{setShowProduction(true);setTab('Trainieren')}} onData={()=>setShowData(true)}/>}
-  {tab==='Lernen'&&(showDiagnostic?<DiagnosticPanel onExit={()=>setShowDiagnostic(false)}/>:<Curriculum onStart={m=>start(m)}/>)}
+  {tab==='Heute'&&<Today attempts={attempts} cards={cards} recommended={recommended} mission={mission} dailyMinutes={settings?.dailyMinutes??30} onStart={()=>void beginMission()} onReview={()=>{setReviewPage(true);setTab('Trainieren')}} onOpenErrors={()=>selectTab('Fehler')} onDiagnostic={()=>{setShowDiagnostic(true);setTab('Lernen')}} onProduction={()=>{setShowProduction(true);setTab('Trainieren')}} onData={()=>setShowData(true)} onReading={()=>{setShowReading(true);setTab('Lernen')}}/>}
+  {tab==='Lernen'&&(showDiagnostic?<DiagnosticPanel onExit={()=>setShowDiagnostic(false)}/>:showReading?<ReadingStudio onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowReading(false)}} onTransfer={(m,id)=>start(m,id)}/>:<Curriculum onStart={m=>start(m)} onReading={()=>setShowReading(true)}/>)}
   {tab==='Trainieren'&&(showProduction?<ProductionStudio onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowProduction(false)}}/>:item?<><div className="status" aria-live="polite">{mission&&sessionId===mission.id?'Tagesmission · Aufgabe '+(mission.index+1)+' / '+mission.steps.length+' · '+missionStep(mission)?.kind:''}</div><PracticeRunner item={item} values={values} onChange={onChange} feedback={feedback} onSubmit={submit} submitting={busy} onNext={()=>void nextQuestion()} onExit={()=>void exitQuestion()} reviewing={reviewing} onReviewGrade={gradeReview}/></>:reviewPage?<ReviewQueue cards={cards} byId={itemById} onStart={id=>{const i=itemById.get(id);if(i)start(i.mode,id,true)}}/>:<section><div className="eyebrow">Gezieltes Üben</div><h1 className="page-title">Trainieren</h1><p className="lead">Fünf Übungsformen nutzen denselben deterministischen Bewertungsmechanismus für ausdrücklich vorgegebene Zielantworten. Das hier verwendete Material ist noch nicht redaktionell freigegeben.</p><div className="grid">{availableModes.map(m=><article className="panel" key={m}><div className="kicker">{m}</div><h2>{labels[m]}</h2><p className="muted">{modes[m].description} · {itemsForMode(m).length} Demoaufgaben</p><button className="button" onClick={()=>start(m)}>Übung starten</button></article>)}</div><div className="buttonrow"><button className="button outline" onClick={()=>setReviewPage(true)}>Fällige Wiederholungen ({cards.filter(c=>c.dueAt<=Date.now()).length})</button></div><div className="grid" style={{marginTop:18}}><article className="panel"><h2>Satzlabor · Schreibwerkstatt</h2><p>20 offene Aufgaben mit Erstfassung, Kriterien und Überarbeitungsarchiv.</p><button className="button outline" onClick={()=>setShowProduction(true)}>Schreibwerkstatt öffnen</button></article><article className="panel"><h2>Kontrastduell</h2><p>Kontextbezogene Unterschiede zwischen Wortverbindungen üben.</p><button className="button outline" onClick={()=>{const first=itemsForMode('M05').find(i=>i.contrast);if(first)start('M05',first.id)}}>Kontrast üben</button></article><article className="panel"><h2>Wörterbuchgestützte Nuancen</h2><p>Neue Kontextbeispiele zu belegten Wortverbindungen; die Beispielredaktion ist noch nicht abgeschlossen.</p><button className="button outline" onClick={()=>{const first=itemsForMode('M05').find(i=>!!i.lexicalAuthority);if(first)start('M05',first.id)}}>Beleggestützte Wendungen üben</button></article></div></section>)}
   {tab==='Fehler'&&<ErrorArchive attempts={attempts} byId={itemById} onRetry={id=>{const i=itemById.get(id);if(i)start(i.mode,id)}}/>}
   {tab==='Fortschritt'&&<Progress attempts={attempts} productions={productions} onData={()=>setShowData(true)}/>}

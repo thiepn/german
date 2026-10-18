@@ -64,6 +64,35 @@ for(const item of demo)if(item.contrast){
  if(item.mode!=='M05'||item.contrast.kind!=='AUTHOR_DRAFT_CHOICE'||!Array.isArray(item.contrast.options)||item.contrast.options.length<2||new Set(item.contrast.options).size!==item.contrast.options.length||!item.contrast.rationale?.trim()||!item.contrast.options.includes(item.variants[0].slots.collocation))throw Error('Invalid M05 contrast '+item.id);
 }
 if(manifest.productionPromptCount!==production.length)throw Error('Production manifest inaccurate');
-const result={valid:true,demo:demo.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const readingSources=manifest.readingSources??[];
+if(readingSources.length!==1||readingSources[0]!=='content/fixtures/reading-studies.demo.json')throw Error('Unexpected reading authoring scope');
+const reading=readingSources.flatMap(read);
+const readingRefs=read(manifest.readingGrammarAnchors);
+const grammaticalRefs=new Map();
+for(const ref of readingRefs.anchors){
+ if(grammaticalRefs.has(ref.id)||!/^https:\/\/grammis\.ids-mannheim\.de\/(fragen|systematische-grammatik)\/\d+$/.test(ref.url)||ref.editorialApproved!==false||ref.licenseToRepublishSourceText!==false||ref.kind!=='LINGUISTIC_GRAMMAR_BACKGROUND')throw Error('Invalid reading grammar reference');
+ grammaticalRefs.set(ref.id,ref);
+}
+const readingIds=new Set();
+let questionCount=0;
+for(const u of reading){
+ if(readingIds.has(u.id)||!/^SG-R09-\d{3}$/.test(u.id)||u.version!==1||u.status!=='DEMO_ONLY'||u.domain!=='G09'||u.editorial?.approved!==false||u.editorial?.reviewedBy!==null||u.referenceScope!=='LINGUISTIC_BACKGROUND_ONLY'||u.rights?.kind!=='ORIGINAL_DRAFT')throw Error('Unqualified reading unit '+u.id);
+ readingIds.add(u.id);
+ if(!u.title?.trim()||!u.focus?.trim()||!u.register?.trim()||!['C1','C2'].includes(u.band)||!Array.isArray(u.paragraphs)||u.paragraphs.length<3||!Array.isArray(u.questions)||u.questions.length!==3)throw Error('Incomplete reading unit '+u.id);
+ const paragraphs=new Set(u.paragraphs.map(p=>p.id));
+ if(paragraphs.size!==u.paragraphs.length||u.paragraphs.some(p=>!p.text||p.text.length<170))throw Error('Missing reading text '+u.id);
+ if(!Array.isArray(u.anchorIds)||u.anchorIds.length===0||u.anchorIds.some(k=>!grammaticalRefs.has(k)))throw Error('Missing grammar reference '+u.id);
+ const questions=new Set();
+ for(const q of u.questions){
+  questionCount++;
+  if(questions.has(q.id)||!/^q[1-9]$/.test(q.id)||!q.prompt?.trim()||!q.model?.trim()||!q.focus?.trim()||!Array.isArray(q.paragraphIds)||!q.paragraphIds.length||q.paragraphIds.some(id=>!paragraphs.has(id)))throw Error('Malformed reading question '+u.id+' '+q.id);
+  questions.add(q.id);
+ }
+ if(!/^SG-M0[1-5]-\d{3}$/.test(u.transfer?.itemId)||!['M01','M02','M03','M04','M05'].includes(u.transfer.mode)||!u.transfer.why?.trim())throw Error('Invalid transfer target '+u.id);
+}
+if(reading.length!==manifest.readingUnitCount||questionCount!==manifest.readingQuestionCount)throw Error('Reading manifest count mismatch');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

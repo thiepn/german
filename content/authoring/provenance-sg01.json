@@ -39,6 +39,15 @@
       "status": "DEMO_ONLY",
       "independentApprovals": 0,
       "editorialCheck": "Qualified independent linguist must check all gender, case and valency answers plus competing alternatives, idiomatic context, register, licenses and CEFR difficulty."
+    },
+    {
+      "id": "P1-G09-ORIGINAL-READING-4",
+      "count": 4,
+      "questions": 12,
+      "status": "DEMO_ONLY",
+      "independentApprovals": 0,
+      "sourceType": "Original fictional argumentative reading passages; IDS grammis links only support grammatical concepts; no external passages reproduced",
+      "editorialCheck": "Qualified human assessment of textual logic, evidence questions, multiple defensible answers, register, B2/C1/C2 calibration and link rights"
     }
   ],
   "editorialApprovals": 0

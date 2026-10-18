@@ -30,3 +30,10 @@ Five objective modes; Today and resumable bounded mission; original attempt/revi
 3. Improve multi-session writing progress with user-controlled writing archives/retention and review-guided insight without fabricated fluency scores.
 4. Verify data-safe migration, PWA offline upgrades, accessibility and physical-device recovery.
 5. Preserve the draft PR and finish exact-head checks before any merge decision.
+
+## New G09 learner journey
+- Four original fictional reading passages (12 paragraph-cited evidence questions), saved initial reading interpretation and question-specific evidence notes, no automatic grading.
+- Readings linked to existing M04/M05 practice; progress remains separate from open-writing counts.
+- IDS grammis conceptual references only; all reading content DEMO_ONLY. See `docs/P1-reading.md`.
+- Editorial CLI expands to 214 nonapproved dossiers with manifest-aligned completeness checks; 0 approved holdouts or CEFR levels.
+- Existing IndexedDB v4, owner-backup v3 (including v1/v2 restore), missions and Artikelwerk isolation unchanged.

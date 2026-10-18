@@ -6,6 +6,7 @@ Generalized German B2+→C1, C1→C2 and C2+ refinement platform. **Draft only, 
 
 - M01 Artikelblitz, M02 Kasus-Kette, M03 Präpositionsjagd, M04 Satzlabor, M05 Kollokationsduell with shared deterministic grading and persistent Error Archive.
 - Momentum Precision-inspired responsive Today, five-mode practice, finite resumable daily mission, 13-domain curriculum overview, spaced review and evidence-oriented Progress.
+- G09 advanced reading: four original fiktive C1–C2 texts, twelve evidence-referenced interpretation questions, persistent reading notes and direct M04/M05 transfer (no automatic scores).
 - M04 writing studio: 20 original draft prompts; immutable first draft; structured self-check lens, guided revisions, word-level comparison, saved revision history and priority for unfinished work. Free writing has **no automatic correctness score**.
 - M05 contextual collocations with alternatives; 12 further dictionary-linked drafts. Dictionary anchors attest lexical expressions only, not the pedagogical correctness of newly written example sentences or distractors.
 - Diagnostic A (72-item plan) and a separate 50-item P1 holdout diagnostic pilot are blocked until actual independent approvals exist. No fake CEFR certification.

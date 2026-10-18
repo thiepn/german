@@ -1,0 +1,292 @@
+[
+  {
+    "id": "SG-R09-001",
+    "title": "Eine scheinbar eindeutige Auswertung",
+    "band": "C1",
+    "focus": "Behauptung, Einschränkung und Folgerung",
+    "register": "Wissenschaftlicher Kommentar (fiktiv)",
+    "anchorIds": [
+      "IDS_KONZESSIV",
+      "IDS_KONNEKTOREN"
+    ],
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Arbeitsgruppe untersuchte, ob eine veränderte Beratungsform mit der Teilnahme an einem freiwilligen Seminar zusammenhängt. In der betrachteten Stichprobe meldeten sich nach Einführung des Formats mehr Personen an. Die Beobachtung stieß auf Interesse, weil sich die Teilnahme zuvor über mehrere Monate kaum verändert hatte."
+      },
+      {
+        "id": "p2",
+        "text": "Obwohl die Zahlen zunächst für eine positive Entwicklung sprechen, erlaubt die Untersuchung keinen eindeutigen Schluss auf die Ursache. Gleichzeitig wurden die Termine verschoben und die Anmeldung vereinfacht. Welche dieser Änderungen welchen Anteil an der Entwicklung hatte, lässt sich mit den vorliegenden Daten nicht trennen. Die Arbeitsgruppe nennt die Auswertung deshalb ausdrücklich vorläufig."
+      },
+      {
+        "id": "p3",
+        "text": "Für die nächste Runde schlägt sie vor, die organisatorischen Bedingungen möglichst konstant zu halten und die Teilnahme in mehreren Gruppen zu vergleichen. Die beobachtete Zunahme soll damit weder als wirkungslos abgetan noch bereits als Nachweis einer bestimmten Maßnahme dargestellt werden. Entscheidend ist, zwischen einem Hinweis und einer belastbaren Erklärung zu unterscheiden."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Welche Veränderung wurde beobachtet, und welche stärkere Behauptung wäre nicht gedeckt?",
+        "paragraphIds": [
+          "p1",
+          "p2"
+        ],
+        "model": "Es wurden mehr Anmeldungen beobachtet. Daraus folgt nicht, dass allein die neue Beratungsform die Zunahme verursacht hat.",
+        "focus": "BEFUND_VS_KAUSALITÄT"
+      },
+      {
+        "id": "q2",
+        "prompt": "Wie verändert der Satzanfang „Obwohl die Zahlen ...“ die Argumentation?",
+        "paragraphIds": [
+          "p2"
+        ],
+        "model": "Er räumt eine positive Lesart ein, begrenzt aber ihre Beweiskraft durch eine methodische Einschränkung.",
+        "focus": "KONZESSION"
+      },
+      {
+        "id": "q3",
+        "prompt": "Welche konkrete methodische Änderung wird vorgeschlagen, und was soll sie ermöglichen?",
+        "paragraphIds": [
+          "p3"
+        ],
+        "model": "Konstantere Bedingungen und mehrere Vergleichsgruppen sollen alternative Einflussfaktoren besser auseinanderhalten.",
+        "focus": "METHODISCHE_FOLGERUNG"
+      }
+    ],
+    "transfer": {
+      "itemId": "SG-M04-001",
+      "mode": "M04",
+      "why": "Übertrage die Unterscheidung zwischen Aussage und gesicherter Tatsache in eine indirekte Rede."
+    },
+    "version": 1,
+    "domain": "G09",
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fiktiver Übungstext; keine fremden Absätze kopiert"
+    },
+    "editorial": {
+      "approved": false,
+      "reviewedBy": null
+    },
+    "referenceScope": "LINGUISTIC_BACKGROUND_ONLY"
+  },
+  {
+    "id": "SG-R09-002",
+    "title": "Ein Beschluss mit Vorbehalt",
+    "band": "C1",
+    "focus": "Indirekte Rede und Sprecherperspektive",
+    "register": "Protokollnahe Darstellung (fiktiv)",
+    "anchorIds": [
+      "IDS_INDIREKTE_REDE",
+      "IDS_KONNEKTOREN"
+    ],
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "In einer internen Sitzung berichtete die Projektleitung über den Stand einer geplanten Umstellung. Nach ihrer Darstellung sei das technische Konzept abgeschlossen; zugleich fehlten noch verbindliche Zusagen zweier Beteiligter. Im Protokoll wurde diese Aussage als Position der Leitung wiedergegeben, nicht als eigenständig überprüfter Abschlussbericht."
+      },
+      {
+        "id": "p2",
+        "text": "Die Interessenvertretung wies darauf hin, dass wesentliche Fragen zum Arbeitsablauf weiterhin offen seien. Sie hielt den vorgesehenen Termin daher für zu ambitioniert. Die Leitung widersprach dieser Einschätzung nicht grundsätzlich, verwies jedoch auf zusätzliche Testmöglichkeiten, die kurzfristig geschaffen werden könnten. Ob diese Tests tatsächlich ausreichen würden, blieb offen."
+      },
+      {
+        "id": "p3",
+        "text": "Am Ende verständigten sich die Anwesenden darauf, die Entscheidung um zwei Wochen zu vertagen. Bis dahin sollten die offenen Zusagen schriftlich vorliegen und die strittigen Abläufe anhand konkreter Beispiele erprobt werden. Der Beschluss bestätigt damit weder die uneingeschränkte Durchführbarkeit noch das Scheitern der Umstellung."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Welche Aussage ist ausdrücklich der Projektleitung zugeordnet statt als gesicherte Tatsache formuliert?",
+        "paragraphIds": [
+          "p1"
+        ],
+        "model": "Dass das technische Konzept abgeschlossen sei; die Formulierung bleibt einer bestimmten Sprecherposition zugeordnet.",
+        "focus": "REDEWIEDERGABE"
+      },
+      {
+        "id": "q2",
+        "prompt": "Hat die Leitung den Bedenken der Interessenvertretung vollständig widersprochen?",
+        "paragraphIds": [
+          "p2"
+        ],
+        "model": "Nein. Sie teilte die Einschätzung nicht uneingeschränkt, verwies aber lediglich auf mögliche zusätzliche Tests; deren Erfolg war offen.",
+        "focus": "NUANCE"
+      },
+      {
+        "id": "q3",
+        "prompt": "Was bedeutet die Vertagung für den behaupteten Projektstatus?",
+        "paragraphIds": [
+          "p3"
+        ],
+        "model": "Die Entscheidung wird verschoben, um Nachweise zu prüfen. Der Text bestätigt weder endgültigen Erfolg noch endgültiges Scheitern.",
+        "focus": "SCHLUSSREICHWEITE"
+      }
+    ],
+    "transfer": {
+      "itemId": "SG-M05-001",
+      "mode": "M05",
+      "why": "Verfestige die idiomatische Präzision beim Formulieren eines formalen Beschlusses."
+    },
+    "version": 1,
+    "domain": "G09",
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fiktiver Übungstext; keine fremden Absätze kopiert"
+    },
+    "editorial": {
+      "approved": false,
+      "reviewedBy": null
+    },
+    "referenceScope": "LINGUISTIC_BACKGROUND_ONLY"
+  },
+  {
+    "id": "SG-R09-003",
+    "title": "Wenn Kritik und Zustimmung zusammenfallen",
+    "band": "C2",
+    "focus": "Konzession, Register und argumentative Gewichtung",
+    "register": "Feuilletonistischer Kommentar (fiktiv)",
+    "anchorIds": [
+      "IDS_KONZESSIV",
+      "IDS_KONNEKTOREN"
+    ],
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die geplante Öffnung des Kulturarchivs verdient Anerkennung. Lange unzugängliche Bestände sollen damit einer breiteren Öffentlichkeit offenstehen, und die vorgesehenen digitalen Angebote könnten die Forschung erleichtern. Dass das Vorhaben ein nachvollziehbares Ziel verfolgt, bedeutet allerdings nicht, dass jede Einzelentscheidung bereits überzeugend begründet wäre."
+      },
+      {
+        "id": "p2",
+        "text": "Gerade weil der Anspruch auf Teilhabe weit reicht, muss sich die Auswahl der zunächst zugänglichen Bestände erklären lassen. Einige Gruppen befürchten, erneut lediglich am Rand berücksichtigt zu werden. Diese Sorge ist nicht dadurch widerlegt, dass das Projekt insgesamt auf Zustimmung stößt. Umgekehrt beweist die Sorge allein noch nicht, dass die Verantwortlichen tatsächlich einseitig handeln."
+      },
+      {
+        "id": "p3",
+        "text": "Eine angemessene Reaktion müsste beides zulassen: die Reform als Fortschritt zu würdigen und ihre Kriterien offenzulegen. Statt die Debatte als Kampf zwischen Zustimmung und Ablehnung zu führen, wäre zu fragen, an welchen überprüfbaren Maßstäben sich die Auswahl messen lassen soll. Der Wert des Ziels entbindet nicht von der Pflicht, den Weg dorthin zu begründen."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Welche zwei Positionen hält der Kommentar gleichzeitig aufrecht?",
+        "paragraphIds": [
+          "p1",
+          "p3"
+        ],
+        "model": "Er erkennt das Ziel des Projekts an, verlangt jedoch weiterhin eine nachvollziehbare Begründung der Auswahlentscheidungen.",
+        "focus": "DOPPELTE_WERTUNG"
+      },
+      {
+        "id": "q2",
+        "prompt": "Worin besteht die doppelte Einschränkung im zweiten Absatz?",
+        "paragraphIds": [
+          "p2"
+        ],
+        "model": "Breite Zustimmung widerlegt die Sorge nicht; die Sorge beweist aber ihrerseits keine tatsächliche Einseitigkeit.",
+        "focus": "EPISTEMISCHE_SYMMETRIE"
+      },
+      {
+        "id": "q3",
+        "prompt": "Warum ersetzt ein Gegensatzpaar aus Zustimmung und Ablehnung nach dem Text keine angemessene Debatte?",
+        "paragraphIds": [
+          "p3"
+        ],
+        "model": "Es verdeckt die überprüfbaren Auswahlkriterien, auf die sich die Kritik und die Rechtfertigung beziehen sollten.",
+        "focus": "ARGUMENTATIVE_STRUKTUR"
+      }
+    ],
+    "transfer": {
+      "itemId": "SG-M05-050",
+      "mode": "M05",
+      "why": "Prüfe, wie sich eine Option erwägen lässt, ohne sie bereits zuzusagen."
+    },
+    "version": 1,
+    "domain": "G09",
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fiktiver Übungstext; keine fremden Absätze kopiert"
+    },
+    "editorial": {
+      "approved": false,
+      "reviewedBy": null
+    },
+    "referenceScope": "LINGUISTIC_BACKGROUND_ONLY"
+  },
+  {
+    "id": "SG-R09-004",
+    "title": "Die Reichweite einer Prognose",
+    "band": "C2",
+    "focus": "Modalität, Einschränkung und Quellenkritik",
+    "register": "Analytische Kurzstudie (fiktiv)",
+    "anchorIds": [
+      "IDS_INDIREKTE_REDE",
+      "IDS_KONNEKTOREN"
+    ],
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein Planungsteam legte zwei mögliche Entwicklungen des lokalen Verkehrsaufkommens vor. Im ersten Szenario bleiben die bisher angenommenen Rahmenbedingungen weitgehend bestehen. Das zweite Szenario setzt dagegen voraus, dass mehrere neue Angebote tatsächlich genutzt werden. Beide Berechnungen sind in sich schlüssig, beruhen aber auf unterschiedlichen Annahmen."
+      },
+      {
+        "id": "p2",
+        "text": "In der öffentlichen Diskussion wurde aus dem zweiten Szenario gelegentlich eine sichere Entlastung abgeleitet. Die Verfasserinnen und Verfasser widersprachen dieser Lesart. Es handle sich um eine bedingte Projektion, erklärten sie, nicht um einen bereits feststehenden Verlauf. Insbesondere sei ungewiss, wie viele Menschen ihr Verhalten ändern würden."
+      },
+      {
+        "id": "p3",
+        "text": "Eine belastbare Entscheidung kann die Berechnungen berücksichtigen, ohne ihnen eine Sicherheit zuzuschreiben, die sie nicht besitzen. Sie müsste sichtbar machen, welche Annahmen die Unterschiede erklären, und prüfen, wie empfindlich die Ergebnisse auf Abweichungen reagieren. Erst dann lässt sich angemessen beurteilen, welche Optionen unter verschiedenen Bedingungen tragfähig erscheinen."
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Was unterscheidet die beiden Szenarien nach dem ersten Absatz?",
+        "paragraphIds": [
+          "p1"
+        ],
+        "model": "Nicht ihre formale innere Schlüssigkeit, sondern die zugrunde gelegten Rahmenbedingungen und die angenommene Nutzung zusätzlicher Angebote.",
+        "focus": "SZENARIO_UNTERSCHIED"
+      },
+      {
+        "id": "q2",
+        "prompt": "Welche Aussage wurde in der öffentlichen Diskussion unzulässig verstärkt?",
+        "paragraphIds": [
+          "p2"
+        ],
+        "model": "Eine bedingte Projektion wurde als sichere Entlastung dargestellt, obwohl die tatsächliche Verhaltensänderung ungewiss ist.",
+        "focus": "MODALITÄT"
+      },
+      {
+        "id": "q3",
+        "prompt": "Welche Prüfung fordert der letzte Absatz vor einer Entscheidung?",
+        "paragraphIds": [
+          "p3"
+        ],
+        "model": "Die entscheidenden Annahmen offenlegen und die Sensitivität der Ergebnisse gegenüber Abweichungen prüfen.",
+        "focus": "SENSITIVITÄT"
+      }
+    ],
+    "transfer": {
+      "itemId": "SG-M04-001",
+      "mode": "M04",
+      "why": "Unterscheide Sprecherbehauptung von gesichertem Sachverhalt in einer präzisen indirekten Rede."
+    },
+    "version": 1,
+    "domain": "G09",
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original fiktiver Übungstext; keine fremden Absätze kopiert"
+    },
+    "editorial": {
+      "approved": false,
+      "reviewedBy": null
+    },
+    "referenceScope": "LINGUISTIC_BACKGROUND_ONLY"
+  }
+]

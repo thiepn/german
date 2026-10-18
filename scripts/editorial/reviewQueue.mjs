@@ -29,7 +29,16 @@ export function collect(){
  const graded=authored.filter(i=>i.id?.startsWith('SG-M'));
  const writing=authored.filter(i=>i.id?.startsWith('SG-P04'));
  if(graded.length!==manifest.demoItemCount||writing.length!==manifest.productionPromptCount||graded.length+writing.length!==authored.length)throw Error('Review queue does not cover entire declared authoring manifest.');
- return buildReviewQueue(graded,writing,read('content/editorial/lexical-anchors.json').anchors);
+ const existing=buildReviewQueue(graded,writing,read('content/editorial/lexical-anchors.json').anchors);
+ const units=(manifest.readingSources??[]).flatMap(read);
+ if(units.length!==manifest.readingUnitCount)throw Error('Editorial queue cannot ignore reading units');
+ const reading=units.flatMap(u=>[
+  {id:u.id,version:u.version,type:'READING_TEXT',mode:'G09',status:u.status,authorId:u.author,source:u.rights.source,prompt:u.title,issues:['Independent editorial reading of entire passage','Check every interpretation and implied factual claim','Copyright and original source provenance','CEFR text and comprehension calibration'],independentEditorialApproval:false},
+  ...u.questions.map(q=>({id:u.id+':'+q.id,version:u.version,type:'READING_EVIDENCE',mode:'G09',status:u.status,authorId:u.author,prompt:q.prompt,model:q.model,evidence:q.paragraphIds,issues:['Check exact paragraph grounding','Accept all defensible responses','Avoid ungrounded certainty and ambiguity','Independent calibrated human review'],independentEditorialApproval:false}))
+ ]);
+ if(reading.length!==manifest.readingUnitCount+manifest.readingQuestionCount)throw Error('Editorial queue reading question mismatch');
+ const ids=new Set(existing.map(x=>x.id));for(const x of reading){if(ids.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval)throw Error('Invalid reading editorial dossier '+x.id);ids.add(x.id)}
+ return [...existing,...reading].sort((a,b)=>a.id.localeCompare(b.id));
 }
 const isCLI=process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url);
 if(isCLI){

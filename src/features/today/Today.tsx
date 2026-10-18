@@ -1,7 +1,7 @@
 import type {Attempt,Exercise,ReviewCard,LearnerSettings} from '../../domain/content/types';
 import {modes} from '../../domain/content/modes';
 import type {Mission} from '../../domain/mission/mission';
-export default function Today({attempts,cards,recommended,onStart,onReview,onOpenErrors,onDiagnostic,onProduction,onData,mission,dailyMinutes}:{attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];onStart:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void}){
+export default function Today({attempts,cards,recommended,onStart,onReview,onOpenErrors,onDiagnostic,onProduction,onData,onReading,mission,dailyMinutes}:{attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];onStart:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void;onReading:()=>void}){
  const due=cards.filter(c=>c.dueAt<=Date.now()).length;
  const recent=attempts.filter(a=>new Date(a.at).toDateString()===new Date().toDateString());
  const weak=attempts.filter(a=>a.result==='INCORRECT'||a.result==='PARTIAL').length;
@@ -34,6 +34,6 @@ export default function Today({attempts,cards,recommended,onStart,onReview,onOpe
    <button type="button" className="today-action" disabled={!due} onClick={onReview}><span><strong>Fällige Wiederholungen</strong><small>{due} Karten aus deinem Fehlerverlauf</small></span><span aria-hidden="true">→</span></button>
    <button type="button" className="today-action" onClick={onOpenErrors}><span><strong>Fehler verstehen</strong><small>{weak} bisherige unsichere Antworten · Originalversuche bleiben erhalten</small></span><span aria-hidden="true">→</span></button>
   </section>
-  <div className="today-secondary"><button className="button outline" onClick={onDiagnostic}>Diagnostik A · Status ansehen</button><button className="button outline" onClick={onProduction}>Schreibwerkstatt öffnen</button><button className="button outline" onClick={onData}>Backup und Wiederherstellung</button><span className="muted small">{recent.length} Aufgaben heute · Kein CEFR-Zertifikat</span></div>
+  <div className="today-secondary"><button className="button outline" onClick={onDiagnostic}>Diagnostik A · Status ansehen</button><button className="button outline" onClick={onProduction}>Schreibwerkstatt öffnen</button><button className="button outline" onClick={onReading}>Lesestudien öffnen</button><button className="button outline" onClick={onData}>Backup und Wiederherstellung</button><span className="muted small">{recent.length} Aufgaben heute · Kein CEFR-Zertifikat</span></div>
  </section>;
 }
