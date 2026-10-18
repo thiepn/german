@@ -10,7 +10,7 @@ export type Exercise = {
  contrast?: { options: string[]; rationale: string; kind:'AUTHOR_DRAFT_CHOICE' }; lexicalAuthority?: { anchorId:string; scope:'LEXICAL_FORM_ONLY'; editorialApproved:false }; status: EditorialStatus; authorId?: string; editorial?: { reviewId?: string; reviewedBy?: string; reviewedAt?: string; sourceChecked?: boolean; languageChecked?: boolean; rightsChecked?: boolean }; rights: { kind: 'ORIGINAL_DRAFT' | 'ORIGINAL_REVIEWED' | 'LICENSED'; source: string; reviewedBy?: string; reviewedAt?: string };
 };
 export type Attempt = { id: string; itemId: string; itemVersion: number; mode: Mode; skillId: string; at: number; slots: Record<string,string>; score: number; correct: boolean; hinted: boolean; result: 'CORRECT'|'PARTIAL'|'INCORRECT'|'VOID'; sessionId: string; variantIndex: number | null; };
-export type ReviewCard = { id: string; itemId: string; itemVersion: number; dueAt: number; stability: number; difficulty: number; lastReviewedAt: number | null; lapses: number; algorithmVersion: 'sg-recall-0.1'; };
-export type ReviewEvent = { id: string; cardId: string; itemId: string; grade: 'Again' | 'Hard' | 'Good' | 'Easy'; at: number; scheduledDueAt: number; algorithmVersion: 'sg-recall-0.1'; };
+export type ReviewCard = { id: string; itemId: string; itemVersion: number; dueAt: number; stability: number; difficulty: number; lastReviewedAt: number | null; lapses: number; algorithmVersion: 'sg-recall-0.1' | 'sg-recall-0.2'; };
+export type ReviewEvent = { id: string; cardId: string; itemId: string; grade: 'Again' | 'Hard' | 'Good' | 'Easy'; at: number; scheduledDueAt: number; algorithmVersion: 'sg-recall-0.1' | 'sg-recall-0.2'; };
 export type LearnerSettings = { id:'local'; entryTrack: EntryTrack; dailyMinutes: 10|20|30|45|60; createdAt:number };
 export type Draft = { id:'active'; itemId: string; slots: Record<string,string>; mode:Mode; sessionId:string; updatedAt:number };

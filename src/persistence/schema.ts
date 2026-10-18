@@ -64,6 +64,46 @@ export async function saveAttemptOnce(attempt:Attempt,card:ReviewCard|null,missi
  if(card){const cs=tx.objectStore('cards');const got=cs.get(card.id);got.onsuccess=()=>{if(!got.result)cs.add(card)};}
  tx.objectStore('drafts').delete('active');await done(tx);return true;
 }
+/** First attempt, review event and schedule transition commit together.
+ * The card snapshot is compared inside this transaction to reject another tab's stale review.
+ * No new IndexedDB store or key migration is introduced.
+ */
+export async function saveReviewedAttemptOnce(attempt:Attempt,event:ReviewEvent,next:ReviewCard,expected:ReviewCard,missionExpected?:Mission):Promise<boolean>{
+ const db=await openLearnerDB();
+ const stores=missionExpected?['attempts','cards','reviewEvents','drafts','missions']:['attempts','cards','reviewEvents','drafts'];
+ const tx=db.transaction(stores,'readwrite');const finished=done(tx);
+ const find=<T>(store:string,id:string):Promise<T|undefined>=>new Promise((resolve,reject)=>{
+  const q=tx.objectStore(store).get(id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);
+ });
+ const fail=async(message:string):Promise<never>=>{tx.abort();try{await finished}catch{}throw Error(message)};
+ if(attempt.result==='VOID'||next.id!==expected.id||event.cardId!==expected.id||event.itemId!==attempt.itemId||
+    next.itemId!==attempt.itemId||next.itemVersion!==attempt.itemVersion||expected.itemVersion!==attempt.itemVersion||
+    !event.id.startsWith(attempt.sessionId+':review:'))return fail('Ungültige Wiederholungszuordnung');
+ if(missionExpected){
+  const m=await find<Mission>('missions',missionExpected.id);
+  const step=m?.steps[m.index];
+  if(!m||m.phase!=='IN_PROGRESS'||m.index!==missionExpected.index||m.updatedAt!==missionExpected.updatedAt||
+   !step||step.itemId!==attempt.itemId||step.itemVersion!==attempt.itemVersion||attempt.sessionId!==m.id)
+    return fail('Mission wurde in einem anderen Tab geändert');
+ }
+ const existingAttempt=await new Promise<Attempt|undefined>((resolve,reject)=>{
+  const q=tx.objectStore('attempts').index('sessionItem').get([attempt.sessionId,attempt.itemId]);
+  q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);
+ });
+ if(existingAttempt)return fail('Ein Erstversuch für diese Sitzung existiert bereits');
+ const stored=await find<ReviewCard>('cards',expected.id);
+ if(!stored||stored.itemId!==expected.itemId||stored.itemVersion!==expected.itemVersion||
+    stored.dueAt!==expected.dueAt||stored.stability!==expected.stability||
+    stored.difficulty!==expected.difficulty||stored.lastReviewedAt!==expected.lastReviewedAt||
+    stored.lapses!==expected.lapses||stored.algorithmVersion!==expected.algorithmVersion)
+   return fail('Wiederholung wurde bereits in einem anderen Tab aktualisiert');
+ if(await find<ReviewEvent>('reviewEvents',event.id))return fail('Wiederholungsereignis existiert bereits');
+ tx.objectStore('attempts').add(attempt);
+ tx.objectStore('reviewEvents').add(event);
+ tx.objectStore('cards').put(next);
+ tx.objectStore('drafts').delete('active');
+ await finished;return true;
+}
 export async function saveReview(event:ReviewEvent,card:ReviewCard):Promise<boolean>{
  const db=await openLearnerDB();const tx=db.transaction(['reviewEvents','cards'],'readwrite');
  const s=tx.objectStore('reviewEvents');const existing=await new Promise<ReviewEvent|undefined>((resolve,reject)=>{const r=s.get(event.id);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
