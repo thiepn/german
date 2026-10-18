@@ -30,11 +30,13 @@ async function exercise(width){
   await p.getByRole('button',{name:'Ersten Leseeindruck speichern'}).click();
   await p.getByText('Dein ursprünglicher Leseeindruck').waitFor();
   for(let i=1;i<=3;i++){
-   await p.locator('#reading-question').selectOption('q'+i);
+   assert.equal(await p.locator('#reading-question').inputValue(),'q'+i,'expected next unanswered question');
    await p.getByLabel('Welcher Absatz stützt deine Antwort?').selectOption('p'+i);
    await p.getByLabel('Deine begründete Antwort').fill('Evidenzbezug für Abschnitt '+i);
+   assert.equal(await p.locator('#reading-evidence').inputValue(),'p'+i);
    await p.getByRole('button',{name:'Antwort und Beleg dokumentieren'}).click();
    await p.getByText('Evidenzbezug für Abschnitt '+i).waitFor();
+   if(i<3){await p.getByRole('button',{name:'Nächste offene Frage'}).click();assert.equal(await p.locator('#reading-question').inputValue(),'q'+(i+1));}
   }
   await p.getByRole('heading',{name:'Wissenschaftliches Kurzbriefing'}).waitFor();
   await p.getByLabel('Dein erster adressatengerechter Text').fill('Für die Forschungsleitung: Die Anmeldezahlen stiegen, aber die Ursachen bleiben ungeklärt. Weitere Vergleiche sind sinnvoll.');
