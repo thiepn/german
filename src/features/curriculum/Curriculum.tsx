@@ -1,6 +1,13 @@
-import {domains,availableDomains} from '../../domain/content/registry';
+import {domains} from '../../domain/content/registry';
 import {availableModes,modes} from '../../domain/content/modes';
 import type {Mode} from '../../domain/content/types';
 export default function Curriculum({onStart,onReading,onPragmatics}:{onStart:(mode:Mode)=>void;onReading:()=>void;onPragmatics:()=>void}){
- return <section><div className="eyebrow">Curriculum · alle Bereiche offen</div><h1 className="page-title">Was möchtest du vertiefen?</h1><p className="lead">13 Domänen von Grammatik über Nuancen bis zur Mediation. G01–G04 und G07 enthalten begrenztes Übungsmaterial. G08 bietet Situationsentscheidungen ohne automatisches Urteil; G09 bietet Lesestudien und adressatengerechte Texttransfers. Weitere Bereiche sind geplant.</p><div className="grid">{domains.map(([id,label])=><article className="panel" key={id}><span className="kicker">{id}</span><h2>{label}</h2><p className="muted small">{id==='G09'?'Lesestudien verfügbar':id==='G08'?'Pragmatische Fallstudien verfügbar':availableDomains.has(id)?'Entwurfsübungen verfügbar':'Inhalt noch nicht implementiert'}</p><button className="button outline" disabled={!availableDomains.has(id)&&id!=='G09'&&id!=='G08'} onClick={()=>id==='G09'?onReading():id==='G08'?onPragmatics():onStart(availableModes.find(m=>modes[m].domain===id) ?? 'M01')}>{id==='G09'?'Lesestudien öffnen':id==='G08'?'Pragmatik öffnen':'Üben'}</button></article>)}</div></section>;
+ return <section><div className="eyebrow">Curriculum · 13 Bereiche</div><h1 className="page-title">Was möchtest du vertiefen?</h1><p className="lead">Sieben Übungsmodi sowie pragmatische Situationen und Lesestudien. Übungen sind ungeprüfte Entwürfe; fehlende Inhalte bleiben sichtbar.</p><div className="grid">{domains.map(([id,label])=>{
+  const mode=availableModes.find(m=>modes[m].domain===id);
+  return <article className="panel" key={id}><span className="kicker">{id}</span><h2>{label}</h2><p className="muted small">{mode?'Entwurfsübungen verfügbar':id==='G09'?'Lesestudien verfügbar':'Noch keine objektiven Übungen'}</p>
+  <div className="buttonrow">{mode&&<button className="button outline" onClick={()=>onStart(mode)}>Übung: {modes[mode].label}</button>}
+  {id==='G08'&&<button className="button outline" onClick={onPragmatics}>Pragmatische Situationen</button>}
+  {id==='G09'&&<button className="button outline" onClick={onReading}>Lesestudien öffnen</button>}
+  {!mode&&id!=='G08'&&id!=='G09'&&<button className="button outline" disabled>In Vorbereitung</button>}</div></article>;
+ })}</div></section>;
 }

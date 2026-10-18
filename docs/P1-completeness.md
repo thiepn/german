@@ -1,10 +1,10 @@
 # P1 product-wide completeness — source-grounded draft status
 
 ## Implemented learner-facing experiences
-Five objective modes; Today and resumable bounded mission; original attempt/review history; local backup/restore; guided Error Archive; progress evidence; diagnostic UI that remains gated; Momentum Precision responsive shell; M04 unscored writing studio with immutable first drafts and explicit version comparison; M05 context choices with lexical reference links.
+Seven objective modes; Today and resumable bounded mission; original attempt/review history; local backup/restore; guided Error Archive; progress evidence; diagnostic UI that remains gated; Momentum Precision responsive shell; M04 unscored writing studio with immutable first drafts and explicit version comparison; M05 context choices with lexical reference links.
 
 ## Real content inventory
-- Objective drafts: **178** (130 before the 48-item advanced precision contribution; full breakdown in content-validation CI output).
+- Objective drafts: **202** (24 additional unreviewed M06/M07 contextual decisions).
 - Ungraded M04 prompts: **20**, each an original AI-assisted draft; ten lesson manuscripts are also unreviewed.
 - Reviewed: **0 of 350** P1 exercises, **0 of 50** P1 diagnostic holdouts, **0 of 72** full Diagnostic A items.
 - Lexical reference coverage: 12 M05 drafts link to six dictionary headwords; this is NOT editorial approval for the prompts, alternative answers or difficulty.
@@ -19,7 +19,7 @@ Five objective modes; Today and resumable bounded mission; original attempt/revi
 ## Remaining significant original product gaps
 - Independent linguist verification, alternate-answer coverage, false-negative analysis, licensing records and editorial calibration are missing. CLI dossiers are only a review aid.
 - Robust diagnostic learner outcomes, approved holdouts and rights-cleared listening audio are absent; both pilots must remain gated.
-- M06–M08 and full reading/listening/speaking/mediation studios not implemented.
+- M06/M07 have limited unreviewed contextual choice tasks; M08 and full listening/speaking/mediation studios remain unimplemented.
 - Automatic scoring of free-form writing is deliberately absent; studio assists self-review but does not assess C2 competence.
 - FSRS-grade scheduler calibration, accessible end-to-end audits, physical Android PWA, multi-tab/quota stress and service-worker upgrade rehearsals remain unqualified.
 - Word-level revision diff is a mechanical comparison, not grammar detection or textual quality evaluation.
@@ -41,7 +41,7 @@ Five objective modes; Today and resumable bounded mission; original attempt/revi
 ## SG-01 G08/G09 pragmatic transfer batch
 - Eight original G08 contextual pragmatic scenarios (demo preference and effect notes, no normative correctness grade).
 - Four G09 reading-to-writing briefs, unlocked after three documented evidence questions, with immutable first response, retained revisions and audience-specific checks.
-- Read-only editorial queue expands to 226 review dossiers, all unapproved. Objective exercise demos remain 178. M04 writing prompts remain 20, G09 texts remain four with twelve questions.
+- Read-only editorial queue expands to 226 review dossiers, all unapproved. Objective exercise demos now total 202. M04 writing prompts remain 20, G09 texts remain four with twelve questions.
 - Existing IndexedDB schema v4, backup v3, zero human approval, and Artikelwerk isolation are unchanged. See `docs/P1-pragmatic-transfer.md`.
 
 ## Writing archive — latest learner continuity

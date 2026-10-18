@@ -20,7 +20,7 @@ export function planMission(id:string,items:readonly Exercise[],attempts:readonl
  const overdue=cards.filter(c=>c.dueAt<=now).sort((a,b)=>a.dueAt-b.dueAt).map(x=>x.itemId);
  const errors=[...attempts].filter(x=>x.result==='INCORRECT'||x.result==='PARTIAL').sort((a,b)=>b.at-a.at).map(x=>x.itemId);
  const unseen=candidates.filter(i=>!history.has(i.id)).map(i=>i.id).sort();
- const transfer=candidates.filter(i=>i.mode==='M04'||i.mode==='M05').map(i=>i.id).sort();
+ const transfer=candidates.filter(i=>i.mode==='M04'||i.mode==='M05'||i.mode==='M06'||i.mode==='M07').map(i=>i.id).sort();
  const amount=capacity[minutes];
  add(overdue,'REVIEW',Math.max(1,Math.floor(amount*.3)));
  add(errors,'REPAIR',Math.max(1,Math.floor(amount*.3)));

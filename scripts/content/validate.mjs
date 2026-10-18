@@ -3,18 +3,18 @@ import {fileURLToPath} from 'node:url';
 import {resolve,dirname} from 'node:path';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const read=(p)=>JSON.parse(readFileSync(resolve(root,p),'utf8'));
-const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json'),...read('content/fixtures/collocation-contrasts.demo.json'),...read('content/fixtures/nuance-grounded.demo.json'),...read('content/fixtures/advanced-precision.demo.json')];
+const demo=[...read('content/fixtures/core.demo.json'),...read('content/fixtures/syntax-collocations.demo.json'),...read('content/fixtures/collocation-contrasts.demo.json'),...read('content/fixtures/nuance-grounded.demo.json'),...read('content/fixtures/advanced-precision.demo.json'),...read('content/fixtures/semantic-register.demo.json')];
 const production=[...read('content/fixtures/production.demo.json'),...read('content/fixtures/production-continuation.demo.json')];
 const authority=read('content/editorial/lexical-anchors.json');
 const approved=read('content/approved/approved.json');
 const ledger=read('content/editorial/approval-ledger.json');
 const manifest=read('content/manifest.json');
-const modes=new Set(['M01','M02','M03','M04','M05']);const ids=new Set();const counts=Object.fromEntries([...modes].map(m=>[m,0]));
+const modes=new Set(['M01','M02','M03','M04','M05','M06','M07']);const ids=new Set();const counts=Object.fromEntries([...modes].map(m=>[m,0]));
 const approvalById=new Map(ledger.map(r=>[r.id+'@'+r.version,r]));
 if(approvalById.size!==ledger.length)throw Error('Duplicate editorial approval records');
 const normalize=s=>s.trim().normalize('NFC').toLocaleLowerCase('de-DE').replace(/\s+/g,' ');
 for(const [item,source] of [...demo.map(i=>[i,'demo']),...approved.map(i=>[i,'approved'])]){
- if(typeof item.id!=='string'||!/^SG-M0[1-5]-\d{3}$/.test(item.id))throw Error('Unrecognized stable ID '+item.id);
+ if(typeof item.id!=='string'||!/^SG-M0[1-7]-\d{3}$/.test(item.id))throw Error('Unrecognized stable ID '+item.id);
  if(ids.has(item.id))throw Error('Duplicate ID across content packages '+item.id);ids.add(item.id);
  if(!Number.isInteger(item.version)||item.version<1)throw Error('Bad revision '+item.id);
  if(!modes.has(item.mode)||!item.id.includes(item.mode))throw Error('Mode mismatch '+item.id);
@@ -59,6 +59,9 @@ for(const p of production){
  if(!/^SG-P04-\d{3}$/.test(p.id)||productionIds.has(p.id)||p.status!=='DEMO_ONLY'||p.authorship!=='AI_DRAFT'||p.reviewedBy!==null||p.skillId!=='G04.SYNTAX'||p.version!==1)throw Error('Unqualified production prompt '+p.id);
  productionIds.add(p.id);
  if(!p.source?.trim()||!p.instruction?.trim()||!p.sample?.trim()||!Array.isArray(p.noticing)||p.noticing.length<3)throw Error('Incomplete production authoring '+p.id);
+}
+for(const item of demo)if(item.decision){
+ if(!['M06','M07'].includes(item.mode)||item.decision.kind!=='AUTHOR_DRAFT_CHOICE'||!Array.isArray(item.decision.options)||item.decision.options.length!==3||new Set(item.decision.options).size!==3||!item.decision.rationale?.trim()||item.slots.length!==1||item.slots[0].id!=='choice'||!item.decision.options.includes(item.variants[0].slots.choice))throw Error('Invalid M06/M07 decision '+item.id);
 }
 for(const item of demo)if(item.contrast){
  if(item.mode!=='M05'||item.contrast.kind!=='AUTHOR_DRAFT_CHOICE'||!Array.isArray(item.contrast.options)||item.contrast.options.length<2||new Set(item.contrast.options).size!==item.contrast.options.length||!item.contrast.rationale?.trim()||!item.contrast.options.includes(item.variants[0].slots.collocation))throw Error('Invalid M05 contrast '+item.id);

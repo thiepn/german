@@ -9,8 +9,8 @@ export function buildReviewQueue(graded,production,anchors){
   const ref=item.lexicalAuthority?source.get(item.lexicalAuthority.anchorId):null;
   if(item.lexicalAuthority&&!ref)throw Error('Lexical anchor missing '+item.id);
   return {id:item.id,version:item.version,type:'OBJECTIVE',mode:item.mode,status:item.status,authorId:item.authorId??'UNRECORDED',
-   prompt:item.prompt,target:item.variants?.map(v=>v.slots),distractors:item.contrast?.options.filter(x=>x!==item.variants[0].slots.collocation)??[],
-   issues:['Independent language-editor assessment','All acceptable inflections and alternate answers','Contextual register and semantic ambiguity','CEFR/skill calibration','Original example and rights provenance',...(item.contrast?['Distractor plausibility and unambiguous instructions']:[])],
+   prompt:item.prompt,target:item.variants?.map(v=>v.slots),distractors:item.contrast?.options.filter(x=>x!==item.variants[0].slots.collocation)??item.decision?.options.filter(x=>x!==item.variants[0].slots.choice)??[],
+   issues:['Independent language-editor assessment','All acceptable inflections and alternate answers','Contextual register and semantic ambiguity','CEFR/skill calibration','Original example and rights provenance',...(item.contrast||item.decision?['Distractor plausibility and unambiguous instructions','Acceptable semantic and register alternatives']:[])],
    lexicalReference:ref?{url:ref.url,headword:ref.headword,claim:ref.claim,scope:'LEXICAL_FORM_ONLY'}:null,
    independentEditorialApproval:false};
  });

@@ -2,10 +2,10 @@
   "schemaVersion": 5,
   "releaseStatus": "DEMO_ONLY",
   "publishedApprovedCount": 0,
-  "demoItemCount": 178,
+  "demoItemCount": 202,
   "productionPromptCount": 20,
   "lessonApprovalCount": 0,
-  "contentPackVersion": "sg01-demo-7",
+  "contentPackVersion": "sg01-demo-8",
   "reviewedTargetP1": 350,
   "approvedItemSource": "content/approved/approved.json",
   "authoringSources": [
@@ -15,7 +15,8 @@
     "content/fixtures/production.demo.json",
     "content/fixtures/nuance-grounded.demo.json",
     "content/fixtures/production-continuation.demo.json",
-    "content/fixtures/advanced-precision.demo.json"
+    "content/fixtures/advanced-precision.demo.json",
+    "content/fixtures/semantic-register.demo.json"
   ],
   "editorialLedger": "content/editorial/approval-ledger.json",
   "diagnosticAAvailable": false,
