@@ -37,8 +37,15 @@ export async function loadSnapshot():Promise<Snapshot>{
 }
 export async function saveSettings(settings:LearnerSettings):Promise<void>{const db=await openLearnerDB();const tx=db.transaction('settings','readwrite');tx.objectStore('settings').put(settings);await done(tx);}
 export async function saveDraft(draft:Draft|null):Promise<void>{const db=await openLearnerDB();const tx=db.transaction('drafts','readwrite');if(draft)tx.objectStore('drafts').put(draft);else tx.objectStore('drafts').delete('active');await done(tx);}
-export async function saveAttemptOnce(attempt:Attempt,card:ReviewCard|null):Promise<boolean>{
- const db=await openLearnerDB();const tx=db.transaction(['attempts','cards','drafts'],'readwrite');const store=tx.objectStore('attempts');
+export async function saveAttemptOnce(attempt:Attempt,card:ReviewCard|null,missionExpected?:Mission):Promise<boolean>{
+ const db=await openLearnerDB();const tx=db.transaction(missionExpected?['attempts','cards','drafts','missions']:['attempts','cards','drafts'],'readwrite');const store=tx.objectStore('attempts');
+ if(missionExpected){
+  const stored=await new Promise<Mission|undefined>((resolve,reject)=>{const q=tx.objectStore('missions').get(missionExpected.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+  const step=stored?.steps[stored.index];
+  if(!stored||stored.phase!=='IN_PROGRESS'||stored.index!==missionExpected.index||stored.updatedAt!==missionExpected.updatedAt||!step||step.itemId!==attempt.itemId||step.itemVersion!==attempt.itemVersion||attempt.sessionId!==stored.id){
+   tx.abort();try{await done(tx)}catch{}throw Error('Die Mission wurde in einem anderen Tab geändert. Aktualisiere vor dem nächsten Versuch.');
+  }
+ }
  const idx=store.index('sessionItem');const existing=await new Promise<Attempt|undefined>((resolve,reject)=>{const r=idx.get([attempt.sessionId,attempt.itemId]);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
  if(existing){tx.abort();try{await done(tx);}catch{}return false;}
  store.add(attempt);
@@ -75,24 +82,38 @@ export async function readAllRecords():Promise<BackupRecords>{
 /** Merge-only restoration. A conflicting history ID rejects the whole import before any write. */
 export async function mergeBackupRecords(incoming:BackupRecords):Promise<{inserted:number;skipped:number}>{
  const stores=[...BACKUP_STORES] as BackupStore[];
- const current=await readAllRecords();const toInsert:Partial<Record<BackupStore,unknown[]>>={};let inserted=0,skipped=0;
- for(const store of stores){
-  const known=new Map((current[store] as {id:string}[]).map(row=>[row.id,row]));
-  const pending:unknown[]=[];
-  for(const record of incoming[store]){
-   const old=known.get(record.id);
-   if(old){
-    if(store!=='settings'&&store!=='drafts'&&JSON.stringify(old)!==JSON.stringify(record))throw Error('Abweichender vorhandener Datensatz in '+store+': '+record.id);
-    skipped++;continue;
-   }
-   pending.push(record);inserted++;
+ const db=await openLearnerDB();
+ // All reads, collision detection and additions share one readwrite transaction.
+ // A concurrent tab cannot insert a conflicting record between preflight and write.
+ return new Promise((resolve,reject)=>{
+  const tx=db.transaction(stores,'readwrite');
+  const current=new Map<BackupStore,{id:string}[]>();let left=stores.length;
+  let inserted=0,skipped=0;let reason:Error|null=null;
+  tx.oncomplete=()=>resolve({inserted,skipped});
+  tx.onerror=()=>reject(reason??tx.error??Error('Import fehlgeschlagen'));
+  tx.onabort=()=>reject(reason??tx.error??Error('Import abgebrochen'));
+  for(const store of stores){
+   const req=tx.objectStore(store).getAll();
+   req.onerror=()=>{reason=Error('Lesefehler in '+store);tx.abort()};
+   req.onsuccess=()=>{
+    current.set(store,req.result as {id:string}[]);left--;
+    if(left!==0)return;
+    try{
+     for(const name of stores){
+      const known=new Map((current.get(name)??[]).map(row=>[row.id,row]));
+      for(const record of incoming[name]){
+       const old=known.get(record.id);
+       if(old){
+        if(name!=='settings'&&name!=='drafts'&&JSON.stringify(old)!==JSON.stringify(record))throw Error('Abweichender vorhandener Datensatz in '+name+': '+record.id);
+        skipped++;continue;
+       }
+       tx.objectStore(name).add(record);inserted++;
+      }
+     }
+    }catch(e){reason=e instanceof Error?e:Error(String(e));tx.abort()}
+   };
   }
-  toInsert[store]=pending;
- }
- if(inserted===0)return {inserted,skipped};
- const db=await openLearnerDB();const tx=db.transaction(stores,'readwrite');const finished=done(tx);
- for(const store of stores)for(const row of toInsert[store]??[])tx.objectStore(store).add(row);
- await finished;return {inserted,skipped};
+ });
 }
 
 export async function loadProductionEntries():Promise<ProductionEntry[]>{
@@ -119,9 +140,27 @@ export async function loadActiveMission():Promise<Mission|null>{
  const all=await new Promise<Mission[]>((resolve,reject)=>{const q=tx.objectStore('missions').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
  await finished;return all.filter(m=>m.phase!=='COMPLETE').sort((a,b)=>b.updatedAt-a.updatedAt)[0]??null;
 }
-export async function saveMission(m:Mission):Promise<void>{
- const db=await openLearnerDB();const tx=db.transaction('missions','readwrite');
- tx.objectStore('missions').put(m);await done(tx);
+/** Transactionally find the single unfinished mission before creating a new one.
+ * A pause/resume transition increments the revision using the persisted clock.
+ * An existing IN_PROGRESS mission is returned unchanged (including its original ID).
+ */
+export async function startOrResumeMission(proposed:Mission,now:number):Promise<Mission>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readwrite');const finished=done(tx);
+ const all=await new Promise<Mission[]>((resolve,reject)=>{const q=tx.objectStore('missions').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ const active=all.filter(m=>m.phase!=='COMPLETE').sort((a,b)=>b.updatedAt-a.updatedAt)[0];
+ const next=active?(active.phase==='PAUSED'?{...active,phase:'IN_PROGRESS' as const,updatedAt:Math.max(active.updatedAt+1,now)}:active):proposed;
+ if(!active||active.phase==='PAUSED')tx.objectStore('missions').put(next);
+ await finished;return next;
+}
+/** A stale tab must not rewind a newer mission after submission or resume. */
+export async function pauseMissionIfCurrent(expected:Mission,now:number):Promise<Mission>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readwrite');const finished=done(tx);
+ const current=await new Promise<Mission|undefined>((resolve,reject)=>{const q=tx.objectStore('missions').get(expected.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ if(!current||current.phase!=='IN_PROGRESS'||current.index!==expected.index||current.updatedAt!==expected.updatedAt){
+  tx.abort();try{await finished}catch{}throw Error('Eine andere Registerkarte hat die Mission bereits geändert.');
+ }
+ const next:Mission={...current,phase:'PAUSED',updatedAt:Math.max(current.updatedAt+1,now)};
+ tx.objectStore('missions').put(next);await finished;return next;
 }
 /** Advance is atomic with a check for an immutable first attempt at the current step. */
 export async function completeMissionStep(m:Mission,now:number):Promise<Mission>{
@@ -129,13 +168,13 @@ export async function completeMissionStep(m:Mission,now:number):Promise<Mission>
  const tx=db.transaction(['missions','attempts','drafts'],'readwrite');const finished=done(tx);
  const get=<T>(store:string,key:string)=>new Promise<T|undefined>((resolve,reject)=>{const q=tx.objectStore(store).get(key);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
  const current=await get<Mission>('missions',m.id);
- if(!current||current.phase!=='IN_PROGRESS'||current.index!==m.index){tx.abort();try{await finished}catch{}throw Error('Mission wurde in einem anderen Tab verändert.');}
+ if(!current||current.phase!=='IN_PROGRESS'||current.index!==m.index||current.updatedAt!==m.updatedAt){tx.abort();try{await finished}catch{}throw Error('Mission wurde in einem anderen Tab verändert.');}
  const step=current.steps[current.index];
  if(!step){tx.abort();try{await finished}catch{}throw Error('Mission ist bereits abgeschlossen.');}
  const attempt=await get<Attempt>('attempts',current.id+':'+step.itemId);
  if(!attempt||attempt.itemVersion!==step.itemVersion){tx.abort();try{await finished}catch{}throw Error('Zuerst Antwort dauerhaft speichern.');}
  const index=current.index+1;
- const next:Mission={...current,index,updatedAt:now,phase:index===current.steps.length?'COMPLETE':'IN_PROGRESS'};
+ const next:Mission={...current,index,updatedAt:Math.max(current.updatedAt+1,now),phase:index===current.steps.length?'COMPLETE':'IN_PROGRESS'};
  tx.objectStore('missions').put(next);tx.objectStore('drafts').delete('active');
  await finished;return next;
 }

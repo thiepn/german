@@ -71,7 +71,7 @@ export async function inspectPortableBackup(text:string):Promise<Envelope>{
  try{raw=JSON.parse(text);}catch{throw Error('Keine gültige JSON-Sicherung.');}
  if(!object(raw)||raw.format!==BACKUP_FORMAT||![1,2,3].includes(Number(raw.version))||raw.sourceDatabase!==DB_NAME||!nonempty(raw.createdAt)||!Number.isFinite(Date.parse(String(raw.createdAt)))||!object(raw.integrity)||raw.integrity.algorithm!=='SHA-256'||!nonempty(raw.integrity.digest))throw Error('Unbekanntes oder unvollständiges Sicherungsformat.');
  validateRecords(raw.records,raw.version as 1|2|3);
- const payload:Payload={format:BACKUP_FORMAT,version:raw.version as 1|2,sourceDatabase:DB_NAME,createdAt:String(raw.createdAt),records:raw.records};
+ const payload:Payload={format:BACKUP_FORMAT,version:raw.version as 1|2|3,sourceDatabase:DB_NAME,createdAt:String(raw.createdAt),records:raw.records};
  if(await digest(canonical(payload))!==raw.integrity.digest)throw Error('Integritätsprüfung fehlgeschlagen: Die Sicherung wurde verändert oder beschädigt.');
  return {...payload,version:BACKUP_VERSION,records:(raw.version===1?{...(raw.records as LegacyRecords),productionEntries:[],missions:[]}:raw.version===2?{...(raw.records as V2Records),missions:[]}:raw.records) as BackupRecords,integrity:{algorithm:'SHA-256',digest:String(raw.integrity.digest)}};
 }

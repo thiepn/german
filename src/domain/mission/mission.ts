@@ -32,5 +32,5 @@ export function planMission(id:string,items:readonly Exercise[],attempts:readonl
 }
 export function missionStep(m:Mission):MissionStep|null{return m.index>=m.steps.length?null:m.steps[m.index];}
 export function validateMission(m:Mission):boolean{
- return Boolean(m.id&&['IN_PROGRESS','PAUSED','COMPLETE'].includes(m.phase)&&Number.isInteger(m.index)&&m.index>=0&&m.index<=m.steps.length&&m.steps.length>0&&m.steps.length<=14&&new Set(m.steps.map(s=>s.itemId)).size===m.steps.length&&m.steps.every(s=>s.itemVersion>=1&&['REVIEW','REPAIR','EXPLORE','TRANSFER'].includes(s.kind)));
+ return Boolean(m&&typeof m.id==='string'&&m.id.length>0&&Number.isFinite(m.createdAt)&&Number.isFinite(m.updatedAt)&&[10,20,30,45,60].includes(m.minutes)&&Array.isArray(m.steps)&&['IN_PROGRESS','PAUSED','COMPLETE'].includes(m.phase)&&Number.isInteger(m.index)&&m.index>=0&&m.index<=m.steps.length&&m.steps.length>0&&m.steps.length<=14&&new Set(m.steps.map(s=>s.itemId)).size===m.steps.length&&m.steps.every(s=>typeof s.itemId==='string'&&s.itemId.length>0&&Number.isInteger(s.itemVersion)&&s.itemVersion>=1&&['REVIEW','REPAIR','EXPLORE','TRANSFER'].includes(s.kind)));
 }

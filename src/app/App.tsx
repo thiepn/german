@@ -7,7 +7,7 @@ import {gradeAnswer,type GradeResult} from '../domain/grading/gradeAnswer';
 import {chooseSession} from '../domain/recommendation/chooseSession';
 import {planMission,missionStep,type Mission} from '../domain/mission/mission';
 import {newCard,nextReview} from '../domain/review/scheduler';
-import {loadSnapshot,saveAttemptOnce,saveDraft,saveReview,saveSettings,loadActiveMission,saveMission,completeMissionStep} from '../persistence/schema';
+import {loadSnapshot,saveAttemptOnce,saveDraft,saveReview,saveSettings,loadActiveMission,startOrResumeMission,pauseMissionIfCurrent,completeMissionStep} from '../persistence/schema';
 import {offlineState,type OfflineState} from '../offline/packageManager';
 import {MobileShell,type Tab} from './layouts/MobileShell';
 import Onboarding from '../features/onboarding/Onboarding';
@@ -46,10 +46,27 @@ export default function App(){
  const [offline,setOffline]=useState<OfflineState>('UNINSTALLED');
  const [mission,setMission]=useState<Mission|null>(null);
  const busyRef=useRef(false);
- const refresh=async()=>{const [s,p]=await Promise.all([loadSnapshot(),loadProductionEntries()]);setAttempts(s.attempts);setCards(s.cards);setReviews(s.reviewEvents);setSettings(s.settings);setProductions(p);};
+ const refresh=async()=>{const [s,p,m]=await Promise.all([loadSnapshot(),loadProductionEntries(),loadActiveMission()]);setMission(m);setAttempts(s.attempts);setCards(s.cards);setReviews(s.reviewEvents);setSettings(s.settings);setProductions(p);};
  useEffect(()=>{let alive=true;loadSnapshot().then(s=>{if(!alive)return;setAttempts(s.attempts);setCards(s.cards);setReviews(s.reviewEvents);setSettings(s.settings);if(s.draft&&itemById.has(s.draft.itemId)){setSessionId(s.draft.sessionId);setMode(s.draft.mode);setItem(itemById.get(s.draft.itemId)!);setValues(s.draft.slots);setTab('Trainieren');}}).catch(e=>{if(alive)setError('Lokales Speichern ist nicht verfügbar: '+String(e))}).finally(()=>{if(alive)setLoading(false)});
  void loadProductionEntries().then(p=>{if(alive)setProductions(p)}).catch(e=>{if(alive)setError(String(e))});
- void loadActiveMission().then(m=>{if(alive)setMission(m)}).catch(e=>{if(alive)setError('Mission konnte nicht geladen werden: '+String(e))});
+ void loadActiveMission().then(async m=>{
+  if(!alive)return;setMission(m);
+  if(m&&m.phase==='IN_PROGRESS'){
+   const active=missionStep(m),target=active&&itemById.get(active.itemId);
+   if(!target||target.version!==active?.itemVersion)return;
+   const saved=await loadSnapshot();
+   if(!alive)return;
+   const prior=saved.attempts.find(a=>a.sessionId===m.id&&a.itemId===target.id);
+   if(prior){
+    setSessionId(m.id);setItem(target);setMode(target.mode);setValues(prior.slots);
+    setFeedback(gradeAnswer(target,prior.slots));setReviewing(false);setTab('Trainieren');
+   }else if(!saved.draft||saved.draft.sessionId===m.id){
+    setSessionId(m.id);setItem(target);setMode(target.mode);
+    setValues(saved.draft?.itemId===target.id?saved.draft.slots:{});
+    setReviewing(active.kind==='REVIEW');setTab('Trainieren');
+   }
+  }
+ }).catch(e=>{if(alive)setError('Mission konnte nicht geladen werden: '+String(e))});
  void offlineState().then(s=>{if(alive)setOffline(s)}).catch(()=>{});
  return ()=>{alive=false};},[]);
  const recommended=chooseSession(allItems,attempts,cards,Date.now(),1)[0];
@@ -65,19 +82,20 @@ export default function App(){
  async function beginMission(){
   setError('');
   try{
-   const current=mission&&mission.phase!=='COMPLETE'?{...mission,phase:'IN_PROGRESS' as const,updatedAt:Date.now()}:planMission(crypto.randomUUID(),allItems,attempts,cards,settings?.dailyMinutes??30,Date.now());
+   const proposed=planMission(crypto.randomUUID(),allItems,attempts,cards,settings?.dailyMinutes??30,Date.now());
+   const current=await startOrResumeMission(proposed,Date.now());
    const step=missionStep(current);
    if(!step)throw Error('Die Mission ist bereits abgeschlossen.');
    const target=itemById.get(step.itemId);
    if(!target||target.version!==step.itemVersion)throw Error('Eine gespeicherte Aufgabe hat sich geändert. Keine Daten wurden verworfen.');
-   await saveMission(current);setMission(current);
+   setMission(current);
    const previous=attempts.find(a=>a.sessionId===current.id&&a.itemId===target.id);
    const saved=await loadSnapshot();
    const answer=previous?.slots??(saved.draft?.sessionId===current.id&&saved.draft.itemId===target.id?saved.draft.slots:{});
    setSessionId(current.id);setMode(target.mode);setItem(target);setValues(answer);
    setFeedback(previous?gradeAnswer(target,previous.slots):null);setReviewing(step.kind==='REVIEW'&&!previous);
    setReviewPage(false);setShowDiagnostic(false);setShowProduction(false);setTab('Trainieren');
-  }catch(e){setError('Mission nicht gestartet: '+String(e))}
+  }catch(e){setError('Mission nicht gestartet: '+String(e));setMission(await loadActiveMission().catch(()=>null))}
  }
  async function nextQuestion(){
   if(!item)return;
@@ -90,15 +108,15 @@ export default function App(){
     if(!target||target.version!==step.itemVersion)throw Error('Aufgabe fehlt oder wurde verändert');
     setItem(target);setMode(target.mode);setValues({});setFeedback(null);setReviewing(step.kind==='REVIEW');
     await saveDraft({id:'active',itemId:target.id,mode:target.mode,sessionId:next.id,slots:{},updatedAt:Date.now()});
-   }catch(e){setError('Mission konnte nicht fortgesetzt werden: '+String(e))}
+   }catch(e){setError('Mission konnte nicht fortgesetzt werden: '+String(e));setMission(await loadActiveMission())}
    return;
   }
   start(mode);
  }
  async function exitQuestion(){
   if(mission&&mission.phase==='IN_PROGRESS'&&sessionId===mission.id){
-   const paused={...mission,phase:'PAUSED' as const,updatedAt:Date.now()};
-   try{await saveMission(paused);setMission(paused)}catch(e){setError('Mission konnte nicht pausiert werden: '+String(e));return}
+   try{const paused=await pauseMissionIfCurrent(mission,Date.now());setMission(paused)}
+   catch(e){setError('Mission konnte nicht pausiert werden: '+String(e));setMission(await loadActiveMission());return}
   }
   selectTab('Heute');
  }
@@ -109,7 +127,8 @@ export default function App(){
   const attempt:Attempt={id:sessionId+':'+item.id,itemId:item.id,itemVersion:item.version,mode:item.mode,skillId:item.skillId,at,slots:{...values},score:result.score,correct:result.status==='CORRECT',hinted:false,result:result.status,sessionId,variantIndex:result.variantIndex};
   try{
     const card=result.status==='CORRECT'||result.status==='VOID'?null:newCard(item.id,item.version,at);
-    const added=await saveAttemptOnce(attempt,card);
+    const expected=mission&&mission.id===sessionId?mission:undefined;
+    const added=await saveAttemptOnce(attempt,card,expected);
     if(reviewing&&added){
       const old=cards.find(c=>c.id===item.id+':'+item.version);
       if(old){
@@ -120,7 +139,7 @@ export default function App(){
     }
     await refresh();setReviewing(false);setFeedback(result);
   }
-  catch(e){setError('Versuch wurde nicht bestätigt und wird nicht als gespeichert gezählt: '+String(e))}
+  catch(e){setError('Versuch wurde nicht bestätigt und wird nicht als gespeichert gezählt: '+String(e));setMission(await loadActiveMission().catch(()=>null))}
   finally{busyRef.current=false;setBusy(false);}
  }
  async function gradeReview(grade:ReviewEvent['grade']){
