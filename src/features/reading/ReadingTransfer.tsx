@@ -13,6 +13,7 @@ export default function ReadingTransfer({unitId,entries,onSaved}:{unitId:string;
  const [error,setError]=useState('');
  if(!brief)return null;
  async function save(isRevision:boolean){
+  if(!brief)throw Error('Transferaufgabe nicht verfügbar.');
   const text=(isRevision?newDraft:first).trim();if(!text||busy)return;
   setBusy(true);setError('');
   try{
