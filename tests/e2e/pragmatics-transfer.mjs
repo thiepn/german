@@ -13,6 +13,8 @@ async function exercise(width){
   await p.getByLabel('Warum wählst du diese Formulierung?').fill('Ich wollte die Unsicherheit deutlicher erklären.');
   await p.getByRole('button',{name:'Wahl und Begründung speichern'}).click();
   await p.getByText('Deine ursprüngliche Entscheidung').waitFor();
+  await p.getByText('Mögliche Wirkungen',{exact:false}).waitFor();
+  await p.getByRole('button',{name:'Wirkungsvergleich ausblenden'}).click();
   await p.getByRole('button',{name:'Wirkungsvergleich zeigen'}).click();
   await p.getByText('Mögliche Wirkungen',{exact:false}).waitFor();
   await p.getByLabel('Deine Formulierung').fill('Ich sehe weitere mögliche Erklärungen und bitte um eine vorsichtige Bewertung.');
