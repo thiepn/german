@@ -133,12 +133,12 @@
       {
         "id": "b",
         "text": "Der Vorschlag fand grundsätzliche Zustimmung.",
-        "effect": "Erfindet Zustimmung."
+        "effect": "Unterstellt Zustimmung, obwohl das Gremium lediglich beraten hat."
       },
       {
         "id": "c",
         "text": "Das Gremium lehnte den Vorschlag ab.",
-        "effect": "Erfindet Ablehnung."
+        "effect": "Unterstellt eine Ablehnung ohne dokumentierten Beschluss."
       }
     ],
     "preferredIds": [
