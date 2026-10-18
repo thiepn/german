@@ -60,6 +60,24 @@ async function run(width){
   const dl=await awaited,filepath=await dl.path();assert.ok(filepath);
   const txt=await import('node:fs/promises').then(x=>x.readFile(filepath,'utf8'));
   assert.ok(txt.includes(link.sessionId),'existing portable backup contains linked transfer attempt');
+  // Restore to a completely separate browser profile, preserving original review/transfer relationships.
+  const restoredContext=await browser.newContext({viewport:{width,height:820},serviceWorkers:'allow'});
+  try{
+   const restored=await restoredContext.newPage();await restored.goto(origin,{waitUntil:'networkidle'});
+   await restored.getByRole('button',{name:'Mit dem Lernen beginnen'}).click();
+   await restored.getByRole('button',{name:'Daten & Sicherung'}).click();
+   await restored.getByLabel('Eigene Sprachgefühl-Sicherung auswählen').setInputFiles({name:'review-transfer.json',mimeType:'application/json',buffer:Buffer.from(txt)});
+   await restored.getByText('Integrität bestätigt').waitFor();
+   await restored.getByRole('button',{name:'Geprüfte Daten ergänzen'}).click();
+   await restored.getByText('Import abgeschlossen:').waitFor();
+   const recovered=await records(restored);
+   assert.equal(recovered.reviewEvents.length,1,'import retains one source review event');
+   assert.equal(recovered.attempts.filter(x=>x.sessionId.startsWith('review-transfer:')).length,1,'import preserves the linked transfer first attempt');
+   assert.equal(recovered.attempts.length,3,'import retains every historic first attempt');
+   await restored.getByRole('button',{name:'Zurück zur Übersicht'}).click();
+   await restored.getByRole('button',{name:'Fortschritt',exact:true}).first().click();
+   await restored.getByText('1 erste Transferantworten gesichert',{exact:false}).waitFor();
+  }finally{await restoredContext.close()}
   await page.getByRole('button',{name:'Zurück zur Übersicht'}).click();
   await page.getByRole('button',{name:'Trainieren',exact:true}).first().click();
   await page.getByRole('button',{name:/Fällige Wiederholungen/}).click();
