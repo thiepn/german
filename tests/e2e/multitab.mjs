@@ -22,7 +22,7 @@ try{
   await b.getByRole('button',{name:'Training verlassen'}).click();
   await b.getByRole('button',{name:'Mission fortsetzen'}).click(); // advances revision
   for(const input of await a.locator('.exercise input[required]').all())await input.fill('unpassend');
-  await a.getByText('Entwurf konnte nicht gespeichert werden',{exact:false}).waitFor();
+  await a.getByText('Dieser Entwurf wurde nicht überschrieben.',{exact:false}).waitFor();
   await a.getByRole('button',{name:'Antwort prüfen'}).click();
   await a.getByText('Versuch wurde nicht bestätigt',{exact:false}).waitFor();
   const attemptCount=await b.evaluate(async()=>new Promise((ok,err)=>{
