@@ -42,6 +42,8 @@ async function exercise(width){
   await p.getByLabel('Dein erster adressatengerechter Text').fill('Für die Forschungsleitung: Die Anmeldezahlen stiegen, aber die Ursachen bleiben ungeklärt. Weitere Vergleiche sind sinnvoll.');
   await p.getByRole('button',{name:'Erstfassung des Texttransfers speichern'}).click();
   await p.getByText('Unveränderliche Erstfassung').waitFor();
+  await p.getByRole('button',{name:'Prüfkriterien ausblenden'}).waitFor();
+  await p.getByRole('button',{name:'Prüfkriterien ausblenden'}).click();
   await p.getByRole('button',{name:'Eigene Prüfkriterien anzeigen'}).click();
   await p.getByLabel('Überarbeite für die Zielgruppe').fill('Die Anmeldung nahm zu; Termine und Anmeldeprozess änderten sich gleichzeitig. Eine Vergleichsstudie wäre erforderlich.');
   await p.getByRole('button',{name:'Neue Fassung ergänzen'}).click();
