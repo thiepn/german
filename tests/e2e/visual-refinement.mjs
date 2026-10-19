@@ -8,7 +8,7 @@ async function geometry(page,label){
   const main=document.querySelector('main');
   const title=main?.querySelector('h1.page-title');
   const width=window.innerWidth;
-  const nav=[...document.querySelectorAll('.bottomnav button')].filter(el=>getComputedStyle(el).display!=='none');
+  const nav=[...document.querySelectorAll('.bottomnav button')].filter(el=>el.getClientRects().length>0);
   return {
    width,overflow:document.documentElement.scrollWidth-width,
    heading:title?.textContent?.trim()??'',titleOffset:title&&main?title.getBoundingClientRect().top-main.getBoundingClientRect().top-parseFloat(getComputedStyle(main).paddingTop):null,
