@@ -20,7 +20,7 @@ try{
    await p.getByRole('button',{name:'Zeitmarke setzen'}).click();
    await p.getByLabel('Deine Interpretation und Begründung').fill('Eine ausdrückliche Einschränkung ist hörbar.');
    await p.getByRole('button',{name:'Hörbeleg mit Zeitmarke speichern'}).click();
-   await p.getByText('Eine ausdrückliche Einschränkung ist hörbar.').waitFor();
+   await p.locator('.listen-evidence').getByText('Eine ausdrückliche Einschränkung ist hörbar.').waitFor();
    await p.reload({waitUntil:'networkidle'});
    await p.getByRole('button',{name:'Lernen',exact:true}).first().click();
    await p.locator('article').filter({hasText:'Hören und Hörpragmatik'}).getByRole('button',{name:'Hörschärfe öffnen'}).click();
