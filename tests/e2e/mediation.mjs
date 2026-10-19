@@ -16,7 +16,8 @@ async function run(width){
   await page.getByLabel('Textbeleg für die Erstinterpretation').selectOption('p2');
   const original='Mehr Personen nahmen teil, aber wegen weiterer Änderungen ist kein sicherer Ursachenbeleg möglich.';
   await page.getByLabel('Erste Deutung mit Einschränkung').fill(original);await create.click();
-  await page.getByText(original).waitFor();
+  await page.getByRole('heading',{name:'Gesicherte Erstinterpretation'}).waitFor();
+  await page.getByText(original,{exact:true}).waitFor();
   assert.match(await page.locator('.mediation-work').innerText(),/Textbeleg:\s*p2/,'first cited source paragraph remains visible');
   await page.getByLabel('Beleg für diese Fassung').selectOption('p2');
   await page.getByLabel('Deine adressatengerechte Fassung').fill('Die Anmeldungen stiegen; offen bleibt, welche Änderung dazu beitrug.');
