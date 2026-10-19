@@ -20,7 +20,7 @@ export default function MediationStudio({onExit,onSource,initialSelection}:{onEx
  const previous=saved?.revisions.filter(r=>r.questionId===stage).at(-2);
  const stats=mediationProgress(entries);
  const refresh=async()=>setEntries(await loadProductionEntries());
- useEffect(()=>{let alive=true;void loadProductionEntries().then(e=>{if(!alive)return;setEntries(e);if(!initialSelection)setSelected(nextMediationBrief(e).id)}).catch(e=>{if(alive)setError(String(e))});return ()=>{alive=false}},[initialSelection]);
+ useEffect(()=>{let alive=true;void loadProductionEntries().then(e=>{if(!alive)return;setEntries(e)}).catch(e=>{if(alive)setError(String(e))});return ()=>{alive=false}},[initialSelection]);
  function choose(id:string){setSelected(id);setAudience('');setEvidence('');setDraft('');setStage('ADAPTATION');setRevision('');setRevisionEvidence('');setUncertainty('');setChecks([]);setError('');}
  async function saveFirst(){
   if(!unit||saved||busy)return;
@@ -47,6 +47,7 @@ export default function MediationStudio({onExit,onSource,initialSelection}:{onEx
   <h1 className="page-title">Sprachmittlung und Argumentation</h1>
   <div className="banner">DEMO_ONLY · {stats.started}/{stats.total} Fälle begonnen · {stats.adapted} adressatengerecht übertragen · {stats.argued} Argumentationen. Originale fiktive Lesetexte; unbewertete, redaktionell ungeprüfte Aufgaben.</div>
   <div className="field"><label htmlFor="mediation-case">Ausgangstext auswählen</label><select id="mediation-case" value={selected} onChange={e=>choose(e.target.value)}>{mediationBriefs.map(b=><option value={b.id} key={b.id}>{b.band} · {b.title}</option>)}</select></div>
+  {nextMediationBrief(entries).id!==selected&&<button className="button outline" type="button" onClick={()=>choose(nextMediationBrief(entries).id)}>Nächsten Fall öffnen</button>}
   <article className="panel"><div className="kicker">{brief.band} · G13 · {unit?.id??brief.unitId} · v{brief.version}</div><h2>{brief.title}</h2>
    {unit?<><div className="mediation-source">{unit.paragraphs.map((p,i)=><p key={p.id} className="reading-paragraph"><strong className="reading-paragraph-id">Absatz {i+1} · {p.id}</strong>{p.text}</p>)}</div>
     <button className="button outline" type="button" onClick={()=>onSource(unit.id)}>Original-Lesestudie öffnen</button>
