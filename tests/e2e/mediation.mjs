@@ -17,7 +17,7 @@ async function run(width){
   const original='Mehr Personen nahmen teil, aber wegen weiterer Änderungen ist kein sicherer Ursachenbeleg möglich.';
   await page.getByLabel('Erste Deutung mit Einschränkung').fill(original);await create.click();
   await page.getByText(original).waitFor();
-  assert.equal(await page.getByText('Textbeleg: p2',{exact:false}).count(),1);
+  assert.match(await page.locator('.mediation-work').innerText(),/Textbeleg:\s*p2/,'first cited source paragraph remains visible');
   await page.getByLabel('Beleg für diese Fassung').selectOption('p2');
   await page.getByLabel('Deine adressatengerechte Fassung').fill('Die Anmeldungen stiegen; offen bleibt, welche Änderung dazu beitrug.');
   await page.getByLabel('Welche Unsicherheit oder Grenze bleibt?').fill('Keine isolierte Wirkung messbar.');
