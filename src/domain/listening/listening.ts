@@ -47,14 +47,7 @@ export function encodeAnchor(s:number):string{if(!Number.isFinite(s)||s<0||s>864
 export function decodeAnchor(s:string|undefined):number|null{if(!s||!/^t=\d{1,5}\.\d$/.test(s))return null;const n=Number(s.slice(2));return Number.isFinite(n)&&n<=86400?n:null}
 export function newListeningEntry(id:string,text:string,at:number,fingerprint?:string):ProductionEntry{
  if(!id.startsWith('listening-study:')||!text.trim()||!Number.isFinite(at))throw Error('Invalid listening note');
- if(fingerprint&&!new RegExp('^audio-sample-sha256-v1:[a-f0-9]{64}
-}
-export function addListeningNote(old:ProductionEntry,taskId:string,text:string,reflection:string,time:number,id:string,at:number):ProductionEntry{
- if(!isListeningEntry(old)||!TASKS.some(t=>t.id===taskId)||!id||!text.trim()||text.length>3000||reflection.length>1200||!Number.isFinite(at))throw Error('Invalid listening revision');
- return {...old,revisions:[...old.revisions,{id,at,text:text.trim(),reflection:reflection.trim(),questionId:taskId,paragraphId:encodeAnchor(time)}]};
-}
-export function nextListeningTask(entry:ProductionEntry){return TASKS.find(t=>!entry.revisions.some(r=>r.questionId===t.id))??TASKS[0]}
-).test(fingerprint))throw Error('Invalid audio signature');
+ if(fingerprint&&!/^audio-sample-sha256-v1:[a-f0-9]{64}$/.test(fingerprint))throw Error('Invalid audio signature');
  return {id,kind:'LISTENING_STUDY',itemId:LISTENING_ITEM,itemVersion:1,sourceId:'USER_AUDIO_NOT_STORED',...(fingerprint?{decisionId:fingerprint}:{}),createdAt:at,original:text.trim(),revisions:[],evaluated:'UNASSESSED'};
 }
 export function addListeningNote(old:ProductionEntry,taskId:string,text:string,reflection:string,time:number,id:string,at:number):ProductionEntry{

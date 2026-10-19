@@ -54,3 +54,7 @@ Seven objective modes; Today and resumable bounded mission; original attempt/rev
 - Four open listening scaffolds across perspective, evidence, qualification, mediation. First response and later evidence are stored through existing `productionEntries` immutable revision CAS, visible in Progress and Schreibspuren.
 - Browser session must reattach the file after reload. Existing 8 IndexedDB stores, backup v3, M01–M07, error/review/mastery/mission authority, diagnostic gates and `thiepn/artikelwerk` separation unchanged.
 - No official C1/C2 listening calibration, human approval or listening certification. Learner-controlled source does not establish comprehension quality.
+
+### M08 recovery boundary
+- Retained original productionEntries IDs, first drafts, CAS revisions, unverified legacy session state and backup v3. Audio samples are hashed locally; only the technical sampled digest is persisted. SHA-256 sample matching is not sufficient for malicious file authenticity.
+- Mismatches reject note writing; legacy records require manual confirmation. Restore imports notes rather than audio and is append-only under existing collision behavior. No new stores or claimed level assessments.

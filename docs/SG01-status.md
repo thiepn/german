@@ -19,3 +19,8 @@ See `docs/P1-completeness.md` for source-based inventory and gaps.
 ## M08 implementation-first
 - Learner-supplied local audio, playback controls, original listening interpretation, timestamped ungraded follow-ups, resume/archive/progress, same productionEntries store; audio is never copied, cached, exported or synchronized.
 - No approved audio, automatic transcription or objective listening score. M08 is not part of the seven graded modes and cannot certify a CEFR level.
+
+## M08 G10 audio resumption and recovery
+- When creating a new session, save a sampled SHA-256 signature of the file size, first/center/last 64 KiB using existing immutable productionEntries.decisionId. It is a heuristic equality signal, not a full-file proof. Rename-safe; no filename or recording stored.
+- Mismatch refuses reattachment and protects new notes. Old M08 sessions without signature stay untouched, but require explicit learner confirmation of reattached audio. Resuming defaults to newest saved session; opening archive respects exact ID.
+- Backup v3 includes original notes, anchors and technical digest, never audio. Existing additive import retains conflict policy and offers a listening recovery route after verified import.
