@@ -3,7 +3,6 @@ import {modes} from '../../domain/content/modes';
 import type {Mission} from '../../domain/mission/mission';
 export default function Today({attempts,cards,recommended,onStart,onReview,onOpenErrors,onDiagnostic,onProduction,onData,onReading,onPragmatics,onListening,mission,dailyMinutes}:{attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];onStart:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void;onReading:()=>void;onPragmatics:()=>void;onListening:()=>void}){
  const due=cards.filter(c=>c.dueAt<=Date.now()).length;
-
  const weak=attempts.filter(a=>a.result==='INCORRECT'||a.result==='PARTIAL').length;
  const focus=recommended?.topic??'Noch keine Empfehlung';
  const visibleMission=mission&&(mission.phase!=='COMPLETE'||new Date(mission.createdAt).toDateString()===new Date().toDateString())?mission:null;
@@ -22,7 +21,6 @@ export default function Today({attempts,cards,recommended,onStart,onReview,onOpe
      <span className="muted small">{doneToday?`${firstCorrect} von ${sessionTotal} Erstversuchen korrekt · DEMO_ONLY`:`${sessionTotal-sessionProgress} Aufgaben verbleiben.`}</span>
    </div>}
    <button type="button" className="button" disabled={!recommended&&!visibleMission} onClick={onStart}>{doneToday?'Weitere Mission starten':visibleMission?'Mission fortsetzen':'Jetzt trainieren'}</button>
-   
   </section>
   <details className="today-explain"><summary>Warum diese Übungen?</summary><p>{due>0?`${due} Wiederholungen sind fällig. `:''}{weak>0?`${weak} bisherige Antworten waren unsicher. `:''}{recommended?modes[recommended.mode].label+' · '+focus:'Noch keine geeignete Aufgabe verfügbar.'}</p></details>
   <section className="today-focus" aria-labelledby="focusHeading"><h2 id="focusHeading">Heute im Fokus</h2>
