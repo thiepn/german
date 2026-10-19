@@ -22,7 +22,7 @@ async function run(width){
   await p.getByRole('button',{name:'Fortschritt',exact:true}).first().click();
   await p.getByRole('button',{name:'Schreibspuren ansehen'}).click();
   await p.getByRole('heading',{name:'Schreibspuren'}).waitFor();
-  await p.getByText('1 passende Originaldatensätze').waitFor();
+  await p.getByText('1 Einträge').waitFor();
   await p.locator('.archive-entry').first().click();
   await p.getByRole('heading',{name:'Unveränderliche Erstfassung'}).waitFor();
   await p.getByText(second).waitFor();
@@ -31,12 +31,12 @@ async function run(width){
   await p.getByRole('heading',{name:'Gegenüberstellung · kein Qualitätsurteil'}).waitFor();
   assert.ok(await p.locator('.archive-comparison .diff-added').count()>0);
   await p.getByLabel('In eigenen Texten suchen').fill('Konjunktiv');
-  await p.getByText('1 passende Originaldatensätze').waitFor();
+  await p.getByText('1 Einträge').waitFor();
   await p.getByLabel('In eigenen Texten suchen').fill('völlig ausgeschlossen');
-  await p.getByText('0 passende Originaldatensätze').waitFor();
+  await p.getByText('0 Einträge').waitFor();
   await p.getByLabel('In eigenen Texten suchen').fill('');
   await p.getByLabel('Textart').selectOption('G08');
-  await p.getByText('0 passende Originaldatensätze').waitFor();
+  await p.getByText('0 Einträge').waitFor();
   await p.getByLabel('Textart').selectOption('M04');
   await p.getByLabel('Überarbeitungen').selectOption('REVISED');
   await p.locator('.archive-entry').first().click();

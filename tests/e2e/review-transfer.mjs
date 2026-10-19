@@ -81,7 +81,7 @@ async function run(width){
   await page.getByRole('button',{name:'Zurück zur Übersicht'}).click();
   await page.getByRole('button',{name:'Trainieren',exact:true}).first().click();
   await page.getByRole('button',{name:/Fällige Wiederholungen/}).click();
-  await page.getByText('Eine neue Anwendung wurde mit Originalantwort dokumentiert.').waitFor();
+  await page.getByText('Neue Anwendung dokumentiert.').waitFor();
   assert.equal(await page.getByRole('button',{name:'In neuem Kontext anwenden'}).count(),0,'completed review not offered a duplicate transfer');
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1),false);
  }finally{await context.close()}
