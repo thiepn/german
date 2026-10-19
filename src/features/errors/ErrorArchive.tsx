@@ -4,15 +4,15 @@ import {buildErrorClusters,type ErrorClusterStatus} from '../../domain/errors/er
 import {availableModes,modes} from '../../domain/content/modes';
 
 const statusLabel:Record<ErrorClusterStatus,string>={
- OFFEN:'Noch offen',ERNEUT_UNSICHER:'Weiter beobachten',WIEDER_ANGEWENDET:'In neuen Aufgaben angewendet'
+ OFFEN:'Noch offen',ERNEUT_UNSICHER:'Weiter beobachten',WIEDER_ANGEWENDET:'Erneut angewendet'
 };
 export default function ErrorArchive({attempts,byId,onRetry}:{attempts:Attempt[];byId:Map<string,Exercise>;onRetry:(id:string)=>void}){
  const [mode,setMode]=useState('all'),[filter,setFilter]=useState('all'),[expanded,setExpanded]=useState<string|null>(null);
  const all=buildErrorClusters(attempts,byId);
  const visible=all.filter(x=>(mode==='all'||x.mode===mode)&&(filter==='all'||filter===x.status));
  return <section className="error-archive">
-  <div className="eyebrow">Originalantworten · Musterarbeit</div><h1 className="page-title">Fehlerarchiv</h1>
-  <p className="lead">Fehler werden nach Übungsbereich und Thema gebündelt. Die Zuordnung ist eine Lernhilfe, keine automatische linguistische Diagnose. Originalantworten bleiben unverändert.</p>
+  <h1 className="page-title">Fehlerarchiv</h1>
+  
   <div className="error-summary" role="status">{all.length} Themen mit unsicheren Erstversuchen · {all.filter(x=>x.freshContextId).length} mit neuen Übungskontexten</div>
   <div className="error-filters">
    <div className="field"><label htmlFor="errorMode">Übungsmodus</label><select id="errorMode" value={mode} onChange={e=>setMode(e.target.value)}><option value="all">Alle Modi</option>{availableModes.map(m=><option key={m} value={m}>{modes[m].label}</option>)}</select></div>
@@ -26,7 +26,7 @@ export default function ErrorArchive({attempts,byId,onRetry}:{attempts:Attempt[]
      <div className="kicker">{cluster.skillId} · {modes[cluster.mode].label}</div>
      <h2>{cluster.topic}</h2>
      <p className="muted small">{cluster.failures.length} unsichere Erstversuche in {cluster.distinctFailureItems} Aufgaben · zuletzt {new Date(cluster.lastFailureAt).toLocaleDateString('de-DE')}</p>
-     <p className="small"><strong>Verlauf:</strong> {statusLabel[cluster.status]}. {cluster.laterCorrect.length} spätere korrekte Antworten in anderen Aufgaben seit dem jüngsten Fehler; daraus folgt keine bestätigte Beherrschung.</p>
+     <p className="small"><strong>Verlauf:</strong> {statusLabel[cluster.status]}. {cluster.laterCorrect.length} spätere korrekte Antworten in anderen Aufgaben.</p>
      <div className="buttonrow">
       {cluster.freshContextId&&<button type="button" className="button" onClick={()=>onRetry(cluster.freshContextId!)}>Neuen Kontext üben</button>}
       {cluster.repeatItemId&&<button type="button" className="button outline" onClick={()=>onRetry(cluster.repeatItemId!)}>Originalaufgabe erneut üben</button>}
@@ -39,7 +39,7 @@ export default function ErrorArchive({attempts,byId,onRetry}:{attempts:Attempt[]
        <div className="status">{new Date(a.at).toLocaleString('de-DE')} · {a.itemId} · v{a.itemVersion}</div>
        <p>{matching?item.prompt:'Aufgabe aus früherer oder nicht verfügbarer Version'}</p>
        <p><strong>Deine Antwort:</strong> {matching?item.slots.map(s=>a.slots[s.id]||'—').join(' · '):Object.values(a.slots).join(' · ')||'—'}</p>
-       {matching&&<details><summary>Historische Musterlösung und Erklärung ansehen</summary><p><strong>Autorenentwurf:</strong> {item.variants.map(v=>item.slots.map(s=>v.slots[s.id]).join(' · ')).join(' / ')}</p><p>{item.explanation}</p><p className="small muted">DEMO_ONLY, sofern noch nicht unabhängig geprüft; nicht automatisch aus dieser Antwort neu bewertet.</p></details>}
+       {matching&&<details><summary>Historische Musterlösung und Erklärung ansehen</summary><p><strong>Autorenentwurf:</strong> {item.variants.map(v=>item.slots.map(s=>v.slots[s.id]).join(' · ')).join(' / ')}</p><p>{item.explanation}</p></details>}
       </div>;
      })}</div>}
     </article>;
