@@ -45,18 +45,18 @@ export default function DataManagement({onExit,onRestore,onListening}:{onExit:()
   }catch(e){setError('Import abgebrochen, vorhandene Daten blieben erhalten: '+String(e))}finally{setBusy(false)}
  }
  return <section>
-  <div className="eyebrow">Lokal · Privat · Ohne Konto</div>
+  
   <h1 className="page-title">Daten & Sicherung</h1>
-  <p className="lead">Deine Lernhistorie liegt in diesem Browser. Eine Datei ermöglicht dir, Versuche, Wiederholungen, Entwürfe, Schreibfassungen und Diagnosesitzungen selbst zu sichern.</p>
+  
   <div className="stack">
-   <article className="panel"><h2>Sicherung exportieren</h2><p className="muted">Die Datei enthält deine originalen Antworten und kann persönliche Angaben enthalten. Keine automatische Cloud-Übertragung.</p><button type="button" className="button" onClick={()=>void exportBackup()} disabled={busy}>JSON-Sicherung herunterladen</button></article>
+   <article className="panel"><h2>Sicherung exportieren</h2><p className="muted">Die Datei enthält persönliche Lerninhalte. Bewahre sie sicher auf.</p><button type="button" className="button" onClick={()=>void exportBackup()} disabled={busy}>JSON-Sicherung herunterladen</button></article>
    <article className="panel"><h2>Daten ergänzen</h2><p>Nur fehlende Datensätze werden importiert. Unterschiedliche vorhandene Versuche, Wiederholungen oder Diagnosen mit derselben ID sperren den gesamten Import. Einstellungen und der aktuelle Entwurf bleiben bei Konflikten unverändert.</p>
     <div className="field"><label htmlFor="backupFile">Eigene Sprachgefühl-Sicherung auswählen</label><input id="backupFile" type="file" accept="application/json,.json" disabled={busy} onChange={e=>void chooseFile(e.target.files?.[0])}/></div>
     {candidate&&<div className="buttonrow"><button type="button" className="button" disabled={busy} onClick={()=>void restore()}>Geprüfte Daten ergänzen</button><button type="button" className="button outline" onClick={()=>{setCandidate(null);setDetails('Import abgebrochen.')}}>Abbrechen</button></div>}
    </article>
   </div>
   {details&&<p className="feedback" role="status">{details}</p>}
-  {listeningRecovered&&<div className="panel"><h2>Hörschärfe fortsetzen</h2><p className="small muted">Importierte Hörnotizen sind wieder verfügbar. Bitte Originalaudio lokal erneut auswählen und die Prüfsumme überprüfen; ältere Sitzungen ohne Prüfsumme verlangen eine bewusste Bestätigung.</p><button className="button outline" type="button" onClick={onListening}>Hörsitzungen öffnen</button></div>}
+  {listeningRecovered&&<div className="panel"><h2>Hörschärfe fortsetzen</h2><p className="small muted">Originalaufnahme erneut auswählen. Ältere Sitzungen ohne Prüfsumme erfordern eine Bestätigung.</p><button className="button outline" type="button" onClick={onListening}>Hörsitzungen öffnen</button></div>}
   {error&&<p className="feedback incorrect" role="alert">{error}</p>}
   <div className="buttonrow"><button type="button" className="button outline" onClick={onExit} disabled={busy}>Zurück zur Übersicht</button></div>
  </section>

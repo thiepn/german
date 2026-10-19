@@ -45,18 +45,18 @@ export default function ReadingStudio({onExit,onTransfer,onPragmatics,initialSel
  }
  const anchorList=unit.anchorIds.map(id=>readingAnchors.find(a=>a.id===id)).filter((x):x is (typeof readingAnchors)[number]=>!!x);
  const complete=entry&&unit.questions.every(q=>entry.revisions.some(r=>r.questionId===q.id));
- return <section><div className="eyebrow">Lesestudien · G09 · unbewertete Textkompetenz</div><h1 className="page-title">Argumente genau lesen</h1>
- <p className="lead">Originale, fiktive Sachtexte lesen, Aussagen mit Textstellen belegen, Deutungen festhalten und gezielt zur Grammatik oder Idiomatik übertragen. Keine automatische Sprachbewertung.</p>
- <div className="banner">DEMO_ONLY · {readingStudies.length} redaktionell ungeprüfte Lesestudien, {progress.answered}/{progress.totalQuestions} lokal dokumentierte Antworten. Quellen belegen nur linguistische Konzepte, nicht die Richtigkeit der Übungstexte.</div>
+ return <section><h1 className="page-title">Argumente genau lesen</h1>
+ 
+ <div className="banner">DEMO_ONLY · {readingStudies.length} ungeprüfte, fiktive Lesestudien · {progress.answered}/{progress.totalQuestions} Antworten dokumentiert. Fachquellen bestätigen nicht die Übungstexte.</div>
  <div className="field"><label htmlFor="reading-unit">Lesestudie wählen</label><select id="reading-unit" value={selected} onChange={e=>chooseUnit(e.target.value)}>{readingStudies.map(u=><option value={u.id} key={u.id}>{u.title} · {u.band}</option>)}</select></div>
  <article className="panel"><div className="kicker">{unit.band} · {unit.register}</div><h2>{unit.title}</h2><p className="muted">{unit.focus}</p>
  {unit.paragraphs.map((p,i)=><p className="reading-paragraph" key={p.id}><span className="reading-paragraph-id">Absatz {i+1}</span>{p.text}</p>)}
- <div className="small muted"><strong>Grammatische Nachschlagequellen:</strong> {anchorList.map((a,i)=><span key={a.id}>{i?', ':''}<a href={a.url} target="_blank" rel="noopener noreferrer">{a.subject}</a></span>)}. Die Texte oben sind neue fiktive Entwürfe, keine kopierten Quellen.</div></article>
+ <div className="small muted"><strong>Grammatische Nachschlagequellen:</strong> {anchorList.map((a,i)=><span key={a.id}>{i?', ':''}<a href={a.url} target="_blank" rel="noopener noreferrer">{a.subject}</a></span>)}. </div></article>
  {!entry?<section className="panel"><h2>Erster Leseeindruck</h2><p>Welche Hauptaussage und welche wichtige Einschränkung erkennst du? Bewahre deine eigene erste Lesart auf.</p>
  <div className="field"><label htmlFor="reading-first">Deine erste Deutung</label><textarea id="reading-first" rows={4} value={first} onChange={e=>setFirst(e.target.value)} maxLength={2500}/></div>
  <button className="button" disabled={busy||!first.trim()} onClick={()=>void saveNote()}>Ersten Leseeindruck speichern</button>
- <p className="small muted">Die Erstfassung bleibt unverändert. Nur ausdrücklich gespeicherte Eingaben überstehen einen Neustart.</p></section>:<>
- <section className="panel"><h2>Dein ursprünglicher Leseeindruck</h2><p className="written">{entry.original}</p><p className="small muted">Gespeichert als eigener Text, nicht als richtig oder falsch bewertet.</p></section>
+ </section>:<>
+ <section className="panel"><h2>Dein ursprünglicher Leseeindruck</h2><p className="written">{entry.original}</p></section>
  <section className="panel"><h2>Belege und Deutung</h2><div className="field"><label htmlFor="reading-question">Frage auswählen</label><select id="reading-question" value={chosen} onChange={e=>{setChosen(e.target.value);setAnswer('');setEvidence('')}}>{unit.questions.map((q,i)=><option key={q.id} value={q.id}>{i+1}. {entry.revisions.some(r=>r.questionId===q.id)?'Dokumentiert':'Offen'} · {q.focus}</option>)}</select></div>
  <p className="prompt">{question.prompt}</p>
  {recorded?<><p><strong>Deine gespeicherte Antwort:</strong></p><p className="written">{recorded.text}</p><p className="small muted">Dein Beleg: {recorded.paragraphId}</p>{nextUnanswered(unit,entry)&&<button className="button outline" type="button" onClick={()=>{const next=nextUnanswered(unit,entry);if(next){setChosen(next.id);setRevealed([]);setAnswer('');setEvidence('')}}}>Nächste offene Frage</button>}</>:<>
@@ -64,10 +64,10 @@ export default function ReadingStudio({onExit,onTransfer,onPragmatics,initialSel
  <div className="field"><label htmlFor="reading-answer">Deine begründete Antwort</label><textarea id="reading-answer" value={answer} onChange={e=>setAnswer(e.target.value)} rows={4} maxLength={2500}/></div>
  <button className="button" disabled={busy||!answer.trim()||!evidence} onClick={()=>void saveQuestion()}>Antwort und Beleg dokumentieren</button></>}
  <div className="buttonrow"><button className="button outline" disabled={!recorded} onClick={()=>setRevealed(v=>v.includes(question.id)?v.filter(x=>x!==question.id):[...v,question.id])}>{revealed.includes(question.id)?'Vergleich ausblenden':'Musterdeutung vergleichen'}</button></div>
- {recorded&&revealed.includes(question.id)&&<div className="feedback"><strong>Eine mögliche Deutung — nicht unabhängig geprüft</strong><p>{question.model}</p><p className="small muted">Orientierung, keine einzige richtige Antwort und keine automatische Note.</p></div>}
+ {recorded&&revealed.includes(question.id)&&<div className="feedback"><strong>Eine mögliche Deutung — nicht unabhängig geprüft</strong><p>{question.model}</p></div>}
  </section>
- {complete?<ReadingTransfer key={unit.id} unitId={unit.id} entries={entries} onSaved={refresh}/>:<div className="panel"><p className="small muted">Eigene adressatengerechte Textfassung nach allen drei dokumentierten Fragen verfügbar.</p></div>}
- <section className="panel"><h2>In einer anderen Übungsform anwenden</h2><p>{unit.transfer.why}</p><button className="button outline" onClick={()=>{try{const t=transferTarget(unit);onTransfer(t.mode,t.id)}catch(e){setError(String(e))}}}>Zum passenden Sprachtraining wechseln</button><p className="small muted">Eine Transferübung ersetzt nicht den Nachweis des Textverständnisses.</p><button className="button outline" onClick={onPragmatics}>Anschließend G08 Situationsangemessenheit üben</button></section>
+ {complete?<ReadingTransfer key={unit.id} unitId={unit.id} entries={entries} onSaved={refresh}/>:}
+ <section className="panel"><h2>In einer anderen Übungsform anwenden</h2><p>{unit.transfer.why}</p><button className="button outline" onClick={()=>{try{const t=transferTarget(unit);onTransfer(t.mode,t.id)}catch(e){setError(String(e))}}}>Zum passenden Sprachtraining wechseln</button><button className="button outline" onClick={onPragmatics}>Anschließend G08 Situationsangemessenheit üben</button></section>
  </>}
  {error&&<p role="alert" className="banner">{error}</p>}<button className="button text" onClick={onExit}>Zurück zum Curriculum</button></section>;
 }

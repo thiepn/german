@@ -80,25 +80,25 @@ export default function ListeningStudio({onExit,onBackup,initialSelection}:{onEx
    setEntries(await loadProductionEntries());setTask(nextListeningTask(updated).id);setNote('');setReflection('');setMarked(null);
   }catch(e){setError('Hörbeleg nicht gespeichert: '+String(e))}finally{setBusy(false)}
  }
- return <section className="listening-studio"><div className="eyebrow">M08 · G10 · Hörschärfe</div><h1 className="page-title">Hörschärfe</h1>
- <p className="lead">Eigenes Audio hören, entscheidende Stellen wiederholen, Aussagen begründen und die Interpretation dokumentieren — ohne automatische Benotung.</p>
- <div className="banner">DEMO_ONLY · Vier ungeprüfte, offene Übungsaufträge. Verwende nur erlaubte Audiodateien. Audio, Dateinamen und Transkripte bleiben ungespeichert. Für neue Hörsitzungen wird nur eine lokale SHA-256-Stichprobenprüfsumme der Datei gesichert, um versehentlich falsches Audio beim Fortsetzen zu erkennen; sie ist kein vollständiger Identitätsbeweis.</div>
+ return <section className="listening-studio"><h1 className="page-title">Hörschärfe</h1>
+ 
+ <div className="banner">DEMO_ONLY · 4 unbewertete Höraufträge. Verwende nur erlaubte Audiodateien. Audio und Dateinamen werden nicht gespeichert. Eine SHA-256-Stichprobenprüfsumme schützt vor versehentlich falscher Wiederzuordnung, beweist aber keine vollständige Dateigleichheit.</div>
  <div className="metrics"><div className="metric"><strong>{stats.sessions}</strong><small>Hörsitzungen</small></div><div className="metric"><strong>{stats.notes}</strong><small>Hörbelege</small></div><div className="metric"><strong>{stats.withEvidence}</strong><small>Sitzungen mit Zeitmarken</small></div></div>
  <div className="field"><label htmlFor="listen-sessions">Hörsitzung auswählen</label><select id="listen-sessions" value={selected} onChange={e=>selectSession(e.target.value)}><option value="new">Neue Hörsitzung</option>{rows.map(r=><option value={r.id} key={r.id}>{new Date(r.createdAt).toLocaleString('de-DE')} · {r.revisions.length} Belege</option>)}</select></div>
- {current&&<p className="small muted" role="status">Gesicherte Sitzung: {current.revisions.length} Hörbelege. {current.decisionId?'Audioquelle wird beim Wiederanhängen geprüft.':'Ältere Sitzung ohne gespeicherte Audio-Prüfsumme.'} Wähle zum Fortsetzen die lokale Originaldatei erneut aus.</p>}
- <article className="panel"><h2>1 · Eigene Audioquelle</h2><p className="small muted">Lokales MP3, WAV, M4A, OGG usw., maximal 250 MiB. Nach Neuladen die ursprüngliche Datei erneut auswählen. Nur eine Stichprobenprüfsumme, kein Audiomaterial, gehört zu deinem Backup.</p>
+ {current&&<p className="small muted" role="status">{current.revisions.length} Hörbelege · {current.decisionId?'Originaldatei erneut auswählen.':'Ältere Sitzung: Originaldatei manuell bestätigen.'}</p>}
+ <article className="panel"><h2>1 · Eigene Audioquelle</h2><p className="small muted">Max. 250 MiB · nach Neuladen Originaldatei erneut auswählen.</p>
  <div className="field"><label htmlFor="listen-file">Lokale Audiodatei auswählen</label><input id="listen-file" type="file" accept="audio/*,.mp3,.wav,.ogg,.m4a,.aac,.flac,.webm" onChange={e=>void selectFile(e)}/></div>
  {checking&&<p role="status" className="muted small">Lokale Audioquelle wird geprüft …</p>}
  {url?<><p className="small muted">Nur in dieser Sitzung: {sourceName}</p>
  {match==='MATCH'&&<p role="status" className="small muted">Audio-Stichprobe stimmt mit der gesicherten Sitzung überein.</p>}
  {match==='LEGACY'&&!legacyConfirmed&&<div className="banner" role="status"><p>Diese ältere Hörsitzung besitzt keine Prüfsumme. Die App kann nicht feststellen, ob du die ursprüngliche Datei ausgewählt hast. Prüfe sie selbst, bevor du fortfährst.</p><button className="button outline" type="button" onClick={()=>setLegacyConfirmed(true)}>Ältere Audioquelle bewusst bestätigen</button></div>}
- {match==='LEGACY'&&legacyConfirmed&&<p role="status" className="small muted">Ältere Aufnahme manuell bestätigt · nicht technisch verifiziert. Die ursprünglichen Daten bleiben unverändert.</p>}
+ {match==='LEGACY'&&legacyConfirmed&&<p role="status" className="small muted">Ältere Aufnahme manuell bestätigt · nicht technisch verifiziert. </p>}
  <audio ref={player} src={url} aria-label="Eigene Audiodatei abspielen" controls preload="metadata" className="listen-player" onTimeUpdate={e=>setTime(e.currentTarget.currentTime)} onLoadedMetadata={e=>{setDuration(Number.isFinite(e.currentTarget.duration)?e.currentTarget.duration:0);e.currentTarget.playbackRate=speed}} onError={()=>setError('Audioformat vom Browser nicht abspielbar.')}/>
  <div className="listen-controls"><button className="button outline" disabled={!sourceReady} onClick={()=>jump(-10)}>−10 Sekunden</button><span className="listen-clock">{clock(time)} / {clock(duration)}</span><button className="button outline" disabled={!sourceReady} onClick={()=>jump(10)}>+10 Sekunden</button>
  <label>Tempo <select aria-label="Abspieltempo" value={speed} onChange={e=>{const v=Number(e.target.value);setSpeed(v);if(player.current)player.current.playbackRate=v}}>{[0.75,1,1.25,1.5].map(n=><option key={n} value={n}>{n}×</option>)}</select></label>
  <button className="button outline" disabled={!sourceReady} onClick={()=>setMarked(player.current?.currentTime??time)}>Zeitmarke setzen</button></div>
  {marked!==null&&<p role="status" className="small muted">Zeitmarke: {clock(marked)} (für den nächsten Hörbeleg)</p>}
- </>:<p className="small muted">Keine geprüfte Audiodatei ausgewählt. Gespeicherte Notizen bleiben auch ohne Mediendatei lesbar.</p>}
+ </>:<p className="small muted">Keine Audiodatei ausgewählt.</p>}
  </article>
  <article className="panel listen-writing"><h2>2 · Eigene Interpretation</h2>
  {!current?<><p>Nach dem Hören die Kernaussage ohne Transkript in eigenen Worten formulieren.</p><div className="field"><label htmlFor="listen-first">Erste Deutung der Kernaussage</label><textarea id="listen-first" rows={5} maxLength={2800} value={first} onChange={e=>setFirst(e.target.value)}/></div>
@@ -113,7 +113,7 @@ export default function ListeningStudio({onExit,onBackup,initialSelection}:{onEx
  {at!==null&&<button className="button text" disabled={!sourceReady} onClick={()=>replayAt(at)}>Hörstelle {clock(at)} mit Vorlauf anhören</button>}
  <p className="written">{r.text}</p>{r.reflection&&<p className="small muted">Eigene Unsicherheit: {r.reflection}</p>}</div>}):<p className="small muted">Noch keine Hörbelege gespeichert.</p>}
  </>}
- <p className="small muted">Originalfassungen bleiben unverändert. Ungespeicherte Texte gehen beim Verlassen verloren. Es gibt keine automatische Transkription, Bewertung oder GER-Einstufung.</p></article>
+ <p className="small muted">Ungespeicherte Eingaben gehen beim Verlassen verloren.</p></article>
  {error&&<p className="banner" role="alert">{error}</p>}
  <div className="buttonrow"><button className="button outline" onClick={()=>selectSession('new')}>Neue Hörsitzung</button><button className="button outline" onClick={onBackup}>Hörnotizen sichern / wiederherstellen</button><button className="button text" onClick={onExit}>Zurück zum Curriculum</button></div></section>;
 }

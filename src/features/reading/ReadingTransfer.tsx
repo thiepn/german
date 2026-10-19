@@ -29,7 +29,7 @@ export default function ReadingTransfer({unitId,entries,onSaved}:{unitId:string;
    await onSaved();setOpen(true);
   }catch(e){setError('Texttransfer nicht gespeichert: '+String(e))}finally{setBusy(false)}
  }
- return <section className="panel"><div className="eyebrow">G09 · Text in eigener Stimme übertragen</div><h2>{brief.title}</h2><p><strong>Zielgruppe:</strong> {brief.audience}. <strong>Register:</strong> {brief.register.replaceAll('_',' ').toLowerCase()}.</p><p>{brief.instruction}</p><p className="small muted">Nach drei belegten Antworten freigeschaltet. Die vier Transferimpulse sind DEMO_ONLY und keine Bewertung der Textkompetenz.</p>
+ return <section className="panel"><h2>{brief.title}</h2><p><strong>Zielgruppe:</strong> {brief.audience}. <strong>Register:</strong> {brief.register.replaceAll('_',' ').toLowerCase()}.</p><p>{brief.instruction}</p>
  {!existing?<><div className="field"><label htmlFor="transfer-first">Dein erster adressatengerechter Text</label><textarea id="transfer-first" rows={6} value={first} onChange={e=>setFirst(e.target.value)} maxLength={2500}/></div>
  <button className="button" onClick={()=>void save(false)} disabled={!first.trim()||busy}>Erstfassung des Texttransfers speichern</button></>:<>
  <p><strong>Unveränderliche Erstfassung</strong></p><p className="written">{existing.original}</p>
