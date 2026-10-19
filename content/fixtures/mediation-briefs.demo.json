@@ -1,0 +1,114 @@
+[
+  {
+    "id": "SG-M09-001",
+    "version": 1,
+    "unitId": "SG-R09-001",
+    "band": "C1",
+    "title": "Teilnahmezahlen ohne Kausalitätsbehauptung",
+    "task": "Vermittle den beobachteten Anstieg, ohne den Effekt der Beratungsform als erwiesen darzustellen.",
+    "argumentTask": "Entkräfte die Behauptung, die neue Beratungsform habe den Anstieg nachweislich allein verursacht. Formuliere eine begrenzte, tragfähige Schlussfolgerung.",
+    "audiences": [
+      {
+        "id": "STUDENTS",
+        "label": "Studierendenvertretung",
+        "purpose": "knappe Mitteilung über den Befund und seine Grenzen"
+      },
+      {
+        "id": "DECISION",
+        "label": "Entscheidungsgremium",
+        "purpose": "abwägende Begründung vor einer möglichen Maßnahme"
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neuer Aufgabenentwurf auf Grundlage der originalen fiktiven SG-R09-Lesestudie; keine fremden Texte"
+    }
+  },
+  {
+    "id": "SG-M09-002",
+    "version": 1,
+    "unitId": "SG-R09-002",
+    "band": "C1",
+    "title": "Beschluss und Sprecherpositionen",
+    "task": "Vermittle den Status des Vorhabens, ohne Aussagen der Projektleitung als geprüfte Tatsachen auszugeben.",
+    "argumentTask": "Prüfe, ob die Vertagung für Erfolg oder Scheitern spricht. Unterscheide Positionen, offen gebliebene Fragen und den tatsächlichen Beschluss.",
+    "audiences": [
+      {
+        "id": "STAFF",
+        "label": "Betroffene Beschäftigte",
+        "purpose": "verständliche Darstellung der Auswirkungen der Vertagung"
+      },
+      {
+        "id": "BOARD",
+        "label": "Projektgremium",
+        "purpose": "präziser Status mit offenen Nachweisen"
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neuer Aufgabenentwurf auf Grundlage der originalen fiktiven SG-R09-Lesestudie; keine fremden Texte"
+    }
+  },
+  {
+    "id": "SG-M09-003",
+    "version": 1,
+    "unitId": "SG-R09-003",
+    "band": "C2",
+    "title": "Einwände und Zugeständnisse gewichten",
+    "task": "Übertrage die wechselseitigen Zugeständnisse und ihre argumentative Gewichtung ohne eine Position zu vereinfachen.",
+    "argumentTask": "Entwickle eine Erwiderung, die einen berechtigten Einwand anerkennt und trotzdem eine differenzierte Gegenposition vertritt.",
+    "audiences": [
+      {
+        "id": "GENERAL",
+        "label": "Interessierte Öffentlichkeit",
+        "purpose": "faire Zusammenfassung kontroverser Positionen"
+      },
+      {
+        "id": "MODERATION",
+        "label": "Gesprächsmoderation",
+        "purpose": "trennscharfe Darstellung von Einwand und Konsens"
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neuer Aufgabenentwurf auf Grundlage der originalen fiktiven SG-R09-Lesestudie; keine fremden Texte"
+    }
+  },
+  {
+    "id": "SG-M09-004",
+    "version": 1,
+    "unitId": "SG-R09-004",
+    "band": "C2",
+    "title": "Prognosen vorsichtig vermitteln",
+    "task": "Erkläre die Reichweite der Prognose und den Unterschied zwischen Erwartung und belastbarer Gewissheit.",
+    "argumentTask": "Reagiere auf eine überzogene Gewissheitsbehauptung mit einem belegten Gegenargument und einer bedingten Schlussfolgerung.",
+    "audiences": [
+      {
+        "id": "PUBLIC",
+        "label": "Öffentliche Information",
+        "purpose": "verständliche Kommunikation der Prognosegrenzen"
+      },
+      {
+        "id": "EXPERTS",
+        "label": "Fachgremium",
+        "purpose": "präzise Bewertung der verwendeten Annahmen"
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neuer Aufgabenentwurf auf Grundlage der originalen fiktiven SG-R09-Lesestudie; keine fremden Texte"
+    }
+  }
+]

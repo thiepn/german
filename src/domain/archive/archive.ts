@@ -4,8 +4,9 @@ import {pragmaticScenarios} from '../pragmatics/pragmatics';
 import {readingStudies} from '../reading/reading';
 import {readingTransferBriefs} from '../reading/transfer';
 import {isListeningEntry} from '../listening/listening';
+import {isMediationEntry,mediationBriefs} from '../mediation/mediation';
 
-export type ArchiveKind='M04'|'G08'|'G09_READING'|'G09_TRANSFER'|'G10_LISTENING';
+export type ArchiveKind='M04'|'G08'|'G09_READING'|'G09_TRANSFER'|'G10_LISTENING'|'G13_MEDIATION';
 export type ArchiveFilter=ArchiveKind|'ALL';
 export type ArchiveActivity='ALL'|'FIRST_ONLY'|'REVISED';
 export type ArchivePeriod='ALL'|'7D'|'30D';
@@ -13,6 +14,7 @@ export type ArchiveRow={entry:ProductionEntry;kind:ArchiveKind;title:string;cont
 export type ArchiveQuery={kind:ArchiveFilter;activity:ArchiveActivity;period:ArchivePeriod;search:string;now:number};
 const lookup=(id:string, list:readonly {id:string;title?:string;objective?:string}[])=>list.find(x=>x.id===id);
 export function archiveKind(entry:ProductionEntry):ArchiveKind{
+ if(isMediationEntry(entry))return 'G13_MEDIATION';
  if(isListeningEntry(entry))return 'G10_LISTENING';
  if(entry.kind==='PRAGMATIC_STUDY')return 'G08';
  if(entry.kind==='READING_STUDY')return 'G09_READING';
@@ -21,18 +23,18 @@ export function archiveKind(entry:ProductionEntry):ArchiveKind{
 }
 export function archiveRow(entry:ProductionEntry):ArchiveRow{
  const kind=archiveKind(entry);
- const title=kind==='G10_LISTENING'?'Hörschärfe · Eigene Hörnotiz':kind==='M04'?productionPrompts.find(p=>p.id===entry.itemId)?.objective:
+ const title=kind==='G13_MEDIATION'?mediationBriefs.find(b=>b.id===entry.itemId)?.title:kind==='G10_LISTENING'?'Hörschärfe · Eigene Hörnotiz':kind==='M04'?productionPrompts.find(p=>p.id===entry.itemId)?.objective:
  kind==='G08'?lookup(entry.itemId,pragmaticScenarios)?.title:
  kind==='G09_READING'?lookup(entry.itemId,readingStudies)?.title:
  readingTransferBriefs.find(b=>b.unitId===entry.sourceId)?.title;
- const description=kind==='G10_LISTENING'?'Hörschärfe · G10':kind==='M04'?'Satzlabor · freie Formulierung':kind==='G08'?'Wirkung und Pragmatik':
+ const description=kind==='G13_MEDIATION'?'Sprachmittlung · G13':kind==='G10_LISTENING'?'Hörschärfe · G10':kind==='M04'?'Satzlabor · freie Formulierung':kind==='G08'?'Wirkung und Pragmatik':
  kind==='G09_READING'?'Lesestudie · Textbelege':'Lesen → Schreiben · Zielgruppenbrief';
- const context=kind==='G10_LISTENING'?'Lernereigene Audiodatei (nicht gespeichert)':kind==='M04'?productionPrompts.find(p=>p.id===entry.itemId)?.instruction:
+ const context=kind==='G13_MEDIATION'?mediationBriefs.find(b=>b.id===entry.itemId)?.task:kind==='G10_LISTENING'?'Lernereigene Audiodatei (nicht gespeichert)':kind==='M04'?productionPrompts.find(p=>p.id===entry.itemId)?.instruction:
  kind==='G08'?pragmaticScenarios.find(s=>s.id===entry.itemId)?.task:
  kind==='G09_READING'?readingStudies.find(s=>s.id===entry.itemId)?.focus:
  readingTransferBriefs.find(b=>b.unitId===entry.sourceId)?.instruction;
  const lastAt=Math.max(entry.createdAt,...entry.revisions.map(r=>r.at).filter(n=>Number.isFinite(n)));
- return {entry,kind,title:title??'Historischer Entwurf ('+entry.itemId+')',context:context??'Originalinhalt inzwischen nicht mehr im Entwurfskatalog.',description,scope:kind==='G10_LISTENING'?'G10':kind==='M04'?'G04':kind==='G08'?'G08':'G09',lastAt,revisions:entry.revisions.length};
+ return {entry,kind,title:title??'Historischer Entwurf ('+entry.itemId+')',context:context??'Originalinhalt inzwischen nicht mehr im Entwurfskatalog.',description,scope:kind==='G13_MEDIATION'?'G13':kind==='G10_LISTENING'?'G10':kind==='M04'?'G04':kind==='G08'?'G08':'G09',lastAt,revisions:entry.revisions.length};
 }
 export function archiveRows(entries:readonly ProductionEntry[], query:ArchiveQuery):ArchiveRow[]{
  const term=query.search.trim().toLocaleLowerCase('de-DE');
