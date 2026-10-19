@@ -1,0 +1,162 @@
+[
+  {
+    "id": "SG-I10-001",
+    "band": "C1",
+    "title": "Prioritäten im Projektgespräch",
+    "role": "Projektkoordination",
+    "context": "Zwei Aufgabenpakete müssen bei begrenzter Zeit priorisiert werden. Im Planungsgespräch unterscheiden sich die Erwartungen.",
+    "registers": [
+      "Sachlich-kollegial",
+      "Verbindlich-formell"
+    ],
+    "turns": [
+      {
+        "id": "t0",
+        "speaker": "Projektkoordination",
+        "text": "Ich würde die Auswertung gern diese Woche abschließen. Können wir die zusätzliche Prüfung nicht einfach streichen?",
+        "task": "Reagiere auf den Zeitdruck. Erkläre, worauf du dich festlegen kannst und welche Grenze bleibt."
+      },
+      {
+        "id": "t1",
+        "speaker": "Projektkoordination",
+        "text": "Verstehe ich. Aber ohne den Abschluss am Freitag wird die Entscheidung womöglich verschoben. Was ist denn tatsächlich unverzichtbar?",
+        "task": "Nimm die Konsequenz ernst und gewichte Mindestprüfung, Zeit und Entscheidungsspielraum."
+      },
+      {
+        "id": "t2",
+        "speaker": "Projektkoordination",
+        "text": "Dann lass uns einen Zwischenstand veröffentlichen. Wie stellen wir sicher, dass der Vorbehalt nicht als Freigabe missverstanden wird?",
+        "task": "Handle eine präzise Formulierung und eine nächste überprüfbare Handlung aus."
+      }
+    ],
+    "version": 1,
+    "domain": "G12",
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_20261019",
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale fiktive Gesprächssituation und Gesprächszüge; keine fremden Dialogtranskripte"
+    }
+  },
+  {
+    "id": "SG-I10-002",
+    "band": "C1",
+    "title": "Einwände in einer Fachbesprechung",
+    "role": "Teammitglied",
+    "context": "Eine Kollegin schlägt eine neue Besprechungsstruktur vor. Die Rückmeldungen stammen nur aus einer kleinen Testgruppe.",
+    "registers": [
+      "Konstruktiv-kollegial",
+      "Diplomatisch-formell"
+    ],
+    "turns": [
+      {
+        "id": "t0",
+        "speaker": "Teammitglied",
+        "text": "Das neue Format kam bei der Testgruppe gut an. Warum sollten wir es nicht sofort für alle übernehmen?",
+        "task": "Würdige den Vorschlag, unterscheide Rückmeldung und repräsentative Evidenz."
+      },
+      {
+        "id": "t1",
+        "speaker": "Teammitglied",
+        "text": "Wenn wir jetzt noch alle befragen, wird die Einführung unnötig kompliziert. Haben wir nicht schon genug Hinweise?",
+        "task": "Antworte auf den Aufwandseinwand und schlage eine begrenzte, praktikable Prüfung vor."
+      },
+      {
+        "id": "t2",
+        "speaker": "Teammitglied",
+        "text": "Ich könnte einem kleineren Pilotprojekt zustimmen. Nach welchen Kriterien entscheiden wir später über die Ausweitung?",
+        "task": "Vereinbare nachvollziehbare Kriterien und eine gemeinsame Entscheidungsschwelle."
+      }
+    ],
+    "version": 1,
+    "domain": "G12",
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_20261019",
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale fiktive Gesprächssituation und Gesprächszüge; keine fremden Dialogtranskripte"
+    }
+  },
+  {
+    "id": "SG-I10-003",
+    "band": "C2",
+    "title": "Kontroverse mit berechtigter Gegenposition",
+    "role": "Diskussionsleitung",
+    "context": "Eine Hochschule berät über verlängerte Öffnungszeiten. Mehr Zugänglichkeit steht gegen personelle Belastung und unsichere Nachfrage.",
+    "registers": [
+      "Abwägend-öffentlich",
+      "Präzise-institutionell"
+    ],
+    "turns": [
+      {
+        "id": "t0",
+        "speaker": "Diskussionsleitung",
+        "text": "Befürworter sagen, alles andere als längere Öffnungszeiten benachteilige Studierende. Gegner halten das für eine überzogene Forderung. Wie beurteilen Sie den Konflikt?",
+        "task": "Erkenne die legitimen Anliegen beider Seiten an, ohne die Standpunkte gleichzusetzen."
+      },
+      {
+        "id": "t1",
+        "speaker": "Diskussionsleitung",
+        "text": "Ein Kompromiss klingt gut, aber Kritiker werden sagen, das Problem werde nur vertagt. Was würde eine Zwischenlösung tatsächlich leisten?",
+        "task": "Formuliere eine bedingte Verteidigung einer Zwischenlösung samt Einwand und Antwort."
+      },
+      {
+        "id": "t2",
+        "speaker": "Diskussionsleitung",
+        "text": "Angenommen, die zusätzlichen Zeiten werden nur vereinzelt genutzt. Würden Sie Ihre Position ändern?",
+        "task": "Stelle eine überprüfbare Bedingung für die Revision deiner Position auf."
+      }
+    ],
+    "version": 1,
+    "domain": "G12",
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_20261019",
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale fiktive Gesprächssituation und Gesprächszüge; keine fremden Dialogtranskripte"
+    }
+  },
+  {
+    "id": "SG-I10-004",
+    "band": "C2",
+    "title": "Schwierige Verhandlung über Unsicherheit",
+    "role": "Verhandlungspartnerin",
+    "context": "Zwei Organisationen verhandeln eine gemeinsame Analyse. Die Methoden sind noch nicht abgestimmt; eine Seite möchte öffentlich einen verbindlichen Erfolgstermin nennen.",
+    "registers": [
+      "Zurückhaltend-verhandelnd",
+      "Direkt-verbindlich"
+    ],
+    "turns": [
+      {
+        "id": "t0",
+        "speaker": "Verhandlungspartnerin",
+        "text": "Wir brauchen bis Monatsende ein klares Erfolgsversprechen. Ein offener Prüfvorbehalt könnte gegenüber Förderern schwach wirken.",
+        "task": "Grenze Zusage von Prognose ab und biete eine verantwortbare Alternative an."
+      },
+      {
+        "id": "t1",
+        "speaker": "Verhandlungspartnerin",
+        "text": "Dann legen wir doch nur ein ambitioniertes Ziel fest. Wer würde uns später vorwerfen, dass es nicht garantiert war?",
+        "task": "Lege die mögliche Fehlinterpretation offen, ohne der Gegenseite unlautere Absichten zu unterstellen."
+      },
+      {
+        "id": "t2",
+        "speaker": "Verhandlungspartnerin",
+        "text": "Gut, nehmen wir Zwischenziele. Welche Zusagen dürfen wir trotzdem verbindlich nach außen vertreten?",
+        "task": "Unterscheide kontrollierbare Arbeitsschritte von ungesicherten Ergebnissen und fixiere den Konsens."
+      }
+    ],
+    "version": 1,
+    "domain": "G12",
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_20261019",
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale fiktive Gesprächssituation und Gesprächszüge; keine fremden Dialogtranskripte"
+    }
+  }
+]
