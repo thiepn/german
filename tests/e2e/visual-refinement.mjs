@@ -17,7 +17,7 @@ async function geometry(page,label){
  });
  assert.ok(g.heading,'main heading '+label);
  assert.ok(g.overflow<=1,'no horizontal overflow '+label+' '+JSON.stringify(g));
- if(!g.nav.length)assert.ok(g.width>700,'desktop navigation only '+label);
+ if(!g.nav.length)assert.ok(label.startsWith('onboarding')||g.width>700,'mobile tabs expected outside onboarding '+label);
  else{
   assert.equal(g.nav.length,5,'five mobile routes '+label);
   assert.ok(g.nav.every(n=>n.height>=44&&n.border==='3px'&&n.scrollWidth<=n.width+1),'stable accessible mobile navigation '+label+' '+JSON.stringify(g.nav));
