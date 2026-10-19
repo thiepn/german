@@ -22,6 +22,7 @@ import DataManagement from '../features/data/DataManagement';
 import ProductionStudio from '../features/production/ProductionStudio';
 import ReadingStudio from '../features/reading/ReadingStudio';
 import PragmaticsStudio from '../features/pragmatics/PragmaticsStudio';
+import ListeningStudio from '../features/listening/ListeningStudio';
 import WritingArchive from '../features/archive/WritingArchive';
 import type {ArchiveKind} from '../domain/archive/archive';
 import {loadProductionEntries} from '../persistence/schema';
@@ -41,6 +42,7 @@ export default function App(){
  const [showProduction,setShowProduction]=useState(false);
  const [showReading,setShowReading]=useState(false);
  const [showPragmatics,setShowPragmatics]=useState(false);
+ const [showListening,setShowListening]=useState(false);
  const [showArchive,setShowArchive]=useState(false);
  const [archiveSource,setArchiveSource]=useState<string|null>(null);
  const [productions,setProductions]=useState<ProductionEntry[]>([]);
@@ -79,18 +81,18 @@ export default function App(){
  void offlineState().then(s=>{if(alive)setOffline(s)}).catch(()=>{});
  return ()=>{alive=false};},[]);
  const recommended=chooseSession(allItems,attempts,cards,Date.now(),1)[0];
- function selectTab(next:Tab){setShowArchive(false);setArchiveSource(null);setShowPragmatics(false);setShowReading(false);setShowProduction(false);setShowData(false);setTab(next);setItem(null);setReviewPage(false);setShowDiagnostic(false);setFeedback(null);}
+ function selectTab(next:Tab){setShowListening(false);setShowArchive(false);setArchiveSource(null);setShowPragmatics(false);setShowReading(false);setShowProduction(false);setShowData(false);setTab(next);setItem(null);setReviewPage(false);setShowDiagnostic(false);setFeedback(null);}
  function openArchived(kind:ArchiveKind,record:ProductionEntry){
-  setShowArchive(false);setArchiveSource(kind==='G09_TRANSFER'?record.sourceId??null:record.itemId);
+  setShowArchive(false);setArchiveSource(kind==='G10_LISTENING'?record.id:kind==='G09_TRANSFER'?record.sourceId??null:record.itemId);
   setItem(null);setFeedback(null);setShowData(false);
-  setShowProduction(kind==='M04');setShowPragmatics(kind==='G08');setShowReading(kind==='G09_READING'||kind==='G09_TRANSFER');
+  setShowProduction(kind==='M04');setShowPragmatics(kind==='G08');setShowReading(kind==='G09_READING'||kind==='G09_TRANSFER');setShowListening(kind==='G10_LISTENING');
   setTab(kind==='M04'?'Trainieren':'Lernen');
  }
  function start(m:Mode,id?:string,asReview=false,sessionOverride?:string){
   const selected=id?itemById.get(id):chooseSession(itemsForMode(m),attempts,cards,Date.now(),1)[0];
   if(!selected)return;
   const sid=sessionOverride??crypto.randomUUID();
-  setMode(m);setItem(selected);setSessionId(sid);setValues({});setFeedback(null);setReviewing(asReview);setTab('Trainieren');setReviewPage(false);setShowDiagnostic(false);setShowProduction(false);setShowReading(false);setShowPragmatics(false);
+  setMode(m);setItem(selected);setSessionId(sid);setValues({});setFeedback(null);setReviewing(asReview);setTab('Trainieren');setReviewPage(false);setShowDiagnostic(false);setShowProduction(false);setShowReading(false);setShowPragmatics(false);setShowListening(false);
   const draft:Draft={id:'active',itemId:selected.id,mode:m,sessionId:sid,slots:{},updatedAt:Date.now()};
   void saveDraft(draft).catch(e=>setError('Entwurf konnte nicht gespeichert werden: '+String(e)));
  }
@@ -193,8 +195,8 @@ export default function App(){
   <div className="banner">DEMO_ONLY · {allItems.length} nicht freigegebene Aufgaben · 0 von 350 P1-Aufgaben redaktionell genehmigt. Kein CEFR-Zertifikat.</div>
   {error&&<div className="banner" role="alert">{error}<div><button type="button" className="button text" onClick={()=>setError('')}>Hinweis schließen</button></div></div>}
   {showData?<DataManagement onExit={()=>setShowData(false)} onRestore={refresh}/>:<>
-  {tab==='Heute'&&<Today attempts={attempts} cards={cards} recommended={recommended} mission={mission} dailyMinutes={settings?.dailyMinutes??30} onStart={()=>void beginMission()} onReview={()=>{setReviewPage(true);setTab('Trainieren')}} onOpenErrors={()=>selectTab('Fehler')} onDiagnostic={()=>{setShowDiagnostic(true);setTab('Lernen')}} onProduction={()=>{setShowProduction(true);setTab('Trainieren')}} onData={()=>setShowData(true)} onReading={()=>{setShowReading(true);setTab('Lernen')}} onPragmatics={()=>{setShowPragmatics(true);setShowReading(false);setTab('Lernen')}}/>}
-  {tab==='Lernen'&&(showDiagnostic?<DiagnosticPanel onExit={()=>setShowDiagnostic(false)}/>:showPragmatics?<PragmaticsStudio initialSelection={archiveSource??undefined} onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowPragmatics(false);setArchiveSource(null)}}/>:showReading?<ReadingStudio initialSelection={archiveSource??undefined} onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowReading(false);setArchiveSource(null)}} onTransfer={(m,id)=>start(m,id)} onPragmatics={()=>{setShowReading(false);setShowPragmatics(true)}}/>:<Curriculum onStart={m=>start(m)} onReading={()=>setShowReading(true)} onPragmatics={()=>setShowPragmatics(true)}/>)}
+  {tab==='Heute'&&<Today attempts={attempts} cards={cards} recommended={recommended} mission={mission} dailyMinutes={settings?.dailyMinutes??30} onStart={()=>void beginMission()} onReview={()=>{setReviewPage(true);setTab('Trainieren')}} onOpenErrors={()=>selectTab('Fehler')} onDiagnostic={()=>{setShowDiagnostic(true);setTab('Lernen')}} onProduction={()=>{setShowProduction(true);setTab('Trainieren')}} onData={()=>setShowData(true)} onReading={()=>{setShowReading(true);setTab('Lernen')}} onPragmatics={()=>{setShowPragmatics(true);setShowReading(false);setTab('Lernen')}} onListening={()=>{setShowListening(true);setTab('Lernen')}}/>}
+  {tab==='Lernen'&&(showDiagnostic?<DiagnosticPanel onExit={()=>setShowDiagnostic(false)}/>:showListening?<ListeningStudio initialSelection={archiveSource??undefined} onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowListening(false);setArchiveSource(null)}}/>:showPragmatics?<PragmaticsStudio initialSelection={archiveSource??undefined} onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowPragmatics(false);setArchiveSource(null)}}/>:showReading?<ReadingStudio initialSelection={archiveSource??undefined} onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowReading(false);setArchiveSource(null)}} onTransfer={(m,id)=>start(m,id)} onPragmatics={()=>{setShowReading(false);setShowPragmatics(true)}}/>:<Curriculum onStart={m=>start(m)} onReading={()=>setShowReading(true)} onPragmatics={()=>setShowPragmatics(true)} onListening={()=>setShowListening(true)}/>)}
   {tab==='Trainieren'&&(showProduction?<ProductionStudio initialSelection={archiveSource??undefined} onExit={()=>{void refresh().catch(e=>setError(String(e)));setShowProduction(false);setArchiveSource(null)}}/>:item?<><div className="status" aria-live="polite">{mission&&sessionId===mission.id?'Tagesmission · Aufgabe '+(mission.index+1)+' / '+mission.steps.length+' · '+missionStep(mission)?.kind:''}</div><PracticeRunner item={item} values={values} onChange={onChange} feedback={feedback} onSubmit={submit} submitting={busy} onNext={()=>void nextQuestion()} onExit={()=>void exitQuestion()} reviewing={reviewing} onReviewGrade={gradeReview}/>{feedback&&sessionId&&!sessionId.startsWith('review-transfer:')&&!(mission&&sessionId===mission.id)&&(()=>{
  const event=reviews.find(e=>e.id===sessionId+':review:'+item.id+':'+item.version);
  if(!event)return null;

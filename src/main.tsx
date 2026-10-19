@@ -7,6 +7,7 @@ import './app/styles/learning.css';
 import './app/styles/reading.css';
 import './app/styles/pragmatics.css';
 import './app/styles/archive.css';
+import './app/styles/listening.css';
 import {installOfflineWorker} from './offline/packageManager';
 const root=document.getElementById('root');if(!root)throw Error('root is missing');
 createRoot(root).render(<React.StrictMode><App/></React.StrictMode>);

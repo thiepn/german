@@ -2,7 +2,7 @@ import {useEffect,useRef,useState} from 'react';
 import type {ChangeEvent} from 'react';
 import type {ProductionEntry} from '../../domain/production/types';
 import {loadProductionEntries,saveProductionEntry} from '../../persistence/schema';
-import {TASKS,addListeningNote,clock,decodeAnchor,isListeningEntry,limitTime,listeningEntries,listeningEvidence,newListeningEntry,nextListeningTask,validateLocalAudio} from '../../domain/listening/listening';
+import {TASKS,addListeningNote,clock,decodeAnchor,limitTime,listeningEntries,listeningEvidence,newListeningEntry,nextListeningTask,validateLocalAudio} from '../../domain/listening/listening';
 export default function ListeningStudio({onExit,initialSelection}:{onExit:()=>void;initialSelection?:string}){
  const [entries,setEntries]=useState<ProductionEntry[]>([]);
  const [selected,setSelected]=useState(initialSelection??'new');
