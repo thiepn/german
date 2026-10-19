@@ -43,6 +43,8 @@ test('source evidence and uncertainty are required for each separate argumentati
  assert.equal(argued.original,original.original);assert.equal(argued.decisionId,original.decisionId);
  assert.equal(versionPair(argued,1)?.previous,'Vorsichtige Meldung');
  assert.equal(archiveRows([argued],{kind:'G13_MEDIATION',activity:'REVISED',period:'ALL',search:'Vergleichsgruppen',now:at+3}).length,1);
+ assert.equal(archiveRows([argued],{kind:'G13_MEDIATION',activity:'ALL',period:'ALL',search:b.unitId,now:at+3}).length,1);
+ assert.equal(archiveRows([argued],{kind:'G13_MEDIATION',activity:'ALL',period:'ALL',search:'p3',now:at+3}).length,1);
  assert.throws(()=>addMediationRevision(original,b,'ARGUMENT','Text','p9','Unklar','bad',at),/vollständig/);
  assert.throws(()=>addMediationRevision(original,b,'ADAPTATION','Text','p1',' ','bad',at),/vollständig/);
  assert.throws(()=>addMediationRevision({...original,sourceId:'unexpected'},b,'ARGUMENT','Text','p1','Unklar','bad',at),/vollständig/);

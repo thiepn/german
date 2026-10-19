@@ -45,7 +45,7 @@ export function archiveRows(entries:readonly ProductionEntry[], query:ArchiveQue
   if(query.activity==='REVISED'&&row.revisions===0)return false;
   if(periodMs!==null&&(!Number.isFinite(row.lastAt)||row.lastAt<query.now-periodMs||row.lastAt>query.now))return false;
   if(!term)return true;
-  const texts=[row.title,row.context,row.description,row.entry.itemId,row.entry.original,...row.entry.revisions.flatMap(r=>[r.text,r.reflection,r.lens??'',...(r.selfChecks??[])])];
+  const texts=[row.title,row.context,row.description,row.entry.itemId,row.entry.sourceId??'',row.entry.decisionId??'',row.entry.original,...row.entry.revisions.flatMap(r=>[r.text,r.reflection,r.lens??'',r.paragraphId??'',r.questionId??'',...(r.selfChecks??[])])];
   return texts.join(' ').toLocaleLowerCase('de-DE').includes(term);
  }).sort((a,b)=>b.lastAt-a.lastAt||a.entry.id.localeCompare(b.entry.id));
 }
