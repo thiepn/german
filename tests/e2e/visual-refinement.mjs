@@ -37,6 +37,7 @@ try{
    let g=await geometry(page,'onboarding '+width+' '+scheme);
    assert.ok(g.titleOffset!==null&&Math.abs(g.titleOffset)<3,'no orphan top margin on onboarding '+JSON.stringify(g));
    await page.getByRole('button',{name:'Mit dem Lernen beginnen'}).click();
+   await page.getByRole('heading',{name:'Heute',exact:true}).waitFor();
    g=await geometry(page,'today '+width+' '+scheme);
    assert.ok(Math.abs(g.titleOffset)<3,'no extra headline offset '+JSON.stringify(g));
    if(width<=700){
