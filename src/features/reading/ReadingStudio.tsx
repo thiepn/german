@@ -66,7 +66,7 @@ export default function ReadingStudio({onExit,onTransfer,onPragmatics,initialSel
  <div className="buttonrow"><button className="button outline" disabled={!recorded} onClick={()=>setRevealed(v=>v.includes(question.id)?v.filter(x=>x!==question.id):[...v,question.id])}>{revealed.includes(question.id)?'Vergleich ausblenden':'Musterdeutung vergleichen'}</button></div>
  {recorded&&revealed.includes(question.id)&&<div className="feedback"><strong>Eine mögliche Deutung — nicht unabhängig geprüft</strong><p>{question.model}</p></div>}
  </section>
- {complete?<ReadingTransfer key={unit.id} unitId={unit.id} entries={entries} onSaved={refresh}/>:}
+ {complete&&<ReadingTransfer key={unit.id} unitId={unit.id} entries={entries} onSaved={refresh}/>}
  <section className="panel"><h2>In einer anderen Übungsform anwenden</h2><p>{unit.transfer.why}</p><button className="button outline" onClick={()=>{try{const t=transferTarget(unit);onTransfer(t.mode,t.id)}catch(e){setError(String(e))}}}>Zum passenden Sprachtraining wechseln</button><button className="button outline" onClick={onPragmatics}>Anschließend G08 Situationsangemessenheit üben</button></section>
  </>}
  {error&&<p role="alert" className="banner">{error}</p>}<button className="button text" onClick={onExit}>Zurück zum Curriculum</button></section>;

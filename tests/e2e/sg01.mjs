@@ -45,7 +45,7 @@ async function open(viewport){
  assert.ok(state>0,'offline cache installed');
  await context.setOffline(true);
  await page.reload({waitUntil:'domcontentloaded'});
- await page.getByText('Sprachgefühl SG-01',{exact:false}).first().waitFor();
+ await page.getByRole('navigation',{name:'Hauptnavigation'}).first().waitFor();
  await context.setOffline(false);
  const hasOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1);
  assert.equal(hasOverflow,false,'no horizontal overflow');

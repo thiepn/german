@@ -33,7 +33,7 @@
 .feedback[role=status],.feedback[role=alert]{overflow-wrap:anywhere}
 .listitem{border-bottom:1px solid var(--line);padding:17px 0}.listitem:last-child{border-bottom:0}
 .metrics{display:flex;gap:32px;flex-wrap:wrap;margin:25px 0}.metric strong{display:block;font-family:Manrope,Inter,"Segoe UI",sans-serif;font-weight:800;font-size:30px;letter-spacing:-.05em}
-.metric small{color:var(--muted)}.banner{background:color-mix(in srgb,var(--warning) 9%,var(--panel));color:var(--ink);padding:11px 14px;border-left:3px solid var(--warning);border-radius:6px;font-size:14px;margin:16px 0}
+.metric small{color:var(--muted);font-size:14px}.banner{background:color-mix(in srgb,var(--warning) 9%,var(--panel));color:var(--ink);padding:11px 14px;border-left:3px solid var(--warning);border-radius:6px;font-size:14px;margin:16px 0}
 .bottomnav{display:none}.skip{position:absolute;left:-10000px}.skip:focus{left:8px;top:8px;background:var(--panel);z-index:100;padding:9px}
 .today-hero{margin-bottom:16px}.today-hero .page-title{font-size:clamp(32px,4.5vw,49px);margin:10px 0}
 .today-mission{max-width:780px;padding:26px 28px}.today-mission-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px}.today-mission-header h2{font-size:20px;margin:0}

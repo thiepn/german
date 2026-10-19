@@ -192,7 +192,7 @@ export default function App(){
  const nav=(t:Tab)=>selectTab(t);
  return <MobileShell active={tab} onSelect={nav}>
   <div className="status">Offline: {offline==='READY'?'verfügbar':offline==='UNINSTALLED'?'noch nicht installiert':offline==='PARTIAL'?'unvollständig':'nicht verfügbar'}</div>
-  <div className="banner">DEMO_ONLY · {allItems.length} nicht freigegebene Aufgaben · 0 von 350 P1-Aufgaben redaktionell genehmigt. Kein CEFR-Zertifikat.</div>
+  {(tab==='Heute'||tab==='Trainieren')&&<div className="banner">DEMO_ONLY · {allItems.length} Entwurfsaufgaben · 0/350 unabhängig freigegeben. Keine CEFR-Einstufung.</div>}
   {error&&<div className="banner" role="alert">{error}<div><button type="button" className="button text" onClick={()=>setError('')}>Hinweis schließen</button></div></div>}
   {showData?<DataManagement onExit={()=>setShowData(false)} onRestore={refresh} onListening={()=>{setShowData(false);setShowListening(true);setArchiveSource(null);setTab('Lernen')}}/>:<>
   {tab==='Heute'&&<Today attempts={attempts} cards={cards} recommended={recommended} mission={mission} dailyMinutes={settings?.dailyMinutes??30} onStart={()=>void beginMission()} onReview={()=>{setReviewPage(true);setTab('Trainieren')}} onOpenErrors={()=>selectTab('Fehler')} onDiagnostic={()=>{setShowDiagnostic(true);setTab('Lernen')}} onProduction={()=>{setShowProduction(true);setTab('Trainieren')}} onData={()=>setShowData(true)} onReading={()=>{setShowReading(true);setTab('Lernen')}} onPragmatics={()=>{setShowPragmatics(true);setShowReading(false);setTab('Lernen')}} onListening={()=>{setShowListening(true);setTab('Lernen')}}/>}
