@@ -15,3 +15,7 @@ Draft PR #1: `feature/sg01-core-learning-foundation`. **Not merged or deployed.*
 350 genuinely independently approved P1 questions and 10 approved lessons, licensed/approved diagnostic audio, human evaluation provisions, accessibility/real-device testing, and full domain learning coverage. No machine-rated free German writing or CEFR guarantee.
 
 See `docs/P1-completeness.md` for source-based inventory and gaps.
+
+## M08 implementation-first
+- Learner-supplied local audio, playback controls, original listening interpretation, timestamped ungraded follow-ups, resume/archive/progress, same productionEntries store; audio is never copied, cached, exported or synchronized.
+- No approved audio, automatic transcription or objective listening score. M08 is not part of the seven graded modes and cannot certify a CEFR level.

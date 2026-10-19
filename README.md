@@ -40,3 +40,7 @@ npm run test:browser
 ```
 
 No deployment, DNS configuration, credentials, paid APIs, migrations of other apps or production data writes. PR #1 remains a draft; see `docs/P1-completeness.md` and `docs/editorial/P1-content-policy.md`.
+
+## M08 Hörschärfe — learner-owned audio
+
+Choose a local audio recording you are permitted to use, replay at adjustable speed, seek and save a first interpretation plus time-anchored notes. Only those authored texts and their timestamps are stored in original IndexedDB v4 `productionEntries` and backup v3; audio, filename and transcripts are never stored, uploaded or backed up. No CEFR level or automatic listening grade is assigned. Re-select the original file after refresh. All four scaffolds remain unreviewed DEMO_ONLY material.

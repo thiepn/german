@@ -48,3 +48,9 @@ Seven objective modes; Today and resumable bounded mission; original attempt/rev
 - Dedicated read-only Schreibspuren browser over existing original G04/G08/G09 writing and reading records, no duplicate storage.
 - Search, source filters, revision status/time range, original and modified versions, self-check/paragraph evidence, historical fallback, and deep links to native writers.
 - Counters reflect only saved actions; no invented proficiency/grammar grades. IndexedDB v4 and backup v3 remain unchanged. See `docs/P1-writing-archive.md`.
+
+## M08 learner-owned audio workspace
+- Original learner-provided audio playback (seek, tempo, time anchors); no bundled audio and no upload, recording, automatic transcript or media storage.
+- Four open listening scaffolds across perspective, evidence, qualification, mediation. First response and later evidence are stored through existing `productionEntries` immutable revision CAS, visible in Progress and Schreibspuren.
+- Browser session must reattach the file after reload. Existing 8 IndexedDB stores, backup v3, M01–M07, error/review/mastery/mission authority, diagnostic gates and `thiepn/artikelwerk` separation unchanged.
+- No official C1/C2 listening calibration, human approval or listening certification. Learner-controlled source does not establish comprehension quality.
