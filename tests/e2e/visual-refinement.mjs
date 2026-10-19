@@ -11,7 +11,7 @@ async function geometry(page,label){
   const nav=[...document.querySelectorAll('.bottomnav button')].filter(el=>el.getClientRects().length>0);
   return {
    width,overflow:document.documentElement.scrollWidth-width,
-   heading:title?.textContent?.trim()??'',titleOffset:title&&main?title.getBoundingClientRect().top-main.getBoundingClientRect().top-parseFloat(getComputedStyle(main).paddingTop):null,
+   heading:title?.textContent?.trim()??'',titleOffset:title?parseFloat(getComputedStyle(title).marginTop):null,
    nav:nav.map(el=>({text:el.textContent?.trim(),height:el.getBoundingClientRect().height,width:el.clientWidth,scrollWidth:el.scrollWidth,border:getComputedStyle(el).borderTopWidth})),
   };
  });
