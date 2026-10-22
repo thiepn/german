@@ -31,8 +31,9 @@ test('manifest and editorial queue include all reading passages and questions wi
  const m=JSON.parse(readFileSync('content/manifest.json','utf8'));
  assert.equal(m.readingUnitCount,4);assert.equal(m.readingQuestionCount,12);
  const worklist=collect();
- assert.equal(worklist.length,m.demoItemCount+m.productionPromptCount+m.readingUnitCount+m.readingQuestionCount+m.pragmaticScenarioCount+m.readingTransferCount);
+ assert.equal(worklist.length,m.demoItemCount+m.productionPromptCount+m.readingUnitCount+m.readingQuestionCount+m.pragmaticScenarioCount+m.readingTransferCount+m.modalityDraftCount*4);
  assert.equal(worklist.filter(x=>x.type==='READING_TEXT').length,4);
  assert.equal(worklist.filter(x=>x.type==='READING_EVIDENCE').length,12);
+ assert.equal(worklist.filter(x=>x.mode==='G05').length,m.modalityDraftCount*4);
  assert.ok(worklist.every(x=>!x.independentEditorialApproval));
 });
