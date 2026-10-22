@@ -46,7 +46,12 @@ export function collect(){
   ...s.contrasts.map(c=>({id:s.id+':'+c.id,version:s.version,type:'G05_AUTHOR_CONTRAST',mode:'G05',status:s.status,authorId:s.author,prompt:c.prompt,quote:c.quote,optionIds:c.options.map(o=>o.id),preferredId:c.preferredId,model:c.model,issues:['Verify the contrast against the cited paragraph','Check ambiguity and competing defensible interpretations','Review author feedback accuracy and teaching value','No inferred CEFR or automated grading'],independentEditorialApproval:false}))
  ]);
  if(modality.length!==manifest.modalityDraftCount*4)throw Error('Missing G05 draft editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality],allIds=new Set();
+ const caseTracing=read(manifest.caseTracingDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G02_ORIGINAL_SOURCE',mode:'G02',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently review every source paragraph and deliberately malformed example','Check original authorship, rights and stable case identities','Verify real C1–C2 difficulty before any certification'],independentEditorialApproval:false},
+  ...s.repairs.map(t=>({id:s.id+':'+t.id,version:s.version,type:'G02_GOVERNED_REPAIR',mode:'G02',status:s.status,authorId:s.author,prompt:t.quote,paragraphId:t.paragraphId,governor:t.governor,canonicalSolution:t.solution,issues:['Verify syntactic governor, gender, number and case including acceptable variants','Verify adjective/participle/noun inflection and register','Validate model explanation and learner task clarity','Do not auto-grade free repairs or certify C1–C2 level'],independentEditorialApproval:false}))
+ ]);
+ if(caseTracing.length!==manifest.caseTracingDraftCount*4)throw Error('Missing G02 original editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }
