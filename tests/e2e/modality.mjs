@@ -26,8 +26,8 @@ async function run(width){
   await answer(p,'A',intro);
   await p.getByRole('heading',{name:'Textdeutung 2 / 3'}).waitFor();
   assert.equal(await p.locator('.modality-reading').count(),1);
-  await p.getByText('Autorenlesart und sprachliche Begründung').first().click();
-  assert.match(await p.locator('.modality-reading').first().innerText(),/Die Leitung behauptet/);
+  await p.locator('.modality-reading details[open]').first().waitFor();
+  assert.match(await p.locator('.modality-reading details[open]').first().innerText(),/Die Leitung behauptet/);
   // Both tabs now hold the same immutable source and revision counter.
   if(width===1280){
    secondTab=await choose(ctx);
