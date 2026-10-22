@@ -1,0 +1,404 @@
+[
+  {
+    "id": "SG-G02-001",
+    "version": 1,
+    "domain": "G02",
+    "band": "C1",
+    "title": "Vermerk zur fachlichen Prüfung",
+    "context": "Rektion und Bezugsformen im schriftlichen Projektbericht",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Arbeitsgruppe stützt sich auf dem vorläufige Bericht der externen Fachleute. Darin sind die offenen Fragen klar benannt; die Einschätzung ersetzt aber noch keine endgültige Entscheidung der Auftraggebenden."
+      },
+      {
+        "id": "p2",
+        "text": "Die Referentin übergab dem zuständige Kollegen die Anlagen für den Termin am Freitag. Er sollte die unvollständigen Belege bis zur Sitzung gesondert kennzeichnen, damit niemand die Unterlagen für freigegeben hält."
+      },
+      {
+        "id": "p3",
+        "text": "Wegen des unerwartet hohen Kosten wurde die endgültige Vergabe vertagt. Die Kommission bat um eine aktualisierte Aufstellung und setzte eine neue Frist für die Beratung an."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "family": "GOVERNED_CASE",
+        "quote": "auf dem vorläufige Bericht",
+        "governor": "sich stützen auf + Akkusativ",
+        "role": "AKKUSATIV",
+        "solution": "auf den vorläufigen Bericht",
+        "explanation": "Die feste Verbindung „sich auf etwas stützen“ regiert den Akkusativ. Bei „den“ trägt das Adjektiv die schwache Endung -en: „auf den vorläufigen Bericht“.",
+        "transferHint": "Formuliere eine eigene Aussage mit „sich auf ... stützen“ und benenne die Grundlage."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "family": "N_DECLENSION",
+        "quote": "dem zuständige Kollegen",
+        "governor": "übergeben + Dativempfänger; der Kollege gehört zur n-Deklination",
+        "role": "DATIV",
+        "solution": "dem zuständigen Kollegen",
+        "explanation": "„Übergeben“ verbindet die übergebene Sache mit einem Empfänger im Dativ. „Kollege“ erhält als schwaches Maskulinum im Dativ Singular -n; das attributive Adjektiv endet auf -en.",
+        "transferHint": "Baue einen Dativempfänger mit einem schwachen maskulinen Nomen ein."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "family": "GENITIVE_PLURAL",
+        "quote": "Wegen des unerwartet hohen Kosten",
+        "governor": "wegen + Genitiv; „Kosten“ ist Plural",
+        "role": "GENITIV",
+        "solution": "Wegen der unerwartet hohen Kosten",
+        "explanation": "Der formelle Genitiv Plural von „die Kosten“ lautet „der Kosten“. Das Adjektiv trägt nach dem bestimmten Artikel die Endung -en: „wegen der unerwartet hohen Kosten“.",
+        "transferHint": "Begründe einen Aufschub mit einer Genitivkonstruktion im Plural."
+      }
+    ],
+    "transfer": "Schreibe zwei eigene Sätze für eine interne Prüfnotiz: einen mit einer eindeutig benannten Akkusativergänzung und einen mit einer formal korrekten Genitiv- oder Dativgruppe. Begründe beide Kasusentscheidungen.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M13",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Übungsauszug, bewusst mit markierten Flexionsfehlern; kein übernommener Fremdtext"
+    }
+  },
+  {
+    "id": "SG-G02-002",
+    "version": 1,
+    "domain": "G02",
+    "band": "C1",
+    "title": "Nachtrag zu einer Datenerhebung",
+    "context": "Präposition, quantifizierter Genitiv und pluralische Flexion",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Mit einen sorgfältig dokumentierten Verfahren wurden die Messungen erneut durchgeführt. Die Forschenden verwendeten dieselben Geräte wie in der ersten Runde, hielten diesmal aber sämtliche Abweichungen schriftlich fest."
+      },
+      {
+        "id": "p2",
+        "text": "Die Auswertung mehrere unabhängiger Datensätze ergab ähnliche Tendenzen. Im Bericht wurde dennoch ausdrücklich darauf hingewiesen, dass aus der Übereinstimmung nicht auf identische Ursachen geschlossen werden kann."
+      },
+      {
+        "id": "p3",
+        "text": "Der Zwischenstand wurde an die neu berufene Gutachter übermittelt. Sie erhielten zusätzlich die Rohdaten und eine kurze Liste der noch nicht überprüften Annahmen."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "family": "MIXED_INFLECTION",
+        "quote": "Mit einen sorgfältig dokumentierten Verfahren",
+        "governor": "mit + Dativ; unbestimmter Artikel im Neutrum",
+        "role": "DATIV",
+        "solution": "Mit einem sorgfältig dokumentierten Verfahren",
+        "explanation": "„Mit“ regiert immer den Dativ. Der unbestimmte Artikel lautet bei „Verfahren“ im Dativ Singular „einem“, während die nachfolgenden Adjektive auf -en enden.",
+        "transferHint": "Nutze „mit einem ... Verfahren“ in einem eigenständigen Satz."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "family": "GENITIVE_PLURAL",
+        "quote": "mehrere unabhängiger Datensätze",
+        "governor": "Die Auswertung wessen? Genitiv Plural mit „mehrere“",
+        "role": "GENITIV",
+        "solution": "mehrerer unabhängiger Datensätze",
+        "explanation": "Die Nominalgruppe ergänzt „Auswertung“ als Genitivattribut. Der quantifizierende Begleiter steht im Genitiv Plural als „mehrerer“; das Adjektiv „unabhängiger“ übernimmt die starke Genitivpluralendung -er.",
+        "transferHint": "Bilde ein Genitivattribut mit „mehrerer ...“."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "family": "PLURAL_AGREEMENT",
+        "quote": "an die neu berufene Gutachter",
+        "governor": "übermitteln an + Akkusativ; pluralische Nominalgruppe",
+        "role": "AKKUSATIV",
+        "solution": "an die neu berufenen Gutachter",
+        "explanation": "Die Empfängergruppe wird hier mit „an + Akkusativ“ ausgedrückt. Bei bestimmtem Artikel im Akkusativ Plural endet das Adjektiv auf -en: „die neu berufenen Gutachter“.",
+        "transferHint": "Formuliere die Weitergabe eines Dokuments an eine Gruppe."
+      }
+    ],
+    "transfer": "Verfasse eine knappe Ergebnisnotiz mit einer Dativkonstruktion und einem eigenständig gebildeten Genitivattribut im Plural. Erläutere, welcher Ausdruck den jeweiligen Kasus auslöst.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M13",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Übungsauszug, bewusst mit markierten Flexionsfehlern; kein übernommener Fremdtext"
+    }
+  },
+  {
+    "id": "SG-G02-003",
+    "version": 1,
+    "domain": "G02",
+    "band": "C1",
+    "title": "Protokoll einer öffentlichen Anhörung",
+    "context": "Nominativ, Dativ Plural und feminine Genitivgruppe",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein erfahrene Fachkraft erläuterte den geplanten Umbau des Gebäudes. Sie stellte besonders die barrierefreien Zugänge und die noch offenen Fragen der Finanzierung vor."
+      },
+      {
+        "id": "p2",
+        "text": "Der Vorsitzende dankte den anwesende Mitgliedern für ihre schriftlichen Hinweise. Er bat darum, die Rückmeldungen getrennt nach technischen und organisatorischen Fragen zu dokumentieren."
+      },
+      {
+        "id": "p3",
+        "text": "Innerhalb des festgelegten Frist können weitere Einwendungen eingereicht werden. Das Sekretariat sichert zu, ihren Eingang zu bestätigen, ohne bereits über den Inhalt zu entscheiden."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "family": "NOMINATIVE_AGREEMENT",
+        "quote": "Ein erfahrene Fachkraft",
+        "governor": "Subjekt im Nominativ; „Fachkraft“ ist feminin",
+        "role": "NOMINATIV",
+        "solution": "Eine erfahrene Fachkraft",
+        "explanation": "Das Subjekt steht im Nominativ. „Fachkraft“ ist feminin, deshalb lautet die Artikelphrase „eine erfahrene Fachkraft“; die Endung -e erscheint am Artikel und Adjektiv.",
+        "transferHint": "Schreibe einen Satz mit einem femininen Subjekt und einem attributiven Adjektiv."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "family": "PLURAL_AGREEMENT",
+        "quote": "den anwesende Mitgliedern",
+        "governor": "danken + Dativ Plural; Mitglieder erhält Dativplural -n",
+        "role": "DATIV",
+        "solution": "den anwesenden Mitgliedern",
+        "explanation": "„Danken“ regiert den Dativ. Der Artikel steht im Dativ Plural als „den“, das Adjektiv erhält -en und „Mitglieder“ die Dativpluralform „Mitgliedern“.",
+        "transferHint": "Formuliere eine Danksagung an eine Gruppe im Dativ Plural."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "family": "GENDER_CASE",
+        "quote": "Innerhalb des festgelegten Frist",
+        "governor": "innerhalb + Genitiv; „Frist“ ist feminin",
+        "role": "GENITIV",
+        "solution": "Innerhalb der festgelegten Frist",
+        "explanation": "Im formellen Gebrauch regiert „innerhalb“ den Genitiv. „Frist“ ist feminin, daher lautet die Nominalgruppe „der festgelegten Frist“, nicht „des ... Frist“.",
+        "transferHint": "Nutze eine feminine Genitivgruppe mit „innerhalb“."
+      }
+    ],
+    "transfer": "Verfasse zwei Sätze für eine Anhörungsmitteilung, in denen ein feminines Subjekt und eine pluralische Dativgruppe eindeutig zugeordnet sind. Nenne ihre grammatischen Auslöser.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M13",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Übungsauszug, bewusst mit markierten Flexionsfehlern; kein übernommener Fremdtext"
+    }
+  },
+  {
+    "id": "SG-G02-004",
+    "version": 1,
+    "domain": "G02",
+    "band": "C2",
+    "title": "Hinweise für ein Beteiligungsverfahren",
+    "context": "Substantivierte Adjektive und gemischte Flexion",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Befragung der Betroffene wurde um einen weiteren Termin ergänzt. Das Gremium wollte erreichen, dass auch Personen ohne bisherigen Zugang zu den Unterlagen ihre Sicht einbringen können."
+      },
+      {
+        "id": "p2",
+        "text": "Das Gremium sprach mit einem Verantwortliche über die technischen Voraussetzungen der Teilnahme. Der Termin wurde bewusst vor die nächste Sitzung gelegt, damit offene Fragen frühzeitig geklärt werden konnten."
+      },
+      {
+        "id": "p3",
+        "text": "Ein neu hinzugekommenen Vertreter erhielt die Aufgabe, die Ergebnisse schriftlich zusammenzuführen. Er sollte in seiner Zusammenfassung zwischen geäußerten Wünschen und bereits zugesagten Maßnahmen unterscheiden."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "family": "NOMINALIZED_ADJECTIVE",
+        "quote": "der Betroffene",
+        "governor": "Befragung wessen? Genitiv Plural eines substantivierten Adjektivs",
+        "role": "GENITIV",
+        "solution": "der Betroffenen",
+        "explanation": "Die Befragten bilden eine Gruppe im Genitiv Plural: „der Betroffenen“. Das substantivierte Adjektiv schreibt man groß und flektiert es nach dem bestimmten Artikel schwach mit -en.",
+        "transferHint": "Nutze ein substantiviertes Adjektiv als Genitivattribut."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "family": "NOMINALIZED_ADJECTIVE",
+        "quote": "mit einem Verantwortliche",
+        "governor": "mit + Dativ Singular; substantiviertes Adjektiv",
+        "role": "DATIV",
+        "solution": "mit einem Verantwortlichen",
+        "explanation": "„Mit“ fordert den Dativ. Das substantivierte Adjektiv „Verantwortlicher“ wird im Dativ Singular Maskulinum nach „einem“ zu „Verantwortlichen“.",
+        "transferHint": "Verwende ein substantiviertes Adjektiv als Dativobjekt."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "family": "MIXED_INFLECTION",
+        "quote": "Ein neu hinzugekommenen Vertreter",
+        "governor": "Nominativ Maskulinum mit „ein“; attributives Partizip",
+        "role": "NOMINATIV",
+        "solution": "Ein neu hinzugekommener Vertreter",
+        "explanation": "Der unbestimmte Artikel „ein“ trägt im Nominativ Maskulinum keine Kasusendung. Das Partizip als Adjektiv übernimmt die starke Endung -er: „ein neu hinzugekommener Vertreter“.",
+        "transferHint": "Bilde ein maskulines Subjekt mit einem attributiv gebrauchten Partizip."
+      }
+    ],
+    "transfer": "Schreibe einen eigenen Bericht über ein Beteiligungsverfahren mit einer substantivierten Personenbezeichnung im Genitiv und einem korrekt flektierten Partizip als Attribut. Erkläre die Endungen.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M13",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Übungsauszug, bewusst mit markierten Flexionsfehlern; kein übernommener Fremdtext"
+    }
+  },
+  {
+    "id": "SG-G02-005",
+    "version": 1,
+    "domain": "G02",
+    "band": "C2",
+    "title": "Abstimmung über eine wissenschaftliche Stellungnahme",
+    "context": "Apposition, Genitivkette und pluralische Attribute",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Entscheidung wurde mit dem Leiterin des Instituts abgestimmt. In der Niederschrift sollten die Verantwortlichkeiten getrennt von den fachlichen Einwänden dokumentiert werden."
+      },
+      {
+        "id": "p2",
+        "text": "Eine Sprecherin des neu gewählten Gremium erläuterte anschließend den Stand der Beratungen. Sie betonte, dass die Abstimmung noch keinen Beschluss über die Umsetzung darstelle."
+      },
+      {
+        "id": "p3",
+        "text": "Die Schätzungen beider beteiligten Abteilung wurden zunächst getrennt ausgewertet. Ein direkter Vergleich war erst möglich, nachdem die Datengrundlagen angeglichen worden waren."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "family": "GENDER_CASE",
+        "quote": "mit dem Leiterin des Instituts",
+        "governor": "mit + Dativ; „Leiterin“ ist feminin",
+        "role": "DATIV",
+        "solution": "mit der Leiterin des Instituts",
+        "explanation": "Die Präposition „mit“ regiert den Dativ. „Leiterin“ ist feminin, daher heißt die Gruppe „mit der Leiterin“; das Genitivattribut „des Instituts“ bleibt unverändert.",
+        "transferHint": "Bilde eine feminine Dativgruppe mit angeschlossenem Genitivattribut."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "family": "GENITIVE_CHAIN",
+        "quote": "des neu gewählten Gremium",
+        "governor": "Sprecherin wessen? Genitiv Singular Neutrum",
+        "role": "GENITIV",
+        "solution": "des neu gewählten Gremiums",
+        "explanation": "Der Bezug „Sprecherin des Gremiums“ ist ein Genitivattribut. Das sächliche Nomen „Gremium“ erhält im Genitiv Singular -s; das Adjektiv bleibt nach „des“ auf -en.",
+        "transferHint": "Schreibe eine Nominalgruppe mit einem Genitivattribut im Neutrum."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "family": "GENITIVE_PLURAL",
+        "quote": "beider beteiligten Abteilung",
+        "governor": "Schätzungen wessen? Genitiv Plural mit „beider“",
+        "role": "GENITIV",
+        "solution": "beider beteiligten Abteilungen",
+        "explanation": "„Beider“ verweist auf zwei Gruppen und steht im Genitiv Plural. Nach „beider“ lautet das Adjektiv „beteiligten“; das Nomen muss im Plural „Abteilungen“ stehen.",
+        "transferHint": "Nutze „beider“ mit einem pluralischen Genitivattribut."
+      }
+    ],
+    "transfer": "Formuliere eine sachliche Stellungnahme mit einer femininen Dativgruppe und einem Genitivattribut, dessen Nominalkern im Plural oder Neutrum steht. Gib die Bezugswörter an.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M13",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Übungsauszug, bewusst mit markierten Flexionsfehlern; kein übernommener Fremdtext"
+    }
+  },
+  {
+    "id": "SG-G02-006",
+    "version": 1,
+    "domain": "G02",
+    "band": "C2",
+    "title": "Gutachtliche Würdigung eines Antrags",
+    "context": "Quantifizierter Genitiv, Partizipialattribute und feminine Genitivkette",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Angesichts mehrere widersprüchlicher Gutachten wurde die Anhörung fortgesetzt. Die zuständige Stelle wollte zunächst klären, welche Unterschiede auf abweichenden Annahmen beruhten."
+      },
+      {
+        "id": "p2",
+        "text": "Die Leitung vertraute auf die bereits geprüftem Nachweise und erklärte, der Antrag sei grundsätzlich entscheidungsreif. Die Fachgruppe erinnerte daran, dass eine unabhängige Gegenprüfung noch ausstand."
+      },
+      {
+        "id": "p3",
+        "text": "Die Ergebnisse einer nachträglich ergänzte Untersuchung wurden dem Ausschuss erst nach der Sitzung übermittelt. Eine abschließende Entscheidung war daher ausdrücklich aufgeschoben worden."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "family": "GENITIVE_PLURAL",
+        "quote": "Angesichts mehrere widersprüchlicher Gutachten",
+        "governor": "angesichts + Genitiv Plural; Quantor „mehrere“",
+        "role": "GENITIV",
+        "solution": "Angesichts mehrerer widersprüchlicher Gutachten",
+        "explanation": "„Angesichts“ regiert im formellen Sprachgebrauch den Genitiv. Der Quantor steht im Genitiv Plural als „mehrerer“; „widersprüchlicher Gutachten“ zeigt starke Adjektivflexion im Genitiv Plural.",
+        "transferHint": "Nutze eine komplexe Genitivpluralgruppe nach „angesichts“."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "family": "PLURAL_AGREEMENT",
+        "quote": "auf die bereits geprüftem Nachweise",
+        "governor": "vertrauen auf + Akkusativ; bestimmter Artikel im Plural",
+        "role": "AKKUSATIV",
+        "solution": "auf die bereits geprüften Nachweise",
+        "explanation": "„Auf etwas vertrauen“ steht mit Akkusativ. Nach „die“ im Akkusativ Plural erhält das attributiv gebrauchte Partizip die schwache Endung -en: „geprüften“.",
+        "transferHint": "Formuliere einen Satz mit „auf“ und einem korrekt flektierten pluralischen Partizip."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "family": "GENITIVE_CHAIN",
+        "quote": "einer nachträglich ergänzte Untersuchung",
+        "governor": "Ergebnisse wessen? Genitiv Singular Femininum",
+        "role": "GENITIV",
+        "solution": "einer nachträglich ergänzten Untersuchung",
+        "explanation": "Die Ergänzung zu „Ergebnisse“ steht im Genitiv Singular. Bei „einer Untersuchung“ endet das attributive Partizip auf -en: „einer nachträglich ergänzten Untersuchung“.",
+        "transferHint": "Bilde eine feminine Genitivgruppe mit Partizipialattribut."
+      }
+    ],
+    "transfer": "Verfasse zwei eigenständige Sätze für eine gutachtliche Würdigung: Verwende eine Genitivpluralgruppe und ein attributives Partizip in einem anders regierten Kasus. Erläutere die Formwahl.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M13",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Übungsauszug, bewusst mit markierten Flexionsfehlern; kein übernommener Fremdtext"
+    }
+  }
+]
