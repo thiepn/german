@@ -25,7 +25,7 @@ export function appendEditorialRevision(entry:ProductionEntry,c:EditorialCase,st
  if(!issue||c.id!==entry.itemId||c.version!==entry.itemVersion||!editorialCaseFor(entry)||!['REDRAFT','RECONSIDER'].includes(stage)||
  (stage==='RECONSIDER'&&!entry.revisions.some(r=>r.questionId==='REDRAFT'))||
  !text.trim()||text.length>2900||!rationale.trim()||rationale.length>1150||!id||!Number.isFinite(at)||
- !Array.isArray(checks)||checks.some(x=>!EDITORIAL_CHECKS.includes(x)))throw Error('Textfassung oder Begründung unvollständig.');
+ !Array.isArray(checks)||checks.some(x=>!(EDITORIAL_CHECKS as readonly string[]).includes(x)))throw Error('Textfassung oder Begründung unvollständig.');
  const rev:ProductionRevision={id,at,text:text.trim(),reflection:rationale.trim(),questionId:stage,paragraphId:issue.paragraphId,lens:issue.focus as RevisionLens,selfChecks:[...new Set(checks)]};
  return {...entry,revisions:[...entry.revisions,rev]};
 }
