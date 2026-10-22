@@ -41,7 +41,12 @@ export function collect(){
  const pragmatic=read(manifest.pragmaticAuthoringSource).map(s=>({id:s.id,version:s.version,type:'PRAGMATIC_CHOICE',mode:'G08',status:s.status,authorId:'SG_AI_DRAFT_20261018',prompt:s.context,task:s.task,alternatives:s.options,preferredIds:s.preferredIds,issues:['Check multiple contextually justified choices','Check implicit social power and cultural assumptions','Human evaluation of phrasing and politeness','Rights/source provenance','CEFR level not established by author','Check rewritten text prompt'],independentEditorialApproval:false}));
  const transfers=read(manifest.readingTransferAuthoringSource).map(b=>({id:b.id,version:b.version,type:'READING_WRITTEN_TRANSFER',mode:'G09',status:b.status,authorId:'SG_AI_DRAFT_20261018',unitId:b.unitId,prompt:b.instruction,audience:b.audience,checks:b.checks,issues:['Verify reading-dependent source fidelity','Ensure fair audience and register requirements','Allow alternate correct rewrites','No machine scoring or CEFR calibration'],independentEditorialApproval:false}));
  if(pragmatic.length!==manifest.pragmaticScenarioCount||transfers.length!==manifest.readingTransferCount)throw Error('Missing pragmatic or transfer editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers],allIds=new Set();
+ const modality=read(manifest.modalityDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G05_ORIGINAL_SOURCE',mode:'G05',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independent grammatical and linguistic assessment of all paragraphs','Register, discourse and temporal/evidential interpretations','Original authorship and source rights','C1–C2 calibration without automatic certification'],independentEditorialApproval:false},
+  ...s.contrasts.map(c=>({id:s.id+':'+c.id,version:s.version,type:'G05_AUTHOR_CONTRAST',mode:'G05',status:s.status,authorId:s.author,prompt:c.prompt,quote:c.quote,optionIds:c.options.map(o=>o.id),preferredId:c.preferredId,model:c.model,issues:['Verify the contrast against the cited paragraph','Check ambiguity and competing defensible interpretations','Review author feedback accuracy and teaching value','No inferred CEFR or automated grading'],independentEditorialApproval:false}))
+ ]);
+ if(modality.length!==manifest.modalityDraftCount*4)throw Error('Missing G05 draft editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

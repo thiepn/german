@@ -31,5 +31,7 @@
   "pragmaticAuthoringSource": "content/fixtures/pragmatics.demo.json",
   "pragmaticReferenceSource": "content/editorial/pragmatics-anchors.json",
   "readingTransferCount": 4,
-  "readingTransferAuthoringSource": "content/fixtures/reading-transfer.demo.json"
+  "readingTransferAuthoringSource": "content/fixtures/reading-transfer.demo.json",
+  "modalityDraftCount": 6,
+  "modalityDraftSource": "content/fixtures/g05-modality.demo.json"
 }

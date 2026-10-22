@@ -120,6 +120,23 @@ for(const x of transfers){
 }
 if(seenTransfer.size!==readingIds.size)throw Error('Missing transfer brief for a reading study');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+const m12=read(manifest.modalityDraftSource);
+if(manifest.modalityDraftCount!==6||m12.length!==manifest.modalityDraftCount)throw Error('G05 modality draft count mismatch');
+const g05Ids=new Set(),g05Families=new Set();
+for(const s of m12){
+ if(!/^SG-G05-\d{3}$/.test(s.id)||g05Ids.has(s.id)||s.version!==1||s.domain!=='G05'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G05 study '+s.id);
+ g05Ids.add(s.id);
+ if(!s.title?.trim()||!s.focus?.trim()||!s.transfer?.trim()||s.paragraphs?.length!==3||s.contrasts?.length!==3)throw Error('Incomplete G05 source study '+s.id);
+ const paragraphIds=new Set(s.paragraphs.map(p=>p.id));
+ if(paragraphIds.size!==3||s.paragraphs.some(p=>!p.text?.trim()||p.text.length<100))throw Error('Missing G05 source text '+s.id);
+ const contrastIds=new Set();
+ for(const x of s.contrasts){
+  if(contrastIds.has(x.id)||!/^c[1-3]$/.test(x.id)||!paragraphIds.has(x.paragraphId)||!s.paragraphs.find(p=>p.id===x.paragraphId)?.text.includes(x.quote)||!x.prompt?.trim()||!x.model?.trim()||!x.reason?.trim()||x.options?.length!==2||x.options[0].id!=='A'||x.options[1].id!=='B'||!['A','B'].includes(x.preferredId)||x.options.some(o=>!o.text?.trim()))throw Error('Invalid G05 source contrast '+s.id+':'+x.id);
+  contrastIds.add(x.id);g05Families.add(x.family);
+ }
+}
+if(g05Families.size<8)throw Error('Insufficient M12 tense, mood and voice contrasts');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}
