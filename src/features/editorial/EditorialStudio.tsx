@@ -15,6 +15,7 @@ export default function EditorialStudio({onExit,initialSelection}:{onExit:()=>vo
  const firstIssue=entry?selectedIssue(entry):null;
  const latest=entry?.revisions.at(-1)??null;
  const completedFirst=Boolean(entry?.revisions.some(r=>r.questionId==='REDRAFT'));
+ const unchanged=Boolean(text.trim()&&(text.trim()===editorialSource(c).trim()||text.trim()===entry?.revisions.at(-1)?.text.trim()));
  const stats=editorialProgress(entries);
  const refresh=async()=>setEntries(await loadProductionEntries());
  useEffect(()=>{let live=true;void loadProductionEntries().then(rows=>{if(live)setEntries(rows)}).catch(e=>{if(live)setError(String(e))});return()=>{live=false}},[]);
@@ -75,7 +76,8 @@ export default function EditorialStudio({onExit,initialSelection}:{onExit:()=>vo
     <div className="field"><label htmlFor="editorial-text">Deine vollständige Textfassung</label><textarea id="editorial-text" rows={10} maxLength={2900} value={text} onChange={e=>setText(e.target.value)}/></div>
     <div className="field"><label htmlFor="editorial-reason">Welche Bezüge, Aussagen oder Folgerungen hast du geändert?</label><textarea id="editorial-reason" rows={4} maxLength={1150} value={reason} onChange={e=>setReason(e.target.value)}/></div>
     <fieldset className="review-checklist"><legend>Eigene Redaktionsprüfung</legend>{EDITORIAL_CHECKS.map(label=><label key={label}><input type="checkbox" checked={checks.includes(label)} onChange={()=>setChecks(v=>v.includes(label)?v.filter(x=>x!==label):[...v,label])}/>{label}</label>)}</fieldset>
-    <button className="button" type="button" disabled={busy||!text.trim()||!reason.trim()||(stage==='RECONSIDER'&&!completedFirst)} onClick={()=>void saveVersion()}>Textfassung mit Begründung speichern</button>
+    {unchanged&&<p className="feedback" role="status">Die Textfassung ist unverändert. Passe den Text vor dem Speichern an.</p>}
+    <button className="button" type="button" disabled={busy||unchanged||!text.trim()||!reason.trim()||(stage==='RECONSIDER'&&!completedFirst)} onClick={()=>void saveVersion()}>Textfassung mit Begründung speichern</button>
     {entry.revisions.length>0&&<section className="editorial-history"><h3>Gespeicherte Textfassungen</h3>
      {entry.revisions.map((r,i)=><article key={r.id}>
       <div className="kicker">{i+1} · {r.questionId==='RECONSIDER'?'Kritische Überarbeitung':'Redigierter Text'} · {r.paragraphId}</div>

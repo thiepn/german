@@ -35,6 +35,8 @@ test('full redrafts and reconsiderations are append-only, anchored and require r
  assert.equal(two.revisions[1].lens,'KOHÄRENZ');
  assert.throws(()=>appendEditorialRevision(e,c,'RECONSIDER',draft,'Begründung',[],'bad',at+3),/unvollständig/);
  assert.throws(()=>appendEditorialRevision(e,c,'REDRAFT',draft,' ',[],'bad',at+3),/unvollständig/);
+ assert.throws(()=>appendEditorialRevision(e,c,'REDRAFT',editorialSource(c),'Begründung',[],'bad',at+3),/unverändert/);
+ assert.throws(()=>appendEditorialRevision(one,c,'RECONSIDER',draft,'Keine Änderung',[],'bad',at+3),/unverändert/);
  assert.throws(()=>appendEditorialRevision({...e,sourceId:'fake'},c,'REDRAFT',draft,'Begründung',[],'bad',at+3),/unvollständig/);
  assert.throws(()=>appendEditorialRevision(e,c,'REDRAFT',draft,'Begründung',['erfundene Prüfnorm'],'bad',at+3),/unvollständig/);
  assert.equal(archiveRows([two],{kind:'G11_EDITORIAL',activity:'REVISED',period:'ALL',search:'Die Folgerung',now:at+3}).length,1);
@@ -48,7 +50,7 @@ test('progress counts observed acts without inferred skill/mastery and chooses i
  assert.equal(editorialProgress([two]).reconsidered,1);
 });
 test('backup v3 retains diagnosis, source reference, and independent complete rewrites',async()=>{
- const e=appendEditorialRevision(first(),c,'REDRAFT',editorialSource(c),'Stelle klar.',[],'r1',at+1);
+ const e=appendEditorialRevision(first(),c,'REDRAFT',editorialSource(c).replace('Sie hat die Hinweise','Die Projektleitung hat die Hinweise'),'Stelle klar.',[],'r1',at+1);
  const records:BackupRecords={attempts:[],cards:[],reviewEvents:[],settings:[],drafts:[],diagnosticSessions:[],productionEntries:[e],missions:[]};
  const packed=await buildPortableBackup(records);
  const read=await inspectPortableBackup(packed);assert.equal(read.version,BACKUP_VERSION);
