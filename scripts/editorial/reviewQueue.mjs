@@ -61,7 +61,12 @@ export function collect(){
   ...s.contrasts.map(c=>({id:s.id+':'+c.id,version:s.version,type:'G04_DISCOURSE_CONTRAST',mode:'G04_FOCUS',status:s.status,authorId:s.author,prompt:c.question,quote:c.quote,paragraphId:c.paragraphId,options:c.options,preferredId:c.preferredId,model:c.model,issues:['Validate source quote and each grammatical alternative','Check scope/topic-focus implications, acceptable interpretations and ambiguous focus readings','Verify independent reformulation prompt, correction explanation and transfer objective','No automatic grades, CEFR claims or approval inferred from authored choices'],independentEditorialApproval:false}))
  ]);
  if(focus.length!==manifest.focusDraftCount*4)throw Error('Missing G04 focus editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus],allIds=new Set();
+ const reference=read(manifest.referenceDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G01_ORIGINAL_SOURCE',mode:'G01_REFERENCE',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independent review of all three German source paragraphs and rights','Check discourse referents, first mentions and article interpretation','Assess plausibility of C1/C2 original tasks without awarding CEFR levels'],independentEditorialApproval:false},
+  ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G01_REFERENCE_DECISION',mode:'G01_REFERENCE',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,alternate:d.alternate,paragraphId:d.paragraphId,options:d.options,preferredId:d.preferredId,model:d.model,issues:['Verify exact original source anchor and determiner contrast','Check contextual referent identity, scope, ambiguity and register variants','Check independent rewrite prompt, explanation and transfer accuracy','Do not certify proficiency, auto-grade free text or publish without independent review'],independentEditorialApproval:false}))
+ ]);
+ if(reference.length!==manifest.referenceDraftCount*4)throw Error('Missing G01 reference editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

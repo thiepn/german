@@ -39,5 +39,7 @@
   "valencyDraftCount": 6,
   "valencyDraftSource": "content/fixtures/g03-valency.demo.json",
   "focusDraftCount": 6,
-  "focusDraftSource": "content/fixtures/g04-information-structure.demo.json"
+  "focusDraftSource": "content/fixtures/g04-information-structure.demo.json",
+  "referenceDraftCount": 6,
+  "referenceDraftSource": "content/fixtures/g01-reference.demo.json"
 }

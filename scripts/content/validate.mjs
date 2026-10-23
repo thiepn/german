@@ -188,6 +188,23 @@ for(const s of m15){
 }
 if(g04Families.size<15||g04Contrasts!==18||g04PreferredB<5)throw Error('Insufficient G04 discourse contrast coverage');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+const m16=read(manifest.referenceDraftSource);
+if(manifest.referenceDraftCount!==6||m16.length!==manifest.referenceDraftCount)throw Error('G01 reference case count mismatch');
+const g01Ids=new Set(),g01Families=new Set();let g01Decisions=0,g01PreferredB=0;
+for(const s of m16){
+ if(!/^SG-G01-\d{3}$/.test(s.id)||g01Ids.has(s.id)||s.version!==1||s.domain!=='G01'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G01 reference study '+s.id);
+ g01Ids.add(s.id);
+ if(!s.title?.trim()||!s.focus?.trim()||!s.transfer?.trim()||s.paragraphs?.length!==3||s.decisions?.length!==3)throw Error('Incomplete G01 reference study '+s.id);
+ const pids=new Set(s.paragraphs.map(p=>p.id));
+ if(pids.size!==3||s.paragraphs.some(p=>!p.text||p.text.length<180))throw Error('Missing original G01 prose '+s.id);
+ const dids=new Set();
+ for(const d of s.decisions){
+  if(dids.has(d.id)||!/^d[1-3]$/.test(d.id)||!pids.has(d.paragraphId)||!s.paragraphs.find(p=>p.id===d.paragraphId)?.text.includes(d.quote)||d.quote.length<35||!d.alternate?.trim()||d.quote===d.alternate||!d.topic?.trim()||!d.question?.trim()||!d.model?.trim()||!d.explanation?.trim()||d.explanation.length<110||!d.repairPrompt?.trim()||d.options?.length!==2||d.options[0].id!=='A'||d.options[1].id!=='B'||d.options.some(o=>!o.text?.trim())||!['A','B'].includes(d.preferredId)||d.options[0].text===d.options[1].text)throw Error('Invalid G01 reference decision '+s.id+':'+d.id);
+  dids.add(d.id);g01Families.add(d.family);g01Decisions++;if(d.preferredId==='B')g01PreferredB++;
+ }
+}
+if(g01Families.size<15||g01Decisions!==18||g01PreferredB<5)throw Error('Insufficient reference and determination coverage');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}
