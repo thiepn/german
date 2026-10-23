@@ -1,0 +1,584 @@
+[
+  {
+    "id": "SG-G04-001",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Wann wurde wirklich entschieden?",
+    "focus": "Vorfeldbesetzung bei Korrektur eines bereits bekannten Sitzungstermins",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Im Vorbereitungsschreiben war eine Abstimmung für Montag angekündigt worden. Erst nach Eingang der unabhängigen Stellungnahme leitete der Ausschuss die Abstimmung ein. Damit korrigiert der Vermerk die frühere Zeitangabe, ohne eine Entscheidung vor der Stellungnahme zu behaupten."
+      },
+      {
+        "id": "p2",
+        "text": "Über die erste Berechnung hatte der Ausschuss bereits gesprochen. Den zweiten Nachweis hatte die Prüfstelle dagegen erst am Montag angefordert. Der zweite Nachweis war Gegenstand einer ausdrücklichen Nachfrage, nicht ein neuer Bericht über die Prüfstelle."
+      },
+      {
+        "id": "p3",
+        "text": "Die Veröffentlichung war nach der Sitzung noch umstritten. Nicht alle Beteiligten hatten der Veröffentlichung zugestimmt. Aus dem Protokoll geht weder hervor, dass niemand zustimmte, noch dass bereits sämtliche Unterschriften vorlagen."
+      }
+    ],
+    "contrasts": [
+      {
+        "family": "VORFELD_TIME",
+        "quote": "Erst nach Eingang der unabhängigen Stellungnahme leitete der Ausschuss die Abstimmung ein.",
+        "question": "Welche Fassung beantwortet die Nachfrage „Warum nicht bereits am Montag?“ mit einer klaren zeitlichen Korrektur?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Erst nach Eingang der unabhängigen Stellungnahme leitete der Ausschuss die Abstimmung ein."
+          },
+          {
+            "id": "B",
+            "text": "Der Ausschuss leitete die Abstimmung nach Eingang der unabhängigen Stellungnahme ein."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das Vorfeld hebt die zeitliche Voraussetzung hervor und korrigiert die erwartete frühere Abstimmung.",
+        "explanation": "Beide Formulierungen sind grammatisch möglich. Erst in Verbindung mit dem vorangehenden Terminhinweis erhält die vorangestellte Beschränkung „erst nach“ das präzise Korrektursignal.",
+        "repairPrompt": "Formuliere eine andere Antwort auf die Frage nach dem verspäteten Beginn, ohne die Ereignisfolge zu verändern.",
+        "id": "c1",
+        "paragraphId": "p1"
+      },
+      {
+        "family": "OBJECT_TOPIC",
+        "quote": "Den zweiten Nachweis hatte die Prüfstelle dagegen erst am Montag angefordert.",
+        "question": "Welche Fassung führt den Kontrast „erster Nachweis – zweiter Nachweis“ fort?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Prüfstelle hatte den zweiten Nachweis dagegen erst am Montag angefordert."
+          },
+          {
+            "id": "B",
+            "text": "Den zweiten Nachweis hatte die Prüfstelle dagegen erst am Montag angefordert."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der bereits kontrastierte Gegenstand „den zweiten Nachweis“ steht im Vorfeld und knüpft an den vorherigen Satz an.",
+        "explanation": "Die Vorfeldstellung des Akkusativobjekts ist keine neue Kasusregel: Sie verändert die Informationsgliederung. Die Subjekt-Vorfeld-Variante legt weniger Gewicht auf den Gegenstandswechsel.",
+        "repairPrompt": "Schreibe einen Anschlusssatz, der eine zweite Unterlage ausdrücklich mit der ersten vergleicht.",
+        "id": "c2",
+        "paragraphId": "p2"
+      },
+      {
+        "family": "NEGATION_QUANTIFIER",
+        "quote": "Nicht alle Beteiligten hatten der Veröffentlichung zugestimmt.",
+        "question": "Welche Aussage bleibt durch die Aktenlage ausdrücklich offen, statt eine vollständige Ablehnung zu behaupten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Keiner der Beteiligten hatte der Veröffentlichung zugestimmt."
+          },
+          {
+            "id": "B",
+            "text": "Nicht alle Beteiligten hatten der Veröffentlichung zugestimmt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Negation vor „alle“ bestreitet die Vollständigkeit der Zustimmung; sie verneint nicht jede einzelne Zustimmung.",
+        "explanation": "„Nicht alle“ ist logisch schwächer als „keiner“. Der Vergleich prüft den Skopus des negierten Quantors und die Reichweite der Behauptung, nicht nur eine austauschbare Wortstellung.",
+        "repairPrompt": "Schreibe die Information so um, dass sie die unvollständige Zustimmung wahrt und keine Totalverneinung enthält.",
+        "id": "c3",
+        "paragraphId": "p3"
+      }
+    ],
+    "transfer": "Verfasse eine kurze Korrektur des Sitzungsvermerks: Erstens den verschobenen Zeitpunkt hervorheben, zweitens einen bereits bekannten Nachweis kontrastieren, drittens den Umfang der Zustimmung präzise begrenzen. Begründe die Vorfeld- und Negationswahl.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M15",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Sprachgefühl-Lehrtext; Entwurf ohne unabhängige Fach- und Rechtefreigabe"
+    }
+  },
+  {
+    "id": "SG-G04-002",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Was steht schon fest?",
+    "focus": "Thema-Rhema-Gliederung und kontrastive neue Information in einem Forschungsbericht",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Erhebung hatte in der ersten Runde nur vorläufige Zahlen geliefert. Die endgültigen Werte wurden erst nach der zweiten Kontrollmessung veröffentlicht. Der Abschnitt beantwortet damit die Frage, wann aus vorläufigen Angaben belastbar veröffentlichte Werte wurden."
+      },
+      {
+        "id": "p2",
+        "text": "Zur Vergleichbarkeit der Stichproben war bereits eine methodische Erläuterung erschienen. Die Gründe für einzelne Ausfälle nannte die Forschungsgruppe allerdings nicht. Die Leserinnen und Leser fragten besonders nach den fehlenden Gründen, nicht nach dem Namen der Verfassenden."
+      },
+      {
+        "id": "p3",
+        "text": "Der Methodenanhang war in der Beratung schon mehrfach erwähnt worden. Auch im Methodenanhang blieben die Ausschlusskriterien unklar. Dass gerade dieser bereits bekannte Anhang betroffen war, sollte in der überarbeiteten Zusammenfassung sichtbar bleiben."
+      }
+    ],
+    "contrasts": [
+      {
+        "family": "FOCUS_NEW_TIME",
+        "quote": "Die endgültigen Werte wurden erst nach der zweiten Kontrollmessung veröffentlicht.",
+        "question": "Welche Formulierung korrigiert die Erwartung einer bereits früher erfolgten Veröffentlichung am deutlichsten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Erst nach der zweiten Kontrollmessung wurden die endgültigen Werte veröffentlicht."
+          },
+          {
+            "id": "B",
+            "text": "Die endgültigen Werte wurden nach der zweiten Kontrollmessung veröffentlicht."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Zeitbeschränkung im Vorfeld bildet die entscheidende Neuigkeit nach dem Hinweis auf vorläufige Zahlen.",
+        "explanation": "Die erste Variante markiert mit „erst“ die zeitliche Abgrenzung. Die zweite nennt ebenfalls die Reihenfolge, beantwortet den vorherigen Irrtum aber weniger explizit.",
+        "repairPrompt": "Schreibe einen eigenen Satz, der einen überraschend späten Zeitpunkt als neue Information kennzeichnet.",
+        "id": "c1",
+        "paragraphId": "p1"
+      },
+      {
+        "family": "OBJECT_CONTINUITY",
+        "quote": "Die Gründe für einzelne Ausfälle nannte die Forschungsgruppe allerdings nicht.",
+        "question": "Welcher Satz hält die bereits eingeführten fehlenden Gründe als Thema der Antwort im Vorfeld?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Forschungsgruppe nannte die Gründe für einzelne Ausfälle allerdings nicht."
+          },
+          {
+            "id": "B",
+            "text": "Die Gründe für einzelne Ausfälle nannte die Forschungsgruppe allerdings nicht."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Objekt-Vorfeldstellung setzt bei der offenen Frage nach den Gründen an; die neue Aussage lautet, dass sie nicht genannt wurden.",
+        "explanation": "Satzgliedvoranstellung ist nicht notwendigerweise Betonung im gesprochenen Sinn. Hier schafft sie textuelle Kontinuität zum zuvor genannten Gegenstand.",
+        "repairPrompt": "Formuliere den ausstehenden Nachweis als Vorfeldthema, ohne seine Nichtvorlage zu verwischen.",
+        "id": "c2",
+        "paragraphId": "p2"
+      },
+      {
+        "family": "ADDITIVE_TOPIC",
+        "quote": "Auch im Methodenanhang blieben die Ausschlusskriterien unklar.",
+        "question": "Welche Fassung signalisiert, dass die Einschränkung selbst im erwarteten Fundort fortbesteht?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Auch im Methodenanhang blieben die Ausschlusskriterien unklar."
+          },
+          {
+            "id": "B",
+            "text": "Die Ausschlusskriterien blieben im Methodenanhang unklar."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„Auch im Methodenanhang“ bindet einen erwarteten zusätzlichen Ort ein und macht die Enttäuschung dieser Erwartung sichtbar.",
+        "explanation": "Der Ausdruck „auch“ hat Skopus über die Ortsangabe; ohne ihn steht die Unklarheit bloß als weiterer Befund. Beide Varianten können wahr sein, sind aber unterschiedlich gewichtet.",
+        "repairPrompt": "Schreibe einen Anschluss, der eine erwartete Informationsquelle als ebenfalls unzureichend markiert.",
+        "id": "c3",
+        "paragraphId": "p3"
+      }
+    ],
+    "transfer": "Schreibe drei selbstständige Sätze, die bei einer bekannten Frage ansetzen, eine neue Feststellung hervorheben und eine unerfüllte Erwartung explizit machen. Erkläre jeweils Thema und Fokus.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M15",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Sprachgefühl-Lehrtext; Entwurf ohne unabhängige Fach- und Rechtefreigabe"
+    }
+  },
+  {
+    "id": "SG-G04-003",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Was wurde tatsächlich geprüft?",
+    "focus": "Kontrastiver Fokus, Negationsskopus und Grenzen der Schlussfolgerung",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die öffentliche Kurzfassung hatte behauptet, alle sechs Entwürfe seien geprüft worden. Geprüft wurden jedoch nur die beiden überarbeiteten Entwürfe. Die übrigen vier lagen zwar bereits vor, aber ihre fachliche Prüfung war noch nicht abgeschlossen."
+      },
+      {
+        "id": "p2",
+        "text": "Aus dem Protokoll ging hervor, dass mehrere Rückfragen gestellt worden waren. Die Prüferin beantwortete nicht die technische, sondern die organisatorische Frage. Eine allgemeine Antwort zu allen offenen Punkten lässt sich daraus nicht ableiten."
+      },
+      {
+        "id": "p3",
+        "text": "Für die Freigabe mussten drei Bedingungen erfüllt sein. Nicht jede Voraussetzung war zum Sitzungstermin erfüllt. Eine der Bedingungen war eindeutig dokumentiert, über die beiden anderen wurde noch beraten."
+      }
+    ],
+    "contrasts": [
+      {
+        "family": "CONTRAST_FOCUS",
+        "quote": "Geprüft wurden jedoch nur die beiden überarbeiteten Entwürfe.",
+        "question": "Welche Fassung korrigiert den zuvor verbreiteten Eindruck, alle Entwürfe seien bereits geprüft?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Geprüft wurden jedoch nur die beiden überarbeiteten Entwürfe."
+          },
+          {
+            "id": "B",
+            "text": "Die beiden überarbeiteten Entwürfe waren Bestandteil der Unterlagen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der vorangestellte Partizipkomplex nimmt das Prüfprädikat auf und grenzt mit „nur“ den tatsächlich geprüften Umfang ein.",
+        "explanation": "Eine formale Themenangabe über vorhandene Unterlagen sagt nichts darüber, was geprüft wurde. Die Voranstellung des Prüfprädikats ist in diesem Kontext eine kontrastive Antwort auf die überzogene Behauptung.",
+        "repairPrompt": "Repariere die öffentliche Kurzfassung mit einer präzisen Aussage über den begrenzten Prüfungsumfang.",
+        "id": "c1",
+        "paragraphId": "p1"
+      },
+      {
+        "family": "NEGATION_CORRECTION",
+        "quote": "Die Prüferin beantwortete nicht die technische, sondern die organisatorische Frage.",
+        "question": "Welche Aussage grenzt die verneinte Alternative exakt ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Prüferin beantwortete keine Frage."
+          },
+          {
+            "id": "B",
+            "text": "Die Prüferin beantwortete nicht die technische, sondern die organisatorische Frage."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das Kontrastpaar „nicht X, sondern Y“ korrigiert einen bestimmten Fokus, ohne alle Antworten zu verneinen.",
+        "explanation": "Negation nimmt hier nur die technische Frage aus dem behaupteten Antwortgegenstand heraus. „Keine Frage“ würde eine sachlich falsche Totalverneinung erzeugen.",
+        "repairPrompt": "Formuliere eine Korrektur mit „nicht …, sondern …“, in der beide Alternativen eindeutig benannt sind.",
+        "id": "c2",
+        "paragraphId": "p2"
+      },
+      {
+        "family": "NEGATION_DISTRIBUTION",
+        "quote": "Nicht jede Voraussetzung war zum Sitzungstermin erfüllt.",
+        "question": "Welche Fassung wahrt die Aussage, dass wenigstens eine Voraussetzung noch fehlte, statt das Fehlen aller Bedingungen zu behaupten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Keine Voraussetzung war zum Sitzungstermin erfüllt."
+          },
+          {
+            "id": "B",
+            "text": "Nicht jede Voraussetzung war zum Sitzungstermin erfüllt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "„Nicht jede“ negiert die universale Erfüllung; aus ihr folgt nicht, dass keine einzige Bedingung erfüllt war.",
+        "explanation": "Bei Quantoren verändert die Stellung der Negation die logische Reichweite der Aussage. Die stärkere Totalverneinung wird durch die Aktenlage ausdrücklich ausgeschlossen.",
+        "repairPrompt": "Schreibe eine formelle Feststellung, die zwischen teilweise und vollständig erfüllten Anforderungen unterscheidet.",
+        "id": "c3",
+        "paragraphId": "p3"
+      }
+    ],
+    "transfer": "Verfasse eine sachliche Richtigstellung mit einer begrenzten Prüfung, einer klaren „nicht … sondern“-Korrektur und einer logisch schwachen Negation der vollständigen Erfüllung.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M15",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Sprachgefühl-Lehrtext; Entwurf ohne unabhängige Fach- und Rechtefreigabe"
+    }
+  },
+  {
+    "id": "SG-G04-004",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Einwand am Ende des Satzes",
+    "focus": "Nachfeld, Ausklammerung und Informationsgewicht in juristisch geprägter Prosa",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Der erste Entwurf legte eine Ausnahme von der Berichtspflicht nahe. Die Kommission wollte von dieser Ausnahme nur dann Gebrauch machen, wenn eine unabhängige Stelle die Nachweise bestätigt. Die Bedingung ist für die Entscheidung zentral und darf nicht in einen bereits erfüllten Umstand umgedeutet werden."
+      },
+      {
+        "id": "p2",
+        "text": "Die Sachverständige hatte die älteren Unterlagen zuerst geprüft. Das neue Gutachten hielt sie jedoch für nicht hinreichend begründet, obwohl es auf denselben Messreihen beruhte. Die nachgetragene Einräumung sollte keine fachliche Zustimmung zum Gutachten suggerieren."
+      },
+      {
+        "id": "p3",
+        "text": "Im Protokoll wurde schließlich ein Vorschlag erörtert. Die Projektgruppe stellte den Vorschlag zurück, bis der von zwei Stellen gemeinsam erstellte Prüfbericht vorlag. Die Ausklammerung des zeitlichen Nebensatzes lässt die ausstehende Voraussetzung am Satzende hervortreten."
+      }
+    ],
+    "contrasts": [
+      {
+        "family": "NACHFELD_CONDITION",
+        "quote": "Die Kommission wollte von dieser Ausnahme nur dann Gebrauch machen, wenn eine unabhängige Stelle die Nachweise bestätigt.",
+        "question": "Welche Form hält die Bedingung sichtbar und verwechselt sie nicht mit einem bereits vorliegenden Befund?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Kommission wollte von dieser Ausnahme Gebrauch machen; die Bestätigung einer unabhängigen Stelle lag vor."
+          },
+          {
+            "id": "B",
+            "text": "Die Kommission wollte von dieser Ausnahme nur dann Gebrauch machen, wenn eine unabhängige Stelle die Nachweise bestätigt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der konditionale Nebensatz steht im Nachfeld und ist an die einschränkende Korrelatgruppe „nur dann“ gebunden.",
+        "explanation": "Ein Nebensatz am Satzende ist nicht automatisch bloße Zusatzinformation; hier präzisiert er eine unerfüllte Bedingung. Die alternative Hauptsatzbehauptung würde den Freigabestand verfälschen.",
+        "repairPrompt": "Schreibe eine Entscheidungsvorlage mit einer nachgestellten offenen Bedingung.",
+        "id": "c1",
+        "paragraphId": "p1"
+      },
+      {
+        "family": "NACHFELD_CONCESSION",
+        "quote": "Das neue Gutachten hielt sie jedoch für nicht hinreichend begründet, obwohl es auf denselben Messreihen beruhte.",
+        "question": "Welche Fassung bewahrt das Verhältnis zwischen Einwand und eingeräumter Gemeinsamkeit?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Obwohl es auf denselben Messreihen beruhte, hielt sie das neue Gutachten nicht für hinreichend begründet."
+          },
+          {
+            "id": "B",
+            "text": "Sie hielt das Gutachten wegen derselben Messreihen für hinreichend begründet."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die vorangestellte konzessive Variante erhält den Gegensatz: gemeinsame Messreihen reichen für die Begründung nicht aus.",
+        "explanation": "Ein „obwohl“-Satz kann im Vorfeld oder Nachfeld stehen. Beide Positionen können die gleichen Tatsachen ausdrücken, aber die zweite erfundene Begründung kehrt die Schlussfolgerung um.",
+        "repairPrompt": "Verschiebe einen konzessiven Nebensatz und erkläre, wie Vorfeld bzw. Nachfeld seinen Informationswert beeinflussen.",
+        "id": "c2",
+        "paragraphId": "p2"
+      },
+      {
+        "family": "NACHFELD_TEMPORAL",
+        "quote": "Die Projektgruppe stellte den Vorschlag zurück, bis der von zwei Stellen gemeinsam erstellte Prüfbericht vorlag.",
+        "question": "Wie bleibt der Zeitpunkt der Wiederaufnahme offen, statt als bereits erledigt dargestellt zu werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Projektgruppe stellte den Vorschlag zurück, nachdem der Prüfbericht bereits vorgelegen hatte."
+          },
+          {
+            "id": "B",
+            "text": "Die Projektgruppe stellte den Vorschlag zurück, bis der von zwei Stellen gemeinsam erstellte Prüfbericht vorlag."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das nachgestellte „bis“ setzt eine zeitliche Grenze für den Aufschub, ohne den Bericht zum Zeitpunkt des Beschlusses schon als vorhanden zu behandeln.",
+        "explanation": "Die Ausklammerung des längeren Nebensatzes reduziert die Belastung des Mittelfelds; der Wechsel zu „nachdem“ veränderte darüber hinaus die Ereignisfolge.",
+        "repairPrompt": "Schreibe eine neue Protokollformulierung, die einen längeren vorangestellten oder nachgestellten Zeitnebensatz korrekt auf den Aufschub bezieht.",
+        "id": "c3",
+        "paragraphId": "p3"
+      }
+    ],
+    "transfer": "Formuliere einen Beschlussabschnitt mit einer noch nicht erfüllten Bedingung, einer konzessiven Einräumung und einer klaren zeitlichen Grenze. Erkläre in eigenen Worten die Nachfeldfunktion.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M15",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Sprachgefühl-Lehrtext; Entwurf ohne unabhängige Fach- und Rechtefreigabe"
+    }
+  },
+  {
+    "id": "SG-G04-005",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Was ist die eigentliche Neuigkeit?",
+    "focus": "Mittelfeldabfolge, Fokuspartikeln und referenziell bekannte Information",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die externe Stelle hatte bereits mehrere Gutachten vorgelegt. Die Verwaltung hat dem Ausschuss die aktualisierten Tabellen erst am Freitag übermittelt. Der eigentliche Streitpunkt betraf den verspäteten Zugang und nicht den Empfängerkreis."
+      },
+      {
+        "id": "p2",
+        "text": "Das Ergebnis der ersten Prüfung war im Vorfeld der Sitzung bekannt. Die Vorsitzende erwähnte lediglich den vorläufigen Befund, nicht die abschließende Bewertung. Im weiteren Verlauf wurde ausdrücklich nach der Reichweite dieser Einschränkung gefragt."
+      },
+      {
+        "id": "p3",
+        "text": "Ein methodischer Fehler war in einer früheren Anlage beschrieben worden. Diesen Fehler hatte die Arbeitsgruppe im Zusatzbericht ausdrücklich eingeräumt. In der Zusammenfassung sollte deshalb die Einräumung selbst sichtbar werden und nicht nur die Existenz einer weiteren Anlage."
+      }
+    ],
+    "contrasts": [
+      {
+        "family": "MITTELFELD_FOCUS",
+        "quote": "Die Verwaltung hat dem Ausschuss die aktualisierten Tabellen erst am Freitag übermittelt.",
+        "question": "Welche Fassung beantwortet die Nachfrage nach dem verspäteten Übermittlungszeitpunkt am klarsten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dem Ausschuss hat die Verwaltung die Tabellen übermittelt."
+          },
+          {
+            "id": "B",
+            "text": "Die Verwaltung hat dem Ausschuss die aktualisierten Tabellen erst am Freitag übermittelt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die bekannte Empfängergruppe steht im Mittelfeld; die spät eingetroffenen Tabellen werden mit „erst am Freitag“ zeitlich präzisiert.",
+        "explanation": "Die Reihenfolge der Satzglieder ist teils flexibel. Im vorliegenden Diskurs ist die zeitfokussierende Partikel wichtiger als eine abstrakte Standardabfolge der Objekte.",
+        "repairPrompt": "Schreibe eine eigene Mitteilung, die Datum und Adressat eindeutig trennt.",
+        "id": "c1",
+        "paragraphId": "p1"
+      },
+      {
+        "family": "FOCUS_PARTICLE",
+        "quote": "Die Vorsitzende erwähnte lediglich den vorläufigen Befund, nicht die abschließende Bewertung.",
+        "question": "Welche Antwort grenzt den Umfang der Äußerung ein, ohne eine bestätigte Endbewertung zu unterstellen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Vorsitzende erwähnte lediglich den vorläufigen Befund, nicht die abschließende Bewertung."
+          },
+          {
+            "id": "B",
+            "text": "Die Vorsitzende bestätigte die abschließende Bewertung und erwähnte den vorläufigen Befund."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„Lediglich“ begrenzt die Erwähnung auf den vorläufigen Befund; die explizite Gegenüberstellung schützt vor einer falschen Bestätigung.",
+        "explanation": "Fokuspartikeln wie „nur“ und „lediglich“ binden sich an einen konkreten Bezugsbereich. Wird die Endbewertung als bestätigt ausgegeben, ändert sich der behauptete Sachstand.",
+        "repairPrompt": "Formuliere mit „lediglich“ oder „nur“ eine sachlich eingegrenzte Mitteilung.",
+        "id": "c2",
+        "paragraphId": "p2"
+      },
+      {
+        "family": "CONTRAST_OBJECT_FRONT",
+        "quote": "Diesen Fehler hatte die Arbeitsgruppe im Zusatzbericht ausdrücklich eingeräumt.",
+        "question": "Wie wird der bereits bekannte methodische Fehler zur thematischen Brücke?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Arbeitsgruppe erwähnte in einem Zusatzbericht einen Fehler."
+          },
+          {
+            "id": "B",
+            "text": "Diesen Fehler hatte die Arbeitsgruppe im Zusatzbericht ausdrücklich eingeräumt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das Demonstrativobjekt im Vorfeld nimmt den zuvor erwähnten Fehler auf; die neue Information ist das ausdrückliche Einräumen.",
+        "explanation": "„Diesen Fehler“ ist anaphorisch bestimmt. In der schwächeren Alternativfassung wird daraus ein nur beiläufig erwähnter unbestimmter Fehler.",
+        "repairPrompt": "Verknüpfe eine frühere Feststellung mit einer neuen Reaktion und markiere den bekannten Gegenstand im Vorfeld.",
+        "id": "c3",
+        "paragraphId": "p3"
+      }
+    ],
+    "transfer": "Schreibe einen dreisätzigen Sachstandsbericht, in dem Datum, Reichweite einer Aussage und eine bereits bekannte Beanstandung unterschiedliche Fokusrollen erhalten.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M15",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Sprachgefühl-Lehrtext; Entwurf ohne unabhängige Fach- und Rechtefreigabe"
+    }
+  },
+  {
+    "id": "SG-G04-006",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Mehrdeutige Kurzfassungen berichtigen",
+    "focus": "Negationsskopus, restriktive Partikeln und Verschiebung von Thema und Fokus",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Forschungsgruppe hatte zwei Varianten parallel erprobt. Nur die zweite Variante wurde in der Abschlusssitzung ausdrücklich empfohlen. Über die erste Variante wurde weiter beraten; sie war weder endgültig verworfen noch empfohlen worden."
+      },
+      {
+        "id": "p2",
+        "text": "Eine öffentliche Zusammenfassung hielt eine Korrektur für notwendig. Der Bericht hat nicht die Aussage zurückgenommen, sondern deren Geltungsbereich präzisiert. Der sachliche Inhalt blieb erhalten; die früher gewählte Formulierung war zu weit gefasst."
+      },
+      {
+        "id": "p3",
+        "text": "Für die Entscheidung war neben der Prüfung noch eine zusätzliche Stellungnahme vorgesehen. Auch die zweite Stellungnahme lag am Sitzungstag nicht vor. Diese Feststellung sollte deutlich machen, dass eine bereits angekündigte weitere Quelle ebenfalls noch fehlte."
+      }
+    ],
+    "contrasts": [
+      {
+        "family": "ONLY_SCOPE",
+        "quote": "Nur die zweite Variante wurde in der Abschlusssitzung ausdrücklich empfohlen.",
+        "question": "Welche Fassung beschränkt die ausgesprochene Empfehlung auf genau eine der beiden Varianten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Nur die zweite Variante wurde in der Abschlusssitzung ausdrücklich empfohlen."
+          },
+          {
+            "id": "B",
+            "text": "Die zweite Variante wurde in der Abschlusssitzung nur ausdrücklich empfohlen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Stellung von „nur“ vor der Nominalgruppe grenzt die Menge der empfohlenen Varianten ein.",
+        "explanation": "In der anderen Form bezieht sich „nur“ eher auf Art oder Umfang der Empfehlung und schließt die erste Variante nicht zuverlässig aus. Die Partikelposition verändert den Skopus.",
+        "repairPrompt": "Schreibe eine Empfehlung, in der die Auswahlmenge eng begrenzt ist, und unterscheide diese von bloß begrenzter Empfehlungsstärke.",
+        "id": "c1",
+        "paragraphId": "p1"
+      },
+      {
+        "family": "NOT_BUT_SCOPE",
+        "quote": "Der Bericht hat nicht die Aussage zurückgenommen, sondern deren Geltungsbereich präzisiert.",
+        "question": "Welche Darstellung korrigiert den Vorwurf eines vollständigen Widerrufs?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Bericht hat seine Aussage vollständig zurückgenommen."
+          },
+          {
+            "id": "B",
+            "text": "Der Bericht hat nicht die Aussage zurückgenommen, sondern deren Geltungsbereich präzisiert."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Negiert wird der behauptete Widerruf; die präzisierende Handlung bleibt bejaht.",
+        "explanation": "Die Konstruktion „nicht X, sondern Y“ hält zwei unterschiedliche Handlungen auseinander. Eine vollständige Zurücknahme wäre ein inhaltlich unzutreffender stärkerer Eingriff.",
+        "repairPrompt": "Formuliere selbst eine Richtigstellung, die zwischen Widerruf und Präzisierung unterscheidet.",
+        "id": "c2",
+        "paragraphId": "p2"
+      },
+      {
+        "family": "ADDITIVE_FOCUS",
+        "quote": "Auch die zweite Stellungnahme lag am Sitzungstag nicht vor.",
+        "question": "Welche Fassung knüpft an die bereits erwähnte fehlende Stellungnahme als zusätzliches Defizit an?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die zweite Stellungnahme lag am Sitzungstag vor."
+          },
+          {
+            "id": "B",
+            "text": "Auch die zweite Stellungnahme lag am Sitzungstag nicht vor."
+          }
+        ],
+        "preferredId": "B",
+        "model": "„Auch“ vor dem Subjekt stellt die zweite Quelle als weiteren Fall derselben negativen Lage heraus.",
+        "explanation": "Fokuspartikel und Negation haben unterschiedliche Aufgaben: „auch“ erweitert die Menge betroffener Quellen, „nicht“ verneint ihre Verfügbarkeit.",
+        "repairPrompt": "Ergänze einen sachlichen Anschluss, der einen zweiten fehlenden Nachweis als additive Information ausweist.",
+        "id": "c3",
+        "paragraphId": "p3"
+      }
+    ],
+    "transfer": "Schreibe eine eigenständige Korrektur öffentlicher Kurzfassungen: Begrenze eine Empfehlung mittels „nur“, präzisiere eine „nicht … sondern“-Aussage und füge ein weiteres fehlendes Dokument mit „auch“ hinzu. Erläutere den jeweiligen Skopus.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M15",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Sprachgefühl-Lehrtext; Entwurf ohne unabhängige Fach- und Rechtefreigabe"
+    }
+  }
+]
