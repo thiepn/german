@@ -71,7 +71,12 @@ export function collect(){
   ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G07_PHRASEOLOGY_CONTRAST',mode:'G07_PHRASEOLOGY',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,alternate:d.alternate,paragraphId:d.paragraphId,options:d.options,preferredId:d.preferredId,model:d.explanation,issues:['Validate literal source quote and fixed-expression integrity','Check commitment, action, responsibility and evidential boundary, including viable readings of alternatives','Independently verify paraphrase prompt, authored explanation and transfer instruction','Do not imply independent language approval, grading or release eligibility'],independentEditorialApproval:false}))
  ]);
  if(phraseology.length!==manifest.phraseologyDraftCount*4)throw Error('Missing G07 phraseology editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology],allIds=new Set();
+ const polysemy=read(manifest.polysemyDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G06_ORIGINAL_SOURCE',mode:'G06_POLYSEMY',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Review all newly authored German paragraphs and original rights','Check specialist lexical meanings and C1/C2 authenticity','Check factual plausibility and domain-specific terminology before any learner publication'],independentEditorialApproval:false},
+  ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G06_SENSE_CONTRAST',mode:'G06_POLYSEMY',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,alternate:d.alternate,paragraphId:d.paragraphId,lemma:d.lemma,options:d.options,preferredId:d.preferredId,model:d.explanation,issues:['Verify literal paragraph quote, lexical senses and grammatical idiom of both alternatives','Check that preferred reading follows source context and competing sense is meaningful','Review authored paraphrase, exclusion justification and independent transfer task','No automatic C1/C2 certification, learner grading or publication without independent approval'],independentEditorialApproval:false}))
+ ]);
+ if(polysemy.length!==manifest.polysemyDraftCount*4)throw Error('Missing G06 lexical semantic editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

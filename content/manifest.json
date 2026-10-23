@@ -43,5 +43,7 @@
   "referenceDraftCount": 6,
   "referenceDraftSource": "content/fixtures/g01-reference.demo.json",
   "phraseologyDraftCount": 6,
-  "phraseologyDraftSource": "content/fixtures/g07-phraseology.demo.json"
+  "phraseologyDraftSource": "content/fixtures/g07-phraseology.demo.json",
+  "polysemyDraftCount": 6,
+  "polysemyDraftSource": "content/fixtures/g06-polysemy.demo.json"
 }

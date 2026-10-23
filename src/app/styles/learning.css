@@ -25,3 +25,10 @@
 .phraseology-analysis,.phraseology-writing{border-top:1px solid var(--line);padding:16px 0;margin-top:12px}.phraseology-history summary,.phraseology-writing summary{font-weight:700;cursor:pointer;min-height:36px}
 .phraseology-task,.phraseology-transfer,.phraseology-history{margin-top:18px}.phraseology-studio select{max-width:100%}.phraseology-studio .version-diff{margin:12px 0}
 @media(max-width:600px){.phraseology-before-after{grid-template-columns:minmax(0,1fr)}}
+
+.polysemy-studio{max-width:950px}.polysemy-paragraph{line-height:1.75;overflow-wrap:anywhere;margin:18px 0}.polysemy-paragraph strong{display:block;color:var(--muted);font-size:14px;margin-bottom:4px}
+.polysemy-before-after{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}.polysemy-before-after>div{min-width:0;padding:12px 0;border-top:1px solid var(--line)}.polysemy-before-after p{line-height:1.65;overflow-wrap:anywhere}
+.polysemy-analysis,.polysemy-writing{border-top:1px solid var(--line);padding:16px 0;margin-top:12px}.polysemy-history summary,.polysemy-writing summary{font-weight:700;cursor:pointer;min-height:36px}
+.polysemy-task,.polysemy-transfer,.polysemy-history{margin-top:18px}.polysemy-studio select{max-width:100%}.polysemy-studio .version-diff{margin:12px 0}
+@media(max-width:600px){.polysemy-before-after{grid-template-columns:minmax(0,1fr)}}
+
