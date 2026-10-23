@@ -28,6 +28,7 @@ async function run(width){
   await p.getByLabel('Begründung: Kasusauslöser, Genus, Numerus und Flexion').fill('Die Originalform ist noch nicht korrigiert.');
   assert.equal(await p.getByRole('button',{name:'Analyse unveränderlich speichern'}).isDisabled(),true);
   await p.getByLabel('Deine korrigierte Nominalgruppe').fill(first);
+  await p.getByLabel('Begründung: Kasusauslöser, Genus, Numerus und Flexion').fill(reason);
   await p.getByRole('button',{name:'Analyse unveränderlich speichern'}).click();
   await p.getByRole('heading',{name:'Flexionsreparatur 2 / 3'}).waitFor();
   const explain=p.locator('.case-tracing-analysis details').first();
