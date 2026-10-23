@@ -35,9 +35,10 @@ test('reading-to-writing briefs are separate from writing mode and source readin
 test('editorial worklist source and manifest include all new 12 unreviewed dossiers',()=>{
  const m=JSON.parse(readFileSync('content/manifest.json','utf8'));
  assert.equal(m.demoItemCount,202);assert.equal(m.pragmaticScenarioCount,8);assert.equal(m.readingTransferCount,4);
- const queue=collect();assert.equal(queue.length,250+m.modalityDraftCount*4);
+ const queue=collect();assert.equal(queue.length,250+m.modalityDraftCount*4+m.caseTracingDraftCount*4);
  assert.equal(queue.filter(x=>x.type==='PRAGMATIC_CHOICE').length,8);
  assert.equal(queue.filter(x=>x.type==='READING_WRITTEN_TRANSFER').length,4);
  assert.equal(queue.filter(x=>x.mode==='G05').length,m.modalityDraftCount*4);
+ assert.equal(queue.filter(x=>x.type==='G02_GOVERNED_REPAIR').length,m.caseTracingDraftCount*3);
  assert.ok(queue.every(x=>x.independentEditorialApproval===false));
 });
