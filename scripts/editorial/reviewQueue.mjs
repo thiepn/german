@@ -51,7 +51,12 @@ export function collect(){
   ...s.repairs.map(t=>({id:s.id+':'+t.id,version:s.version,type:'G02_GOVERNED_REPAIR',mode:'G02',status:s.status,authorId:s.author,prompt:t.quote,paragraphId:t.paragraphId,governor:t.governor,canonicalSolution:t.solution,issues:['Verify syntactic governor, gender, number and case including acceptable variants','Verify adjective/participle/noun inflection and register','Validate model explanation and learner task clarity','Do not auto-grade free repairs or certify C1–C2 level'],independentEditorialApproval:false}))
  ]);
  if(caseTracing.length!==manifest.caseTracingDraftCount*4)throw Error('Missing G02 original editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing],allIds=new Set();
+ const valency=read(manifest.valencyDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G03_ORIGINAL_SOURCE',mode:'G03',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently verify all original prose, register and rights','Verify the intended governing predicates and argument structure','Confirm C1/C2 complexity without any CEFR certification'],independentEditorialApproval:false},
+  ...s.frames.map(f=>({id:s.id+':'+f.id,version:s.version,type:'G03_VALENCY_FRAME',mode:'G03',status:s.status,authorId:s.author,prompt:f.question,quote:f.quote,paragraphId:f.paragraphId,governor:f.governor,alternate:f.alternate,options:f.options,preferredId:f.preferredId,model:f.model,issues:['Validate both grammatical frames and acceptable semantic overlap','Confirm source-anchored interpretation and genuine alternative effects','Independently review authorship, semantics, syntactic role and feedback','Do not infer learner proficiency or release without review'],independentEditorialApproval:false}))
+ ]);
+ if(valency.length!==manifest.valencyDraftCount*4)throw Error('Missing G03 editorial review dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

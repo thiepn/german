@@ -35,5 +35,7 @@
   "modalityDraftCount": 6,
   "modalityDraftSource": "content/fixtures/g05-modality.demo.json",
   "caseTracingDraftCount": 6,
-  "caseTracingDraftSource": "content/fixtures/g02-case-tracing.demo.json"
+  "caseTracingDraftSource": "content/fixtures/g02-case-tracing.demo.json",
+  "valencyDraftCount": 6,
+  "valencyDraftSource": "content/fixtures/g03-valency.demo.json"
 }
