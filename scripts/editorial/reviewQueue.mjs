@@ -66,7 +66,12 @@ export function collect(){
   ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G01_REFERENCE_DECISION',mode:'G01_REFERENCE',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,alternate:d.alternate,paragraphId:d.paragraphId,options:d.options,preferredId:d.preferredId,model:d.model,issues:['Verify exact original source anchor and determiner contrast','Check contextual referent identity, scope, ambiguity and register variants','Check independent rewrite prompt, explanation and transfer accuracy','Do not certify proficiency, auto-grade free text or publish without independent review'],independentEditorialApproval:false}))
  ]);
  if(reference.length!==manifest.referenceDraftCount*4)throw Error('Missing G01 reference editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference],allIds=new Set();
+ const phraseology=read(manifest.phraseologyDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G07_ORIGINAL_SOURCE',mode:'G07_PHRASEOLOGY',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Check all original German paragraphs for idiomatic accuracy and source rights','Verify phraseological source expressions and reporting context','Assess C1/C2 training complexity without any CEFR certification'],independentEditorialApproval:false},
+  ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G07_PHRASEOLOGY_CONTRAST',mode:'G07_PHRASEOLOGY',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,alternate:d.alternate,paragraphId:d.paragraphId,options:d.options,preferredId:d.preferredId,model:d.explanation,issues:['Validate literal source quote and fixed-expression integrity','Check commitment, action, responsibility and evidential boundary, including viable readings of alternatives','Independently verify paraphrase prompt, authored explanation and transfer instruction','Do not imply independent language approval, grading or release eligibility'],independentEditorialApproval:false}))
+ ]);
+ if(phraseology.length!==manifest.phraseologyDraftCount*4)throw Error('Missing G07 phraseology editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

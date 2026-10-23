@@ -35,7 +35,7 @@ test('reading-to-writing briefs are separate from writing mode and source readin
 test('editorial worklist source and manifest include all new 12 unreviewed dossiers',()=>{
  const m=JSON.parse(readFileSync('content/manifest.json','utf8'));
  assert.equal(m.demoItemCount,202);assert.equal(m.pragmaticScenarioCount,8);assert.equal(m.readingTransferCount,4);
- const queue=collect();assert.equal(queue.length,250+m.modalityDraftCount*4+m.caseTracingDraftCount*4+m.valencyDraftCount*4+m.focusDraftCount*4+m.referenceDraftCount*4);
+ const queue=collect();assert.equal(queue.length,250+m.modalityDraftCount*4+m.caseTracingDraftCount*4+m.valencyDraftCount*4+m.focusDraftCount*4+m.referenceDraftCount*4+m.phraseologyDraftCount*4);
  assert.equal(queue.filter(x=>x.type==='PRAGMATIC_CHOICE').length,8);
  assert.equal(queue.filter(x=>x.type==='READING_WRITTEN_TRANSFER').length,4);
  assert.equal(queue.filter(x=>x.mode==='G05').length,m.modalityDraftCount*4);
@@ -43,5 +43,6 @@ test('editorial worklist source and manifest include all new 12 unreviewed dossi
  assert.equal(queue.filter(x=>x.type==='G03_VALENCY_FRAME').length,m.valencyDraftCount*3);
  assert.equal(queue.filter(x=>x.type==='G04_DISCOURSE_CONTRAST').length,m.focusDraftCount*3);
  assert.equal(queue.filter(x=>x.type==='G01_REFERENCE_DECISION').length,m.referenceDraftCount*3);
+ assert.equal(queue.filter(x=>x.type==='G07_PHRASEOLOGY_CONTRAST').length,m.phraseologyDraftCount*3);
  assert.ok(queue.every(x=>x.independentEditorialApproval===false));
 });

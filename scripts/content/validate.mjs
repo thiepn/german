@@ -205,6 +205,23 @@ for(const s of m16){
 }
 if(g01Families.size<15||g01Decisions!==18||g01PreferredB<5)throw Error('Insufficient reference and determination coverage');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+const m17=read(manifest.phraseologyDraftSource);
+if(manifest.phraseologyDraftCount!==6||m17.length!==manifest.phraseologyDraftCount)throw Error('G07 phraseology case count mismatch');
+const g07Ids=new Set(),g07Families=new Set();let g07Decisions=0,g07PreferredB=0;
+for(const s of m17){
+ if(!/^SG-G07-\d{3}$/.test(s.id)||g07Ids.has(s.id)||s.version!==1||s.domain!=='G07'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G07 phraseology study '+s.id);
+ g07Ids.add(s.id);
+ if(!s.title?.trim()||!s.focus?.trim()||!s.transfer?.trim()||s.paragraphs?.length!==3||s.decisions?.length!==3)throw Error('Incomplete G07 phraseology study '+s.id);
+ const pids=new Set(s.paragraphs.map(p=>p.id));
+ if(pids.size!==3||s.paragraphs.some(p=>!p.text||p.text.length<180))throw Error('Missing original G07 prose '+s.id);
+ const dids=new Set();
+ for(const d of s.decisions){
+  if(dids.has(d.id)||!/^d[1-3]$/.test(d.id)||!pids.has(d.paragraphId)||!s.paragraphs.find(p=>p.id===d.paragraphId)?.text.includes(d.quote)||d.quote.length<30||!d.alternate?.trim()||d.quote===d.alternate||!d.focus?.trim()||!d.question?.trim()||!d.analysis?.trim()||!d.explanation?.trim()||d.explanation.length<125||!d.repairPrompt?.trim()||d.options?.length!==2||d.options[0].id!=='A'||d.options[1].id!=='B'||d.options.some(o=>!o.text?.trim())||!['A','B'].includes(d.preferredId)||d.options[0].text===d.options[1].text)throw Error('Invalid G07 phraseology contrast '+s.id+':'+d.id);
+  dids.add(d.id);g07Families.add(d.family);g07Decisions++;if(d.preferredId==='B')g07PreferredB++;
+ }
+}
+if(g07Families.size<15||g07Decisions!==18||g07PreferredB<5)throw Error('Insufficient G07 phraseology contrast coverage');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

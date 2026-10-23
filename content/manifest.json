@@ -41,5 +41,7 @@
   "focusDraftCount": 6,
   "focusDraftSource": "content/fixtures/g04-information-structure.demo.json",
   "referenceDraftCount": 6,
-  "referenceDraftSource": "content/fixtures/g01-reference.demo.json"
+  "referenceDraftSource": "content/fixtures/g01-reference.demo.json",
+  "phraseologyDraftCount": 6,
+  "phraseologyDraftSource": "content/fixtures/g07-phraseology.demo.json"
 }

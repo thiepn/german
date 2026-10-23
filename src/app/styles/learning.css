@@ -19,3 +19,9 @@
 .reference-before-after{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}.reference-before-after>div{min-width:0;padding:12px 0;border-top:1px solid var(--line)}.reference-before-after p{line-height:1.65;overflow-wrap:anywhere}.reference-analysis,.reference-writing{border-top:1px solid var(--line);padding:16px 0;margin-top:12px}
 .reference-history summary,.reference-writing summary{font-weight:700;cursor:pointer;min-height:36px}.reference-task,.reference-transfer,.reference-history{margin-top:18px}.reference-studio select{max-width:100%}.reference-studio .version-diff{margin:12px 0}
 @media(max-width:600px){.reference-before-after{grid-template-columns:minmax(0,1fr)}}
+
+.phraseology-studio{max-width:950px}.phraseology-paragraph{line-height:1.75;overflow-wrap:anywhere;margin:18px 0}.phraseology-paragraph strong{display:block;color:var(--muted);font-size:14px;margin-bottom:4px}
+.phraseology-before-after{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}.phraseology-before-after>div{min-width:0;padding:12px 0;border-top:1px solid var(--line)}.phraseology-before-after p{line-height:1.65;overflow-wrap:anywhere}
+.phraseology-analysis,.phraseology-writing{border-top:1px solid var(--line);padding:16px 0;margin-top:12px}.phraseology-history summary,.phraseology-writing summary{font-weight:700;cursor:pointer;min-height:36px}
+.phraseology-task,.phraseology-transfer,.phraseology-history{margin-top:18px}.phraseology-studio select{max-width:100%}.phraseology-studio .version-diff{margin:12px 0}
+@media(max-width:600px){.phraseology-before-after{grid-template-columns:minmax(0,1fr)}}
