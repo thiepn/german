@@ -37,5 +37,7 @@
   "caseTracingDraftCount": 6,
   "caseTracingDraftSource": "content/fixtures/g02-case-tracing.demo.json",
   "valencyDraftCount": 6,
-  "valencyDraftSource": "content/fixtures/g03-valency.demo.json"
+  "valencyDraftSource": "content/fixtures/g03-valency.demo.json",
+  "focusDraftCount": 6,
+  "focusDraftSource": "content/fixtures/g04-information-structure.demo.json"
 }

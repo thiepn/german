@@ -56,7 +56,12 @@ export function collect(){
   ...s.frames.map(f=>({id:s.id+':'+f.id,version:s.version,type:'G03_VALENCY_FRAME',mode:'G03',status:s.status,authorId:s.author,prompt:f.question,quote:f.quote,paragraphId:f.paragraphId,governor:f.governor,alternate:f.alternate,options:f.options,preferredId:f.preferredId,model:f.model,issues:['Validate both grammatical frames and acceptable semantic overlap','Confirm source-anchored interpretation and genuine alternative effects','Independently review authorship, semantics, syntactic role and feedback','Do not infer learner proficiency or release without review'],independentEditorialApproval:false}))
  ]);
  if(valency.length!==manifest.valencyDraftCount*4)throw Error('Missing G03 editorial review dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency],allIds=new Set();
+ const focus=read(manifest.focusDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G04_ORIGINAL_SOURCE',mode:'G04_FOCUS',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independent authenticity, German idiom and rights review for all source paragraphs','Check discourse premises and context for every focus-dependent interpretation','Check C1/C2 learning progression without awarding CEFR credit'],independentEditorialApproval:false},
+  ...s.contrasts.map(c=>({id:s.id+':'+c.id,version:s.version,type:'G04_DISCOURSE_CONTRAST',mode:'G04_FOCUS',status:s.status,authorId:s.author,prompt:c.question,quote:c.quote,paragraphId:c.paragraphId,options:c.options,preferredId:c.preferredId,model:c.model,issues:['Validate source quote and each grammatical alternative','Check scope/topic-focus implications, acceptable interpretations and ambiguous focus readings','Verify independent reformulation prompt, correction explanation and transfer objective','No automatic grades, CEFR claims or approval inferred from authored choices'],independentEditorialApproval:false}))
+ ]);
+ if(focus.length!==manifest.focusDraftCount*4)throw Error('Missing G04 focus editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }
