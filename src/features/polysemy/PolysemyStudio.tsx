@@ -44,7 +44,7 @@ export default function PolysemyStudio({initialSelection,onExit}:{initialSelecti
   <div className="field"><label htmlFor="polysemy-study">Textfall</label><select id="polysemy-study" value={selected} disabled={busy} onChange={e=>select(e.target.value)}>{polysemyStudies.map(s=><option key={s.id} value={s.id}>{s.band} · {s.title}</option>)}</select></div>
   {nextPolysemyStudy(entries).id!==selected&&<button className="button outline" type="button" disabled={busy} onClick={()=>select(nextPolysemyStudy(entries).id)}>Nächsten Fall öffnen</button>}
   <article className="panel polysemy-source">
-   <div className="kicker">{study.band} · G07 · {study.id} · v{study.version}</div>
+   <div className="kicker">{study.band} · G06 · {study.id} · v{study.version}</div>
    <h2>{study.title}</h2><p>{study.focus}</p>
    {study.paragraphs.map((p,i)=><p className="polysemy-paragraph" key={p.id}><strong>Absatz {i+1} · {p.id}</strong>{p.text}</p>)}
    <p className="small muted">{study.status} · {study.rights.kind} · {study.rights.source}</p>

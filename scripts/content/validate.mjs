@@ -226,7 +226,7 @@ const m18=read(manifest.polysemyDraftSource);
 if(manifest.polysemyDraftCount!==6||m18.length!==manifest.polysemyDraftCount)throw Error('G06 polysemy source count mismatch');
 const g06Ids=new Set(),g06Families=new Set();let g06Decisions=0,g06PreferredB=0;
 for(const s of m18){
- if(!/^SG-G06-\\d{3}$/.test(s.id)||g06Ids.has(s.id)||s.version!==1||s.domain!=='G06'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G06 polysemy study '+s.id);
+ if(!/^SG-G06-\d{3}$/.test(s.id)||g06Ids.has(s.id)||s.version!==1||s.domain!=='G06'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G06 polysemy study '+s.id);
  g06Ids.add(s.id);
  if(!s.title?.trim()||!s.focus?.trim()||!s.transfer?.trim()||s.paragraphs?.length!==3||s.decisions?.length!==3)throw Error('Incomplete G06 polysemy source '+s.id);
  const paragraphIds=new Set(s.paragraphs.map(p=>p.id));

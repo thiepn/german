@@ -249,7 +249,7 @@
         "family": "AUSWEISEN_KOSTEN",
         "lemma": "ausweisen",
         "quote": "Die Haushaltsübersicht wies die Kosten für die befristete Betreuung gesondert aus.",
-        "alternate": "Die zuständige Stelle wies einer Mitarbeiterin nach der Prüfung einen neuen Arbeitsplatz aus.",
+        "alternate": "Die Behörde wies den Reisenden nach Prüfung seiner Unterlagen aus dem Staatsgebiet aus.",
         "question": "Welche Bedeutung hat „ausweisen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
         "options": [
           {
@@ -258,11 +258,11 @@
           },
           {
             "id": "B",
-            "text": "Einer Person wurde ein konkreter Arbeitsplatz zugeteilt."
+            "text": "Eine Person wurde behördlich zum Verlassen des Staatsgebiets verpflichtet."
           }
         ],
         "preferredId": "B",
-        "explanation": "Kosten ausweisen heißt, sie in einer Übersicht als Posten erkennbar zu machen. Einen Arbeitsplatz zuweisen ist eine andere Handlung; eine Kostendarstellung allein bewirkt keine persönliche Zuteilung oder finanzielle Zuständigkeitsentscheidung.",
+        "explanation": "Kosten ausweisen heißt, sie in einer Übersicht als Posten erkennbar zu machen. Eine Person ausweisen meint dagegen eine behördliche Maßnahme, die zum Verlassen des Staatsgebiets verpflichtet. Das Sichtbarmachen von Kosten ist keine Entscheidung über eine Person und auch noch keine Zusage ihrer Finanzierung.",
         "repairPrompt": "Formuliere einen Haushaltssatz, der Transparenz über Beträge von einer Finanzierungszusage trennt."
       },
       {
@@ -449,7 +449,7 @@
         "family": "DECKEN_AUSGABEN",
         "lemma": "decken",
         "quote": "Für das kommende Jahr sollte eine zweckgebundene Rücklage einen Teil der Betriebsausgaben decken.",
-        "alternate": "Eine abschließende Untersuchung deckte bisher unbekannte Unregelmäßigkeiten im Betrieb auf.",
+        "alternate": "Eine Handwerksfirma deckte das beschädigte Dach der Einrichtung mit neuen Ziegeln.",
         "question": "Welche Bedeutung hat „decken“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
         "options": [
           {
@@ -458,11 +458,11 @@
           },
           {
             "id": "B",
-            "text": "Eine Untersuchung brachte zuvor verborgene Sachverhalte ans Licht."
+            "text": "Eine Dachfläche wurde mit einem wetterfesten Material bedeckt."
           }
         ],
         "preferredId": "B",
-        "explanation": "Ausgaben decken bedeutet hier, finanzielle Mittel für sie bereitzustellen. Etwas aufdecken heißt dagegen, Unbekanntes sichtbar zu machen. Der Bericht begrenzt die verfügbare Finanzierung ausdrücklich auf einen Teil der Kosten.",
+        "explanation": "Betriebsausgaben decken heißt hier, finanzielle Mittel für sie vorzusehen. Ein Dach decken bezeichnet die handwerkliche Anbringung eines schützenden Belags. Im Bericht ist ausdrücklich nur von der teilweisen finanziellen Deckung die Rede; eine bauliche Arbeit wird nicht behauptet.",
         "repairPrompt": "Formuliere eine Finanzierungsangabe, die Teildeckung nicht als vollständige Kostensicherung ausgibt."
       },
       {
@@ -549,7 +549,7 @@
         "family": "ANRECHNEN_LEISTUNGEN",
         "lemma": "anrechnen",
         "quote": "Bei einer erfolgreichen Bewerbung konnten einzelne bereits erbrachte Studienleistungen angerechnet werden.",
-        "alternate": "Die Verwaltung rechnete die Gebühren für die erneute Prüfung dem Projektbudget an.",
+        "alternate": "Die Verwaltung rechnete eine bereits gezahlte Gebühr auf die neue Rechnung an.",
         "question": "Welche Bedeutung hat „anrechnen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
         "options": [
           {
@@ -558,11 +558,11 @@
           },
           {
             "id": "B",
-            "text": "Bestimmte Kosten wurden einem Etat buchhalterisch zugeordnet."
+            "text": "Eine bestehende Geldzahlung wurde auf einen neuen Zahlungsbetrag verrechnet."
           }
         ],
         "preferredId": "A",
-        "explanation": "Studienleistungen anrechnen betrifft die fachliche Anerkennung bereits erbrachter Arbeit und kann den Studienumfang mindern. Kosten anrechnen oder verrechnen gehört dagegen in einen finanziellen Kontext; aus dem Text folgt keine neue Gebühr.",
+        "explanation": "Studienleistungen anrechnen betrifft die fachliche Anerkennung bereits erbrachter Arbeit und kann den Studienumfang mindern. Eine Zahlung auf eine Rechnung anrechnen betrifft die Verrechnung von Geldbeträgen. Aus der fachlichen Anerkennung lässt sich keine neue Gebühr und keine finanzielle Gutschrift ableiten.",
         "repairPrompt": "Fasse die fachliche Anerkennung bereits absolvierter Module ohne finanziellen Nebenbefund zusammen."
       },
       {
