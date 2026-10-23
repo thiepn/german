@@ -165,7 +165,7 @@ for(const s of m14){
  if(pids.size!==3||s.paragraphs.some(p=>!p.text||p.text.length<130))throw Error('Missing G03 source paragraph '+s.id);
  const fids=new Set();
  for(const f of s.frames){
-  if(fids.has(f.id)||!/^f[1-3]$/.test(f.id)||!pids.has(f.paragraphId)||!s.paragraphs.find(p=>p.id===f.paragraphId)?.text.includes(f.quote)||!f.governor?.trim()||!f.alternate?.trim()||!f.question?.trim()||!f.model?.trim()||!f.explanation?.trim()||f.explanation.length<80||!f.repairPrompt?.trim()||f.options?.length!==2||f.options[0].id!=='A'||f.options[1].id!=='B'||f.options.some(o=>!o.text?.trim())||!['A','B'].includes(f.preferredId)||f.options.find(o=>o.id===f.preferredId).text===f.options.find(o=>o.id!=='A'&&o.id!=='B')?.text)throw Error('Invalid G03 valency contrast '+s.id+':'+f.id);
+  if(fids.has(f.id)||!/^f[1-3]$/.test(f.id)||!pids.has(f.paragraphId)||!s.paragraphs.find(p=>p.id===f.paragraphId)?.text.includes(f.quote)||!f.governor?.trim()||!f.alternate?.trim()||!f.question?.trim()||!f.model?.trim()||!f.explanation?.trim()||f.explanation.length<80||!f.repairPrompt?.trim()||f.options?.length!==2||f.options[0].id!=='A'||f.options[1].id!=='B'||f.options.some(o=>!o.text?.trim())||!['A','B'].includes(f.preferredId)||f.options[0].text===f.options[1].text)throw Error('Invalid G03 valency contrast '+s.id+':'+f.id);
   fids.add(f.id);g03Families.add(f.family);g03Contrasts++;
  }
 }

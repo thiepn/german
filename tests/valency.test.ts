@@ -99,7 +99,7 @@ test('original backup v3 retains source, immutable interpretation, frame choices
  const packed=await buildPortableBackup(records),restored=await inspectPortableBackup(packed);
  assert.equal(restored.version,BACKUP_VERSION);
  assert.deepEqual(restored.records.productionEntries,[e]);
- await assert.rejects(()=>inspectPortableBackup(packed.replace('bestehen auf','erfundene Angabe')),/Integritätsprüfung/);
+ await assert.rejects(()=>inspectPortableBackup(packed.replace('Die Kommission verlangt schriftliche Belege','Die Kommission hat diese Angaben nie erhalten')),/Integritätsprüfung/);
 });
 
 test('all six source files and eighteen contrasts are independently unapproved in the original review queue',()=>{
