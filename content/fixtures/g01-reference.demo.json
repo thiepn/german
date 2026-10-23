@@ -1,0 +1,620 @@
+[
+  {
+    "id": "SG-G01-001",
+    "version": 1,
+    "domain": "G01",
+    "band": "C1",
+    "title": "Ein Gutachten und sein Verfasser",
+    "focus": "Erstnennung, Wiederaufnahme und Referenzkette",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine externe Gutachterin nahm den Förderantrag im März entgegen. Bis dahin hatte die Kommission nur interne Bewertungen gesammelt und der hinzugezogenen Fachperson noch keine Unterlagen übermittelt. Ihre Bestellung wurde erst nach einer öffentlichen Nachfrage bekannt."
+      },
+      {
+        "id": "p2",
+        "text": "Die Gutachterin sichtete anschließend die eingereichten Berechnungen und verfasste ein vorläufiges Gutachten. Die Kommission bat sie, die Unsicherheit einer zentralen Prognose gesondert auszuweisen. Über die endgültige Förderung sollte erst nach Eingang ihrer Stellungnahme entschieden werden."
+      },
+      {
+        "id": "p3",
+        "text": "Das Gutachten ging am Freitag bei der Geschäftsstelle ein. Der Vorsitzende legte es jedoch nicht unmittelbar zur Abstimmung vor, weil mehrere Anlagen noch fehlten. Im folgenden Protokoll wurde ausdrücklich zwischen dem eingegangenen Bericht und der ausstehenden Entscheidung unterschieden."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "FIRST_MENTION",
+        "topic": "Erstnennung einer bislang nicht identifizierten Person",
+        "quote": "Eine externe Gutachterin nahm den Förderantrag im März entgegen.",
+        "alternate": "Die externe Gutachterin nahm den Förderantrag im März entgegen.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es wird eine neue Person in den Diskurs eingeführt."
+          },
+          {
+            "id": "B",
+            "text": "Die bestimmte Form kann nur ohne zusätzliche Erklärung funktionieren, wenn die Person bereits identifizierbar war."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der unbestimmte Artikel eröffnet eine neue Referenzkette; die bestimmte Variante setzt die Identifizierbarkeit der Gutachterin aus einem früheren Kontext voraus.",
+        "explanation": "Der unbestimmte Artikel eröffnet eine neue Referenzkette; die bestimmte Variante setzt die Identifizierbarkeit der Gutachterin aus einem früheren Kontext voraus.",
+        "repairPrompt": "Schreibe eine Erstnennung mit passender Einbettung in den Folgesatz."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "ANAPHORIC_RETURN",
+        "topic": "Wiederaufnahme der vorher eingeführten Gutachterin",
+        "quote": "Die Gutachterin sichtete anschließend die eingereichten Berechnungen",
+        "alternate": "Eine Gutachterin sichtete anschließend die eingereichten Berechnungen",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die schon eingeführte Gutachterin setzt die Bearbeitung fort."
+          },
+          {
+            "id": "B",
+            "text": "Irgendeine weitere oder neu eingeführte Gutachterin nimmt die Sichtung vor."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die bestimmte Nominalgruppe verbindet die zweite Passage mit der Erstnennung; eine erneute unbestimmte Form kann einen neuen Referenten nahelegen.",
+        "explanation": "Die bestimmte Nominalgruppe verbindet die zweite Passage mit der Erstnennung; eine erneute unbestimmte Form kann einen neuen Referenten nahelegen.",
+        "repairPrompt": "Formuliere die Passage mit eindeutiger Wiederaufnahme, ohne unbelegt eine zweite Gutachterin einzuführen."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "DOCUMENT_CHAIN",
+        "topic": "Rückverweis auf den bereits genannten schriftlichen Entwurf",
+        "quote": "Das Gutachten ging am Freitag bei der Geschäftsstelle ein.",
+        "alternate": "Ein Gutachten ging am Freitag bei der Geschäftsstelle ein.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der zuvor genannte Bericht traf am Freitag ein."
+          },
+          {
+            "id": "B",
+            "text": "Es traf ein möglicherweise anderer, erst jetzt genannter Bericht ein."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die zweite Passage führt ein vorläufiges Gutachten ein; der bestimmte Artikel greift genau dieses Dokument wieder auf.",
+        "explanation": "Die zweite Passage führt ein vorläufiges Gutachten ein; der bestimmte Artikel greift genau dieses Dokument wieder auf. Die Alternative lässt seine Identität offen.",
+        "repairPrompt": "Stelle einen klaren Bezug zwischen der Erstellung eines Dokuments und seinem späteren Eingang her."
+      }
+    ],
+    "transfer": "Verfasse eine eigenständige kurze Mitteilung, die den Referenzverlauf der drei Absätze richtig wiedergibt. Führe zunächst einen Referenten ein, greife ihn danach eindeutig auf und begrenze eine generalisierende oder negative Aussage. Erläutere, welche Determinierer du gewählt hast und welche alternativen Bezüge du vermeiden willst.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M16 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored fictional G01 contextual reference and determination studies; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G01-002",
+    "version": 1,
+    "domain": "G01",
+    "band": "C1",
+    "title": "Bürgerbeteiligung und Beschwerdeliste",
+    "focus": "Generische Aussagen, lokale Gruppen und demonstrative Abgrenzung",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Mehrere Bewohner des westlichen Viertels wandten sich wegen der neuen Verkehrsführung an die Stadt. Anwohner brauchen grundsätzlich eine erreichbare Auskunftsstelle, wenn Straßen für längere Zeit gesperrt werden. Der Bericht fasste diese allgemeine Forderung zunächst ohne Bezug auf einzelne Namen zusammen."
+      },
+      {
+        "id": "p2",
+        "text": "Die Anwohner des westlichen Viertels erhielten am Mittwoch einen Gesprächstermin. Andere Stadtteile waren zu diesem Termin nicht eingeladen, obwohl auch dort Beschwerden eingegangen waren. Für eine gesamtstädtische Versammlung lag noch kein Beschluss vor."
+      },
+      {
+        "id": "p3",
+        "text": "Diese Beschwerden wurden in einer gesonderten Liste dokumentiert. Zuvor hatte die Geschäftsstelle sowohl die Eingaben aus dem westlichen Viertel als auch die aus den benachbarten Straßen zusammengetragen. Die Liste sollte gerade die zuletzt erwähnten Eingaben von älteren Vorgängen unterscheiden."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "GENERIC_PLURAL",
+        "topic": "Generischer Plural ohne bestimmten Personenkreis",
+        "quote": "Anwohner brauchen grundsätzlich eine erreichbare Auskunftsstelle",
+        "alternate": "Die Anwohner brauchen grundsätzlich eine erreichbare Auskunftsstelle",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Gemeint sind Anwohner als allgemeine Gruppe in solchen Situationen."
+          },
+          {
+            "id": "B",
+            "text": "Es geht nur um die konkret zuvor erwähnten Bewohner des westlichen Viertels."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der artikellose Plural kann die grundsätzliche Eigenschaft aller einschlägigen Anwohner ausdrücken; die bestimmte Variante lenkt stärker zu einer bekannten Gruppe.",
+        "explanation": "Der artikellose Plural kann die grundsätzliche Eigenschaft aller einschlägigen Anwohner ausdrücken; die bestimmte Variante lenkt stärker zu einer bekannten Gruppe.",
+        "repairPrompt": "Schreibe eine allgemeine Regel und anschließend eine Aussage über einen konkreten Personenkreis."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "DEFINED_GROUP",
+        "topic": "Durch Zusatz identifizierte Gruppe und unbestimmte Teilmenge",
+        "quote": "Die Anwohner des westlichen Viertels erhielten am Mittwoch einen Gesprächstermin.",
+        "alternate": "Anwohner des westlichen Viertels erhielten am Mittwoch einen Gesprächstermin.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die im Bericht identifizierte Gruppe erhält den Termin."
+          },
+          {
+            "id": "B",
+            "text": "Einige nicht näher bestimmte Anwohner aus dem Viertel erhalten einen Termin."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die bestimmte Wortgruppe verknüpft die Mitteilung mit der zuvor eingeführten Gruppe; die artikellose Alternative ist mit einer unbestimmten Teilmenge kompatibel.",
+        "explanation": "Die bestimmte Wortgruppe verknüpft die Mitteilung mit der zuvor eingeführten Gruppe; die artikellose Alternative ist mit einer unbestimmten Teilmenge kompatibel.",
+        "repairPrompt": "Formuliere eine präzise Terminmitteilung und kennzeichne, ob alle benannten oder nur einzelne Anwohner gemeint sind."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "DEMONSTRATIVE_SELECTION",
+        "topic": "Demonstrative Auswahl im Kontrast zu früheren Vorgängen",
+        "quote": "Diese Beschwerden wurden in einer gesonderten Liste dokumentiert.",
+        "alternate": "Die Beschwerden wurden in einer gesonderten Liste dokumentiert.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die gerade angesprochenen Beschwerden werden gegenüber anderen hervorgehoben."
+          },
+          {
+            "id": "B",
+            "text": "Eine aus dem Zusammenhang bekannte Menge von Beschwerden wird ohne besondere Hervorhebung wiederaufgenommen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„Diese“ macht die Auswahl einer gerade relevanten Teilmenge explizit; „die“ kann schlicht anaphorisch sein.",
+        "explanation": "„Diese“ macht die Auswahl einer gerade relevanten Teilmenge explizit; „die“ kann schlicht anaphorisch sein. Beide sind möglich, aber die Diskurslenkung unterscheidet sich.",
+        "repairPrompt": "Schreibe eine Auswahl, bei der zwei Beschwerdegruppen eindeutig voneinander getrennt bleiben."
+      }
+    ],
+    "transfer": "Verfasse eine eigenständige kurze Mitteilung, die den Referenzverlauf der drei Absätze richtig wiedergibt. Führe zunächst einen Referenten ein, greife ihn danach eindeutig auf und begrenze eine generalisierende oder negative Aussage. Erläutere, welche Determinierer du gewählt hast und welche alternativen Bezüge du vermeiden willst.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M16 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored fictional G01 contextual reference and determination studies; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G01-003",
+    "version": 1,
+    "domain": "G01",
+    "band": "C2",
+    "title": "Die Forschung und ihre Proben",
+    "focus": "Stoffnamen, definite Proben und begrenzte Referenz",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Für eine Laborstudie wurden Wasser und Sediment aus drei Messstellen entnommen. Wasser galt dabei als Untersuchungsmaterial, nicht als Bezeichnung einer bestimmten Flasche. Jede Entnahme erhielt eine Kennziffer und wurde getrennt dokumentiert."
+      },
+      {
+        "id": "p2",
+        "text": "Das Wasser aus der nördlichen Messstelle enthielt auffällige Rückstände. Die Forschenden verglichen es mit Material aus den beiden übrigen Messstellen und hielten die Ergebnisse zunächst nur intern fest. Ein allgemeiner Befund über das gesamte Gewässer ließ sich daraus nicht ableiten."
+      },
+      {
+        "id": "p3",
+        "text": "Proben mit unklarer Herkunft wurden nicht in die Auswertung aufgenommen. Die Proben aus dem ersten Durchgang blieben dagegen vollständig erhalten und wurden später erneut geprüft. Im Bericht werden deshalb die ausgeschlossenen Fälle und die konkret archivierten Entnahmen getrennt ausgewiesen."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "MASS_INTRODUCTION",
+        "topic": "Stoffbezeichnungen als neu eingeführtes Material",
+        "quote": "Für eine Laborstudie wurden Wasser und Sediment aus drei Messstellen entnommen.",
+        "alternate": "Für eine Laborstudie wurden das Wasser und das Sediment aus drei Messstellen entnommen.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es werden Stoffe als Untersuchungsmaterial benannt, ohne eine zuvor bestimmte Menge vorauszusetzen."
+          },
+          {
+            "id": "B",
+            "text": "Bestimmte, bereits identifizierbare Materialmengen werden entnommen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Nullartikel bei Stoffnamen eignet sich für noch nicht individuierte Materialarten.",
+        "explanation": "Nullartikel bei Stoffnamen eignet sich für noch nicht individuierte Materialarten. „Das Wasser“ verlangt in der Regel einen aus Kontext oder Zusatz bestimmten Stoffanteil.",
+        "repairPrompt": "Berichte über zwei neue Stoffproben und lege im Folgesatz fest, welche davon erneut untersucht wurde."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "RESTRICTED_DEFINITE",
+        "topic": "Identifizierbare Stoffportion mit lokaler Herkunft",
+        "quote": "Das Wasser aus der nördlichen Messstelle enthielt auffällige Rückstände.",
+        "alternate": "Wasser aus einer nördlichen Messstelle enthielt auffällige Rückstände.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die bereits bezeichnete Entnahme aus der nördlichen Messstelle ist gemeint."
+          },
+          {
+            "id": "B",
+            "text": "Eine bislang nicht näher festgelegte nördliche Messstelle und das dortige Wasser werden neu eingeführt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der bestimmte Ausdruck wird durch die bekannte nördliche Messstelle präzisiert; „einer nördlichen Messstelle“ hebt die Eindeutigkeit dieser Herkunft auf.",
+        "explanation": "Der bestimmte Ausdruck wird durch die bekannte nördliche Messstelle präzisiert; „einer nördlichen Messstelle“ hebt die Eindeutigkeit dieser Herkunft auf.",
+        "repairPrompt": "Formuliere eine Aussage nur zu einem bestimmten Probenort und vermeide eine Generalisierung auf alle Messstellen."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "INDEFINITE_PLURAL",
+        "topic": "Unbestimmte Klasse statt vorgängig vollständig bekannter Liste",
+        "quote": "Proben mit unklarer Herkunft wurden nicht in die Auswertung aufgenommen.",
+        "alternate": "Die Proben mit unklarer Herkunft wurden nicht in die Auswertung aufgenommen.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Alle Fälle, auf die das Merkmal unklare Herkunft zutraf, werden als Regel ausgeschlossen."
+          },
+          {
+            "id": "B",
+            "text": "Eine konkrete, bekannte Menge problematischer Proben ist gemeint."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der artikellose Plural eignet sich hier zur Beschreibung eines Auswahlkriteriums; die bestimmte Variante setzt einen identifizierten Bestand voraus.",
+        "explanation": "Der artikellose Plural eignet sich hier zur Beschreibung eines Auswahlkriteriums; die bestimmte Variante setzt einen identifizierten Bestand voraus.",
+        "repairPrompt": "Trenne eine allgemeine Ausschlussregel von der Mitteilung über eine bestimmte archivierte Probenmenge."
+      }
+    ],
+    "transfer": "Verfasse eine eigenständige kurze Mitteilung, die den Referenzverlauf der drei Absätze richtig wiedergibt. Führe zunächst einen Referenten ein, greife ihn danach eindeutig auf und begrenze eine generalisierende oder negative Aussage. Erläutere, welche Determinierer du gewählt hast und welche alternativen Bezüge du vermeiden willst.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M16 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored fictional G01 contextual reference and determination studies; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G01-004",
+    "version": 1,
+    "domain": "G01",
+    "band": "C2",
+    "title": "Ein Ausschuss und seine Ämter",
+    "focus": "Rollenausdrücke, etablierte Referenten und Verweis auf einzelne Mitglieder",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein neu gebildeter Ausschuss trat zum ersten Mal im Rathaus zusammen. Die Mitglieder einigten sich darauf, eine Person für die Sitzungsleitung zu bestimmen. Eine erfahrene Juristin übernahm nach der Abstimmung den Vorsitz."
+      },
+      {
+        "id": "p2",
+        "text": "Die Juristin sprach anschließend als Vorsitzende des Ausschusses und nicht als Vertreterin ihrer früheren Dienststelle. Sie erläuterte die Tagesordnung und stellte klar, dass persönliche Stellungnahmen einzelner Mitglieder nicht automatisch Beschlüsse des Gremiums seien."
+      },
+      {
+        "id": "p3",
+        "text": "Ein Mitglied des Ausschusses beantragte eine zusätzliche Anhörung. Der Antrag wurde aufgenommen, aber noch nicht abgestimmt. Das Mitglied, das den Antrag gestellt hatte, erhielt Gelegenheit, die Gründe bei der nächsten Sitzung nachzureichen."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "ROLE_INTRODUCTION",
+        "topic": "Neu eingeführte Amtsträgerin",
+        "quote": "Eine erfahrene Juristin übernahm nach der Abstimmung den Vorsitz.",
+        "alternate": "Die erfahrene Juristin übernahm nach der Abstimmung den Vorsitz.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine bislang nicht im Text identifizierte Person erhält das Amt."
+          },
+          {
+            "id": "B",
+            "text": "Eine dem Leser schon bekannte Juristin erhält das Amt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der unbestimmte Artikel führt die konkrete spätere Vorsitzende neu ein.",
+        "explanation": "Der unbestimmte Artikel führt die konkrete spätere Vorsitzende neu ein. Die bestimmte Variante benötigt eine im Diskurs etablierte Identität.",
+        "repairPrompt": "Schreibe über die Vergabe einer Funktion ohne unberechtigt eine zuvor bekannte Person vorauszusetzen."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "PREDICATIVE_ROLE",
+        "topic": "Rollenangabe nach als gegenüber individuierender Bestimmung",
+        "quote": "Die Juristin sprach anschließend als Vorsitzende des Ausschusses",
+        "alternate": "Die Juristin sprach anschließend als die Vorsitzende des Ausschusses",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Juristin handelt in ihrer amtlichen Funktion."
+          },
+          {
+            "id": "B",
+            "text": "Die Sprecherin wird ausdrücklich als die identifizierte Inhaberin des Amtes bezeichnet, mit zusätzlicher Hervorhebung ihrer Person."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Nach „als“ kann der bloße Rollenname die Funktion ohne eigenständige Referenz hervorheben; „als die Vorsitzende“ ist möglich, setzt aber die identifizierende Rollenbezeichnung stärker in Szene.",
+        "explanation": "Nach „als“ kann der bloße Rollenname die Funktion ohne eigenständige Referenz hervorheben; „als die Vorsitzende“ ist möglich, setzt aber die identifizierende Rollenbezeichnung stärker in Szene.",
+        "repairPrompt": "Formuliere eine Stellungnahme einer Person in amtlicher Rolle und grenze sie von einer persönlichen Äußerung ab."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "RESTRICTIVE_IDENTIFICATION",
+        "topic": "Bekannter einzelner Antragsteller",
+        "quote": "Das Mitglied, das den Antrag gestellt hatte, erhielt Gelegenheit",
+        "alternate": "Ein Mitglied, das den Antrag gestellt hatte, erhielt Gelegenheit",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Das zuvor eingeführte antragstellende Mitglied wird wiederaufgenommen."
+          },
+          {
+            "id": "B",
+            "text": "Es wird ein möglicherweise anderer Antragsteller aus dem Ausschuss beschrieben."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der bestimmte Artikel plus Relativsatz identifiziert das bereits erwähnte antragstellende Mitglied; ein neuer unbestimmter Ausdruck kann einen weiteren Referenten nahelegen.",
+        "explanation": "Der bestimmte Artikel plus Relativsatz identifiziert das bereits erwähnte antragstellende Mitglied; ein neuer unbestimmter Ausdruck kann einen weiteren Referenten nahelegen.",
+        "repairPrompt": "Schreibe eine Folgehandlung, bei der der erste Antragsteller eindeutig derselbe bleibt."
+      }
+    ],
+    "transfer": "Verfasse eine eigenständige kurze Mitteilung, die den Referenzverlauf der drei Absätze richtig wiedergibt. Führe zunächst einen Referenten ein, greife ihn danach eindeutig auf und begrenze eine generalisierende oder negative Aussage. Erläutere, welche Determinierer du gewählt hast und welche alternativen Bezüge du vermeiden willst.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M16 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored fictional G01 contextual reference and determination studies; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G01-005",
+    "version": 1,
+    "domain": "G01",
+    "band": "C2",
+    "title": "Empfehlung oder Entscheidung?",
+    "focus": "Negative Determination, bestimmte Negation und Entscheidungsstand",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Prüfgruppe legte am Donnerstag einen Zwischenbericht vor. Eine Empfehlung zur sofortigen Freigabe enthielt der Bericht nicht. Er beschrieb lediglich Bedingungen, unter denen später eine Erprobung verantwortbar sein könnte."
+      },
+      {
+        "id": "p2",
+        "text": "Die Empfehlung des externen Beirats wurde dagegen als eigener Tagesordnungspunkt erörtert. Einige Mitglieder hielten sie für zu weitgehend, andere wollten zumindest einzelne Vorschläge übernehmen. Dass die Prüfgruppe dieselbe Empfehlung ausgesprochen habe, behauptete niemand."
+      },
+      {
+        "id": "p3",
+        "text": "Der Ausschuss fasste keinen Beschluss zur Freigabe. Ein früher diskutierter Entwurf war deshalb weiterhin nicht verbindlich. Die Vorsitzende machte deutlich, dass auch die Ablehnung einer bestimmten Vorlage noch keine Entscheidung über sämtliche zukünftigen Varianten bedeutete."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "NEGATIVE_INTRODUCTION",
+        "topic": "Fehlen einer Empfehlung ohne vorausgesetzte konkrete Vorlage",
+        "quote": "Eine Empfehlung zur sofortigen Freigabe enthielt der Bericht nicht.",
+        "alternate": "Die Empfehlung zur sofortigen Freigabe enthielt der Bericht nicht.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Zwischenbericht spricht keine solche Empfehlung aus."
+          },
+          {
+            "id": "B",
+            "text": "Eine ganz bestimmte, bereits identifizierte Freigabeempfehlung ist im Bericht nicht enthalten."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„Eine Empfehlung … nicht“ verneint im gegebenen Kontext das Vorliegen irgendeiner Empfehlung dieses Typs; „die Empfehlung“ setzt eine einzelne bekannte Vorlage voraus.",
+        "explanation": "„Eine Empfehlung … nicht“ verneint im gegebenen Kontext das Vorliegen irgendeiner Empfehlung dieses Typs; „die Empfehlung“ setzt eine einzelne bekannte Vorlage voraus.",
+        "repairPrompt": "Schreibe eine begrenzte Negation, ohne zu suggerieren, ein spezifisch identifiziertes Dokument fehle."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "DEFINITE_EXTERNAL_SOURCE",
+        "topic": "Bestimmter zuvor eingeführter Beiratsvorschlag",
+        "quote": "Die Empfehlung des externen Beirats wurde dagegen als eigener Tagesordnungspunkt erörtert.",
+        "alternate": "Eine Empfehlung des externen Beirats wurde dagegen als eigener Tagesordnungspunkt erörtert.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine als konkrete Vorlage identifizierbare Empfehlung steht zur Debatte."
+          },
+          {
+            "id": "B",
+            "text": "Ein noch nicht bestimmter Vorschlag unter möglicherweise mehreren wird neu genannt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der bestimmte Artikel verankert die Debatte in einer identifizierten Vorlage.",
+        "explanation": "Der bestimmte Artikel verankert die Debatte in einer identifizierten Vorlage. Die unbestimmte Form lässt offen, welcher Vorschlag des Beirats behandelt wurde.",
+        "repairPrompt": "Formuliere eine Erwiderung auf ein bereits bekanntes Empfehlungspapier, ohne es mit dem Zwischenbericht zu vermengen."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "NEGATIVE_EXISTENTIAL",
+        "topic": "Kein Beschluss im Gegensatz zu nicht dieser Beschluss",
+        "quote": "Der Ausschuss fasste keinen Beschluss zur Freigabe.",
+        "alternate": "Der Ausschuss fasste nicht den Beschluss zur Freigabe.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es wurde überhaupt kein Freigabebeschluss gefasst."
+          },
+          {
+            "id": "B",
+            "text": "Ein bestimmter bereits diskutierter Freigabebeschluss wurde nicht gefasst; ein anderer könnte vorliegen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„keinen Beschluss“ negiert das Vorliegen eines entsprechenden Beschlusses; „nicht den Beschluss“ negiert primär eine bestimmte erwartete Entscheidung und lässt Alternativen offen.",
+        "explanation": "„keinen Beschluss“ negiert das Vorliegen eines entsprechenden Beschlusses; „nicht den Beschluss“ negiert primär eine bestimmte erwartete Entscheidung und lässt Alternativen offen.",
+        "repairPrompt": "Verfasse eine Sitzungsnotiz, die nicht aus dem Fehlen eines einzelnen Beschlusses das Fehlen aller Entscheidungen folgert."
+      }
+    ],
+    "transfer": "Verfasse eine eigenständige kurze Mitteilung, die den Referenzverlauf der drei Absätze richtig wiedergibt. Führe zunächst einen Referenten ein, greife ihn danach eindeutig auf und begrenze eine generalisierende oder negative Aussage. Erläutere, welche Determinierer du gewählt hast und welche alternativen Bezüge du vermeiden willst.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M16 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored fictional G01 contextual reference and determination studies; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G01-006",
+    "version": 1,
+    "domain": "G01",
+    "band": "C1",
+    "title": "Naturschutzplan und Adressaten",
+    "focus": "Verteilung, demonstrative Verweise und Einzel-/Gruppenreferenz",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Jede Gemeinde erhielt im Frühjahr eine eigene Übersicht zu den örtlichen Schutzgebieten. Die Verwaltung hatte bewusst keine einheitliche Karte für das gesamte Land verschickt. In den Übersichten wurden jeweils nur Flächen innerhalb der betreffenden Gemeinde ausgewiesen."
+      },
+      {
+        "id": "p2",
+        "text": "Die Gemeinden am Oberlauf des Flusses tauschten sich anschließend über gemeinsame Maßnahmen aus. Andere Gemeinden waren an dieser Runde nicht beteiligt. Der Bericht trennt die örtlichen Einzelpflichten deshalb von den freiwilligen gemeinsamen Vorhaben."
+      },
+      {
+        "id": "p3",
+        "text": "Dieses Vorhaben wurde bei der späteren Sitzung ausdrücklich von der verpflichtenden Bestandsaufnahme abgegrenzt. Zuvor war ein gemeinsamer Beobachtungspfad vorgeschlagen worden, während die Erhebung der geschützten Arten bereits gesetzlich vorgesehen war. Die Beteiligten wollten eine Vermischung dieser beiden Aufgaben verhindern."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "DISTRIBUTIVE_EACH",
+        "topic": "Einzelverteilung statt bloße Gruppeninformation",
+        "quote": "Jede Gemeinde erhielt im Frühjahr eine eigene Übersicht",
+        "alternate": "Die Gemeinden erhielten im Frühjahr eine eigene Übersicht",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Jeder einzelnen Gemeinde wurde je eine eigene Übersicht zugeteilt."
+          },
+          {
+            "id": "B",
+            "text": "Eine bestimmte Gruppe von Gemeinden erhielt eine oder mehrere Übersichten; die individuelle Zuordnung bleibt offen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„jede“ trägt einen distributiven Quantor und erzwingt im Zusammenhang mit „eine eigene“ eine Zuordnung pro Gemeinde.",
+        "explanation": "„jede“ trägt einen distributiven Quantor und erzwingt im Zusammenhang mit „eine eigene“ eine Zuordnung pro Gemeinde. „Die Gemeinden“ allein sichert diese Verteilung nicht.",
+        "repairPrompt": "Berichte über eine individuelle Pflicht pro Gemeinde und anschließend über eine gemeinsame Maßnahme."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "DEFINED_SUBGROUP",
+        "topic": "Bestimmte lokale Teilgruppe gegenüber unbestimmten Beteiligten",
+        "quote": "Die Gemeinden am Oberlauf des Flusses tauschten sich anschließend über gemeinsame Maßnahmen aus.",
+        "alternate": "Gemeinden am Oberlauf des Flusses tauschten sich anschließend über gemeinsame Maßnahmen aus.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die relevante Gruppe der Oberlauf-Gemeinden ist als Einheit identifiziert."
+          },
+          {
+            "id": "B",
+            "text": "Eine nicht vollständig eingegrenzte Auswahl von Oberlauf-Gemeinden beteiligte sich."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der bestimmte Artikel markiert den Oberlauf-Kreis als identifizierte Gruppe; der Nullartikel kann eine unbestimmte Teilmenge zulassen.",
+        "explanation": "Der bestimmte Artikel markiert den Oberlauf-Kreis als identifizierte Gruppe; der Nullartikel kann eine unbestimmte Teilmenge zulassen.",
+        "repairPrompt": "Fasse ein Treffen zusammen und benenne genau, welche Gemeinden teilgenommen haben sollen."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "DEMONSTRATIVE_REPAIR",
+        "topic": "Kontrastive Auswahl des gerade eingeführten Vorschlags",
+        "quote": "Dieses Vorhaben wurde bei der späteren Sitzung ausdrücklich von der verpflichtenden Bestandsaufnahme abgegrenzt.",
+        "alternate": "Das Vorhaben wurde bei der späteren Sitzung ausdrücklich von der verpflichtenden Bestandsaufnahme abgegrenzt.",
+        "question": "Auf welchen Referenten oder welche Menge bezieht sich die Formulierung im gegebenen Absatz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der zuvor genannte Beobachtungspfad wird von einer anderen Aufgabe unterschieden."
+          },
+          {
+            "id": "B",
+            "text": "Ein aus dem Kontext bekanntes Vorhaben wird ohne besonders markierten Kontrast wiederaufgenommen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„dieses“ richtet den Fokus auf das unmittelbar zuvor eingeführte gemeinsame Vorhaben und erleichtert die Abgrenzung; „das“ bleibt möglich, ist aber weniger demonstrativ.",
+        "explanation": "„dieses“ richtet den Fokus auf das unmittelbar zuvor eingeführte gemeinsame Vorhaben und erleichtert die Abgrenzung; „das“ bleibt möglich, ist aber weniger demonstrativ.",
+        "repairPrompt": "Schreibe eine eindeutige Wiederaufnahme zweier konkurrierender Maßnahmen, ohne ihre Zuständigkeiten zu vermischen."
+      }
+    ],
+    "transfer": "Verfasse eine eigenständige kurze Mitteilung, die den Referenzverlauf der drei Absätze richtig wiedergibt. Führe zunächst einen Referenten ein, greife ihn danach eindeutig auf und begrenze eine generalisierende oder negative Aussage. Erläutere, welche Determinierer du gewählt hast und welche alternativen Bezüge du vermeiden willst.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M16 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored fictional G01 contextual reference and determination studies; no third-party passages"
+    }
+  }
+]
