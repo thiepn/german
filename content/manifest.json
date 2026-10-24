@@ -49,5 +49,7 @@
   "stanceDraftCount": 6,
   "stanceDraftSource": "content/fixtures/g08-stance.demo.json",
   "crossSourceDraftCount": 4,
-  "crossSourceDraftSource": "content/fixtures/g09-cross-source.demo.json"
+  "crossSourceDraftSource": "content/fixtures/g09-cross-source.demo.json",
+  "compressionDraftCount": 4,
+  "compressionDraftSource": "content/fixtures/g04-compression.demo.json"
 }
