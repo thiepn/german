@@ -100,7 +100,13 @@ export function collect(){
   ...s.anchors.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G11_QUOTE_PARAPHRASE_INTEGRATION',mode:'G11_ATTRIBUTION',status:s.status,authorId:s.author,prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,speaker:a.speaker,options:a.options,preferredId:a.preferredId,model:a.model,issues:['Verify verbatim quote and source location against original document','Review exact speaker and proposition attribution, conditional modality and evidential limits','Review direct quote embedding and independent indirect paraphrase idiom in German','Check original transfer brief and case-specific limitations without granting editorial approval or automatic scoring'],independentEditorialApproval:false}))
  ]);
  if(attribution.length!==manifest.attributionDraftCount*4)throw Error('Incomplete G11 attribution editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution],allIds=new Set();
+
+ const repair=read(manifest.repairDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G12_ORIGINAL_DISCUSSION_RECORD',mode:'G12_REPAIR',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently review all three fictional source paragraphs, rights and idiomatic German dialogue','Check realistic conversational ambiguity, role attribution and decision-making authority','No source approval, automatic proficiency assessment or publication'],independentEditorialApproval:false},
+  ...s.repairs.map(t=>({id:s.id+':'+t.id,version:s.version,type:'G12_AMBIGUITY_REPAIR',mode:'G12_REPAIR',status:s.status,authorId:s.author,prompt:t.question,quote:t.quote,speaker:t.speaker,paragraphId:t.paragraphId,options:t.options,preferredId:t.preferredId,clarified:t.clarified,model:t.model,issues:['Verify verbatim utterance and speaker in source paragraph','Independently review plausible conflicting interpretations and conditional commitments','Assess open-ended clarification question, cautious reply and unresolved-status transfer','Preserve author rights, DEMO_ONLY status and no automatic scores'],independentEditorialApproval:false}))
+ ]);
+ if(repair.length!==manifest.repairDraftCount*4)throw Error('Incomplete G12 repair editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

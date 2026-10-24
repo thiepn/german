@@ -328,6 +328,28 @@ for(const s of m22){
 }
 if(attributionIds.size!==4||attributionBands.size!==2||speakers.size<10||attributionQuotes!==12||attributionPreferredB<4)throw Error('Insufficient G11 attribution variety');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m23=read(manifest.repairDraftSource);
+if(manifest.repairDraftCount!==4||m23.length!==4)throw Error('M23 G12 repair dossier count mismatch');
+const repairIds=new Set(),repairSpeakers=new Set(),repairBands=new Set();let repairAnchors=0,repairPreferredB=0;
+for(const s of m23){
+ if(!/^SG-G12R-\d{3}$/.test(s.id)||repairIds.has(s.id)||s.version!==1||s.domain!=='G12'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G12 repair dossier '+s.id);
+ repairIds.add(s.id);repairBands.add(s.band);
+ if(!s.title?.trim()||!s.focus?.trim()||s.brief?.length<100||s.paragraphs?.length!==3||s.repairs?.length!==3)throw Error('Incomplete G12 repair case '+s.id);
+ for(const [i,p] of s.paragraphs.entries()){
+  if(p.id!=='p'+(i+1)||typeof p.text!=='string'||p.text.length<420)throw Error('Invalid G12 repair source '+s.id+':'+p.id);
+ }
+ for(const [i,t] of s.repairs.entries()){
+  const source=s.paragraphs[i],quoted='„'+t.quote+'“';
+  if(t.id!=='r'+(i+1)||t.paragraphId!==source.id||t.quote?.length<22||t.quote.length>100||!source.text.includes(quoted)||source.text.split(quoted).length!==2||
+   !t.speaker?.trim()||!t.question?.trim()||t.clarified?.length<90||t.model?.length<95||
+   t.options?.length!==2||t.options[0].id!=='A'||t.options[1].id!=='B'||t.options[0].text===t.options[1].text||
+   t.options.some(o=>o.text?.length<75)||!['A','B'].includes(t.preferredId))throw Error('Ungrounded G12 repair turn '+s.id+':'+t.id);
+  repairSpeakers.add(t.speaker);repairAnchors++;if(t.preferredId==='B')repairPreferredB++;
+ }
+}
+if(repairIds.size!==4||repairBands.size!==2||repairSpeakers.size<10||repairAnchors!==12||repairPreferredB<4)throw Error('Insufficient G12 repair variation');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}
