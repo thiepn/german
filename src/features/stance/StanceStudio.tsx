@@ -43,13 +43,13 @@ export default function StanceStudio({initialSelection,onExit}:{initialSelection
   <p className="small muted">{progress.started}/{progress.total} Quellen begonnen · {progress.decisions} Positionierungen · {progress.transferred} eigene Texte · {progress.rewritten} Revisionen. Keine automatische Bewertung.</p>
   <div className="field"><label htmlFor="stance-study">Textfall</label><select id="stance-study" value={selected} disabled={busy} onChange={e=>select(e.target.value)}>{stanceStudies.map(s=><option key={s.id} value={s.id}>{s.band} · {s.title}</option>)}</select></div>
   {nextStanceStudy(entries).id!==selected&&<button className="button outline" type="button" disabled={busy} onClick={()=>select(nextStanceStudy(entries).id)}>Nächsten Fall öffnen</button>}
-  <article className="panel stance-source">
+  <article className="panel polysemy-source">
    <div className="kicker">{study.band} · G08 · {study.id} · v{study.version}</div>
    <h2>{study.title}</h2><p>{study.focus}</p>
    {study.paragraphs.map((p,i)=><p className="polysemy-paragraph" key={p.id}><strong>Absatz {i+1} · {p.id}</strong>{p.text}</p>)}
    <p className="small muted">{study.status} · {study.rights.kind} · {study.rights.source}</p>
   </article>
-  {entry&&<section className="panel stance-history"><h2>Gespeicherte Haltungsanalysen</h2>
+  {entry&&<section className="panel polysemy-history"><h2>Gespeicherte Haltungsanalysen</h2>
    {study.decisions.map((d,i)=>{
     const saved=savedStanceDecision(entry,d);if(!saved)return null;
     return <article className="polysemy-analysis" key={d.id}>
@@ -65,7 +65,7 @@ export default function StanceStudio({initialSelection,onExit}:{initialSelection
     </article>;
    })}
   </section>}
-  {decision&&<section className="panel stance-task">
+  {decision&&<section className="panel polysemy-task">
    <h2>Schlussfolgerung {study.decisions.indexOf(decision)+1} / {study.decisions.length}</h2>
    <div className="polysemy-before-after"><div><strong>Textbeleg {decision.paragraphId}</strong><p>{decision.quote}</p></div><div><strong>Alternative</strong><p>{decision.alternate}</p></div></div>
    <p>{decision.question}</p>
@@ -75,7 +75,7 @@ export default function StanceStudio({initialSelection,onExit}:{initialSelection
    {copied&&<p className="feedback" role="status">Die Formulierung ist unverändert oder zu kurz. Eigene Sätze sind erforderlich.</p>}
    <button type="button" className="button" disabled={busy||!choice||!independentStanceRewrite(decision,rewrite)||boundary.trim().length<20} onClick={()=>void saveDecision()}>Deutung und Rekonstruktion speichern</button>
   </section>}
-  {entry&&!decision&&<section className="panel stance-transfer">
+  {entry&&!decision&&<section className="panel polysemy-transfer">
    <h2>{latest?'Eigenen Text überarbeiten':'Eigenständig formulieren'}</h2><p>{study.transfer}</p>
    {latest&&<><h3>Letzte Textfassung</h3><p className="written">{latest.text}</p><button type="button" className="button outline" onClick={()=>setDraft(latest.text)}>Letzte Fassung übernehmen</button></>}
    <div className="field"><label htmlFor="stance-paragraph">Quellenabsatz als Ausgangspunkt</label><select id="stance-paragraph" value={paragraph} onChange={e=>setParagraph(e.target.value)}><option value="">Absatz wählen</option>{study.paragraphs.map((p,i)=><option key={p.id} value={p.id}>Absatz {i+1} · {p.id}</option>)}</select></div>

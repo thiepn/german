@@ -244,7 +244,7 @@ const m19=read(manifest.stanceDraftSource);
 if(manifest.stanceDraftCount!==6||m19.length!==6)throw Error('G08 stance case count mismatch');
 const stanceIds=new Set(),moves=new Set();let stanceDecisions=0,stancePreferredB=0;
 for(const s of m19){
- if(!/^SG-G08-\\d{3}$/.test(s.id)||stanceIds.has(s.id)||s.version!==1||s.domain!=='G08'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G08 discourse dossier '+s.id);
+ if(!/^SG-G08-\d{3}$/.test(s.id)||stanceIds.has(s.id)||s.version!==1||s.domain!=='G08'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G08 discourse dossier '+s.id);
  stanceIds.add(s.id);
  if(!s.title?.trim()||!s.focus?.trim()||!s.transfer?.trim()||s.paragraphs?.length!==3||s.decisions?.length!==3)throw Error('Incomplete G08 discourse dossier '+s.id);
  const paragraphIds=new Set(s.paragraphs.map(p=>p.id)),did=new Set();
