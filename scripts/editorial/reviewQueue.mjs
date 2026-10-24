@@ -82,7 +82,13 @@ export function collect(){
   ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G08_STANCE_CONTRAST',mode:'G08_STANCE',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,alternate:d.alternate,paragraphId:d.paragraphId,move:d.move,options:d.options,preferredId:d.preferredId,model:d.explanation,issues:['Check quote against original passage and implied stance','Evaluate whether the authored contrast is genuinely inferentially distinct','Confirm acceptable readings, register and degree of commitment','Independently review transfer brief; no grading or publication approval'],independentEditorialApproval:false}))
  ]);
  if(stance.length!==manifest.stanceDraftCount*4)throw Error('Missing G08 stance editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance],allIds=new Set();
+
+ const cross=read(manifest.crossSourceDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G09_ORIGINAL_SOURCE_PAIR',mode:'G09_CROSS_SOURCE',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,sourceTitles:s.sources.map(x=>x.title),issues:['Review all six original German paragraphs and rights in both documents','Independently check stated sample sizes, methodology, reporting limits and plausibility','Do not infer publication or CEFR approval'],independentEditorialApproval:false},
+  ...s.comparisons.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G09_CROSS_SOURCE_CONTRAST',mode:'G09_CROSS_SOURCE',status:s.status,authorId:s.author,prompt:d.question,quoteA:d.quoteA,quoteB:d.quoteB,sourceA:d.sourceA,sourceB:d.sourceB,issue:d.issue,options:d.options,preferredId:d.preferredId,model:d.model,issues:['Confirm both quotations are literal and their source locations are correct','Review interpretive compatibility, contradictory evidence, different measurement units and unsupported stronger inferences','Review audience-oriented synthesis task, adequate alternative readings, idiomatic German and source rights','Original suggestions do not grade independent writing or confer approval'],independentEditorialApproval:false}))
+ ]);
+ if(cross.length!==manifest.crossSourceDraftCount*4)throw Error('Incomplete G09 cross-source editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

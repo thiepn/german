@@ -256,6 +256,31 @@ for(const s of m19){
 }
 if(stanceIds.size!==6||moves.size!==18||stanceDecisions!==18||stancePreferredB<5)throw Error('Insufficient G08 stance source diversity');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m20=read(manifest.crossSourceDraftSource);
+if(manifest.crossSourceDraftCount!==4||m20.length!==4)throw Error('M20 cross-source case count mismatch');
+const crossIds=new Set(),crossIssues=new Set(),crossBands=new Set();let crossPairs=0,preferredB=0;
+for(const s of m20){
+ if(!/^SG-G09X-\d{3}$/.test(s.id)||crossIds.has(s.id)||s.version!==1||s.domain!=='G09'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G09 cross-source study '+s.id);
+ crossIds.add(s.id);crossBands.add(s.band);
+ if(!s.title?.trim()||!s.focus?.trim()||!s.transfer?.trim()||s.sources?.length!==2||s.sources[0].id!=='A'||s.sources[1].id!=='B'||s.comparisons?.length!==3)throw Error('Incomplete G09 source dossier '+s.id);
+ for(const [index,source] of s.sources.entries()){
+  if(!source.title?.trim()||source.paragraphs?.length!==3||new Set(source.paragraphs.map(p=>p.id)).size!==3)throw Error('Invalid paired G09 source '+s.id);
+  for(const [j,p] of source.paragraphs.entries())if(p.id!==(index===0?'A':'B')+(j+1)||typeof p.text!=='string'||p.text.length<320)throw Error('Missing G09 original paragraph '+s.id+':'+p.id);
+ }
+ const ids=new Set();
+ for(const [j,comparison] of s.comparisons.entries()){
+  const a=s.sources[0].paragraphs[j],b=s.sources[1].paragraphs[j];
+  if(comparison.id!=='c'+(j+1)||ids.has(comparison.id)||comparison.sourceA!==a.id||comparison.sourceB!==b.id||
+   !a.text.includes(comparison.quoteA)||!b.text.includes(comparison.quoteB)||comparison.quoteA.length<65||comparison.quoteB.length<65||
+   !comparison.issue?.trim()||crossIssues.has(s.id+':'+comparison.issue)||!comparison.question?.trim()||comparison.model?.length<100||!comparison.transferCue?.trim()||
+   comparison.options?.length!==2||comparison.options[0].id!=='A'||comparison.options[1].id!=='B'||!comparison.options.every(o=>o.text?.length>=65)||
+   comparison.options[0].text===comparison.options[1].text||!['A','B'].includes(comparison.preferredId))throw Error('Ungrounded G09 paired comparison '+s.id+':'+comparison.id);
+  ids.add(comparison.id);crossIssues.add(s.id+':'+comparison.issue);crossPairs++;if(comparison.preferredId==='B')preferredB++;
+ }
+}
+if(crossIds.size!==4||crossPairs!==12||preferredB<4||crossBands.size!==2)throw Error('Insufficient G09 cross-source variation');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}
