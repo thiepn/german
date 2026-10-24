@@ -94,7 +94,13 @@ export function collect(){
   ...s.operations.map(o=>({id:s.id+':'+o.id,version:s.version,type:'G04_BIDIRECTIONAL_SYNTAX',mode:'G04_COMPRESSION',status:s.status,authorId:s.author,prompt:o.question,quote:o.quote,paragraphId:o.paragraphId,family:o.family,options:o.options,preferredId:o.preferredId,model:o.model,issues:['Confirm quote against exact source paragraph','Independently check nominalization and participial or conditional syntax analysis','Verify expansion and compression preserve negation, scope, agent, conditionality and evidential status','Review audience-specific transfer, alternative readings and idiomatic German; no auto-grade or approval'],independentEditorialApproval:false}))
  ]);
  if(compression.length!==manifest.compressionDraftCount*4)throw Error('Incomplete G04 compression editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression],allIds=new Set();
+
+ const attribution=read(manifest.attributionDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G11_ORIGINAL_ATTRIBUTION_DOCUMENT',mode:'G11_ATTRIBUTION',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently review all three original fictional source texts and direct quotations','Assess genre-specific citation, attribution and stylistic suitability, including quotation punctuation','Verify authorship/rights and maintain DEMO_ONLY; no CEFR claims'],independentEditorialApproval:false},
+  ...s.anchors.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G11_QUOTE_PARAPHRASE_INTEGRATION',mode:'G11_ATTRIBUTION',status:s.status,authorId:s.author,prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,speaker:a.speaker,options:a.options,preferredId:a.preferredId,model:a.model,issues:['Verify verbatim quote and source location against original document','Review exact speaker and proposition attribution, conditional modality and evidential limits','Review direct quote embedding and independent indirect paraphrase idiom in German','Check original transfer brief and case-specific limitations without granting editorial approval or automatic scoring'],independentEditorialApproval:false}))
+ ]);
+ if(attribution.length!==manifest.attributionDraftCount*4)throw Error('Incomplete G11 attribution editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }
