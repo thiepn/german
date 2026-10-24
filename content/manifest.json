@@ -45,5 +45,7 @@
   "phraseologyDraftCount": 6,
   "phraseologyDraftSource": "content/fixtures/g07-phraseology.demo.json",
   "polysemyDraftCount": 6,
-  "polysemyDraftSource": "content/fixtures/g06-polysemy.demo.json"
+  "polysemyDraftSource": "content/fixtures/g06-polysemy.demo.json",
+  "stanceDraftCount": 6,
+  "stanceDraftSource": "content/fixtures/g08-stance.demo.json"
 }
