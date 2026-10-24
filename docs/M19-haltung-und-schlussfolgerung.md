@@ -4,7 +4,7 @@
 
 M19 exercises the inferential distance between what institutional prose asserts, what it attributes to third parties, what it recommends, and what it leaves undecided. This differs from the isolated G08 situational-choice prompts and G06 lexical sense disambiguation. The learner must reason over three sustained paragraphs per dossier and explicitly reject an overstrong inference.
 
-Six newly authored original **fictional** documents: climate measurements, public transport hearings, academic funding evaluation, an internal culture-sector audit, an application portal complaint, and a museum attribution report. They provide 18 anchored contrasts across limited evidence, conditional support, concessive objections, discretionary decisions, reported positions, methodological uncertainty, and procedural commitments. No real institution's position is represented. IDs: SG-G08-001 through SG-G08-006.
+Six newly authored original **fictional** documents: climate measurements, public transport hearings, academic funding evaluation, an internal culture-sector audit, an application portal complaint, and a museum attribution report. They provide 18 anchored contrasts across limited evidence, conditional support, concessive objections, discretionary decisions, reported positions, methodological uncertainty, and procedural commitments. No real institution's position is represented. IDs: SG-G08S-001 through SG-G08S-006.
 
 ## Learning
 

@@ -105,7 +105,7 @@ if(sourceRefs.size!==refs.anchors.length||!sourceRefs.has('CEFR_SOCIOPRAGMATIC_2
 for(const ref of refs.anchors)if(ref.editorialApproved!==false||!/^https:\/\/(www\.coe\.int|grammis\.ids-mannheim\.de)\//.test(ref.url))throw Error('Unapproved authority or malformed reference');
 const pragmaticIds=new Set();
 for(const p of pragmatic){
- if(!/^SG-G08S-\d{3}$/.test(p.id)||pragmaticIds.has(p.id)||p.version!==1||p.domain!=='G08'||!['C1','C2'].includes(p.band)||p.status!=='DEMO_ONLY'||p.authorship!=='AI_DRAFT'||p.reviewedBy!==null||p.editorialApproval!==false||p.rights?.kind!=='ORIGINAL_DRAFT'||!sourceRefs.has(p.cefrReference))throw Error('Invalid pragmatic decision '+p.id);
+ if(!/^SG-G08-\d{3}$/.test(p.id)||pragmaticIds.has(p.id)||p.version!==1||p.domain!=='G08'||!['C1','C2'].includes(p.band)||p.status!=='DEMO_ONLY'||p.authorship!=='AI_DRAFT'||p.reviewedBy!==null||p.editorialApproval!==false||p.rights?.kind!=='ORIGINAL_DRAFT'||!sourceRefs.has(p.cefrReference))throw Error('Invalid pragmatic decision '+p.id);
  pragmaticIds.add(p.id);
  if(!p.title?.trim()||!p.context?.trim()||!p.task?.trim()||!p.rewrite?.trim()||p.context.length<30||!Array.isArray(p.options)||p.options.length!==3)throw Error('Incomplete pragmatics '+p.id);
  const optionIds=new Set(p.options.map(o=>o.id));
