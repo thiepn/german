@@ -57,7 +57,7 @@ test('transfer requires completed source work and append-only semantic revision'
  const changed=appendStanceTransfer(e,study,'REWRITE',transferText+' Die verantwortliche Stelle muss ihre Entscheidung gesondert dokumentieren.','Die Ergänzung unterscheidet zwischen der fachlichen Empfehlung und der später erforderlichen Entscheidung der zuständigen Gremien.','p2','revision',at+4);
  assert.equal(changed.original,e.original);assert.deepEqual(changed.revisions.slice(0,3),e.revisions);
  assert.equal(changed.revisions[3].questionId,'REWRITE');assert.equal(versionPair(changed,3)?.previous,transferText);
- assert.equal(archiveRows([changed],{kind:'G08_STANCE',activity:'REVISED',period:'ALL',search:'zuständige Gremien',now:at+5}).length,1);
+ assert.equal(archiveRows([changed],{kind:'G08_STANCE',activity:'REVISED',period:'ALL',search:'zuständigen Gremien',now:at+5}).length,1);
 });
 test('progress measures work completed without CEFR or mastery scoring',()=>{
  assert.deepEqual(stanceProgress([]),{started:0,decisions:0,transferred:0,rewritten:0,total:6});
