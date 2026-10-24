@@ -65,6 +65,7 @@ async function run(width){
   assert.equal(await page.getByRole('button',{name:'Überarbeitung speichern'}).isDisabled(),true);
   await page.locator('#attribution-anchor').selectOption('q3');
   await page.locator('#attribution-draft').fill(draft+' Vor einer Entscheidung über eine Errichtung muss daher eine gesonderte und überprüfbare Vorlage erstellt werden.');
+  await page.locator('#attribution-reason').fill('Die Ergänzung unterscheidet die finanzierte Vorprüfung ausdrücklich vom künftigen Bau. Die drei Stimmen bleiben klar zugeordnet, und ihre Aussagen werden nicht als gemeinsame Bauzusage behandelt.');
   await page.getByRole('button',{name:'Überarbeitung speichern'}).click();
   await page.getByRole('button',{name:'Zurück zum Curriculum'}).click();
   await page.getByRole('button',{name:'Fortschritt',exact:true}).first().click();
