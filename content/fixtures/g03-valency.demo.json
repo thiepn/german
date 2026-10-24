@@ -1,0 +1,620 @@
+[
+  {
+    "id": "SG-G03-001",
+    "version": 1,
+    "domain": "G03",
+    "band": "C1",
+    "title": "Begründungen im Prüfverfahren",
+    "focus": "Beharren, Bezugnahme und Abhängigkeit",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Kommission besteht auf einer schriftlichen Begründung, bevor sie den Antrag erneut behandelt. Sie hält eine bloße mündliche Zusicherung nicht für ausreichend und hat ihre Forderung im Sitzungsprotokoll festgehalten."
+      },
+      {
+        "id": "p2",
+        "text": "Der Bericht bezieht sich auf die Erhebung aus dem Vorjahr und übernimmt daraus die vergleichbaren Messwerte. Auf das Gutachten einer externen Stelle beruft sich die Verfasserin dagegen nur bei der Einschätzung der Messgenauigkeit."
+      },
+      {
+        "id": "p3",
+        "text": "Die endgültige Entscheidung hängt von den Ergebnissen einer weiteren Prüfung ab. Solange diese Ergebnisse fehlen, bleibt offen, ob die vorgeschlagene Maßnahme umgesetzt oder noch einmal verändert wird."
+      }
+    ],
+    "frames": [
+      {
+        "id": "f1",
+        "paragraphId": "p1",
+        "family": "FRAME_SHIFT",
+        "quote": "besteht auf einer schriftlichen Begründung",
+        "governor": "bestehen auf + Dativ: auf einer Forderung beharren",
+        "alternate": "besteht aus einer schriftlichen Begründung",
+        "question": "Welche Beziehung zwischen Kommission und Begründung beschreibt der Ausgangstext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Kommission fordert verbindlich eine Begründung."
+          },
+          {
+            "id": "B",
+            "text": "Die Kommission besteht ausschließlich aus einem geschriebenen Text."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der Text berichtet ein nachdrückliches Verlangen der Kommission, keine Zusammensetzung.",
+        "explanation": "„bestehen auf“ nimmt die verlangte Sache mit Dativ; „bestehen aus“ benennt Bestandteile und verändert die Aussage.",
+        "repairPrompt": "Ersetze die Konstruktion in einem eigenen Satz, ohne Beharren und Zusammensetzung zu verwechseln."
+      },
+      {
+        "id": "f2",
+        "paragraphId": "p2",
+        "family": "SOURCE_AUTHORITY",
+        "quote": "bezieht sich auf die Erhebung aus dem Vorjahr",
+        "governor": "sich beziehen auf + Akkusativ: thematischen oder sachlichen Bezug herstellen",
+        "alternate": "beruft sich auf die Erhebung aus dem Vorjahr",
+        "question": "Welche Rolle spielt die Erhebung im konkreten Satz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Verfasserin führt die Erhebung als übergeordnete Autorität zur Rechtfertigung an."
+          },
+          {
+            "id": "B",
+            "text": "Der Bericht verwendet die Erhebung als sachliche Bezugsgrundlage für Vergleichswerte."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Quelle liefert hier Vergleichswerte; der Text unterscheidet dies ausdrücklich vom Berufen auf das externe Gutachten.",
+        "explanation": "„sich beziehen auf“ bezeichnet einen Bezug, „sich berufen auf“ ein argumentatives Inanspruchnehmen als Stütze; beide haben Akkusativ, aber andere kommunikative Funktionen.",
+        "repairPrompt": "Formuliere sowohl einen neutralen Bezug als auch eine ausdrückliche Berufung auf eine Autorität."
+      },
+      {
+        "id": "f3",
+        "paragraphId": "p3",
+        "family": "DEPENDENCY",
+        "quote": "hängt von den Ergebnissen einer weiteren Prüfung ab",
+        "governor": "abhängen von + Dativ: Ergebnis ist durch Bedingung bestimmt",
+        "alternate": "kommt auf die Ergebnisse einer weiteren Prüfung an",
+        "question": "Warum ist die Entscheidung zum beschriebenen Zeitpunkt offen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ihr weiterer Verlauf wird vom Vorliegen und Inhalt der Prüfergebnisse abhängig gemacht."
+          },
+          {
+            "id": "B",
+            "text": "Die Kommission beschreibt nur, worauf sie rhetorisch besonders großen Wert legt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Aussage nennt die ausstehende Prüfung als Bedingung für die Entscheidung.",
+        "explanation": "„abhängen von“ benennt eine Abhängigkeit; „ankommen auf“ hebt eine entscheidende Größe hervor. Beide können in vielen Kontexten nahe beieinander liegen; sie sind nicht mechanisch austauschbar.",
+        "repairPrompt": "Schreibe eine bedingte Entscheidung, ohne ein noch unbekanntes Ergebnis vorwegzunehmen."
+      }
+    ],
+    "transfer": "Formuliere zwei eigenständige Sätze für eine Prüfnotiz: eine Forderung mit „bestehen auf“ und eine ausdrücklich bedingte Entscheidung mit „abhängen von“. Begründe, warum die jeweiligen Verbrahmen nicht durch einen bloßen Themenbezug ersetzt werden können.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M14",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Fall; keine Fremdpassagen und keine autorisierte sprachliche Fachfreigabe"
+    }
+  },
+  {
+    "id": "SG-G03-002",
+    "version": 1,
+    "domain": "G03",
+    "band": "C1",
+    "title": "Aussagen einer Forschungsgruppe",
+    "focus": "Erwartung, Zweifel und verfügbare Ressourcen",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Das Forschungsteam rechnet mit einer längeren Auswertungsphase, weil einzelne Datensätze nacherfasst werden müssen. Eine konkrete Dauer kann es derzeit nicht nennen; der Zeitplan enthält daher einen ausdrücklich vorläufigen Puffer."
+      },
+      {
+        "id": "p2",
+        "text": "Die Leiterin zweifelt an der Belastbarkeit der Stichprobe, ohne die gesamten Befunde zu verwerfen. Sie verlangt zusätzliche Informationen zur Auswahl der Teilnehmenden und will erst danach über weitere Erhebungen entscheiden."
+      },
+      {
+        "id": "p3",
+        "text": "Der Fachbereich verfügt über die erforderlichen Geräte, jedoch nicht über genügend geschultes Personal. Eine Zusammenarbeit mit einer zweiten Arbeitsgruppe wird geprüft; ein zusätzlicher Kauf ist bisher nicht vorgesehen."
+      }
+    ],
+    "frames": [
+      {
+        "id": "f1",
+        "paragraphId": "p1",
+        "family": "EXPECTATION",
+        "quote": "rechnet mit einer längeren Auswertungsphase",
+        "governor": "rechnen mit + Dativ: erwartete Möglichkeit einplanen",
+        "alternate": "zählt auf eine längere Auswertungsphase",
+        "question": "Wofür steht „rechnen mit“ in diesem Bericht?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Forschenden planen eine mögliche längere Dauer ein."
+          },
+          {
+            "id": "B",
+            "text": "Die Forschenden wünschen ausdrücklich eine Verzögerung und vertrauen auf sie."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der veränderte Zeitplan reagiert vorsichtig auf ein mögliches Verzögerungsrisiko.",
+        "explanation": "„mit etwas rechnen“ bedeutet eine Entwicklung erwarten; „auf etwas zählen“ bedeutet auf einen erhofften oder erwarteten Rückhalt vertrauen. Die Ergänzungen und Perspektiven sind nicht austauschbar.",
+        "repairPrompt": "Füge eine vorsichtige Erwartung in eine eigene Terminmitteilung ein."
+      },
+      {
+        "id": "f2",
+        "paragraphId": "p2",
+        "family": "DOUBT_DENIAL",
+        "quote": "zweifelt an der Belastbarkeit der Stichprobe",
+        "governor": "zweifeln an + Dativ: Zweifel an der Verlässlichkeit äußern",
+        "alternate": "bestreitet die Belastbarkeit der Stichprobe",
+        "question": "Welche Stärke hat die Einwendung der Leiterin?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sie hält die Aussage nachweislich für vollständig falsch."
+          },
+          {
+            "id": "B",
+            "text": "Sie stellt die Verlässlichkeit in Frage, ohne sie bereits abschließend zu verneinen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Leiterin will zusätzliche Daten; der Text beschreibt begründete Unsicherheit, keine definitive Widerlegung.",
+        "explanation": "„zweifeln an“ ist schwächer als das aktive Bestreiten einer Aussage; ein Wechsel wäre semantisch stärker, auch wenn beide grammatisch möglich sind.",
+        "repairPrompt": "Formuliere eine begründete Skepsis ohne vorweggenommene Widerlegung."
+      },
+      {
+        "id": "f3",
+        "paragraphId": "p3",
+        "family": "POSSESSION_ORDER",
+        "quote": "verfügt über die erforderlichen Geräte",
+        "governor": "verfügen über + Akkusativ: Mittel zur Verfügung haben",
+        "alternate": "verfügt die Anschaffung zusätzlicher Geräte",
+        "question": "Was lässt sich über die Ausstattung sagen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Geräte stehen grundsätzlich zur Verfügung; es fehlt vor allem Personal."
+          },
+          {
+            "id": "B",
+            "text": "Die Leitung hat verbindlich den Kauf neuer Geräte angeordnet."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der Fachbereich besitzt bzw. nutzt bereits die benötigten Geräte. Eine zusätzliche Beschaffung ist nicht beschlossen.",
+        "explanation": "„über etwas verfügen“ bezeichnet Verfügbarkeit; transitives „etwas verfügen“ heißt in einschlägigen Verwaltungszusammenhängen etwas anordnen und verlangt eine andere Ergänzungsstruktur.",
+        "repairPrompt": "Beschreibe die vorhandenen Mittel, ohne daraus eine neue verbindliche Anordnung zu machen."
+      }
+    ],
+    "transfer": "Schreibe einen eigenen kurzen Forschungsstand: markiere eine vorsichtige Erwartung, begründete Zweifel und die tatsächliche Ressourcenlage. Begründe zwei unterschiedliche Valenzrahmen und deren Aussagegrenzen.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M14",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Fall; keine Fremdpassagen und keine autorisierte sprachliche Fachfreigabe"
+    }
+  },
+  {
+    "id": "SG-G03-003",
+    "version": 1,
+    "domain": "G03",
+    "band": "C1",
+    "title": "Rückmeldungen zu einem Verwaltungsantrag",
+    "focus": "Verzicht, Unterscheidung und sachliche Grundlage",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die antragstellende Person verzichtet auf eine zusätzliche Anhörung, weil die schriftlichen Unterlagen ihre Argumente bereits enthalten. Sie hält an der Möglichkeit fest, auf konkrete Rückfragen schriftlich zu antworten."
+      },
+      {
+        "id": "p2",
+        "text": "Die Verwaltung unterscheidet zwischen formellen Einwänden und nachträglichen Hinweisen. Die beiden Gruppen werden im Protokoll getrennt dokumentiert, damit der rechtliche Verfahrensstand aus den Angaben klar hervorgeht."
+      },
+      {
+        "id": "p3",
+        "text": "Die vorläufige Einschätzung beruht auf den bisher eingegangenen Unterlagen. Die Behörde benennt ausdrücklich, welche Nachweise noch fehlen und weshalb noch keine endgültige Aussage über den Antrag möglich ist."
+      }
+    ],
+    "frames": [
+      {
+        "id": "f1",
+        "paragraphId": "p1",
+        "family": "RELINQUISH_AVOID",
+        "quote": "verzichtet auf eine zusätzliche Anhörung",
+        "governor": "verzichten auf + Akkusativ: Anspruch oder Möglichkeit nicht wahrnehmen",
+        "alternate": "entzieht sich einer zusätzlichen Anhörung",
+        "question": "Was wird über das Verhalten der Person mitgeteilt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sie nutzt die angebotene zusätzliche Anhörung freiwillig nicht."
+          },
+          {
+            "id": "B",
+            "text": "Sie weicht einem verpflichtenden Verfahren aus, das sie eigentlich wahrnehmen müsste."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Im Text geht es um einen freiwilligen Verzicht auf ein zusätzliches Angebot, nicht um ein Sich-Entziehen.",
+        "explanation": "„verzichten auf“ markiert die Nichtinanspruchnahme einer Option; „sich entziehen“ verlangt typischerweise Dativ und legt ein anderes, häufig kritisches Verhalten nahe.",
+        "repairPrompt": "Formuliere den freiwilligen Verzicht, ohne eine Verfahrenspflicht zu unterstellen."
+      },
+      {
+        "id": "f2",
+        "paragraphId": "p2",
+        "family": "CLASSIFICATION",
+        "quote": "unterscheidet zwischen formellen Einwänden und nachträglichen Hinweisen",
+        "governor": "unterscheiden zwischen + Dativ: Kategorien voneinander abgrenzen",
+        "alternate": "trennt alle nachträglichen Hinweise von den Akten",
+        "question": "Welche Aussage über die beiden Gruppen macht der Satz?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Alle Hinweise werden ausdrücklich aus dem Verfahren entfernt."
+          },
+          {
+            "id": "B",
+            "text": "Einwände und Hinweise werden als unterschiedliche Kategorien geführt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Verwaltung klassifiziert die Angaben für das Protokoll; ein Ausschluss aus den Akten ist nicht behauptet.",
+        "explanation": "„zwischen X und Y unterscheiden“ setzt zwei Kategorien in Beziehung; „X von Y trennen“ kann eine tatsächliche Trennung nahelegen und verändert hier die Verfahrensbehauptung.",
+        "repairPrompt": "Beschreibe zwei Kategorien, ohne eine nicht belegte Entfernung einer Gruppe zu behaupten."
+      },
+      {
+        "id": "f3",
+        "paragraphId": "p3",
+        "family": "BASIS_INVOCATION",
+        "quote": "beruht auf den bisher eingegangenen Unterlagen",
+        "governor": "beruhen auf + Dativ: sachliche Grundlage oder Ursache",
+        "alternate": "beruft sich auf die bisher eingegangenen Unterlagen",
+        "question": "Was ist die Funktion der Unterlagen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sie bilden die Grundlage der vorläufigen Einschätzung."
+          },
+          {
+            "id": "B",
+            "text": "Die Einschätzung handelt selbst als Sprecherin und beruft sich strategisch auf Autoritäten."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Unterlagen sind Grundlage einer Einschätzung, nicht deren rhetorisch auftretender Akteur.",
+        "explanation": "„beruhen auf“ bezeichnet einen Sachverhalt, der auf einer Grundlage fußt; „sich berufen auf“ verlangt einen Akteur, der etwas als Stütze geltend macht.",
+        "repairPrompt": "Fasse eine vorläufige Grundlage zusammen, ohne ihr eine handelnde Person zuzuschreiben."
+      }
+    ],
+    "transfer": "Schreibe zwei Sätze einer behördlichen Rückmeldung. Unterscheide freiwilligen Verzicht und eine sachliche Grundlage, benenne den passenden Valenzrahmen und verhindere einen unbelegten Vorwurf.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M14",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Fall; keine Fremdpassagen und keine autorisierte sprachliche Fachfreigabe"
+    }
+  },
+  {
+    "id": "SG-G03-004",
+    "version": 1,
+    "domain": "G03",
+    "band": "C2",
+    "title": "Aushandlung eines gemeinsamen Prüfplans",
+    "focus": "Verständigung, Beharren und Interessenvertretung",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die beteiligten Gruppen verständigten sich über die Reihenfolge der Prüfungen. In einem gemeinsamen Protokoll hielten sie fest, welche Schritte zuerst erfolgen und über welche Punkte noch kein Einvernehmen erzielt wurde."
+      },
+      {
+        "id": "p2",
+        "text": "Die Leitung beharrte auf einer vollständigen Dokumentation aller Änderungen. Sie war zwar zu einer späteren Abgabefrist bereit, wollte aber auch bei geringfügigen Korrekturen keine Ausnahmen von der Nachvollziehbarkeit zulassen."
+      },
+      {
+        "id": "p3",
+        "text": "Eine Vertreterin setzte sich für eine unabhängige Nachprüfung ein. Sie verwies auf frühere Konflikte und schlug vor, die Prüfstelle organisatorisch von der ausführenden Gruppe zu trennen."
+      }
+    ],
+    "frames": [
+      {
+        "id": "f1",
+        "paragraphId": "p1",
+        "family": "RECIPROCAL_NOTIFY",
+        "quote": "verständigten sich über die Reihenfolge der Prüfungen",
+        "governor": "sich verständigen über + Akkusativ: miteinander eine gemeinsame Regelung erzielen",
+        "alternate": "verständigten die Beteiligten über die Reihenfolge der Prüfungen",
+        "question": "Was war das Ergebnis des gemeinsamen Gesprächs?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Gruppen schickten anderen Personen lediglich eine Benachrichtigung."
+          },
+          {
+            "id": "B",
+            "text": "Die Gruppen erzielten untereinander eine Verständigung über den Ablauf."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der dokumentierte Ablauf ist Ergebnis gegenseitiger Abstimmung, nicht nur einer Information an Dritte.",
+        "explanation": "Reflexives „sich über etwas verständigen“ beschreibt wechselseitige Einigung; transitives „jemanden über etwas verständigen“ bedeutet jemanden informieren und hat ein Akkusativobjekt.",
+        "repairPrompt": "Formuliere sowohl eine Einigung als auch eine bloße Benachrichtigung korrekt und markiere den Unterschied."
+      },
+      {
+        "id": "f2",
+        "paragraphId": "p2",
+        "family": "INSIST_ADVOCATE",
+        "quote": "beharrte auf einer vollständigen Dokumentation",
+        "governor": "beharren auf + Dativ: trotz Gegenargumenten an einer Position festhalten",
+        "alternate": "trat für eine vollständige Dokumentation ein",
+        "question": "Welcher Grad an Festlegung wird hier beschrieben?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Leitung hält auch gegenüber möglichen Ausnahmen unverändert an ihrer Forderung fest."
+          },
+          {
+            "id": "B",
+            "text": "Die Leitung äußert nur allgemein Sympathie für eine Dokumentationspflicht."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Leitung schließt Ausnahmen ausdrücklich aus. Das ist stärker als eine allgemeine Befürwortung.",
+        "explanation": "„beharren auf“ signalisiert Unnachgiebigkeit; „für etwas eintreten“ bezeichnet engagierte Unterstützung, ohne dass ein Festhalten trotz Widerstand zwingend vorliegt.",
+        "repairPrompt": "Schreibe eine verbindliche Position und eine bloße Fürsprache als zwei unterschiedliche Aussagen."
+      },
+      {
+        "id": "f3",
+        "paragraphId": "p3",
+        "family": "ADVOCATE_ENGAGE",
+        "quote": "setzte sich für eine unabhängige Nachprüfung ein",
+        "governor": "sich einsetzen für + Akkusativ: ein Ziel aktiv unterstützen",
+        "alternate": "setzte sich mit einer unabhängigen Nachprüfung auseinander",
+        "question": "Was tat die Vertreterin?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sie unterstützte die Einführung einer unabhängigen Prüfung aktiv."
+          },
+          {
+            "id": "B",
+            "text": "Sie analysierte lediglich die Idee, ohne selbst eine Position dazu einzunehmen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Sie schlägt organisatorische Konsequenzen vor und vertritt das Ziel ausdrücklich.",
+        "explanation": "„sich einsetzen für“ ist aktive Interessenvertretung; „sich auseinandersetzen mit“ bedeutet eine Sache inhaltlich bearbeiten. Das Ziel verschiebt sich vom Eintreten zum Befassen.",
+        "repairPrompt": "Formuliere einen Vorschlag, bei dem Interessenvertretung von neutraler Prüfung unterschieden wird."
+      }
+    ],
+    "transfer": "Entwirf eine kurze Verhandlungsnotiz mit einer erreichten Verständigung, einer beharrlichen Forderung und einer begründeten Fürsprache. Erkläre jeweils, welche Valenzstruktur den beabsichtigten Sprechakt trägt.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M14",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Fall; keine Fremdpassagen und keine autorisierte sprachliche Fachfreigabe"
+    }
+  },
+  {
+    "id": "SG-G03-005",
+    "version": 1,
+    "domain": "G03",
+    "band": "C2",
+    "title": "Wissenschaftliche Schlussfolgerungen",
+    "focus": "Schlussregeln, Ursachen und Voraussetzungen",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Arbeitsgruppe schließt aus den wiederholten Messabweichungen auf einen systematischen Fehler. Sie betont zugleich, dass diese Schlussfolgerung nur so belastbar ist wie die Vergleichbarkeit der zugrunde liegenden Messreihen."
+      },
+      {
+        "id": "p2",
+        "text": "Die beobachteten Unterschiede lassen sich zum Teil auf abweichende Ausgangsbedingungen zurückführen. Auch das Auswertungsverfahren könnte eine Rolle gespielt haben; die Anteile der einzelnen Einflüsse wurden noch nicht bestimmt."
+      },
+      {
+        "id": "p3",
+        "text": "Der Bericht geht von einer über mehrere Monate stabilen Nachfrage aus. Diese Annahme wird als Arbeitsgrundlage für zwei Szenarien verwendet und nicht als bereits bestätigte Entwicklung dargestellt."
+      }
+    ],
+    "frames": [
+      {
+        "id": "f1",
+        "paragraphId": "p1",
+        "family": "INFERENCE_EXCLUSION",
+        "quote": "schließt aus den wiederholten Messabweichungen auf einen systematischen Fehler",
+        "governor": "aus + Dativ auf + Akkusativ schließen: Indizien zu einer Schlussfolgerung führen",
+        "alternate": "schließt einen systematischen Fehler aus",
+        "question": "Welche Beziehung zwischen Messungen und Fehlerannahme ist gemeint?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aus den Messwerten wird die Fehlerannahme als mögliche Folgerung abgeleitet."
+          },
+          {
+            "id": "B",
+            "text": "Die Arbeitsgruppe erklärt, dass ein systematischer Fehler ausgeschlossen sei."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das Team leitet gerade eine mögliche Fehlerursache aus beobachteten Abweichungen her.",
+        "explanation": "„aus X auf Y schließen“ ist ein zweigliedriger Inferenzrahmen; „Y ausschließen“ verneint die Möglichkeit und behauptet nahezu das Gegenteil.",
+        "repairPrompt": "Formuliere eine vorsichtige Schlussfolgerung aus Indizien und trenne sie vom Ausschluss einer Hypothese."
+      },
+      {
+        "id": "f2",
+        "paragraphId": "p2",
+        "family": "CAUSE_ASCRIPTION",
+        "quote": "auf abweichende Ausgangsbedingungen zurückführen",
+        "governor": "etwas auf + Akkusativ zurückführen: eine Ursache zuschreiben",
+        "alternate": "gehen auf abweichende Ausgangsbedingungen zurück",
+        "question": "Was ändert sich vor allem beim Wechsel zur alternativen Konstruktion?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Ursache wird in beiden Fällen gleich sicher und unabhängig bewiesen."
+          },
+          {
+            "id": "B",
+            "text": "Die aktive Ursachezuschreibung wird zu einer unpersönlichen Aussage über den Ursprung; die Unsicherheit bleibt separat zu prüfen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Im Ausgangstext wird eine teilweise Zuschreibung formuliert, nicht eine vollständige Bestätigung des Ursprungs.",
+        "explanation": "„etwas auf X zurückführen“ betont einen zuschreibenden Erklärungsakt; „auf X zurückgehen“ stellt die Ursprungsbeziehung in den Vordergrund. Beide können semantisch ähnlich sein, der Agens- und Argumentrahmen unterscheidet sich.",
+        "repairPrompt": "Formuliere eine nur teilweise belegte Ursachenannahme ohne vorgebliche Gewissheit."
+      },
+      {
+        "id": "f3",
+        "paragraphId": "p3",
+        "family": "ASSUMPTION_ASSERTION",
+        "quote": "geht von einer über mehrere Monate stabilen Nachfrage aus",
+        "governor": "ausgehen von + Dativ: eine vorläufige Annahme zugrunde legen",
+        "alternate": "stellt eine über mehrere Monate stabile Nachfrage fest",
+        "question": "Wie ist der Status der Nachfrageaussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Bericht arbeitet mit einer noch nicht bestätigten Voraussetzung."
+          },
+          {
+            "id": "B",
+            "text": "Die stabile Entwicklung wurde unabhängig festgestellt und abschließend belegt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Nachfrage ist hier eine modellierte Voraussetzung, kein empirisch nachgewiesener Befund.",
+        "explanation": "„von etwas ausgehen“ markiert eine Prämisse; „etwas feststellen“ beansprucht einen erhobenen Befund. Der Rahmenwechsel verändert den epistemischen Anspruch.",
+        "repairPrompt": "Schreibe eine Prognose, die ihre Annahmen klar von festgestellten Ergebnissen trennt."
+      }
+    ],
+    "transfer": "Verfasse drei Sätze zu einer wissenschaftlichen Schlussfolgerung. Unterscheide das Schließen aus Messungen auf eine Hypothese, eine vorsichtige Ursachenzuschreibung und eine unbestätigte Modellannahme. Begründe die Valenz- und Bedeutungsunterschiede.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M14",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Fall; keine Fremdpassagen und keine autorisierte sprachliche Fachfreigabe"
+    }
+  },
+  {
+    "id": "SG-G03-006",
+    "version": 1,
+    "domain": "G03",
+    "band": "C2",
+    "title": "Abwägungen im Ausschuss",
+    "focus": "Absehen, Wiederaufnahme und ausdrücklicher Widerspruch",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Prüfungsstelle sieht von einer sofortigen Entscheidung ab, weil wesentliche Nachweise noch fehlen. Sie hat noch keine abschließende Bewertung vorgenommen und will die offene Frage nach Eingang der Unterlagen erneut behandeln."
+      },
+      {
+        "id": "p2",
+        "text": "Die Kommission kommt in ihrer nächsten Sitzung auf die offenen Fragen zurück. Bereits erörterte Punkte werden dafür in einer gesonderten Übersicht zusammengestellt, damit die weitere Beratung an den dokumentierten Stand anknüpfen kann."
+      },
+      {
+        "id": "p3",
+        "text": "Der Ausschuss spricht sich gegen eine voreilige Freigabe aus. Einige Mitglieder befürworten eine begrenzte Erprobung; trotzdem besteht Einigkeit darüber, dass eine endgültige Freigabe zusätzliche Prüfnachweise erfordert."
+      }
+    ],
+    "frames": [
+      {
+        "id": "f1",
+        "paragraphId": "p1",
+        "family": "REFRAIN_OVERLOOK",
+        "quote": "sieht von einer sofortigen Entscheidung ab",
+        "governor": "absehen von + Dativ: bewusst auf eine Maßnahme verzichten",
+        "alternate": "sieht über die sofortige Entscheidung hinweg",
+        "question": "Worüber informiert der Ausgangstext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Stelle nimmt vorerst keine Entscheidung vor und nennt dafür einen Grund."
+          },
+          {
+            "id": "B",
+            "text": "Die Stelle übersieht absichtlich eine schon getroffene Entscheidung."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Es geht um einen bewussten Entscheidungsaufschub wegen fehlender Nachweise.",
+        "explanation": "„von etwas absehen“ bedeutet eine Handlung unterlassen; „über etwas hinwegsehen“ heißt einen Umstand übergehen oder nachsehen. Das sind unterschiedliche Verbpartikel, Ergänzungen und Handlungen.",
+        "repairPrompt": "Schreibe eine begründete Vertagung, ohne eine bereits getroffene Entscheidung zu unterstellen."
+      },
+      {
+        "id": "f2",
+        "paragraphId": "p2",
+        "family": "RESUME_REFER",
+        "quote": "kommt in ihrer nächsten Sitzung auf die offenen Fragen zurück",
+        "governor": "zurückkommen auf + Akkusativ: ein Thema erneut aufnehmen",
+        "alternate": "kommt von den offenen Fragen zurück",
+        "question": "Was kündigt die Kommission an?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sie beendet die Beschäftigung mit diesen Fragen endgültig."
+          },
+          {
+            "id": "B",
+            "text": "Sie wird das Thema in einer späteren Sitzung nochmals behandeln."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Kommission plant eine erneute Beratung der noch offenen Fragen.",
+        "explanation": "„auf etwas zurückkommen“ nimmt ein Thema erneut auf; „von etwas zurückkommen“ wird in anderen Kontexten für Abkehr von einer Position verwendet und kann keine mechanische Ortsbewegung hier ersetzen.",
+        "repairPrompt": "Formuliere die angekündigte Wiederaufnahme eines noch offenen Prüfungspunkts."
+      },
+      {
+        "id": "f3",
+        "paragraphId": "p3",
+        "family": "OPPOSE_DISCUSS",
+        "quote": "spricht sich gegen eine voreilige Freigabe aus",
+        "governor": "sich aussprechen gegen + Akkusativ: ausdrückliche Ablehnung",
+        "alternate": "spricht über eine voreilige Freigabe",
+        "question": "Welchen Standpunkt nimmt der Ausschuss ein?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Ausschuss lehnt die zu frühe Freigabe ausdrücklich ab."
+          },
+          {
+            "id": "B",
+            "text": "Der Ausschuss erwähnt die Freigabe lediglich als Gesprächsthema."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Ablehnung wird durch „gegen ... aussprechen“ klar ausgedrückt; das bloße Besprechen wäre neutral.",
+        "explanation": "„sich gegen etwas aussprechen“ ist ein wertender Positionsrahmen, „über etwas sprechen“ nur thematisch. Der reflexive Bestandteil und die Partikel verändern die Funktion.",
+        "repairPrompt": "Fasse eine ausdrückliche Ablehnung zusammen, ohne sie auf eine neutrale Themennennung abzuschwächen."
+      }
+    ],
+    "transfer": "Schreibe eine sachliche Ausschussmitteilung mit einer begründeten Vertagung, einer späteren Wiederaufnahme und einer ausdrücklichen Position zur Freigabe. Begründe die Bedeutungsverschiebung bei zwei alternativen Verbrahmen.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "SG_AI_DRAFT_M14",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Sprachgefühl-Fall; keine Fremdpassagen und keine autorisierte sprachliche Fachfreigabe"
+    }
+  }
+]

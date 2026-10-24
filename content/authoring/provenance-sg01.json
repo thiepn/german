@@ -1,0 +1,70 @@
+{
+  "draftBatch": "SG01-M04-M05",
+  "author": "SG_DRAFT_20261018",
+  "sourceType": "Original example drafts written for this app",
+  "reviewStatus": "DEMO_ONLY",
+  "independentReviewCompleted": false,
+  "sourceCorroborationCompleted": false,
+  "licenseClearanceForThirdPartyTextRequired": false,
+  "generatedByAI": true,
+  "editorialNotes": "Requires independent linguist review for correctness, alternative valid forms, idiomatic range, CEFR-targeting, duplicate semantics and suitability; counts as zero approved.",
+  "additionalDraftBatches": [
+    {
+      "id": "P1-M05-CONTEXT-CONTRAST",
+      "count": 14,
+      "status": "DEMO_ONLY",
+      "editorialCheck": "Native speakers to verify context, unique preferred response and legitimate alternatives"
+    },
+    {
+      "id": "P1-M04-FREE-PRODUCTION",
+      "count": 12,
+      "status": "DEMO_ONLY",
+      "editorialCheck": "Qualified editor to verify semantic equivalence, register, rubric, clarity and alternative formulations"
+    },
+    {
+      "id": "P1-M05-DUDEN-LEXICAL-ANCHORS",
+      "count": 12,
+      "status": "DEMO_ONLY",
+      "editorialCheck": "Duden headword references verify only a locution, not sentence correctness; human review of all distractors mandatory."
+    },
+    {
+      "id": "P1-M04-ARGUMENTATIVE-CONTINUITY",
+      "count": 8,
+      "status": "DEMO_ONLY",
+      "editorialCheck": "Human evaluation of argument fidelity, modality, register, diverse valid rewrites required."
+    },
+    {
+      "id": "P1-ADVANCED-PRECISION-48",
+      "count": 48,
+      "status": "DEMO_ONLY",
+      "independentApprovals": 0,
+      "editorialCheck": "Qualified independent linguist must check all gender, case and valency answers plus competing alternatives, idiomatic context, register, licenses and CEFR difficulty."
+    },
+    {
+      "id": "P1-G09-ORIGINAL-READING-4",
+      "count": 4,
+      "questions": 12,
+      "status": "DEMO_ONLY",
+      "independentApprovals": 0,
+      "sourceType": "Original fictional argumentative reading passages; IDS grammis links only support grammatical concepts; no external passages reproduced",
+      "editorialCheck": "Qualified human assessment of textual logic, evidence questions, multiple defensible answers, register, B2/C1/C2 calibration and link rights"
+    },
+    {
+      "id": "P1-G08-PRAGMATIC-DECISIONS",
+      "count": 8,
+      "status": "DEMO_ONLY",
+      "independentApprovals": 0,
+      "sourceType": "Original fictional workplace/institutional interaction scenarios; CEFR companion 2020 as skill taxonomy inspiration only",
+      "editorialCheck": "Independent German editor to assess contexts, multiple valid responses, politeness, cultural assumptions, nuance, register and text rights."
+    },
+    {
+      "id": "P1-G09-READING-TO-WRITING",
+      "count": 4,
+      "status": "DEMO_ONLY",
+      "independentApprovals": 0,
+      "sourceType": "Original audience-specific transfer briefs tied to SG-R09-001 through -004",
+      "editorialCheck": "Verify audience requirements, reading grounding, alternative formulations and impossible demands."
+    }
+  ],
+  "editorialApprovals": 0
+}

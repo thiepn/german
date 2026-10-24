@@ -1,0 +1,218 @@
+[
+  {
+    "id": "SG-P04-001",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "source": "Die Sprecherin sagt: „Die Zahlen sind eindeutig, aber die Ursachen kennen wir noch nicht.“",
+    "instruction": "Gib ihre Aussage in einem zusammenhängenden Satz indirekt wieder und wahre die inhaltliche Einschränkung.",
+    "objective": "Indirekte Rede mit Distanz",
+    "sample": "Die Sprecherin erklärte, die Zahlen seien eindeutig, die Ursachen seien jedoch noch nicht bekannt.",
+    "noticing": [
+      "Wird eine fremde Aussage eindeutig zugeschrieben?",
+      "Bleibt die Unkenntnis über Ursachen bestehen?",
+      "Ist der Konjunktiv konsistent?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-002",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "source": "Die Untersuchung ist umfangreich. Ihre Aussagekraft bleibt begrenzt.",
+    "instruction": "Verbinde beide Feststellungen zu einem konzessiven, wissenschaftlich angemessenen Satz.",
+    "objective": "Konzessive Argumentation",
+    "sample": "Obwohl die Untersuchung umfangreich angelegt ist, bleibt ihre Aussagekraft begrenzt.",
+    "noticing": [
+      "Ist der Gegensatz erhalten?",
+      "Vermeidet der Satz eine nicht belegte Kausalität?",
+      "Ist das Register kohärent?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-003",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "source": "Weil die Daten verspätet eingingen, musste das Team die Auswertung verschieben.",
+    "instruction": "Fasse den Sachverhalt prägnant im Nominalstil zusammen.",
+    "objective": "Nominalisierung ohne Sinnverschiebung",
+    "sample": "Der verspätete Eingang der Daten führte zur Verschiebung der Auswertung.",
+    "noticing": [
+      "Ist der zeitliche Zusammenhang erhalten?",
+      "Ist die Nominalisierung idiomatisch?",
+      "Wird keine zusätzliche Schuld zugeschrieben?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-004",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Die Methode scheint für einige Fälle geeignet. Für andere ist sie wahrscheinlich ungeeignet.",
+    "instruction": "Formuliere eine differenzierte, sachliche Einschränkung ohne unbelegte Gewissheit.",
+    "objective": "Präzise Einschränkung",
+    "sample": "Die Methode könnte sich für bestimmte Anwendungsfälle eignen, dürfte jedoch nicht uneingeschränkt übertragbar sein.",
+    "noticing": [
+      "Werden Wahrscheinlichkeiten nicht übertrieben?",
+      "Wird die Reichweite der Behauptung klar?",
+      "Ist die Modalität konsequent?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-005",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "source": "Die Studie wurde mehrfach kritisiert. Sie erschien vor zwei Jahren und wird inzwischen erneut geprüft.",
+    "instruction": "Bilde einen zusammenhängenden Satz mit erweitertem Partizipialattribut.",
+    "objective": "Partizipialkonstruktion",
+    "sample": "Die vor zwei Jahren erschienene, mehrfach kritisierte Studie wird inzwischen erneut geprüft.",
+    "noticing": [
+      "Beziehen sich alle Attribute auf die Studie?",
+      "Stimmen Endungen und Satzklammer?",
+      "Bleibt der zeitliche Ablauf nachvollziehbar?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-006",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Man hat die Risiken sehr spät erkannt. Es gibt deshalb Kritik am Verfahren.",
+    "instruction": "Formuliere eine elegante journalistisch-sachliche Passage, ohne mehr zu behaupten.",
+    "objective": "Verdichteter Kommentar",
+    "sample": "Die späte Erkennung der Risiken hat Kritik am Verfahren ausgelöst.",
+    "noticing": [
+      "Kein impliziter Schuldiger ergänzt?",
+      "Kausalität nur entsprechend dem Ausgangssatz?",
+      "Vermeidung überflüssiger Füllwörter?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-007",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "„Ihre Schlussfolgerung ist falsch.“",
+    "instruction": "Formuliere einen höflichen fachlichen Widerspruch, der die These deutlich infrage stellt.",
+    "objective": "Pragmatisch höflicher Widerspruch",
+    "sample": "Diese Schlussfolgerung erscheint mir angesichts der vorliegenden Daten nicht hinreichend begründet.",
+    "noticing": [
+      "Bleibt der Widerspruch deutlich?",
+      "Ist die Distanzierung höflich statt abwertend?",
+      "Wird keine fremde Evidenz erfunden?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-008",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "In der Stichprobe traten zwei Veränderungen gleichzeitig auf.",
+    "instruction": "Formuliere eine Interpretation, die keine unbewiesene Ursache behauptet.",
+    "objective": "Kausale Zurückhaltung",
+    "sample": "Das gleichzeitige Auftreten beider Veränderungen in der Stichprobe erlaubt für sich genommen keinen Kausalschluss.",
+    "noticing": [
+      "Keine kausale Beziehung erfunden?",
+      "Stichprobenbezug erhalten?",
+      "Keine Ergebnisse behauptet, die nicht vorliegen?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-009",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "source": "Die Regeln sind klar. Bei der Umsetzung entstehen trotzdem Schwierigkeiten.",
+    "instruction": "Schreibe einen komplexen Satz mit angemessener kontrastiver Verknüpfung.",
+    "objective": "Kohärenter Übergang",
+    "sample": "Auch wenn die Regeln klar formuliert sind, ergeben sich bei ihrer Umsetzung Schwierigkeiten.",
+    "noticing": [
+      "Logische Verbindung treffend?",
+      "Gegensatz bleibt erhalten?",
+      "Idiomaticher Satzbau?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-010",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Die Kritik ist teilweise berechtigt. Das Projekt sollte dennoch fortgesetzt werden.",
+    "instruction": "Schreibe einen sachlich abwägenden Satz, ohne die Kritik zu entwerten.",
+    "objective": "Argumentative Gewichtung",
+    "sample": "Obgleich einzelne Kritikpunkte berechtigt sind, spricht dies nicht zwingend gegen eine Fortsetzung des Projekts.",
+    "noticing": [
+      "Bleibt die Kritik teilweise berechtigt?",
+      "Wird die Empfehlung nicht zum Fakt erklärt?",
+      "Ist der Konzessivsatz angemessen?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-011",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Die Verwaltung bezeichnet die Maßnahme als notwendig. Betroffene äußern erhebliche Zweifel.",
+    "instruction": "Formuliere eine neutrale Gegenüberstellung beider Perspektiven.",
+    "objective": "Anspruchsvolle Perspektivübernahme",
+    "sample": "Während die Verwaltung die Maßnahme für notwendig hält, äußern Betroffene erhebliche Zweifel daran.",
+    "noticing": [
+      "Beide Sprecherpositionen klar getrennt?",
+      "Keine der Positionen zur Tatsache erhoben?",
+      "Register sachlich?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-012",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "source": "„Das klappt so nicht, weil zu viele Infos fehlen.“",
+    "instruction": "Verwandle diese Äußerung in eine sachliche Formulierung für einen schriftlichen Projektbericht.",
+    "objective": "Registerwechsel",
+    "sample": "Die Umsetzung ist in der vorliegenden Form nicht möglich, da wesentliche Informationen fehlen.",
+    "noticing": [
+      "Informelle Wendungen ersetzt?",
+      "Keine unangemessene Schärfe?",
+      "Bleibt der Informationsmangel als Grund erhalten?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  }
+]

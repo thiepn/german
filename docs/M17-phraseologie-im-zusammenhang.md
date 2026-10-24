@@ -1,0 +1,17 @@
+# M17 — G07 Phraseologie, Verpflichtungsgrad und Handlungsstand im Kontext
+
+## Independent coverage audit
+M05 remains the graded, isolated collocation-choice mode. G03 M14 examines argument frames, G06 M06 isolated semantic precision, G04 M15 information structure, G01 M16 referent identity, and G11 M11 writing revision. None provides paragraph-spanning authored decisions about **phraseological action status and institutional obligations**. This module stays an independent ungraded source-linked workflow; no existing grader, scheduler or scoring mode is extended.
+
+## Source and learner behavior
+Six wholly newly authored, fictional C1–C2 German source cases, each with three connected original paragraphs, three literal paragraph-anchored multiword-expression contrasts and an independent transfer brief. The 18 families include tentative versus binding commitments; acknowledgement versus endorsement; objections versus their resolution; active consideration versus abstract suitability; public expression versus formal recording; data provision versus availability; actual decision versus preparation; accountability versus explanation; scrutiny versus refutation; overdue fulfillment versus causing another party delay; implemented versus merely announced measures; duty fulfillment versus questioning the duty; shortlisting versus release; reserving versus making changes; giving versus obtaining expert comments; drawing inferences versus data hints; deliberate rejection versus mere omission; and aligning language with evidence versus contradicting evidence.
+
+Learners read the **complete original source**, compare the fixed phrase with an authored context-shifting alternative, choose one of two semantic readings, write an original equivalent assertion, and explain exactly what the alternate wording would misleadingly imply. Each saved, source-version-bound decision makes an authored explanation available, without grading any free response or deriving CEFR levels. The initial decision and its choice are immutable in `ProductionEntry.original`/`decisionId`. Subsequent decisions append `DECISION:dN` revisions with paragraph link and learner reasoning. Only after all three analyses is an independent multi-sentence `TRANSFER` available; further `REWRITE` versions are append-only with a **word-level diff between adjacent independent texts only**.
+
+All writes reuse the existing `productionEntries` transactional compare-and-swap writer, eight IndexedDB stores, backup v3, and the existing archive/search/version history. No user identifiers, external requests, migrations, diagnostic ownership, schedulers or grading engines added.
+
+## Editorial rights and release
+Content: `DEMO_ONLY`, `AI_DRAFT`, `ORIGINAL_DRAFT`, `editorialApproval:false`, and no reviewed-by assertion. Six source and 18 decision worklist dossiers (24 unapproved) require independent German idiom, semantic overlap, context, attribution and source-rights review before any release. No externally copyrighted text incorporated. Existing M01–M16 IDs unchanged.
+
+## Qualification gate
+Source manifest validation for all quote anchors, 18 unique families, rights and status; 8 new Node tests including adversarial domain ordering, immutable source evidence, ungraded errors, writing history, backup v3 tamper rejection and editorial queue. Genuine Chromium desktop/mobile with stale multi-tab CAS collision, save/revision/archive/reload, then unchanged original M01–M16 and visual/copy suites. Preserve same draft PR. No merge or deployment.

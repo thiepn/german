@@ -1,0 +1,576 @@
+[
+  {
+    "id": "SG-M05-036",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die Behörde muss den Antrag sorgfältig ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "prüfen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "prüfen",
+        "ablehnen"
+      ],
+      "rationale": "Ablehnen wäre bereits eine Entscheidung, die aus dem Satz nicht hervorgeht.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Ein Antrag wird geprüft, bevor über Annahme oder Ablehnung entschieden werden kann.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die Behörde muss den Antrag sorgfältig ___ .",
+    "reviewAnswer": "prüfen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-037",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die Geschäftsführung möchte den Beschäftigten eine Perspektive ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "aufzeigen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "aufzeigen",
+        "versprechen"
+      ],
+      "rationale": "Versprechen würde eine verbindlichere Zusage behaupten.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Eine Perspektive aufzeigen bedeutet Möglichkeiten deutlich machen.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die Geschäftsführung möchte den Beschäftigten eine Perspektive ___ .",
+    "reviewAnswer": "aufzeigen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-038",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Der Bericht konnte die wesentlichen Zweifel nicht ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ausräumen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "ausräumen",
+        "äußern"
+      ],
+      "rationale": "Zweifel äußern wäre das Gegenteil der beabsichtigten Handlung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Zweifel ausräumen heißt Bedenken beseitigen.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Der Bericht konnte die wesentlichen Zweifel nicht ___ .",
+    "reviewAnswer": "ausräumen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-039",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die Expertin wollte mit ihrem Beitrag die Debatte ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "anstoßen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "anstoßen",
+        "beenden"
+      ],
+      "rationale": "Beenden beschreibt die entgegengesetzte Prozessphase.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Eine Debatte anstoßen heißt, einen Diskurs beginnen.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die Expertin wollte mit ihrem Beitrag die Debatte ___ .",
+    "reviewAnswer": "anstoßen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-040",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die Kommission soll die Interessen aller Beteiligten ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "berücksichtigen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "berücksichtigen",
+        "vertreten"
+      ],
+      "rationale": "Vertreten hieße für sie einzutreten und wäre weitergehend.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Interessen berücksichtigen heißt sie in die Abwägung einbeziehen.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die Kommission soll die Interessen aller Beteiligten ___ .",
+    "reviewAnswer": "berücksichtigen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-041",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die vorliegenden Angaben lassen noch keinen eindeutigen Schluss ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "zu"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "zu",
+        "aus"
+      ],
+      "rationale": "Einen Schluss auslassen hätte eine andere Bedeutung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Einen Schluss zulassen ist eine gebräuchliche Verbindung.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die vorliegenden Angaben lassen noch keinen eindeutigen Schluss ___ .",
+    "reviewAnswer": "zu",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-042",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Das Urteil könnte den bisherigen Ansatz grundsätzlich infrage ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "stellen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "stellen",
+        "legen"
+      ],
+      "rationale": "Infrage legen ist in diesem Zusammenhang nicht idiomatisch.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Etwas infrage stellen ist eine feste Konstruktion.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Das Urteil könnte den bisherigen Ansatz grundsätzlich infrage ___ .",
+    "reviewAnswer": "stellen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-043",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die neue Regelung soll im kommenden Jahr in Kraft ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "treten"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "treten",
+        "setzen"
+      ],
+      "rationale": "In Kraft setzen ist transitiv und benötigt einen Handelnden und ein Objekt.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "In Kraft treten bezeichnet das Wirksamwerden einer Regelung.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die neue Regelung soll im kommenden Jahr in Kraft ___ .",
+    "reviewAnswer": "treten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-044",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Der Vorsitzende konnte zu den Vorwürfen keine Stellung ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "nehmen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "nehmen",
+        "ziehen"
+      ],
+      "rationale": "Stellung ziehen ist nicht die einschlägige Wortverbindung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Stellung nehmen ist die etablierte Verbindung.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Der Vorsitzende konnte zu den Vorwürfen keine Stellung ___ .",
+    "reviewAnswer": "nehmen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-045",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Der Bericht wollte auf Risiken aufmerksam ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "machen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "machen",
+        "werden"
+      ],
+      "rationale": "Auf etwas aufmerksam werden hat einen Wahrnehmungsträger als Subjekt.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Auf etwas aufmerksam machen ist transitiv.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Der Bericht wollte auf Risiken aufmerksam ___ .",
+    "reviewAnswer": "machen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-046",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die Redaktion wollte den Widerspruch ausdrücklich zur Sprache ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "bringen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "bringen",
+        "kommen"
+      ],
+      "rationale": "Zur Sprache kommen beschreibt, dass ein Thema angesprochen wird.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Etwas zur Sprache bringen ist aktiv-transitiv.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die Redaktion wollte den Widerspruch ausdrücklich zur Sprache ___ .",
+    "reviewAnswer": "bringen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-047",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die Forscherin muss eine differenziertere Betrachtung in Erwägung ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ziehen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "ziehen",
+        "tragen"
+      ],
+      "rationale": "In Erwägung tragen ist hier nicht idiomatisch.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "In Erwägung ziehen heißt erwägen.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die Forscherin muss eine differenziertere Betrachtung in Erwägung ___ .",
+    "reviewAnswer": "ziehen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-048",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die Kommission beschloss, unverzüglich geeignete Maßnahmen zu ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ergreifen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "ergreifen",
+        "leisten"
+      ],
+      "rationale": "Leisten verbindet sich beispielsweise mit Hilfe oder Arbeit.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Maßnahmen ergreifen ist die übliche Verbindung.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die Kommission beschloss, unverzüglich geeignete Maßnahmen zu ___ .",
+    "reviewAnswer": "ergreifen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-049",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Bedeutungskontrast",
+    "prompt": "Die Verhandlungen sollten einen tragfähigen Kompromiss ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Wähle die kontextuell passende Verbindung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "ermöglichen"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "ermöglichen",
+        "verhindern"
+      ],
+      "rationale": "Verhindern wäre eine gegenteilige Aussage, die eine andere Absicht voraussetzt.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Einen Kompromiss ermöglichen beschreibt eine positive Bedingung.",
+    "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+    "reviewPrompt": "Die Verhandlungen sollten einen tragfähigen Kompromiss ___ .",
+    "reviewAnswer": "ermöglichen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original authored contrast-draft; independently unreviewed"
+    },
+    "editorial": {}
+  }
+]

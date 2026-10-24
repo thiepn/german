@@ -1,0 +1,378 @@
+[
+  {
+    "id": "SG-G12R-001",
+    "version": 1,
+    "domain": "G12",
+    "band": "C2",
+    "title": "Verbindlichkeit in einer Forschungskooperation",
+    "focus": "Absichtserklärung, Zustimmungsvorbehalt und Leistungszusage präzise auseinanderhalten",
+    "brief": "Halte für das gemeinsame Projektprotokoll fest, welche Schritte angekündigt, geprüft oder tatsächlich vereinbart wurden. Formuliere eine verbindlichkeitsbewusste Zusammenfassung für beide Partner und überarbeite sie nach eigener Quellenkontrolle.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Zu Beginn der Besprechung erläuterte die Projektpartnerin, dass die Abteilung zuletzt mehrere Versionen eines gemeinsam genutzten Datensatzes bereinigt hatte. Angesichts eines nahen Vortragstermins sagte sie: „Den Datensatz könnten wir bis Freitag bereitstellen.“ Wenig später verwies sie jedoch auf fehlende Einwilligungsnachweise und eine interne Rechtsprüfung, deren Abschluss sie nicht terminieren konnte. Die Projektleitung notierte deshalb ausdrücklich noch keine Lieferzusage für Freitag."
+      },
+      {
+        "id": "p2",
+        "text": "Als der Datenschutzbeauftragte um eine vorläufige Einschätzung zur geplanten Speicherstruktur gebeten wurde, sah er sich eine schematische Übersicht an. Auf die Frage, ob der Ansatz grundsätzlich weiterverfolgt werden könne, antwortete er: „Dagegen spricht aus meiner Sicht zunächst nichts.“ Im weiteren Gespräch stellte er klar, dass die Datenflüsse, die Löschfristen und die Übermittlung an Dritte noch nicht vollständig dokumentiert waren. Eine rechtliche Freigabe oder verbindliche Genehmigung könne erst nach Einreichung dieser Unterlagen geprüft werden."
+      },
+      {
+        "id": "p3",
+        "text": "Gegen Ende der Sitzung verwies die Fakultätsvertretung darauf, dass der Projektetat nur die bisher vereinbarten Arbeitspakete deckte. Für eine zusätzliche Nutzerstudie stünden noch keine Mittel zur Verfügung. Sie erklärte: „Die Finanzierung sollten wir im nächsten Gremium ansprechen.“ Das nächste Gremium kann die Finanzierung beraten, verfügt aber weder automatisch über zusätzliche Mittel noch über eine Vorabzustimmung. Im Sitzungsprotokoll wurde die Vorbereitung einer Kostenübersicht vermerkt, nicht jedoch eine positive Mittelentscheidung."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "speaker": "Projektpartnerin",
+        "quote": "Den Datensatz könnten wir bis Freitag bereitstellen.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Projektpartnerin stellte eine mögliche Bereitstellung bis Freitag in Aussicht; ein verbindlicher Liefertermin ist wegen der ausstehenden Rechtsprüfung noch nicht zugesagt."
+          },
+          {
+            "id": "B",
+            "text": "Die Projektpartnerin hat eine rechtsverbindliche und uneingeschränkte Lieferung des geprüften Datensatzes bis Freitag garantiert."
+          }
+        ],
+        "preferredId": "A",
+        "clarified": "Die Partnerin bestätigt auf Nachfrage, dass Freitag nur bei abgeschlossener Rechtsprüfung erreichbar wäre.",
+        "model": "Das Modalverb im Konjunktiv II markiert eine Möglichkeit; nur eine Nachfrage nach Bedingung und Zuständigkeit kann den realen Lieferstatus klären."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "speaker": "Datenschutzbeauftragter",
+        "quote": "Dagegen spricht aus meiner Sicht zunächst nichts.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Datenschutzbeauftragte bestätigte mit dieser Aussage die vollständige rechtswirksame Zulässigkeit sämtlicher Datenflüsse."
+          },
+          {
+            "id": "B",
+            "text": "Der Datenschutzbeauftragte äußerte gegen den schematischen Ansatz keinen ersten Einwand, hat aber keine Prüfung des vollständigen Verfahrens abgeschlossen."
+          }
+        ],
+        "preferredId": "B",
+        "clarified": "Auf Nachfrage unterscheidet er seine erste Einschätzung von einer formalen Freigabe, für die zusätzliche Unterlagen nötig sind.",
+        "model": "Die adverbialen Einschränkungen „aus meiner Sicht“ und „zunächst“ verhindern, dass eine vorläufige Haltung zur institutionellen Rechtsfreigabe wird."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "speaker": "Fakultätsvertretung",
+        "quote": "Die Finanzierung sollten wir im nächsten Gremium ansprechen.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Fakultätsvertretung schlägt vor, die Finanzierung im nächsten Gremium zu behandeln, ohne damit eine Bewilligung zu versprechen."
+          },
+          {
+            "id": "B",
+            "text": "Die Fakultätsvertretung hat bereits neue Mittel bewilligt und erklärt die geplante Nutzerstudie für vollständig finanziert."
+          }
+        ],
+        "preferredId": "A",
+        "clarified": "Auf Nachfrage sagt sie nur die Aufnahme des Themas und die Vorbereitung einer Kostenübersicht zu.",
+        "model": "Der Vorschlag „sollten wir ... ansprechen“ ist keine Haushaltsentscheidung; Gesprächsabsicht und Finanzierungskompetenz sind verschieden."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M23 original fictional advanced German dialogue authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale fiktive Gesprächsprotokolle und Gesprächsäußerungen; unabhängig redaktionell zu prüfen"
+    }
+  },
+  {
+    "id": "SG-G12R-002",
+    "version": 1,
+    "domain": "G12",
+    "band": "C2",
+    "title": "Zuständigkeiten in einer Klinikübergabe",
+    "focus": "Mehrdeutige Zusagen, Delegation und Sicherheitsvorbehalte in professionellen Übergaben",
+    "brief": "Erstelle eine sachliche Übergabenotiz für das Folgeteam, die keine offenen Prüfungen zu medizinischen Freigaben oder verbindlichen Zusagen umdeutet. Ergänze eine präzise überarbeitete Fassung mit offenen Verantwortlichkeiten.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Im Übergabegespräch ging es um die Organisation einer zusätzlichen nicht dringlichen Untersuchung. Die Stationskoordination sagte auf die Frage nach einem geeigneten Termin: „Das können wir heute noch organisieren.“ Die Aussage bezog sich auf die Kontaktaufnahme mit der Terminplanung, nicht auf eine Durchführung am selben Tag. Zugleich war der erforderliche Untersuchungsraum noch nicht verbindlich verfügbar. Die anwesende Ärztin bat deshalb ausdrücklich um eine Bestätigung, sobald ein tatsächlicher Termin vergeben sei."
+      },
+      {
+        "id": "p2",
+        "text": "Die Fachärztin überflog den vorliegenden Kurzbericht zur bisherigen Vorbereitung einer geplanten Untersuchung. Sie bemerkte: „Die Unterlagen dürften dafür ausreichen.“ Im anschließenden Austausch wies sie darauf hin, dass die endgültige Prüfung der Kontraindikationen und die persönliche Aufklärung erst vor dem Termin durchgeführt würden. Der Satz bedeutete eine vorsichtige Einschätzung zur Vollständigkeit des Kurzberichts und erteilte weder eine ärztliche Durchführungserlaubnis noch ersetzte er die notwendige individuelle Prüfung."
+      },
+      {
+        "id": "p3",
+        "text": "Als die Dokumentation einer ausstehenden Rückmeldung erwähnt wurde, sagte die Schichtleitung: „Jemand aus dem Spätdienst kümmert sich darum.“ Zu diesem Zeitpunkt war keine bestimmte Person eingeteilt und das elektronische Übergabefeld trug noch keinen Verantwortlichkeitsvermerk. Zwei anwesende Beschäftigte gingen anschließend jeweils davon aus, die andere Gruppe werde die Rückmeldung dokumentieren. Das Team vereinbarte deshalb, die Zuständigkeit vor Schichtwechsel namentlich festzulegen."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "speaker": "Stationskoordination",
+        "quote": "Das können wir heute noch organisieren.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Stationskoordination hat eine medizinisch freigegebene Untersuchung noch für heute verbindlich bestätigt."
+          },
+          {
+            "id": "B",
+            "text": "Die Stationskoordination hält eine Kontaktaufnahme mit der Terminplanung noch am selben Tag für möglich; die Untersuchung selbst ist nicht terminiert."
+          }
+        ],
+        "preferredId": "B",
+        "clarified": "Sie erläutert, dass heute zunächst ein Termin angefragt und die tatsächliche Verfügbarkeit später mitgeteilt werden kann.",
+        "model": "Das deiktische „das“ bezieht sich im Gespräch auf die Organisation, nicht notwendigerweise auf die Durchführung. Ein Zeitadverb überträgt sich nicht automatisch auf jeden Teilvorgang."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "speaker": "Fachärztin",
+        "quote": "Die Unterlagen dürften dafür ausreichen.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Fachärztin hält die Unterlagen vorläufig für wahrscheinlich ausreichend, behält die abschließende Prüfung aber ausdrücklich vor."
+          },
+          {
+            "id": "B",
+            "text": "Die Fachärztin erklärt, dass sämtliche Kontraindikationen abschließend ausgeschlossen und die Untersuchung bereits freigegeben seien."
+          }
+        ],
+        "preferredId": "A",
+        "clarified": "Sie erläutert, dass ihre Einschätzung nur die Dokumentenlage betrifft und die endgültige klinische Prüfung noch aussteht.",
+        "model": "„Dürften“ ist hier epistemisch abgeschwächt. Die Einschätzung zur Aktenlage darf nicht in eine individuelle medizinische Freigabe verwandelt werden."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "speaker": "Schichtleitung",
+        "quote": "Jemand aus dem Spätdienst kümmert sich darum.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Schichtleitung hat bereits eine benannte Fachkraft verbindlich beauftragt und die Rückmeldung nachweislich abgeschlossen."
+          },
+          {
+            "id": "B",
+            "text": "Die Schichtleitung beschreibt eine geplante Aufgabe für den Spätdienst; eine namentliche Zuständigkeit war noch nicht dokumentiert."
+          }
+        ],
+        "preferredId": "B",
+        "clarified": "Auf Nachfrage wird bestätigt, dass eine konkrete Person erst vor dem Schichtwechsel zugeordnet werden muss.",
+        "model": "Das indefinite Pronomen signalisiert eine unbestimmte Person. Die bloße Aufgabenabsicht genügt für keine überprüfbare Delegationszusage."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M23 original fictional advanced German dialogue authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale fiktive Gesprächsprotokolle und Gesprächsäußerungen; unabhängig redaktionell zu prüfen"
+    }
+  },
+  {
+    "id": "SG-G12R-003",
+    "version": 1,
+    "domain": "G12",
+    "band": "C1",
+    "title": "Bürgerbeteiligung zu einer Verkehrsmaßnahme",
+    "focus": "Vorschläge, Testzusagen und Fristen in öffentlicher Kommunikation eingrenzen",
+    "brief": "Schreibe für die Anwohnenden eine verständliche Ergebnisnotiz mit klarer Trennung von eingegangenen Vorschlägen, tatsächlichen Zusagen und weiteren Entscheidungen. Überarbeite unpräzise Formulierungen zu verbindlichen Terminen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "In einer öffentlichen Diskussion über die Sicherheit vor einer Schule stellte die Verkehrsplanerin verschiedene zeitlich begrenzte Verkehrsmaßnahmen vor. Zur versuchsweisen Sperrung einer Seitenstraße bemerkte sie: „Eine Sperrung wäre am Wochenende möglich.“ Die Stadtverwaltung hatte zu diesem Zeitpunkt aber weder die erforderliche Verkehrsrechtliche Anordnung noch einen Beschluss über die Organisation des Testbetriebs eingeholt. Die Aussage beschrieb eine planerisch mögliche Zeitspanne und keinen veröffentlichten Starttermin."
+      },
+      {
+        "id": "p2",
+        "text": "Die Schulvertretung wurde gefragt, wie sie eine zunächst auf zwei Wochen begrenzte Testphase bewerten würde. Nach kurzer Beratung antwortete ihre Sprecherin: „Damit könnten wir leben.“ Unmittelbar anschließend ergänzte sie, dass die Bring- und Holzeiten besonders beobachtet und eine Auswertung gemeinsam mit den Eltern stattfinden müssten. Im weiteren Gespräch blieb offen, ob die Stellungnahme von allen Mitgliedern der Schule getragen wurde und welche Variante die Schulkonferenz später formal unterstützen würde."
+      },
+      {
+        "id": "p3",
+        "text": "Der zuständige Verwaltungsmitarbeiter erläuterte am Ende der Versammlung, dass eingegangene Hinweise zusammen mit Verkehrszählungen ausgewertet werden sollten. Er kündigte an: „Wir melden uns nach der Auswertung.“ Ein konkreter Zeitpunkt für das Ende der Datenauswertung lag nicht vor. Im schriftlichen Nachgang sollten eine Kontaktstelle und der voraussichtliche Beratungsweg benannt werden, doch kein Datum für die endgültige Entscheidung wurde vereinbart. Mehrere Anwesende fragten deshalb, wann mit einer verbindlichen Rückmeldung zu rechnen sei."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "speaker": "Verkehrsplanerin",
+        "quote": "Eine Sperrung wäre am Wochenende möglich.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Verkehrsplanerin bezeichnet eine Wochenendsperrung als mögliche Testoption, ohne einen genehmigten Zeitpunkt zu nennen."
+          },
+          {
+            "id": "B",
+            "text": "Die Verkehrsplanerin gab bekannt, dass die Seitenstraße am kommenden Wochenende rechtskräftig und endgültig gesperrt wird."
+          }
+        ],
+        "preferredId": "A",
+        "clarified": "Auf Nachfrage verweist sie auf die nötige Anordnung und die noch ausstehende Terminentscheidung.",
+        "model": "Der Konjunktiv II zeigt eine Planungsoption. Eine verbindliche Sperrung verlangt behördliche Anordnung und Bekanntmachung."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "speaker": "Schulvertretung",
+        "quote": "Damit könnten wir leben.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die vollständige Schulkonferenz hat mit der Äußerung der endgültigen und unbefristeten Straßensperrung zugestimmt."
+          },
+          {
+            "id": "B",
+            "text": "Die Sprecherin der Schulvertretung signalisiert bedingte Offenheit für einen befristeten Test, nicht eine uneingeschränkte Zustimmung der Schule."
+          }
+        ],
+        "preferredId": "B",
+        "clarified": "Auf Nachfrage erklärt die Sprecherin, dass ihre Offenheit für eine befristete Erprobung an eine Auswertung gebunden ist.",
+        "model": "Die elliptische Zustimmung hat einen engen Referenten: den Test unter Bedingungen. Sie ist weder Votum eines anderen Organs noch generelle politische Zustimmung."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "speaker": "Bezirksverwaltung",
+        "quote": "Wir melden uns nach der Auswertung.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Verwaltung kündigt eine spätere Rückmeldung nach der Auswertung an; ein verbindlicher Termin oder eine Entscheidung ist noch offen."
+          },
+          {
+            "id": "B",
+            "text": "Die Bezirksverwaltung hat verbindlich zugesagt, bis zum nächsten Tag eine endgültige Sperrentscheidung bekanntzugeben."
+          }
+        ],
+        "preferredId": "A",
+        "clarified": "Auf Nachfrage kann sie zunächst nur den Ablauf der Auswertung und die zuständige Kontaktstelle benennen.",
+        "model": "„Nach“ legt eine Reihenfolge fest, aber kein Kalenderdatum. Eine Rückmeldeabsicht ist keine Zusage des Entscheidungsinhalts."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M23 original fictional advanced German dialogue authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale fiktive Gesprächsprotokolle und Gesprächsäußerungen; unabhängig redaktionell zu prüfen"
+    }
+  },
+  {
+    "id": "SG-G12R-004",
+    "version": 1,
+    "domain": "G12",
+    "band": "C1",
+    "title": "Softwaremigration im Arbeitsprojekt",
+    "focus": "Verfügbarkeitsaussagen, Teststatus und ungeklärte Verantwortlichkeiten auseinanderhalten",
+    "brief": "Erstelle für das Projektteam einen neutralen Statusbericht über die Migration. Benenne, was tatsächlich getestet wurde, welche Freigaben fehlen und wer noch Verantwortung übernehmen muss. Überarbeite jede irreführende Verbindlichkeitsbehauptung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Während der Statusrunde stellte die Entwicklungsleitung einen funktionierenden Prototyp der Schnittstelle in ihrer eigenen Entwicklungsumgebung vor. Sie erklärte: „Die neue Schnittstelle läuft bei uns schon.“ Der Test benutzte jedoch künstliche Beispieldaten und deckte weder die Anbindung an die Produktionsumgebung noch die Verarbeitung von Altbeständen ab. Die Leitung schlug einen weiteren Integrationstest vor, der zum Zeitpunkt der Sitzung noch nicht terminiert war."
+      },
+      {
+        "id": "p2",
+        "text": "Eine Vertreterin der Informationssicherheit erhielt den Vorschlag, die Schnittstelle zunächst ausschließlich in einer isolierten Testumgebung zu erproben. Sie sagte: „Von unserer Seite wäre das vorstellbar.“ Dabei verwies sie jedoch auf die noch ausstehende Prüfung der Berechtigungskonzepte und der Protokollierung. Ihre Aussage betraf die Erörterbarkeit eines begrenzten Tests und konnte weder die Zustimmung anderer Fachbereiche noch eine Sicherheitsfreigabe für personenbezogene Echtdaten ersetzen."
+      },
+      {
+        "id": "p3",
+        "text": "Für die Beobachtung des geplanten Integrationstests wurde die Betriebskoordination um Unterstützung gebeten. Ihr Vertreter sagte: „Wir stellen rechtzeitig jemanden ab.“ Weder war aber der Testtermin festgelegt noch hatte die Teamleitung eine bestimmte Person für die Aufgabe benannt. In der anschließenden Diskussion wurde daher vorgeschlagen, Verantwortliche erst nach Bestätigung eines Zeitfensters zuzuordnen und ihre Verfügbarkeit in der Aufgabenübersicht zu dokumentieren."
+      }
+    ],
+    "repairs": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "speaker": "Entwicklungsleitung",
+        "quote": "Die neue Schnittstelle läuft bei uns schon.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Entwicklungsleitung bestätigt eine produktive, vollständig abgesicherte Migration aller Bestandsdaten ohne weitere Tests."
+          },
+          {
+            "id": "B",
+            "text": "Die Entwicklungsleitung berichtet von einem lokalen Prototyp mit Testdaten, nicht von einer produktiven oder vollständig getesteten Schnittstelle."
+          }
+        ],
+        "preferredId": "B",
+        "clarified": "Auf Nachfrage nennt sie die lokale Entwicklungsumgebung und verweist auf den noch fehlenden Integrationstest.",
+        "model": "Der Ortshinweis „bei uns“ und das unbestimmte „läuft“ sind keine Freigabeaussagen über produktive Dienste."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "speaker": "Informationssicherheit",
+        "quote": "Von unserer Seite wäre das vorstellbar.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Informationssicherheit hält einen eingeschränkten Test grundsätzlich für diskutabel, hat aber noch keine formale Freigabe erteilt."
+          },
+          {
+            "id": "B",
+            "text": "Die Informationssicherheit hat die Verarbeitung personenbezogener Produktivdaten uneingeschränkt genehmigt."
+          }
+        ],
+        "preferredId": "A",
+        "clarified": "Auf Nachfrage präzisiert sie, dass erst Berechtigungen und Protokollierung geprüft werden müssen.",
+        "model": "Das konditionale „wäre“ und der Zuständigkeitszusatz „von unserer Seite“ begrenzen die Aussage erheblich."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "speaker": "Betriebskoordination",
+        "quote": "Wir stellen rechtzeitig jemanden ab.",
+        "question": "Welche Lesart kann als gesichert protokolliert werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Betriebskoordination hat eine bestimmte Fachkraft für einen bereits bestätigten Integrationstest verbindlich eingeplant."
+          },
+          {
+            "id": "B",
+            "text": "Die Betriebskoordination äußert eine allgemeine Bereitschaft zur Unterstützung, ohne schon eine Person oder ein verbindliches Zeitfenster festgelegt zu haben."
+          }
+        ],
+        "preferredId": "B",
+        "clarified": "Auf Nachfrage erklärt sie, dass die Personalzuteilung erst nach Festlegung des Testtermins erfolgen kann.",
+        "model": "„Rechtzeitig“ ist ohne Bezugstermin unbestimmt, und „jemanden“ garantiert keine bereits kontrollierte Ressourcenplanung."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M23 original fictional advanced German dialogue authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale fiktive Gesprächsprotokolle und Gesprächsäußerungen; unabhängig redaktionell zu prüfen"
+    }
+  }
+]

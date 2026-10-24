@@ -1,0 +1,65 @@
+{
+  "note": "Wörterbuchverweise bestätigen nur die lexikalischen Wendungen, nicht die redaktionelle Eignung der neuen Beispielsätze.",
+  "anchors": [
+    {
+      "id": "BETRACHT",
+      "headword": "Betracht",
+      "url": "https://www.duden.de/rechtschreibung/Betracht",
+      "claim": "in Betracht ziehen / in Betracht kommen",
+      "referenceKind": "DICTIONARY_LEXICAL_FORM_ONLY",
+      "checkedAt": "2026-10-18",
+      "editorialApproved": false,
+      "licenseForQuotation": false
+    },
+    {
+      "id": "ERWAEGUNG",
+      "headword": "Erwägung",
+      "url": "https://www.duden.de/rechtschreibung/Erwaegung",
+      "claim": "in Erwägung ziehen / nach reiflicher Erwägung",
+      "referenceKind": "DICTIONARY_LEXICAL_FORM_ONLY",
+      "checkedAt": "2026-10-18",
+      "editorialApproved": false,
+      "licenseForQuotation": false
+    },
+    {
+      "id": "RECHNUNG",
+      "headword": "Rechnung",
+      "url": "https://www.duden.de/rechtschreibung/Rechnung",
+      "claim": "einer Sache Rechnung tragen",
+      "referenceKind": "DICTIONARY_LEXICAL_FORM_ONLY",
+      "checkedAt": "2026-10-18",
+      "editorialApproved": false,
+      "licenseForQuotation": false
+    },
+    {
+      "id": "AUSSCHLAG",
+      "headword": "Ausschlag",
+      "url": "https://www.duden.de/rechtschreibung/Ausschlag",
+      "claim": "den Ausschlag geben",
+      "referenceKind": "DICTIONARY_LEXICAL_FORM_ONLY",
+      "checkedAt": "2026-10-18",
+      "editorialApproved": false,
+      "licenseForQuotation": false
+    },
+    {
+      "id": "GELTUNG",
+      "headword": "Geltung",
+      "url": "https://www.duden.de/rechtschreibung/Geltung",
+      "claim": "Geltung verschaffen / zur Geltung kommen",
+      "referenceKind": "DICTIONARY_LEXICAL_FORM_ONLY",
+      "checkedAt": "2026-10-18",
+      "editorialApproved": false,
+      "licenseForQuotation": false
+    },
+    {
+      "id": "RECHENSCHAFT",
+      "headword": "Rechenschaft",
+      "url": "https://www.duden.de/rechtschreibung/Rechenschaft",
+      "claim": "Rechenschaft ablegen",
+      "referenceKind": "DICTIONARY_LEXICAL_FORM_ONLY",
+      "checkedAt": "2026-10-18",
+      "editorialApproved": false,
+      "licenseForQuotation": false
+    }
+  ]
+}

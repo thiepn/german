@@ -1,0 +1,1698 @@
+[
+  {
+    "id": "SG-M01-013",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Diskrepanz.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Diskrepanz“ hat hier das Genus die. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Diskrepanz.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-014",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Resümee.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Resümee“ hat hier das Genus das. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Resümee.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-015",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Konsens.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Konsens“ hat hier das Genus der. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Konsens.",
+    "reviewAnswer": "der",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-016",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C2",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Paradigma.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Paradigma“ hat hier das Genus das. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Paradigma.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-017",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Votum.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Votum“ hat hier das Genus das. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Votum.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-018",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Prämisse.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Prämisse“ hat hier das Genus die. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Prämisse.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-019",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Indiz.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Indiz“ hat hier das Genus das. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Indiz.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-020",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C2",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Befund.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Befund“ hat hier das Genus der. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Befund.",
+    "reviewAnswer": "der",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-021",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Plädoyer.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Plädoyer“ hat hier das Genus das. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Plädoyer.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-022",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Chiffre.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Chiffre“ hat hier das Genus die. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Chiffre.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-023",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Exposé.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Exposé“ hat hier das Genus das. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Exposé.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-024",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C2",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Nuance.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Nuance“ hat hier das Genus die. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Nuance.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-025",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Kompromiss.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Kompromiss“ hat hier das Genus der. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Kompromiss.",
+    "reviewAnswer": "der",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-026",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Maxime.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Maxime“ hat hier das Genus die. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Maxime.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-027",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C1",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Privileg.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "das"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Privileg“ hat hier das Genus das. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Privileg.",
+    "reviewAnswer": "das",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M01-028",
+    "version": 1,
+    "mode": "M01",
+    "skillId": "G01.GENUS",
+    "band": "C2",
+    "topic": "Fachsprache",
+    "prompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Ambivalenz.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "die"
+        }
+      }
+    ],
+    "explanation": "Das Substantiv „Ambivalenz“ hat hier das Genus die. Unabhängige Bestätigung steht aus.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze den bestimmten Artikel im Nominativ Singular: ___ Ambivalenz.",
+    "reviewAnswer": "die",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-013",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: trotz ___ ___ Rückschlags.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "unerwarteten"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „trotz des unerwarteten Rückschlags“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: trotz ___ ___ Rückschlags.",
+    "reviewAnswer": "des · unerwarteten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-014",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: wegen ___ ___ Zeitdrucks.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "erheblichen"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „wegen des erheblichen Zeitdrucks“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: wegen ___ ___ Zeitdrucks.",
+    "reviewAnswer": "des · erheblichen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-015",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: angesichts ___ ___ Kosten.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der",
+          "adjective": "steigenden"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „angesichts der steigenden Kosten“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: angesichts ___ ___ Kosten.",
+    "reviewAnswer": "der · steigenden",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-016",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C2",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: während ___ ___ Verfahrens.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "laufenden"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „während des laufenden Verfahrens“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: während ___ ___ Verfahrens.",
+    "reviewAnswer": "des · laufenden",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-017",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: außerhalb ___ ___ Bezirks.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "zuständigen"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „außerhalb des zuständigen Bezirks“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: außerhalb ___ ___ Bezirks.",
+    "reviewAnswer": "des · zuständigen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-018",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: innerhalb ___ ___ Frist.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der",
+          "adjective": "festgelegten"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „innerhalb der festgelegten Frist“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: innerhalb ___ ___ Frist.",
+    "reviewAnswer": "der · festgelegten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-019",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: aufgrund ___ ___ Arguments.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "überzeugenden"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „aufgrund des überzeugenden Arguments“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: aufgrund ___ ___ Arguments.",
+    "reviewAnswer": "des · überzeugenden",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-020",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C2",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: mithilfe ___ ___ Verfahrens.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "geeigneten"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „mithilfe des geeigneten Verfahrens“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: mithilfe ___ ___ Verfahrens.",
+    "reviewAnswer": "des · geeigneten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-021",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: statt ___ ___ Berichts.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "ausführlichen"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „statt des ausführlichen Berichts“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: statt ___ ___ Berichts.",
+    "reviewAnswer": "des · ausführlichen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-022",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: infolge ___ ___ Entwicklung.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der",
+          "adjective": "unerwarteten"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „infolge der unerwarteten Entwicklung“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: infolge ___ ___ Entwicklung.",
+    "reviewAnswer": "der · unerwarteten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-023",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: trotz ___ ___ Belege.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der",
+          "adjective": "umfangreichen"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „trotz der umfangreichen Belege“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: trotz ___ ___ Belege.",
+    "reviewAnswer": "der · umfangreichen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-024",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C2",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: während ___ ___ Phase.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der",
+          "adjective": "entscheidenden"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „während der entscheidenden Phase“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: während ___ ___ Phase.",
+    "reviewAnswer": "der · entscheidenden",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-025",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: unweit ___ ___ Gebäudes.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "historischen"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „unweit des historischen Gebäudes“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: unweit ___ ___ Gebäudes.",
+    "reviewAnswer": "des · historischen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-026",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: angesichts ___ ___ Sachlage.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der",
+          "adjective": "komplizierten"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „angesichts der komplizierten Sachlage“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: angesichts ___ ___ Sachlage.",
+    "reviewAnswer": "der · komplizierten",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-027",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C1",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: trotz ___ ___ Ergebnisse.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "der",
+          "adjective": "vorliegenden"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „trotz der vorliegenden Ergebnisse“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: trotz ___ ___ Ergebnisse.",
+    "reviewAnswer": "der · vorliegenden",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M02-028",
+    "version": 1,
+    "mode": "M02",
+    "skillId": "G02.ADJEKTIVFLEXION",
+    "band": "C2",
+    "topic": "Formelle Nominalphrasen",
+    "prompt": "Ergänze im formellen schriftsprachlichen Genitiv: aufgrund ___ ___ Befunds.",
+    "slots": [
+      {
+        "id": "article",
+        "label": "Artikel"
+      },
+      {
+        "id": "adjective",
+        "label": "Adjektivform"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "article": "des",
+          "adjective": "aktuellen"
+        }
+      }
+    ],
+    "explanation": "In dieser formellen Konstruktion: „aufgrund des aktuellen Befunds“. Register- und Formvarianten bedürfen der Prüfung.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze im formellen schriftsprachlichen Genitiv: aufgrund ___ ___ Befunds.",
+    "reviewAnswer": "des · aktuellen",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-013",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „zweifeln“ passende Präposition und den Kasus für die Bedeutung: die Verlässlichkeit einer Aussage infrage stellen.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "an",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert an + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „zweifeln“ passende Präposition und den Kasus für die Bedeutung: die Verlässlichkeit einer Aussage infrage stellen.",
+    "reviewAnswer": "an · Dativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-014",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „bestehen“ passende Präposition und den Kasus für die Bedeutung: auf einer eindeutigen Begründung beharren.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "auf",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert auf + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „bestehen“ passende Präposition und den Kasus für die Bedeutung: auf einer eindeutigen Begründung beharren.",
+    "reviewAnswer": "auf · Dativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-015",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „verzichten“ passende Präposition und den Kasus für die Bedeutung: einen zusätzlichen Nachweis bewusst nicht verlangen.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "auf",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert auf + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „verzichten“ passende Präposition und den Kasus für die Bedeutung: einen zusätzlichen Nachweis bewusst nicht verlangen.",
+    "reviewAnswer": "auf · Akkusativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-016",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C2",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „rechnen“ passende Präposition und den Kasus für die Bedeutung: eine Verzögerung als möglich erwarten.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "mit",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert mit + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „rechnen“ passende Präposition und den Kasus für die Bedeutung: eine Verzögerung als möglich erwarten.",
+    "reviewAnswer": "mit · Dativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-017",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich abfinden“ passende Präposition und den Kasus für die Bedeutung: eine veränderte Lage widerwillig akzeptieren.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "mit",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert mit + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich abfinden“ passende Präposition und den Kasus für die Bedeutung: eine veränderte Lage widerwillig akzeptieren.",
+    "reviewAnswer": "mit · Dativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-018",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich stützen“ passende Präposition und den Kasus für die Bedeutung: einen Befund als Grundlage verwenden.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "auf",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert auf + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich stützen“ passende Präposition und den Kasus für die Bedeutung: einen Befund als Grundlage verwenden.",
+    "reviewAnswer": "auf · Akkusativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-019",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich aussprechen“ passende Präposition und den Kasus für die Bedeutung: eine Maßnahme ausdrücklich befürworten.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "für",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert für + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich aussprechen“ passende Präposition und den Kasus für die Bedeutung: eine Maßnahme ausdrücklich befürworten.",
+    "reviewAnswer": "für · Akkusativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-020",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C2",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „ausgehen“ passende Präposition und den Kasus für die Bedeutung: eine Annahme als Ausgangspunkt verwenden.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "von",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert von + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „ausgehen“ passende Präposition und den Kasus für die Bedeutung: eine Annahme als Ausgangspunkt verwenden.",
+    "reviewAnswer": "von · Dativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-021",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich wenden“ passende Präposition und den Kasus für die Bedeutung: einen Beschluss offen kritisieren.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "gegen",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert gegen + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich wenden“ passende Präposition und den Kasus für die Bedeutung: einen Beschluss offen kritisieren.",
+    "reviewAnswer": "gegen · Akkusativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-022",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich halten“ passende Präposition und den Kasus für die Bedeutung: vereinbarte Bedingungen konsequent befolgen.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "an",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert an + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich halten“ passende Präposition und den Kasus für die Bedeutung: vereinbarte Bedingungen konsequent befolgen.",
+    "reviewAnswer": "an · Akkusativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-023",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich hüten“ passende Präposition und den Kasus für die Bedeutung: eine voreilige Schlussfolgerung bewusst vermeiden.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "vor",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert vor + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich hüten“ passende Präposition und den Kasus für die Bedeutung: eine voreilige Schlussfolgerung bewusst vermeiden.",
+    "reviewAnswer": "vor · Dativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-024",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C2",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich bemühen“ passende Präposition und den Kasus für die Bedeutung: einen fairen Ausgleich erreichen wollen.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "um",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert um + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich bemühen“ passende Präposition und den Kasus für die Bedeutung: einen fairen Ausgleich erreichen wollen.",
+    "reviewAnswer": "um · Akkusativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-025",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich hinwegsetzen“ passende Präposition und den Kasus für die Bedeutung: geltende Regeln bewusst missachten.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "über",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert über + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich hinwegsetzen“ passende Präposition und den Kasus für die Bedeutung: geltende Regeln bewusst missachten.",
+    "reviewAnswer": "über · Akkusativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-026",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „sich berufen“ passende Präposition und den Kasus für die Bedeutung: ein Urteil als Begründung heranziehen.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "auf",
+          "case": "Akkusativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert auf + Akkusativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „sich berufen“ passende Präposition und den Kasus für die Bedeutung: ein Urteil als Begründung heranziehen.",
+    "reviewAnswer": "auf · Akkusativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-027",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C1",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „abhängen“ passende Präposition und den Kasus für die Bedeutung: äußere Umstände als entscheidenden Faktor haben.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "von",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert von + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „abhängen“ passende Präposition und den Kasus für die Bedeutung: äußere Umstände als entscheidenden Faktor haben.",
+    "reviewAnswer": "von · Dativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  },
+  {
+    "id": "SG-M03-028",
+    "version": 1,
+    "mode": "M03",
+    "skillId": "G03.VALENZ",
+    "band": "C2",
+    "topic": "Verb-Rektion",
+    "prompt": "Ergänze die zu „beitragen“ passende Präposition und den Kasus für die Bedeutung: eine langfristige Verbesserung unterstützen.",
+    "slots": [
+      {
+        "id": "preposition",
+        "label": "Präposition"
+      },
+      {
+        "id": "case",
+        "label": "Kasus (Dativ oder Akkusativ)"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "preposition": "zu",
+          "case": "Dativ"
+        }
+      }
+    ],
+    "explanation": "Die angegebene Konstruktion regiert zu + Dativ. Andere Bedeutungen des Verbs können andere Formen verlangen.",
+    "misconception": "Kasus, Flexion, Genus und Kontextbezug",
+    "reviewPrompt": "Ergänze die zu „beitragen“ passende Präposition und den Kasus für die Bedeutung: eine langfristige Verbesserung unterstützen.",
+    "reviewAnswer": "zu · Dativ",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original Sprachgefühl AI-assisted draft, independently unreviewed"
+    }
+  }
+]

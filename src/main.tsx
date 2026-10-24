@@ -1,0 +1,14 @@
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import App from './app/App';
+import './app/styles/tokens.css';
+import './app/styles/layout.css';
+import './app/styles/learning.css';
+import './app/styles/reading.css';
+import './app/styles/pragmatics.css';
+import './app/styles/archive.css';
+import './app/styles/listening.css';
+import {installOfflineWorker} from './offline/packageManager';
+const root=document.getElementById('root');if(!root)throw Error('root is missing');
+createRoot(root).render(<React.StrictMode><App/></React.StrictMode>);
+void installOfflineWorker().catch(err=>console.warn('Offline shell unavailable',err));

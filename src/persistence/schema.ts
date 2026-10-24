@@ -1,0 +1,238 @@
+import type {Mission} from '../domain/mission/mission';
+import type {ProductionEntry} from '../domain/production/types';
+import type {DiagnosticSession} from '../domain/diagnostic/engine';
+import type {Attempt,ReviewCard,ReviewEvent,LearnerSettings,Draft} from '../domain/content/types';
+export const DB_NAME='sprachgefuehl-learning-v1';
+export const DB_VERSION=4;
+import {BACKUP_STORES,type BackupRecords,type BackupStore} from './portableBackup';
+export type Snapshot={attempts:Attempt[];cards:ReviewCard[];reviewEvents:ReviewEvent[];settings:LearnerSettings|null;draft:Draft|null;};
+let singleton:Promise<IDBDatabase>|null=null;
+export function openLearnerDB():Promise<IDBDatabase>{
+ if(singleton)return singleton;
+ singleton=new Promise((resolve,reject)=>{
+  if(!('indexedDB' in window)){reject(Error('IndexedDB ist nicht verfügbar.'));return;}
+  const req=indexedDB.open(DB_NAME,DB_VERSION);
+  req.onupgradeneeded=()=>{const db=req.result;
+   if(!db.objectStoreNames.contains('attempts')){const s=db.createObjectStore('attempts',{keyPath:'id'});s.createIndex('sessionItem',['sessionId','itemId'],{unique:true});}
+   if(!db.objectStoreNames.contains('cards'))db.createObjectStore('cards',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('reviewEvents'))db.createObjectStore('reviewEvents',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('settings'))db.createObjectStore('settings',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('drafts'))db.createObjectStore('drafts',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('diagnosticSessions'))db.createObjectStore('diagnosticSessions',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('productionEntries'))db.createObjectStore('productionEntries',{keyPath:'id'});
+   if(!db.objectStoreNames.contains('missions'))db.createObjectStore('missions',{keyPath:'id'});
+  };
+  req.onsuccess=()=>resolve(req.result);
+  req.onerror=()=>{singleton=null;reject(req.error)};
+  req.onblocked=()=>{singleton=null;reject(Error('Datenbank ist in einem anderen Tab geöffnet.'))};
+ });
+ return singleton;
+}
+function done(tx:IDBTransaction):Promise<void>{return new Promise((resolve,reject)=>{tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error??Error('Abgebrochene Transaktion'));});}
+export async function loadSnapshot():Promise<Snapshot>{
+ const db=await openLearnerDB();const tx=db.transaction(['attempts','cards','reviewEvents','settings','drafts'],'readonly');
+ const q=<T>(store:string):Promise<T[]>=>new Promise((resolve,reject)=>{const req=tx.objectStore(store).getAll();req.onsuccess=()=>resolve(req.result as T[]);req.onerror=()=>reject(req.error)});
+ const [attempts,cards,reviewEvents,settings,drafts]=await Promise.all([q<Attempt>('attempts'),q<ReviewCard>('cards'),q<ReviewEvent>('reviewEvents'),q<LearnerSettings>('settings'),q<Draft>('drafts')]);
+ await done(tx);return {attempts,cards,reviewEvents,settings:settings.find(x=>x.id==='local')??null,draft:drafts.find(x=>x.id==='active')??null};
+}
+export async function saveSettings(settings:LearnerSettings):Promise<void>{const db=await openLearnerDB();const tx=db.transaction('settings','readwrite');tx.objectStore('settings').put(settings);await done(tx);}
+export async function saveDraft(draft:Draft|null,expectedMission?:Mission):Promise<void>{
+ const db=await openLearnerDB();
+ const tx=db.transaction(expectedMission?['drafts','missions']:['drafts'],'readwrite');const completed=done(tx);
+ if(expectedMission){
+  const current=await new Promise<Mission|undefined>((resolve,reject)=>{const q=tx.objectStore('missions').get(expectedMission.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+  const step=current?.steps[current.index];
+  if(!current||current.phase!=='IN_PROGRESS'||current.index!==expectedMission.index||current.updatedAt!==expectedMission.updatedAt||!step||draft?.sessionId!==current.id||draft.itemId!==step.itemId){
+   tx.abort();try{await completed}catch{}throw Error('Mission wurde in einer anderen Registerkarte geändert. Dieser Entwurf wurde nicht überschrieben.');
+  }
+ }
+ if(draft)tx.objectStore('drafts').put(draft);else tx.objectStore('drafts').delete('active');
+ await completed;
+}
+export async function saveAttemptOnce(attempt:Attempt,card:ReviewCard|null,missionExpected?:Mission):Promise<boolean>{
+ const db=await openLearnerDB();const tx=db.transaction(missionExpected?['attempts','cards','drafts','missions']:['attempts','cards','drafts'],'readwrite');const store=tx.objectStore('attempts');
+ if(missionExpected){
+  const stored=await new Promise<Mission|undefined>((resolve,reject)=>{const q=tx.objectStore('missions').get(missionExpected.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+  const step=stored?.steps[stored.index];
+  if(!stored||stored.phase!=='IN_PROGRESS'||stored.index!==missionExpected.index||stored.updatedAt!==missionExpected.updatedAt||!step||step.itemId!==attempt.itemId||step.itemVersion!==attempt.itemVersion||attempt.sessionId!==stored.id){
+   tx.abort();try{await done(tx)}catch{}throw Error('Die Mission wurde in einem anderen Tab geändert. Aktualisiere vor dem nächsten Versuch.');
+  }
+ }
+ const idx=store.index('sessionItem');const existing=await new Promise<Attempt|undefined>((resolve,reject)=>{const r=idx.get([attempt.sessionId,attempt.itemId]);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
+ if(existing){tx.abort();try{await done(tx);}catch{}return false;}
+ store.add(attempt);
+ if(card){const cs=tx.objectStore('cards');const got=cs.get(card.id);got.onsuccess=()=>{if(!got.result)cs.add(card)};}
+ tx.objectStore('drafts').delete('active');await done(tx);return true;
+}
+/** First attempt, review event and schedule transition commit together.
+ * The card snapshot is compared inside this transaction to reject another tab's stale review.
+ * No new IndexedDB store or key migration is introduced.
+ */
+export async function saveReviewedAttemptOnce(attempt:Attempt,event:ReviewEvent,next:ReviewCard,expected:ReviewCard,missionExpected?:Mission):Promise<boolean>{
+ const db=await openLearnerDB();
+ const stores=missionExpected?['attempts','cards','reviewEvents','drafts','missions']:['attempts','cards','reviewEvents','drafts'];
+ const tx=db.transaction(stores,'readwrite');const finished=done(tx);
+ const find=<T>(store:string,id:string):Promise<T|undefined>=>new Promise((resolve,reject)=>{
+  const q=tx.objectStore(store).get(id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);
+ });
+ const fail=async(message:string):Promise<never>=>{tx.abort();try{await finished}catch{}throw Error(message)};
+ if(attempt.result==='VOID'||next.id!==expected.id||event.cardId!==expected.id||event.itemId!==attempt.itemId||
+    next.itemId!==attempt.itemId||next.itemVersion!==attempt.itemVersion||expected.itemVersion!==attempt.itemVersion||
+    !event.id.startsWith(attempt.sessionId+':review:'))return fail('Ungültige Wiederholungszuordnung');
+ if(missionExpected){
+  const m=await find<Mission>('missions',missionExpected.id);
+  const step=m?.steps[m.index];
+  if(!m||m.phase!=='IN_PROGRESS'||m.index!==missionExpected.index||m.updatedAt!==missionExpected.updatedAt||
+   !step||step.itemId!==attempt.itemId||step.itemVersion!==attempt.itemVersion||attempt.sessionId!==m.id)
+    return fail('Mission wurde in einem anderen Tab geändert');
+ }
+ const existingAttempt=await new Promise<Attempt|undefined>((resolve,reject)=>{
+  const q=tx.objectStore('attempts').index('sessionItem').get([attempt.sessionId,attempt.itemId]);
+  q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);
+ });
+ if(existingAttempt)return fail('Ein Erstversuch für diese Sitzung existiert bereits');
+ const stored=await find<ReviewCard>('cards',expected.id);
+ if(!stored||stored.itemId!==expected.itemId||stored.itemVersion!==expected.itemVersion||
+    stored.dueAt!==expected.dueAt||stored.stability!==expected.stability||
+    stored.difficulty!==expected.difficulty||stored.lastReviewedAt!==expected.lastReviewedAt||
+    stored.lapses!==expected.lapses||stored.algorithmVersion!==expected.algorithmVersion)
+   return fail('Wiederholung wurde bereits in einem anderen Tab aktualisiert');
+ if(await find<ReviewEvent>('reviewEvents',event.id))return fail('Wiederholungsereignis existiert bereits');
+ tx.objectStore('attempts').add(attempt);
+ tx.objectStore('reviewEvents').add(event);
+ tx.objectStore('cards').put(next);
+ tx.objectStore('drafts').delete('active');
+ await finished;return true;
+}
+export async function saveReview(event:ReviewEvent,card:ReviewCard):Promise<boolean>{
+ const db=await openLearnerDB();const tx=db.transaction(['reviewEvents','cards'],'readwrite');
+ const s=tx.objectStore('reviewEvents');const existing=await new Promise<ReviewEvent|undefined>((resolve,reject)=>{const r=s.get(event.id);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
+ if(existing){tx.abort();try{await done(tx)}catch{}return false;}
+ s.add(event);tx.objectStore('cards').put(card);await done(tx);return true;
+}
+
+// Additive v1 -> v2 migration: existing stores and keys are never renamed or cleared.
+export async function saveDiagnosticSession(s:DiagnosticSession):Promise<void>{
+ const db=await openLearnerDB();const tx=db.transaction('diagnosticSessions','readwrite');tx.objectStore('diagnosticSessions').put(s);await done(tx);
+}
+export async function loadDiagnosticSession(id:string):Promise<DiagnosticSession|null>{
+ const db=await openLearnerDB();const tx=db.transaction('diagnosticSessions','readonly');
+ const value=await new Promise<DiagnosticSession|undefined>((resolve,reject)=>{const req=tx.objectStore('diagnosticSessions').get(id);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});
+ await done(tx);return value??null;
+}
+
+/** Read all six stores, including paused and historical diagnostic sessions. */
+export async function readAllRecords():Promise<BackupRecords>{
+ const db=await openLearnerDB();const stores=[...BACKUP_STORES] as BackupStore[];
+ const tx=db.transaction(stores,'readonly');const finished=done(tx);
+ const result=await Promise.all(stores.map(store=>new Promise<unknown[]>((resolve,reject)=>{
+  const q=tx.objectStore(store).getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);
+ })));
+ await finished;
+ return Object.fromEntries(stores.map((store,i)=>[store,result[i]])) as BackupRecords;
+}
+/** Merge-only restoration. A conflicting history ID rejects the whole import before any write. */
+export async function mergeBackupRecords(incoming:BackupRecords):Promise<{inserted:number;skipped:number}>{
+ const stores=[...BACKUP_STORES] as BackupStore[];
+ const db=await openLearnerDB();
+ // All reads, collision detection and additions share one readwrite transaction.
+ // A concurrent tab cannot insert a conflicting record between preflight and write.
+ return new Promise((resolve,reject)=>{
+  const tx=db.transaction(stores,'readwrite');
+  const current=new Map<BackupStore,{id:string}[]>();let left=stores.length;
+  let inserted=0,skipped=0;let reason:Error|null=null;
+  tx.oncomplete=()=>resolve({inserted,skipped});
+  tx.onerror=()=>reject(reason??tx.error??Error('Import fehlgeschlagen'));
+  tx.onabort=()=>reject(reason??tx.error??Error('Import abgebrochen'));
+  for(const store of stores){
+   const req=tx.objectStore(store).getAll();
+   req.onerror=()=>{reason=Error('Lesefehler in '+store);tx.abort()};
+   req.onsuccess=()=>{
+    current.set(store,req.result as {id:string}[]);left--;
+    if(left!==0)return;
+    try{
+     for(const name of stores){
+      const known=new Map((current.get(name)??[]).map(row=>[row.id,row]));
+      for(const record of incoming[name]){
+       const old=known.get(record.id);
+       if(old){
+        if(name!=='settings'&&name!=='drafts'&&JSON.stringify(old)!==JSON.stringify(record))throw Error('Abweichender vorhandener Datensatz in '+name+': '+record.id);
+        skipped++;continue;
+       }
+       tx.objectStore(name).add(record);inserted++;
+      }
+     }
+    }catch(e){reason=e instanceof Error?e:Error(String(e));tx.abort()}
+   };
+  }
+ });
+}
+
+export async function loadProductionEntries():Promise<ProductionEntry[]>{
+ const db=await openLearnerDB();const tx=db.transaction('productionEntries','readonly');const completed=done(tx);
+ const records=await new Promise<ProductionEntry[]>((resolve,reject)=>{const q=tx.objectStore('productionEntries').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ await completed;return records.sort((a,b)=>b.createdAt-a.createdAt);
+}
+/** Immutable first draft. A revision appends without replacing the original text. */
+export async function saveProductionEntry(entry:ProductionEntry,revisionExpected:number):Promise<void>{
+ const db=await openLearnerDB();const tx=db.transaction('productionEntries','readwrite');const completed=done(tx);
+ const s=tx.objectStore('productionEntries');const previous=await new Promise<ProductionEntry|undefined>((resolve,reject)=>{const q=s.get(entry.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ const count=previous?.revisions.length??0;
+ if(count!==revisionExpected){tx.abort();try{await completed}catch{}throw Error('Schreibversion wurde inzwischen verändert. Bitte neu laden.');}
+ if(previous&&(previous.original!==entry.original||previous.itemId!==entry.itemId||previous.itemVersion!==entry.itemVersion||previous.createdAt!==entry.createdAt||previous.kind!==entry.kind||previous.sourceId!==entry.sourceId||previous.decisionId!==entry.decisionId||entry.revisions.length!==count+1||entry.revisions.slice(0,-1).some((r,i)=>JSON.stringify(r)!==JSON.stringify(previous.revisions[i])))){
+  tx.abort();try{await completed}catch{}throw Error('Gespeicherte Erstfassungen und Überarbeitungen sind unveränderlich.');
+ }
+ if(!previous&&(!entry.original.trim()||entry.revisions.length!==0)){tx.abort();try{await completed}catch{}throw Error('Ungültige Erstfassung.');}
+ s.put(entry);await completed;
+}
+
+/** Mission writes stay in the same original learner database. */
+export async function loadActiveMission():Promise<Mission|null>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readonly');const finished=done(tx);
+ const all=await new Promise<Mission[]>((resolve,reject)=>{const q=tx.objectStore('missions').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ await finished;return all.filter(m=>m.phase!=='COMPLETE').sort((a,b)=>b.updatedAt-a.updatedAt)[0]??null;
+}
+/** Latest persisted session including completed ones, for a truthful recovery summary. */
+export async function loadLatestMission():Promise<Mission|null>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readonly');const finished=done(tx);
+ const all=await new Promise<Mission[]>((resolve,reject)=>{const q=tx.objectStore('missions').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ await finished;return all.sort((a,b)=>b.updatedAt-a.updatedAt||b.createdAt-a.createdAt)[0]??null;
+}
+/** Transactionally find the single unfinished mission before creating a new one.
+ * A pause/resume transition increments the revision using the persisted clock.
+ * An existing IN_PROGRESS mission is returned unchanged (including its original ID).
+ */
+export async function startOrResumeMission(proposed:Mission,now:number):Promise<Mission>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readwrite');const finished=done(tx);
+ const all=await new Promise<Mission[]>((resolve,reject)=>{const q=tx.objectStore('missions').getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ const active=all.filter(m=>m.phase!=='COMPLETE').sort((a,b)=>b.updatedAt-a.updatedAt)[0];
+ const next=active?(active.phase==='PAUSED'?{...active,phase:'IN_PROGRESS' as const,updatedAt:Math.max(active.updatedAt+1,now)}:active):proposed;
+ if(!active||active.phase==='PAUSED')tx.objectStore('missions').put(next);
+ await finished;return next;
+}
+/** A stale tab must not rewind a newer mission after submission or resume. */
+export async function pauseMissionIfCurrent(expected:Mission,now:number):Promise<Mission>{
+ const db=await openLearnerDB();const tx=db.transaction('missions','readwrite');const finished=done(tx);
+ const current=await new Promise<Mission|undefined>((resolve,reject)=>{const q=tx.objectStore('missions').get(expected.id);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ if(!current||current.phase!=='IN_PROGRESS'||current.index!==expected.index||current.updatedAt!==expected.updatedAt){
+  tx.abort();try{await finished}catch{}throw Error('Eine andere Registerkarte hat die Mission bereits geändert.');
+ }
+ const next:Mission={...current,phase:'PAUSED',updatedAt:Math.max(current.updatedAt+1,now)};
+ tx.objectStore('missions').put(next);await finished;return next;
+}
+/** Advance is atomic with a check for an immutable first attempt at the current step. */
+export async function completeMissionStep(m:Mission,now:number):Promise<Mission>{
+ const db=await openLearnerDB();
+ const tx=db.transaction(['missions','attempts','drafts'],'readwrite');const finished=done(tx);
+ const get=<T>(store:string,key:string)=>new Promise<T|undefined>((resolve,reject)=>{const q=tx.objectStore(store).get(key);q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+ const current=await get<Mission>('missions',m.id);
+ if(!current||current.phase!=='IN_PROGRESS'||current.index!==m.index||current.updatedAt!==m.updatedAt){tx.abort();try{await finished}catch{}throw Error('Mission wurde in einem anderen Tab verändert.');}
+ const step=current.steps[current.index];
+ if(!step){tx.abort();try{await finished}catch{}throw Error('Mission ist bereits abgeschlossen.');}
+ const attempt=await get<Attempt>('attempts',current.id+':'+step.itemId);
+ if(!attempt||attempt.itemVersion!==step.itemVersion){tx.abort();try{await finished}catch{}throw Error('Zuerst Antwort dauerhaft speichern.');}
+ const index=current.index+1;
+ const next:Mission={...current,index,updatedAt:Math.max(current.updatedAt+1,now),phase:index===current.steps.length?'COMPLETE':'IN_PROGRESS'};
+ tx.objectStore('missions').put(next);tx.objectStore('drafts').delete('active');
+ await finished;return next;
+}

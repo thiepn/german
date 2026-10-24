@@ -1,0 +1,602 @@
+[
+  {
+    "id": "SG-G06-001",
+    "version": 1,
+    "domain": "G06",
+    "band": "C2",
+    "title": "Die zurückgenommene Satzung",
+    "focus": "Amtliches Handeln: erlassen, aussetzen, aufheben",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Der Gemeinderat erließ im Frühjahr eine neue Satzung über die Nutzung der Uferwege. Im Beschlusstext wurden die zuständigen Stellen und die künftigen Gebühren benannt. Der Erlass begründete noch keinen Anspruch darauf, dass einzelne Gebührenforderungen aus der Vergangenheit entfallen würden; über solche Fälle musste die Verwaltung gesondert befinden."
+      },
+      {
+        "id": "p2",
+        "text": "Nach einem technischen Gutachten setzte die Verwaltung den Vollzug der neuen Gebührenregelung zunächst für sechs Wochen aus. Damit blieb die Satzung als Rechtsgrundlage bestehen, während die Gebühren vorläufig nicht nach ihr erhoben wurden. Bürgerinnen und Bürger sollten bis zur Überprüfung keine zusätzlichen Unterlagen einreichen müssen."
+      },
+      {
+        "id": "p3",
+        "text": "Erst in einer späteren Sitzung hob der Rat die umstrittene Gebührenbestimmung vollständig auf. Die übrigen Teile der Satzung sollten weitergelten. Alte Akten, auf die sich die Entscheidung stützte, wurden archiviert und nicht entsorgt; das Aufheben von Unterlagen war keine Rücknahme der früheren Rechtslage."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "ERLASSEN_REGEL",
+        "lemma": "erlassen",
+        "quote": "Der Gemeinderat erließ im Frühjahr eine neue Satzung über die Nutzung der Uferwege.",
+        "alternate": "Die Verwaltung erließ einer einzelnen Bürgerin eine bereits festgesetzte Gebühr.",
+        "question": "Welche Bedeutung hat „erlassen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Rat verabschiedete eine allgemein geltende Norm."
+          },
+          {
+            "id": "B",
+            "text": "Einer Person wurde eine konkrete Zahlungsverpflichtung erlassen."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Der Erlass einer Satzung ist eine Normsetzung; der Erlass einer Gebühr ist dagegen ein Verzicht auf einen individuellen Zahlungsanspruch. Die beiden Lesarten dürfen nicht zu einer rückwirkenden Gebührenbefreiung verschmolzen werden.",
+        "repairPrompt": "Erkläre den Ratsbeschluss, ohne eine unbelegte Gebührenbefreiung zu behaupten."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "AUSSETZEN_VOLLZUG",
+        "lemma": "aussetzen",
+        "quote": "Nach einem technischen Gutachten setzte die Verwaltung den Vollzug der neuen Gebührenregelung zunächst für sechs Wochen aus.",
+        "alternate": "Die Verwaltung setzte die Anwohnenden über längere Zeit einer erhöhten Belastung aus.",
+        "question": "Welche Bedeutung hat „aussetzen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Vollzug wurde zeitlich befristet unterbrochen."
+          },
+          {
+            "id": "B",
+            "text": "Die Anwohnenden wurden einem belastenden Zustand ausgesetzt."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "Aussetzen in der Verbindung den Vollzug aussetzen bezeichnet eine befristete Unterbrechung des Handelns. Jemanden einer Gefahr aussetzen hat hingegen eine andere Bedeutungs- und Rollenstruktur; aus dem Text folgt keine Gefährdung der Anwohnenden.",
+        "repairPrompt": "Formuliere eine befristete Vollzugspause, ohne das rechtliche Bestehen der Satzung zu bestreiten."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "AUFHEBEN_NORM",
+        "lemma": "aufheben",
+        "quote": "Erst in einer späteren Sitzung hob der Rat die umstrittene Gebührenbestimmung vollständig auf.",
+        "alternate": "Die Geschäftsstelle hob die für die Prüfung benötigten alten Akten sorgfältig auf.",
+        "question": "Welche Bedeutung hat „aufheben“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine bestimmte Norm wurde rechtlich außer Kraft gesetzt."
+          },
+          {
+            "id": "B",
+            "text": "Dokumente wurden zur späteren Nutzung aufbewahrt."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Eine Bestimmung aufheben meint hier ihren rechtlichen Wegfall. Akten aufheben bedeutet im zweiten Satz gerade deren Aufbewahrung; beide Handlungen können nebeneinander geschehen, sind aber keine austauschbaren Schlussfolgerungen.",
+        "repairPrompt": "Grenze das Ende einer Rechtsnorm vom Erhalt ihrer schriftlichen Entscheidungsgrundlagen ab."
+      }
+    ],
+    "transfer": "Schreibe eine eigenständige fachliche Zusammenfassung des dreiteiligen Ausgangstextes. Ersetze alle drei untersuchten Verwendungen durch treffende, nicht mehrdeutige Umschreibungen; erhalte zeitliche und sachliche Grenzen. Erkläre anschließend, welche Bedeutungen du ausgeschlossen hast, und überarbeite den Text nach dem ersten Entwurf.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl M18 original context-polysemy drafts",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "New original fictional professional German prose authored for G06 sense-disambiguation; no copied third-party examples"
+    }
+  },
+  {
+    "id": "SG-G06-002",
+    "version": 1,
+    "domain": "G06",
+    "band": "C1",
+    "title": "Ein digitales Archiv wird geprüft",
+    "focus": "Daten und Modelle: sichern, abbilden, erfassen",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Vor dem Austausch des alten Servers sicherte das Archivteam sämtliche digitalisierten Bestandslisten auf einem getrennten Datenträger. Die Sicherheitskopie sollte bei einem technischen Ausfall eine Wiederherstellung ermöglichen. Ob die Daten inhaltlich vollständig waren, ließ sich aus der erfolgreichen Sicherung allein noch nicht ableiten."
+      },
+      {
+        "id": "p2",
+        "text": "Das neue Katalogsystem bildet die Beziehungen zwischen Werken, Ausgaben und einzelnen Exemplaren in einem gemeinsamen Datenmodell ab. Ein solches Modell vereinfacht die Recherche, ersetzt aber nicht die Prüfung der Originale. Die grafische Darstellung auf dem Bildschirm zeigt nur eine Auswahl der im System vorhandenen Verknüpfungen."
+      },
+      {
+        "id": "p3",
+        "text": "Bei der Nachinventur erfassten die Mitarbeitenden zusätzliche handschriftliche Randnotizen als eigene Datensätze. Mehrere Einträge blieben zunächst ungeklärt, weil ihre Urheberschaft nicht eindeutig ermittelt werden konnte. Im Bericht wird deshalb zwischen der technischen Erfassung einer Notiz und ihrem inhaltlichen Verständnis unterschieden."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "SICHERN_BACKUP",
+        "lemma": "sichern",
+        "quote": "Vor dem Austausch des alten Servers sicherte das Archivteam sämtliche digitalisierten Bestandslisten auf einem getrennten Datenträger.",
+        "alternate": "Die Archivleitung sicherte einem externen Verein einen dauerhaften Zugriff auf den Bestand zu.",
+        "question": "Welche Bedeutung hat „sichern“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es wurde eine technische Kopie zur Wiederherstellung erzeugt."
+          },
+          {
+            "id": "B",
+            "text": "Einem Dritten wurde ein verbindliches Nutzungsrecht zugesagt."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "Daten sichern ist hier eine konkrete technische Vorsorgemaßnahme gegen Verlust. Zugriff zusichern bedeutet eine verbindliche Erklärung gegenüber einem Adressaten. Die Existenz einer Sicherheitskopie schafft für sich weder ein Recht noch eine Zugriffszusage.",
+        "repairPrompt": "Beschreibe den technischen Schutz der Bestandslisten, ohne daraus Nutzungsrechte abzuleiten."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "ABBILDEN_MODELL",
+        "lemma": "abbilden",
+        "quote": "Das neue Katalogsystem bildet die Beziehungen zwischen Werken, Ausgaben und einzelnen Exemplaren in einem gemeinsamen Datenmodell ab.",
+        "alternate": "Eine historische Zeichnung bildet die Fassade des früheren Archivgebäudes ab.",
+        "question": "Welche Bedeutung hat „abbilden“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Beziehungen werden als strukturierte Datenelemente repräsentiert."
+          },
+          {
+            "id": "B",
+            "text": "Ein sichtbarer Gegenstand wird bildlich dargestellt."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Abbilden bezeichnet im Katalog die modellhafte Repräsentation von Beziehungen, nicht die Herstellung eines Bildes. Eine grafische Darstellung kann das Modell veranschaulichen, ist aber nicht mit dessen semantischem Inhalt identisch.",
+        "repairPrompt": "Erkläre das Datenmodell und unterscheide es von der bloßen grafischen Oberfläche."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "ERFASSEN_REGISTRIEREN",
+        "lemma": "erfassen",
+        "quote": "Bei der Nachinventur erfassten die Mitarbeitenden zusätzliche handschriftliche Randnotizen als eigene Datensätze.",
+        "alternate": "Die Mitarbeitenden erfassten nach langer Prüfung den gemeinten Sinn einer rätselhaften Randnotiz.",
+        "question": "Welche Bedeutung hat „erfassen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Notizen wurden formal in den Datenbestand aufgenommen."
+          },
+          {
+            "id": "B",
+            "text": "Der Inhalt der Notizen wurde vollständig verstanden."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "Eine Randnotiz erfassen bedeutet im Inventarkontext zunächst, sie als Datensatz zu registrieren. Ihren Sinn erfassen verlangt dagegen semantisches Verstehen. Der Text nennt ausdrücklich unklare Zuschreibungen und erlaubt daher keinen Schluss auf gesichertes Verständnis.",
+        "repairPrompt": "Verfasse eine Inventarnotiz, die zwischen Dokumentation und Interpretation differenziert."
+      }
+    ],
+    "transfer": "Schreibe eine eigenständige fachliche Zusammenfassung des dreiteiligen Ausgangstextes. Ersetze alle drei untersuchten Verwendungen durch treffende, nicht mehrdeutige Umschreibungen; erhalte zeitliche und sachliche Grenzen. Erkläre anschließend, welche Bedeutungen du ausgeschlossen hast, und überarbeite den Text nach dem ersten Entwurf.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl M18 original context-polysemy drafts",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "New original fictional professional German prose authored for G06 sense-disambiguation; no copied third-party examples"
+    }
+  },
+  {
+    "id": "SG-G06-003",
+    "version": 1,
+    "domain": "G06",
+    "band": "C2",
+    "title": "Bericht über knappe Kapazitäten",
+    "focus": "Befund und Darstellung: belegen, ausweisen, auflösen",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Im Jahresbericht belegte die Forschungsgruppe ihre Angaben zur Auslastung mit anonymisierten Messprotokollen. Die Protokolle dokumentierten die gezählten Nutzungsstunden, nicht jedoch die Ursachen der Nachfrage. Die Aussage war damit überprüfbar, ohne bereits eine Erklärung für die beobachtete Entwicklung zu liefern."
+      },
+      {
+        "id": "p2",
+        "text": "Die Haushaltsübersicht wies die Kosten für die befristete Betreuung gesondert aus. Dadurch waren die Beträge von den allgemeinen Sachmitteln unterscheidbar. Aus der getrennten Darstellung ergab sich allerdings keine Entscheidung darüber, welche Stelle die Betreuung künftig finanzieren würde."
+      },
+      {
+        "id": "p3",
+        "text": "Am Ende löste die Arbeitsgruppe einen scheinbaren Widerspruch zwischen zwei Tabellen auf: Eine Übersicht bezog sich auf Kalendermonate, die andere auf tatsächliche Nutzungstage. Beide Werte waren für ihre jeweilige Bezugsgröße korrekt. Die Auflösung der Differenz erforderte deshalb eine begriffliche Klärung, nicht die Schließung einer Einrichtung."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "BELEGEN_QUELLEN",
+        "lemma": "belegen",
+        "quote": "Im Jahresbericht belegte die Forschungsgruppe ihre Angaben zur Auslastung mit anonymisierten Messprotokollen.",
+        "alternate": "Die Forschungsgruppe belegte sämtliche verfügbaren Besprechungsräume für den folgenden Monat.",
+        "question": "Welche Bedeutung hat „belegen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Messprotokolle dienten als nachvollziehbare Belege für Zahlen."
+          },
+          {
+            "id": "B",
+            "text": "Physische Kapazitäten wurden durch Reservierungen beansprucht."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Eine Aussage mit Dokumenten belegen meint ihre nachprüfbare Stützung. Räume belegen bezeichnet das Beanspruchen von Plätzen oder Kapazitäten. Dass Daten belegbar sind, bedeutet im Bericht nicht, dass die Forschungsgruppe alle Räume beansprucht hätte.",
+        "repairPrompt": "Paraphrasiere die dokumentierten Zahlen ohne ihnen eine Erklärung ihrer Ursachen hinzuzufügen."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "AUSWEISEN_KOSTEN",
+        "lemma": "ausweisen",
+        "quote": "Die Haushaltsübersicht wies die Kosten für die befristete Betreuung gesondert aus.",
+        "alternate": "Die Behörde wies den Reisenden nach Prüfung seiner Unterlagen aus dem Staatsgebiet aus.",
+        "question": "Welche Bedeutung hat „ausweisen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Ausgaben wurden als eigene Position transparent kenntlich gemacht."
+          },
+          {
+            "id": "B",
+            "text": "Eine Person wurde behördlich zum Verlassen des Staatsgebiets verpflichtet."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "Kosten ausweisen heißt, sie in einer Übersicht als Posten erkennbar zu machen. Eine Person ausweisen meint dagegen eine behördliche Maßnahme, die zum Verlassen des Staatsgebiets verpflichtet. Das Sichtbarmachen von Kosten ist keine Entscheidung über eine Person und auch noch keine Zusage ihrer Finanzierung.",
+        "repairPrompt": "Formuliere einen Haushaltssatz, der Transparenz über Beträge von einer Finanzierungszusage trennt."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "AUFLOESEN_WIDERSPRUCH",
+        "lemma": "auflösen",
+        "quote": "Am Ende löste die Arbeitsgruppe einen scheinbaren Widerspruch zwischen zwei Tabellen auf",
+        "alternate": "Am Ende löste der Träger die Arbeitsgruppe nach dem Projektabschluss auf.",
+        "question": "Welche Bedeutung hat „auflösen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine scheinbare Unvereinbarkeit wurde erklärt und beseitigt."
+          },
+          {
+            "id": "B",
+            "text": "Eine organisatorische Einheit wurde beendet."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Einen Widerspruch auflösen meint hier seine begriffliche oder rechnerische Klärung. Eine Gruppe auflösen bezeichnet die Beendigung dieser Einheit. Der Befund aus unterschiedlichen Bezugsgrößen rechtfertigt weder organisatorische Schließungen noch deren Behauptung.",
+        "repairPrompt": "Erkläre den Unterschied der Bezugsgrößen, ohne eine institutionelle Maßnahme zu erfinden."
+      }
+    ],
+    "transfer": "Schreibe eine eigenständige fachliche Zusammenfassung des dreiteiligen Ausgangstextes. Ersetze alle drei untersuchten Verwendungen durch treffende, nicht mehrdeutige Umschreibungen; erhalte zeitliche und sachliche Grenzen. Erkläre anschließend, welche Bedeutungen du ausgeschlossen hast, und überarbeite den Text nach dem ersten Entwurf.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl M18 original context-polysemy drafts",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "New original fictional professional German prose authored for G06 sense-disambiguation; no copied third-party examples"
+    }
+  },
+  {
+    "id": "SG-G06-004",
+    "version": 1,
+    "domain": "G06",
+    "band": "C1",
+    "title": "Umstellung einer Verwaltung",
+    "focus": "Vorgänge im Betrieb: einstellen, verlegen, umstellen",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Das Bürgerbüro stellte für den Winter die Öffnungszeiten an zwei Tagen neu ein. Die Terminsoftware zeigte fortan spätere Anfangszeiten, während die Zahl der Beschäftigten unverändert blieb. Eine Einstellung zusätzlicher Kräfte war vorerst nicht vorgesehen; zunächst sollte die Nachfrage nach Abendterminen beobachtet werden."
+      },
+      {
+        "id": "p2",
+        "text": "Die Verwaltung verlegte die öffentliche Informationsveranstaltung vom Rathaus in die Stadtbibliothek. Datum und Uhrzeit blieben unverändert, damit bereits verschickte Einladungen weiter nutzbar waren. Die zunächst angedachte Verschiebung auf einen späteren Abend wurde ausdrücklich verworfen."
+      },
+      {
+        "id": "p3",
+        "text": "Im dritten Schritt stellte das Team die Terminvergabe auf ein digitales Verfahren um. Bestehende Reservierungen wurden übernommen, und für Personen ohne Internetzugang blieb eine telefonische Anmeldung möglich. Die Änderung des Verfahrens sollte keinen Wegfall der persönlichen Beratung bedeuten."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "EINSTELLEN_KONFIGURIEREN",
+        "lemma": "einstellen",
+        "quote": "Das Bürgerbüro stellte für den Winter die Öffnungszeiten an zwei Tagen neu ein.",
+        "alternate": "Die Amtsleitung stellte zwei neue Mitarbeitende für die Abendtermine ein.",
+        "question": "Welche Bedeutung hat „einstellen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine technische oder organisatorische Vorgabe wurde angepasst."
+          },
+          {
+            "id": "B",
+            "text": "Es wurden zusätzliche Arbeitsverhältnisse begründet."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Öffnungszeiten einstellen meint hier das Setzen neuer Werte in der Terminsoftware. Mitarbeitende einstellen bezeichnet die Begründung eines Arbeitsverhältnisses. Aus der Änderung der Einstellungen folgt ausdrücklich keine Vergrößerung des Personals.",
+        "repairPrompt": "Fasse die neue Konfiguration zusammen, ohne eine Personalentscheidung zu behaupten."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "VERLEGEN_ORT",
+        "lemma": "verlegen",
+        "quote": "Die Verwaltung verlegte die öffentliche Informationsveranstaltung vom Rathaus in die Stadtbibliothek.",
+        "alternate": "Die Verwaltung verlegte die Informationsveranstaltung vom Mittwoch auf den folgenden Freitag.",
+        "question": "Welche Bedeutung hat „verlegen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Veranstaltungsort änderte sich, der Termin blieb bestehen."
+          },
+          {
+            "id": "B",
+            "text": "Der Zeitpunkt wurde geändert, unabhängig vom Veranstaltungsort."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "Eine Veranstaltung verlegen kann eine räumliche oder zeitliche Änderung meinen. Der Quelltext legt durch die Ortsangaben und die unveränderte Uhrzeit ausschließlich die räumliche Lesart nahe; eine neue Terminankündigung wäre deshalb falsch.",
+        "repairPrompt": "Schreibe eine verständliche Ortsänderung und halte den unveränderten Termin ausdrücklich fest."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "UMSTELLEN_VERFAHREN",
+        "lemma": "umstellen",
+        "quote": "Im dritten Schritt stellte das Team die Terminvergabe auf ein digitales Verfahren um.",
+        "alternate": "Beim Aufbau der Ausstellung stellte das Team sämtliche Informationsschilder um.",
+        "question": "Welche Bedeutung hat „umstellen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der organisatorische Ablauf wurde auf einen anderen Prozess übertragen."
+          },
+          {
+            "id": "B",
+            "text": "Gegenstände wurden an andere Positionen gestellt."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Ein Verfahren umstellen heißt im Kontext, die Arbeitsweise systematisch zu ändern. Schilder umstellen bezeichnet ihre räumliche Neuanordnung. Der erste Vorgang betrifft die Terminlogik und muss nicht bedeuten, dass Beratungsangebote abgeschafft werden.",
+        "repairPrompt": "Beschreibe den Prozesswechsel und sichere zugleich den fortbestehenden telefonischen Zugang ab."
+      }
+    ],
+    "transfer": "Schreibe eine eigenständige fachliche Zusammenfassung des dreiteiligen Ausgangstextes. Ersetze alle drei untersuchten Verwendungen durch treffende, nicht mehrdeutige Umschreibungen; erhalte zeitliche und sachliche Grenzen. Erkläre anschließend, welche Bedeutungen du ausgeschlossen hast, und überarbeite den Text nach dem ersten Entwurf.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl M18 original context-polysemy drafts",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "New original fictional professional German prose authored for G06 sense-disambiguation; no copied third-party examples"
+    }
+  },
+  {
+    "id": "SG-G06-005",
+    "version": 1,
+    "domain": "G06",
+    "band": "C2",
+    "title": "Rechnung und Verantwortung",
+    "focus": "Finanzielle und organisatorische Lesarten: belasten, decken, abschreiben",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Rechnungsstelle belastete das Projektkonto mit den Kosten einer nachträglich bestellten Messreihe. Im Buchungstext war der Betrag klar gekennzeichnet; wer die Verzögerung verursacht hatte, wurde damit nicht festgestellt. Die zusätzliche Belastung des Budgets bedeutete keine persönliche Schuldzuweisung an einzelne Beschäftigte."
+      },
+      {
+        "id": "p2",
+        "text": "Für das kommende Jahr sollte eine zweckgebundene Rücklage einen Teil der Betriebsausgaben decken. Aus der Finanzplanung ging jedoch hervor, dass die Rücklage nicht sämtliche laufenden Kosten auffangen konnte. Deshalb sollten weitere Mittel geprüft werden, bevor der Träger einen dauerhaften Betrieb zusagte."
+      },
+      {
+        "id": "p3",
+        "text": "Eine veraltete Forderung schrieb die Buchhaltung nach erfolgloser Prüfung als uneinbringlich ab. Der zugrunde liegende Vorgang blieb in der Dokumentation nachvollziehbar; weder wurde der frühere Rechnungstext abgeschrieben noch galt die Forderung dadurch automatisch als nachträglich beglichen."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "BELASTEN_BUCHUNG",
+        "lemma": "belasten",
+        "quote": "Die Rechnungsstelle belastete das Projektkonto mit den Kosten einer nachträglich bestellten Messreihe.",
+        "alternate": "Die Projektleitung belastete eine Mitarbeiterin öffentlich mit dem Vorwurf der Pflichtverletzung.",
+        "question": "Welche Bedeutung hat „belasten“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ein bestimmter Kostenbetrag wurde buchhalterisch einem Konto zugeordnet."
+          },
+          {
+            "id": "B",
+            "text": "Einer Person wurde ein Fehlverhalten zugeschrieben."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Ein Projektkonto belasten beschreibt einen Buchungsvorgang, während eine Person mit einem Vorwurf belasten eine Anschuldigung ausdrückt. Die neue Kostenposition begründet weder die Verantwortung noch die Schuld eines einzelnen Mitglieds.",
+        "repairPrompt": "Berichte über die Buchung, ohne eine ungesicherte Verantwortungszuschreibung anzufügen."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "DECKEN_AUSGABEN",
+        "lemma": "decken",
+        "quote": "Für das kommende Jahr sollte eine zweckgebundene Rücklage einen Teil der Betriebsausgaben decken.",
+        "alternate": "Eine Handwerksfirma deckte das beschädigte Dach der Einrichtung mit neuen Ziegeln.",
+        "question": "Welche Bedeutung hat „decken“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Rücklage sollte einen begrenzten Teil der Kosten finanzieren."
+          },
+          {
+            "id": "B",
+            "text": "Eine Dachfläche wurde mit einem wetterfesten Material bedeckt."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "Betriebsausgaben decken heißt hier, finanzielle Mittel für sie vorzusehen. Ein Dach decken bezeichnet die handwerkliche Anbringung eines schützenden Belags. Im Bericht ist ausdrücklich nur von der teilweisen finanziellen Deckung die Rede; eine bauliche Arbeit wird nicht behauptet.",
+        "repairPrompt": "Formuliere eine Finanzierungsangabe, die Teildeckung nicht als vollständige Kostensicherung ausgibt."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "ABSCHREIBEN_FORDERUNG",
+        "lemma": "abschreiben",
+        "quote": "Eine veraltete Forderung schrieb die Buchhaltung nach erfolgloser Prüfung als uneinbringlich ab.",
+        "alternate": "Ein Teammitglied schrieb den Wortlaut der früheren Rechnung für das Archiv sorgfältig ab.",
+        "question": "Welche Bedeutung hat „abschreiben“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Forderung wurde wegen erwarteter Uneinbringlichkeit buchhalterisch wertberichtigt."
+          },
+          {
+            "id": "B",
+            "text": "Der Text der Rechnung wurde wortgetreu kopiert."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Eine Forderung abschreiben ist eine buchhalterische Wertkorrektur bei voraussichtlich ausbleibender Zahlung. Einen Text abschreiben bezeichnet seine Kopie. Die Buchung ist weder eine Dokumentenabschrift noch ein Nachweis dafür, dass die Schuld beglichen wurde.",
+        "repairPrompt": "Fasse den Forderungsstatus zusammen, ohne Zahlung oder Aktenverlust zu suggerieren."
+      }
+    ],
+    "transfer": "Schreibe eine eigenständige fachliche Zusammenfassung des dreiteiligen Ausgangstextes. Ersetze alle drei untersuchten Verwendungen durch treffende, nicht mehrdeutige Umschreibungen; erhalte zeitliche und sachliche Grenzen. Erkläre anschließend, welche Bedeutungen du ausgeschlossen hast, und überarbeite den Text nach dem ersten Entwurf.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl M18 original context-polysemy drafts",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "New original fictional professional German prose authored for G06 sense-disambiguation; no copied third-party examples"
+    }
+  },
+  {
+    "id": "SG-G06-006",
+    "version": 1,
+    "domain": "G06",
+    "band": "C2",
+    "title": "Eine Anerkennung bleibt offen",
+    "focus": "Zugang und Anerkennung: zulassen, anrechnen, zurückstellen",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Prüfungsordnung ließ Bewerbungen ohne das übliche Abschlusszeugnis nur in ausdrücklich geregelten Ausnahmefällen zu. Das Entscheidungsgremium prüfte solche Gesuche anhand zusätzlicher Nachweise. Eine Zulassung zum Verfahren war damit noch keine Zusage für einen Studienplatz; darüber wurde in einem späteren Schritt entschieden."
+      },
+      {
+        "id": "p2",
+        "text": "Bei einer erfolgreichen Bewerbung konnten einzelne bereits erbrachte Studienleistungen angerechnet werden. Die zuständige Stelle musste dazu Inhalte und Umfang vergleichen. Eine Anrechnung verkürzte gegebenenfalls das weitere Studium, bedeutete aber nicht, dass die früheren Leistungen für die neue Hochschule noch einmal erbracht werden müssten."
+      },
+      {
+        "id": "p3",
+        "text": "Den Antrag einer Bewerberin stellte die Kommission bis zum Eingang einer fehlenden Bescheinigung zurück. Die Unterlagen wurden nicht abgelehnt und auch nicht an die Bewerberin zurückgesandt. Das Gremium vermerkte vielmehr einen offenen Prüfpunkt und setzte die Entscheidung für die nächste Sitzung auf die Tagesordnung."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "ZULASSEN_VERFAHREN",
+        "lemma": "zulassen",
+        "quote": "Die Prüfungsordnung ließ Bewerbungen ohne das übliche Abschlusszeugnis nur in ausdrücklich geregelten Ausnahmefällen zu.",
+        "alternate": "Die Hochschule ließ eine Bewerberin nach Prüfung ihrer Unterlagen verbindlich zum Studiengang zu.",
+        "question": "Welche Bedeutung hat „zulassen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Einreichung bestimmter Bewerbungen war unter Bedingungen zulässig."
+          },
+          {
+            "id": "B",
+            "text": "Einer konkreten Person wurde bereits ein Studienplatz eingeräumt."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "Bewerbungen unter Bedingungen zulassen regelt zunächst den Zugang zum Verfahren. Eine Bewerberin zum Studiengang zulassen betrifft hingegen die konkrete Aufnahmeentscheidung. Der Text hält diese beiden Schritte ausdrücklich auseinander.",
+        "repairPrompt": "Schreibe eine bedingte Bewerbungsvorschrift, ohne daraus eine Studienplatzgarantie abzuleiten."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "ANRECHNEN_LEISTUNGEN",
+        "lemma": "anrechnen",
+        "quote": "Bei einer erfolgreichen Bewerbung konnten einzelne bereits erbrachte Studienleistungen angerechnet werden.",
+        "alternate": "Die Verwaltung rechnete eine bereits gezahlte Gebühr auf die neue Rechnung an.",
+        "question": "Welche Bedeutung hat „anrechnen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Vorleistungen konnten nach Gleichwertigkeitsprüfung anerkannt und dem Studienumfang zugerechnet werden."
+          },
+          {
+            "id": "B",
+            "text": "Eine bestehende Geldzahlung wurde auf einen neuen Zahlungsbetrag verrechnet."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Studienleistungen anrechnen betrifft die fachliche Anerkennung bereits erbrachter Arbeit und kann den Studienumfang mindern. Eine Zahlung auf eine Rechnung anrechnen betrifft die Verrechnung von Geldbeträgen. Aus der fachlichen Anerkennung lässt sich keine neue Gebühr und keine finanzielle Gutschrift ableiten.",
+        "repairPrompt": "Fasse die fachliche Anerkennung bereits absolvierter Module ohne finanziellen Nebenbefund zusammen."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "ZURUECKSTELLEN_ENTSCHEIDUNG",
+        "lemma": "zurückstellen",
+        "quote": "Den Antrag einer Bewerberin stellte die Kommission bis zum Eingang einer fehlenden Bescheinigung zurück.",
+        "alternate": "Nach der Akteneinsicht stellte die Sachbearbeiterin die entnommene Mappe wieder an ihren Platz zurück.",
+        "question": "Welche Bedeutung hat „zurückstellen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Sachentscheidung wurde vorübergehend vertagt."
+          },
+          {
+            "id": "B",
+            "text": "Ein zuvor entnommener Gegenstand wurde räumlich zurückgelegt."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "Einen Antrag zurückstellen bedeutet hier, seine Bearbeitung oder Entscheidung vorübergehend zu verschieben. Eine Mappe zurückstellen bezeichnet ihre Rückgabe an einen Platz. Das bloße Vertagen ist ausdrücklich weder eine Ablehnung noch eine Rücksendung der Akten.",
+        "repairPrompt": "Verfasse eine Zwischenmitteilung, die den offenen Prüfstand präzise von einer Ablehnung unterscheidet."
+      }
+    ],
+    "transfer": "Schreibe eine eigenständige fachliche Zusammenfassung des dreiteiligen Ausgangstextes. Ersetze alle drei untersuchten Verwendungen durch treffende, nicht mehrdeutige Umschreibungen; erhalte zeitliche und sachliche Grenzen. Erkläre anschließend, welche Bedeutungen du ausgeschlossen hast, und überarbeite den Text nach dem ersten Entwurf.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl M18 original context-polysemy drafts",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "New original fictional professional German prose authored for G06 sense-disambiguation; no copied third-party examples"
+    }
+  }
+]

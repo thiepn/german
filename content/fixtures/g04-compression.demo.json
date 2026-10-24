@@ -1,0 +1,406 @@
+[
+  {
+    "id": "SG-G04C-001",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Schließung einer Stadtteilbibliothek: Voraussetzungen eines Beschlusses",
+    "focus": "Nominalisierung, Geltungsbereich von Bedingungen und Zuständigkeiten",
+    "audience": "Bezirksvertretung und betroffene Anwohner",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Im Zuge der zum Jahresende vorgesehenen Neuordnung der Bibliotheksstandorte ist eine Zusammenlegung der Bestände des kleinsten Stadtteilhauses mit dem zentralen Medienzentrum vorgeschlagen worden. Dem Vorschlag liegt ein Vergleich der bisherigen Öffnungszeiten und der geschätzten Gebäudekosten zugrunde; eine belastbare Untersuchung der Wegezeiten für mobilitätseingeschränkte Besucherinnen und Besucher wurde bislang nicht abgeschlossen. Die Vorlage benennt den Standortwechsel ausdrücklich als Prüfoption und nicht als bereits beschlossene Maßnahme."
+      },
+      {
+        "id": "p2",
+        "text": "Die von der Verwaltung unter dem Vorbehalt einer gesonderten Haushaltsentscheidung in Aussicht gestellte Erweiterung des Bücherbusangebots würde nach derzeitiger Planung nur an zwei Nachmittagen pro Woche stattfinden. Ob damit die regelmäßigen Schulbesuche und die Medienausleihe für ältere Menschen ersetzt werden könnten, bleibt offen. Der Finanzausschuss hat die erforderlichen Mittel noch nicht beraten; die örtlichen Schulen sollen im folgenden Monat angehört werden."
+      },
+      {
+        "id": "p3",
+        "text": "Nach Abschluss der noch ausstehenden Beteiligung und vorbehaltlich einer positiven Prüfung der Barrierefreiheit könnte der Rat frühestens im Frühjahr über das künftige Standortnetz entscheiden. Der Ausschussbericht betont, dass eine wirtschaftliche Einsparung nicht automatisch eine gleichwertige Erreichbarkeit bedeutet. Bis zum Ratsbeschluss bleiben die bisherigen Öffnungszeiten in Kraft und die Bibliotheksleitung ist zu keiner Bestandsverlagerung ermächtigt."
+      }
+    ],
+    "operations": [
+      {
+        "id": "o1",
+        "paragraphId": "p1",
+        "family": "NOMINALISIERUNG",
+        "quote": "Im Zuge der zum Jahresende vorgesehenen Neuordnung der Bibliotheksstandorte ist eine Zusammenlegung der Bestände des kleinsten Stadtteilhauses mit dem zentralen Medienzentrum vorgeschlagen worden.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Verwaltung erwägt, die Bibliotheksstandorte neu zu ordnen und die Bestände zusammenzuführen; die Maßnahme ist lediglich vorgeschlagen und für das Jahresende vorgesehen."
+          },
+          {
+            "id": "B",
+            "text": "Der Rat hat die kleinste Bibliothek zum Jahresende endgültig geschlossen und sämtliche Bestände bereits verlagert."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das Ereignis steckt in den Substantiven „Neuordnung“ und „Zusammenlegung“. Die unpersönliche Passivkonstruktion verschleiert, wer den Vorschlag unterbreitet hat, markiert aber keinen Beschluss. Ein expandierter Satz darf keine abschließende Genehmigung ergänzen.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      },
+      {
+        "id": "o2",
+        "paragraphId": "p2",
+        "family": "PARTIZIPIALATTRIBUT",
+        "quote": "Die von der Verwaltung unter dem Vorbehalt einer gesonderten Haushaltsentscheidung in Aussicht gestellte Erweiterung des Bücherbusangebots würde nach derzeitiger Planung nur an zwei Nachmittagen pro Woche stattfinden.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Weil der Haushalt bereits genehmigt ist, erweitert die Verwaltung den Bücherbus ab sofort an allen Wochentagen."
+          },
+          {
+            "id": "B",
+            "text": "Die Verwaltung hat eine Ausweitung des Bücherbusses angekündigt, doch dafür ist erst eine gesonderte Haushaltsentscheidung nötig; bislang ist ein Angebot an zwei Nachmittagen vorgesehen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das lange Partizipialattribut verbindet Urheber und Vorbehalt. „Würde“ und „nach derzeitiger Planung“ signalisieren den hypothetischen Status. Die Entflechtung muss beide Einschränkungen beibehalten.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      },
+      {
+        "id": "o3",
+        "paragraphId": "p3",
+        "family": "BEDINGUNGSGEFÜGE",
+        "quote": "Nach Abschluss der noch ausstehenden Beteiligung und vorbehaltlich einer positiven Prüfung der Barrierefreiheit könnte der Rat frühestens im Frühjahr über das künftige Standortnetz entscheiden.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Rat kann frühestens im Frühjahr entscheiden, wenn die Beteiligung abgeschlossen und die Barrierefreiheit positiv geprüft worden ist."
+          },
+          {
+            "id": "B",
+            "text": "Der Rat wird im Frühjahr unabhängig von der Beteiligung eine Schließung verbindlich beschließen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die temporale Fügung ist an eine ausstehende Beteiligung gebunden; „vorbehaltlich“ setzt eine weitere Voraussetzung. „Könnte“ lässt sogar den Zeitpunkt und das Zustandekommen des Beschlusses offen.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      }
+    ],
+    "transfer": "Verfasse für die Bezirksvertretung eine kurze formal präzise Zusammenfassung und daneben eine für die Anwohner verständliche Version, ohne Vorschläge in Beschlüsse, Vorbehalte in Zusagen oder Möglichkeit in Gewissheit umzuschreiben.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M21 original fictional German authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Fiktive ursprüngliche M21-Texte, keine Übernahme externer Berichte; redaktionell ungeprüft"
+    }
+  },
+  {
+    "id": "SG-G04C-002",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Hochwasserwarnung zwischen Messung und Vorsorge",
+    "focus": "Verdichtete Zeitverhältnisse, Wahrscheinlichkeitsmarker und Handlungsträger",
+    "audience": "Kommunaler Lageausschuss und Öffentlichkeit",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Angesichts der in den vergangenen Stunden oberhalb der Stadt gemessenen Niederschlagsmengen ist bei anhaltend hohen Zuflüssen mit einer Überschreitung des ersten Warnpegels in der Nacht zu rechnen. Das hydrologische Modell berücksichtigt die am Vormittag veröffentlichten Messreihen, nicht jedoch einzelne gemeldete Verstopfungen kleiner Durchlässe. Die Fachstelle spricht deshalb von einer wahrscheinlichen, keinesfalls aber schon beobachteten Überschreitung."
+      },
+      {
+        "id": "p2",
+        "text": "Die für den Fall einer bestätigten Überschreitung der zweiten Warnstufe vorgesehenen Straßensperrungen werden erst nach einer erneuten Lagebewertung durch die Einsatzleitung angeordnet. In den sozialen Medien zirkulieren Karten, die mögliche Sperrbereiche bereits als geschlossen markieren. Das Amt weist darauf hin, dass Vorsorgekarten keine behördlichen Anordnungen sind und die derzeit nutzbaren Straßen ausdrücklich offenbleiben."
+      },
+      {
+        "id": "p3",
+        "text": "Unter Berücksichtigung der unsicheren Vorhersage für die Niederschläge am Folgetag wurde die vorsorgliche Bereitstellung mobiler Schutzwände beschlossen. Die Entscheidung betrifft Material und Personal, nicht eine allgemeine Evakuierung der Uferquartiere. Eine solche Maßnahme wäre von der jeweils zuständigen Stelle auf der Grundlage neuer Pegelbeobachtungen gesondert anzuordnen."
+      }
+    ],
+    "operations": [
+      {
+        "id": "o1",
+        "paragraphId": "p1",
+        "family": "KONDITIONALER RAHMEN",
+        "quote": "Angesichts der in den vergangenen Stunden oberhalb der Stadt gemessenen Niederschlagsmengen ist bei anhaltend hohen Zuflüssen mit einer Überschreitung des ersten Warnpegels in der Nacht zu rechnen.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der erste Warnpegel ist bereits überschritten, und die Fachstelle hat die Überschwemmung für die ganze Stadt bestätigt."
+          },
+          {
+            "id": "B",
+            "text": "Sollten die Zuflüsse hoch bleiben, könnte der erste Warnpegel in der Nacht überschritten werden; die Einschätzung beruht auf Niederschlagsmessungen oberhalb der Stadt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "„Bei anhaltend“ nennt eine Bedingung, die Nominalgruppe erklärt den Anlass. „Ist zu rechnen“ bezeichnet eine Prognose, keine bereits eingetretene Beobachtung.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      },
+      {
+        "id": "o2",
+        "paragraphId": "p2",
+        "family": "PARTIZIPIALATTRIBUT",
+        "quote": "Die für den Fall einer bestätigten Überschreitung der zweiten Warnstufe vorgesehenen Straßensperrungen werden erst nach einer erneuten Lagebewertung durch die Einsatzleitung angeordnet.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Erst wenn die zweite Warnstufe nachweislich überschritten ist und die Einsatzleitung die Lage neu bewertet hat, können die vorgesehenen Straßensperrungen angeordnet werden."
+          },
+          {
+            "id": "B",
+            "text": "Sobald die erste Warnstufe erwartet wird, sind sämtliche Straßen automatisch gesperrt und eine neue Bewertung ist überflüssig."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das Partizipialattribut kodiert einen konditionalen Plan, während „erst nach“ die weitere zeitliche Schranke bezeichnet. Nur eine spätere Anordnung der zuständigen Einsatzleitung schafft die Sperrung.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      },
+      {
+        "id": "o3",
+        "paragraphId": "p3",
+        "family": "NOMINALISIERUNG",
+        "quote": "Unter Berücksichtigung der unsicheren Vorhersage für die Niederschläge am Folgetag wurde die vorsorgliche Bereitstellung mobiler Schutzwände beschlossen.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Weil eine Überflutung sicher eintreten wird, hat die Einsatzleitung sämtliche Uferquartiere bereits evakuiert."
+          },
+          {
+            "id": "B",
+            "text": "Die zuständige Stelle hat entschieden, mobile Schutzwände vorsorglich bereitzuhalten, weil die Niederschlagsvorhersage für den nächsten Tag unsicher ist."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Fügungen „unter Berücksichtigung“ und „Bereitstellung“ bündeln Anlass und eine begrenzte Handlung. Der Beschluss betrifft Vorsorgematerial und darf nicht mit einer Evakuierungsanordnung verwechselt werden.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      }
+    ],
+    "transfer": "Erstelle eine fachliche Lagezusammenfassung und eine klare öffentliche Warninformation. Trenne Prognose, bedingte Sperrentscheidung und tatsächlich beschlossene Vorsorgemaßnahmen.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M21 original fictional German authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Fiktive ursprüngliche M21-Texte, keine Übernahme externer Berichte; redaktionell ungeprüft"
+    }
+  },
+  {
+    "id": "SG-G04C-003",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Prüfung einer wissenschaftlichen Forschungsförderung",
+    "focus": "Nominalstil und verschachtelte Bezugsstrukturen in einem Förderbescheid",
+    "audience": "Forschungsreferat und Antragstellende",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die nach der ersten Begutachtungsrunde auf Grundlage der eingegangenen Fachvoten vorgenommene Einstufung des Projekts als grundsätzlich förderwürdig begründet noch keinen Anspruch auf die Auszahlung von Mitteln. Nach dem geltenden Verfahren müssen vor einer endgültigen Entscheidung die für das Vorhaben erforderlichen Datenschutzunterlagen vorliegen. Die Entscheidung über eine Bewilligung trifft ausschließlich das zuständige Vergabegremium."
+      },
+      {
+        "id": "p2",
+        "text": "Aufgrund der vom Forschungsteam bislang nicht vollständig dokumentierten Einwilligungserklärungen ist die Freigabe der geplanten Personenbefragung bis zur ergänzenden Prüfung zurückgestellt worden. Der Zwischenbescheid betrifft nur die Datenerhebung mit betroffenen Personen; eine bereits genehmigte theoretische Vorstudie kann unabhängig davon fortgesetzt werden. Ob neue Unterlagen die Prüfung erfolgreich abschließen, lässt sich derzeit nicht vorwegnehmen."
+      },
+      {
+        "id": "p3",
+        "text": "Die bei rechtzeitiger Nachreichung der ausstehenden Nachweise mögliche erneute Befassung des Gremiums soll im kommenden Sitzungslauf vorbereitet werden. Ein genauer Termin hängt von der Vollständigkeit der Unterlagen ab und wird noch mitgeteilt. Die Geschäftsstelle bittet um eine Zusammenfassung der offenen Punkte, ohne damit eine spätere Förderzusage in Aussicht zu stellen."
+      }
+    ],
+    "operations": [
+      {
+        "id": "o1",
+        "paragraphId": "p1",
+        "family": "NOMINALISIERUNG",
+        "quote": "Die nach der ersten Begutachtungsrunde auf Grundlage der eingegangenen Fachvoten vorgenommene Einstufung des Projekts als grundsätzlich förderwürdig begründet noch keinen Anspruch auf die Auszahlung von Mitteln.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Nach der ersten Begutachtung wurde das Projekt zunächst als förderwürdig eingestuft; daraus folgt aber noch kein Anspruch auf eine Auszahlung."
+          },
+          {
+            "id": "B",
+            "text": "Die eingegangenen Fachvoten haben eine endgültige Bewilligung ausgelöst, sodass die Auszahlung unmittelbar fällig ist."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die komplexe Subjektgruppe fasst Prüfprozess und vorläufige Einordnung zusammen. Der Hauptsatz verneint ausdrücklich einen Anspruch; bei der Entflechtung muss diese Negation erhalten bleiben.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      },
+      {
+        "id": "o2",
+        "paragraphId": "p2",
+        "family": "PARTIZIPIALATTRIBUT",
+        "quote": "Aufgrund der vom Forschungsteam bislang nicht vollständig dokumentierten Einwilligungserklärungen ist die Freigabe der geplanten Personenbefragung bis zur ergänzenden Prüfung zurückgestellt worden.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Datenschutzstelle hat wegen nachgewiesenen Fehlverhaltens das gesamte Forschungsprojekt endgültig verboten."
+          },
+          {
+            "id": "B",
+            "text": "Das Forschungsteam hat die Einwilligungen noch nicht vollständig dokumentiert; deshalb bleibt die geplante Personenbefragung bis zur ergänzenden Prüfung ohne Freigabe."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das Partizipialattribut lokalisiert einen Dokumentationsmangel bei Einwilligungen. Zurückgestellt ist allein die Freigabe der Personenbefragung und nur bis zu einer ergänzenden Prüfung.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      },
+      {
+        "id": "o3",
+        "paragraphId": "p3",
+        "family": "BEDINGUNGSGEFÜGE",
+        "quote": "Die bei rechtzeitiger Nachreichung der ausstehenden Nachweise mögliche erneute Befassung des Gremiums soll im kommenden Sitzungslauf vorbereitet werden.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Wenn die Unterlagen rechtzeitig nachgereicht werden, kann das Gremium den Antrag erneut behandeln; diese Möglichkeit soll organisatorisch vorbereitet werden."
+          },
+          {
+            "id": "B",
+            "text": "Das Gremium wird den Antrag im nächsten Sitzungslauf definitiv bewilligen, selbst wenn weiterhin Nachweise fehlen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die nominalisierte „Befassung“ ersetzt den Vollzug einer erneuten Beratung. Die Voraussetzung „bei rechtzeitiger Nachreichung“ und die Modalität „mögliche“ dürfen in keiner Zielversion verschwinden.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      }
+    ],
+    "transfer": "Formuliere aus dem Prüfbericht eine nüchterne Aktennotiz und eine verständliche Mitteilung an Antragstellende. Erhalte Negationen, Zuständigkeit, bedingte Verfahrensschritte und die fehlende Förderzusage.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M21 original fictional German authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Fiktive ursprüngliche M21-Texte, keine Übernahme externer Berichte; redaktionell ungeprüft"
+    }
+  },
+  {
+    "id": "SG-G04C-004",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Erprobung verkehrsabhängiger Ampelsteuerungen",
+    "focus": "Agentenlose Passivformen, verschränkte Zeitachsen und begrenzte Evidenz",
+    "audience": "Technischer Verkehrsbericht und Pendlerinformation",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die im Rahmen des auf sechs Kreuzungen begrenzten Versuchs durch automatische Sensoren ausgelöste Anpassung der Grünphasen hat in den gemessenen Abendstunden zu kürzeren mittleren Wartezeiten geführt. Das Ergebnis stammt aus zwei Wochen mit vergleichsweise geringer Baustellentätigkeit. Der Bericht hält ausdrücklich offen, ob der Rückgang bei Regen, geänderten Schulzeiten oder zusätzlichem Lieferverkehr ebenfalls zu beobachten wäre."
+      },
+      {
+        "id": "p2",
+        "text": "Bei der nachträglichen Auswertung der von den Sensoren teilweise fehlerhaft erfassten Radfahrbewegungen wurde eine systematische Unterschätzung einzelner Abbiegevorgänge festgestellt. Die betroffenen Daten wurden vor der endgültigen Berechnung gesondert gekennzeichnet; eine automatische Änderung der Vorrangregeln für Radfahrende fand nicht statt. Die Forschenden empfehlen weitere Beobachtungen an Kreuzungen mit höherem Radverkehr."
+      },
+      {
+        "id": "p3",
+        "text": "Vor einer flächendeckenden Freigabe der bislang ausschließlich im Testbetrieb eingesetzten Steuerungssoftware ist eine externe Sicherheitsprüfung durchzuführen. Die Verkehrsverwaltung hat zunächst lediglich die Finanzierung dieser Prüfung beschlossen. Erst ihr Ergebnis soll dem Stadtrat zusammen mit einem Bericht über Barrierefreiheit und mögliche Auswirkungen auf Buslinien vorgelegt werden."
+      }
+    ],
+    "operations": [
+      {
+        "id": "o1",
+        "paragraphId": "p1",
+        "family": "PARTIZIPIALATTRIBUT",
+        "quote": "Die im Rahmen des auf sechs Kreuzungen begrenzten Versuchs durch automatische Sensoren ausgelöste Anpassung der Grünphasen hat in den gemessenen Abendstunden zu kürzeren mittleren Wartezeiten geführt.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die sensorbasierte Steuerung hat auf allen Straßen rund um die Uhr und bei jedem Wetter die Wartezeiten dauerhaft gesenkt."
+          },
+          {
+            "id": "B",
+            "text": "In einem Versuch an sechs Kreuzungen passten Sensoren die Grünphasen an; während der untersuchten Abendstunden waren die durchschnittlichen Wartezeiten kürzer."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Attributkette enthält Technik, räumliche Grenze und Messzeitraum. Der beobachtete Mittelwert ist kein Nachweis einer flächendeckenden oder dauerhaften Wirkung.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      },
+      {
+        "id": "o2",
+        "paragraphId": "p2",
+        "family": "NOMINALISIERUNG",
+        "quote": "Bei der nachträglichen Auswertung der von den Sensoren teilweise fehlerhaft erfassten Radfahrbewegungen wurde eine systematische Unterschätzung einzelner Abbiegevorgänge festgestellt.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Als die Forschenden die Sensordaten später prüften, stellten sie fest, dass bestimmte Abbiegevorgänge von Radfahrenden regelmäßig zu selten erfasst worden waren."
+          },
+          {
+            "id": "B",
+            "text": "Die Stadt hat absichtlich sämtliche Radfahrenden aus den Statistiken gelöscht, um den Test positiv aussehen zu lassen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der nominalisierte Auswertungsvorgang verschiebt die handelnde Instanz in den Hintergrund. Die Feststellung beschreibt eine technische Erfassungsabweichung; Vorsatz oder Manipulation werden nicht behauptet.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      },
+      {
+        "id": "o3",
+        "paragraphId": "p3",
+        "family": "BEDINGUNGSGEFÜGE",
+        "quote": "Vor einer flächendeckenden Freigabe der bislang ausschließlich im Testbetrieb eingesetzten Steuerungssoftware ist eine externe Sicherheitsprüfung durchzuführen.",
+        "question": "Welche Explikation wahrt den Aussageumfang und die Bedingungen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Stadt hat die Software bereits für alle Kreuzungen freigegeben und eine Prüfung aus Kostengründen gestrichen."
+          },
+          {
+            "id": "B",
+            "text": "Bevor die bislang nur getestete Software überall freigegeben werden kann, muss eine externe Stelle ihre Sicherheit prüfen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Präpositionalgruppe „vor einer ... Freigabe“ ordnet eine notwendige Vorbedingung an. Der Infinitiv „ist ... durchzuführen“ formuliert eine Pflicht, nicht deren bereits erfolgte Erfüllung.",
+        "expandPrompt": "Entfalte die verdichtete Aussage in eigenen Haupt- oder Nebensätzen mit allen nötigen Einschränkungen.",
+        "compressPrompt": "Formuliere deine Erklärung erneut als knappen, idiomatischen wissenschaftlichen oder administrativen Satz, ohne den Wortlaut des Originals zu kopieren.",
+        "riskPrompt": "Welche Zeit-, Agenten-, Geltungs- oder Bedingungsinformation darf dabei nicht verloren gehen?"
+      }
+    ],
+    "transfer": "Schreibe erst eine präzise technische Ergebnisnotiz, dann eine verständliche Mitteilung für Pendelnde. Achte auf räumliche Messgrenzen, fehlerhafte Sensordaten und die ausstehende Sicherheitsprüfung.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M21 original fictional German authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Fiktive ursprüngliche M21-Texte, keine Übernahme externer Berichte; redaktionell ungeprüft"
+    }
+  }
+]

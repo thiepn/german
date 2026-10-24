@@ -1,0 +1,90 @@
+[
+  {
+    "id": "SG-T09-001",
+    "version": 1,
+    "unitId": "SG-R09-001",
+    "title": "Wissenschaftliches Kurzbriefing",
+    "instruction": "Fasse für eine Forschungsleitung in einem kurzen Absatz Beobachtung, alternative Erklärungen und methodische Konsequenz zusammen.",
+    "audience": "Forschungsleitung",
+    "register": "SACHLICH_WISSENSCHAFTLICH",
+    "checks": [
+      "Beobachtung und Ursache trennen",
+      "Mindestens zwei mögliche Einflussfaktoren beachten",
+      "Keine Wirkung als bewiesen darstellen"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original transfer prompt; independently unreviewed."
+    }
+  },
+  {
+    "id": "SG-T09-002",
+    "version": 1,
+    "unitId": "SG-R09-002",
+    "title": "Neutraler Sitzungsvermerk",
+    "instruction": "Berichte einer abwesenden Kollegin Positionen, offene Fragen und den tatsächlichen Stand des Beschlusses.",
+    "audience": "Abwesende Kollegin",
+    "register": "FORMAL_PROTOKOLL",
+    "checks": [
+      "Sprecherbehauptungen zuordnen",
+      "Vertagung nicht als Zustimmung wiedergeben",
+      "Offene Zusagen benennen"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original transfer prompt; independently unreviewed."
+    }
+  },
+  {
+    "id": "SG-T09-003",
+    "version": 1,
+    "unitId": "SG-R09-003",
+    "title": "Abwägender Kommentar",
+    "instruction": "Würdige das Öffnungsziel des Archivs, ohne die Kritik an Auswahlkriterien zu übergehen.",
+    "audience": "Öffentliche Leserschaft",
+    "register": "ARGUMENTATIV",
+    "checks": [
+      "Lob und Kritik trennen",
+      "Eine Sorge nicht als bewiesene Benachteiligung behandeln",
+      "Prüfbare Kriterien nennen"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original transfer prompt; independently unreviewed."
+    }
+  },
+  {
+    "id": "SG-T09-004",
+    "version": 1,
+    "unitId": "SG-R09-004",
+    "title": "Bedingte Entscheidungsvorlage",
+    "instruction": "Schreibe eine kurze Vorlage, die zwei Szenarien und ihre Unsicherheiten für die Entscheidung einordnet.",
+    "audience": "Verwaltungsleitung",
+    "register": "INSTITUTIONELL",
+    "checks": [
+      "Projektion nicht als sicheren Verlauf formulieren",
+      "Annahmen unterscheiden",
+      "Überprüfbaren nächsten Schritt empfehlen"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original transfer prompt; independently unreviewed."
+    }
+  }
+]
