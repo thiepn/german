@@ -88,7 +88,13 @@ export function collect(){
   ...s.comparisons.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G09_CROSS_SOURCE_CONTRAST',mode:'G09_CROSS_SOURCE',status:s.status,authorId:s.author,prompt:d.question,quoteA:d.quoteA,quoteB:d.quoteB,sourceA:d.sourceA,sourceB:d.sourceB,issue:d.issue,options:d.options,preferredId:d.preferredId,model:d.model,issues:['Confirm both quotations are literal and their source locations are correct','Review interpretive compatibility, contradictory evidence, different measurement units and unsupported stronger inferences','Review audience-oriented synthesis task, adequate alternative readings, idiomatic German and source rights','Original suggestions do not grade independent writing or confer approval'],independentEditorialApproval:false}))
  ]);
  if(cross.length!==manifest.crossSourceDraftCount*4)throw Error('Incomplete G09 cross-source editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross],allIds=new Set();
+
+ const compression=read(manifest.compressionDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G04_ORIGINAL_COMPLEX_DOCUMENT',mode:'G04_COMPRESSION',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently review all three multi-paragraph C1-C2 German sources and rights','Check nuance, agency, scope and plausible institutional conditions','No automatic grading, CEFR credit or publication approval'],independentEditorialApproval:false},
+  ...s.operations.map(o=>({id:s.id+':'+o.id,version:s.version,type:'G04_BIDIRECTIONAL_SYNTAX',mode:'G04_COMPRESSION',status:s.status,authorId:s.author,prompt:o.question,quote:o.quote,paragraphId:o.paragraphId,family:o.family,options:o.options,preferredId:o.preferredId,model:o.model,issues:['Confirm quote against exact source paragraph','Independently check nominalization and participial or conditional syntax analysis','Verify expansion and compression preserve negation, scope, agent, conditionality and evidential status','Review audience-specific transfer, alternative readings and idiomatic German; no auto-grade or approval'],independentEditorialApproval:false}))
+ ]);
+ if(compression.length!==manifest.compressionDraftCount*4)throw Error('Incomplete G04 compression editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

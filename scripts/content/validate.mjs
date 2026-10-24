@@ -281,6 +281,30 @@ for(const s of m20){
 }
 if(crossIds.size!==4||crossPairs!==12||preferredB<4||crossBands.size!==2)throw Error('Insufficient G09 cross-source variation');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m21=read(manifest.compressionDraftSource);
+if(manifest.compressionDraftCount!==4||m21.length!==4)throw Error('M21 G04 compression dossier count mismatch');
+const compressionIds=new Set(),families=new Set(),bands=new Set();let compressionOps=0,compressionPreferredB=0;
+for(const s of m21){
+ if(!/^SG-G04C-\d{3}$/.test(s.id)||compressionIds.has(s.id)||s.version!==1||s.domain!=='G04'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G04 compression dossier '+s.id);
+ compressionIds.add(s.id);bands.add(s.band);
+ if(!s.title?.trim()||!s.focus?.trim()||!s.audience?.trim()||!s.transfer?.trim()||s.paragraphs?.length!==3||s.operations?.length!==3)throw Error('Incomplete G04 compression case '+s.id);
+ const ids=new Set();
+ for(const [i,p] of s.paragraphs.entries()){
+  if(p.id!=='p'+(i+1)||!p.text||p.text.length<340||ids.has(p.id))throw Error('Invalid G04 paragraph '+s.id+':'+p.id);
+  ids.add(p.id);
+ }
+ for(const [i,o] of s.operations.entries()){
+  if(o.id!=='o'+(i+1)||o.paragraphId!==s.paragraphs[i].id||!s.paragraphs[i].text.includes(o.quote)||o.quote.length<90||
+   !['NOMINALISIERUNG','PARTIZIPIALATTRIBUT','BEDINGUNGSGEFÜGE','KONDITIONALER RAHMEN'].includes(o.family)||!o.question?.trim()||
+   !o.expandPrompt?.trim()||!o.compressPrompt?.trim()||!o.riskPrompt?.trim()||o.model?.length<145||
+   o.options?.length!==2||o.options[0].id!=='A'||o.options[1].id!=='B'||o.options[0].text===o.options[1].text||
+   o.options.some(v=>v.text.length<75)||!['A','B'].includes(o.preferredId))throw Error('Ungrounded G04 compression operation '+s.id+':'+o.id);
+  families.add(o.family);compressionOps++;if(o.preferredId==='B')compressionPreferredB++;
+ }
+}
+if(compressionIds.size!==4||bands.size!==2||families.size<3||compressionOps!==12||compressionPreferredB<4)throw Error('Insufficient G04 compression variation');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}
