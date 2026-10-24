@@ -76,7 +76,13 @@ export function collect(){
   ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G06_SENSE_CONTRAST',mode:'G06_POLYSEMY',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,alternate:d.alternate,paragraphId:d.paragraphId,lemma:d.lemma,options:d.options,preferredId:d.preferredId,model:d.explanation,issues:['Verify literal paragraph quote, lexical senses and grammatical idiom of both alternatives','Check that preferred reading follows source context and competing sense is meaningful','Review authored paraphrase, exclusion justification and independent transfer task','No automatic C1/C2 certification, learner grading or publication without independent approval'],independentEditorialApproval:false}))
  ]);
  if(polysemy.length!==manifest.polysemyDraftCount*4)throw Error('Missing G06 lexical semantic editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy],allIds=new Set();
+
+ const stance=read(manifest.stanceDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G08_ORIGINAL_DISCOURSE_SOURCE',mode:'G08_STANCE',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently review all three German source paragraphs and original rights','Check reported institutional perspective and methodological accuracy','No automatic writing evaluation or CEFR certification'],independentEditorialApproval:false},
+  ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G08_STANCE_CONTRAST',mode:'G08_STANCE',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,alternate:d.alternate,paragraphId:d.paragraphId,move:d.move,options:d.options,preferredId:d.preferredId,model:d.explanation,issues:['Check quote against original passage and implied stance','Evaluate whether the authored contrast is genuinely inferentially distinct','Confirm acceptable readings, register and degree of commitment','Independently review transfer brief; no grading or publication approval'],independentEditorialApproval:false}))
+ ]);
+ if(stance.length!==manifest.stanceDraftCount*4)throw Error('Missing G08 stance editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

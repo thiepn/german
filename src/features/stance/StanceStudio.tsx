@@ -38,7 +38,7 @@ export default function StanceStudio({initialSelection,onExit}:{initialSelection
   finally{setBusy(false)}
  }
  const unchanged=Boolean(latest&&draft.trim().replace(/\s+/g,' ').toLocaleLowerCase('de-DE')===latest.text.trim().replace(/\s+/g,' ').toLocaleLowerCase('de-DE'));
- return <section className="stance-studio">
+ return <section className="polysemy-studio">
   <h1 className="page-title">Haltung und Schlussfolgerung im Text</h1>
   <p className="small muted">{progress.started}/{progress.total} Quellen begonnen · {progress.decisions} Positionierungen · {progress.transferred} eigene Texte · {progress.rewritten} Revisionen. Keine automatische Bewertung.</p>
   <div className="field"><label htmlFor="stance-study">Textfall</label><select id="stance-study" value={selected} disabled={busy} onChange={e=>select(e.target.value)}>{stanceStudies.map(s=><option key={s.id} value={s.id}>{s.band} · {s.title}</option>)}</select></div>
@@ -46,15 +46,15 @@ export default function StanceStudio({initialSelection,onExit}:{initialSelection
   <article className="panel stance-source">
    <div className="kicker">{study.band} · G08 · {study.id} · v{study.version}</div>
    <h2>{study.title}</h2><p>{study.focus}</p>
-   {study.paragraphs.map((p,i)=><p className="stance-paragraph" key={p.id}><strong>Absatz {i+1} · {p.id}</strong>{p.text}</p>)}
+   {study.paragraphs.map((p,i)=><p className="polysemy-paragraph" key={p.id}><strong>Absatz {i+1} · {p.id}</strong>{p.text}</p>)}
    <p className="small muted">{study.status} · {study.rights.kind} · {study.rights.source}</p>
   </article>
   {entry&&<section className="panel stance-history"><h2>Gespeicherte Haltungsanalysen</h2>
    {study.decisions.map((d,i)=>{
     const saved=savedStanceDecision(entry,d);if(!saved)return null;
-    return <article className="stance-analysis" key={d.id}>
+    return <article className="polysemy-analysis" key={d.id}>
      <h3>{i+1} · {d.move} · {d.paragraphId}</h3>
-     <div className="stance-before-after"><div><strong>Originalaussage</strong><p>{d.quote}</p></div><div><strong>Überdehnung</strong><p>{d.alternate}</p></div></div>
+     <div className="polysemy-before-after"><div><strong>Originalaussage</strong><p>{d.quote}</p></div><div><strong>Überdehnung</strong><p>{d.alternate}</p></div></div>
      <p><strong>Deine Textdeutung:</strong> {d.options.find(o=>o.id===saved.choice)?.text}</p>
      <p><strong>Deine Rekonstruktion:</strong> <span className="written">{saved.rewrite}</span></p>
      <p><strong>Ausgeschlossene Folgerung:</strong> {saved.boundary}</p>
@@ -67,7 +67,7 @@ export default function StanceStudio({initialSelection,onExit}:{initialSelection
   </section>}
   {decision&&<section className="panel stance-task">
    <h2>Schlussfolgerung {study.decisions.indexOf(decision)+1} / {study.decisions.length}</h2>
-   <div className="stance-before-after"><div><strong>Textbeleg {decision.paragraphId}</strong><p>{decision.quote}</p></div><div><strong>Alternative</strong><p>{decision.alternate}</p></div></div>
+   <div className="polysemy-before-after"><div><strong>Textbeleg {decision.paragraphId}</strong><p>{decision.quote}</p></div><div><strong>Alternative</strong><p>{decision.alternate}</p></div></div>
    <p>{decision.question}</p>
    <div className="field"><label htmlFor="stance-choice">Durch den Text gestützte Lesart</label><select id="stance-choice" disabled={busy} value={choice} onChange={e=>setChoice(e.target.value as StanceChoice|'')}><option value="">Lesart auswählen</option>{decision.options.map(o=><option key={o.id} value={o.id}>{o.text}</option>)}</select></div>
    <div className="field"><label htmlFor="stance-rewrite">Rekonstruiere Aussage und Einschränkung in eigenen Sätzen</label><textarea id="stance-rewrite" rows={5} maxLength={1800} value={rewrite} onChange={e=>setRewrite(e.target.value)}/></div>
@@ -85,7 +85,7 @@ export default function StanceStudio({initialSelection,onExit}:{initialSelection
    <button type="button" className="button" disabled={busy||draft.trim().length<100||draftWhy.trim().length<25||!paragraph||unchanged} onClick={()=>void saveTransfer()}>{latest?'Überarbeitung speichern':'Eigenen Text speichern'}</button>
    {entry.revisions.filter(r=>r.questionId==='TRANSFER'||r.questionId==='REWRITE').map((r,i,all)=>{
     const previous=i?all[i-1]:null;
-    return <article className="stance-writing" key={r.id}>
+    return <article className="polysemy-writing" key={r.id}>
      <h3>{i+1} · {r.questionId==='TRANSFER'?'Erster eigener Text':'Überarbeitung'}</h3>
      <p className="written">{r.text}</p><p><strong>Quelle:</strong> {r.paragraphId} · <strong>Begründung:</strong> {r.reflection}</p>
      {previous&&<details><summary>Änderungen gegenüber der vorherigen Fassung</summary><div className="written version-diff">{revisionDiff(previous.text,r.text).map((part,j)=><span key={j} className={'diff-'+part.kind}>{part.text} </span>)}</div><p className="small muted">Wortvergleich, keine automatische sprachliche Bewertung.</p></details>}

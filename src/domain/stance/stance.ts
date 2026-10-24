@@ -1,4 +1,4 @@
-import original from '../../../content/fixtures/g06-stance.demo.json';
+import original from '../../../content/fixtures/g08-stance.demo.json';
 import type {ProductionEntry,ProductionRevision} from '../production/types';
 
 export type StanceChoice='A'|'B';

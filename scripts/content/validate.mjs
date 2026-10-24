@@ -239,6 +239,23 @@ for(const s of m18){
 }
 if(g06Families.size!==18||g06Decisions!==18||g06PreferredB<5)throw Error('Insufficient distinct context polysemy coverage');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m19=read(manifest.stanceDraftSource);
+if(manifest.stanceDraftCount!==6||m19.length!==6)throw Error('G08 stance case count mismatch');
+const stanceIds=new Set(),moves=new Set();let stanceDecisions=0,stancePreferredB=0;
+for(const s of m19){
+ if(!/^SG-G08-\\d{3}$/.test(s.id)||stanceIds.has(s.id)||s.version!==1||s.domain!=='G08'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G08 discourse dossier '+s.id);
+ stanceIds.add(s.id);
+ if(!s.title?.trim()||!s.focus?.trim()||!s.transfer?.trim()||s.paragraphs?.length!==3||s.decisions?.length!==3)throw Error('Incomplete G08 discourse dossier '+s.id);
+ const paragraphIds=new Set(s.paragraphs.map(p=>p.id)),did=new Set();
+ if(paragraphIds.size!==3||s.paragraphs.some(p=>p.text.length<300))throw Error('Missing original G08 source paragraphs '+s.id);
+ for(const d of s.decisions){
+  if(did.has(d.id)||!/^d[1-3]$/.test(d.id)||!paragraphIds.has(d.paragraphId)||!s.paragraphs.find(p=>p.id===d.paragraphId)?.text.includes(d.quote)||d.quote.length<35||!d.move?.trim()||!d.family?.trim()||moves.has(d.move)||!d.alternate?.trim()||d.quote===d.alternate||!d.question?.trim()||!d.explanation||d.explanation.length<125||!d.repairPrompt?.trim()||d.options?.length!==2||d.options[0].id!=='A'||d.options[1].id!=='B'||d.options.some(o=>!o.text?.trim())||!['A','B'].includes(d.preferredId)||d.options[0].text===d.options[1].text)throw Error('Invalid G08 discourse contrast '+s.id+':'+d.id);
+  did.add(d.id);moves.add(d.move);stanceDecisions++;if(d.preferredId==='B')stancePreferredB++;
+ }
+}
+if(stanceIds.size!==6||moves.size!==18||stanceDecisions!==18||stancePreferredB<5)throw Error('Insufficient G08 stance source diversity');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}
