@@ -1,6 +1,6 @@
 [
   {
-    "id": "SG-G08-001",
+    "id": "SG-G08S-001",
     "version": 1,
     "domain": "G08",
     "band": "C2",
@@ -100,7 +100,7 @@
     }
   },
   {
-    "id": "SG-G08-002",
+    "id": "SG-G08S-002",
     "version": 1,
     "domain": "G08",
     "band": "C1",
@@ -200,7 +200,7 @@
     }
   },
   {
-    "id": "SG-G08-003",
+    "id": "SG-G08S-003",
     "version": 1,
     "domain": "G08",
     "band": "C2",
@@ -300,7 +300,7 @@
     }
   },
   {
-    "id": "SG-G08-004",
+    "id": "SG-G08S-004",
     "version": 1,
     "domain": "G08",
     "band": "C1",
@@ -400,7 +400,7 @@
     }
   },
   {
-    "id": "SG-G08-005",
+    "id": "SG-G08S-005",
     "version": 1,
     "domain": "G08",
     "band": "C2",
@@ -500,7 +500,7 @@
     }
   },
   {
-    "id": "SG-G08-006",
+    "id": "SG-G08S-006",
     "version": 1,
     "domain": "G08",
     "band": "C2",

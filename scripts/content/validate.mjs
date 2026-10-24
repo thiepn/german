@@ -105,7 +105,7 @@ if(sourceRefs.size!==refs.anchors.length||!sourceRefs.has('CEFR_SOCIOPRAGMATIC_2
 for(const ref of refs.anchors)if(ref.editorialApproved!==false||!/^https:\/\/(www\.coe\.int|grammis\.ids-mannheim\.de)\//.test(ref.url))throw Error('Unapproved authority or malformed reference');
 const pragmaticIds=new Set();
 for(const p of pragmatic){
- if(!/^SG-G08-\d{3}$/.test(p.id)||pragmaticIds.has(p.id)||p.version!==1||p.domain!=='G08'||!['C1','C2'].includes(p.band)||p.status!=='DEMO_ONLY'||p.authorship!=='AI_DRAFT'||p.reviewedBy!==null||p.editorialApproval!==false||p.rights?.kind!=='ORIGINAL_DRAFT'||!sourceRefs.has(p.cefrReference))throw Error('Invalid pragmatic decision '+p.id);
+ if(!/^SG-G08S-\d{3}$/.test(p.id)||pragmaticIds.has(p.id)||p.version!==1||p.domain!=='G08'||!['C1','C2'].includes(p.band)||p.status!=='DEMO_ONLY'||p.authorship!=='AI_DRAFT'||p.reviewedBy!==null||p.editorialApproval!==false||p.rights?.kind!=='ORIGINAL_DRAFT'||!sourceRefs.has(p.cefrReference))throw Error('Invalid pragmatic decision '+p.id);
  pragmaticIds.add(p.id);
  if(!p.title?.trim()||!p.context?.trim()||!p.task?.trim()||!p.rewrite?.trim()||p.context.length<30||!Array.isArray(p.options)||p.options.length!==3)throw Error('Incomplete pragmatics '+p.id);
  const optionIds=new Set(p.options.map(o=>o.id));
@@ -244,7 +244,7 @@ const m19=read(manifest.stanceDraftSource);
 if(manifest.stanceDraftCount!==6||m19.length!==6)throw Error('G08 stance case count mismatch');
 const stanceIds=new Set(),moves=new Set();let stanceDecisions=0,stancePreferredB=0;
 for(const s of m19){
- if(!/^SG-G08-\d{3}$/.test(s.id)||stanceIds.has(s.id)||s.version!==1||s.domain!=='G08'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G08 discourse dossier '+s.id);
+ if(!/^SG-G08S-\d{3}$/.test(s.id)||stanceIds.has(s.id)||s.version!==1||s.domain!=='G08'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.editorialApproval!==false||s.reviewedBy!==null||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G08 discourse dossier '+s.id);
  stanceIds.add(s.id);
  if(!s.title?.trim()||!s.focus?.trim()||!s.transfer?.trim()||s.paragraphs?.length!==3||s.decisions?.length!==3)throw Error('Incomplete G08 discourse dossier '+s.id);
  const paragraphIds=new Set(s.paragraphs.map(p=>p.id)),did=new Set();

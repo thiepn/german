@@ -19,13 +19,13 @@ test('M19 supplies six independent original G08 sources and 18 literal, distinct
  assert.equal(stanceStudies.length,6);assert.equal(new Set(stanceStudies.map(s=>s.id)).size,6);
  const moves=new Set(),choices=new Set(),bands=new Set();
  for(const s of stanceStudies){
-  assert.match(s.id,/^SG-G08-\d{3}$/);assert.equal(s.version,1);assert.equal(s.domain,'G08');assert.equal(s.status,'DEMO_ONLY');assert.equal(s.authorship,'AI_DRAFT');assert.equal(s.editorialApproval,false);assert.equal(s.rights.kind,'ORIGINAL_DRAFT');
+  assert.match(s.id,/^SG-G08S-\d{3}$/);assert.equal(s.version,1);assert.equal(s.domain,'G08');assert.equal(s.status,'DEMO_ONLY');assert.equal(s.authorship,'AI_DRAFT');assert.equal(s.editorialApproval,false);assert.equal(s.rights.kind,'ORIGINAL_DRAFT');
   bands.add(s.band);assert.deepEqual(s.paragraphs.map(p=>p.id),['p1','p2','p3']);assert.ok(s.paragraphs.every(p=>p.text.length>=300));
   assert.deepEqual(s.decisions.map(d=>d.id),['d1','d2','d3']);
   for(const d of s.decisions){assert.ok(s.paragraphs.find(p=>p.id===d.paragraphId)?.text.includes(d.quote));moves.add(d.move);choices.add(d.preferredId);assert.ok(d.explanation.length>=125);}
  }
  assert.equal(moves.size,18);assert.deepEqual([...choices].sort(),['A','B']);assert.deepEqual([...bands].sort(),['C1','C2']);
- assert.ok(!allItems.some(x=>x.id.startsWith('SG-G08-')),'free-text analysis cannot join the graded exercise bank');
+ assert.ok(!allItems.some(x=>x.id.startsWith('SG-G08S-')),'free-text analysis cannot join the graded exercise bank');
 });
 test('source identity and immutable first stance analysis',()=>{
  const e=begin();assert.equal(e.id,stanceEntryId(study.id));assert.equal(e.kind,'STANCE_STUDY');assert.equal(e.evaluated,'UNASSESSED');
