@@ -1,0 +1,498 @@
+[
+  {
+    "id": "SG-G09X-001",
+    "version": 1,
+    "domain": "G09",
+    "band": "C2",
+    "title": "Was die kürzere Arbeitswoche tatsächlich zeigt",
+    "focus": "Stichproben, Produktivität und Belastung aus einem Betriebsexperiment und einer Beschäftigtenbefragung",
+    "sources": [
+      {
+        "id": "A",
+        "title": "A · Betriebliche Pilotstudie",
+        "paragraphs": [
+          {
+            "id": "A1",
+            "text": "Bei vier freiwillig teilnehmenden Softwareteams sank die erfasste Wochenarbeitszeit im Halbjahr um durchschnittlich vier Stunden. Die Projektleitungen meldeten zugleich, dass die vereinbarten Liefertermine überwiegend eingehalten wurden. In die Auswertung gingen allerdings nur Teams ein, deren Aufgaben sich während des Versuchs nicht grundlegend geändert hatten; für das gesamte Unternehmen liegen keine entsprechenden Daten vor."
+          },
+          {
+            "id": "A2",
+            "text": "Die Zahl abgeschlossener Tickets blieb in drei Teams nahezu gleich und stieg im vierten leicht an. Der Bericht verwendet die Ticketzahl als Maß für den dokumentierten Arbeitsdurchsatz, nicht als unmittelbaren Qualitätsindikator. Mehrere aufwendig bearbeitete Störungen wurden von der Kennzahl nur als ein einzelner Vorgang erfasst, während zusätzliche Rückfragen von Kundinnen und Kunden gesondert vermerkt wurden."
+          },
+          {
+            "id": "A3",
+            "text": "Die Autorinnen schlagen eine Ausweitung auf weitere Tätigkeitsbereiche unter kontrollierten Bedingungen vor. Besonders die langfristige Erreichbarkeit im Kundendienst und die Verteilung von Mehrarbeit seien vorab zu klären. Eine dauerhafte allgemeine Arbeitszeitverkürzung lässt sich aus den Pilotdaten nach ihrer eigenen Einschätzung noch nicht als betriebliche Verpflichtung ableiten."
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B · Anonyme Beschäftigtenbefragung",
+        "paragraphs": [
+          {
+            "id": "B1",
+            "text": "Eine anonyme Befragung unter den Beschäftigten derselben vier Teams ergab eine mehrheitlich positive Bewertung der zusätzlichen freien Zeit. Von insgesamt 68 eingeladenen Personen beantworteten jedoch nur 41 den Fragebogen vollständig. Personen mit starken Belastungsspitzen beteiligten sich seltener; ob ihre Antworten die Gesamtbewertung verändert hätten, kann die Befragung nicht bestimmen."
+          },
+          {
+            "id": "B2",
+            "text": "Mehrere Teilnehmende berichteten von höherer Konzentration, andere dagegen von verdichteten Besprechungen kurz vor Projektabgaben. Die Befragung erfasste erlebte Arbeitsintensität, während die Pilotstudie abgeschlossene Tickets zählte. Ein unveränderter Ticketdurchsatz widerlegt deshalb weder die Berichte über Verdichtung noch beweist die subjektive Entlastung eine Verbesserung der Produktqualität."
+          },
+          {
+            "id": "B3",
+            "text": "Im offenen Teil forderten Beschäftigte verlässlichere Vertretungsregeln, bevor das Modell auf den Support übertragen werde. Die Befragung enthält damit eine Bedingung aus Sicht der Betroffenen, aber keine Personalplanung und keinen Kostenvergleich. Eine Entscheidung der Unternehmensleitung über die Fortführung wurde zum Zeitpunkt der Erhebung nicht dokumentiert."
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "c1",
+        "sourceA": "A1",
+        "sourceB": "B1",
+        "quoteA": "Bei vier freiwillig teilnehmenden Softwareteams sank die erfasste Wochenarbeitszeit im Halbjahr um durchschnittlich vier Stunden.",
+        "quoteB": "Eine anonyme Befragung unter den Beschäftigten derselben vier Teams ergab eine mehrheitlich positive Bewertung der zusätzlichen freien Zeit.",
+        "issue": "Teilnahme und Übertragbarkeit",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Beide Quellen betreffen dieselben vier Teams; die erste dokumentiert eine begrenzte Arbeitszeitänderung, die zweite freiwillige Antworten mit geringerem Rücklauf. Keine davon belegt einen repräsentativen Effekt für alle Beschäftigten."
+          },
+          {
+            "id": "B",
+            "text": "Das Unternehmen hat mit einer repräsentativen Vollerhebung bewiesen, dass alle Beschäftigten vom Modell profitieren."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Feldstudie und die Befragung haben verschiedene Auswahl- und Erhebungsprozesse. Sie dürfen weder als zufällige Gesamtauswahl noch als identische Beobachtungen behandelt werden.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Teilnahme und Übertragbarkeit“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      },
+      {
+        "id": "c2",
+        "sourceA": "A2",
+        "sourceB": "B2",
+        "quoteA": "Die Zahl abgeschlossener Tickets blieb in drei Teams nahezu gleich und stieg im vierten leicht an.",
+        "quoteB": "Mehrere Teilnehmende berichteten von höherer Konzentration, andere dagegen von verdichteten Besprechungen kurz vor Projektabgaben.",
+        "issue": "Leistung und empfundene Intensität",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Befragung widerlegt die Ticketstatistik und zeigt eindeutig, dass die Leistung sämtlicher Teams zurückging."
+          },
+          {
+            "id": "B",
+            "text": "Der überwiegend stabile Ticketdurchsatz lässt sich mit unterschiedlichen Belastungserfahrungen vereinbaren: Die Messgröße beschreibt abgeschlossene Vorgänge, die Befragung persönliche Arbeitsintensität."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Unterschiedliche Zielgrößen sind nicht automatisch widersprüchliche Resultate. Eine belastbare Synthese muss zwischen Umfang, Qualität und subjektiver Arbeitsdichte unterscheiden.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Leistung und empfundene Intensität“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      },
+      {
+        "id": "c3",
+        "sourceA": "A3",
+        "sourceB": "B3",
+        "quoteA": "Die Autorinnen schlagen eine Ausweitung auf weitere Tätigkeitsbereiche unter kontrollierten Bedingungen vor.",
+        "quoteB": "Im offenen Teil forderten Beschäftigte verlässlichere Vertretungsregeln, bevor das Modell auf den Support übertragen werde.",
+        "issue": "Pilotempfehlung und Entscheidungsbefugnis",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Beide Texte benennen Prüfbedarf vor einer Ausweitung: Die Studie fordert kontrollierte Bedingungen, die Befragten funktionierende Vertretungsregeln. Eine Entscheidung über die Umsetzung ist damit nicht getroffen."
+          },
+          {
+            "id": "B",
+            "text": "Leitung und Beschäftigte haben bereits gemeinsam einen verbindlichen Ausbau auf den gesamten Support beschlossen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Fachliche Empfehlung, Forderung aus einer Befragung und institutioneller Beschluss sind verschiedene Sprechakte mit unterschiedlichen Zuständigkeiten.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Pilotempfehlung und Entscheidungsbefugnis“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      }
+    ],
+    "transfer": "Verfasse eine 180–250 Wörter lange Entscheidungsvorlage, die Datenreichweite, unterschiedliche Messgrößen und gemeinsame Bedingungen der Quellen nennt, ohne eine nicht belegte Zustimmung oder Produktivitätssteigerung zu behaupten.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M20 original fictional German drafting",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive Quellenpaare für Sprachgefühl M20; unabhängige Redaktion ausstehend"
+    }
+  },
+  {
+    "id": "SG-G09X-002",
+    "version": 1,
+    "domain": "G09",
+    "band": "C2",
+    "title": "Automatisierte Vorauswahl bei Stipendien",
+    "focus": "Modellgüte, Fairness und praktische Folgen zweier unabhängiger Prüfberichte",
+    "sources": [
+      {
+        "id": "A",
+        "title": "A · Technischer Evaluationsbericht",
+        "paragraphs": [
+          {
+            "id": "A1",
+            "text": "Ein Klassifikationsmodell ordnete historische Bewerbungen anhand früherer Auswahlentscheidungen nach einer Wahrscheinlichkeit für die Einladung zum Gespräch. In einer zurückgehaltenen Testmenge stimmten 84 Prozent der Prognosen mit den archivierten Entscheidungen überein. Der Bericht bezeichnet diese Übereinstimmung ausdrücklich als Vorhersage des bisherigen Verfahrens, nicht als Nachweis, dass dessen Entscheidungen sachlich gerecht waren."
+          },
+          {
+            "id": "A2",
+            "text": "Die Fehlerrate war bei Bewerbungen mit lückenhaften Unterlagen höher als bei vollständig standardisierten Datensätzen. Da die Aufzeichnungen aus älteren Ausschreibungsrunden stammen, waren mehrere Gründe für fehlende Dokumente nicht mehr rekonstruierbar. Der Evaluationsbericht empfiehlt, vor einer Einführung Herkunft und Vollständigkeit der Daten über alle Jahrgänge hinweg zu prüfen."
+          },
+          {
+            "id": "A3",
+            "text": "Das technische Team empfiehlt zunächst einen begrenzten Schattenbetrieb ohne automatische Ablehnung. Dabei sollen die maschinellen Vorschläge neben den menschlichen Bewertungen protokolliert, jedoch nicht unmittelbar für Bescheide verwendet werden. Der Bericht enthält weder eine Freigabe durch den Stipendienausschuss noch ein belastbares Urteil darüber, wie zusätzliche Einsprüche zu bearbeiten wären."
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B · Unabhängiger Verfahrensreview",
+        "paragraphs": [
+          {
+            "id": "B1",
+            "text": "Der externe Review wertete Gesprächsprotokolle und anonymisierte Beschwerden aus mehreren Stipendienrunden aus. Dabei wurde deutlich, dass frühere Einladungen häufig auch von informellen Empfehlungen abhingen, die in den standardisierten Daten nicht auftauchten. Eine hohe Trefferquote gegenüber früheren Entscheidungen könnte nach Einschätzung des Reviews somit bestehende Auswahlmuster reproduzieren, ohne deren Legitimität zu prüfen."
+          },
+          {
+            "id": "B2",
+            "text": "Bei unvollständig dokumentierten Bewerbungen fanden die Prüferinnen Unterschiede zwischen individuellen Aktennotizen und späteren elektronischen Kurzfassungen. Sie konnten nicht feststellen, wie häufig dies zu einer veränderten Entscheidung geführt hatte. Der Review mahnt deshalb eine nachvollziehbare Begründungspflicht an, statt aus dem unvollständigen Material eine konkrete Diskriminierungsquote abzuleiten."
+          },
+          {
+            "id": "B3",
+            "text": "Die Verfahrensprüfung hält einen zeitlich begrenzten Test grundsätzlich für denkbar, sofern Widerspruchswege klar kommuniziert und unabhängige Kontrollen eingerichtet werden. Sie spricht sich jedoch dagegen aus, technische Trefferquoten öffentlich als Fairnessnachweis auszugeben. Ein zuständiger Ausschuss muss über rechtliche Prüfung, Beteiligung und weitere Verwendung getrennt entscheiden."
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "c1",
+        "sourceA": "A1",
+        "sourceB": "B1",
+        "quoteA": "In einer zurückgehaltenen Testmenge stimmten 84 Prozent der Prognosen mit den archivierten Entscheidungen überein.",
+        "quoteB": "Der externe Review wertete Gesprächsprotokolle und anonymisierte Beschwerden aus mehreren Stipendienrunden aus.",
+        "issue": "Trefferquote und normative Qualität",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die hohe Modelltrefferquote beweist unabhängig vom Verfahrensreview, dass die früheren Auswahlentscheidungen diskriminierungsfrei waren."
+          },
+          {
+            "id": "B",
+            "text": "Eine 84-prozentige Reproduktion historischer Einladungen zeigt Vorhersageübereinstimmung, während der Verfahrensreview die möglichen informellen Einflüsse dieser historischen Entscheidungen untersuchte. Vorhersagegüte ist kein Fairnessnachweis."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die technische Zielgröße ist das vergangene Entscheidungsmuster. Ob dieses Muster normativ tragfähig war, verlangt andere Belege und eine eigenständige Beurteilung.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Trefferquote und normative Qualität“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      },
+      {
+        "id": "c2",
+        "sourceA": "A2",
+        "sourceB": "B2",
+        "quoteA": "Die Fehlerrate war bei Bewerbungen mit lückenhaften Unterlagen höher als bei vollständig standardisierten Datensätzen.",
+        "quoteB": "Bei unvollständig dokumentierten Bewerbungen fanden die Prüferinnen Unterschiede zwischen individuellen Aktennotizen und späteren elektronischen Kurzfassungen.",
+        "issue": "Datenlücken und Nachweisbarkeit",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Beide Berichte verweisen auf Dokumentationsprobleme aus verschiedenen Blickwinkeln: messbare Fehlerraten einerseits und abweichende Aktenübertragungen andererseits. Über die Häufigkeit fehlerhafter Entscheidungen lässt sich daraus noch keine belastbare Zahl ableiten."
+          },
+          {
+            "id": "B",
+            "text": "Die beiden Berichte ergeben zusammengenommen eine nachgewiesene Quote rechtswidrig abgelehnter Bewerbungen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Erhöhte Prognosefehler und unklare Aktenübertragungen sind Indizien für Prüfbedarf, aber keine unmittelbar messbare Rechtsverletzungsquote.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Datenlücken und Nachweisbarkeit“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      },
+      {
+        "id": "c3",
+        "sourceA": "A3",
+        "sourceB": "B3",
+        "quoteA": "Das technische Team empfiehlt zunächst einen begrenzten Schattenbetrieb ohne automatische Ablehnung.",
+        "quoteB": "Die Verfahrensprüfung hält einen zeitlich begrenzten Test grundsätzlich für denkbar, sofern Widerspruchswege klar kommuniziert und unabhängige Kontrollen eingerichtet werden.",
+        "issue": "Schattenbetrieb und Entscheidungsbefugnis",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Beide Prüfstellen haben die automatisierte Ablehnung aller als ungeeignet klassifizierten Anträge bereits genehmigt."
+          },
+          {
+            "id": "B",
+            "text": "Beide Texte lassen einen nicht entscheidungswirksamen Test unter Voraussetzungen zu. Der externe Review ergänzt Verfahrensgarantien; keiner der Berichte ersetzt den späteren Beschluss des zuständigen Ausschusses."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Ein vorgeschlagener Schattenbetrieb ohne Folgen für Bescheide unterscheidet sich grundlegend von automatisierter Ablehnung und erteilter institutioneller Erlaubnis.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Schattenbetrieb und Entscheidungsbefugnis“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      }
+    ],
+    "transfer": "Entwirf eine unabhängige Kurzbewertung für den Stipendienausschuss. Trenne prognostische Übereinstimmung, Legitimitätsprüfung, Datenprobleme und Bedingungen eines nicht entscheidungswirksamen Tests.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M20 original fictional German drafting",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive Quellenpaare für Sprachgefühl M20; unabhängige Redaktion ausstehend"
+    }
+  },
+  {
+    "id": "SG-G09X-003",
+    "version": 1,
+    "domain": "G09",
+    "band": "C1",
+    "title": "Energetische Modernisierung im Mietwohnungsbestand",
+    "focus": "Verbrauchsdaten versus Alltagserfahrungen bei unterschiedlichen Beobachtungseinheiten",
+    "sources": [
+      {
+        "id": "A",
+        "title": "A · Technischer Verbrauchsbericht",
+        "paragraphs": [
+          {
+            "id": "A1",
+            "text": "In zwölf sanierten Häusern sank der witterungsbereinigte Heizenergiebedarf im ersten Winter nach Abschluss der Arbeiten im Mittel um elf Prozent. Die Auswertung stützt sich auf Zählerstände auf Gebäudeebene und korrigiert diese rechnerisch um Außentemperaturunterschiede. Nicht erfasst wurde, wie sich einzelne Haushalte hinsichtlich Raumtemperatur und Lüftung verhielten."
+          },
+          {
+            "id": "A2",
+            "text": "Bei drei Häusern lag der tatsächliche Verbrauch höher als in den energetischen Modellrechnungen vorhergesagt. Die Fachfirma nennt unter anderem noch nicht optimal eingestellte Heizkurven als mögliche Ursache. Weil die Anlagensteuerung erst später nachjustiert wurde, lässt sich aus dieser ersten Heizperiode keine stabile Langzeitprognose für jedes einzelne Gebäude ableiten."
+          },
+          {
+            "id": "A3",
+            "text": "Der Bericht empfiehlt eine zweite Messperiode und eine transparente Darstellung der Betriebskosten vor einer pauschalen Aussage über finanzielle Entlastungen. Eine Reduktion des Heizenergiebedarfs kann mit veränderten Kosten pro Kilowattstunde zusammenfallen. Aus der technischen Messung allein ist daher weder eine konstante Warmmiete noch eine gleichmäßige Ersparnis für alle Mietparteien ersichtlich."
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B · Qualitative Wohnungsbefragung",
+        "paragraphs": [
+          {
+            "id": "B1",
+            "text": "Ein Forschungsteam führte in fünf der zwölf Häuser ausführliche Gespräche mit 24 Haushalten. Einige berichteten nach der Sanierung von weniger Zugluft, andere von Schwierigkeiten bei der Regelung der neuen Heizkörper. Die Auswahl erfolgte über freiwillige Rückmeldungen an die Hausverwaltungen und war nicht als repräsentative Stichprobe aller Bewohnerinnen und Bewohner angelegt."
+          },
+          {
+            "id": "B2",
+            "text": "Mehrere Befragte beschrieben nach den Umbauten häufiger beschlagene Fenster, während andere von gleichmäßigeren Temperaturen sprachen. Die Interviews dokumentieren diese Erfahrungen, enthalten aber keine unabhängigen Messreihen zur Luftfeuchtigkeit oder zum Lüftungsverhalten. Die unterschiedlichen Beobachtungen sind daher nicht unmittelbar mit den Zählerwerten der Gebäude gleichzusetzen."
+          },
+          {
+            "id": "B3",
+            "text": "Eine Mehrheit der interviewten Haushalte wünschte eine verständliche Abrechnung und persönliche Beratung zur neuen Heiztechnik. Über die tatsächliche Entwicklung der Nebenkosten konnten die Befragten noch keine vollständige Jahresabrechnung vorlegen. Die Autorinnen empfehlen, technische Nachmessungen mit einer erneuten Befragung nach der ersten Abrechnung zu verbinden."
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "c1",
+        "sourceA": "A1",
+        "sourceB": "B1",
+        "quoteA": "In zwölf sanierten Häusern sank der witterungsbereinigte Heizenergiebedarf im ersten Winter nach Abschluss der Arbeiten im Mittel um elf Prozent.",
+        "quoteB": "Ein Forschungsteam führte in fünf der zwölf Häuser ausführliche Gespräche mit 24 Haushalten.",
+        "issue": "Messbereich und Beteiligung",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die elf Prozent beschreiben einen rechnerisch bereinigten Gebäudemittelwert; die Interviews betreffen freiwillig teilnehmende Haushalte aus fünf Häusern. Die beiden Befunde sind nicht als identische Stichprobe oder individuelle Einsparquote zu lesen."
+          },
+          {
+            "id": "B",
+            "text": "Sämtliche befragten Haushalte haben wegen der Sanierung nachweislich genau elf Prozent ihrer Heizkosten eingespart."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Gebäudeenergiebedarf, Kosten und individuelle Haushaltsangaben unterscheiden sich nach Einheit, Messmethode und Abdeckung.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Messbereich und Beteiligung“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      },
+      {
+        "id": "c2",
+        "sourceA": "A2",
+        "sourceB": "B2",
+        "quoteA": "Bei drei Häusern lag der tatsächliche Verbrauch höher als in den energetischen Modellrechnungen vorhergesagt.",
+        "quoteB": "Mehrere Befragte beschrieben nach den Umbauten häufiger beschlagene Fenster, während andere von gleichmäßigeren Temperaturen sprachen.",
+        "issue": "Technische Abweichungen und Erleben",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die drei Häuser mit Mehrverbrauch verursachten erwiesenermaßen alle in den Interviews berichteten Fensterprobleme."
+          },
+          {
+            "id": "B",
+            "text": "Der technische Bericht zeigt Abweichungen von Berechnungen, die Interviews verschiedene Komforterfahrungen. Ohne zugeordnete Luftfeuchtigkeits- und Anlagendaten lässt sich kein direkter Ursache-Wirkungs-Zusammenhang für die Fensterbeobachtungen behaupten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Weder räumliche Zuordnung noch vergleichbare Messgrößen oder Kontrollbedingungen erlauben die Gleichsetzung der zwei Befunde.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Technische Abweichungen und Erleben“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      },
+      {
+        "id": "c3",
+        "sourceA": "A3",
+        "sourceB": "B3",
+        "quoteA": "Der Bericht empfiehlt eine zweite Messperiode und eine transparente Darstellung der Betriebskosten vor einer pauschalen Aussage über finanzielle Entlastungen.",
+        "quoteB": "Eine Mehrheit der interviewten Haushalte wünschte eine verständliche Abrechnung und persönliche Beratung zur neuen Heiztechnik.",
+        "issue": "Nächste Untersuchung und Kosten",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der technische Bericht mahnt weitere Messung und Kostenprüfung an; die Befragung belegt Informationsbedarf. Eine tatsächliche finanzielle Entlastung aller Haushalte ist in keinem Text ausgewiesen."
+          },
+          {
+            "id": "B",
+            "text": "Die Modernisierung hat nach beiden Quellen für alle Mietparteien bereits eine stabile Senkung der Warmmiete nachgewiesen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Eine Empfehlung zur Kostenanalyse und ein geäußerter Beratungswunsch sind kein beobachtetes, verallgemeinerbares Abrechnungsergebnis.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Nächste Untersuchung und Kosten“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      }
+    ],
+    "transfer": "Verfasse eine sachliche Information an den Mieterbeirat, die Gebäudemesswerte, subjektive Erfahrungen und offenen Kostenfragen getrennt zusammenführt.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M20 original fictional German drafting",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive Quellenpaare für Sprachgefühl M20; unabhängige Redaktion ausstehend"
+    }
+  },
+  {
+    "id": "SG-G09X-004",
+    "version": 1,
+    "domain": "G09",
+    "band": "C2",
+    "title": "Digitalisierung historischer Archivbestände",
+    "focus": "Erfassungsquoten, Zugänglichkeit und Forschungstauglichkeit als verschiedene Erfolgskriterien",
+    "sources": [
+      {
+        "id": "A",
+        "title": "A · Interner Projektbericht",
+        "paragraphs": [
+          {
+            "id": "A1",
+            "text": "Das Archiv meldet für das abgeschlossene Quartal 18 400 neu digitalisierte Bilddateien aus historischen Aktenbeständen. Gezählt wurden technisch erfolgreich erstellte Dateien nach der Qualitätssicherung des Scanprozesses. Ob die Dokumente hinreichend erschlossen, korrekt verschlagwortet oder rechtlich für den öffentlichen Zugriff freigegeben sind, wird in dieser Zahl ausdrücklich nicht abgebildet."
+          },
+          {
+            "id": "A2",
+            "text": "Bei einer internen Stichprobe waren die Bildschärfe und Lesbarkeit der ausgewählten Scans überwiegend zufriedenstellend. Die Prüfung betraf jedoch jeweils einzelne Seiten und nicht die Vollständigkeit der zugehörigen Akteneinheiten. Fehlende Beilagen, falsche Reihenfolgen und unklare Bestandssignaturen wurden daher in einem separaten Rückstandskatalog geführt."
+          },
+          {
+            "id": "A3",
+            "text": "Die Projektleitung schlägt vor, die Digitalisierung im nächsten Halbjahr auf weitere Sammlungen auszuweiten. Dafür müssten vorab zusätzliche Kapazitäten für Metadaten, Rechteklärung und Bestandspflege eingeplant werden. Der Bericht hält diese Bereiche ausdrücklich für eigenständige Voraussetzungen einer nutzbaren Veröffentlichung und enthält noch keinen rechtswirksamen Freigabevermerk."
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B · Externe Nutzungsstudie",
+        "paragraphs": [
+          {
+            "id": "B1",
+            "text": "Eine Forschungsgruppe ließ zwölf historisch arbeitende Personen mit dem neu aufgebauten Rechercheportal arbeiten. Trotz des sichtbaren Zuwachses an Bilddateien fanden viele ihre gesuchten Vorgänge nicht auf Anhieb, weil die Suchbegriffe nur auf einem Teil der Digitalisate erfasst waren. Die Untersuchung misst konkrete Recherchehandlungen und erhebt keinen vollständigen Zensus aller potenziellen Nutzergruppen."
+          },
+          {
+            "id": "B2",
+            "text": "Bei zwei Testaufgaben konnten die Teilnehmenden zwar lesbare Einzelseiten aufrufen, nicht aber zuverlässig die Reihenfolge der gesamten Akte nachvollziehen. Ohne stabile Verknüpfung zur Archivsignatur war zudem unklar, ob die abgerufene Seite zur richtigen Fassung gehörte. Die Studie hebt deshalb den Unterschied zwischen technischer Lesbarkeit und quellenkritisch brauchbarem Zusammenhang hervor."
+          },
+          {
+            "id": "B3",
+            "text": "Die Studie empfiehlt vorrangig eine überarbeitete Metadatenstruktur und nachvollziehbare Zugriffsregeln. Die befragten Personen wünschen außerdem Kennzeichnungen für unvollständige Einheiten und gesperrte Rechtefälle. Damit beschreibt der Text Anforderungen aus Nutzersicht; über deren Finanzierung oder die tatsächliche Veröffentlichung weiterer Bestände konnte das Forschungsteam nicht entscheiden."
+          }
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "c1",
+        "sourceA": "A1",
+        "sourceB": "B1",
+        "quoteA": "Das Archiv meldet für das abgeschlossene Quartal 18 400 neu digitalisierte Bilddateien aus historischen Aktenbeständen.",
+        "quoteB": "Eine Forschungsgruppe ließ zwölf historisch arbeitende Personen mit dem neu aufgebauten Rechercheportal arbeiten.",
+        "issue": "Dateizahl und auffindbare Quellen",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die 18 400 Bilddateien beweisen, dass alle historisch Forschenden jede gesuchte Quelle vollständig und fehlerfrei finden."
+          },
+          {
+            "id": "B",
+            "text": "Die Projektkennzahl betrifft erzeugte Bilddateien, die Nutzungsstudie dagegen das Auffinden von Quellen in konkreten Aufgaben. Ein hoher Scan-Durchsatz garantiert keine gleich hohe Recherchezugänglichkeit."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Erstellte Dateien und erfolgreiche Suchvorgänge unterscheiden sich als Messobjekte; die Nutzerstichprobe ist klein und nicht als Gesamtpopulation ausgewiesen.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Dateizahl und auffindbare Quellen“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      },
+      {
+        "id": "c2",
+        "sourceA": "A2",
+        "sourceB": "B2",
+        "quoteA": "Bei einer internen Stichprobe waren die Bildschärfe und Lesbarkeit der ausgewählten Scans überwiegend zufriedenstellend.",
+        "quoteB": "Bei zwei Testaufgaben konnten die Teilnehmenden zwar lesbare Einzelseiten aufrufen, nicht aber zuverlässig die Reihenfolge der gesamten Akte nachvollziehen.",
+        "issue": "Lesbarkeit und dokumentarischer Zusammenhang",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Beide Texte sind miteinander vereinbar: gut lesbare einzelne Scans können ohne sichere Reihenfolge und Archivsignatur dennoch unzureichend für quellenkritische Arbeit sein."
+          },
+          {
+            "id": "B",
+            "text": "Die externe Nutzungsstudie beweist, dass die technische Bildschärfe der internen Stichprobe durchweg mangelhaft war."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Lesbarkeit ist nicht mit Aktenvollständigkeit, Reihenfolge oder korrekter archivalischer Zuordnung gleichzusetzen.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Lesbarkeit und dokumentarischer Zusammenhang“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      },
+      {
+        "id": "c3",
+        "sourceA": "A3",
+        "sourceB": "B3",
+        "quoteA": "Die Projektleitung schlägt vor, die Digitalisierung im nächsten Halbjahr auf weitere Sammlungen auszuweiten.",
+        "quoteB": "Die Studie empfiehlt vorrangig eine überarbeitete Metadatenstruktur und nachvollziehbare Zugriffsregeln.",
+        "issue": "Ausbau und Rechtefreigabe",
+        "question": "Welche gemeinsame Schlussfolgerung ist durch beide Quellen gedeckt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Archiv und Forschungsteam haben die vollständige, rechtsverbindliche Veröffentlichung aller neuen Sammlungen bereits beschlossen."
+          },
+          {
+            "id": "B",
+            "text": "Projektbericht und Nutzerstudie benennen jeweils eigene Prioritäten. Beide verlangen begleitende Metadaten- und Rechtearbeit; eine Freigabe oder Finanzierung zusätzlicher Bestände lässt sich daraus nicht ableiten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Ein Projektvorschlag und eine externe Empfehlung ersetzen weder Haushaltsentscheidung noch Rechtsprüfung und Zugriffsfreigabe.",
+        "transferCue": "Stelle die Belege aus Quelle A und Quelle B zu „Ausbau und Rechtefreigabe“ nebeneinander und benenne die begrenzte gemeinsame Schlussfolgerung."
+      }
+    ],
+    "transfer": "Verfasse eine präzise Kurzbewertung für einen wissenschaftlichen Beirat und unterscheide Scanfortschritt, historische Verlässlichkeit, Suchbarkeit und offene Freigabefragen.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M20 original fictional German drafting",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive Quellenpaare für Sprachgefühl M20; unabhängige Redaktion ausstehend"
+    }
+  }
+]
