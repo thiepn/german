@@ -53,5 +53,7 @@
   "compressionDraftCount": 4,
   "compressionDraftSource": "content/fixtures/g04-compression.demo.json",
   "attributionDraftCount": 4,
-  "attributionDraftSource": "content/fixtures/g11-attribution.demo.json"
+  "attributionDraftSource": "content/fixtures/g11-attribution.demo.json",
+  "repairDraftCount": 4,
+  "repairDraftSource": "content/fixtures/g12-repair.demo.json"
 }
