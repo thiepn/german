@@ -51,5 +51,7 @@
   "crossSourceDraftCount": 4,
   "crossSourceDraftSource": "content/fixtures/g09-cross-source.demo.json",
   "compressionDraftCount": 4,
-  "compressionDraftSource": "content/fixtures/g04-compression.demo.json"
+  "compressionDraftSource": "content/fixtures/g04-compression.demo.json",
+  "attributionDraftCount": 4,
+  "attributionDraftSource": "content/fixtures/g11-attribution.demo.json"
 }
