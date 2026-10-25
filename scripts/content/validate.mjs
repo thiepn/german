@@ -369,6 +369,25 @@ for(const s of m24){
 }
 if(argumentIds.size!==4||argumentBands.size!==2||argumentFocuses.size!==4||argumentNodes!==12||argumentPreferredB<4)throw Error('Insufficient G11 argument variety');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m25=read(manifest.numericDraftSource);
+if(manifest.numericDraftCount!==4||m25.length!==4)throw Error('M25 numerical precision dossier count mismatch');
+const numericalIds=new Set(),numericalBands=new Set(),numericalFocuses=new Set();let numericalClaims=0,numericalPreferredB=0;
+for(const s of m25){
+ if(!/^SG-G09N-\d{3}$/.test(s.id)||numericalIds.has(s.id)||s.version!==1||s.domain!=='G09'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified numerical precision dossier '+s.id);
+ numericalIds.add(s.id);numericalBands.add(s.band);numericalFocuses.add(s.focus);
+ if(!s.title?.trim()||s.focus?.length<25||s.brief?.length<110||s.paragraphs?.length!==3||s.claims?.length!==3)throw Error('Incomplete numerical precision study '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<500)throw Error('Incomplete numeric source paragraph '+s.id+':'+p.id);
+ for(const [i,n] of s.claims.entries()){
+  const p=s.paragraphs[i],quoted='„'+n.quote+'“';
+  if(n.id!=='n'+(i+1)||n.paragraphId!==p.id||n.quote?.length<25||n.quote.length>140||!p.text.includes(quoted)||p.text.split(quoted).length!==2||
+  !n.question?.trim()||n.model?.length<90||n.trap?.length<75||n.options?.length!==2||n.options[0].id!=='A'||n.options[1].id!=='B'||n.options[0].text===n.options[1].text||
+  n.options.some(o=>o.text?.length<90)||!['A','B'].includes(n.preferredId))throw Error('Numerical statement not anchored '+s.id+':'+n.id);
+  numericalClaims++;if(n.preferredId==='B')numericalPreferredB++;
+ }
+}
+if(numericalIds.size!==4||numericalBands.size!==2||numericalFocuses.size!==4||numericalClaims!==12||numericalPreferredB<4)throw Error('Insufficient G09 numerical claim variation');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

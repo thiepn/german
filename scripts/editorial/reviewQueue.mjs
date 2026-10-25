@@ -112,7 +112,13 @@ export function collect(){
   ...s.arguments.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G11_WARRANT_AND_COUNTERARGUMENT',mode:'G11_ARGUMENT',status:s.status,authorId:s.author,prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,options:a.options,preferredId:a.preferredId,model:a.model,counter:a.counter,issues:['Check literal source quote against paragraph','Independently review inferential warrant, alternative causes and strongest plausible objections','Verify nuanced counterargument, independent production and revision transfer','Keep editorial approval false; no auto-grade for free German writing'],independentEditorialApproval:false}))
  ]);
  if(argument.length!==manifest.argumentDraftCount*4)throw Error('Incomplete G11 argument editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument],allIds=new Set();
+
+ const numeric=read(manifest.numericDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G09_ORIGINAL_NUMERICAL_SOURCE',mode:'G09_NUMERIC',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently verify all fictional counts, units, denominators, percentage arithmetic and temporal comparisons','Review complete idiomatic original German, rights and proposed reader audience','No human review completed; keep DEMO_ONLY, no CEFR grade or publication'],independentEditorialApproval:false},
+  ...s.claims.map(n=>({id:s.id+':'+n.id,version:s.version,type:'G09_QUANTITATIVE_CLAIM',mode:'G09_NUMERIC',status:s.status,authorId:s.author,prompt:n.question,quote:n.quote,paragraphId:n.paragraphId,options:n.options,preferredId:n.preferredId,model:n.model,trap:n.trap,issues:['Verify literal quote against original source paragraph','Recalculate source arithmetic and distinguish counts, percent and percentage points','Review original denominator, measurement unit, cohort and forecast boundaries','Assess independent German writing without automatic grading or approval'],independentEditorialApproval:false}))
+ ]);
+ if(numeric.length!==manifest.numericDraftCount*4)throw Error('Incomplete G09 numeric editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }
