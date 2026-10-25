@@ -55,5 +55,7 @@
   "attributionDraftCount": 4,
   "attributionDraftSource": "content/fixtures/g11-attribution.demo.json",
   "repairDraftCount": 4,
-  "repairDraftSource": "content/fixtures/g12-repair.demo.json"
+  "repairDraftSource": "content/fixtures/g12-repair.demo.json",
+  "argumentDraftCount": 4,
+  "argumentDraftSource": "content/fixtures/g11-argument.demo.json"
 }
