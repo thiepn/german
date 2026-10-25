@@ -388,6 +388,26 @@ for(const s of m25){
 }
 if(numericalIds.size!==4||numericalBands.size!==2||numericalFocuses.size!==4||numericalClaims!==12||numericalPreferredB<4)throw Error('Insufficient G09 numerical claim variation');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m26=read(manifest.disclosureDraftSource);
+if(manifest.disclosureDraftCount!==4||m26.length!==4)throw Error('M26 disclosure count mismatch');
+const disclosureIds=new Set(),disclosureBands=new Set(),disclosureRestricted=new Set();let disclosureAnchors=0,disclosureB=0;
+for(const s of m26){
+ if(!/^SG-G13D-\d{3}$/.test(s.id)||disclosureIds.has(s.id)||s.version!==1||s.domain!=='G13'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G13 source '+s.id);
+ disclosureIds.add(s.id);disclosureBands.add(s.band);
+ if(s.focus?.length<35||s.brief?.length<100||s.paragraphs?.length!==3||s.decisions?.length!==3||s.audiences?.length!==2||s.audiences[0].id!=='PUBLIC'||s.audiences[1].id!=='INTERNAL')throw Error('Incomplete G13 source '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<500)throw Error('Incomplete G13 paragraph '+s.id+':'+p.id);
+ for(const [i,d] of s.decisions.entries()){
+  const p=s.paragraphs[i],quoted='„'+d.quote+'“';
+  if(d.id!=='d'+(i+1)||d.paragraphId!==p.id||d.quote?.length<35||d.quote.length>140||!p.text.includes(quoted)||p.text.split(quoted).length!==2||
+   !/^[A-Z]{2}-\d{4}$/.test(d.restricted)||!p.text.includes(d.restricted)||disclosureRestricted.has(d.restricted)||
+   d.action?.length<85||d.boundary?.length<70||d.options?.length!==2||d.options[0].id!=='A'||d.options[1].id!=='B'||d.options[0].text===d.options[1].text||
+   d.options.some(o=>o.text?.length<85)||!['A','B'].includes(d.preferredId)||!d.options.find(o=>o.id!==d.preferredId)?.text.includes(d.restricted))throw Error('Unanchored G13 disclosure '+s.id+':'+d.id);
+  disclosureRestricted.add(d.restricted);disclosureAnchors++;if(d.preferredId==='B')disclosureB++;
+ }
+}
+if(disclosureIds.size!==4||disclosureBands.size!==2||disclosureRestricted.size!==12||disclosureAnchors!==12||disclosureB<4)throw Error('Insufficient G13 disclosure coverage');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

@@ -118,7 +118,13 @@ export function collect(){
   ...s.claims.map(n=>({id:s.id+':'+n.id,version:s.version,type:'G09_QUANTITATIVE_CLAIM',mode:'G09_NUMERIC',status:s.status,authorId:s.author,prompt:n.question,quote:n.quote,paragraphId:n.paragraphId,options:n.options,preferredId:n.preferredId,model:n.model,trap:n.trap,issues:['Verify literal quote against original source paragraph','Recalculate source arithmetic and distinguish counts, percent and percentage points','Review original denominator, measurement unit, cohort and forecast boundaries','Assess independent German writing without automatic grading or approval'],independentEditorialApproval:false}))
  ]);
  if(numeric.length!==manifest.numericDraftCount*4)throw Error('Incomplete G09 numeric editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric],allIds=new Set();
+
+ const disclosure=read(manifest.disclosureDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G13_ORIGINAL_DISCLOSURE_SOURCE',mode:'G13_DISCLOSURE',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independent review of full original fictional sources, limits and rights','Verify clarity of both target audiences and information minimization','No independent approval or publication'],independentEditorialApproval:false},
+  ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G13_DISCLOSURE_DECISION',mode:'G13_DISCLOSURE',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,paragraphId:d.paragraphId,options:d.options,preferredId:d.preferredId,action:d.action,boundary:d.boundary,issues:['Check direct source quotation, action and fictional restricted token','Check limited disclosure without unnecessary detail and no invented approval','Check independent public/internal versions and meaningful revisions; no automatic grades'],independentEditorialApproval:false}))
+ ]);
+ if(disclosure.length!==manifest.disclosureDraftCount*4)throw Error('Incomplete G13 disclosure editorial worklist');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }
