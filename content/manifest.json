@@ -59,5 +59,7 @@
   "argumentDraftCount": 4,
   "argumentDraftSource": "content/fixtures/g11-argument.demo.json",
   "numericDraftCount": 4,
-  "numericDraftSource": "content/fixtures/g09-numeracy.demo.json"
+  "numericDraftSource": "content/fixtures/g09-numeracy.demo.json",
+  "disclosureDraftCount": 4,
+  "disclosureDraftSource": "content/fixtures/g13-disclosure.demo.json"
 }
