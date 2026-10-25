@@ -61,7 +61,7 @@ async function run(width){
  await p.getByRole('button',{name:'Originalen Lernbereich öffnen'}).click();await p.getByRole('heading',{name:'Zahlen präzise ausdrücken',exact:true}).waitFor();
  await p.getByText(statements[1],{exact:false}).first().waitFor();
  await p.reload({waitUntil:'networkidle'});await p.getByRole('button',{name:'Lernen',exact:true}).first().click();
- await p.locator('article').filter({hasText:'Lesen und Belegarbeit'}).getByRole('button',{name:'Zahlen präzise ausdrücken'}).click();
+ await p.locator('article').filter({hasText:'Lesen und Textkompetenz'}).getByRole('button',{name:'Zahlen präzise ausdrücken'}).click();
  await p.getByText(statements[0],{exact:false}).first().waitFor();assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,'horizontal overflow');
  console.log('PASS M25 G09 quantitative precision, denominators, CAS, independent briefing, revision, Archive/reload '+width);
  }finally{await ctx.close()}
