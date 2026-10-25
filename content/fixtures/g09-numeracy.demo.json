@@ -331,7 +331,7 @@
         ],
         "preferredId": "A",
         "model": "Ein Szenariointervall ist kein gemessener Ist-Wert und seine Obergrenze keine garantierte Mindestwirkung.",
-        "trap": "Modalität und Bandbreite gehören zum numerischen Inhalt."
+        "trap": "Eine prognostizierte Bandbreite ist keine nachträglich festgestellte Einsparung: Weder die obere Grenze noch eine einzelne Wohnung darf als garantierter Wert dargestellt werden."
       },
       {
         "id": "n3",
