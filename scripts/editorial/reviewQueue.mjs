@@ -106,7 +106,13 @@ export function collect(){
   ...s.repairs.map(t=>({id:s.id+':'+t.id,version:s.version,type:'G12_AMBIGUITY_REPAIR',mode:'G12_REPAIR',status:s.status,authorId:s.author,prompt:t.question,quote:t.quote,speaker:t.speaker,paragraphId:t.paragraphId,options:t.options,preferredId:t.preferredId,clarified:t.clarified,model:t.model,issues:['Verify verbatim utterance and speaker in source paragraph','Independently review plausible conflicting interpretations and conditional commitments','Assess open-ended clarification question, cautious reply and unresolved-status transfer','Preserve author rights, DEMO_ONLY status and no automatic scores'],independentEditorialApproval:false}))
  ]);
  if(repair.length!==manifest.repairDraftCount*4)throw Error('Incomplete G12 repair editorial dossiers');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair],allIds=new Set();
+
+ const argument=read(manifest.argumentDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G11_ORIGINAL_ARGUMENT_SOURCE',mode:'G11_ARGUMENT',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently review original German prose, rights and all source scopes','Evaluate plausibility of premises, opposing arguments and limited institutional decisions','Preserve DEMO_ONLY, no language score, CEFR credit or publication signoff'],independentEditorialApproval:false},
+  ...s.arguments.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G11_WARRANT_AND_COUNTERARGUMENT',mode:'G11_ARGUMENT',status:s.status,authorId:s.author,prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,options:a.options,preferredId:a.preferredId,model:a.model,counter:a.counter,issues:['Check literal source quote against paragraph','Independently review inferential warrant, alternative causes and strongest plausible objections','Verify nuanced counterargument, independent production and revision transfer','Keep editorial approval false; no auto-grade for free German writing'],independentEditorialApproval:false}))
+ ]);
+ if(argument.length!==manifest.argumentDraftCount*4)throw Error('Incomplete G11 argument editorial dossiers');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }
