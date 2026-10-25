@@ -1,0 +1,366 @@
+[
+  {
+    "id": "SG-G09N-001",
+    "version": 1,
+    "domain": "G09",
+    "band": "C2",
+    "title": "Studienförderung: Quote, Nenner und Auswahl",
+    "focus": "Bewerbungsquote, Prozentpunkte und wechselnde Grundgesamtheit",
+    "brief": "Verfasse einen überprüfbaren Bericht für einen Hochschulausschuss: Trenne Bewerbungsanteile von Bewilligungsquoten, Prozentpunkte von relativen Veränderungen und zeitlich verschieden abgegrenzte Gruppen. Überarbeite eine missverständliche Formulierung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Das Förderreferat veröffentlichte für zwei Bewerbungsrunden eine Auswertung der Entscheidungen. In der ersten Runde wurden 200 von 1.000 förderfähigen Anträgen bewilligt, in der zweiten 250 von ebenfalls 1.000. In der Kurzfassung stand: „Die Bewilligungsquote stieg von 20 auf 25 Prozent.“ Der Abstand beträgt fünf Prozentpunkte; bezogen auf den Ausgangswert von 20 Prozent ist dies eine relative Zunahme um ein Viertel. Der Bericht nennt keine Vergleichsdaten zur sozialen Zusammensetzung der beiden Gruppen und führt den Anstieg nicht auf eine bestimmte Regeländerung zurück."
+      },
+      {
+        "id": "p2",
+        "text": "In einer freiwilligen Befragung wurden 300 Personen angeschrieben, die bereits eine Förderung erhalten hatten. 180 von ihnen beantworteten die Fragen vollständig, während die nicht antwortenden 120 Personen nicht erneut kontaktiert wurden. Die Statistik fasste zusammen: „Von den befragten Geförderten antworteten 60 Prozent.“ Eine Frage zur Verständlichkeit des Bescheids beantworteten 135 der 180 Teilnehmenden positiv. Das entspricht 75 Prozent der Antwortenden, aber lediglich 45 Prozent aller Angeschriebenen. Eine Aussage über sämtliche Förderberechtigte wäre durch diesen Rücklauf nicht gedeckt."
+      },
+      {
+        "id": "p3",
+        "text": "In einer zweiten Notiz verglich das Referat 560 Erstanträge mit 500 im vorherigen Jahr. Es schrieb: „Die Zahl der Erstanträge lag zwölf Prozent über dem Vorjahr.“ Allerdings wurden im aktuellen Jahr erstmals auch Bewerbungen aus einem neuen Teilstudiengang gezählt. Aus diesem Teilstudiengang gingen 35 Erstanträge ein. Für die früher erfassten Studiengänge verblieben damit 525 Anträge, also fünf Prozent mehr als die 500 des Vorjahrs. Die Änderung der Berichtseinheit macht eine unbegrenzte Aussage über die Nachfrageentwicklung problematisch."
+      }
+    ],
+    "claims": [
+      {
+        "id": "n1",
+        "paragraphId": "p1",
+        "quote": "Die Bewilligungsquote stieg von 20 auf 25 Prozent.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Quote erhöhte sich um fünf Prozentpunkte beziehungsweise relativ um 25 Prozent gegenüber der ersten Runde; über die Ursache lässt sich daraus noch nichts Sicheres sagen."
+          },
+          {
+            "id": "B",
+            "text": "Die Quote erhöhte sich um fünf Prozent und damit um genau fünf Prozentpunkte relativ zum Ausgangswert, wodurch die Wirkung der Reform bewiesen ist."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Differenz von 25 und 20 ist fünf Prozentpunkte; die relative Steigerung von 5/20 beträgt 25 Prozent. Kausalität ist nicht gemessen.",
+        "trap": "Eine relative Prozentänderung ist keine Prozentpunktdifferenz; nur mit explizitem Ausgangswert bleibt die Umrechnung nachvollziehbar."
+      },
+      {
+        "id": "n2",
+        "paragraphId": "p2",
+        "quote": "Von den befragten Geförderten antworteten 60 Prozent.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "75 Prozent aller Förderberechtigten bewerteten den Bescheid positiv, denn 135 Personen machten eine zustimmende Angabe."
+          },
+          {
+            "id": "B",
+            "text": "135 der 180 Antwortenden bewerteten den Bescheid positiv, während 120 angeschriebene Geförderte nicht teilnahmen; das ist keine Quote für alle Berechtigten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die für 75 Prozent verwendete Grundgesamtheit umfasst 180 Antwortende und nicht 300 Angeschriebene oder alle Förderberechtigten.",
+        "trap": "Die Auswahl der Geförderten und der freiwillige Rücklauf schränken die Übertragbarkeit ein; 135/300 sind 45 Prozent."
+      },
+      {
+        "id": "n3",
+        "paragraphId": "p3",
+        "quote": "Die Zahl der Erstanträge lag zwölf Prozent über dem Vorjahr.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "In der erweiterten Zählung stieg die Zahl der Erstanträge um zwölf Prozent; bei unverändertem Fächerschnitt betrug der Anstieg fünf Prozent."
+          },
+          {
+            "id": "B",
+            "text": "In genau denselben Studiengängen nahm die Nachfrage um zwölf Prozent zu, weil 560 Anträge gegenüber 500 im Vorjahr erfasst wurden."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die um einen Studiengang erweiterte Grundgesamtheit erzeugt die Differenz zwischen zwölf Prozent Gesamtzunahme und fünf Prozent vergleichbarer Zunahme.",
+        "trap": "Vergleiche benötigen gleiche Abgrenzungen; 525 statt 500 sind fünf Prozent, 560 statt 500 zwölf Prozent."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M25 original fictitious numerical German source dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive deutsche Lehrtexte und Zahlenfälle; keine übernommenen Statistiken; unabhängige Redaktion offen"
+    }
+  },
+  {
+    "id": "SG-G09N-002",
+    "version": 1,
+    "domain": "G09",
+    "band": "C2",
+    "title": "Verkehrsbericht: Durchschnitt, Median und Wegfall",
+    "focus": "Lageparameter, Zeitfenster und scheinbar eindeutige Verbesserung",
+    "brief": "Schreibe eine knappe Verkehrsanalyse für die Stadtteilvertretung, die Mittelwerte nicht zu typischen Einzelfällen erklärt und aus Teilmessungen keine ganztägige Wirkung ableitet. Überarbeite deine Schlussfolgerung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein Pilot zur geänderten Ampelschaltung wurde an vier aufeinanderfolgenden Werktagen im Nachmittagsverkehr erfasst. Der technische Bericht nennt für fünf exemplarische Wartezeiten die Werte zwei, drei, vier, sechs und zwanzig Minuten. Zur Zusammenfassung stand dort: „Die mittlere Wartezeit betrug sieben Minuten.“ Der arithmetische Mittelwert dieser Werte ist sieben Minuten, während der Median bei vier Minuten liegt. Die einzelne lange Wartezeit beeinflusst den Mittelwert deutlich. Eine Aussage über alle Stunden oder sämtliche Haltestellen lässt sich aus der kleinen Zeitstichprobe nicht ableiten."
+      },
+      {
+        "id": "p2",
+        "text": "Bei einem Busspurversuch wurden über einen Monat zwanzig Arbeitstage protokolliert. An zwölf Tagen meldete der Betrieb keine technische Störung, an acht Tagen dagegen mindestens eine. In der Auswertung hieß es: „An zwölf von zwanzig Messtagen gab es keine Störung.“ Auf die Zahl der Fahrten bezogene Angaben lagen noch nicht vor; zudem waren kurze Störungen an den acht betroffenen Tagen unterschiedlich stark. Die Quote von 60 Prozent störungsfreien Tagen ist daher keine Aussage darüber, dass 60 Prozent aller Fahrten problemlos waren oder wie lange Fahrgäste jeweils warten mussten."
+      },
+      {
+        "id": "p3",
+        "text": "Die Verkehrsplanung verglich die Zählungen von 1.200 Fahrzeugen pro Stunde vor dem Versuch mit rund 1.080 Fahrzeugen pro Stunde während des Versuchs, jeweils nur zwischen sieben und acht Uhr. Im Text wurde festgehalten: „In der Frühspitze ging das Verkehrsaufkommen um rund ein Zehntel zurück.“ Für die übrigen Stunden lagen noch keine vollständigen Zählungen vor, und die Messwochen unterschieden sich bei den Schulferien. Der beobachtete Rückgang beträgt für das genannte Stundenfenster etwa zehn Prozent, beweist aber weder einen ganztägigen Rückgang noch einen ausschließlichen Effekt der Ampeländerung."
+      }
+    ],
+    "claims": [
+      {
+        "id": "n1",
+        "paragraphId": "p1",
+        "quote": "Die mittlere Wartezeit betrug sieben Minuten.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sieben Minuten waren zugleich der Median und die tatsächlich von jeder Person erlebte Wartezeit an allen Haltestellen."
+          },
+          {
+            "id": "B",
+            "text": "In der beispielhaften Stichprobe lag der arithmetische Mittelwert bei sieben Minuten und der Median bei vier; die Werte beschreiben nicht den gesamten Tagesbetrieb."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die sortierte mittlere Beobachtung ist vier Minuten, die Summe 35 ergibt geteilt durch fünf sieben Minuten; beide Größen beschreiben Verschiedenes.",
+        "trap": "Mittelwert und Median sind nicht austauschbar; Stichprobenzeit und Extremwert gehören zur Einordnung."
+      },
+      {
+        "id": "n2",
+        "paragraphId": "p2",
+        "quote": "An zwölf von zwanzig Messtagen gab es keine Störung.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "60 Prozent der dokumentierten Tage waren störungsfrei; ohne Fahrtzahlen lässt sich daraus keine Quote störungsfreier Fahrten ableiten."
+          },
+          {
+            "id": "B",
+            "text": "Exakt 60 Prozent aller Busfahrten verliefen ohne Störung, weil zwölf der zwanzig Arbeitstage störungsfrei waren."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der Nenner ist die Zahl der Arbeitstage. Ein Anteil von Fahrten würde deren Anzahl und Störungsverteilung voraussetzen.",
+        "trap": "Tagesquoten, Fahrtenquoten und Minutenquoten haben unterschiedliche Bezugsgrößen."
+      },
+      {
+        "id": "n3",
+        "paragraphId": "p3",
+        "quote": "In der Frühspitze ging das Verkehrsaufkommen um rund ein Zehntel zurück.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die gesamte tägliche Verkehrsmenge sank nachweislich um mindestens zehn Prozent ausschließlich wegen der geänderten Ampelschaltung."
+          },
+          {
+            "id": "B",
+            "text": "Zwischen sieben und acht Uhr wurden ungefähr zehn Prozent weniger Fahrzeuge gezählt; andere Tageszeiten und konkurrierende Einflussfaktoren bleiben offen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "120 von 1.200 Fahrzeugen entsprechen zehn Prozent, doch das Messfenster von einer Stunde und der Ferienunterschied verhindern eine Tages- und Kausalbehauptung.",
+        "trap": "Ein zeitlich eingegrenzter Anteil kann nicht ohne weitere Daten auf den gesamten Tag ausgedehnt werden."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M25 original fictitious numerical German source dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive deutsche Lehrtexte und Zahlenfälle; keine übernommenen Statistiken; unabhängige Redaktion offen"
+    }
+  },
+  {
+    "id": "SG-G09N-003",
+    "version": 1,
+    "domain": "G09",
+    "band": "C1",
+    "title": "Bibliotheksnutzung: Reichweite statt bloßer Zählung",
+    "focus": "Absolute Werte und Anteile bei veränderter Grundgesamtheit",
+    "brief": "Formuliere für den Kulturausschuss einen verständlichen Bericht, der Mitglieder, Entleihungen und Besuchsgruppen getrennt hält. Korrigiere eine irreführende Erfolgszahl in deiner Revision.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Stadtbibliothek meldete für das laufende Jahr 54.000 Entleihungen nach 50.000 im Vorjahr. In ihrer Kurzübersicht stand: „Die Zahl der Entleihungen stieg um acht Prozent.“ Die Zahl der aktiven Bibliothekskarten ging zugleich von 5.000 auf 4.500 zurück. Das ergibt rechnerisch im Vorjahr zehn und im laufenden Jahr zwölf Entleihungen je aktiver Karte. Die Statistik lässt allerdings offen, wie viele einzelne Personen Karten gemeinsam nutzten. Aus der höheren Entleihzahl lässt sich deshalb nicht direkt ableiten, dass mehr Menschen die Bibliothek erreichten."
+      },
+      {
+        "id": "p2",
+        "text": "Für das neue Veranstaltungsprogramm dokumentierte die Bibliothek 90 Anmeldungen von insgesamt 60 verschiedenen Personen. Bei der Nachbefragung erklärten 20 der 60 Personen, sie hätten mehr als einen Workshop besucht. In der Statistik hieß es: „Ein Drittel der Teilnehmenden besuchte mehr als einen Workshop.“ Die Formulierung bezieht sich auf die 60 Menschen, nicht auf die 90 Anmeldungen. Sie lässt außerdem offen, ob zusätzliche Besuche von wiederkehrenden Personen oder neue Veranstaltungsformate die höhere Gesamtzahl an Anmeldungen trugen."
+      },
+      {
+        "id": "p3",
+        "text": "Nach Einführung eines Bücherbusses listete der Jahresbericht vier Ortsteile auf, die zuvor keinen regelmäßigen mobilen Halt hatten. Er schrieb: „Die mobile Ausleihe erreichte vier weitere Ortsteile.“ In zwei dieser Ortsteile wurde nur einmal monatlich ein Termin angeboten, in den beiden anderen alle zwei Wochen. Unklar blieb, wie viele Menschen die Halte tatsächlich nutzten und ob bestehende stationäre Angebote durch die mobile Ausleihe ersetzt wurden. Die räumliche Ausweitung ist damit als Angebotsmerkmal belegbar, nicht aber bereits als Nachweis einer proportional gewachsenen Leserschaft."
+      }
+    ],
+    "claims": [
+      {
+        "id": "n1",
+        "paragraphId": "p1",
+        "quote": "Die Zahl der Entleihungen stieg um acht Prozent.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Entleihungen nahmen um acht Prozent zu, während die aktiven Karten zurückgingen; über die Zahl verschiedener Nutzender ist damit noch nicht entschieden."
+          },
+          {
+            "id": "B",
+            "text": "Die Zahl der tatsächlich erreichten Personen stieg um acht Prozent, weil die Entleihungen von 50.000 auf 54.000 zunahmen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Zahl der Transaktionen ist nicht die Zahl der Personen. 4.000 zusätzliche Entleihungen entsprechen acht Prozent von 50.000.",
+        "trap": "Entleihungen, Karten und individuelle Menschen sind verschiedene Zähleinheiten."
+      },
+      {
+        "id": "n2",
+        "paragraphId": "p2",
+        "quote": "Ein Drittel der Teilnehmenden besuchte mehr als einen Workshop.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "90 verschiedene Personen nahmen teil, von denen genau 30 mehrere Workshops besuchten, weil jede Anmeldung eine neue Person belegt."
+          },
+          {
+            "id": "B",
+            "text": "20 von 60 verschiedenen Teilnehmenden besuchten mehrere Workshops; 90 Anmeldungen dürfen nicht als 90 verschiedene Menschen dargestellt werden."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das Drittel bezieht sich auf 60 Personen; daraus folgen 20 Menschen, nicht 30, und wiederholte Anmeldungen erhöhen die Kopfzahl nicht.",
+        "trap": "Personen und Teilnahmen unterscheiden; eine Teilnahmequote braucht eine explizite Grundgesamtheit."
+      },
+      {
+        "id": "n3",
+        "paragraphId": "p3",
+        "quote": "Die mobile Ausleihe erreichte vier weitere Ortsteile.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Vier zusätzliche Ortsteile erhielten ein mobiles Ausleihangebot, dessen Frequenz variiert; die Anzahl neuer Nutzender ist noch nicht erhoben."
+          },
+          {
+            "id": "B",
+            "text": "In allen vier Ortsteilen verdoppelte sich nachweislich die Zahl der Lesenden, weil der Bücherbus nun dort hält."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Zahl der erschlossenen Gebiete misst Angebotsreichweite, nicht unmittelbar Nutzung oder individuelle Wirkung.",
+        "trap": "Eine räumliche Erweiterung kann mit unterschiedlicher Angebotsdichte verbunden sein."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M25 original fictitious numerical German source dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive deutsche Lehrtexte und Zahlenfälle; keine übernommenen Statistiken; unabhängige Redaktion offen"
+    }
+  },
+  {
+    "id": "SG-G09N-004",
+    "version": 1,
+    "domain": "G09",
+    "band": "C1",
+    "title": "Energiebericht: Einsparprognose und Messzeitraum",
+    "focus": "Prognose, Bandbreite, Vergleichszeitraum und Einheiten",
+    "brief": "Verfasse eine präzise Kurzbewertung für eine Eigentümerversammlung. Unterscheide realisierte Energieverbräuche, Modellprognosen und noch unbekannte Betriebskosten und überarbeite eine Übertreibung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein Gebäudebeirat verglich den Heizenergiebedarf eines sanierten Hauses mit den Unterlagen aus der Vorperiode. Im gemessenen Winter ermittelte die Verwaltung einen spezifischen Verbrauch von 80 Kilowattstunden je Quadratmeter beheizter Fläche. Im Bericht steht: „Der Heizenergiebedarf lag im Winter bei 80 Kilowattstunden je Quadratmeter.“ Der Referenzwert für das frühere Messjahr betrug 100 Kilowattstunden je Quadratmeter; die beiden Winter waren unterschiedlich kalt. Ein rein rechnerischer Rückgang um 20 Prozent bedeutet daher noch keine temperaturbereinigte Wirkung der Baumaßnahme."
+      },
+      {
+        "id": "p2",
+        "text": "Für das kommende Jahr berechnete ein Ingenieurbüro unter verschiedenen Annahmen zur Nutzung des Hauses mehrere Szenarien. Die Zusammenfassung lautet: „Das Modell erwartet eine Einsparung zwischen 15 und 25 Prozent.“ Die zugrunde gelegten Werte hängen von Raumtemperaturen, Wartungszustand und dem tatsächlichen Heizverhalten ab. Die Bandbreite ist eine modellierte Erwartung, keine bereits gemessene Verbrauchsreduktion und auch keine Garantie, dass jede einzelne Wohnung dieselbe Verbesserung erlebt. Der Bericht empfiehlt eine erneute Auswertung nach einem vollen Betriebsjahr."
+      },
+      {
+        "id": "p3",
+        "text": "Die Hausverwaltung legte zusätzlich eine erste Kostenschätzung für die modernisierte Heizungsanlage vor. In der Erläuterung stand: „Die Betriebskostenprognose enthält noch keine neuen Wartungsangebote.“ Zwar könnten geringere Energieverbräuche die laufenden Ausgaben verringern, doch wurden die neuen Wartungsverträge noch nicht verhandelt. Außerdem ließ sich die Entwicklung künftiger Energiepreise nicht zuverlässig bestimmen. Die Verwaltung schlug vor, die vollständige Jahresrechnung erst nach dem ersten regulären Betrieb mit den aktuellen Angeboten erneut zu berechnen."
+      }
+    ],
+    "claims": [
+      {
+        "id": "n1",
+        "paragraphId": "p1",
+        "quote": "Der Heizenergiebedarf lag im Winter bei 80 Kilowattstunden je Quadratmeter.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Sanierung hat unter identischen Bedingungen nachweislich 20 Prozent Energie eingespart und der absolute Verbrauch jedes Haushalts sank genau gleich stark."
+          },
+          {
+            "id": "B",
+            "text": "Der spezifische Verbrauch lag 20 Prozent unter dem angegebenen Vorjahreswert; wegen unterschiedlicher Witterung ist das noch keine bereinigte Einsparwirkung."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Werte 80 und 100 haben dieselbe spezifische Einheit, erlauben einen Prozentvergleich, aber noch keinen witterungsbereinigten Kausalnachweis.",
+        "trap": "Spezifische Energie je Fläche, Gesamtverbrauch und kausale Einsparwirkung sind verschieden."
+      },
+      {
+        "id": "n2",
+        "paragraphId": "p2",
+        "quote": "Das Modell erwartet eine Einsparung zwischen 15 und 25 Prozent.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die 15 bis 25 Prozent sind eine bedingte Modellbandbreite, die später an tatsächlichen Messwerten überprüft werden muss."
+          },
+          {
+            "id": "B",
+            "text": "Die Einsparung betrug bereits sicher 25 Prozent in jeder Wohnung; diese konkrete Wirkung ist durch das Rechenmodell abschließend bestätigt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Ein Szenariointervall ist kein gemessener Ist-Wert und seine Obergrenze keine garantierte Mindestwirkung.",
+        "trap": "Modalität und Bandbreite gehören zum numerischen Inhalt."
+      },
+      {
+        "id": "n3",
+        "paragraphId": "p3",
+        "quote": "Die Betriebskostenprognose enthält noch keine neuen Wartungsangebote.",
+        "question": "Welche numerische Wiedergabe wahrt Grundgesamtheit, Einheit, Zeitfenster und Aussagegrenze?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die vollständigen Betriebskosten werden nachweislich in jedem Fall um denselben Prozentsatz sinken wie die geschätzte Heizenergie."
+          },
+          {
+            "id": "B",
+            "text": "Eine Senkung der laufenden Gesamtkosten ist noch nicht belegt, weil Wartungsverträge und künftige Preise in der vorläufigen Prognose fehlen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Energiebedarf und Geldkosten sind unterschiedliche Messgrößen; die unbekannten Vertrags- und Preiswerte verhindern eine garantierte Kostenzahl.",
+        "trap": "Aus einer technischen Einsparung folgt nicht ohne Kostenmodell dieselbe finanzielle Veränderung."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M25 original fictitious numerical German source dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive deutsche Lehrtexte und Zahlenfälle; keine übernommenen Statistiken; unabhängige Redaktion offen"
+    }
+  }
+]
