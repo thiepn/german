@@ -1,0 +1,370 @@
+[
+  {
+    "id": "SG-G11Q-001",
+    "version": 1,
+    "domain": "G11",
+    "band": "C2",
+    "title": "Quartierswärme: Stimmen zwischen Pilot und Beschluss",
+    "genre": "Kommunaler Ergebnisvermerk",
+    "focus": "Aussagen von Projektleitung, Mietendenvertretung und Haushaltsausschuss voneinander trennen",
+    "brief": "Verfasse einen 220–320 Wörter langen fachlichen Vermerk mit zwei explizit zugeschriebenen Aussagen, einem wörtlichen Beleg und einer eigenen, erkennbar begrenzten Einordnung. Verwechsle die Prüfung nicht mit einer verbindlichen Umsetzung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "In einer offenen Sitzung erläuterte die Projektkoordinatorin die Reichweite einer ersten Erhebung zu einem geplanten gemeinschaftlichen Wärmenetz. Sie sagte: „Wir haben ausschließlich die technisch erreichbaren Häuser untersucht.“ Bei der Auswertung blieben Gebäude mit ungeklärten Eigentumsverhältnissen und einzelne schlecht dokumentierte Heizungsanlagen unberücksichtigt. Die Koordinatorin empfahl weitere Gespräche; ihre Ausführungen enthielten weder eine Zusage für Anschlüsse noch eine abschließende Kostenrechnung."
+      },
+      {
+        "id": "p2",
+        "text": "Bei der anschließenden Anhörung sprach die Mietendenvertretung über die bislang nur grob geschätzten Entgelte und unklare Verteilungsschlüssel. Ihre Sprecherin erklärte: „Ohne transparente Betriebskosten können wir keinen Vorschlag unterstützen.“ Sie verlangte verständliche Szenarien für Haushalte mit unterschiedlichen Wohnungsgrößen und verwies auf die bisher fehlenden vollständigen Jahresabrechnungen. Ob der Verband ein späteres Modell befürworten würde, blieb offen; eine Zustimmung oder förmliche Ablehnung lag zu diesem Zeitpunkt nicht vor."
+      },
+      {
+        "id": "p3",
+        "text": "Im öffentlichen Teil des Haushaltsausschusses verwies der Vorsitz auf den begrenzten Beratungsgegenstand der Sitzung. Er betonte: „Heute entscheiden wir nur über die Finanzierung der Vorprüfung.“ Anschließend stimmte die Mehrheit dem Prüfauftrag zu; ein Ausbauplan oder der spätere Netzbetrieb stand nicht auf der Tagesordnung. Die Unterlagen sollen nach Vorliegen der Ergebnisse erneut beraten werden. Eine Berichterstattung, die den Prüfauftrag bereits als Ratsbeschluss über den Bau bezeichnete, würde Zuständigkeit und Reichweite der Entscheidung verfälschen."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "q1",
+        "paragraphId": "p1",
+        "speaker": "Projektkoordinatorin",
+        "quote": "Wir haben ausschließlich die technisch erreichbaren Häuser untersucht.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Projektkoordinatorin begrenzt die Erhebung ausdrücklich auf technisch erreichbare Häuser und macht damit keine Aussage über einen Anschluss aller Gebäude."
+          },
+          {
+            "id": "B",
+            "text": "Die Projektkoordinatorin bestätigt, dass ausnahmslos alle Häuser angeschlossen werden können und die technische Planung bereits genehmigt ist."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Der Satz legt die Auswahl der Erhebung offen. Ein dokumentierter methodischer Zuschnitt ist keine technische Garantie und keine verbindliche Bauentscheidung."
+      },
+      {
+        "id": "q2",
+        "paragraphId": "p2",
+        "speaker": "Mietendenvertretung",
+        "quote": "Ohne transparente Betriebskosten können wir keinen Vorschlag unterstützen.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Mietendenvertretung hat die Wärmenetzplanung endgültig gebilligt und bereits eine feste monatliche Belastung zugesagt."
+          },
+          {
+            "id": "B",
+            "text": "Die Mietendenvertretung knüpft eine mögliche Unterstützung an nachvollziehbare Betriebskosten, ohne bereits über den endgültigen Vorschlag zu entscheiden."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die direkt zitierte Bedingung betrifft eine mögliche spätere Unterstützung. Forderungen und fehlende Daten dürfen nicht als Zustimmung oder als veröffentlichte Kostenangabe ausgegeben werden."
+      },
+      {
+        "id": "q3",
+        "paragraphId": "p3",
+        "speaker": "Haushaltsausschuss",
+        "quote": "Heute entscheiden wir nur über die Finanzierung der Vorprüfung.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Haushaltsausschuss bewilligte Mittel für die Vorprüfung; nach Aussage seines Vorsitzes war damit nicht über den Bau des Wärmenetzes entschieden."
+          },
+          {
+            "id": "B",
+            "text": "Der Haushaltsausschuss beschloss mit seiner Abstimmung die vollständige Errichtung und den laufenden Betrieb des Wärmenetzes."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die institutionelle Entscheidung ist eng begrenzt. Die direkte Äußerung des Vorsitzes und der protokollierte Prüfauftrag dürfen nicht zu einem baulichen Vollzugsbeschluss erweitert werden."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M22 original fictitious German research dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu erstellte fiktive M22-Quellen und Originalzitate; keine historischen oder realen Aussagen; unabhängige Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G11Q-002",
+    "version": 1,
+    "domain": "G11",
+    "band": "C1",
+    "title": "Digitale Studienberatung: Forschung und Erfahrungen",
+    "genre": "Universitärer Evaluationstext",
+    "focus": "Vorläufige Befunde, Betroffenenperspektive und institutionelle Freigabe sauber attribuieren",
+    "brief": "Schreibe eine quellenbewusste Bewertung für den Fakultätsrat. Integriere eine originalgetreue Äußerung und mehrere eigene indirekte Wiedergaben, benenne die Datenlücken und schließe ohne erfundene Freigabe.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine Studienforscherin stellte die Ergebnisse eines achtwöchigen Versuchs mit digitaler Terminvergabe vor. Sie erläuterte vor dem Fakultätsrat: „Die Wartezeit ist gesunken, die Beratungsqualität wurde nicht gemessen.“ Die Zeiten wurden aus dem Buchungssystem abgeleitet; nur Termine, die tatsächlich über das Portal vergeben worden waren, gingen in die Auswertung ein. Persönliche Beratungsgespräche ohne digitale Voranmeldung wurden nicht berücksichtigt. Ein verbessertes Erlebnis aller Studierenden lässt sich aus dieser begrenzten Messung nicht ableiten."
+      },
+      {
+        "id": "p2",
+        "text": "Der Studierendenrat wertete anonyme Rückmeldungen aus dem ersten Monat der Erprobung aus. Eine Vertreterin sagte: „Viele Studierende finden im Portal keinen passenden Beratungstyp.“ Die Stellungnahme verwies unter anderem auf unklare Bezeichnungen für Prüfungsfragen und soziale Anliegen; die Rückmeldungen stammten jedoch vorwiegend von Personen, die sich an den Rat gewandt hatten. Der Rat forderte eine Überarbeitung der Kategorien, gab aber keine repräsentative Befragungsquote für den gesamten Fachbereich an."
+      },
+      {
+        "id": "p3",
+        "text": "Die Fakultätsgeschäftsführung erklärte in der abschließenden Aussprache, dass die Erprobung zunächst nur in zwei Studiengängen fortgeführt werde. Sie sagte: „Eine Ausweitung setzen wir erst nach der Barrierefreiheitsprüfung an.“ Zum Zeitpunkt der Sitzung lag die externe Prüfung der Bedienbarkeit mit assistiven Technologien noch nicht vor. Der Fakultätsrat nahm den Zwischenbericht zur Kenntnis, beschloss aber keinen flächendeckenden Start. Die Geschäftsstelle kündigte eine erneute Vorlage nach Abschluss der Prüfung an."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "q1",
+        "paragraphId": "p1",
+        "speaker": "Studienforscherin",
+        "quote": "Die Wartezeit ist gesunken, die Beratungsqualität wurde nicht gemessen.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Forscherin hat nachgewiesen, dass die digitale Buchung die Qualität jedes Beratungsgesprächs deutlich verbessert."
+          },
+          {
+            "id": "B",
+            "text": "Die Studienforscherin berichtet über kürzere erfasste Wartezeiten bei digital gebuchten Terminen, trifft aber keine Aussage zur Qualität der Gespräche."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Messung und Nichtmessung sind explizit voneinander zu unterscheiden. Der Rückgang einer administrativen Kennzahl belegt keine Verbesserung einer anderen Größe."
+      },
+      {
+        "id": "q2",
+        "paragraphId": "p2",
+        "speaker": "Studierendenrat",
+        "quote": "Viele Studierende finden im Portal keinen passenden Beratungstyp.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Studierendenrat weist auf Orientierungsprobleme bei den Beratungsarten hin; seine Rückmeldungen sind keine Vollerhebung aller Studierenden."
+          },
+          {
+            "id": "B",
+            "text": "Der Studierendenrat belegt durch eine repräsentative Befragung, dass sämtliche Studierenden das Buchungsportal ablehnen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Betroffenenstimme benennt ein Problem, das nicht durch eine ungenannte Vollerhebung quantifiziert werden darf. Eine Forderung nach Kategorienänderung ist keine generelle Ablehnung."
+      },
+      {
+        "id": "q3",
+        "paragraphId": "p3",
+        "speaker": "Fakultätsgeschäftsführung",
+        "quote": "Eine Ausweitung setzen wir erst nach der Barrierefreiheitsprüfung an.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Fakultätsgeschäftsführung bestätigte die sofortige Ausweitung auf sämtliche Studiengänge und erklärte die Barrierefreiheit für geprüft."
+          },
+          {
+            "id": "B",
+            "text": "Die Fakultätsgeschäftsführung macht eine mögliche Ausweitung vom Ergebnis einer noch ausstehenden Barrierefreiheitsprüfung abhängig."
+          }
+        ],
+        "preferredId": "B",
+        "model": "„Erst nach“ markiert eine ausstehende Bedingung. Kenntnisnahme durch den Rat ist keine Genehmigung für einen Vollbetrieb."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M22 original fictitious German research dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu erstellte fiktive M22-Quellen und Originalzitate; keine historischen oder realen Aussagen; unabhängige Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G11Q-003",
+    "version": 1,
+    "domain": "G11",
+    "band": "C2",
+    "title": "Objektprovenienz im Museum: Belege und Deutungen",
+    "genre": "Wissenschaftliche Bestandsnotiz",
+    "focus": "Archivbefund, Anspruchsperspektive und museumsinterne Zuständigkeit trennen",
+    "brief": "Schreibe einen wissenschaftlich nüchternen Abschnitt über die offene Provenienzprüfung. Stelle mindestens zwei Stimmen korrekt in indirekter Rede dar, integriere ein kurzes wortgetreues Zitat und grenze die verbleibenden Unsicherheiten ab.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Bei der Präsentation der neu erschlossenen Unterlagen beschrieb die Archivarin eine Lücke in der Überlieferungsgeschichte eines Sammlungsguts. Sie stellte fest: „Zwischen zwei Inventareinträgen fehlt ein belastbarer Übergabenachweis.“ Zwar lag eine Rechnung aus dem betreffenden Jahrzehnt vor, sie enthielt jedoch keine eindeutig zuordenbare Objektbezeichnung. Die Archivarin hielt ausdrücklich fest, dass die Dokumentenlücke weder einen rechtmäßigen noch einen unrechtmäßigen Eigentumsübergang unmittelbar beweist. Sie empfahl eine Prüfung weiterer privater Nachlässe."
+      },
+      {
+        "id": "p2",
+        "text": "In einem moderierten Austausch wies die Vertretung der Nachfahren auf die Bedeutung offener Besitzfragen hin. Ihre Sprecherin sagte: „Die Unsicherheit darf nicht mit unserer Zustimmung verwechselt werden.“ Sie erklärte, die Beteiligten hätten noch keine gemeinsame Position zu einem möglichen Ausstellungs- oder Rückgabeverfahren festgelegt und benötigten Einsicht in weitere Dokumente. Die Äußerung macht einen Vorbehalt aus Betroffenenperspektive sichtbar; sie ersetzt weder einen abgeschlossenen Rechtsbefund noch ein vollständiges Verhandlungsergebnis."
+      },
+      {
+        "id": "p3",
+        "text": "In einem später veröffentlichten Sitzungsvermerk erläuterte die Museumsdirektion die internen Verfahrensschritte. Sie führte aus: „Über die Präsentation entscheidet das Kuratorium nach Abschluss der Prüfung.“ Bis dahin verbleibt das Objekt laut Vermerk im Depot; eine digitale Dokumentation des Forschungsstands wird gesondert vorbereitet. Die Museumsdirektion kann eine Vorlage erarbeiten, ist nach der eigenen Geschäftsordnung jedoch nicht befugt, die endgültige Präsentation allein zu genehmigen. Ein Termin für den Abschluss des Prüfverfahrens wurde nicht genannt."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "q1",
+        "paragraphId": "p1",
+        "speaker": "Archivarin",
+        "quote": "Zwischen zwei Inventareinträgen fehlt ein belastbarer Übergabenachweis.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Archivarin dokumentiert eine Lücke zwischen Inventareinträgen, ohne aus ihr allein die Rechtmäßigkeit des historischen Erwerbs abzuleiten."
+          },
+          {
+            "id": "B",
+            "text": "Die Archivarin hat durch die fehlende Übergabeurkunde bewiesen, dass das Museum das Objekt rechtswidrig erworben hat."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Ein fehlender Nachweis ist ein präziser Befund über die Quellenlage; eine rechtliche Bewertung erfordert weitere Umstände und Belege."
+      },
+      {
+        "id": "q2",
+        "paragraphId": "p2",
+        "speaker": "Vertretung der Nachfahren",
+        "quote": "Die Unsicherheit darf nicht mit unserer Zustimmung verwechselt werden.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Vertretung der Nachfahren hat dem Museum bereits ausdrücklich alle Rechte an dem Objekt übertragen und eine Ausstellung genehmigt."
+          },
+          {
+            "id": "B",
+            "text": "Die Vertretung der Nachfahren warnt davor, den noch offenen Sachstand als ihre Zustimmung zu einer bestimmten Lösung auszugeben."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Hier ist die Stimme als Position einer beteiligten Gruppe zu kennzeichnen, nicht als rechtliche Freigabe. Ein Vorbehalt darf nicht aus dem Zitat herausgelöst werden."
+      },
+      {
+        "id": "q3",
+        "paragraphId": "p3",
+        "speaker": "Museumsdirektion",
+        "quote": "Über die Präsentation entscheidet das Kuratorium nach Abschluss der Prüfung.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Nach Auskunft der Museumsdirektion liegt die spätere Entscheidung über eine Präsentation beim Kuratorium und setzt den Abschluss der Prüfung voraus."
+          },
+          {
+            "id": "B",
+            "text": "Die Museumsdirektion hat das Objekt bereits dauerhaft zur Präsentation freigegeben und dem Kuratorium damit jede Entscheidung abgenommen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Aussage über künftige Zuständigkeit und bereits erteilte Genehmigung sind verschiedene Sprechakte. Die temporale Bedingung gehört zur Aussage."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M22 original fictitious German research dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu erstellte fiktive M22-Quellen und Originalzitate; keine historischen oder realen Aussagen; unabhängige Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G11Q-004",
+    "version": 1,
+    "domain": "G11",
+    "band": "C1",
+    "title": "Lüftungstest in einer Pflegeeinrichtung",
+    "genre": "Sachlicher Prüf- und Informationsbericht",
+    "focus": "Technische Beobachtung, Arbeitsschutzforderung und Verwaltungsentscheidung differenzieren",
+    "brief": "Verfasse eine sachliche Zusammenfassung für die Einrichtungsleitung, die die begrenzten Messdaten, die Arbeitnehmervertretung und den Beschluss der Verwaltung unterscheidet. Verwende direktes Zitat und eigenständige Paraphrasen angemessen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Bei einer Begehung stellte eine Prüfingenieurin die Ergebnisse wiederholter Luftwechselmessungen vor. Sie betonte: „Die Messwerte gelten nur für die untersuchten Aufenthaltsräume.“ Der technische Bericht bezieht sich auf vier Zimmer in einer einzigen Gebäudewoche; für Behandlungsräume und die Wintermonate fehlten ausreichende Vergleichsdaten. Die Ingenieurin bewertete die Messergebnisse als Ausgangspunkt für weitere Untersuchungen, nicht als Nachweis für den ganzen Gebäudekomplex. Die Einrichtung veranlasste daraufhin eine zusätzliche Messreihe."
+      },
+      {
+        "id": "p2",
+        "text": "Die Personalvertretung verwies im Gespräch mit der Leitung auf Schichten mit besonders vielen anwesenden Personen. Eine Sprecherin erklärte: „Wir brauchen eine Regelung für die besonders belegten Dienste.“ In ihrer schriftlichen Stellungnahme forderte sie verbindliche Lüftungsabläufe und eine Prüfung, ob bisherige Pausenzeiten zur Umsetzung ausreichen. Die Stellungnahme beschreibt einen organisatorischen Bedarf, enthält aber keine nachträglichen Messwerte und ersetzt keine technische Sicherheitsprüfung durch unabhängige Fachleute."
+      },
+      {
+        "id": "p3",
+        "text": "Im Ergebnisprotokoll hielt die Trägerverwaltung den finanziellen Umfang der Entscheidung fest. Der zuständige Referatsleiter sagte: „Bewilligt ist bislang allein die zusätzliche Untersuchung.“ Die Kosten einer möglichen Nachrüstung des Lüftungssystems sollen erst nach Vorlage der Messdaten beziffert werden. Eine Beauftragung der Bauarbeiten oder ein konkreter Zeitplan wurden nicht beschlossen. Die Verwaltung stellte klar, dass die technische Empfehlung später einer eigenen Haushaltsentscheidung bedarf."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "q1",
+        "paragraphId": "p1",
+        "speaker": "Prüfingenieurin",
+        "quote": "Die Messwerte gelten nur für die untersuchten Aufenthaltsräume.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Prüfingenieurin bescheinigt, dass das gesamte Gebäude zu jeder Jahreszeit über eine ausreichende Belüftung verfügt."
+          },
+          {
+            "id": "B",
+            "text": "Die Prüfingenieurin begrenzt ihre Ergebnisse auf vier untersuchte Räume und verweist auf Datenlücken für andere Bereiche und Jahreszeiten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Messwerte beziehen sich auf definierte Räume und Zeitfenster. Eine systemweite Unbedenklichkeitsbestätigung geht darüber hinaus."
+      },
+      {
+        "id": "q2",
+        "paragraphId": "p2",
+        "speaker": "Personalvertretung",
+        "quote": "Wir brauchen eine Regelung für die besonders belegten Dienste.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Personalvertretung fordert verbindliche Abläufe für stark besetzte Dienste, stellt damit aber selbst keine technischen Messdaten bereit."
+          },
+          {
+            "id": "B",
+            "text": "Die Personalvertretung hat durch eigene Messungen bestätigt, dass an allen Arbeitsplätzen bereits die optimale Luftqualität herrscht."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Forderung kommt aus der Perspektive der Beschäftigten. Sie ist kein eigener technischer Untersuchungsbericht und kein Beleg einer bereits umgesetzten Maßnahme."
+      },
+      {
+        "id": "q3",
+        "paragraphId": "p3",
+        "speaker": "Trägerverwaltung",
+        "quote": "Bewilligt ist bislang allein die zusätzliche Untersuchung.",
+        "question": "Welche Quellenintegration wahrt die Sprecherzuordnung und die Reichweite der Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Trägerverwaltung hat alle Nachrüstungsarbeiten bereits beauftragt und einen verbindlichen Fertigstellungstermin veröffentlicht."
+          },
+          {
+            "id": "B",
+            "text": "Die Trägerverwaltung bestätigt lediglich die Finanzierung zusätzlicher Messungen; eine technische Nachrüstung wurde noch nicht genehmigt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der Bewilligungsgegenstand ist eng formuliert. Eine Entscheidung über Untersuchungsmittel darf nicht in eine Bau- und Finanzierungszusage verwandelt werden."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M22 original fictitious German research dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu erstellte fiktive M22-Quellen und Originalzitate; keine historischen oder realen Aussagen; unabhängige Freigabe ausstehend"
+    }
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "statement": "IDS grammis source references document grammar/concept terminology. Fictional passages, questions, examples and difficulty remain independently unreviewed.",
+  "anchors": [
+    {
+      "id": "IDS_INDIREKTE_REDE",
+      "url": "https://grammis.ids-mannheim.de/fragen/6829",
+      "kind": "LINGUISTIC_GRAMMAR_BACKGROUND",
+      "subject": "Konjunktiv in der indirekten Rede",
+      "editorialApproved": false,
+      "licenseToRepublishSourceText": false
+    },
+    {
+      "id": "IDS_KONZESSIV",
+      "url": "https://grammis.ids-mannheim.de/systematische-grammatik/2109",
+      "kind": "LINGUISTIC_GRAMMAR_BACKGROUND",
+      "subject": "Konzessivsätze und Erwartungsbruch",
+      "editorialApproved": false,
+      "licenseToRepublishSourceText": false
+    },
+    {
+      "id": "IDS_KONNEKTOREN",
+      "url": "https://grammis.ids-mannheim.de/systematische-grammatik/366",
+      "kind": "LINGUISTIC_GRAMMAR_BACKGROUND",
+      "subject": "Konnektoren und semantische Relationen",
+      "editorialApproved": false,
+      "licenseToRepublishSourceText": false
+    }
+  ]
+}

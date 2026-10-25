@@ -1,0 +1,560 @@
+[
+  {
+    "id": "SG-G05-001",
+    "version": 1,
+    "domain": "G05",
+    "band": "C1",
+    "title": "Aussagen im Prüfbericht",
+    "focus": "Konjunktiv I und Sprecherzuordnung",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Auf der Sitzung erklärte die Projektleitung, der technische Entwurf sei abgeschlossen. Diese Aussage bezog sich auf die Entwurfsphase; eine Freigabe durch die Prüfungskommission lag nicht vor."
+      },
+      {
+        "id": "p2",
+        "text": "Die Prüfgruppe teilte mit, zwei Nachweise fehlten noch. Die Projektleitung erwiderte, sie werde die Unterlagen bis Freitag ergänzen. Im Protokoll wurden beide Angaben als Äußerungen der jeweiligen Stellen festgehalten."
+      },
+      {
+        "id": "p3",
+        "text": "Am Freitag hieß es aus der Projektleitung, die Nachweise seien inzwischen eingereicht worden. Die Kommission erklärte jedoch, sie habe den Eingang noch nicht vollständig geprüft."
+      }
+    ],
+    "contrasts": [
+      {
+        "id": "c1",
+        "paragraphId": "p1",
+        "family": "KI_REPORT",
+        "quote": "der technische Entwurf sei abgeschlossen",
+        "prompt": "Was leistet der Konjunktiv I im Protokoll?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Bericht ordnet die Behauptung der Projektleitung zu, ohne sie selbst als geprüft auszugeben."
+          },
+          {
+            "id": "B",
+            "text": "Der Bericht bestätigt als eigener Befund, dass der Entwurf geprüft und freigegeben ist."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Leitung behauptet einen abgeschlossenen Entwurf; eine unabhängige Bestätigung oder Freigabe ergibt sich nicht.",
+        "reason": "„sei“ signalisiert wiedergegebene Rede. Ob die Behauptung zutrifft, folgt daraus nicht."
+      },
+      {
+        "id": "c2",
+        "paragraphId": "p2",
+        "family": "KI_REPORT",
+        "quote": "sie werde die Unterlagen bis Freitag ergänzen",
+        "prompt": "Welcher zeitliche Bezug wird durch „werde“ im Redebericht hergestellt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aus damaliger Sicht der Leitung lag die Ergänzung noch in der Zukunft."
+          },
+          {
+            "id": "B",
+            "text": "Die Ergänzung war bei dieser Äußerung bereits abgeschlossen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„werde ergänzen“ gibt eine aus Sicht des ursprünglichen Sprechzeitpunkts zukünftige Handlung wieder.",
+        "reason": "Die indirekte Rede macht noch keine Aussage über die tatsächliche spätere Erfüllung."
+      },
+      {
+        "id": "c3",
+        "paragraphId": "p3",
+        "family": "KI_REPORT",
+        "quote": "die Nachweise seien inzwischen eingereicht worden",
+        "prompt": "Welche Aussage ist aus dem zweiten Redebericht belastbar?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Leitung meldete die Einreichung; die Kommission hatte den Eingang noch nicht vollständig verifiziert."
+          },
+          {
+            "id": "B",
+            "text": "Die Kommission bestätigte mit dieser Formulierung die vollständige Prüfung."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die abgeschlossene Einreichung ist eine der Leitung zugeschriebene Aussage, keine unabhängige Bestätigung.",
+        "reason": "Konjunktiv I Perfekt-Passiv bezeichnet hier eine als abgeschlossen berichtete Handlung."
+      }
+    ],
+    "transfer": "Formuliere für eine interne Entscheidungsvorlage drei Sätze: Berichte die Aussage der Leitung mit klarer Zuschreibung, markiere den ungeprüften Stand und formuliere eine bedingte Empfehlung.",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_M12",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Übungstext; keine fremden Texte oder Transkripte"
+    }
+  },
+  {
+    "id": "SG-G05-002",
+    "version": 1,
+    "domain": "G05",
+    "band": "C1",
+    "title": "Vorzeitigkeit in einer Untersuchung",
+    "focus": "Tempusfolge und Konjunktiv in der Rückschau",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Nachdem die Fragebögen eingegangen waren, begann das Forschungsteam mit der Auswertung. Die zusätzlichen Interviews fanden erst in der darauffolgenden Woche statt."
+      },
+      {
+        "id": "p2",
+        "text": "Im Zwischenbericht erklärte die Koordinatorin, man habe die ersten Fragebögen bereits ausgewertet. Sie fügte hinzu, die weiteren Interviews seien zum Zeitpunkt des Berichts noch nicht geführt worden."
+      },
+      {
+        "id": "p3",
+        "text": "Die Leitung kündigte an, eine Gesamtauswertung könne erst erfolgen, wenn auch die Interviewdaten vorlägen. Eine spätere Notiz bestätigte, dass die Interviews inzwischen abgeschlossen waren."
+      }
+    ],
+    "contrasts": [
+      {
+        "id": "c1",
+        "paragraphId": "p1",
+        "family": "TEMPORAL",
+        "quote": "Nachdem die Fragebögen eingegangen waren, begann das Forschungsteam mit der Auswertung.",
+        "prompt": "Welche Ereignisfolge legt das Plusquamperfekt fest?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Eingang der Fragebögen lag vor Beginn der Auswertung."
+          },
+          {
+            "id": "B",
+            "text": "Beide Ereignisse liefen notwendig gleichzeitig ab."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Vorvergangenheit markiert den bereits abgeschlossenen Eingang als Voraussetzung des späteren Auswertungsbeginns.",
+        "reason": "„Nachdem“ und Plusquamperfekt ordnen Ereignisse, ohne selbst eine Aussage über die Dauer zu treffen."
+      },
+      {
+        "id": "c2",
+        "paragraphId": "p2",
+        "family": "KI_REPORT",
+        "quote": "man habe die ersten Fragebögen bereits ausgewertet",
+        "prompt": "Welchen Zeitbezug hat die berichtete Form?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Koordinatorin stellt die Auswertung als zu ihrem Äußerungszeitpunkt abgeschlossen dar."
+          },
+          {
+            "id": "B",
+            "text": "Die Koordinatorin kündigt die erste Auswertung erst für die Zukunft an."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Konjunktiv I Perfekt berichtet eine zum ursprünglichen Sprechzeitpunkt abgeschlossene Handlung.",
+        "reason": "Die Textquelle ist die Koordinatorin; aus der Form allein folgt keine externe Überprüfung."
+      },
+      {
+        "id": "c3",
+        "paragraphId": "p3",
+        "family": "KII_HYPOTHESIS",
+        "quote": "eine Gesamtauswertung könne erst erfolgen, wenn auch die Interviewdaten vorlägen",
+        "prompt": "Wie ist die zeitliche und epistemische Bedingung zu verstehen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Gesamtauswertung wird als möglich unter einer noch zu erfüllenden Bedingung dargestellt."
+          },
+          {
+            "id": "B",
+            "text": "Der Satz behauptet, dass die Gesamtauswertung zum Äußerungszeitpunkt bereits vorlag."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„könne“ und „vorlägen“ stehen in einer berichteten konditionalen Aussage; die Möglichkeit hängt von den Interviewdaten ab.",
+        "reason": "Der Konjunktiv belegt weder, dass die Bedingung erfüllt ist, noch, dass das Ergebnis vorliegt."
+      }
+    ],
+    "transfer": "Berichte den Ablauf aus Sicht der Koordinatorin. Trenne bereits abgeschlossene Arbeiten, damals noch ausstehende Datenerhebung und eine spätere Bestätigung.",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_M12",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Übungstext; keine fremden Texte oder Transkripte"
+    }
+  },
+  {
+    "id": "SG-G05-003",
+    "version": 1,
+    "domain": "G05",
+    "band": "C1",
+    "title": "Gerüchte und Schlussfolgerungen",
+    "focus": "Modalverben als Quelle und Wahrscheinlichkeit",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Im Haus kursierte die Nachricht, die neue Bibliothekssoftware solle bereits am Montag freigeschaltet worden sein. Eine Mitteilung der IT-Stelle lag zu diesem Zeitpunkt nicht vor."
+      },
+      {
+        "id": "p2",
+        "text": "Die Projektgruppe erklärte, die technische Umstellung dürfte inzwischen weitgehend abgeschlossen sein. Sie verwies dabei auf erfolgreich bestandene interne Tests, nicht auf eine endgültige Abnahme."
+      },
+      {
+        "id": "p3",
+        "text": "Für die öffentliche Freigabe müssen nach den geltenden internen Vorgaben zwei verantwortliche Personen zustimmen. Bis Donnerstag war erst eine der beiden Zustimmungen dokumentiert."
+      }
+    ],
+    "contrasts": [
+      {
+        "id": "c1",
+        "paragraphId": "p1",
+        "family": "MODAL_REPORT",
+        "quote": "solle bereits am Montag freigeschaltet worden sein",
+        "prompt": "Was kennzeichnet „soll ... worden sein“ im Kontext eines Gerüchts?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es wird eine fremde, nicht unabhängig bestätigte Behauptung über einen früheren Vorgang wiedergegeben."
+          },
+          {
+            "id": "B",
+            "text": "Es wird einer Person die Pflicht auferlegt, die Software am Montag freizuschalten."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Epistemisches „sollen“ berichtet hier eine Behauptung Dritter; das Perfekt-Passiv bezieht sich auf einen behaupteten früheren Vorgang.",
+        "reason": "Nicht mit dem verpflichtenden „sollen“ verwechseln: Der Kontext nennt ausdrücklich Gerüchte."
+      },
+      {
+        "id": "c2",
+        "paragraphId": "p2",
+        "family": "MODAL_INFERENCE",
+        "quote": "dürfte inzwischen weitgehend abgeschlossen sein",
+        "prompt": "Welchen Grad an Gewissheit vermittelt „dürfte“?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine plausible Vermutung, keine verbindliche Feststellung."
+          },
+          {
+            "id": "B",
+            "text": "Eine formal bestätigte, vollständig sichere Abnahme."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Konjunktiv II von „dürfen“ dient hier einer vorsichtigen epistemischen Einschätzung.",
+        "reason": "„weitgehend“ verstärkt die Einschränkung; Tests sind nicht mit der Endabnahme identisch."
+      },
+      {
+        "id": "c3",
+        "paragraphId": "p3",
+        "family": "MODAL_OBLIGATION",
+        "quote": "müssen nach den geltenden internen Vorgaben zwei verantwortliche Personen zustimmen",
+        "prompt": "Welche Funktion hat „müssen“ hier?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es bezeichnet eine regelbasierte Verpflichtung vor der Freigabe."
+          },
+          {
+            "id": "B",
+            "text": "Es stellt lediglich die Vermutung dar, dass die beiden Personen schon zugestimmt haben."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Form nennt eine Verfahrenspflicht, keine epistemische Schlussfolgerung.",
+        "reason": "Ob die Pflicht erfüllt wurde, ist eine eigene Frage: Es lag erst eine Zustimmung vor."
+      }
+    ],
+    "transfer": "Schreibe eine knappe Mitteilung über den Stand der Freigabe. Unterscheide ausdrücklich Gerücht, begründete Vermutung und verbindliche Verfahrensvorgabe.",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_M12",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Übungstext; keine fremden Texte oder Transkripte"
+    }
+  },
+  {
+    "id": "SG-G05-004",
+    "version": 1,
+    "domain": "G05",
+    "band": "C2",
+    "title": "Entscheidung ohne handelndes Subjekt",
+    "focus": "Vorgangs- und Zustandspassiv, Urheberschaft",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Anträge wurden am Dienstag geprüft. Wer die abschließenden Prüfschritte vorgenommen hatte, stand in dem veröffentlichten Kurzbericht nicht."
+      },
+      {
+        "id": "p2",
+        "text": "Am Mittwoch hieß es, die Anträge seien nun geprüft. Zugleich war die Einspruchsfrist noch nicht abgelaufen, sodass die Entscheidung weiterhin geändert werden konnte."
+      },
+      {
+        "id": "p3",
+        "text": "Später erklärte die zuständige Kommission ausdrücklich, sie habe die finale Freigabe noch nicht erteilt. In der öffentlichen Zusammenfassung war zuvor lediglich formuliert worden, die Freigabe werde vorbereitet."
+      }
+    ],
+    "contrasts": [
+      {
+        "id": "c1",
+        "paragraphId": "p1",
+        "family": "PASSIVE_AGENT",
+        "quote": "Die Anträge wurden am Dienstag geprüft.",
+        "prompt": "Welche Information lässt das Vorgangspassiv offen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Handlung wird beschrieben, ohne die prüfende Instanz ausdrücklich zu nennen."
+          },
+          {
+            "id": "B",
+            "text": "Die grammatische Form beweist, dass kein Mensch an der Prüfung beteiligt war."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„wurden geprüft“ richtet den Blick auf den Vorgang; die handelnde Instanz bleibt ungenannt.",
+        "reason": "Die Agenten-Auslassung ist keine Aussage über die Nichtexistenz eines Verantwortlichen."
+      },
+      {
+        "id": "c2",
+        "paragraphId": "p2",
+        "family": "PASSIVE_STATE",
+        "quote": "die Anträge seien nun geprüft",
+        "prompt": "Wie unterscheidet sich die Form im Redebericht vom Vorgangspassiv?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sie stellt einen erreichten Prüfzustand als berichtete Aussage dar, nicht den Verlauf des Prüfens."
+          },
+          {
+            "id": "B",
+            "text": "Sie verpflichtet die Kommission, erst noch mit dem Prüfen zu beginnen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„seien geprüft“ ist hier Konjunktiv-I-Zustandspassiv bzw. eine entsprechende Zustandsschilderung in indirekter Rede.",
+        "reason": "Der geprüfte Zustand ist nicht mit einer endgültigen Freigabe gleichzusetzen."
+      },
+      {
+        "id": "c3",
+        "paragraphId": "p3",
+        "family": "PASSIVE_AGENT",
+        "quote": "die Freigabe werde vorbereitet",
+        "prompt": "Welche Verantwortungsfrage beantwortet diese Passivform gerade nicht?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Wer die Vorbereitung verantwortet und ob daraus eine Freigabe folgt, bleibt offen."
+          },
+          {
+            "id": "B",
+            "text": "Die Form besagt, dass die Kommission die Freigabe bereits verbindlich erteilt hat."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„werde vorbereitet“ stellt ein laufendes oder geplantes Vorbereiten als berichtete Handlung dar, ohne den Akteur zu benennen.",
+        "reason": "Die spätere explizite Aussage der Kommission begrenzt die Schlussfolgerung."
+      }
+    ],
+    "transfer": "Verfasse eine Transparenznotiz. Benenne, soweit aus dem Text möglich, die zuständige Instanz; unterscheide Prüfung, erreichten Zustand und ausstehende Freigabe.",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_M12",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Übungstext; keine fremden Texte oder Transkripte"
+    }
+  },
+  {
+    "id": "SG-G05-005",
+    "version": 1,
+    "domain": "G05",
+    "band": "C2",
+    "title": "Die rückblickende Gegenprobe",
+    "focus": "Irreale Vergangenheit, Bedingung und berichteter Stand",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Auswertung wurde veröffentlicht, bevor die angekündigte Gegenprobe abgeschlossen war. Eine Mitarbeiterin sagte später, hätte man die zusätzliche Kontrolle abgewartet, wäre der Fehler wohl früher aufgefallen."
+      },
+      {
+        "id": "p2",
+        "text": "Der Abschlussbericht hielt fest, die Gruppe habe den Fehler erst nach der Veröffentlichung bemerkt. Sie räumte ein, eine Korrektur wäre bei längerer Prüfzeit wahrscheinlich möglich gewesen."
+      },
+      {
+        "id": "p3",
+        "text": "Nach der Korrektur erklärte die Leitung, der neue Bericht sei bereits verschickt worden; sie werde die Empfänger über die Änderungen informieren. Eine Bestätigung über den Zugang lag am selben Tag noch nicht vor."
+      }
+    ],
+    "contrasts": [
+      {
+        "id": "c1",
+        "paragraphId": "p1",
+        "family": "KII_COUNTERFACTUAL",
+        "quote": "hätte man die zusätzliche Kontrolle abgewartet, wäre der Fehler wohl früher aufgefallen",
+        "prompt": "Welche Zeitlage und Wirklichkeit ist hier gemeint?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es geht um eine nicht verwirklichte Bedingung in der Vergangenheit und eine hypothetische Folge."
+          },
+          {
+            "id": "B",
+            "text": "Es wird eine künftig sicher eintretende Folge angekündigt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Konjunktiv II Vergangenheit bildet eine irreale rückblickende Bedingung. „wohl“ hält die Folgerung zusätzlich vorsichtig.",
+        "reason": "Der Satz beweist nicht nachträglich, dass die Gegenprobe den Fehler tatsächlich aufgedeckt hätte."
+      },
+      {
+        "id": "c2",
+        "paragraphId": "p2",
+        "family": "KI_REPORT",
+        "quote": "die Gruppe habe den Fehler erst nach der Veröffentlichung bemerkt",
+        "prompt": "Was leistet die Formenwahl?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ein vergangenes Bemerken wird als Aussage des Berichts wiedergegeben."
+          },
+          {
+            "id": "B",
+            "text": "Der Verfasser bestätigt damit unmittelbar als Augenzeuge den Zeitpunkt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Konjunktiv I Perfekt weist die Information dem Bericht zu.",
+        "reason": "Eine berichtete Tatsache ist nicht automatisch extern verifiziert."
+      },
+      {
+        "id": "c3",
+        "paragraphId": "p3",
+        "family": "TEMPORAL",
+        "quote": "der neue Bericht sei bereits verschickt worden; sie werde die Empfänger über die Änderungen informieren",
+        "prompt": "Wie stehen die beiden Handlungen zeitlich zueinander?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Versand wird als abgeschlossen gemeldet, die Information der Empfänger als noch beabsichtigt."
+          },
+          {
+            "id": "B",
+            "text": "Beide Handlungen sind nachweislich vollständig abgeschlossen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„sei ... verschickt worden“ berichtet Vergangenes, „werde ... informieren“ eine aus Sprechersicht spätere Handlung.",
+        "reason": "Empfangsbestätigungen folgen weder aus der einen noch aus der anderen Form."
+      }
+    ],
+    "transfer": "Formuliere eine rückblickende Analyse: Unterscheide den tatsächlichen Ablauf, eine vorsichtige kontrafaktische Möglichkeit und die noch ausstehenden Mitteilungen.",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_M12",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Übungstext; keine fremden Texte oder Transkripte"
+    }
+  },
+  {
+    "id": "SG-G05-006",
+    "version": 1,
+    "domain": "G05",
+    "band": "C2",
+    "title": "Bedingte Prognose und Verantwortungszuschreibung",
+    "focus": "Konjunktiv II, Modalität und agentenloses Passiv",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Arbeitsgruppe modellierte eine mögliche steigende Nachfrage. Sie erläuterte, stiege die Zahl der Anträge stark an, müssten zusätzliche Prüfkapazitäten bereitgestellt werden. Die höhere Nachfrage war zum Zeitpunkt der Sitzung nicht eingetreten."
+      },
+      {
+        "id": "p2",
+        "text": "Im Entwurf wurde daraus die Formulierung abgeleitet, zusätzliche Prüfkapazitäten würden im kommenden Quartal bereitgestellt. Die dafür zuständige Stelle hatte jedoch noch keinen Beschluss gefasst."
+      },
+      {
+        "id": "p3",
+        "text": "Eine spätere fachliche Stellungnahme stellte klar, die Umsetzung könne erst beschlossen werden, wenn belastbare Prognosedaten vorlägen. Bis dahin solle lediglich ein möglicher Personalbedarf erhoben werden."
+      }
+    ],
+    "contrasts": [
+      {
+        "id": "c1",
+        "paragraphId": "p1",
+        "family": "KII_HYPOTHESIS",
+        "quote": "stiege die Zahl der Anträge stark an, müssten zusätzliche Prüfkapazitäten bereitgestellt werden",
+        "prompt": "Welche Reichweite hat die Aussage?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sie beschreibt eine denkbare Bedingung und die daraus folgende Notwendigkeit, keine sichere Prognose."
+          },
+          {
+            "id": "B",
+            "text": "Sie besagt, dass die Nachfrage bereits gestiegen ist und die Kapazitäten bewilligt wurden."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die konditionale Verb-Erst-Stellung und Konjunktiv II markieren eine hypothetische Bedingung.",
+        "reason": "„müssten“ nennt die daraus abgeleitete Erforderlichkeit, nicht eine beschlossene Maßnahme."
+      },
+      {
+        "id": "c2",
+        "paragraphId": "p2",
+        "family": "PASSIVE_AGENT",
+        "quote": "zusätzliche Prüfkapazitäten würden im kommenden Quartal bereitgestellt",
+        "prompt": "Warum ist diese Passivform im Kontext riskant?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sie kann als belastbare Ankündigung gelesen werden, obwohl Zuständigkeit und Beschluss noch offen sind."
+          },
+          {
+            "id": "B",
+            "text": "Die Form belegt eindeutig, dass eine namentlich genannte Stelle die Freigabe bereits erteilt hat."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„würden bereitgestellt“ verschleiert hier den fehlenden Beschluss und den nicht genannten Entscheidungsträger.",
+        "reason": "Eine alternative Formulierung müsste die Bedingungen und Verantwortlichkeit sichtbar machen."
+      },
+      {
+        "id": "c3",
+        "paragraphId": "p3",
+        "family": "KI_REPORT",
+        "quote": "die Umsetzung könne erst beschlossen werden, wenn belastbare Prognosedaten vorlägen",
+        "prompt": "Wie sind Quelle und Bedingung abzubilden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Stellungnahme nennt eine Bedingung, unter der eine spätere Entscheidung möglich wäre."
+          },
+          {
+            "id": "B",
+            "text": "Die Stellungnahme bestätigt damit, dass ein verbindlicher Beschluss bereits vorliegt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "„könne“ und „vorlägen“ sind im Kontext berichtete Konditionalität, keine Bestätigung einer Freigabe.",
+        "reason": "Nicht mit einem bereits dokumentierten Vollzug verwechseln."
+      }
+    ],
+    "transfer": "Verfasse zwei alternative Entscheidungssätze: einen vorsichtigen internen Plan und eine öffentlich verständliche Aussage. Benenne die Bedingung, den Verantwortungsbereich und die Unsicherheit.",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "status": "DEMO_ONLY",
+    "author": "SG_AI_DRAFT_M12",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originaler fiktiver Übungstext; keine fremden Texte oder Transkripte"
+    }
+  }
+]

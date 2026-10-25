@@ -1,0 +1,146 @@
+[
+  {
+    "id": "SG-P04-013",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Die Vorsitzende sagt: „Wir haben den Einwand gehört. Ob er die Entscheidung verändert, ist noch offen.“",
+    "instruction": "Gib die Aussage distanziert wieder. Vermeide eine schon entschiedene Ablehnung.",
+    "objective": "Indirekte Rede – Verantwortlichkeit",
+    "sample": "Die Vorsitzende erklärte, der Einwand sei gehört worden; ob er die Entscheidung beeinflusse, bleibe jedoch offen.",
+    "noticing": [
+      "Wird keine Ablehnung behauptet?",
+      "Bleibt die Entscheidung offen?",
+      "Ist die fremde Aussage klar markiert?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-014",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "In der untersuchten Gruppe wurde ein Zusammenhang beobachtet. Über andere Gruppen liegen keine Daten vor.",
+    "instruction": "Formuliere eine wissenschaftlich vorsichtige Schlussfolgerung ohne Generalisierung.",
+    "objective": "Reichweite statistischer Befunde",
+    "sample": "Der beobachtete Zusammenhang ist bislang nur für die untersuchte Gruppe belegt; Aussagen über andere Gruppen lassen sich daraus nicht ableiten.",
+    "noticing": [
+      "Unterscheidung von Beobachtung und Generalisierung?",
+      "Keine erfundene Kausalität?",
+      "Angemessener Grad von Gewissheit?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-015",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Eine Veröffentlichung nennt keine Quelle für eine zentrale Behauptung. Ob die Behauptung falsch ist, ist unbekannt.",
+    "instruction": "Schreibe zwei differenzierte Sätze für einen sachlichen Kommentar.",
+    "objective": "Kritik ohne Unterstellung",
+    "sample": "Für eine zentrale Behauptung fehlt in der Veröffentlichung ein Quellenbeleg. Damit ist ihre Richtigkeit nicht überprüfbar, ohne dass daraus bereits ihre Unrichtigkeit folgt.",
+    "noticing": [
+      "Belegmangel ist nicht Widerlegung?",
+      "Keine Vermutung über Motive?",
+      "Sachliche Wortwahl?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-016",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "source": "Die Projektleitung hält den Zeitplan für realistisch. Einige Mitarbeitende zweifeln daran.",
+    "instruction": "Fasse die Positionen neutral in einem komplexen Satz zusammen.",
+    "objective": "Neutraler Perspektivvergleich",
+    "sample": "Während die Projektleitung den Zeitplan für realistisch hält, äußern einige Mitarbeitende Zweifel an seiner Umsetzbarkeit.",
+    "noticing": [
+      "Beide Perspektiven bleiben klar zugeordnet?",
+      "Kein fiktiver Konsens?",
+      "Idiomaticher Kontrast?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-017",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Die Reform kann erfolgreich sein. Voraussetzung ist eine breite Zustimmung. Bisher gibt es nur vereinzelte Zusagen.",
+    "instruction": "Formuliere einen bedingten Ausblick, der Erfolg nicht behauptet.",
+    "objective": "Nuancierte Bedingung",
+    "sample": "Ein Erfolg der Reform erscheint nur unter der Voraussetzung breiter Zustimmung möglich; die bislang vereinzelten Zusagen lassen noch keinen sicheren Schluss zu.",
+    "noticing": [
+      "Bedingung von Resultat getrennt?",
+      "Kein Erfolg vorweggenommen?",
+      "Zurückhaltung explizit?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-018",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C1",
+    "source": "Die Datenbasis ist begrenzt. Die Ergebnisse können dennoch Hinweise für weitere Untersuchungen liefern.",
+    "instruction": "Verbinde beide Gedanken im gehobenen Sachstil.",
+    "objective": "Konzession und Folgerung",
+    "sample": "Obwohl die Datenbasis begrenzt ist, könnten die Ergebnisse wertvolle Anhaltspunkte für weiterführende Untersuchungen liefern.",
+    "noticing": [
+      "Methodische Grenze bleibt sichtbar?",
+      "Hinweis nicht als Beweis bezeichnet?",
+      "Konzessives Satzgefüge gelungen?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-019",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Die Frist wurde überschritten. Es lässt sich nicht feststellen, wer dafür verantwortlich war.",
+    "instruction": "Formuliere einen kurzen Berichtssatz, ohne Verantwortung zu erfinden.",
+    "objective": "Verfahrenssprache ohne Schuldzuweisung",
+    "sample": "Die Überschreitung der Frist ist dokumentiert; eine individuelle Verantwortlichkeit lässt sich derzeit nicht feststellen.",
+    "noticing": [
+      "Keine unzulässige Schuldzuweisung?",
+      "Ungewissheit erhalten?",
+      "Formales Register angemessen?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  },
+  {
+    "id": "SG-P04-020",
+    "version": 1,
+    "skillId": "G04.SYNTAX",
+    "band": "C2",
+    "source": "Ein Vorschlag verringert Kosten. Gleichzeitig verlängert sich die Bearbeitungszeit.",
+    "instruction": "Schreibe eine ausgewogene fachliche Bewertung, ohne zusätzliche Zahlen anzunehmen.",
+    "objective": "Argumentative Gewichtung",
+    "sample": "Der Vorschlag könnte zwar die Kosten senken, ginge jedoch mit einer längeren Bearbeitungszeit einher; beide Effekte sind gegeneinander abzuwägen.",
+    "noticing": [
+      "Kosten und Zeit klar abgegrenzt?",
+      "Keine erfundenen Größenangaben?",
+      "Ausgewogenheit und Modalität?"
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null
+  }
+]

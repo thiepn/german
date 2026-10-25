@@ -1,0 +1,8 @@
+# M24 — G11 Argumente begründen und prüfen
+
+## Distinct curriculum gap
+G11 M11 revises flawed manuscripts, G08 M19 interprets institutional stance, G09 M20 compares source evidence, and G11 M22 attributes quotes. M24 uniquely asks learners to **construct a source-grounded argument from first principles**: separately state a limited conclusion, identify the missing logical warrant linking evidence to the claim, formulate a **strong adversarial counterargument** rather than a caricature, and then produce and revise a multi-paragraph original policy argument. No duplicate grammar grader or evidence scorer is introduced.
+
+Four newly authored fictitious documents (12 full paragraphs, 12 verbatim anchors) span a public administration four-day working week, generative AI in academic advising, municipal heat adaptation, and digital archive access. Each text distinguishes observed data, omitted comparison, competing interpretation and a conditional institutional decision. Items SG-G11A-001–004, version 1, C1 and C2. Sources and options remain original AI_DRAFT, ORIGINAL_DRAFT and DEMO_ONLY.
+
+The first source-linked chain lives in immutable ProductionEntry.original. The remaining anchors, full independently authored essay and meaningful revisions live in append-only ProductionRevision. Native Today/Curriculum/Progress/Archive, original eight stores, transactional CAS and backup v3. Word diff displays edits without grading correctness. Text constraints reject verbatim source copying and duplicated fields, but do not claim to assess independent prose semantically. Four source documents and twelve argument nodes receive distinct unapproved editorial dossiers. No rights approval, migration, merge or deployment.

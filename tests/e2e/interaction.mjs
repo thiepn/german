@@ -1,0 +1,62 @@
+import {chromium} from 'playwright';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({headless:true});
+async function run(width){
+ const ctx=await browser.newContext({viewport:{width,height:850},serviceWorkers:'allow'});
+ try{
+  const p=await ctx.newPage();await p.goto('http://127.0.0.1:4173/',{waitUntil:'networkidle'});
+  await p.getByRole('button',{name:'Mit dem Lernen beginnen'}).click();
+  await p.getByRole('button',{name:'Gesprächsstrategien · G12'}).click();
+  await p.getByRole('heading',{name:'Gespräch und Argumentation'}).waitFor();
+  const dialogue=p.locator('.interaction-transcript');
+  await dialogue.getByText('Können wir die zusätzliche Prüfung nicht einfach streichen?',{exact:false}).waitFor();
+  const save=p.getByRole('button',{name:'Antwort dauerhaft speichern'});
+  assert.equal(await save.isDisabled(),true);
+  await p.getByLabel('Gesprächsregister').selectOption('Sachlich-kollegial');
+  await p.getByLabel('Gesprächsstrategie').selectOption('CHALLENGE');
+  const original='Die Prüfung kann ich nicht auslassen, wohl aber ihren Umfang begrenzen.';
+  await p.getByLabel('Deine Gesprächsantwort').fill(original);await save.click();
+  await dialogue.getByText(original,{exact:true}).waitFor();
+  await p.getByRole('heading',{name:/Auf den Einwand antworten/}).waitFor();
+  assert.equal(await dialogue.locator('.interaction-other').count(),2,'second scripted turn appears only after the first reply');
+  await p.getByLabel('Gesprächsstrategie').selectOption('NEGOTIATE');
+  const second='Ich sichere die Mindestprüfung bis Freitag zu und kennzeichne den Zwischenstand.';
+  await p.getByLabel('Deine Gesprächsantwort').fill(second);
+  await p.getByLabel('Begründung, Vorbehalt oder Konsequenz').fill('Nur der Mindestumfang ist verbindlich; die vollständige Prüfung bleibt offen.');
+  await save.click();await dialogue.getByText(second,{exact:true}).waitFor();
+  assert.equal(await dialogue.locator('.interaction-other').count(),3);
+  const third='Wir kennzeichnen den Entwurf ausdrücklich als vorläufig und planen die Kontrolle.';
+  await p.getByLabel('Deine Gesprächsantwort').fill(third);
+  await p.getByLabel('Begründung, Vorbehalt oder Konsequenz').fill('Eine verbindliche Freigabe ist mit dem Zwischenstand noch nicht gedeckt.');
+  await save.click();await dialogue.getByText(third,{exact:true}).waitFor();
+  await p.getByText('Drei Gesprächszüge dokumentiert.',{exact:false}).waitFor();
+  await p.getByLabel('Gesprächszug').selectOption('t0');
+  await p.getByLabel('Alternative Strategie').selectOption('REFRAME');
+  const alt='Die Frage ist, welche Ergebnisse zuverlässig vorliegen, nicht was wir streichen.';
+  await p.getByLabel('Alternative Antwort').fill(alt);
+  await p.getByLabel('Warum ist diese Alternative sinnvoll? Welche Grenze bleibt?').fill('Verschiebt die Perspektive auf eine überprüfbare Zusage.');
+  await p.getByRole('button',{name:'Alternative speichern'}).click();
+  await dialogue.getByText('Alternative 1').waitFor();
+  await dialogue.getByText('Alternative 1').click();
+  await dialogue.getByText(alt,{exact:true}).waitFor();
+  await p.getByRole('button',{name:'Zurück zum Curriculum'}).click();
+  await p.getByRole('button',{name:'Fortschritt',exact:true}).first().click();
+  await p.getByRole('heading',{name:'Gespräch und Argumentation · G12'}).waitFor();
+  await p.getByText('1/4 Gespräche begonnen',{exact:false}).waitFor();
+  await p.getByRole('button',{name:'Schreibspuren ansehen'}).click();
+  await p.getByLabel('Textart').selectOption('G12_INTERACTION');
+  await p.locator('.archive-entry').first().click();
+  await p.getByText(original,{exact:true}).waitFor();
+  await p.getByText('Verschiebt die Perspektive auf eine überprüfbare Zusage.',{exact:false}).waitFor();
+  await p.getByRole('button',{name:'Originalen Lernbereich öffnen'}).click();
+  await p.getByRole('heading',{name:'Gespräch und Argumentation'}).waitFor();
+  await dialogue.getByText(original,{exact:true}).waitFor();
+  await p.reload({waitUntil:'networkidle'});
+  await p.getByRole('button',{name:'Lernen',exact:true}).first().click();
+  await p.locator('article').filter({hasText:'Sprechen und Interaktion'}).getByRole('button',{name:'Gesprächsstrategien öffnen'}).click();
+  await dialogue.getByText(original,{exact:true}).waitFor();
+  assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,'no horizontal overflow');
+  console.log('PASS M10 scripted dialogue, strategies, alternatives, archive, reload '+width);
+ }finally{await ctx.close()}
+}
+try{await run(1280);await run(360)}finally{await browser.close()}

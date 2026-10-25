@@ -1,0 +1,620 @@
+[
+  {
+    "id": "SG-G07-001",
+    "version": 1,
+    "domain": "G07",
+    "band": "C1",
+    "title": "Förderzusage und Vorbehalte",
+    "focus": "Ankündigung, Kenntnisnahme und Bedenken im Förderverfahren",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Referentin stellte eine zusätzliche Förderung in Aussicht, machte deren Höhe jedoch ausdrücklich von einer noch ausstehenden Prüfung abhängig. Die Projektleitung überarbeitete daraufhin ihren Finanzplan, ohne den möglichen Zuschuss bereits als gesicherte Einnahme zu buchen."
+      },
+      {
+        "id": "p2",
+        "text": "Die Geschäftsstelle nahm die eingereichten Hinweise zur Kenntnis, ohne sich deren Bewertung zu eigen zu machen. Im Protokoll wurde ausdrücklich festgehalten, dass die Rückmeldung der Beteiligten kein Einverständnis mit allen vorgeschlagenen Maßnahmen bedeutete."
+      },
+      {
+        "id": "p3",
+        "text": "Die Projektgruppe meldete Vorbehalte gegen den engen Zeitplan an und bat um eine erneute Abstimmung. Diese Bedenken waren noch nicht ausgeräumt, als die nächste Sitzung angesetzt wurde. Eine verbindliche gemeinsame Terminentscheidung lag weiterhin nicht vor."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "ANNOUNCEMENT_COMMITMENT",
+        "focus": "Grad der Verbindlichkeit",
+        "quote": "Die Referentin stellte eine zusätzliche Förderung in Aussicht",
+        "alternate": "Die Referentin sagte eine zusätzliche Förderung verbindlich zu",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Referentin benennt eine mögliche spätere Unterstützung, über die noch zu entscheiden ist."
+          },
+          {
+            "id": "B",
+            "text": "Die Referentin gibt bereits eine verbindliche Zusage über die Förderung ab."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "Die mehrteilige Wendung „in Aussicht stellen“ kündigt eine Aussicht oder Erwartung an; sie ist keine belastbare feste Zusage. Die Bedingung im folgenden Satz bestätigt diese Grenze.",
+        "repairPrompt": "Formuliere eine mögliche Förderung, ohne eine rechtlich oder finanziell gesicherte Zusage vorzutäuschen.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "ACKNOWLEDGEMENT_ENDORSEMENT",
+        "focus": "Kenntnisnahme gegenüber Übernahme einer Position",
+        "quote": "Die Geschäftsstelle nahm die eingereichten Hinweise zur Kenntnis",
+        "alternate": "Die Geschäftsstelle machte sich die eingereichten Hinweise zu eigen",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Geschäftsstelle bestätigt die Aufnahme der Hinweise, ohne ihre Inhalte zu billigen."
+          },
+          {
+            "id": "B",
+            "text": "Die Geschäftsstelle übernimmt die Argumente ausdrücklich als eigene Position."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "„zur Kenntnis nehmen“ bezeichnet die Rezeption der Hinweise. „sich etwas zu eigen machen“ verlangt ein viel stärkeres inhaltliches Einstehen für diese Position; der Text verneint das ausdrücklich.",
+        "repairPrompt": "Schreibe eine Eingangsbestätigung und eine getrennte inhaltliche Bewertung, ohne beides gleichzusetzen.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "OBJECTION_RESOLUTION",
+        "focus": "Vorbehalte anmelden gegenüber ausräumen",
+        "quote": "Die Projektgruppe meldete Vorbehalte gegen den engen Zeitplan an",
+        "alternate": "Die Projektgruppe räumte Vorbehalte gegen den engen Zeitplan aus",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Projektgruppe bringt Bedenken vor und verlangt eine neue Abstimmung."
+          },
+          {
+            "id": "B",
+            "text": "Die Projektgruppe beseitigt bestehende Bedenken und erklärt die Frage für geklärt."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„Vorbehalte anmelden“ führt Einwände in ein Verfahren ein; „Vorbehalte ausräumen“ beschreibt ihre Beseitigung. Im Ausgangstext bestehen die Bedenken ausdrücklich fort.",
+        "repairPrompt": "Gib in einer Sitzungsnotiz an, ob ein Einwand erst geäußert oder tatsächlich beseitigt wurde.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      }
+    ],
+    "transfer": "Verfasse eine neue, eigenständige Sachstandsmitteilung auf Grundlage der drei Absätze. Verwende mindestens zwei der untersuchten festen Wendungen in passenden neuen Sätzen. Unterscheide ausdrücklich zwischen geplantem, nur angekündigtem und tatsächlich erfolgtem Handeln. Begründe danach die Wortwahl und die Grenzen dessen, was sich aus der Quelle behaupten lässt.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M17 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl M17 independently authored fictional phraseological source case; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G07-002",
+    "version": 1,
+    "domain": "G07",
+    "band": "C1",
+    "title": "Nachprüfung und Zuständigkeit",
+    "focus": "Erwägung, öffentliches Bekenntnis und tatsächliche Bereitstellung",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Nach mehreren widersprüchlichen Messungen zog das Forschungsteam eine zusätzliche Erhebung in Betracht. Eine Entscheidung über Umfang und Finanzierung stand noch aus. Zunächst sollten nur mögliche Prüfverfahren miteinander verglichen werden."
+      },
+      {
+        "id": "p2",
+        "text": "Die Sprecherin brachte eine abweichende Auffassung zur Methode zum Ausdruck, ohne zugleich ein förmliches Minderheitsvotum einzureichen. Die Sitzungsleitung hielt den Unterschied im Protokoll fest; eine gesonderte Abstimmung über diese Position fand nicht statt."
+      },
+      {
+        "id": "p3",
+        "text": "Die Forschungsabteilung stellte der externen Prüfstelle die anonymisierten Messreihen zur Verfügung. Sie dokumentierte die Übergabe und die Nutzungsbeschränkungen. Andere Datenbestände blieben ausschließlich im internen Archiv und wurden nicht weitergegeben."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "ACTIVE_CONSIDERATION",
+        "focus": "Erwägung durch einen Akteur gegenüber Option",
+        "quote": "zog das Forschungsteam eine zusätzliche Erhebung in Betracht",
+        "alternate": "kam eine zusätzliche Erhebung für das Forschungsteam in Betracht",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Forschenden prüfen aktiv, ob eine zusätzliche Erhebung durchgeführt werden sollte."
+          },
+          {
+            "id": "B",
+            "text": "Eine zusätzliche Erhebung ist grundsätzlich eine mögliche Option; eine aktive Beratung wird nicht ausdrücklich berichtet."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„etwas in Betracht ziehen“ benennt die prüfende Person oder Gruppe und ihren Abwägungsvorgang. „in Betracht kommen“ beschreibt zunächst eine Eignung oder Möglichkeit und schwächt den Bericht über das tatsächliche Erwägen ab.",
+        "repairPrompt": "Formuliere eine noch offene Handlungsoption und grenze eine aktive Beratung von bloßer Möglichkeit ab.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "EXPRESSION_FORMAL_RECORD",
+        "focus": "Meinungsäußerung gegenüber formalisierter Erklärung",
+        "quote": "Die Sprecherin brachte eine abweichende Auffassung zur Methode zum Ausdruck",
+        "alternate": "Die Sprecherin gab eine abweichende Auffassung zur Methode als förmliches Minderheitsvotum zu Protokoll",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Sprecherin macht ihre abweichende Meinung erkennbar, ohne ein formales Votum einzureichen."
+          },
+          {
+            "id": "B",
+            "text": "Die Sprecherin veranlasst eine formell dokumentierte Minderheitserklärung."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "„zum Ausdruck bringen“ bezeichnet das sichtbare Äußern einer Haltung; „etwas zu Protokoll geben“ rückt den Vorgang in ein dokumentiertes Verfahren. Die ergänzte Formulierung wäre hier stärker als der belegte Ablauf.",
+        "repairPrompt": "Verfasse eine Äußerung, die eine Meinung erkennbar macht, aber kein förmliches Minderheitsvotum behauptet.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "PROVISION_AVAILABILITY",
+        "focus": "Aktive Übergabe gegenüber vorhandener Verfügbarkeit",
+        "quote": "Die Forschungsabteilung stellte der externen Prüfstelle die anonymisierten Messreihen zur Verfügung",
+        "alternate": "Die anonymisierten Messreihen standen der externen Prüfstelle zur Verfügung",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Forschungsabteilung übergibt die Daten zur Nutzung und dokumentiert diesen Vorgang."
+          },
+          {
+            "id": "B",
+            "text": "Die Daten sind für die Prüfstelle verfügbar; wer sie wann bereitgestellt hat, bleibt offen."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„zur Verfügung stellen“ berichtet eine konkrete Bereitstellung durch einen Akteur. „zur Verfügung stehen“ beschreibt Verfügbarkeit ohne denselben Übergabeakt. Der Folgeabsatz belegt ausdrücklich die Übergabe.",
+        "repairPrompt": "Schreibe eine belastbare Mitteilung über übergebene und zurückbehaltene Datenbestände.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      }
+    ],
+    "transfer": "Verfasse eine neue, eigenständige Sachstandsmitteilung auf Grundlage der drei Absätze. Verwende mindestens zwei der untersuchten festen Wendungen in passenden neuen Sätzen. Unterscheide ausdrücklich zwischen geplantem, nur angekündigtem und tatsächlich erfolgtem Handeln. Begründe danach die Wortwahl und die Grenzen dessen, was sich aus der Quelle behaupten lässt.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M17 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl M17 independently authored fictional phraseological source case; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G07-003",
+    "version": 1,
+    "domain": "G07",
+    "band": "C2",
+    "title": "Haushaltsausschuss und Kontrolle",
+    "focus": "Verfahrensstand, Verantwortungsnachweis und kritische Prüfung",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Der Haushaltsausschuss fasste noch keinen Beschluss über den Antrag, obwohl die Vorlage seit zwei Wochen auf der Tagesordnung stand. Die Fraktionen verlangten zunächst ergänzende Angaben zu den laufenden Kosten. Die Verwaltung sollte die fehlenden Unterlagen in der nächsten Sitzung nachreichen."
+      },
+      {
+        "id": "p2",
+        "text": "Die Verwaltung legte Rechenschaft über die verwendeten Mittel ab. Dazu benannte sie die einzelnen Ausgaben, ihre haushaltsrechtliche Grundlage und die Personen, die sie genehmigt hatten. Die bloße Schilderung eines positiven Projektergebnisses hätte diese Auskunftspflicht nicht erfüllt."
+      },
+      {
+        "id": "p3",
+        "text": "Mehrere Mitglieder stellten die Annahme stabiler Folgekosten infrage. Sie verlangten eine neue Prognose und verwiesen darauf, dass die bisherigen Berechnungen auf unveränderten Energiepreisen beruhten. Einen endgültigen Gegenbeweis hatte bis dahin niemand vorgelegt."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "DECISION_PREPARATION",
+        "focus": "Beschluss fassen gegenüber Vorbereitung einer Entscheidung",
+        "quote": "Der Haushaltsausschuss fasste noch keinen Beschluss über den Antrag",
+        "alternate": "Der Haushaltsausschuss bereitete einen Beschluss über den Antrag vor",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Es liegt noch keine verbindliche Ausschussentscheidung zum Antrag vor."
+          },
+          {
+            "id": "B",
+            "text": "Der Ausschuss arbeitete bereits an einer Beschlussfassung, ohne deren Ergebnis zu nennen."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„einen Beschluss fassen“ bezeichnet den abgeschlossenen Entscheidungsvorgang. Die alternative Wendung beschreibt nur Vorbereitung; ohne die Negation würde eine erfolgte Abstimmung behauptet.",
+        "repairPrompt": "Formuliere den Stand eines noch nicht abgeschlossenen Beschlussverfahrens präzise.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "ACCOUNTABILITY_EXPLANATION",
+        "focus": "Rechenschaft gegenüber bloßer Erläuterung",
+        "quote": "Die Verwaltung legte Rechenschaft über die verwendeten Mittel ab",
+        "alternate": "Die Verwaltung erläuterte die Verwendung der Mittel",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Verwaltung berichtet im Rahmen ihrer Verantwortung nachvollziehbar über Entscheidungen und Mittelverwendung."
+          },
+          {
+            "id": "B",
+            "text": "Die Verwaltung erklärt den Ablauf, ohne damit zwingend eine formale Verantwortungslegung zu leisten."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "„Rechenschaft ablegen“ verlangt einen verantworteten Nachweis gegenüber Berechtigten; „etwas erläutern“ kann sich auf eine bloße Erklärung beschränken. Der Bericht nennt ausdrücklich Rechtsgrundlage und Genehmigende.",
+        "repairPrompt": "Beschreibe eine kontrollierbare Auskunftspflicht und unterscheide sie von allgemeiner Projektkommunikation.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "CHALLENGE_REFUTATION",
+        "focus": "Kritische Infragestellung gegenüber endgültiger Widerlegung",
+        "quote": "Mehrere Mitglieder stellten die Annahme stabiler Folgekosten infrage",
+        "alternate": "Mehrere Mitglieder erklärten die Annahme stabiler Folgekosten für widerlegt",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Mitglieder bezweifeln die Belastbarkeit der Annahme und verlangen neue Berechnungen."
+          },
+          {
+            "id": "B",
+            "text": "Die Mitglieder behaupten, die Annahme bereits endgültig widerlegt zu haben."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„etwas infrage stellen“ eröffnet eine begründungsbedürftige Prüfung, ohne den Gegenbeweis zu liefern. Die Alternative steigert die Aussage zu einer endgültigen Feststellung; genau dieser Beleg fehlt.",
+        "repairPrompt": "Fasse Zweifel und Evidenzgrenzen zusammen, ohne aus einer Nachfrage eine Widerlegung zu machen.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      }
+    ],
+    "transfer": "Verfasse eine neue, eigenständige Sachstandsmitteilung auf Grundlage der drei Absätze. Verwende mindestens zwei der untersuchten festen Wendungen in passenden neuen Sätzen. Unterscheide ausdrücklich zwischen geplantem, nur angekündigtem und tatsächlich erfolgtem Handeln. Begründe danach die Wortwahl und die Grenzen dessen, was sich aus der Quelle behaupten lässt.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M17 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl M17 independently authored fictional phraseological source case; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G07-004",
+    "version": 1,
+    "domain": "G07",
+    "band": "C2",
+    "title": "Betriebsunterbrechung und Lieferpflichten",
+    "focus": "Verzug, tatsächlich ergriffene Maßnahmen und Pflichterfüllung",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Lieferantin geriet mit der Lieferung wichtiger Ersatzteile in Verzug, nachdem mehrere geplante Transporte ausgefallen waren. Der Auftraggeber dokumentierte die vereinbarten Fristen und verlangte eine Erklärung. Eine nachträgliche Änderung des ursprünglichen Liefertermins war nicht vereinbart worden."
+      },
+      {
+        "id": "p2",
+        "text": "Die Betriebsleitung ergriff Maßnahmen zur Sicherung der Produktion. Sie verteilte noch vorhandene Teile auf die dringendsten Aufträge und organisierte eine befristete Ersatzlieferung. In der Mitteilung an die Belegschaft unterschied sie diese Schritte von bloß erwogenen weiteren Optionen."
+      },
+      {
+        "id": "p3",
+        "text": "Das Unternehmen kam seiner Informationspflicht gegenüber den betroffenen Kunden nach. Es verschickte konkrete Angaben zu den Verzögerungen und zu den möglichen Auswirkungen auf laufende Aufträge. Ob die Lieferfristen später erneut geändert werden mussten, blieb weiterhin offen."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "DELAY_AGENT",
+        "focus": "Selbst in Verzug geraten gegenüber fremden Verzug verursachen",
+        "quote": "Die Lieferantin geriet mit der Lieferung wichtiger Ersatzteile in Verzug",
+        "alternate": "Die Lieferantin brachte den Auftraggeber mit der Lieferung wichtiger Ersatzteile in Verzug",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Lieferantin erfüllt die eigene Leistung nicht innerhalb der vereinbarten Frist."
+          },
+          {
+            "id": "B",
+            "text": "Die Lieferantin verursacht eine Verzögerung einer Leistungspflicht des Auftraggebers."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„in Verzug geraten“ bezieht sich auf die verspätete Erfüllung der eigenen Pflicht; „jemanden in Verzug bringen“ verteilt die Verantwortung anders und würde hier einen nicht berichteten Schuldnerwechsel nahelegen.",
+        "repairPrompt": "Berichte über eine verspätete Lieferung und benenne eindeutig, wer welche Pflicht nicht rechtzeitig erfüllt.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "ACTION_ANNOUNCEMENT",
+        "focus": "Durchgeführte Maßnahme gegenüber angekündigter Option",
+        "quote": "Die Betriebsleitung ergriff Maßnahmen zur Sicherung der Produktion",
+        "alternate": "Die Betriebsleitung kündigte Maßnahmen zur Sicherung der Produktion an",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Leitung handelt bereits konkret, um die Produktion zu stabilisieren."
+          },
+          {
+            "id": "B",
+            "text": "Die Leitung stellt erst künftige Schritte in Aussicht; eine Durchführung ist nicht belegt."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "„Maßnahmen ergreifen“ berichtet tatsächliche Handlungen. „Maßnahmen ankündigen“ berichtet lediglich kommunikative Absicht; der Text nennt mehrere bereits realisierte Schritte.",
+        "repairPrompt": "Formuliere einen Lagebericht, der umgesetzte und erst geplante Schritte ausdrücklich trennt.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "DUTY_FULFILLMENT",
+        "focus": "Pflichterfüllung gegenüber Debatte über ihre Berechtigung",
+        "quote": "Das Unternehmen kam seiner Informationspflicht gegenüber den betroffenen Kunden nach",
+        "alternate": "Das Unternehmen stellte seine Informationspflicht gegenüber den betroffenen Kunden zur Diskussion",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Das Unternehmen erfüllt die bestehende Informationspflicht durch konkrete Mitteilungen."
+          },
+          {
+            "id": "B",
+            "text": "Das Unternehmen lässt offen, ob es die Informationspflicht akzeptiert, und diskutiert stattdessen deren Status."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„einer Pflicht nachkommen“ sagt aus, dass sie erfüllt wird; „eine Pflicht zur Diskussion stellen“ macht die Verpflichtung zum Gegenstand einer Debatte. Im Text liegen tatsächliche Benachrichtigungen vor.",
+        "repairPrompt": "Beschreibe einen erfüllten Informationsschritt, ohne ihn als bloßes Versprechen oder Grundsatzdebatte darzustellen.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      }
+    ],
+    "transfer": "Verfasse eine neue, eigenständige Sachstandsmitteilung auf Grundlage der drei Absätze. Verwende mindestens zwei der untersuchten festen Wendungen in passenden neuen Sätzen. Unterscheide ausdrücklich zwischen geplantem, nur angekündigtem und tatsächlich erfolgtem Handeln. Begründe danach die Wortwahl und die Grenzen dessen, was sich aus der Quelle behaupten lässt.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M17 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl M17 independently authored fictional phraseological source case; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G07-005",
+    "version": 1,
+    "domain": "G07",
+    "band": "C1",
+    "title": "Wettbewerb und Vorläufigkeit",
+    "focus": "Auswahlstufe, Änderungsvorbehalt und Richtung eines Gutachtens",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Jury zog drei Entwürfe in die engere Wahl, nachdem sie sämtliche Einsendungen auf die formalen Anforderungen geprüft hatte. Eine endgültige Zusage an die beteiligten Büros war damit nicht verbunden. Die ausgewählten Teams sollten ihre Konzepte in einer zweiten Runde erläutern."
+      },
+      {
+        "id": "p2",
+        "text": "Die Ausstellungsleitung behielt sich Änderungen am Ablauf vor, bis die Brandschutzprüfung abgeschlossen wäre. Sie nahm zu diesem Zeitpunkt noch keine Änderung am veröffentlichten Programm vor. Die Veranstaltenden informierten die beteiligten Gruppen ausdrücklich über diesen Vorbehalt."
+      },
+      {
+        "id": "p3",
+        "text": "Eine unabhängige Fachgruppe gab eine Stellungnahme zu den räumlichen Anforderungen ab. Die Jury hatte das Gutachten zuvor angefordert und erhielt nun erstmals eine schriftliche Antwort. Über die konkrete Umsetzung der Hinweise sollte erst später entschieden werden."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "SHORTLIST_APPROVAL",
+        "focus": "Engere Wahl gegenüber Freigabe zur Durchführung",
+        "quote": "Die Jury zog drei Entwürfe in die engere Wahl",
+        "alternate": "Die Jury gab drei Entwürfe zur Ausführung frei",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Drei Entwürfe dürfen an der nächsten Bewertungsrunde teilnehmen; sie sind noch nicht verbindlich ausgewählt."
+          },
+          {
+            "id": "B",
+            "text": "Drei Entwürfe erhalten bereits die Genehmigung, umgesetzt zu werden."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„in die engere Wahl ziehen“ ist eine Vorentscheidung im Auswahlverfahren; „zur Ausführung freigeben“ bezeichnet eine wesentlich spätere Genehmigungsstufe. Die Folgepassage nennt ausdrücklich eine weitere Runde.",
+        "repairPrompt": "Formuliere eine Zwischenmitteilung, die Bewerbungen würdigt, ohne daraus einen Zuschlag zu machen.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "RESERVATION_EXECUTION",
+        "focus": "Vorbehalt gegenüber Vollzug",
+        "quote": "Die Ausstellungsleitung behielt sich Änderungen am Ablauf vor",
+        "alternate": "Die Ausstellungsleitung nahm Änderungen am Ablauf vor",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Leitung hält sich die Möglichkeit einer künftigen Änderung offen."
+          },
+          {
+            "id": "B",
+            "text": "Die Leitung hat den Ablauf bereits konkret geändert."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "„sich Änderungen vorbehalten“ reserviert eine Handlungsoption für später; „Änderungen vornehmen“ berichtet ihren Vollzug. Im zweiten Satz steht ausdrücklich, dass noch nichts geändert wurde.",
+        "repairPrompt": "Schreibe eine Ankündigung, die einen Änderungsvorbehalt klar von bereits vorgenommenen Änderungen unterscheidet.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "OPINION_DIRECTION",
+        "focus": "Stellungnahme abgeben gegenüber einholen",
+        "quote": "Eine unabhängige Fachgruppe gab eine Stellungnahme zu den räumlichen Anforderungen ab",
+        "alternate": "Eine unabhängige Fachgruppe holte eine Stellungnahme zu den räumlichen Anforderungen ein",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Fachgruppe liefert eine eigene fachliche Stellungnahme an die Jury."
+          },
+          {
+            "id": "B",
+            "text": "Die Fachgruppe bittet selbst eine weitere Stelle um eine Stellungnahme."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„eine Stellungnahme abgeben“ markiert die Fachgruppe als Urheberin einer Äußerung; „eine Stellungnahme einholen“ markiert den Empfänger als aktiv nachfragende Person. Der Bericht nennt die Jury als Auftraggeberin.",
+        "repairPrompt": "Formuliere in einem Verfahren eindeutig, wer ein Gutachten angefordert und wer es abgegeben hat.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      }
+    ],
+    "transfer": "Verfasse eine neue, eigenständige Sachstandsmitteilung auf Grundlage der drei Absätze. Verwende mindestens zwei der untersuchten festen Wendungen in passenden neuen Sätzen. Unterscheide ausdrücklich zwischen geplantem, nur angekündigtem und tatsächlich erfolgtem Handeln. Begründe danach die Wortwahl und die Grenzen dessen, was sich aus der Quelle behaupten lässt.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M17 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl M17 independently authored fictional phraseological source case; no third-party passages"
+    }
+  },
+  {
+    "id": "SG-G07-006",
+    "version": 1,
+    "domain": "G07",
+    "band": "C2",
+    "title": "Wissenschaftliche Bewertung und Grenzen",
+    "focus": "Inferenz, Distanzierung und Einordnung eines Befundes",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Forschenden zogen vorsichtige Schlussfolgerungen aus den Vergleichsdaten, nachdem sie die Messreihen auf fehlende Werte geprüft hatten. Sie wiesen darauf hin, dass sich ein Zusammenhang beschreiben, aber noch keine eindeutige Ursache identifizieren ließ. Der Bericht trennte deshalb Beobachtungen und Erklärungsversuche."
+      },
+      {
+        "id": "p2",
+        "text": "Die Autorinnen nahmen ausdrücklich Abstand von einer kausalen Deutung der beobachteten Unterschiede. Sie untersuchten mögliche Einflussgrößen weiterhin, wollten aber aus dem bisherigen Material keine verbindliche Ursachenzuschreibung ableiten. Ein weiterer Untersuchungsdurchgang wurde vorbereitet."
+      },
+      {
+        "id": "p3",
+        "text": "Die Redaktion brachte die sprachliche Zuspitzung des Ergebnistextes mit den belegten Befunden in Einklang. Sie ersetzte insbesondere eine unzulässige Gewissheitsformulierung durch eine vorsichtigere Darstellung. Der abschließende Text unterschied nun zwischen einer plausiblen Hypothese und einem nachgewiesenen Ergebnis."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "family": "HUMAN_INFERENCE_DATA_HINT",
+        "focus": "Aktive Interpretation gegenüber Indizwirkung der Daten",
+        "quote": "Die Forschenden zogen vorsichtige Schlussfolgerungen aus den Vergleichsdaten",
+        "alternate": "Die Vergleichsdaten legten vorsichtige Schlussfolgerungen nahe",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Forschenden vollziehen und verantworten selbst einen vorsichtigen Interpretationsschritt."
+          },
+          {
+            "id": "B",
+            "text": "Die Daten machen eine Deutung plausibel; wer sie konkret zieht, bleibt im Satz offen."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "„Schlussfolgerungen ziehen“ benennt den interpretierenden Akteur; „Schlussfolgerungen nahelegen“ beschreibt vor allem die Evidenzwirkung. Beides ist sinnvoll, aber die Verantwortung für den Schluss wird unterschiedlich verteilt.",
+        "repairPrompt": "Schreibe zwei Sätze, die den Unterschied zwischen Datenhinweis und begründetem Schluss der Forschenden sichtbar machen.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "family": "DELIBERATE_DISTANCE_OMISSION",
+        "focus": "Bewusste Distanzierung gegenüber Nichtbeachtung",
+        "quote": "Die Autorinnen nahmen ausdrücklich Abstand von einer kausalen Deutung der beobachteten Unterschiede",
+        "alternate": "Die Autorinnen ließen eine kausale Deutung der beobachteten Unterschiede außer Acht",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Autorinnen verwerfen eine vorschnelle Ursachendeutung bewusst."
+          },
+          {
+            "id": "B",
+            "text": "Die Autorinnen berücksichtigen eine mögliche Erklärung nicht, ohne notwendig ausdrücklich Stellung dazu zu nehmen."
+          }
+        ],
+        "preferredId": "A",
+        "explanation": "„Abstand von etwas nehmen“ ist eine bewusste Distanzierung; „etwas außer Acht lassen“ kann auf eine Auslassung hinweisen. Die Originalquelle erläutert gerade die begründete Zurückhaltung.",
+        "repairPrompt": "Formuliere eine wissenschaftliche Einschränkung, die bewusste methodische Zurückhaltung von bloßem Übersehen unterscheidet.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "family": "ALIGNMENT_CONTRADICTION",
+        "focus": "In Einklang bringen gegenüber Widerspruch erzeugen",
+        "quote": "Die Redaktion brachte die sprachliche Zuspitzung des Ergebnistextes mit den belegten Befunden in Einklang",
+        "alternate": "Die Redaktion setzte die sprachliche Zuspitzung des Ergebnistextes in Widerspruch zu den belegten Befunden",
+        "question": "Welche Handlung oder Verpflichtung berichtet die feste Wortverbindung hier genau, und welche stärkere oder andere Aussage erzeugt die Alternative?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Redaktion passt die sprachlichen Aussagen an die belastbaren Ergebnisse an."
+          },
+          {
+            "id": "B",
+            "text": "Die Redaktion verschärft die Aussagen so, dass sie den tatsächlichen Befunden widersprechen."
+          }
+        ],
+        "preferredId": "B",
+        "explanation": "„in Einklang bringen“ bezeichnet die Herstellung einer Übereinstimmung zwischen Aussage und Beleg; „in Widerspruch setzen“ bezeichnet gerade die gegenteilige Beziehung. Die Revision reduziert die Übertreibung.",
+        "repairPrompt": "Formuliere eine transparente wissenschaftliche Korrektur, die Aussagekraft und sprachlichen Anspruch wieder aufeinander abstimmt.",
+        "analysis": "Beachte die mehrteilige Wendung als Einheit sowie die tatsächliche Handlung, Verbindlichkeit und den Träger der Verantwortung im Absatz."
+      }
+    ],
+    "transfer": "Verfasse eine neue, eigenständige Sachstandsmitteilung auf Grundlage der drei Absätze. Verwende mindestens zwei der untersuchten festen Wendungen in passenden neuen Sätzen. Unterscheide ausdrücklich zwischen geplantem, nur angekündigtem und tatsächlich erfolgtem Handeln. Begründe danach die Wortwahl und die Grenzen dessen, was sich aus der Quelle behaupten lässt.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "Sprachgefühl original M17 source draft",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Sprachgefühl M17 independently authored fictional phraseological source case; no third-party passages"
+    }
+  }
+]

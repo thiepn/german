@@ -1,0 +1,194 @@
+[
+  {
+    "id": "SG-E11-001",
+    "band": "C1",
+    "title": "Zuständigkeit in einer Projektmitteilung",
+    "genre": "Interne Projektinformation",
+    "audience": "Projektteam",
+    "objective": "Bezüge und Zuständigkeiten ohne unbelegte Schuldzuweisung klären",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Fachgruppe hat ihre erste Auswertung am Dienstag übergeben. Die Projektleitung bestätigte den Eingang und kündigte an, die Ergebnisse mit den Beteiligten zu besprechen."
+      },
+      {
+        "id": "p2",
+        "text": "Sie hat die Hinweise allerdings noch nicht geprüft. Deshalb werden ihre Empfehlungen im nächsten Schritt umgesetzt. Offen bleibt, ob alle Beteiligten dieselben Unterlagen erhalten haben."
+      },
+      {
+        "id": "p3",
+        "text": "Das Team schlägt ein gemeinsames Prüfgespräch vor, bevor verbindliche Maßnahmen beschlossen werden. Bis dahin gelten die Befunde als vorläufig."
+      }
+    ],
+    "issues": [
+      {
+        "id": "REFERENT",
+        "paragraphId": "p2",
+        "label": "Unklare Referenz",
+        "question": "Worauf beziehen sich „sie“ und „ihre“? Wie vermeidest du eine irreführende Zuständigkeitszuweisung?",
+        "focus": "KOHÄRENZ"
+      },
+      {
+        "id": "INFERENCE",
+        "paragraphId": "p2",
+        "label": "Unbegründete Folgerung",
+        "question": "Warum lässt sich die sofortige Umsetzung aus den ungeprüften Hinweisen nicht ableiten?",
+        "focus": "BEDEUTUNG"
+      }
+    ],
+    "version": 1,
+    "domain": "G11",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Redaktionsfall; keine übernommenen Fremdabsätze"
+    }
+  },
+  {
+    "id": "SG-E11-002",
+    "band": "C1",
+    "title": "Bericht über einen Pilotversuch",
+    "genre": "Zusammenfassender Projektbericht",
+    "audience": "Abteilungsleitung",
+    "objective": "Beobachtung, Einschränkung und Handlungsvorschlag kohärent verbinden",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Im Pilotversuch mit einer kleinen freiwilligen Gruppe fiel die Bearbeitungszeit geringer aus als zuvor. Parallel dazu waren die Aufgaben kürzer und die Teilnehmenden erhielten zusätzliche Hilfestellungen."
+      },
+      {
+        "id": "p2",
+        "text": "Damit ist erwiesen, dass das neue Verfahren allein die Zeitersparnis bewirkt. Die Ergebnisse sollten deshalb ohne weitere Prüfung auf alle Standorte übertragen werden."
+      },
+      {
+        "id": "p3",
+        "text": "Die Arbeitsgruppe empfiehlt für die nächste Runde vergleichbare Aufgaben und getrennt dokumentierte Unterstützungsleistungen. Erst ein solcher Vergleich könnte die Ursachen des Unterschieds eingrenzen."
+      }
+    ],
+    "issues": [
+      {
+        "id": "CAUSALITY",
+        "paragraphId": "p2",
+        "label": "Kausalität überdehnt",
+        "question": "Welche Einflussgrößen aus dem ersten Absatz widersprechen dem kausalen Schluss?",
+        "focus": "BEDEUTUNG"
+      },
+      {
+        "id": "CONTRADICTION",
+        "paragraphId": "p3",
+        "label": "Unvereinbare Empfehlungen",
+        "question": "Wie lässt sich der sofortige Rollout im zweiten Absatz mit dem Prüfbedarf des dritten Absatzes vereinbaren?",
+        "focus": "KOHÄRENZ"
+      }
+    ],
+    "version": 1,
+    "domain": "G11",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Redaktionsfall; keine übernommenen Fremdabsätze"
+    }
+  },
+  {
+    "id": "SG-E11-003",
+    "band": "C2",
+    "title": "Stellungnahme mit scheinbarem Zugeständnis",
+    "genre": "Öffentliche Stellungnahme",
+    "audience": "Interessierte Öffentlichkeit",
+    "objective": "Konzession, Gewichtung und normative Schlussfolgerung differenzieren",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die vorgeschlagene Öffnung des Lesesaals am Abend würde die Nutzung für Berufstätige erleichtern. Zugleich erfordert sie zusätzlichen Personaleinsatz, dessen Umfang bislang nur geschätzt werden kann."
+      },
+      {
+        "id": "p2",
+        "text": "Zwar entstehen dadurch möglicherweise Mehrkosten, dennoch ist der Vorschlag ausnahmslos wirtschaftlich sinnvoll. Wer Einwände erhebt, verkennt folglich die Interessen aller Besucherinnen und Besucher."
+      },
+      {
+        "id": "p3",
+        "text": "Vor einer dauerhaften Entscheidung könnten zwei begrenzte Testphasen Aufschluss über Nachfrage, Arbeitsbelastung und Kosten geben. Eine solche Erprobung würde Nutzen und Aufwand sichtbar machen, ohne eine langfristige Zusage vorwegzunehmen."
+      }
+    ],
+    "issues": [
+      {
+        "id": "CONCESSION",
+        "paragraphId": "p2",
+        "label": "Konzession ohne Abwägung",
+        "question": "Wie wird die eingeräumte Kostenunsicherheit im anschließenden Urteil unzulässig übersprungen?",
+        "focus": "KOHÄRENZ"
+      },
+      {
+        "id": "POLARISATION",
+        "paragraphId": "p2",
+        "label": "Unbelegtes Motivurteil",
+        "question": "Warum ist die pauschale Unterstellung gegenüber Kritikern argumentativ nicht gedeckt?",
+        "focus": "BEDEUTUNG"
+      }
+    ],
+    "version": 1,
+    "domain": "G11",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Redaktionsfall; keine übernommenen Fremdabsätze"
+    }
+  },
+  {
+    "id": "SG-E11-004",
+    "band": "C2",
+    "title": "Prognose und Entscheidungsgrundlage",
+    "genre": "Fachliche Entscheidungsvorlage",
+    "audience": "Fachgremium",
+    "objective": "Prognoseannahmen, Evidenz und Entscheidungsspielraum auseinanderhalten",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Das Szenario beruht auf der Annahme, dass die gegenwärtige Nachfrage im kommenden Jahr unverändert bleibt. Zwei der zugrunde liegenden Datenreihen wurden zuletzt jedoch nur unvollständig aktualisiert."
+      },
+      {
+        "id": "p2",
+        "text": "Daher kann die zukünftige Entwicklung zuverlässig und auf einen Prozentpunkt genau angegeben werden. Die Leitung müsse bereits jetzt verbindlich über die vollständige Umstellung entscheiden."
+      },
+      {
+        "id": "p3",
+        "text": "Ein alternatives Szenario mit veränderter Nachfrage wurde noch nicht durchgerechnet. Die Analysegruppe schlägt vor, vor der endgültigen Entscheidung die Eingangsdaten zu prüfen und mindestens eine Sensitivitätsrechnung zu ergänzen."
+      }
+    ],
+    "issues": [
+      {
+        "id": "CERTAINTY",
+        "paragraphId": "p2",
+        "label": "Scheingenauigkeit",
+        "question": "Wie passt die beanspruchte Genauigkeit zu unvollständigen Daten und einer einzigen Annahme?",
+        "focus": "BEDEUTUNG"
+      },
+      {
+        "id": "DECISION",
+        "paragraphId": "p2",
+        "label": "Schlussfolgerung überdehnt",
+        "question": "Welche Form einer bedingten Entscheidung wäre angesichts der offenen Sensitivitätsprüfung vertretbar?",
+        "focus": "KOHÄRENZ"
+      }
+    ],
+    "version": 1,
+    "domain": "G11",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "editorialApproval": false,
+    "reviewedBy": null,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasster fiktiver Redaktionsfall; keine übernommenen Fremdabsätze"
+    }
+  }
+]

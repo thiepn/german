@@ -1,0 +1,19 @@
+{
+  "name": "Sprachgefühl — Advanced German",
+  "short_name": "Sprachgefühl",
+  "description": "Fortgeschrittenes Deutsch trainieren",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#29483f",
+  "background_color": "#f5f1e9",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

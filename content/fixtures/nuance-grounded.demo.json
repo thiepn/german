@@ -1,0 +1,554 @@
+[
+  {
+    "id": "SG-M05-050",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Die Planungskommission möchte eine alternative Finanzierung in ___ ziehen.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Betracht"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Betracht",
+        "Aussicht"
+      ],
+      "rationale": "„In Aussicht stellen“ ist eine andere Verbindung und würde eine Aussicht oder Zusage beschreiben.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "BETRACHT",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "Die Verbindung „in Betracht ziehen“ bedeutet, eine Möglichkeit zu erwägen.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Die Planungskommission möchte eine alternative Finanzierung in ___ ziehen.",
+    "reviewAnswer": "Betracht",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-051",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Eine vollständig neue Lösung kommt derzeit nicht in ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Betracht"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Betracht",
+        "Rechnung"
+      ],
+      "rationale": "„In Rechnung kommen“ ist in diesem Sinn keine entsprechende Wortverbindung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "BETRACHT",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„In Betracht kommen“ bezeichnet eine überhaupt mögliche Option.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Eine vollständig neue Lösung kommt derzeit nicht in ___.",
+    "reviewAnswer": "Betracht",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-052",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Die Leitung will auch einen zeitlichen Aufschub in ___ ziehen.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Erwägung"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Erwägung",
+        "Erinnerung"
+      ],
+      "rationale": "„In Erinnerung rufen“ hat eine andere Konstruktion und bedeutet etwas zu vergegenwärtigen.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "ERWAEGUNG",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„In Erwägung ziehen“ bedeutet, einen Vorschlag ernsthaft zu erwägen.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Die Leitung will auch einen zeitlichen Aufschub in ___ ziehen.",
+    "reviewAnswer": "Erwägung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-053",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Nach reiflicher ___ entschied das Gremium gegen eine Änderung.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Erwägung"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Erwägung",
+        "Erinnerung"
+      ],
+      "rationale": "„Nach reiflicher Erinnerung“ ist keine entsprechende feste Fügung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "ERWAEGUNG",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Nach reiflicher Erwägung“ bezeichnet eine sorgfältige Überlegung.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Nach reiflicher ___ entschied das Gremium gegen eine Änderung.",
+    "reviewAnswer": "Erwägung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-054",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Die neue Regelung muss den berechtigten Einwänden ___ tragen.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Rechnung"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Rechnung",
+        "Betracht"
+      ],
+      "rationale": "„Einer Sache Betracht tragen“ ist keine idiomatische Entsprechung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "RECHNUNG",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Einer Sache Rechnung tragen“ verlangt ein Dativobjekt und bedeutet berücksichtigen.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Die neue Regelung muss den berechtigten Einwänden ___ tragen.",
+    "reviewAnswer": "Rechnung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-055",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C1",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Diese Lösung trägt der Vielfalt der Fälle ___ .",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Rechnung"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Rechnung",
+        "Geltung"
+      ],
+      "rationale": "„Der Vielfalt Geltung tragen“ entspricht nicht der etablierten Konstruktion.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "RECHNUNG",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Der Vielfalt Rechnung tragen“ heißt, sie angemessen berücksichtigen.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Diese Lösung trägt der Vielfalt der Fälle ___ .",
+    "reviewAnswer": "Rechnung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-056",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Bei der knappen Abstimmung gab ein einzelnes Argument den ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Ausschlag"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Ausschlag",
+        "Auftrag"
+      ],
+      "rationale": "„Einen Auftrag geben“ beschreibt eine Beauftragung, nicht den Entscheidungsfaktor.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "AUSSCHLAG",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Den Ausschlag geben“ bezeichnet den entscheidenden Einfluss.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Bei der knappen Abstimmung gab ein einzelnes Argument den ___.",
+    "reviewAnswer": "Ausschlag",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-057",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Letztlich gab nicht das Budget, sondern die Frist den ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Ausschlag"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Ausschlag",
+        "Anstoß"
+      ],
+      "rationale": "„Den Anstoß geben“ bedeutet etwas auslösen; der Ausgangssatz fragt aber nach dem ausschlaggebenden Kriterium.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "AUSSCHLAG",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Den Ausschlag geben“ bezeichnet den entscheidenden Faktor.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Letztlich gab nicht das Budget, sondern die Frist den ___.",
+    "reviewAnswer": "Ausschlag",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-058",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Die Sprecherin will den Anliegen der Minderheit stärker ___ verschaffen.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Geltung"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Geltung",
+        "Erwägung"
+      ],
+      "rationale": "„Erwägung verschaffen“ ist in diesem Sinn keine etablierte Konstruktion.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "GELTUNG",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Einer Sache Geltung verschaffen“ heißt, für Anerkennung oder Wirksamkeit zu sorgen.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Die Sprecherin will den Anliegen der Minderheit stärker ___ verschaffen.",
+    "reviewAnswer": "Geltung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-059",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Im neuen Vergleich kommt die Besonderheit der Methode klar zur ___.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Geltung"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Geltung",
+        "Rechnung"
+      ],
+      "rationale": "„Zur Rechnung kommen“ ist keine entsprechende Wortverbindung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "GELTUNG",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Zur Geltung kommen“ bedeutet deutlich oder wirkungsvoll hervortreten.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Im neuen Vergleich kommt die Besonderheit der Methode klar zur ___.",
+    "reviewAnswer": "Geltung",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-060",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Die Leitung musste öffentlich ___ über die Mittelverwendung ablegen.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Rechenschaft"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Rechenschaft",
+        "Erwägung"
+      ],
+      "rationale": "„Erwägung ablegen“ ist keine übliche entsprechende Verbindung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "RECHENSCHAFT",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Rechenschaft ablegen“ heißt, das eigene verantwortete Handeln zu erklären.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Die Leitung musste öffentlich ___ über die Mittelverwendung ablegen.",
+    "reviewAnswer": "Rechenschaft",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M05-061",
+    "version": 1,
+    "mode": "M05",
+    "skillId": "G07.KOLLOKATION",
+    "band": "C2",
+    "topic": "Lexikalische Nuancen",
+    "prompt": "Für ihre Entscheidungen musste die Behörde ___ ablegen.",
+    "slots": [
+      {
+        "id": "collocation",
+        "label": "Passende Wortverbindung auswählen"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "collocation": "Rechenschaft"
+        }
+      }
+    ],
+    "contrast": {
+      "options": [
+        "Rechenschaft",
+        "Betracht"
+      ],
+      "rationale": "„Betracht ablegen“ ist keine entsprechende Funktionsverbverbindung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "lexicalAuthority": {
+      "anchorId": "RECHENSCHAFT",
+      "scope": "LEXICAL_FORM_ONLY",
+      "editorialApproved": false
+    },
+    "explanation": "„Über etwas Rechenschaft ablegen“ verlangt eine Darstellung und Begründung.",
+    "misconception": "Funktionsverbverbindung und semantische Nachbarschaft",
+    "reviewPrompt": "Für ihre Entscheidungen musste die Behörde ___ ablegen.",
+    "reviewAnswer": "Rechenschaft",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_DRAFT_20261018",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigener neu formulierter Beispielsatz; Wörterbuch nur als lexikalische Referenz, keine fremden Beispiele kopiert"
+    },
+    "editorial": {}
+  }
+]

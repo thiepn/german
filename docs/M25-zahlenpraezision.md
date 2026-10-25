@@ -1,0 +1,9 @@
+# M25 — G09 Zahlen präzise ausdrücken
+
+## Distinct C1–C2 competence
+Existing M20 G09 reconciles evidence between two separately authored studies, while M24 G11 constructs warranted arguments. M25 trains **the precise German linguistic encoding of numerical claims in their own original context**: Prozent versus Prozentpunkte, relative versus absolute change, changing denominators and cohorts, median versus arithmetic mean, rates per day versus per journey, measured consumption versus modeled forecast, and uncertainty in reference periods.
+
+Four newly authored fictional original dossiers, each three extended German paragraphs, 12 direct quotations and 12 interpretation contrasts: scholarships, traffic, library usage, building energy. Stable SG-G09N-001–004 version 1, mixed C1/C2. Each source-anchored task requires choosing an appropriately limited inference, independently paraphrasing the claim with its value, explicitly naming the denominator and unit, and rejecting a more expansive interpretation. After all three, learners independently write and revise a cohesive quantitative briefing with a change-level word diff.
+
+## State, rights and ownership
+First immutable evidence stored in original ProductionEntry; subsequent claims and independent reports append as ProductionRevision, saved with the established transactional CAS into the existing productionEntries IndexedDB store. Existing eight stores, backup v3, Today, Curriculum, Progress, Archive and stable source return. Text validation checks meaningful length and independence from option copying, **not numerical accuracy or proficiency**; no new grader or fabricated CEFR credit. Four original documents and twelve claim entries are held in the editorial worklist as DEMO_ONLY / AI_DRAFT / ORIGINAL_DRAFT, no independent review, human signoff, permission or publication. No merge, migration or deployment.

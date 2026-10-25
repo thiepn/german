@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "SG-M06-001",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Kausalität",
+    "prompt": "Eine Studie findet eine Korrelation, untersucht jedoch keine Ursache. Welche Aussage ist vorsichtig?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Die Daten deuten auf einen Zusammenhang hin."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Die Daten deuten auf einen Zusammenhang hin.",
+        "Die Daten beweisen die Ursache.",
+        "Die Daten widerlegen jeden Zusammenhang."
+      ],
+      "rationale": "Ein Zusammenhang ist keine nachgewiesene Ursache.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Ein Zusammenhang ist keine nachgewiesene Ursache.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Eine Studie findet eine Korrelation, untersucht jedoch keine Ursache. Welche Aussage ist vorsichtig?",
+    "reviewAnswer": "Die Daten deuten auf einen Zusammenhang hin.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-002",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Hypothese",
+    "prompt": "Die Befunde passen zur Hypothese, reichen aber nicht zu ihrer Bestätigung. Was stimmt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Die Ergebnisse sind mit der Hypothese vereinbar."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Die Ergebnisse bestätigen die Hypothese abschließend.",
+        "Die Hypothese ist widerlegt.",
+        "Die Ergebnisse sind mit der Hypothese vereinbar."
+      ],
+      "rationale": "Vereinbarkeit ist keine Bestätigung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Vereinbarkeit ist keine Bestätigung.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Die Befunde passen zur Hypothese, reichen aber nicht zu ihrer Bestätigung. Was stimmt?",
+    "reviewAnswer": "Die Ergebnisse sind mit der Hypothese vereinbar.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-003",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Gegenbeispiel",
+    "prompt": "Ein gültiges Gegenbeispiel widerspricht einer universellen Behauptung. Welche Beschreibung trifft zu?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Das Gegenbeispiel widerlegt die uneingeschränkte Aussage."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Das Gegenbeispiel beweist nur eine Tendenz.",
+        "Das Gegenbeispiel widerlegt die uneingeschränkte Aussage.",
+        "Das Gegenbeispiel bestätigt die Aussage ausnahmslos."
+      ],
+      "rationale": "Eine Aussage ohne Ausnahmen wird durch ein Gegenbeispiel widerlegt.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Eine Aussage ohne Ausnahmen wird durch ein Gegenbeispiel widerlegt.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Ein gültiges Gegenbeispiel widerspricht einer universellen Behauptung. Welche Beschreibung trifft zu?",
+    "reviewAnswer": "Das Gegenbeispiel widerlegt die uneingeschränkte Aussage.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-004",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C2",
+    "topic": "Vorläufigkeit",
+    "prompt": "Eine Regelung wird bis zur endgültigen Entscheidung erprobt. Wie gilt sie?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Die Regelung gilt vorläufig."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Die Regelung gilt vorläufig.",
+        "Die Regelung gilt unbefristet.",
+        "Die Regelung gilt rückwirkend."
+      ],
+      "rationale": "Vorläufig bezeichnet eine Übergangslösung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Vorläufig bezeichnet eine Übergangslösung.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Eine Regelung wird bis zur endgültigen Entscheidung erprobt. Wie gilt sie?",
+    "reviewAnswer": "Die Regelung gilt vorläufig.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-005",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Vorbehalt",
+    "prompt": "Ein nützliches Verfahren hat mögliche Nebenwirkungen. Welche Bewertung wahrt beide Seiten?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Das Verfahren ist nicht frei von Risiken."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Das Verfahren ist risikofrei.",
+        "Das Verfahren bringt ausschließlich Nachteile.",
+        "Das Verfahren ist nicht frei von Risiken."
+      ],
+      "rationale": "Der Nutzen schließt Risiken nicht aus.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Der Nutzen schließt Risiken nicht aus.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Ein nützliches Verfahren hat mögliche Nebenwirkungen. Welche Bewertung wahrt beide Seiten?",
+    "reviewAnswer": "Das Verfahren ist nicht frei von Risiken.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-006",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Notwendigkeit",
+    "prompt": "Eine Zulassung setzt einen Abschluss voraus; der Abschluss garantiert sie nicht. Was stimmt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Der Abschluss ist notwendig, aber nicht hinreichend."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Der Abschluss ist weder notwendig noch hinreichend.",
+        "Der Abschluss ist notwendig, aber nicht hinreichend.",
+        "Der Abschluss ist hinreichend, aber nicht notwendig."
+      ],
+      "rationale": "Notwendig heißt erforderlich; hinreichend heißt ausreichend.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Notwendig heißt erforderlich; hinreichend heißt ausreichend.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Eine Zulassung setzt einen Abschluss voraus; der Abschluss garantiert sie nicht. Was stimmt?",
+    "reviewAnswer": "Der Abschluss ist notwendig, aber nicht hinreichend.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-007",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Hinreichend",
+    "prompt": "Ein bestimmter Nachweis genügt zur Förderung, doch auch andere Nachweise genügen. Welche Einordnung stimmt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Der Nachweis ist hinreichend, aber nicht notwendig."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Der Nachweis ist hinreichend, aber nicht notwendig.",
+        "Der Nachweis ist notwendig, aber nicht hinreichend.",
+        "Der Nachweis ist notwendig und hinreichend."
+      ],
+      "rationale": "Es gibt mehrere ausreichende Wege.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Es gibt mehrere ausreichende Wege.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Ein bestimmter Nachweis genügt zur Förderung, doch auch andere Nachweise genügen. Welche Einordnung stimmt?",
+    "reviewAnswer": "Der Nachweis ist hinreichend, aber nicht notwendig.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-008",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C2",
+    "topic": "Schlussfolgerung",
+    "prompt": "Die Datengrundlage ist lückenhaft. Welche Formulierung vermeidet eine Überdehnung?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Daraus lässt sich kein zwingender Schluss ziehen."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Die Deutung ist endgültig bewiesen.",
+        "Die Daten lassen nur eine einzige Deutung zu.",
+        "Daraus lässt sich kein zwingender Schluss ziehen."
+      ],
+      "rationale": "Lückenhafte Daten erlauben keinen zwingenden Schluss.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Lückenhafte Daten erlauben keinen zwingenden Schluss.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Die Datengrundlage ist lückenhaft. Welche Formulierung vermeidet eine Überdehnung?",
+    "reviewAnswer": "Daraus lässt sich kein zwingender Schluss ziehen.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-009",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Relativierung",
+    "prompt": "Eine zweite Studie schränkt die Reichweite einer Aussage ein. Was tut sie?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Sie relativiert die ursprüngliche Aussage."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Sie wiederholt die Aussage unverändert.",
+        "Sie relativiert die ursprüngliche Aussage.",
+        "Sie verabsolutiert die ursprüngliche Aussage."
+      ],
+      "rationale": "Relativieren heißt die Reichweite einer Aussage begrenzen.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Relativieren heißt die Reichweite einer Aussage begrenzen.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Eine zweite Studie schränkt die Reichweite einer Aussage ein. Was tut sie?",
+    "reviewAnswer": "Sie relativiert die ursprüngliche Aussage.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-010",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Indizien",
+    "prompt": "Beobachtungen sprechen für eine Erklärung, beweisen sie aber nicht. Welche Formulierung passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Die Beobachtungen legen diese Erklärung nahe."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Die Beobachtungen legen diese Erklärung nahe.",
+        "Die Beobachtungen erzwingen diese Erklärung.",
+        "Die Beobachtungen verhindern jede Erklärung."
+      ],
+      "rationale": "Nahelegen bezeichnet eine plausible, nicht notwendige Deutung.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Nahelegen bezeichnet eine plausible, nicht notwendige Deutung.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Beobachtungen sprechen für eine Erklärung, beweisen sie aber nicht. Welche Formulierung passt?",
+    "reviewAnswer": "Die Beobachtungen legen diese Erklärung nahe.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-011",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C1",
+    "topic": "Annahme",
+    "prompt": "Ein Argument gilt nur unter einer unbewiesenen Annahme. Was tut das Argument?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Es setzt diese Annahme voraus."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Es widerlegt diese Annahme.",
+        "Es macht diese Annahme unmöglich.",
+        "Es setzt diese Annahme voraus."
+      ],
+      "rationale": "Voraussetzen benennt eine erforderliche Annahme.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Voraussetzen benennt eine erforderliche Annahme.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Ein Argument gilt nur unter einer unbewiesenen Annahme. Was tut das Argument?",
+    "reviewAnswer": "Es setzt diese Annahme voraus.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M06-012",
+    "version": 1,
+    "mode": "M06",
+    "skillId": "G06.SEMANTIK",
+    "band": "C2",
+    "topic": "Evidenz",
+    "prompt": "Zwei belastbare Studien liefern entgegengesetzte Ergebnisse. Welche Zusammenfassung passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Die Befundlage ist widersprüchlich."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Es gibt überhaupt keine Befunde.",
+        "Die Befundlage ist widersprüchlich.",
+        "Die Befundlage ist vollständig eindeutig."
+      ],
+      "rationale": "Widersprüchliche Befunde sind nicht dasselbe wie fehlende Befunde.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Widersprüchliche Befunde sind nicht dasselbe wie fehlende Befunde.",
+    "misconception": "Semantische Reichweite und Evidenzgrad verwechselt.",
+    "reviewPrompt": "Zwei belastbare Studien liefern entgegengesetzte Ergebnisse. Welche Zusammenfassung passt?",
+    "reviewAnswer": "Die Befundlage ist widersprüchlich.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-001",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Bitte",
+    "prompt": "Du siezt eine Professorin und bittest höflich um Unterlagen. Was passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Könnten Sie mir bitte die Unterlagen zusenden?"
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Könnten Sie mir bitte die Unterlagen zusenden?",
+        "Schick mir mal die Sachen rüber.",
+        "Hiermit befehle ich die Zusendung."
+      ],
+      "rationale": "Konjunktiv II und Sie-Anrede formulieren eine höfliche Bitte.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Konjunktiv II und Sie-Anrede formulieren eine höfliche Bitte.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Du siezt eine Professorin und bittest höflich um Unterlagen. Was passt?",
+    "reviewAnswer": "Könnten Sie mir bitte die Unterlagen zusenden?",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-002",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Abstract",
+    "prompt": "Ein wissenschaftliches Abstract meldet Korrelation, keine Ursache. Welche Aussage passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Die Ergebnisse legen einen Zusammenhang nahe."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Die Ursache ist damit endgültig bewiesen.",
+        "Das hängt halt irgendwie zusammen.",
+        "Die Ergebnisse legen einen Zusammenhang nahe."
+      ],
+      "rationale": "Die sachliche Aussage respektiert die Beweisgrenze.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Die sachliche Aussage respektiert die Beweisgrenze.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Ein wissenschaftliches Abstract meldet Korrelation, keine Ursache. Welche Aussage passt?",
+    "reviewAnswer": "Die Ergebnisse legen einen Zusammenhang nahe.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-003",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Absage",
+    "prompt": "Eine Verwaltung lehnt einen Antrag sachlich ab. Welche Antwort ist angemessen?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Leider können wir Ihrem Antrag derzeit nicht entsprechen."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Ihr Antrag ist uns völlig egal.",
+        "Leider können wir Ihrem Antrag derzeit nicht entsprechen.",
+        "Nö, daraus wird nichts."
+      ],
+      "rationale": "Formelle Absagen sollen bestimmt und respektvoll sein.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Formelle Absagen sollen bestimmt und respektvoll sein.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Eine Verwaltung lehnt einen Antrag sachlich ab. Welche Antwort ist angemessen?",
+    "reviewAnswer": "Leider können wir Ihrem Antrag derzeit nicht entsprechen.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-004",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C2",
+    "topic": "Korrektur",
+    "prompt": "Du vermutest einen Tabellenfehler und möchtest ihn ohne Vorwurf ansprechen. Was passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "In der Tabelle scheint ein Wert vertauscht worden zu sein."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "In der Tabelle scheint ein Wert vertauscht worden zu sein.",
+        "Sie haben alles vermasselt.",
+        "Das ist total daneben, Leute."
+      ],
+      "rationale": "Scheint macht die Unsicherheit deutlich.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Scheint macht die Unsicherheit deutlich.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Du vermutest einen Tabellenfehler und möchtest ihn ohne Vorwurf ansprechen. Was passt?",
+    "reviewAnswer": "In der Tabelle scheint ein Wert vertauscht worden zu sein.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-005",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Kollegial",
+    "prompt": "Du duzt einen Kollegen und bittest vor einer Sitzung um Folien. Was passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Könntest du die Folien vor dem Termin teilen?"
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Ich befehle dir die sofortige Zusendung.",
+        "Hiermit fordere ich Sie förmlich dazu auf.",
+        "Könntest du die Folien vor dem Termin teilen?"
+      ],
+      "rationale": "Die Bitte ist persönlich und professionell.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Die Bitte ist persönlich und professionell.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Du duzt einen Kollegen und bittest vor einer Sitzung um Folien. Was passt?",
+    "reviewAnswer": "Könntest du die Folien vor dem Termin teilen?",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-006",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Information",
+    "prompt": "Eine Stadt informiert über eine Straßensperrung ab Montag. Was ist öffentlich verständlich?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Die Sperrung beginnt am Montag."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Da ist dann halt alles dicht.",
+        "Die Sperrung beginnt am Montag.",
+        "Die Maßnahme initiiert montags ihre Wirksamkeit."
+      ],
+      "rationale": "Klare Verben und Datumsangaben erleichtern das Verstehen.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Klare Verben und Datumsangaben erleichtern das Verstehen.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Eine Stadt informiert über eine Straßensperrung ab Montag. Was ist öffentlich verständlich?",
+    "reviewAnswer": "Die Sperrung beginnt am Montag.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-007",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Protokoll",
+    "prompt": "Ein Protokoll dokumentiert unterschiedliche Auffassungen, ohne Streit zu behaupten. Was passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Die Beteiligten äußerten unterschiedliche Einschätzungen."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Die Beteiligten äußerten unterschiedliche Einschätzungen.",
+        "Die Beteiligten gerieten in einen erbitterten Streit.",
+        "Alle waren ausnahmslos einer Meinung."
+      ],
+      "rationale": "Die Formulierung behauptet keinen nicht dokumentierten Konflikt.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Die Formulierung behauptet keinen nicht dokumentierten Konflikt.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Ein Protokoll dokumentiert unterschiedliche Auffassungen, ohne Streit zu behaupten. Was passt?",
+    "reviewAnswer": "Die Beteiligten äußerten unterschiedliche Einschätzungen.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-008",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C2",
+    "topic": "Service",
+    "prompt": "Ein Serviceteam bestätigt eine Prüfung und eine Rückmeldung bis Freitag. Welche Antwort passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Wir prüfen den Vorgang und melden uns bis Freitag."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Chill, wir schauen irgendwann mal drauf.",
+        "Sie erhalten grundsätzlich keine Auskunft.",
+        "Wir prüfen den Vorgang und melden uns bis Freitag."
+      ],
+      "rationale": "Die konkrete Frist zeigt Verbindlichkeit.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Die konkrete Frist zeigt Verbindlichkeit.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Ein Serviceteam bestätigt eine Prüfung und eine Rückmeldung bis Freitag. Welche Antwort passt?",
+    "reviewAnswer": "Wir prüfen den Vorgang und melden uns bis Freitag.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-009",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Einwand",
+    "prompt": "Ein Fachaufsatz kritisiert eine kleine Stichprobe. Welche Formulierung ist wissenschaftlich angemessen?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Dem lässt sich entgegenhalten, dass die Stichprobe klein ist."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Damit ist jede Forschung falsch.",
+        "Dem lässt sich entgegenhalten, dass die Stichprobe klein ist.",
+        "Das ist wegen der Mini-Stichprobe kompletter Quatsch."
+      ],
+      "rationale": "Die Wendung führt ein begründetes Gegenargument ein.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Die Wendung führt ein begründetes Gegenargument ein.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Ein Fachaufsatz kritisiert eine kleine Stichprobe. Welche Formulierung ist wissenschaftlich angemessen?",
+    "reviewAnswer": "Dem lässt sich entgegenhalten, dass die Stichprobe klein ist.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-010",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Bewerbung",
+    "prompt": "Du beschreibst eine Qualifikation im Bewerbungsschreiben. Was passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Ich verfüge über Erfahrung in der Datenanalyse."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Ich verfüge über Erfahrung in der Datenanalyse.",
+        "Ich bin mega krass mit Daten.",
+        "Daten kann ich halt irgendwie auch."
+      ],
+      "rationale": "Die Formulierung ist präzise und formal.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Die Formulierung ist präzise und formal.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Du beschreibst eine Qualifikation im Bewerbungsschreiben. Was passt?",
+    "reviewAnswer": "Ich verfüge über Erfahrung in der Datenanalyse.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-011",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C1",
+    "topic": "Diplomatie",
+    "prompt": "Du regst an, den Teamzeitplan zu überprüfen, ohne jemanden persönlich anzugreifen. Was passt?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Ich würde vorschlagen, den Zeitplan nochmals zu prüfen."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Euer Zeitplan ist offensichtlich absurd.",
+        "Ihr habt alle keine Ahnung von Planung.",
+        "Ich würde vorschlagen, den Zeitplan nochmals zu prüfen."
+      ],
+      "rationale": "Der Vorschlag wahrt Kooperation.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Der Vorschlag wahrt Kooperation.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Du regst an, den Teamzeitplan zu überprüfen, ohne jemanden persönlich anzugreifen. Was passt?",
+    "reviewAnswer": "Ich würde vorschlagen, den Zeitplan nochmals zu prüfen.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  },
+  {
+    "id": "SG-M07-012",
+    "version": 1,
+    "mode": "M07",
+    "skillId": "G08.REGISTER",
+    "band": "C2",
+    "topic": "Attribution",
+    "prompt": "Eine Zeitung übernimmt Zahlen ausschließlich aus einer Mitteilung der Behörde. Was kennzeichnet die Quelle?",
+    "slots": [
+      {
+        "id": "choice",
+        "label": "Passende Formulierung"
+      }
+    ],
+    "variants": [
+      {
+        "slots": {
+          "choice": "Nach Angaben der Behörde wurden drei Anträge abgelehnt."
+        }
+      }
+    ],
+    "decision": {
+      "options": [
+        "Ich glaube, es waren vielleicht drei.",
+        "Nach Angaben der Behörde wurden drei Anträge abgelehnt.",
+        "Es ist unabhängig erwiesen, dass drei Anträge abgelehnt wurden."
+      ],
+      "rationale": "Nach Angaben attribuiert die Aussage ohne unzulässigen Wahrheitsanspruch.",
+      "kind": "AUTHOR_DRAFT_CHOICE"
+    },
+    "explanation": "Nach Angaben attribuiert die Aussage ohne unzulässigen Wahrheitsanspruch.",
+    "misconception": "Register und Adressatenbezug verwechselt.",
+    "reviewPrompt": "Eine Zeitung übernimmt Zahlen ausschließlich aus einer Mitteilung der Behörde. Was kennzeichnet die Quelle?",
+    "reviewAnswer": "Nach Angaben der Behörde wurden drei Anträge abgelehnt.",
+    "status": "DEMO_ONLY",
+    "authorId": "SG_AI_DRAFT_20261019",
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original AI-assisted Sprachgefühl draft; independent language review missing"
+    },
+    "editorial": {}
+  }
+]
