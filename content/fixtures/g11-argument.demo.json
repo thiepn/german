@@ -1,0 +1,366 @@
+[
+  {
+    "id": "SG-G11A-001",
+    "version": 1,
+    "domain": "G11",
+    "band": "C2",
+    "title": "Vier-Tage-Woche in einer Kommunalverwaltung",
+    "focus": "Von betrieblichen Pilotdaten zur normativen Schlussfolgerung",
+    "brief": "Entwirf einen kritisch argumentierenden Kommentar für den Personalausschuss: begründe eine begrenzte Testfortsetzung, würdige den stärksten Einwand zur Erreichbarkeit und nenne die Kriterien für eine spätere Entscheidung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "In einer Sitzung zum Arbeitszeitversuch der Stadtverwaltung stellte das Organisationsamt seinen Zwischenbericht vor. Während eines zehnwöchigen Pilotprojekts mit einer kleineren Gruppe gingen kurzfristig gemeldete Fehlzeiten zurück. Der Bericht fasste den wichtigsten Befund so zusammen: „Im Pilotteam sank die Zahl kurzfristiger Fehlzeiten.“ Die Auswahl erfolgte freiwillig, und vergleichbare Angaben aus anderen Abteilungen waren nur lückenhaft vorhanden. Zusätzlich erledigte das Team einige Aufgaben zu einer anderen Tageszeit als bisher. Die Zahlen sagen daher zunächst etwas über die beobachtete Pilotgruppe und keine gesicherte allgemeine Ursache."
+      },
+      {
+        "id": "p2",
+        "text": "Der Leiter des Bürgerbüros berichtete außerdem über organisatorische Anpassungen während des Versuchs. Die Schichten waren so versetzt, dass am Wochenanfang weiterhin reguläre Termine angeboten wurden. In seiner Präsentation stellte er fest: „Die Bürgerberatung blieb montags unverändert geöffnet.“ Gleichzeitig kam es an einzelnen Nachmittagen zu längeren Wartezeiten, und die Abteilung erhielt mehr telefonische Nachfragen. Da diese beiden Kennzahlen nicht über alle Versuchstage in gleicher Weise erfasst wurden, kann die beobachtete Öffnung am Montag nicht ohne Weiteres als Nachweis gleichbleibender Servicequalität gelten."
+      },
+      {
+        "id": "p3",
+        "text": "Die Personalvertretung schlug eine Ausweitung auf weitere freiwillige Teams vor, sofern zugleich die Erreichbarkeit der Verwaltung systematisch gemessen werde. Der Personalausschuss diskutierte anschließend, ob eine solche Erprobung politisch bereits als Zustimmung zu einem dauerhaften Modell zu verstehen sei. In der schriftlichen Empfehlung hieß es: „Eine Fortsetzung soll vorerst auf weitere sechs Monate begrenzt bleiben.“ Eine abschließende Entscheidung über eine generelle Arbeitszeitregelung wurde nicht getroffen. Für die kommende Bewertung sind Vergleichskennzahlen und Rückmeldungen aus stärker publikumsbezogenen Dienststellen vorgesehen."
+      }
+    ],
+    "arguments": [
+      {
+        "id": "a1",
+        "paragraphId": "p1",
+        "quote": "Im Pilotteam sank die Zahl kurzfristiger Fehlzeiten.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der beobachtete Rückgang kann eine weitere Untersuchung rechtfertigen, belegt aber ohne Kontrollvergleich keinen kausalen Effekt der verkürzten Arbeitswoche."
+          },
+          {
+            "id": "B",
+            "text": "Die rückläufigen Fehlzeiten beweisen abschließend, dass eine kürzere Arbeitswoche in sämtlichen Dienststellen die Ursache besserer Gesundheit ist."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die implizite Brücke von Korrelation auf Kausalität verlangt einen geeigneten Vergleich und die Prüfung alternativer Ursachen.",
+        "counter": "Weil sich besonders motivierte Beschäftigte freiwillig meldeten, kann ein Auswahleffekt die Differenz erklären."
+      },
+      {
+        "id": "a2",
+        "paragraphId": "p2",
+        "quote": "Die Bürgerberatung blieb montags unverändert geöffnet.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Da montags geöffnet war, wurden sämtliche Leistungen an allen Tagen nachweislich schneller und ohne zusätzliche Wartezeit erbracht."
+          },
+          {
+            "id": "B",
+            "text": "Die unveränderte Montagsöffnung ist ein konkreter Zugänglichkeitsbeleg, aber kein vollständiger Nachweis unveränderter Beratungsqualität oder Wartezeiten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Eine institutionelle Folgerung über gesamte Erreichbarkeit benötigt Daten zu Terminangebot, Wartezeit und Nachfrage, nicht nur einen Wochentag.",
+        "counter": "Wer durch den neuen Schichtplan am Nachmittag keinen passenden Termin findet, profitiert nicht von der unveränderten Montagsöffnung."
+      },
+      {
+        "id": "a3",
+        "paragraphId": "p3",
+        "quote": "Eine Fortsetzung soll vorerst auf weitere sechs Monate begrenzt bleiben.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Empfehlung stützt eine zeitlich begrenzte, überprüfbare Fortsetzung und keine sofortige unbefristete Einführung für die gesamte Verwaltung."
+          },
+          {
+            "id": "B",
+            "text": "Die Empfehlung verpflichtet die Stadt bereits zu einer dauerhaften Vier-Tage-Woche ohne weitere Messungen und ohne gesonderten Beschluss."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Aus einer befristeten Erprobung folgt nur dann eine dauerhafte Regel, wenn Entscheidungskriterien, Gremienzuständigkeit und zusätzliche Evidenz erfüllt sind.",
+        "counter": "Auch eine weitere sechsmonatige Erprobung bindet Planungskapazität und sollte an messbare Abbruchkriterien geknüpft sein."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M24 original fictional German authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasste fiktive M24-Argumentationstexte; keine externen Werke; unabhängige Prüfung ausstehend"
+    }
+  },
+  {
+    "id": "SG-G11A-002",
+    "version": 1,
+    "domain": "G11",
+    "band": "C2",
+    "title": "Generative KI in der Studienberatung",
+    "focus": "Evidenz, Gleichbehandlung und reversible Entscheidung",
+    "brief": "Schreibe eine ausgewogene Empfehlung für den Fakultätsrat. Entwickle eine begrenzte Position zu einem unterstützten Test, nimm den Datenschutz- und Gerechtigkeitseinwand ernst und skizziere die nötigen Entscheidungsschwellen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein Institut erprobte über vier Wochen ein textbasiertes Assistenzsystem für häufig gestellte Studienfragen. Die Auswertung zeigte kürzere Reaktionszeiten für eine vorab definierte Sammlung einfacher Auskünfte. Der Bericht formulierte den Vergleich so: „Bei Standardfragen antwortete das System schneller als die E-Mail-Beratung.“ Die Bewertung erfasste jedoch nicht, ob jede Antwort sachlich korrekt war oder ob komplexe Prüfungsfragen ausreichend differenziert behandelt wurden. Zudem wurden nur Anfragen einbezogen, für die im System bereits redaktionell geprüfte Musterantworten hinterlegt waren."
+      },
+      {
+        "id": "p2",
+        "text": "Die studentische Fachschaft sammelte freiwillige Rückmeldungen zum Test. Mehrere Personen beschrieben Fälle, in denen das Assistenzsystem für ähnliche Anliegen unterschiedliche Hinweise formuliert hatte. In ihrer Stellungnahme stand: „Einige Studierende berichteten von widersprüchlichen Empfehlungen.“ Die Meldungen sind ernst zu nehmen, bilden aber keine repräsentative Stichprobe aller Nutzenden. Sie zeigen konkrete Prüfbedarfe und belegen noch nicht, wie häufig systematisch fehlerhafte Hinweise im gesamten Betrieb vorkommen würden. Die Fachschaft forderte deshalb eine unabhängige Auswertung besonders folgenreicher Themen."
+      },
+      {
+        "id": "p3",
+        "text": "Der Fakultätsrat behandelte abschließend die Frage, ob aus den bisherigen Erfahrungen bereits eine unbeschränkte Einführung abgeleitet werden könne. Die Geschäftsführung verwies auf personenbezogene Informationen, die Studierende gelegentlich auch bei einfachen Fragen freiwillig preisgeben. Im protokollierten Beschlussentwurf hieß es: „Die endgültige Freigabe setzt ein separates Datenschutzgutachten voraus.“ Beschlossen wurde lediglich, ein Verfahren für die Prüfung vorzubereiten und die redaktionell geprüften Antworten zu aktualisieren. Ein Einsatz für prüfungsrechtlich verbindliche Entscheidungen war weiterhin ausgeschlossen."
+      }
+    ],
+    "arguments": [
+      {
+        "id": "a1",
+        "paragraphId": "p1",
+        "quote": "Bei Standardfragen antwortete das System schneller als die E-Mail-Beratung.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Geschwindigkeitsvergleich zeigt, dass das System sämtliche menschliche Studienberatung einschließlich Prüfungsentscheidungen ersetzen kann."
+          },
+          {
+            "id": "B",
+            "text": "Für standardisierte Auskünfte sind kürzere Reaktionszeiten plausibel; daraus folgt noch keine Gleichwertigkeit bei komplexen oder individuellen Entscheidungen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Reaktionsgeschwindigkeit ist ein enger Effizienzindikator und kein Ersatz für Validität, Rechtsfolgen oder individuelle Beratung.",
+        "counter": "Fehler bei Prüfungsfristen können trotz schneller Rückmeldung erhebliche Nachteile verursachen."
+      },
+      {
+        "id": "a2",
+        "paragraphId": "p2",
+        "quote": "Einige Studierende berichteten von widersprüchlichen Empfehlungen.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Rückmeldungen begründen einen konkreten Qualitäts- und Fairnessprüfbedarf, ohne die unbekannte Fehlerquote aller Anfragen zu beziffern."
+          },
+          {
+            "id": "B",
+            "text": "Die freiwilligen Beschwerden beweisen, dass jede einzelne Systemantwort widersprüchlich und für alle Studierenden gleichermaßen unbrauchbar ist."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Fallberichte rechtfertigen gezielte Risikoanalyse, erlauben aber ohne Nenner keine populationsweite Fehlerquote.",
+        "counter": "Schon seltene, aber folgenreiche Falschhinweise können für betroffene Studierende unzumutbar sein."
+      },
+      {
+        "id": "a3",
+        "paragraphId": "p3",
+        "quote": "Die endgültige Freigabe setzt ein separates Datenschutzgutachten voraus.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der vorbereitende Beschluss ermächtigt bereits zum unbegrenzten Einsatz bei allen prüfungsrechtlichen Entscheidungen."
+          },
+          {
+            "id": "B",
+            "text": "Allenfalls ein begrenzter Test mit geprüften Antworten ist zu erwägen; eine vollständige Freigabe hängt von einem noch ausstehenden Datenschutzgutachten ab."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die konditionale Grenze im Beschluss darf bei einem normativen Schluss nicht übergangen werden; vorgeschaltete Prüfung ist keine Erlaubnis.",
+        "counter": "Eine zusätzliche Prüfung kann teuer sein und den erhofften Zeitgewinn verringern, ist aber bei personenbezogenen Daten relevant."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M24 original fictional German authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasste fiktive M24-Argumentationstexte; keine externen Werke; unabhängige Prüfung ausstehend"
+    }
+  },
+  {
+    "id": "SG-G11A-003",
+    "version": 1,
+    "domain": "G11",
+    "band": "C1",
+    "title": "Hitzeschutz und öffentliche Brunnen",
+    "focus": "Von punktuellen Messungen zu einem verhältnismäßigen Maßnahmenplan",
+    "brief": "Verfasse eine begründete Stellungnahme für den Bezirksrat. Trenne Temperaturbeobachtungen von Wirkungsnachweisen, behandle die Kostenfrage fair und schlage eine überprüfbare Priorisierung vor.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine lokale Umweltgruppe ließ während einer sommerlichen Hitzeperiode die Oberflächentemperaturen verschiedener öffentlicher Plätze messen. Im Ergebnisbericht hieß es: „Am Platz wurden an drei Tagen besonders hohe Oberflächentemperaturen gemessen.“ Die Erhebung erfolgte jeweils am frühen Nachmittag und ließ Bereiche mit unterschiedlichen Schattenverhältnissen erkennen. Daten zur tatsächlichen Aufenthaltsdauer der Besucherinnen und Besucher wurden dagegen nicht erhoben. Die Gruppe empfahl, mögliche Abkühlungsmaßnahmen zu prüfen, stellte aber keine belegte Gesundheitswirkung eines bestimmten Brunnentyps fest."
+      },
+      {
+        "id": "p2",
+        "text": "Im Finanzausschuss wurden mögliche Kosten eines neuen Trinkwasserbrunnens und einer zusätzlichen schattenspendenden Bepflanzung gegenübergestellt. Die Kostenvorlage vermerkte: „Die jährlichen Wartungskosten sind bislang nur grob geschätzt.“ Der erste Vorschlag könnte unabhängig von einer aufwendigen Platzumgestaltung realisiert werden, erforderte jedoch laufende Wasserqualitätsprüfungen und technische Betreuung. Für die alternative Begrünung lagen noch keine verbindlichen Angaben zu Bewässerung und Pflege vor. Eine belastbare Lebenszyklusrechnung war somit für keine der beiden Optionen abgeschlossen."
+      },
+      {
+        "id": "p3",
+        "text": "Der Bezirksrat diskutierte schließlich, ob die Maßnahmen gleichzeitig beschlossen oder schrittweise geprüft werden sollten. Der Entwurf für das weitere Vorgehen lautete: „Zunächst soll ein Standortversuch ausgewertet werden.“ Für eine kurze Testphase müssten Verantwortliche für Betrieb und Messung benannt sowie Kriterien zur Nutzung und tatsächlichen Kühlwirkung vereinbart werden. Weder die endgültige Zahl der Brunnen noch die Finanzierungsquelle weiterer Standorte war festgelegt. Der Bericht empfahl daher ein stufenweises Vorgehen mit öffentlicher Rückmeldung statt einer vorweggenommenen Vollausstattung."
+      }
+    ],
+    "arguments": [
+      {
+        "id": "a1",
+        "paragraphId": "p1",
+        "quote": "Am Platz wurden an drei Tagen besonders hohe Oberflächentemperaturen gemessen.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die punktuellen Temperaturmessungen stützen eine Prüfung des Hitzeschutzbedarfs, belegen jedoch keine bestimmte gesundheitliche Wirkung eines Brunnens."
+          },
+          {
+            "id": "B",
+            "text": "Die drei Messungen beweisen, dass nur ein neuer Brunnen sämtliche hitzebedingten Gesundheitsprobleme der Anwohner lösen kann."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Eine beobachtete Belastung trägt die Problemdefinition, nicht automatisch die eindeutige Wahl oder Wirksamkeit einer Maßnahme.",
+        "counter": "Messungen an wenigen Tagen erfassen möglicherweise nicht, wie sich ein Platz im gesamten Sommer entwickelt."
+      },
+      {
+        "id": "a2",
+        "paragraphId": "p2",
+        "quote": "Die jährlichen Wartungskosten sind bislang nur grob geschätzt.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Weil nur Schätzungen vorliegen, verursacht ein Trinkwasserbrunnen nachweislich keinerlei Folgekosten und ist jedem Alternativvorschlag überlegen."
+          },
+          {
+            "id": "B",
+            "text": "Die unvollständige Kostenschätzung spricht für einen Variantenvergleich und eine spätere Nachrechnung, nicht für die behauptete Kostenfreiheit einer Option."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Unsicherheit über Kosten ist weder Nachweis von Nullkosten noch automatisch ein Argument gegen jeden Pilot; es verlangt eine bessere Entscheidungsgrundlage.",
+        "counter": "Laufende Wartung kann Haushalte stärker belasten als die sichtbaren einmaligen Anschaffungskosten."
+      },
+      {
+        "id": "a3",
+        "paragraphId": "p3",
+        "quote": "Zunächst soll ein Standortversuch ausgewertet werden.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine zuerst ausgewertete Erprobung erlaubt eine spätere Entscheidung nach Nutzungs-, Kosten- und Wirkungsdaten, ohne bereits alle Standorte festzulegen."
+          },
+          {
+            "id": "B",
+            "text": "Mit dieser Empfehlung hat der Bezirksrat sämtliche Brunnen finanziert und jeden Standort endgültig beschlossen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das temporale „zunächst“ weist auf eine Entscheidungssequenz hin; die spätere Skalierung ist an vorher definierten Kriterien zu messen.",
+        "counter": "Ein kleiner Standortversuch kann für unterschiedliche Stadtteile schwer übertragbar sein und muss deswegen sorgfältig ausgewählt werden."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M24 original fictional German authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasste fiktive M24-Argumentationstexte; keine externen Werke; unabhängige Prüfung ausstehend"
+    }
+  },
+  {
+    "id": "SG-G11A-004",
+    "version": 1,
+    "domain": "G11",
+    "band": "C1",
+    "title": "Digitale Ortsarchive und öffentlicher Zugang",
+    "focus": "Zwischen Nutzungszahlen, Zugänglichkeitskritik und Maßstab für eine Förderung",
+    "brief": "Schreibe eine differenzierte Förderempfehlung für einen Kulturausschuss. Verbinde beide Arten von Nutzungsdaten, begründe Kriterien für Teilhabe und korrigiere eine vorschnelle Erfolgsbehauptung in einer zweiten Fassung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein kommunales Archiv stellte im Kulturausschuss eine erste Bilanz seines digitalen Portals vor. In den Zugriffsdaten war ein starker Anstieg einzelner Downloads zu erkennen. Die Bilanz lautete: „Seit der Freischaltung wurden deutlich mehr Dateien abgerufen.“ Die Statistik zählte wiederholte Downloads derselben Datei mit und unterschied noch nicht zwischen Privatnutzenden, Forschungsteams und automatisierten Abfragen. Das Archiv wertete das Ergebnis als Zeichen einer gestiegenen technischen Reichweite, nicht als Beleg einer gleichmäßig verbesserten Nutzung für alle Bevölkerungsgruppen."
+      },
+      {
+        "id": "p2",
+        "text": "Eine lokale Beratungsstelle für Barrierefreiheit testete das Portal mit einer kleinen Gruppe und veröffentlichte ihre Beobachtungen. Im Bericht stand: „Die Suchoberfläche ist mit mehreren Hilfstechnologien schwer bedienbar.“ Die Tests zeigten unter anderem unklare Bezeichnungen in der Navigation und eine fehlerhafte Reihenfolge beim Tastaturzugriff. Allerdings war die Auswahl der Geräte begrenzt, und nicht jede getestete Assistenzsoftware wies dieselben Probleme auf. Die Beratungsstelle empfahl eine Überarbeitung mit wiederholter Prüfung durch unterschiedliche Nutzergruppen."
+      },
+      {
+        "id": "p3",
+        "text": "Die Kulturverwaltung erläuterte zum Schluss den Stand der finanziellen Unterstützung. Der Kulturausschuss hatte eine begrenzte Erprobungsfinanzierung bewilligt, jedoch noch keine Zusage für den dauerhaften Portalbetrieb erteilt. Im Sitzungsbericht hieß es: „Über eine weitere Förderung wird nach der nächsten Evaluation entschieden.“ Die nächste Bewertung soll die Zugriffsstatistik zusammen mit Nutzbarkeit, Dokumentationsqualität und laufenden Betriebskosten behandeln. Ein automatischer Anspruch auf zusätzliche Mittel wurde ausdrücklich ausgeschlossen, auch wenn das Archiv an einer langfristigen Lösung interessiert bleibt."
+      }
+    ],
+    "arguments": [
+      {
+        "id": "a1",
+        "paragraphId": "p1",
+        "quote": "Seit der Freischaltung wurden deutlich mehr Dateien abgerufen.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die gestiegenen Downloadzahlen belegen, dass inzwischen jede Bevölkerungsgruppe das Portal gleichermaßen erfolgreich verwendet."
+          },
+          {
+            "id": "B",
+            "text": "Der Anstieg der Abrufe weist auf technische Nachfrage hin, lässt aber ohne Angaben zu eindeutigen Personen keine Aussage über gleichmäßigen gesellschaftlichen Zugang zu."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Downloadzahlen zählen Ereignisse und nicht zwingend verschiedene Nutzende; der Schluss auf gesellschaftliche Teilhabe braucht weitere Daten.",
+        "counter": "Wiederholte Abrufe durch wenige Forschende könnten fast den gesamten gemessenen Anstieg erklären."
+      },
+      {
+        "id": "a2",
+        "paragraphId": "p2",
+        "quote": "Die Suchoberfläche ist mit mehreren Hilfstechnologien schwer bedienbar.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Tests belegen konkrete Barrieren für untersuchte Zugänge und begründen Nachbesserungen, ohne die Nutzung durch sämtliche Menschen für unmöglich zu erklären."
+          },
+          {
+            "id": "B",
+            "text": "Die Beratungsstelle beweist, dass keine einzige Person das Archivportal unter irgendeinen Umständen sinnvoll benutzen kann."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Ein konkreter, wiederholbar beobachteter Defekt trägt eine Verpflichtung zur Reparatur, aber keine unbegrenzte Behauptung über alle Nutzenden.",
+        "counter": "Wenn Grundfunktionen mit verbreiteten Hilfstechnologien scheitern, können selbst hohe Abrufzahlen die Zugänglichkeit nicht legitimieren."
+      },
+      {
+        "id": "a3",
+        "paragraphId": "p3",
+        "quote": "Über eine weitere Förderung wird nach der nächsten Evaluation entschieden.",
+        "question": "Welche Schlussfolgerung folgt aus dieser Textstelle, ohne eine nicht belegte Prämisse hinzuzufügen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Ausschuss hat sich wegen der höheren Downloadzahlen bereits unbefristet zur Vollfinanzierung des Portals verpflichtet."
+          },
+          {
+            "id": "B",
+            "text": "Eine weitere Förderung bleibt eine gesonderte Entscheidung nach der Evaluation und sollte Reichweite, Barrierefreiheit und laufende Kosten gemeinsam prüfen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die noch ausstehende Evaluationsentscheidung ist eine normative Voraussetzung und begrenzt jede Förderempfehlung.",
+        "counter": "Eine umfassendere Evaluation benötigt Zeit und Ressourcen; ohne sie bleibt die Förderentscheidung jedoch epistemisch unsicher."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M24 original fictional German authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasste fiktive M24-Argumentationstexte; keine externen Werke; unabhängige Prüfung ausstehend"
+    }
+  }
+]
