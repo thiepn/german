@@ -1,0 +1,426 @@
+[
+  {
+    "id": "SG-G13D-001",
+    "version": 1,
+    "domain": "G13",
+    "band": "C2",
+    "title": "Prüfungseinspruch: öffentliche Auskunft und interne Fallbearbeitung",
+    "focus": "Verfahrensfrist, Vertraulichkeit und zuständige Stelle zwischen Interessierten und Prüfungsteam trennen",
+    "brief": "Schreibe erst eine sachliche öffentliche Information zum Einspruchsverfahren und dann eine interne Übergabenotiz. Die Einzelfallkennungen und privaten Angaben dürfen in keiner Fassung offengelegt werden. Erhalte Frist, Zuständigkeit und noch offene Sachverhalte.",
+    "audiences": [
+      {
+        "id": "PUBLIC",
+        "label": "Öffentliche FAQ",
+        "purpose": "Zugang, Frist und allgemeine Verfahrensschritte ohne Einzelfalldaten"
+      },
+      {
+        "id": "INTERNAL",
+        "label": "Verfahrenskoordination",
+        "purpose": "Aufgaben und Kontrollpunkte ohne Weitergabe privater Kennungen"
+      }
+    ],
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine Prüfungsverwaltung berichtete über die Bearbeitung schriftlicher Einsprüche. Im allgemeinen Verfahrensvermerk wurde festgehalten: „Der Einspruch muss innerhalb von vier Wochen schriftlich eingehen.“ Die Frist beginnt laut dem fiktiven Vermerk mit der Zustellung der Entscheidung; die prüfende Stelle dokumentiert zunächst nur den fristgerechten Eingang. In der internen Anlage wurde ein Beispiel unter dem Kürzel PX-7316 geführt, dessen persönliche Umstände gerade nicht für eine allgemeine Veröffentlichung bestimmt waren. Weder die Einlegung eines Einspruchs noch die erste Eingangsbestätigung ändert automatisch die angefochtene Entscheidung."
+      },
+      {
+        "id": "p2",
+        "text": "Die Sachbearbeitung erläuterte in einem weiteren Abschnitt die organisatorischen Grenzen einer Einsicht in Prüfungsakten. Die Regel lautet: „Die Einsicht ist nach Terminvereinbarung in einem geschützten Raum möglich.“ Die Anmeldung erfolgt über die Prüfungsverwaltung und erfordert keine öffentliche Erklärung des Einspruchsgrundes. Die interne Beispieldatei enthielt den frei erfundenen Raumeintrag IN-2849 sowie eine Notiz über persönliche Lebensumstände. Beides ist für eine allgemeine Wegbeschreibung unnötig. Der Hinweis auf die Möglichkeit der Einsicht bedeutet nicht, dass Akten ohne Zugangskontrolle oder über einen offenen Link bereitgestellt werden dürfen."
+      },
+      {
+        "id": "p3",
+        "text": "Im Schlussabschnitt wurde zwischen der Eingangsbestätigung und der späteren Prüfung unterschieden. Die Verwaltung schrieb: „Das Ergebnis wird erst nach abgeschlossener inhaltlicher Prüfung mitgeteilt.“ In einer fiktiven internen Bearbeitungsliste stand die Kennung EF-4952 neben einem noch unvollständigen Prüfvermerk. Ein Termin für die inhaltliche Entscheidung war nicht zugesagt; Rückfragen sollten weiterhin ausschließlich über die dafür benannte Stelle laufen. Die Mitteilung einer abgeschlossenen Prüfung ist eine zukünftige Verfahrenshandlung und darf weder als bereits erfolgte Stattgabe noch als verbindlicher Entscheidungstermin dargestellt werden."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "quote": "Der Einspruch muss innerhalb von vier Wochen schriftlich eingehen.",
+        "restricted": "PX-7316",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Allgemein mitgeteilt werden dürfen die schriftliche Vierwochenfrist ab Zustellung und der Eingang bei der zuständigen Stelle; die interne Fallkennung bleibt vertraulich."
+          },
+          {
+            "id": "B",
+            "text": "Die fiktive Fallkennung PX-7316 sollte in der öffentlichen FAQ genannt werden, damit sich der individuelle Einspruch öffentlich nachvollziehen lässt."
+          }
+        ],
+        "preferredId": "A",
+        "action": "Ein fristgerecht eingegangener Einspruch ist zunächst zu registrieren; die inhaltliche Entscheidung erfolgt in einem getrennten Schritt.",
+        "boundary": "Die abstrakte Frist lässt sich vermitteln, während die interne Personenkennung keine erforderliche Information für Außenstehende ist."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "quote": "Die Einsicht ist nach Terminvereinbarung in einem geschützten Raum möglich.",
+        "restricted": "IN-2849",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Zur Orientierung sind die interne Raumkennung IN-2849 und die persönlichen Hintergründe der antragstellenden Person in einer öffentlichen Mitteilung anzugeben."
+          },
+          {
+            "id": "B",
+            "text": "Interessierte können nach einer Terminvereinbarung die geschützte Akteneinsicht bei der Prüfungsverwaltung wahrnehmen, ohne persönliche Hintergründe öffentlich mitzuteilen."
+          }
+        ],
+        "preferredId": "B",
+        "action": "Die zuständige Stelle muss Termine, Zugangsberechtigung und Schutz der Unterlagen prüfen, bevor Einsicht gewährt wird.",
+        "boundary": "Die Information über das Verfahren bleibt nützlich, auch wenn interne Raumdaten und persönliche Begründungen weggelassen werden."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "quote": "Das Ergebnis wird erst nach abgeschlossener inhaltlicher Prüfung mitgeteilt.",
+        "restricted": "EF-4952",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Nach der schriftlichen Eingangsbearbeitung informiert die Prüfungsverwaltung über das Ergebnis erst nach einer gesonderten inhaltlichen Prüfung; ein genauer Termin steht nicht fest."
+          },
+          {
+            "id": "B",
+            "text": "Der Fall EF-4952 wurde bereits positiv entschieden und die interne Bearbeitungsliste darf mit dieser Kennung öffentlich verbreitet werden."
+          }
+        ],
+        "preferredId": "A",
+        "action": "Die Bearbeitung muss den Status offener Prüfung beibehalten und die Ergebnisbenachrichtigung vom bloßen Eingang unterscheiden.",
+        "boundary": "Eine korrekte Verfahrensmitteilung vermeidet private Bezeichnungen ebenso wie eine erfundene Vorabentscheidung."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M26 original fictional context and audience dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Fiktive Originaltexte, frei erfundene nicht personenbezogene Testkennungen; redaktionelle Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G13D-002",
+    "version": 1,
+    "domain": "G13",
+    "band": "C1",
+    "title": "Hitzehilfe: öffentliche Orientierung ohne Schutzbedürftigkeit offenzulegen",
+    "focus": "Öffentliches Hilfsangebot und vertrauliche Unterstützungsdaten voneinander abgrenzen",
+    "brief": "Entwirf einen für alle verständlichen öffentlichen Hinweis und eine begrenzte interne Koordinationsnotiz zu den Hitzeangeboten. Lass alle nicht notwendigen Personenkennungen weg, ohne Zugangsvoraussetzungen und Zuständigkeiten zu erfinden.",
+    "audiences": [
+      {
+        "id": "PUBLIC",
+        "label": "Information für Einwohner",
+        "purpose": "Ort, Zugang und Kontakt bei Hitze ohne Angaben zu Betroffenen"
+      },
+      {
+        "id": "INTERNAL",
+        "label": "Einsatzkoordination",
+        "purpose": "Aufgaben, Fristen und offengebliebene Zuständigkeiten ohne individuelle Kennungen"
+      }
+    ],
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein kommunaler Hilfsdienst erprobte während einer Hitzewoche einen öffentlich zugänglichen Aufenthaltsraum. Der veröffentlichungsfähige Teil des Berichts erklärt: „Der kühle Aufenthaltsraum ist werktags von zwölf bis achtzehn Uhr geöffnet.“ In einer internen Planungsnotiz befand sich außerdem die Beispielkennung HZ-6210 einer hilfebedürftigen Person, deren Betreuungsbedarf ausdrücklich nicht Bestandteil des allgemeinen Aushangs sein sollte. Der Raum war ohne vorherige Anmeldung nutzbar; ein Anspruch auf individuelle medizinische Versorgung wurde damit nicht versprochen. Die Öffnungszeiten bezogen sich allein auf die Werktage des Versuchs."
+      },
+      {
+        "id": "p2",
+        "text": "Die Sozialkoordination berichtete zusätzlich von telefonischen Anfragen während der heißen Tage. Das organisatorische Verfahren wird mit dem Satz beschrieben: „Eine telefonische Beratung wird bei Bedarf gesondert vermittelt.“ In der internen Gesprächsübersicht lag eine rein erfundene Vorgangsnummer HB-4083 zu einer privaten Nachfrage vor, die für die Bekanntgabe des Angebots nicht gebraucht wird. Der Hilfsdienst konnte Kontakte vermitteln, verfügte jedoch nicht über eine durchgehend besetzte medizinische Notfallleitung. Der Aushang sollte daher einen normalen Kontaktweg nennen und keine jederzeitige ärztliche Erreichbarkeit suggerieren."
+      },
+      {
+        "id": "p3",
+        "text": "Am Ende des Versuchs besprachen Verwaltung und freiwillige Helferinnen die weitere Planung. Der Bericht hält fest: „Über eine Fortsetzung des Angebots wird nach Auswertung der Nachfrage entschieden.“ Die interne Abstimmungsanlage trug die fiktive Kennung HF-9327 für einen vorläufigen Ressourcenvermerk. Weder eine zusätzliche Finanzierung noch eine Ausweitung auf Wochenenden war beschlossen. Vor einer öffentlichen Ankündigung über dauerhafte Öffnungszeiten müssten daher die Besuchszahlen, verfügbaren Räume und die Personalplanung gemeinsam geprüft werden."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "quote": "Der kühle Aufenthaltsraum ist werktags von zwölf bis achtzehn Uhr geöffnet.",
+        "restricted": "HZ-6210",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Damit Betroffene erkennbar sind, sollte die interne Kennung HZ-6210 zusammen mit ihrer Hilfebedürftigkeit am Eingang öffentlich veröffentlicht werden."
+          },
+          {
+            "id": "B",
+            "text": "Der Raum kann während des Versuchs werktags zwischen zwölf und achtzehn Uhr ohne Anmeldung aufgesucht werden; Angaben zu einzelnen hilfebedürftigen Personen gehören nicht in den Aushang."
+          }
+        ],
+        "preferredId": "B",
+        "action": "Die Aushänge müssen die befristeten Werktagszeiten korrekt darstellen; zusätzliche persönliche Hilfen sind bei Bedarf über die zuständige Stelle zu klären.",
+        "boundary": "Für die öffentliche Orientierung zählt der Zugang zum Angebot, nicht die Identität einzelner Personen."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "quote": "Eine telefonische Beratung wird bei Bedarf gesondert vermittelt.",
+        "restricted": "HB-4083",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Bei Bedarf kann über den Hilfsdienst eine gesonderte telefonische Beratung vermittelt werden; eine rund um die Uhr besetzte medizinische Notfallberatung wird nicht angeboten."
+          },
+          {
+            "id": "B",
+            "text": "Die private Anfragenummer HB-4083 ist öffentlich bekanntzugeben und als jederzeit erreichbare ärztliche Notfallstelle zu bewerben."
+          }
+        ],
+        "preferredId": "A",
+        "action": "Der öffentliche Kontakt muss als Vermittlungsweg bezeichnet werden, während persönliche Nachfragen ausschließlich innerhalb der zuständigen Bearbeitung verbleiben.",
+        "boundary": "Ein Kontaktangebot lässt sich verständlich ausdrücken, ohne vertrauliche Anliegen zu veröffentlichen oder die Leistungsart zu übertreiben."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "quote": "Über eine Fortsetzung des Angebots wird nach Auswertung der Nachfrage entschieden.",
+        "restricted": "HF-9327",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Unter Berufung auf die interne Kennung HF-9327 sollte öffentlich eine bereits gesicherte ganzjährige Wochenendöffnung versprochen werden."
+          },
+          {
+            "id": "B",
+            "text": "Die Verwaltung prüft nach Ende des Versuchs, ob das Angebot fortgesetzt werden kann; eine dauerhafte oder zusätzliche Wochenendöffnung ist bislang nicht beschlossen."
+          }
+        ],
+        "preferredId": "B",
+        "action": "Die Koordination soll zunächst Nachfrage und Personalbedarf auswerten; bis dahin gelten allein die veröffentlichten Versuchszeiten.",
+        "boundary": "Vorläufige interne Planung ist keine Zusage und benötigt keine Veröffentlichung ihrer Kennung."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M26 original fictional context and audience dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Fiktive Originaltexte, frei erfundene nicht personenbezogene Testkennungen; redaktionelle Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G13D-003",
+    "version": 1,
+    "domain": "G13",
+    "band": "C2",
+    "title": "Museumsarchiv: Provenienzfragen und geschützter Austausch",
+    "focus": "Verfahrensstand öffentlich vermitteln und Beteiligtenpositionen nicht personenbezogen offenlegen",
+    "brief": "Schreibe eine kurze öffentliche Mitteilung zum Stand einer Herkunftsprüfung sowie einen internen Prüfauftrag. Verzichte auf nicht erforderliche Kontaktkennungen und bewahre die Unterscheidung zwischen Archivlücke, Rechtseinschätzung und Entscheidung.",
+    "audiences": [
+      {
+        "id": "PUBLIC",
+        "label": "Museumspublikum",
+        "purpose": "Verfahrensstatus ohne private Kontakte oder unbelegte Eigentumsbehauptungen"
+      },
+      {
+        "id": "INTERNAL",
+        "label": "Forschungsteam",
+        "purpose": "Quellennachforderungen, Zuständigkeit und Freigabeschritte ohne Kontaktdaten"
+      }
+    ],
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "In einem Zwischenbericht zur Herkunft eines Sammlungsguts erläuterte die Forschungsabteilung den Stand der Archivsichtung. Sie schrieb: „Der Übergang zwischen zwei Bestandsverzeichnissen ist nicht dokumentiert.“ Die bislang bekannten Unterlagen erlaubten keine gesicherte Aussage über die historische Rechtslage. In einer vertraulichen Arbeitstabelle befand sich der rein erfundene Kontaktvermerk PV-2178 zu einer Person, die weitere Familienunterlagen prüfen wollte. Der Vermerk war für die öffentliche Beschreibung der Dokumentenlücke nicht nötig und sollte außerhalb des geschützten Forschungsaustauschs nicht weitergegeben werden."
+      },
+      {
+        "id": "p2",
+        "text": "Nach einer moderierten Besprechung erklärte die Museumsdirektion, wie die weitere Darstellung vorbereitet werden solle. Der Vermerk lautete: „Die Beteiligten erhalten vor einer Veröffentlichung eine Gelegenheit zur Rückmeldung.“ In einem geschützten Protokoll wurde die künstliche Vorgangskennung RP-6642 für ein nicht abgeschlossenes Gespräch verwendet. Diese Kennung identifiziert ausschließlich einen fiktiven internen Ablauf und ist weder eine veröffentlichbare Sprecherposition noch ein Beleg für die Zustimmung aller Beteiligten. Eine Rückmeldung wird angeboten; ihre tatsächliche Abgabe oder eine Einigung ist damit nicht gewährleistet."
+      },
+      {
+        "id": "p3",
+        "text": "Der abschließende Abschnitt grenzte Forschung und institutionelle Entscheidung voneinander ab. Der Zwischenbericht erklärte: „Das Kuratorium entscheidet nach Abschluss der fachlichen Prüfung.“ Eine interne Terminübersicht verwendete das erfundene Aktenkürzel KT-8534 für eine noch nicht anberaumte Sitzung. Das Kuratorium hatte zu diesem Zeitpunkt weder eine Präsentation freigegeben noch eine Rückgabe beschlossen. Die öffentliche Mitteilung sollte deshalb die Zuständigkeit und den noch offenen Ablauf wiedergeben, ohne aus einem internen Terminkürzel ein beschlossenes Datum zu machen."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "quote": "Der Übergang zwischen zwei Bestandsverzeichnissen ist nicht dokumentiert.",
+        "restricted": "PV-2178",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Museumstext kann die offene Lücke zwischen Bestandsverzeichnissen nennen, ohne daraus eine Eigentumsentscheidung abzuleiten oder die vertrauliche Kontaktkennung zu veröffentlichen."
+          },
+          {
+            "id": "B",
+            "text": "Die öffentlich zugängliche Beschilderung soll die Kontaktkennung PV-2178 nennen und eine rechtswidrige Herkunft allein aus der Archivlücke als bewiesen ausgeben."
+          }
+        ],
+        "preferredId": "A",
+        "action": "Das Forschungsteam sollte zusätzliche Belege suchen und die Interpretation bis zum belastbaren Quellenabgleich als offen kennzeichnen.",
+        "boundary": "Archivarischer Befund und personenbezogener Kontakt gehören verschiedenen Informationsbereichen an."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "quote": "Die Beteiligten erhalten vor einer Veröffentlichung eine Gelegenheit zur Rückmeldung.",
+        "restricted": "RP-6642",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die interne Gesprächskennung RP-6642 sollte veröffentlicht und als eindeutiger Nachweis für die bereits erteilte Zustimmung sämtlicher Beteiligter dargestellt werden."
+          },
+          {
+            "id": "B",
+            "text": "Vor einer Veröffentlichung ist eine Rückmeldemöglichkeit vorgesehen; das bedeutet weder, dass eine Zustimmung schon vorliegt, noch dass interne Gesprächskennungen veröffentlicht werden dürfen."
+          }
+        ],
+        "preferredId": "B",
+        "action": "Die Direktion muss den Rückmeldeweg ermöglichen und dokumentieren, darf fehlende Antworten aber nicht als Einverständnis deuten.",
+        "boundary": "Eine Beteiligungsgelegenheit ist kein stellvertretendes Einverständnis und schützt den internen Gesprächsverlauf."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "quote": "Das Kuratorium entscheidet nach Abschluss der fachlichen Prüfung.",
+        "restricted": "KT-8534",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine abschließende Entscheidung trifft das Kuratorium erst nach fachlicher Prüfung; ein bestimmter Sitzungstermin oder eine Freigabe wurde noch nicht beschlossen."
+          },
+          {
+            "id": "B",
+            "text": "Wegen des Aktenkürzels KT-8534 gilt die Ausstellung als bereits offiziell genehmigt und darf unter dieser Kennung angekündigt werden."
+          }
+        ],
+        "preferredId": "A",
+        "action": "Die fachliche Vorlage ist zunächst abzuschließen und dann dem zuständigen Kuratorium zur Entscheidung zu übergeben.",
+        "boundary": "Interne Termincodes ersetzen weder ein offizielles Sitzungsdatum noch einen Beschluss."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M26 original fictional context and audience dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Fiktive Originaltexte, frei erfundene nicht personenbezogene Testkennungen; redaktionelle Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G13D-004",
+    "version": 1,
+    "domain": "G13",
+    "band": "C1",
+    "title": "Stadtteilwerkstatt: barrierearme Beratung und private Rückmeldungen",
+    "focus": "Offene Veranstaltungen, Zugangshinweise und nicht öffentliche Rückmeldungen trennen",
+    "brief": "Verfasse einen öffentlichen Einladungstext und eine interne Aufgabenübersicht zur Stadtteilwerkstatt, jeweils ohne die erfundenen privaten Vorgangskennungen. Bewahre Termin, Barrierefreiheitsvorbehalt und Auswertungsstatus.",
+    "audiences": [
+      {
+        "id": "PUBLIC",
+        "label": "Teilnehmende der Werkstatt",
+        "purpose": "Teilnahmeinformationen und klare Zugangswege"
+      },
+      {
+        "id": "INTERNAL",
+        "label": "Organisationsteam",
+        "purpose": "Aufgaben für Ort, Beratung und Ergebnisrückmeldung"
+      }
+    ],
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine Stadtteilwerkstatt kündigte eine offene Beratungsrunde zu geplanten Veränderungen im Quartier an. Der öffentliche Programmentwurf enthält den Satz: „Die offene Beratung beginnt am Donnerstag um siebzehn Uhr.“ Ort und Wegbeschreibung sollten auf einer offiziellen Veranstaltungsseite stehen. In der internen Teilnehmendenübersicht war außerdem die frei erfundene Kennung WS-3851 zu einer persönlichen Rückfrage vermerkt, die für die Einladung irrelevant war. Die Beratung ist öffentlich zugänglich und erfordert keine individuelle Anmeldung; über besondere Unterstützungsbedarfe wird auf Anfrage gesondert gesprochen."
+      },
+      {
+        "id": "p2",
+        "text": "Für die Räume der Werkstatt wurde vorab eine erste Zugangsprüfung vorgenommen. Der Planungsvermerk lautet: „Ein barrierearmer Zugang ist vorgesehen, aber noch nicht abschließend geprüft.“ Eine konkrete Überprüfung mit unterschiedlichen Hilfsmitteln soll vor dem Veranstaltungstag stattfinden. Im internen Prüfprotokoll trug ein frei erfundener Hinweis auf eine persönliche Mobilitätsfrage die Kennung BA-7402. Eine öffentliche Einladung darf keine unbestätigte vollständige Barrierefreiheit versprechen und muss zugleich einen Kontaktweg für individuelle Fragen anbieten, ohne die privaten Hintergründe offenzulegen."
+      },
+      {
+        "id": "p3",
+        "text": "Nach Ende der Werkstatt sollten Vorschläge verschiedener Gruppen geordnet werden. Im internen Sitzungsvermerk heißt es: „Die Vorschläge werden erst nach einer gesonderten Auswertung veröffentlicht.“ Die zunächst gesammelten Notizen enthalten teilweise persönliche Anmerkungen, die vor einer Veröffentlichung entfernt oder nur in allgemeiner Form wiedergegeben werden dürfen. Für den fiktiven Sortierprozess wurde das Kürzel AU-5913 vergeben. Eine spätere Ergebnisübersicht ist angekündigt, aber ein fester Veröffentlichungstermin und eine politische Annahme einzelner Vorschläge standen noch nicht fest."
+      }
+    ],
+    "decisions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "quote": "Die offene Beratung beginnt am Donnerstag um siebzehn Uhr.",
+        "restricted": "WS-3851",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Alle Gäste sollten bei der Anmeldung die interne Kennung WS-3851 offen nennen, obwohl die Veranstaltung ausdrücklich ohne Anmeldung zugänglich ist."
+          },
+          {
+            "id": "B",
+            "text": "Die offene Beratung startet am Donnerstag um siebzehn Uhr ohne vorherige Anmeldung; private Rückfragekennungen gehören nicht in die öffentliche Einladung."
+          }
+        ],
+        "preferredId": "B",
+        "action": "Das Organisationsteam muss den offiziellen Ort ergänzen und den offenen Zugang im Einladungstext deutlich benennen.",
+        "boundary": "Zeit und Teilnahmeweg sind relevant, nicht die Zuordnung einer früheren persönlichen Nachfrage."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "quote": "Ein barrierearmer Zugang ist vorgesehen, aber noch nicht abschließend geprüft.",
+        "restricted": "BA-7402",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Ein möglichst barrierearmer Zugang ist geplant, muss aber noch geprüft werden; für individuelle Fragen sollte eine zuständige Kontaktstelle genannt werden."
+          },
+          {
+            "id": "B",
+            "text": "Unter Nennung der internen Kennung BA-7402 kann garantiert werden, dass jede Form der Barrierefreiheit bereits vollständig und abschließend nachgewiesen ist."
+          }
+        ],
+        "preferredId": "A",
+        "action": "Vor Veröffentlichung soll die Organisation den Zugang prüfen und den Umgang mit noch bestehenden Hindernissen sachlich beschreiben.",
+        "boundary": "Ein individueller Unterstützungsbedarf ist kein öffentliches Identifizierungsmerkmal und die Vorprüfung keine Garantie."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "quote": "Die Vorschläge werden erst nach einer gesonderten Auswertung veröffentlicht.",
+        "restricted": "AU-5913",
+        "question": "Welche Aussage vermittelt die notwendige Handlung, ohne interne Einzelfallinformationen offenzulegen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Kennung AU-5913 belegt, dass alle Vorschläge bereits politisch angenommen und die privaten Notizen vollständig zur Veröffentlichung freigegeben wurden."
+          },
+          {
+            "id": "B",
+            "text": "Die Vorschläge werden vor einer späteren Veröffentlichung gesondert ausgewertet; personenbezogene Hinweise bleiben geschützt und ein Termin ist noch offen."
+          }
+        ],
+        "preferredId": "B",
+        "action": "Das Team muss die Notizen sichten, personenbezogene Inhalte zurückhalten und erst danach eine veröffentlichungsfähige Zusammenfassung vorbereiten.",
+        "boundary": "Die Auswertung trennt private Rohnotizen von öffentlich mitteilbaren Ergebnissen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M26 original fictional context and audience dossiers",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Fiktive Originaltexte, frei erfundene nicht personenbezogene Testkennungen; redaktionelle Freigabe ausstehend"
+    }
+  }
+]
