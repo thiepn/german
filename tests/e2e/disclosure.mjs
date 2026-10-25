@@ -49,9 +49,12 @@ async function run(width){
  await p.locator('#disclosure-text-PUBLIC').fill(publicText+' PX-7316');await p.locator('#disclosure-why-PUBLIC').fill(rationale);
  assert.equal(await p.getByRole('button',{name:'Fassung speichern'}).first().isDisabled(),true);
  await p.locator('#disclosure-text-PUBLIC').fill(publicText);await p.getByRole('button',{name:'Fassung speichern'}).first().click();
- await p.locator('#disclosure-text-INTERNAL').fill(internalText);await p.locator('#disclosure-why-INTERNAL').fill(rationale);
- await p.getByRole('button',{name:'Fassung speichern'}).click();
  const pub=p.locator('article.polysemy-writing').filter({has:p.getByRole('heading',{name:'Öffentliche FAQ'})}).first();
+ await pub.getByRole('button',{name:'Überarbeitung speichern'}).waitFor();
+ await p.locator('#disclosure-text-INTERNAL').fill(internalText);await p.locator('#disclosure-why-INTERNAL').fill(rationale);
+ const internal=p.locator('article.polysemy-writing').filter({has:p.getByRole('heading',{name:'Verfahrenskoordination'})}).first();
+ await internal.getByRole('button',{name:'Fassung speichern'}).click();
+ await internal.getByRole('button',{name:'Überarbeitung speichern'}).waitFor();
  await pub.getByRole('button',{name:'Letzte Fassung übernehmen'}).click();
  assert.equal(await pub.getByRole('button',{name:'Überarbeitung speichern'}).isDisabled(),true);
  await p.locator('#disclosure-text-PUBLIC').fill(publicText+' Der konkrete Fristbeginn richtet sich stets nach dem individuell nachweisbaren Zustellungszeitpunkt.');
