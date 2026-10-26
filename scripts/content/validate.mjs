@@ -427,6 +427,27 @@ for(const s of m27){
 }
 if(chronologyIds.size!==4||chronologyBands.size!==2||chronologyTopics.size!==4||chronologyAnchors!==12||chronologyPreferredB<4)throw Error('Insufficient distinct C1-C2 chronology coverage');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m28=read(manifest.definitionDraftSource);
+if(manifest.definitionDraftCount!==4||m28.length!==4)throw Error('M28 G06 definition dossier count mismatch');
+const definitionIds=new Set(),definitionBands=new Set(),definitionTopics=new Set(),definitionTerms=new Set();let definitionAnchors=0,definitionB=0;
+for(const s of m28){
+ if(!/^SG-G06B-\d{3}$/.test(s.id)||definitionIds.has(s.id)||s.version!==1||s.domain!=='G06'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G06 terminology source '+s.id);
+ definitionIds.add(s.id);definitionBands.add(s.band);definitionTopics.add(s.focus);
+ if(s.title?.length<35||s.focus?.length<55||s.brief?.length<110||s.paragraphs?.length!==3||s.distinctions?.length!==3)throw Error('Incomplete original G06 dossier '+s.id);
+ const localTerms=new Set();
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<750)throw Error('Incomplete G06 source paragraph '+s.id+':'+p.id);
+ for(const [i,d] of s.distinctions.entries()){
+  const p=s.paragraphs[i],quoted='„'+d.quote+'“';
+  if(d.id!=='d'+(i+1)||d.paragraphId!==p.id||d.quote?.length<38||d.quote.length>150||!p.text.includes(quoted)||p.text.split(quoted).length!==2||
+   d.term?.length<7||d.nearTerm?.length<7||d.term===d.nearTerm||localTerms.has(d.term)||d.question?.length<60||
+   d.model?.length<85||d.trap?.length<75||d.options?.length!==2||d.options[0].id!=='A'||d.options[1].id!=='B'||d.options[0].text===d.options[1].text||
+   d.options.some(o=>o.text?.length<95)||!['A','B'].includes(d.preferredId))throw Error('Unanchored G06 conceptual boundary '+s.id+':'+d.id);
+  localTerms.add(d.term);definitionTerms.add(d.term);definitionAnchors++;if(d.preferredId==='B')definitionB++;
+ }
+}
+if(definitionIds.size!==4||definitionBands.size!==2||definitionTopics.size!==4||definitionAnchors!==12||definitionTerms.size<10||definitionB<4)throw Error('Insufficient G06 definition-boundary diversity');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}
