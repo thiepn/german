@@ -124,7 +124,13 @@ export function collect(){
   ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G13_DISCLOSURE_DECISION',mode:'G13_DISCLOSURE',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,paragraphId:d.paragraphId,options:d.options,preferredId:d.preferredId,action:d.action,boundary:d.boundary,issues:['Check direct source quotation, action and fictional restricted token','Check limited disclosure without unnecessary detail and no invented approval','Check independent public/internal versions and meaningful revisions; no automatic grades'],independentEditorialApproval:false}))
  ]);
  if(disclosure.length!==manifest.disclosureDraftCount*4)throw Error('Incomplete G13 disclosure editorial worklist');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure],allIds=new Set();
+
+ const chronology=read(manifest.chronologyDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G09_ORIGINAL_PROCEDURAL_SOURCE',mode:'G09_CHRONOLOGY',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently verify original full-length German fictional source and source rights','Assess whether chronology and approval logic are linguistically plausible rather than legal advice','Maintain DEMO_ONLY, with no approval, grade or publication'],independentEditorialApproval:false},
+  ...s.claims.map(t=>({id:s.id+':'+t.id,version:s.version,type:'G09_CONDITIONAL_CHRONOLOGY',mode:'G09_CHRONOLOGY',status:s.status,authorId:s.author,prompt:t.question,quote:t.quote,paragraphId:t.paragraphId,options:t.options,preferredId:t.preferredId,model:t.model,trap:t.trap,issues:['Check literal quotation exactly once in named paragraph','Verify temporal markers, precedence and conditional or postponed effects','Verify independent three-field German response and transfer memo are source-appropriate','Human editorial approval only; never infer proficiency from writing lengths'],independentEditorialApproval:false}))
+ ]);
+ if(chronology.length!==manifest.chronologyDraftCount*4)throw Error('Incomplete G09 chronology editorial queue');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

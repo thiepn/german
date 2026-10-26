@@ -408,6 +408,25 @@ for(const s of m26){
 }
 if(disclosureIds.size!==4||disclosureBands.size!==2||disclosureRestricted.size!==12||disclosureAnchors!==12||disclosureB<4)throw Error('Insufficient G13 disclosure coverage');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m27=read(manifest.chronologyDraftSource);
+if(manifest.chronologyDraftCount!==4||m27.length!==4)throw Error('M27 chronology source count mismatch');
+const chronologyIds=new Set(),chronologyBands=new Set(),chronologyTopics=new Set();let chronologyAnchors=0,chronologyPreferredB=0;
+for(const s of m27){
+ if(!/^SG-G09T-\d{3}$/.test(s.id)||chronologyIds.has(s.id)||s.version!==1||s.domain!=='G09'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified M27 chronology source '+s.id);
+ chronologyIds.add(s.id);chronologyBands.add(s.band);chronologyTopics.add(s.focus);
+ if(s.focus?.length<35||s.brief?.length<110||s.paragraphs?.length!==3||s.claims?.length!==3)throw Error('Incomplete chronology dossier '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<600)throw Error('Truncated chronology source '+s.id+':'+p.id);
+ for(const [i,t] of s.claims.entries()){
+  const p=s.paragraphs[i],quoted='„'+t.quote+'“';
+  if(t.id!=='t'+(i+1)||t.paragraphId!==p.id||t.quote?.length<40||t.quote.length>145||!p.text.includes(quoted)||p.text.split(quoted).length!==2||
+  !t.question?.trim()||t.model?.length<90||t.trap?.length<65||t.options?.length!==2||t.options[0].id!=='A'||t.options[1].id!=='B'||t.options[0].text===t.options[1].text||
+  t.options.some(o=>o.text?.length<90)||!['A','B'].includes(t.preferredId))throw Error('Unanchored chronology interpretation '+s.id+':'+t.id);
+  chronologyAnchors++;if(t.preferredId==='B')chronologyPreferredB++;
+ }
+}
+if(chronologyIds.size!==4||chronologyBands.size!==2||chronologyTopics.size!==4||chronologyAnchors!==12||chronologyPreferredB<4)throw Error('Insufficient distinct C1-C2 chronology coverage');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}
