@@ -61,5 +61,7 @@
   "numericDraftCount": 4,
   "numericDraftSource": "content/fixtures/g09-numeracy.demo.json",
   "disclosureDraftCount": 4,
-  "disclosureDraftSource": "content/fixtures/g13-disclosure.demo.json"
+  "disclosureDraftSource": "content/fixtures/g13-disclosure.demo.json",
+  "chronologyDraftCount": 4,
+  "chronologyDraftSource": "content/fixtures/g09-chronology.demo.json"
 }
