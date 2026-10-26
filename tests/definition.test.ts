@@ -62,7 +62,7 @@ test('independently authored full-document terminological transfer and meaningfu
  assert.throws(()=>appendDefinitionReport(e,s,'REWRITE',memo,why,'d1','same',time+4),/fehlt/);
  const revised=appendDefinitionReport(e,s,'REWRITE',memo+' Der begrenzte Geltungsbereich der Arbeitsdefinitionen muss auch in der externen Kommunikation ausdrücklich erkennbar bleiben.',why,'d3','revised',time+4);
  assert.equal(revised.original,e.original);assert.deepEqual(revised.revisions.slice(0,3),e.revisions);assert.equal(versionPair(revised,3)?.previous,memo);
- assert.equal(archiveRows([revised],{kind:'G06_DEFINITION',activity:'REVISED',period:'ALL',search:'externe Kommunikation',now:time+5}).length,1);
+ assert.equal(archiveRows([revised],{kind:'G06_DEFINITION',activity:'REVISED',period:'ALL',search:'externen Kommunikation',now:time+5}).length,1);
 });
 test('observed progress tracks authored definitions, coherent memo and revision without CEFR grading',()=>{
  assert.deepEqual(definitionProgress([]),{started:0,distinctions:0,transferred:0,revised:0,total:4});
