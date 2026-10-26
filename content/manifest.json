@@ -63,5 +63,7 @@
   "disclosureDraftCount": 4,
   "disclosureDraftSource": "content/fixtures/g13-disclosure.demo.json",
   "chronologyDraftCount": 4,
-  "chronologyDraftSource": "content/fixtures/g09-chronology.demo.json"
+  "chronologyDraftSource": "content/fixtures/g09-chronology.demo.json",
+  "definitionDraftCount": 4,
+  "definitionDraftSource": "content/fixtures/g06-definition.demo.json"
 }

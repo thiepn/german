@@ -1,4 +1,4 @@
-import raw from '../../../content/fixtures/g09-definition.demo.json';
+import raw from '../../../content/fixtures/g06-definition.demo.json';
 import type {ProductionEntry,ProductionRevision} from '../production/types';
 export type DefinitionChoice='A'|'B';
 export type DefinitionDistinction={id:string;paragraphId:string;term:string;nearTerm:string;quote:string;question:string;options:{id:DefinitionChoice;text:string}[];preferredId:DefinitionChoice;model:string;trap:string};
