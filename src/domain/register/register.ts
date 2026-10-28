@@ -32,7 +32,7 @@ export function appendRegister(e:ProductionEntry,s:RegisterStudy,stage:'TRANSFER
  const source=registerSource(e),first=firstRegister(e);
  if(!source||source.id!==s.id||!first||registerStage(e)!==stage||!independentRegister(source,text,reason)||!revId||!Number.isFinite(at))throw Error('Quellenbeleg oder Arbeitsschritt ungültig.');
  const previous=stage==='TRANSFER'?first.text:[...e.revisions].reverse().find(x=>x.questionId==='TRANSFER'||x.questionId==='REWRITE')?.text;
- if(previous&&norm(previous)===norm(text))throw Error('Unveränderte Fassung ist keine Überarbeitung.');
+ if((previous&&norm(previous)===norm(text))||(stage==='REWRITE'&&norm(first.text)===norm(text)))throw Error('Unveränderte Fassung ist keine Überarbeitung.');
  const revision:ProductionRevision={id:revId,at,text:text.trim(),reflection:reason.trim(),questionId:stage,paragraphId:source.anchor.paragraphId,lens:stage==='TRANSFER'?'REGISTER':'KOHÄRENZ',selfChecks:['SOURCE:'+source.id]};
  return {...e,revisions:[...e.revisions,revision]};
 }
