@@ -65,5 +65,7 @@
   "chronologyDraftCount": 4,
   "chronologyDraftSource": "content/fixtures/g09-chronology.demo.json",
   "definitionDraftCount": 4,
-  "definitionDraftSource": "content/fixtures/g06-definition.demo.json"
+  "definitionDraftSource": "content/fixtures/g06-definition.demo.json",
+  "registerResponsibilityDraftCount": 4,
+  "registerResponsibilityDraftSource": "content/fixtures/g08-register-responsibility.demo.json"
 }
