@@ -75,7 +75,7 @@ async function run(width){
  await p.getByText(interpretations[1],{exact:false}).first().waitFor();
  await p.reload({waitUntil:'networkidle'});
  await p.getByRole('button',{name:'Lernen',exact:true}).first().click();
- await p.locator('article').filter({hasText:'Satzbau'}).getByRole('button',{name:'Fokuspartikeln und Negationsskopus'}).click();
+ await p.locator('article').filter({hasText:'Syntax und Informationsstruktur'}).getByRole('button',{name:'Fokuspartikeln und Negationsskopus'}).click();
  await p.getByText(interpretations[0],{exact:false}).first().waitFor();
  await p.getByRole('button',{name:'Zurück zum Curriculum'}).click();
  await p.getByRole('button',{name:'Daten & Sicherung'}).click();
@@ -95,7 +95,7 @@ async function run(width){
  await b.getByText('Import abgeschlossen:',{exact:false}).waitFor();
  await b.reload({waitUntil:'networkidle'});
  await b.getByRole('button',{name:'Lernen',exact:true}).first().click();
- await b.locator('article').filter({hasText:'Satzbau'}).getByRole('button',{name:'Fokuspartikeln und Negationsskopus'}).click();
+ await b.locator('article').filter({hasText:'Syntax und Informationsstruktur'}).getByRole('button',{name:'Fokuspartikeln und Negationsskopus'}).click();
  await b.getByText('sachliche Pressefassung',{exact:false}).first().waitFor();
  assert.equal(await b.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,'horizontal overflow');
  console.log('PASS M30 G04 source and scope reasoning, CAS stale tab, revision, archive, backup v3 and reload '+width);
