@@ -67,5 +67,7 @@
   "definitionDraftCount": 4,
   "definitionDraftSource": "content/fixtures/g06-definition.demo.json",
   "registerResponsibilityDraftCount": 4,
-  "registerResponsibilityDraftSource": "content/fixtures/g08-register-responsibility.demo.json"
+  "registerResponsibilityDraftSource": "content/fixtures/g08-register-responsibility.demo.json",
+  "scopeDraftCount": 4,
+  "scopeDraftSource": "content/fixtures/g04-scope.demo.json"
 }

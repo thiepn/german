@@ -448,6 +448,25 @@ for(const s of m28){
 }
 if(definitionIds.size!==4||definitionBands.size!==2||definitionTopics.size!==4||definitionAnchors!==12||definitionTerms.size<10||definitionB<4)throw Error('Insufficient G06 definition-boundary diversity');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m30=read(manifest.scopeDraftSource);
+if(manifest.scopeDraftCount!==4||m30.length!==4)throw Error('M30 G04 scope dossier count mismatch');
+const scopeIds=new Set(),scopeBands=new Set(),scopeFoci=new Set(),scopeParticles=new Set();let scopeAnchors=0,scopeB=0;
+for(const s of m30){
+ if(!/^SG-G04S-\d{3}$/.test(s.id)||scopeIds.has(s.id)||s.version!==1||s.domain!=='G04'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified M30 scope source '+s.id);
+ scopeIds.add(s.id);scopeBands.add(s.band);scopeFoci.add(s.focus);
+ if(s.title?.length<35||s.focus?.length<65||s.brief?.length<125||s.paragraphs?.length!==3||s.scopes?.length!==3)throw Error('Incomplete G04 scope dossier '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<650)throw Error('Incomplete G04 scope source paragraph '+s.id+':'+p.id);
+ for(const [i,c] of s.scopes.entries()){
+  const p=s.paragraphs[i],quoted='„'+c.quote+'“';
+  if(c.id!=='s'+(i+1)||c.paragraphId!==p.id||c.quote?.length<30||c.quote.length>145||!p.text.includes(quoted)||p.text.split(quoted).length!==2||
+   c.particle?.length<5||c.question?.length<45||c.model?.length<80||c.trap?.length<70||c.options?.length!==2||c.options[0].id!=='A'||c.options[1].id!=='B'||c.options[0].text===c.options[1].text||
+   c.options.some(o=>o.text?.length<90)||!['A','B'].includes(c.preferredId))throw Error('Unanchored M30 scope interpretation '+s.id+':'+c.id);
+  scopeAnchors++;scopeParticles.add(c.particle);if(c.preferredId==='B')scopeB++;
+ }
+}
+if(scopeIds.size!==4||scopeBands.size!==2||scopeFoci.size!==4||scopeAnchors!==12||scopeParticles.size<10||scopeB<4)throw Error('Insufficient distinct G04 focus/negation scope coverage');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

@@ -136,7 +136,13 @@ export function collect(){
   ...s.distinctions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G06_OPERATIONAL_DEFINITION_BOUNDARY',mode:'G06_DEFINITION',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,paragraphId:d.paragraphId,term:d.term,nearTerm:d.nearTerm,options:d.options,preferredId:d.preferredId,model:d.model,trap:d.trap,issues:['Match the quotation literally to exactly one source paragraph','Check term, adjacent concept, excluded inference and substantive boundary example','Review independent multi-paragraph terminological memo and meaningful revisions without auto-grading','No editorial approval or publication until independently assessed'],independentEditorialApproval:false}))
  ]);
  if(definitions.length!==manifest.definitionDraftCount*4)throw Error('Incomplete M28 G06 editorial sources and anchors');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions],allIds=new Set();
+
+ const scope=read(manifest.scopeDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G04_ORIGINAL_SCOPE_SOURCE',mode:'G04_SCOPE',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independent edit of original German, scope and rights','Review C1/C2 calibration without claiming automated CEFR measurement','No publication or approval until independently reviewed'],independentEditorialApproval:false},
+  ...s.scopes.map(c=>({id:s.id+':'+c.id,version:s.version,type:'G04_FOCUS_PARTICLE_OR_NEGATION_SCOPE',mode:'G04_SCOPE',status:s.status,authorId:s.author,prompt:c.question,quote:c.quote,paragraphId:c.paragraphId,particle:c.particle,options:c.options,preferredId:c.preferredId,model:c.model,trap:c.trap,issues:['Verify literal quote occurs once in named source paragraph','Verify truth-conditional negation scope, focus alternatives and counterexamples','Review independent document, audience revision and no automated free-writing grade','Preserve DEMO_ONLY and unreviewed rights'],independentEditorialApproval:false}))
+ ]);
+ if(scope.length!==manifest.scopeDraftCount*4)throw Error('Incomplete M30 G04 editorial source and anchor queue');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }
