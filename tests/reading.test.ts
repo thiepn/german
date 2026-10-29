@@ -31,7 +31,7 @@ test('manifest and editorial queue include all reading passages and questions wi
  const m=JSON.parse(readFileSync('content/manifest.json','utf8'));
  assert.equal(m.readingUnitCount,4);assert.equal(m.readingQuestionCount,12);
  const worklist=collect();
- assert.equal(worklist.length,m.demoItemCount+m.productionPromptCount+m.readingUnitCount+m.readingQuestionCount+m.pragmaticScenarioCount+m.readingTransferCount+m.modalityDraftCount*4+m.caseTracingDraftCount*4+m.valencyDraftCount*4+m.focusDraftCount*4+m.referenceDraftCount*4+m.phraseologyDraftCount*4+m.polysemyDraftCount*4+m.stanceDraftCount*4+m.crossSourceDraftCount*4+m.compressionDraftCount*4+m.attributionDraftCount*4+m.repairDraftCount*4+m.argumentDraftCount*4+m.numericDraftCount*4+m.disclosureDraftCount*4+m.chronologyDraftCount*4+m.definitionDraftCount*4);
+ assert.equal(worklist.length,m.demoItemCount+m.productionPromptCount+m.readingUnitCount+m.readingQuestionCount+m.pragmaticScenarioCount+m.readingTransferCount+m.modalityDraftCount*4+m.caseTracingDraftCount*4+m.valencyDraftCount*4+m.focusDraftCount*4+m.referenceDraftCount*4+m.phraseologyDraftCount*4+m.polysemyDraftCount*4+m.stanceDraftCount*4+m.crossSourceDraftCount*4+m.compressionDraftCount*4+m.attributionDraftCount*4+m.repairDraftCount*4+m.argumentDraftCount*4+m.numericDraftCount*4+m.disclosureDraftCount*4+m.chronologyDraftCount*4+m.definitionDraftCount*4+m.scopeDraftCount*4);
  assert.equal(worklist.filter(x=>x.type==='READING_TEXT').length,4);
  assert.equal(worklist.filter(x=>x.type==='READING_EVIDENCE').length,12);
  assert.equal(worklist.filter(x=>x.mode==='G05').length,m.modalityDraftCount*4);
