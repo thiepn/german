@@ -62,7 +62,7 @@ export function savedDeixis(e:ProductionEntry,p:DeixisPoint):DeixisEvidence|null
  const s=deixisSource(e),first=firstDeixis(e);
  if(!s||!first||!s.anchors.some(q=>q.id===p.id&&q.paragraphId===p.paragraphId))return null;
  if(s.anchors[0].id===p.id)return first;
- const rev=e.revisions.find(r=>r.questionId==='ATTACH:'+p.id),parts=rev?decoded(rev.text):null,c=rev?.selfChecks?.[0];
+ const rev=e.revisions.find(r=>r.questionId==='DEIXIS:'+p.id),parts=rev?decoded(rev.text):null,c=rev?.selfChecks?.[0];
  if(!rev||!parts||rev.paragraphId!==p.paragraphId||!c||!isChoice(p,c)||!independentDeixis(p,parts.report,parts.misreading,parts.origo,parts.boundary))return null;
  return {deixisId:p.id,paragraphId:p.paragraphId,choice:c,...parts,initial:false};
 }
@@ -75,7 +75,7 @@ export function appendDeixis(e:ProductionEntry,s:DeixisStudy,pointId:string,choi
  const source=deixisSource(e),p=source?.anchors.find(x=>x.id===pointId);
  if(!source||source.id!==s.id||!firstDeixis(e)||!p||nextDeixis(s,e)?.id!==pointId||!isChoice(p,choice)||
  !independentDeixis(p,report,misreading,origo,boundary)||!revisionId||e.revisions.some(r=>r.id===revisionId)||!Number.isFinite(at))throw Error('Deixisbeleg fehlt oder ist außerhalb der Reihenfolge.');
- const revision:ProductionRevision={id:revisionId,at,text:encoded(report,misreading,origo,boundary),reflection:'Deixisrekonstruktion: '+p.phenomenon,questionId:'ATTACH:'+p.id,paragraphId:p.paragraphId,lens:'BEDEUTUNG',selfChecks:[choice]};
+ const revision:ProductionRevision={id:revisionId,at,text:encoded(report,misreading,origo,boundary),reflection:'Deixisrekonstruktion: '+p.phenomenon,questionId:'DEIXIS:'+p.id,paragraphId:p.paragraphId,lens:'BEDEUTUNG',selfChecks:[choice]};
  return {...e,revisions:[...e.revisions,revision]};
 }
 export const latestDeixisMemo=(e:ProductionEntry):ProductionRevision|null=>
@@ -92,7 +92,7 @@ export function appendDeixisMemo(e:ProductionEntry,s:DeixisStudy,stage:'TRANSFER
  !valid(memo,560,3900)||memo.trim().split(/\n\s*\n/).filter(Boolean).length<2||!valid(reason,110,1500)||
  !revisionId||e.revisions.some(r=>r.id===revisionId)||!Number.isFinite(at)||
  (stage==='TRANSFER'&&prior!==null)||(stage==='REWRITE'&&(!prior||!substantialDeixisRevision(prior.text,memo))))throw Error('Ein vollständiger eigenständiger Vermerk oder eine substantielle Revision fehlt.');
- const revision:ProductionRevision={id:revisionId,at,text:memo.trim(),reflection:reason.trim(),questionId:stage,paragraphId:p.paragraphId,lens:stage==='REWRITE'?'REGISTER':'BEDEUTUNG',selfChecks:['ATTACH:'+p.id]};
+ const revision:ProductionRevision={id:revisionId,at,text:memo.trim(),reflection:reason.trim(),questionId:stage,paragraphId:p.paragraphId,lens:stage==='REWRITE'?'REGISTER':'BEDEUTUNG',selfChecks:['DEIXIS:'+p.id]};
  return {...e,revisions:[...e.revisions,revision]};
 }
 export function deixisProgress(entries:readonly ProductionEntry[]){

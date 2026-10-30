@@ -7,7 +7,7 @@ import {deixisStudies,isDeixisEntry,beginDeixis,appendDeixis,appendDeixisMemo,de
 export default function DeixisStudio({initialSelection,onExit}:{initialSelection?:string;onExit:()=>void}){
  const [entries,setEntries]=useState<ProductionEntry[]>([]);
  const [selected,setSelected]=useState(deixisStudies.some(s=>s.id===initialSelection)?initialSelection!:deixisStudies[0].id);
- const [choice,setChoice]=useState<DeixisChoice|''>(''),[report,setRewrite]=useState(''),[misreading,setAlternative]=useState(''),[origo,setContext]=useState(''),[boundary,setBoundary]=useState('');
+ const [choice,setChoice]=useState<DeixisChoice|''>(''),[report,setReport]=useState(''),[misreading,setMisreading]=useState(''),[origo,setOrigo]=useState(''),[boundary,setBoundary]=useState('');
  const [memo,setMemo]=useState(''),[reason,setReason]=useState(''),[anchor,setAnchor]=useState('');
  const [busy,setBusy]=useState(false),[error,setError]=useState('');
  const study=deixisStudies.find(s=>s.id===selected)!;
@@ -16,7 +16,7 @@ export default function DeixisStudio({initialSelection,onExit}:{initialSelection
  const dirty=[choice,report,misreading,origo,boundary,memo,reason].some(x=>x.trim().length>0);
  useEffect(()=>{let live=true;void loadProductionEntries().then(rows=>{if(live)setEntries(rows)}).catch(e=>{if(live)setError(String(e))});return()=>{live=false}},[]);
  const refresh=async()=>setEntries(await loadProductionEntries());
- function clear(){setChoice('');setRewrite('');setAlternative('');setContext('');setBoundary('');setMemo('');setReason('');setAnchor('');setError('')}
+ function clear(){setChoice('');setReport('');setMisreading('');setOrigo('');setBoundary('');setMemo('');setReason('');setAnchor('');setError('')}
  function select(id:string){if(dirty&&!window.confirm('Ungespeicherte Texte für dieses Dokument verwerfen?'))return;setSelected(id);clear()}
  function exit(){if(dirty&&!window.confirm('Ungespeicherte Texte verwerfen?'))return;onExit()}
  async function saveEvidence(){
@@ -38,7 +38,7 @@ export default function DeixisStudio({initialSelection,onExit}:{initialSelection
  const memos=entry?.revisions.filter(r=>r.questionId==='TRANSFER'||r.questionId==='REWRITE')??[];
  return <section className="polysemy-studio deixis-studio">
   <h1 className="page-title">Deiktische Zentren und Perspektivwechsel</h1>
-  <p className="small muted">{progress.started}/{progress.total} Quellen begonnen · {progress.analyses} Deixisrekonstruktionn · {progress.transferred} Vermerke · {progress.revised} Revisionen. Ohne automatische Bewertung.</p>
+  <p className="small muted">{progress.started}/{progress.total} Quellen begonnen · {progress.analyses} Deixisrekonstruktionen · {progress.transferred} Vermerke · {progress.revised} Revisionen. Ohne automatische Bewertung.</p>
   <div className="field"><label htmlFor="deixis-select">Quelldokument</label><select id="deixis-select" value={selected} disabled={busy} onChange={e=>select(e.target.value)}>{deixisStudies.map(s=><option key={s.id} value={s.id}>{s.band} · {s.title}</option>)}</select></div>
   {nextDeixisStudy(entries).id!==selected&&<button className="button outline" type="button" disabled={busy} onClick={()=>select(nextDeixisStudy(entries).id)}>Nächstes Dokument öffnen</button>}
   <article className="panel polysemy-source"><div className="kicker">{study.band} · G01 · {study.id} · v{study.version}</div><h2>{study.title}</h2><p>{study.focus}</p>
@@ -53,9 +53,9 @@ export default function DeixisStudio({initialSelection,onExit}:{initialSelection
    </article>})}</section>}
   {next&&<section className="panel polysemy-task"><h2>Deixisbeleg {study.anchors.indexOf(next)+1} / {study.anchors.length}</h2><p><strong>{next.phenomenon} · {next.paragraphId}:</strong> „{next.quote}“</p><p>{next.question}</p>
    <div className="field"><label htmlFor="deixis-choice">Welche deiktische Verankerung stützt die Originaläußerung?</label><select id="deixis-choice" value={choice} disabled={busy} onChange={e=>setChoice(e.target.value as DeixisChoice|'')}><option value="">Deixis wählen</option>{next.options.map(o=><option key={o.id} value={o.id}>{o.text}</option>)}</select></div>
-   <div className="field"><label htmlFor="deixis-report">Schreibe eine eindeutig datierte indirekte Wiedergabe mit aufgelösten Orts- und Personenbezügen</label><textarea id="deixis-report" rows={5} maxLength={1450} value={report} onChange={e=>setRewrite(e.target.value)}/></div>
-   <div className="field"><label htmlFor="deixis-misreading">Beschreibe eine plausible, aber falsch verankerte spätere Lesart</label><textarea id="deixis-misreading" rows={5} maxLength={1450} value={misreading} onChange={e=>setAlternative(e.target.value)}/></div>
-   <div className="field"><label htmlFor="deixis-origo">Erläutere Sprecher, Äußerungsdatum, Ort und Adressat anhand einer konkreten Quelleninformation</label><textarea id="deixis-origo" rows={5} maxLength={1650} value={origo} onChange={e=>setContext(e.target.value)}/></div>
+   <div className="field"><label htmlFor="deixis-report">Schreibe eine eindeutig datierte indirekte Wiedergabe mit aufgelösten Orts- und Personenbezügen</label><textarea id="deixis-report" rows={5} maxLength={1450} value={report} onChange={e=>setReport(e.target.value)}/></div>
+   <div className="field"><label htmlFor="deixis-misreading">Beschreibe eine plausible, aber falsch verankerte spätere Lesart</label><textarea id="deixis-misreading" rows={5} maxLength={1450} value={misreading} onChange={e=>setMisreading(e.target.value)}/></div>
+   <div className="field"><label htmlFor="deixis-origo">Erläutere Sprecher, Äußerungsdatum, Ort und Adressat anhand einer konkreten Quelleninformation</label><textarea id="deixis-origo" rows={5} maxLength={1650} value={origo} onChange={e=>setOrigo(e.target.value)}/></div>
    <div className="field"><label htmlFor="deixis-boundary">Welche anachronistische oder falsch zugeordnete Folgerung ist nicht gedeckt?</label><textarea id="deixis-boundary" rows={5} maxLength={1400} value={boundary} onChange={e=>setBoundary(e.target.value)}/></div>
    <button className="button" type="button" disabled={busy||!choice||!independentDeixis(next,report,misreading,origo,boundary)} onClick={()=>void saveEvidence()}>Deixisbeleg speichern</button>
   </section>}
