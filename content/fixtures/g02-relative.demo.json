@@ -1,0 +1,378 @@
+[
+  {
+    "id": "SG-G02R-001",
+    "version": 1,
+    "domain": "G02",
+    "band": "C1",
+    "title": "Kommunaler Prüfbericht: Bezugswort und grammatische Satzrolle",
+    "focus": "Nominativ, Dativ und Präpositionsbezug im eingebetteten Relativsatz gegen die Satzrolle des Bezugsworts abgrenzen",
+    "brief": "Verfasse einen selbstständigen mehrabsätzigen Bericht für ein fiktives Prüfungsgremium. Lege für jede der drei Quellenstellen das Bezugswort, dessen Kasus im übergeordneten Satz und die grammatische Funktion des Relativpronomens im Nebensatz offen. Übertrage den Bericht in eine allgemeinverständliche Bürgerinformation und revidiere die Satzstruktur substanziell, ohne Zuständigkeiten zu vertauschen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "In einer fiktiven Stadtverwaltung prüfte eine Kommission auffällige Abweichungen zwischen zwei öffentlich zugänglichen Tabellen. Die Geschäftsstelle hatte zunächst nur eine kurze Zusammenfassung erhalten, während der ausführliche Prüfbericht noch bei der Dokumentationsstelle lag. Im Sitzungsprotokoll stand: „Den Bericht, der die Abweichung dokumentierte, erhielt die Kommission erst am Dienstag.“ Die Satzstellung mit dem vorangestellten Akkusativobjekt verleitete einen Bearbeiter dazu, auch das Relativpronomen im Akkusativ zu setzen. Er übersah dabei, dass im Relativsatz der Bericht die Abweichung dokumentiert und deshalb als Subjekt fungiert. Die Kommission ist Empfängerin des Berichts, nicht dessen Verfasserin. Das Lieferverzeichnis bestätigte den Dienstag als Eingangstag; der Bericht enthielt die eigentliche Beschreibung der Abweichung. Für die spätere öffentliche Zusammenfassung sollte genau diese Rollenverteilung erhalten bleiben, auch wenn die Formulierung in zwei kürzere Sätze aufgelöst würde."
+      },
+      {
+        "id": "p2",
+        "text": "Der zweite Teil der Untersuchung behandelte die fachliche Rückmeldung. Eine Sachverständige hatte die Tabellen zunächst nicht selbst erstellt; die Geschäftsstelle übermittelte ihr einen Datensatz, damit sie die Abweichungen überprüfen konnte. In der Chronik hieß es: „Die Sachverständige, der man die Rohdaten geschickt hatte, antwortete am Donnerstag.“ Eine Redaktionsfassung ersetzte der durch die, weil die Sachverständige im Hauptsatz als Subjekt vorkam. Dadurch verlor der Relativsatz seine grammatisch notwendige Empfängerin: Das unpersönliche man hatte die Rohdaten an eine andere Person gesendet, die anschließend antwortete. Das Versandprotokoll führte die Sachverständige als Adressatin und die Rohdaten als versandte Unterlagen; ihre Antwort wurde am Donnerstag registriert. Eine sprachlich korrekte Paraphrase musste den Dativ im Nebensatz entweder beibehalten oder die Handlung mit einem ausdrücklichen Verb wie erhalten umschreiben. Nicht belegt war, dass die Sachverständige selbst die Rohdaten verschickt habe."
+      },
+      {
+        "id": "p3",
+        "text": "Beim Ordnen der eingegangenen Akten stellte die Geschäftsstelle fest, dass einige der eingereichten Dokumentenmappen keinen separaten Prüfvermerk enthielten. Andere Mappen waren vollständig; die unvollständigen sollten zunächst nicht in den geprüften Bestand eingeordnet werden. Der Ordnungsvermerk lautete: „Die Unterlagen, denen ein Prüfvermerk fehlte, wurden gesondert abgelegt.“ Im Hauptsatz sind die Unterlagen das Subjekt eines passiven Ablagevorgangs. Im eingeschobenen Relativsatz fehlt den Unterlagen etwas; der Prüfvermerk ist dort das Subjekt der Fehlensbeziehung. Eine Kurzfassung machte aus den Unterlagen irrtümlich die Sache, die dem Vermerk fehlt, und kehrte damit die Bedeutungsbeziehung um. Das Ablageprotokoll bestätigte, dass die fehlenden Vermerke die Unterlagen betrafen und gerade deswegen eine gesonderte Bearbeitung vorgesehen war. Die Darstellung durfte weder unterstellen, sämtliche Unterlagen seien fehlerhaft, noch die fehlende Beilage als schon nachgereicht bezeichnen."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "phenomenon": "Akkusativ im Hauptsatz, Nominativ im Relativsatz",
+        "quote": "Den Bericht, der die Abweichung dokumentierte, erhielt die Kommission erst am Dienstag.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Bericht steht im Hauptsatz als Akkusativobjekt zu erhielt; der ist im Relativsatz dagegen Nominativsubjekt zu dokumentierte."
+          },
+          {
+            "id": "B",
+            "text": "Weil den Bericht im Hauptsatz im Akkusativ steht, müsste das Relativpronomen ebenfalls den heißen; es ist Objekt von dokumentierte."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das Bezugswort ist Akkusativobjekt des übergeordneten Verbs erhalten. Im Relativsatz ist der Bericht selbst Handelnder des Dokumentierens, weshalb der Nominativ der richtig ist.",
+        "trap": "Der Kasus des Antezedens wird nicht mechanisch in den Relativsatz übernommen; dessen internes Verb bestimmt die Funktion."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "phenomenon": "Nominativisches Bezugswort, dativischer Empfänger",
+        "quote": "Die Sachverständige, der man die Rohdaten geschickt hatte, antwortete am Donnerstag.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Sachverständige ist in beiden Teilsätzen Subjekt, weshalb das Relativpronomen die heißen müsste und keine Empfängerrolle ausdrückt."
+          },
+          {
+            "id": "B",
+            "text": "Die Sachverständige ist Subjekt von antwortete, während der als Dativempfängerin zum Verb schicken gehört; die Rohdaten bilden dessen Akkusativobjekt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das relative der steht für der Sachverständigen im Dativ, weil man jemandem etwas schickt; das Bezugswort die Sachverständige ist hingegen Nominativsubjekt des Hauptsatzes.",
+        "trap": "Die gleiche Person kann in Haupt- und Relativsatz verschiedene syntaktische Rollen übernehmen, ohne dass sich ihre Referenz ändert."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "phenomenon": "Pluralisches Subjekt und Dativrelation bei fehlen",
+        "quote": "Die Unterlagen, denen ein Prüfvermerk fehlte, wurden gesondert abgelegt.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Unterlagen sind Subjekt der Passivaussage wurden abgelegt; denen ist Dativplural, weil im Relativsatz ein Prüfvermerk den Unterlagen fehlt."
+          },
+          {
+            "id": "B",
+            "text": "Das Bezugswort ist Plural, daher muss die stehen; die Unterlagen fehlen dem Prüfvermerk und sind Objekt des Nebensatzes."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das Verb fehlen konstruiert etwas fehlt jemandem oder einer Sache: Ein Prüfvermerk fehlt den Unterlagen. Denen ist deshalb Dativplural, unabhängig vom Nominativ der Unterlagen im Hauptsatz.",
+        "trap": "Wer oder was fehlt, ist nicht dasselbe wie wem etwas fehlt; ein Rollenwechsel verfälscht die Eigenschaft der Akten."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M34 original fictional relative-clause syntax studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigenständig verfasste fiktive Quellen, keine fremden Originaldokumente; sprachliche, CEFR- und redaktionelle Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G02R-002",
+    "version": 1,
+    "domain": "G02",
+    "band": "C2",
+    "title": "Forschungsförderung: Genitivbezüge und rektionale Relativanschlüsse",
+    "focus": "Possessive dessen/deren bei unterschiedlich numerischen Bezugswörtern sowie Dativanschluss an Präpositionen quellengebunden umformen",
+    "brief": "Schreibe eine präzise Stellungnahme für eine fiktive Förderkommission, in der du bei jedem Bezug die syntaktische Rolle des Bezugsworts sowie die Genitiv- oder Präpositionsfunktion innerhalb des Relativsatzes begründest. Übertrage den Text in einen Förderbescheid und revidiere ihn, ohne Zuständigkeit, Besitzverhältnis oder Prüfstatus zu verändern.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktiver Forschungsrat prüfte mehrere Anträge auf Förderung gemeinsamer Messinfrastruktur. Bei einem Vorhaben fehlten noch verbindliche Nachweise darüber, welche Einrichtung welche Kosten tragen sollte. Der Entwurf war fachlich ausgearbeitet, wurde aber noch nicht in einen endgültigen Förderbescheid überführt. In der Übersicht stand: „Das Vorhaben, dessen Finanzierung noch ungeklärt war, blieb im Entwurfsstatus.“ Der Satz bezieht den offenen Finanzierungsstand auf das Vorhaben; dessen ist kein Hinweis auf einen Empfänger der Förderung, sondern ein Genitivanschluss. Eine gekürzte Fassung stellte die Finanzierungsfrage so dar, als sei lediglich die Zuständigkeit der Förderkommission unklar. Die Unterlagen zeigten jedoch, dass die Aufteilung der Mittel zwischen den beteiligten Einrichtungen offen war. Der Forschungsrat bestätigte deshalb nur den Entwurfsstatus und vertagte die Entscheidung über eine endgültige Förderung. Die sprachliche Revision musste die Zugehörigkeit der Finanzierung zu diesem Vorhaben und die weiterhin offene Prüfung ausdrücklich erhalten."
+      },
+      {
+        "id": "p2",
+        "text": "Ein zweites Kapitel dokumentierte die Behandlung der beteiligten Arbeitsgruppen. Die zentrale Prüfstelle verglich Messreihen aus drei Teams, die unterschiedliche Versuchsaufbauten genutzt hatten. Die Prüfstelle übersandte ihre Beobachtungen anschließend einzeln an jede Arbeitsgruppe. In der Niederschrift stand: „Die Teams, deren Messreihen geprüft wurden, erhielten getrennte Rückmeldungen.“ Das Relativpronomen deren verknüpft die geprüften Daten mit den Teams im Plural; es bezeichnet keine zusätzlich eingeführte Stelle. Ein Entwurf deutete das passive geprüft wurden hingegen so, als hätten die Teams selbst die Prüfung durchgeführt. Damit wurden geprüfte Objekte und Prüfende ohne Grundlage vertauscht. Der Prüfplan wies die zentrale Stelle als verantwortliche Prüferin aus, während die Teams die Herkunft der Messreihen bestimmten. Im Bescheid sollten die Zuordnung der Daten und die Rückmeldung an jedes Team erhalten bleiben, ohne eine Selbstprüfung oder eine bereits erfolgte Freigabe sämtlicher Ergebnisse zu behaupten."
+      },
+      {
+        "id": "p3",
+        "text": "Vor dem Abschluss der Akte prüften mehrere wissenschaftliche und administrative Stellen einen gemeinsam erarbeiteten Vorschlag. Jede von ihnen brachte Änderungen ein, die am Ende in einen Beschlussentwurf eingingen. Die Geschäftsstelle notierte: „Der Beschluss, an dem mehrere Stellen mitwirkten, wurde am Freitag protokolliert.“ Mehrere Beteiligte arbeiteten an diesem Beschluss; das Relativpronomen steht im Dativ nach an, weil mitwirken an eine Beteiligung an einer Sache beschreibt. Die Erstfassung verwendete an den, offenbar in Anlehnung an Richtungsangaben wie an den Tisch gehen. Das war hier eine andere Konstruktion. Der Sitzungsnachweis bestätigte nur, dass der Beschluss am Freitag protokolliert wurde, nicht dass alle beteiligten Stellen damit schon eine eigene rechtliche Freigabe erteilt hätten. Für die Förderakte musste die Mitwirkung korrekt wiedergegeben und von späteren Entscheidungen deutlich getrennt werden."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "phenomenon": "Genitiv des sächlichen Bezugsworts dessen",
+        "quote": "Das Vorhaben, dessen Finanzierung noch ungeklärt war, blieb im Entwurfsstatus.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dessen ist hier Dativ und bezeichnet die Förderkommission als Empfängerin; der Finanzierungsstand des Vorhabens wird dadurch nicht beschrieben."
+          },
+          {
+            "id": "B",
+            "text": "Das neutrale Vorhaben ist Subjekt des Hauptsatzes; dessen verbindet die Finanzierung possessiv mit diesem Vorhaben, während Finanzierung im Relativsatz Subjekt ist."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Dessen ist das Genitivattribut zum neutralen Antezedens Vorhaben und markiert Zugehörigkeit; das substantivierte Finanzierung ist Subjekt von war.",
+        "trap": "Der Genitiv des Relativpronomens zeigt die Zuordnung einer Größe zu einem Referenten, nicht einen Dativempfänger im Hauptsatz."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "phenomenon": "Genitiv pluralischer Besitzrelation deren",
+        "quote": "Die Teams, deren Messreihen geprüft wurden, erhielten getrennte Rückmeldungen.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Teams sind Pluralsubjekt des Hauptsatzes; deren ist Genitivattribut und weist die im Relativsatz geprüften Messreihen den jeweiligen Teams zu."
+          },
+          {
+            "id": "B",
+            "text": "Deren bezeichnet hier eine einzelne Kommission im Dativ, während die Teams die fremden Messreihen selbst prüften."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Deren gehört zum pluralischen Antezedens die Teams und markiert die Besitz- beziehungsweise Zuordnungsrelation der Messreihen; geprüft wurden die Messreihen im Passiv.",
+        "trap": "Ein passiver Prüfvorgang benennt nicht automatisch die Teams als Prüfende; deren sagt nur, wessen Messreihen betroffen waren."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "phenomenon": "Rektion an mitwirkend verlangt an plus Dativ",
+        "quote": "Der Beschluss, an dem mehrere Stellen mitwirkten, wurde am Freitag protokolliert.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Weil der Beschluss Subjekt ist, muss der heißen; außerdem regiert mitwirken an grundsätzlich den Akkusativ an den."
+          },
+          {
+            "id": "B",
+            "text": "Beschluss ist Nominativsubjekt der Passivaussage; im Relativsatz regiert mitwirken an den Dativ und verlangt daher an dem."
+          }
+        ],
+        "preferredId": "B",
+        "model": "An einem Beschluss mitwirken fordert Präposition an mit Dativ. Der Antezedens-Kasus im passiven Hauptsatz liefert dafür keine Kasusvorgabe.",
+        "trap": "Die Präposition und das Verb im Relativsatz bilden ein rektionales Gefüge, dessen Kasus nicht aus dem Hauptsatz abgeschrieben werden darf."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M34 original fictional relative-clause syntax studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigenständig verfasste fiktive Quellen, keine fremden Originaldokumente; sprachliche, CEFR- und redaktionelle Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G02R-003",
+    "version": 1,
+    "domain": "G02",
+    "band": "C1",
+    "title": "Laborbericht: Präposition im Relativsatz und pronominales was",
+    "focus": "Auf und mit als regierende Präpositionen sowie was nach quantifizierendem Pronomen bei eigenständigen Relativsätzen unterscheiden",
+    "brief": "Erstelle einen eigenständigen Laborbericht, der die Funktionsrollen von Präpositional-Relativa und was nach alles begründet, die ausdrücklich belegten Untersuchungsschritte bewahrt und unzulässige Schlussfolgerungen benennt. Übertrage das Ergebnis in eine verständliche Schulungsnotiz und überarbeite den Text substanziell.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktives Labor beantragte die Förderung einer Vergleichsstudie. Der Antrag verwies auf eine intern entwickelte Auswertungsmethode, die zwar im Labor erprobt, aber noch nicht allgemein veröffentlicht worden war. Im Antragstext stand: „Die Methode, auf die sich der Antrag stützte, war noch nicht veröffentlicht.“ Die Aussage hat zwei unterschiedliche grammatische Ebenen: Die Methode ist Subjekt der Hauptaussage über den Veröffentlichungsstand; der Antrag stützt sich im Relativsatz auf diese Methode. Ein Bearbeiter setzte aus Gewohnheit auf der, weil Methode im Hauptsatz Subjekt ist. Dabei beachtete er nicht, dass sich stützen auf in dieser Bedeutung einen Akkusativanschluss fordert. Die Dokumentationsstelle bestätigte die interne Erprobung und die noch fehlende Veröffentlichung. Der überarbeitete Bericht musste die Bezugsrelation deutlich machen, ohne eine externe Validierung der Methode zu erfinden oder den Status des Antrags mit dem Veröffentlichungsstand gleichzusetzen."
+      },
+      {
+        "id": "p2",
+        "text": "Im zweiten Arbeitsschritt wurden mehrere Proben für eine interne Vergleichsreihe vorbereitet. Die Fachgruppe nutzte eine ausdrücklich gekennzeichnete Referenzprobe, deren Behälter auch nach der Messung verschlossen bleiben sollte. Das Protokoll hielt fest: „Die Probe, mit der das Labor den Vergleich durchführte, blieb versiegelt.“ Der Relativsatz beschreibt, welche Probe bei dem Vergleich verwendet wurde. Die Präposition mit verlangt im Deutschen den Dativ, weshalb die weibliche Form der hier die korrekte Funktion hat, obwohl das Bezugswort die Probe als Subjekt des Hauptsatzes erscheint. Ein Kurztext formulierte mit die und ließ zugleich die Aussage über den Verschlusszustand weg. Dadurch entstand der falsche Eindruck, das Labor habe eine andere, nicht weiter bezeichnete Probe benutzt. Die Laborliste identifizierte jedoch eindeutig die versiegelte Referenzprobe und den abgeschlossenen Vergleich. Die neue Fassung sollte den instrumentalen Bezug und den dokumentierten Zustand getrennt erhalten."
+      },
+      {
+        "id": "p3",
+        "text": "Beim Abschluss der Auswertung überprüften zwei Prüferinnen, welche einzelnen Aussagen im Arbeitsentwurf durch Daten, Notizen oder Laborprotokolle gestützt waren. Für einige besonders weitreichende Behauptungen fehlten überprüfbare Belege. Die Redaktion beschloss, genau diese Passagen nicht in den Endbericht zu übernehmen. Im Beschlussprotokoll hieß es: „Alles, was die Prüferinnen nicht belegen konnten, wurde aus dem Bericht gestrichen.“ Das Relativpronomen was bezieht sich auf das indefinite alles; es bezeichnet die Menge der nicht belegbaren Aussagen. Eine sprachlich missglückte Fassung ersetzte was durch das und ließ die Negation weg, sodass scheinbar sämtliche überprüften Inhalte gestrichen wurden. Die Redakteurin widersprach dem ausdrücklich: Gut belegte Ergebnisse blieben erhalten, entfernt wurden nur unzureichend gestützte Behauptungen. Die vereinfachte Schulungsnotiz musste diese Einschränkung und die besondere Relativsatzkonstruktion gleichermaßen sichtbar machen."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "phenomenon": "Reflexives Verb stützen auf mit Akkusativ",
+        "quote": "Die Methode, auf die sich der Antrag stützte, war noch nicht veröffentlicht.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Methode ist Bezugswort; das reflexive Verb sich stützen auf verlangt den Akkusativ auf die, obwohl Methode im Hauptsatz Nominativsubjekt ist."
+          },
+          {
+            "id": "B",
+            "text": "Das Relativpronomen muss der heißen, weil die Methode im Hauptsatz Subjekt ist, und die Präposition auf hat hier keinen Einfluss."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Sich auf etwas stützen verlangt auf mit Akkusativ. Das relative die trägt also einen eigenständigen Kasus, der aus dem Verb im Relativsatz und der Präposition entsteht.",
+        "trap": "Der Satz behauptet nicht, dass die Methode bereits veröffentlicht war; Kasus und Aussage über ihren Status müssen erhalten bleiben."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "phenomenon": "Instrumentalpräposition mit und Dativanschluss",
+        "quote": "Die Probe, mit der das Labor den Vergleich durchführte, blieb versiegelt.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Relativsatz verlangt mit die, weil die Probe im Hauptsatz Subjekt ist; mit der würde eine andere Probe meinen."
+          },
+          {
+            "id": "B",
+            "text": "Probe ist Subjekt der Hauptaussage über den Verschlusszustand; mit verlangt im Relativsatz den Dativ mit der als instrumentalen Bezug."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das Präpositionalglied mit der bezeichnet das Instrument beziehungsweise Material der Vergleichsarbeit. Mit regiert den Dativ und überstimmt damit den Nominativstatus des Bezugsworts im Hauptsatz.",
+        "trap": "Die Hauptaussage blieb versiegelt lässt sich nicht als Aussage über alle Proben oder alle Phasen des Vergleichs erweitern."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "phenomenon": "Was nach indefinitem Quantor alles",
+        "quote": "Alles, was die Prüferinnen nicht belegen konnten, wurde aus dem Bericht gestrichen.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Alles ist ein indefinites Antezedens; nach alles steht das Relativpronomen was, das im Relativsatz Objekt zu belegen ist."
+          },
+          {
+            "id": "B",
+            "text": "Nach alles muss zwingend das stehen, weil das Hauptsatzsubjekt sächlich ist; die Prüferinnen selbst wurden aus dem Bericht gestrichen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Indefinite Bezugswörter wie alles ziehen regelmäßig das Relativpronomen was nach sich. Im Relativsatz bezeichnet was die nicht belegbaren Aussagen, nicht die Prüferinnen.",
+        "trap": "Aus dem Bericht wurden nur die nicht belegbaren Inhalte entfernt, nicht pauschal alle Beobachtungen oder Personen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M34 original fictional relative-clause syntax studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigenständig verfasste fiktive Quellen, keine fremden Originaldokumente; sprachliche, CEFR- und redaktionelle Freigabe ausstehend"
+    }
+  },
+  {
+    "id": "SG-G02R-004",
+    "version": 1,
+    "domain": "G02",
+    "band": "C2",
+    "title": "Wissenschaftlicher Tätigkeitsbericht: satzbezogenes was und freie Relativsätze",
+    "focus": "Was als Bezug auf ganze Sachverhalte, superlativisches Antezedens und wem/dem als freien dativischen Relativanschluss unterscheiden",
+    "brief": "Schreibe einen differenzierten editorischen Bericht für die Leitung einer fiktiven Forschungseinrichtung, der Relativsätze mit Satzbezug, substantiviertem Superlativ und freier dativischer Relativkonstruktion analysiert. Übertrage den Bericht in transparente Zugangshinweise und revidiere ihn, ohne den Umfang der Aussagen zu vergrößern.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die fiktive Einrichtung bereitete die Veröffentlichung eines wissenschaftlichen Tätigkeitsberichts vor. Eine interne Prüfung ergab, dass die Nachweise für einzelne Bildmaterialien noch ergänzt werden mussten. Die Veröffentlichung der betreffenden Bildgruppe wurde deshalb auf einen späteren Termin verschoben. Im redaktionellen Protokoll stand: „Die Freigabe wurde vertagt, was die Redaktion ausdrücklich dokumentierte.“ Der Relativsatz mit was nimmt den gesamten zuvor beschriebenen Sachverhalt der Vertagung wieder auf. Ein Bearbeiter suchte dagegen nach einem einzelnen sächlichen Substantiv als Antezedens und bezog was auf ein nicht genanntes Dokument. Damit ließ er offen, welcher Vorgang eigentlich festgehalten worden war. Die Sitzungsnotiz bestätigte, dass die Redaktion den Beschluss zur Vertagung notierte; eine endgültige Freigabe wurde dadurch gerade nicht vollzogen. Der öffentliche Bericht sollte den dokumentierten Aufschub erklären, ohne den Status der Bilder fälschlich als veröffentlicht auszugeben."
+      },
+      {
+        "id": "p2",
+        "text": "Im anschließenden Methodenteil sollten die Fachgruppen die Ergebnisse nicht nur nach ihrer technischen Genauigkeit, sondern auch nach ihren Aussagegrenzen einordnen. Besonders problematisch war, dass die Stichprobe nur wenige Einrichtungen umfasste und wesentliche Randbedingungen kaum vergleichbar waren. Die Vorsitzende fasste zusammen: „Das Wichtigste, was die Prüfung ergab, war die begrenzte Aussagekraft.“ Das nominalisierte Superlativglied das Wichtigste bezeichnet einen herausragenden Inhalt, an den der Relativsatz mit was anschließt. Eine Bearbeitung ersetzte was durch das und behauptete zusätzlich, die Prüfung habe gerade die allgemeine Gültigkeit der Resultate bestätigt. Beides widersprach der vorgesehenen Formulierung beziehungsweise dem fachlichen Befund. Der Methodenanhang dokumentierte die geringe Reichweite der Daten ausdrücklich. Ein redaktionell verlässlicher Text durfte daher die Hauptaussage nicht ins Gegenteil verkehren und musste die relative Bezugnahme grammatisch korrekt gestalten."
+      },
+      {
+        "id": "p3",
+        "text": "Zum Schluss erläuterte die Verwaltung der fiktiven Einrichtung das Verfahren für formale Rückmeldungen. Einzelne Beteiligte erhielten einen schriftlichen Bescheid und konnten danach eine Stellungnahme einreichen. Die Geschäftsordnung drückte den Zugang so aus: „Wem die Entscheidung schriftlich mitgeteilt wurde, dem stand eine Stellungnahme offen.“ Der freie Relativsatz bestimmt die Gruppe über die Rolle als Empfänger einer Mitteilung. Das Korrelat dem im Hauptsatz bezieht sich auf dieselben Personen und trägt den Dativ auch dort weiter, wo eine Stellungnahmemöglichkeit beschrieben wird. Eine gekürzte Version trennte wem und dem gedanklich voneinander und behauptete, sämtliche externen Leser hätten bereits Stellung genommen. Die Versandübersicht belegte dagegen nur, welche Beteiligten schriftlich benachrichtigt worden waren. Die veröffentlichte Information sollte deshalb die Empfängerbedingung verständlich erklären und die Möglichkeit einer Stellungnahme nicht als tatsächlich ausgeübtes Recht ausgeben."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "phenomenon": "Satzbezogenes was als Bezug auf die Vertagung",
+        "quote": "Die Freigabe wurde vertagt, was die Redaktion ausdrücklich dokumentierte.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Was bezeichnet eine einzelne Redaktion und beweist, dass die Freigabe bereits beschlossen und umgesetzt wurde."
+          },
+          {
+            "id": "B",
+            "text": "Was bezieht sich hier auf den gesamten Sachverhalt, dass die Freigabe vertagt wurde; dieser Vorgang wurde dokumentiert."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Ein satzbezogener weiterführender Relativsatz mit was kann den zuvor genannten Sachverhalt als Ganzes wiederaufnehmen, hier die Vertagung der Freigabe.",
+        "trap": "Die Tatsache einer dokumentierten Vertagung darf weder zu einer vollzogenen Freigabe noch zu einer Identifizierung eines neuen Gegenstands umgedeutet werden."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "phenomenon": "Superlativisches nominales Antezedens mit was",
+        "quote": "Das Wichtigste, was die Prüfung ergab, war die begrenzte Aussagekraft.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Was bezieht sich auf das substantivierte Superlativglied das Wichtigste und bezeichnet im Relativsatz das wichtigste Ergebnis der Prüfung."
+          },
+          {
+            "id": "B",
+            "text": "Nach dem substantivierten Superlativ muss das stehen; das Wichtigste bezeichnet die Prüfenden, nicht ein Ergebnis."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Nach substantivierten Superlativen wie das Wichtigste ist was ein üblicher Relativanschluss. Das Bezugswort bezeichnet hier einen herausgehobenen Inhalt.",
+        "trap": "Die Aussage über die begrenzte Aussagekraft ist das hervorgehobene Ergebnis; sie erlaubt keine unbegrenzte Generalisierung."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "phenomenon": "Freier dativischer Relativsatz wem mit Korrelat dem",
+        "quote": "Wem die Entscheidung schriftlich mitgeteilt wurde, dem stand eine Stellungnahme offen.",
+        "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Wem ist ein Nominativsubjekt, dem bezeichnet eine andere Person; folglich besteht kein Empfängerbezug zur Stellungnahme."
+          },
+          {
+            "id": "B",
+            "text": "Wem ist Dativobjekt zu mitgeteilt wurde; dem nimmt dieselbe Empfängerrolle im Hauptsatz als dativisches Korrelat wieder auf."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der freie Relativsatz wem die Entscheidung mitgeteilt wurde identifiziert die Empfängergruppe. Das dativische Korrelat dem im Hauptsatz nimmt genau diese Gruppe auf.",
+        "trap": "Die Mitteilung eröffnet lediglich eine Stellungnahmemöglichkeit; sie ist nicht schon der Nachweis, dass jede betroffene Person Stellung genommen hat."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M34 original fictional relative-clause syntax studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigenständig verfasste fiktive Quellen, keine fremden Originaldokumente; sprachliche, CEFR- und redaktionelle Freigabe ausstehend"
+    }
+  }
+]
