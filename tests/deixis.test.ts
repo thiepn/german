@@ -110,7 +110,7 @@ test('eight-store portable backup v3 preserves untouched original, all text vers
 });
 test('editorial queue includes all 4 source dossiers and 12 anchors without approval or publication',()=>{
  const rows=collect().filter(x=>x.mode==='G01_DEIXIS');assert.equal(rows.length,16);
- assert.equal(rows.filter(x=>x.phenomenon==='G01_ORIGINAL_DEIXIS_SOURCE').length,4);
- assert.equal(rows.filter(x=>x.phenomenon==='G01_PREPOSITIONAL_DEIXIS').length,12);
+ assert.equal(rows.filter(x=>x.type==='G01_ORIGINAL_DEICTIC_SOURCE').length,4);
+ assert.equal(rows.filter(x=>x.type==='G01_DEICTIC_CENTRE_ANCHOR').length,12);
  assert.ok(rows.every(x=>x.status==='DEMO_ONLY'&&!x.independentEditorialApproval));
 });
