@@ -162,7 +162,16 @@ export function collect(){
    issues:['Verify exact source quotation occurs once and is anchored to the named paragraph','Review concessive, causal, temporal, conditional, contrastive or instrumental relation direction','Review learner-generated counter-reading, evidence, independent full document and audience revision','Unapproved DEMO_ONLY; no automatic free-writing grade'],independentEditorialApproval:false}))
  ]);
  if(relations.length!==manifest.relationDraftCount*4)throw Error('Incomplete M32 relation editorial queue');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope,...attachments,...relations],allIds=new Set();
+
+ const deixis=read(manifest.deixisDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G01_ORIGINAL_DEICTIC_SOURCE',mode:'G01_DEIXIS',status:s.status,authorId:s.author,
+   prompt:s.title,source:s.rights.source,issues:['Independent German copyedit and source rights review','Verify source dates, speaker, addressee, place and retrospective time reference','Human C1/C2 calibration without automatic proficiency grade','No publication until independent approval'],independentEditorialApproval:false},
+  ...s.anchors.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G01_DEICTIC_CENTRE_ANCHOR',mode:'G01_DEIXIS',status:s.status,authorId:s.author,
+   prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,phenomenon:a.phenomenon,options:a.options,preferredId:a.preferredId,model:a.model,trap:a.trap,
+   issues:['Verify exact single literal anchor in named fictional paragraph','Independently verify anchored dates, place, speaker and addressee','Audit reported rephrasing, alternate perspective, source evidence, complete transfer and revision','AI_DRAFT / ORIGINAL_DRAFT / DEMO_ONLY: no publication or automatic free-writing grade'],independentEditorialApproval:false}))
+ ]);
+ if(deixis.length!==manifest.deixisDraftCount*4)throw Error('Incomplete M33 G01 editorial source and anchor queue');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope,...attachments,...relations,...deixis],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

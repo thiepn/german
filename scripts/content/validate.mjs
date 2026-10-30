@@ -514,6 +514,30 @@ for(const s of m32){
 if(relationIds.size!==4||relationBands.size!==2||relationTopics.size!==4||relationKinds.size<10||
  relationAnchors!==12||relationB<4||relationB>8)throw Error('Insufficient distinct G04 connector relations');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,relationDrafts:m32.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m33=read(manifest.deixisDraftSource);
+if(manifest.deixisDraftCount!==4||m33.length!==4)throw Error('M33 G01 deictic source count mismatch');
+const deixisIds=new Set(),deixisBands=new Set(),deixisTopics=new Set(),deixisPhenomena=new Set();let deixisAnchors=0,deixisB=0;
+for(const s of m33){
+ if(!/^SG-G01D-\d{3}$/.test(s.id)||deixisIds.has(s.id)||s.version!==1||s.domain!=='G01'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())
+ throw Error('Unqualified M33 G01 source '+s.id);
+ deixisIds.add(s.id);deixisBands.add(s.band);deixisTopics.add(s.focus);
+ if(s.title?.length<40||s.focus?.length<70||s.brief?.length<140||s.paragraphs?.length!==3||s.anchors?.length!==3)throw Error('Incomplete M33 deictic dossier '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<820)throw Error('Truncated M33 source paragraph '+s.id+':'+p.id);
+ for(const [i,a] of s.anchors.entries()){
+  const p=s.paragraphs[i],quote='„'+a.quote+'“';
+  if(a.id!=='d'+(i+1)||a.paragraphId!==p.id||a.quote?.length<30||a.quote.length>130||p.text.split(quote).length!==2||
+  a.phenomenon?.length<24||a.question?.length<110||a.model?.length<90||a.trap?.length<90||
+  a.options?.length!==2||a.options[0].id!=='A'||a.options[1].id!=='B'||a.options[0].text===a.options[1].text||
+  a.options.some(o=>o.text?.length<100)||!['A','B'].includes(a.preferredId))
+  throw Error('Unanchored M33 deictic centre '+s.id+':'+a.id);
+  deixisPhenomena.add(a.phenomenon);deixisAnchors++;if(a.preferredId==='B')deixisB++;
+ }
+}
+if(deixisIds.size!==4||deixisBands.size!==2||deixisTopics.size!==4||deixisPhenomena.size<10||
+ deixisAnchors!==12||deixisB!==6)throw Error('Insufficient distinct M33 deictic centres');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,relationDrafts:m32.length,deixisDrafts:m33.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

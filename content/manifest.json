@@ -73,5 +73,7 @@
   "attachmentDraftCount": 4,
   "attachmentDraftSource": "content/fixtures/g03-attachment.demo.json",
   "relationDraftCount": 4,
-  "relationDraftSource": "content/fixtures/g04-relations.demo.json"
+  "relationDraftSource": "content/fixtures/g04-relations.demo.json",
+  "deixisDraftCount": 4,
+  "deixisDraftSource": "content/fixtures/g01-deixis.demo.json"
 }
