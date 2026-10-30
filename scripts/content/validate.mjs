@@ -467,6 +467,31 @@ for(const s of m30){
 }
 if(scopeIds.size!==4||scopeBands.size!==2||scopeFoci.size!==4||scopeAnchors!==12||scopeParticles.size<10||scopeB<4)throw Error('Insufficient distinct G04 focus/negation scope coverage');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m31=read(manifest.attachmentDraftSource);
+if(manifest.attachmentDraftCount!==4||m31.length!==4)throw Error('M31 G03 attachment source count mismatch');
+const attachmentIds=new Set(),attachmentBands=new Set(),attachmentTopics=new Set(),attachmentTypes=new Set();let attachmentAnchors=0,attachmentB=0;
+for(const s of m31){
+ if(!/^SG-G03A-\d{3}$/.test(s.id)||attachmentIds.has(s.id)||s.version!==1||s.domain!=='G03'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())
+ throw Error('Unqualified M31 G03 source '+s.id);
+ attachmentIds.add(s.id);attachmentBands.add(s.band);attachmentTopics.add(s.focus);
+ if(s.title?.length<35||s.focus?.length<70||s.brief?.length<145||s.paragraphs?.length!==3||s.attachments?.length!==3)
+ throw Error('Incomplete M31 G03 source '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<900)throw Error('Truncated original M31 G03 paragraph '+s.id+':'+p.id);
+ for(const [i,a] of s.attachments.entries()){
+  const p=s.paragraphs[i],quote='„'+a.quote+'“';
+  if(a.id!=='a'+(i+1)||a.paragraphId!==p.id||a.quote?.length<45||a.quote.length>145||!p.text.includes(quote)||p.text.split(quote).length!==2||
+  a.type?.length<20||a.question?.length<100||a.model?.length<80||a.trap?.length<80||
+  a.options?.length!==2||a.options[0].id!=='A'||a.options[1].id!=='B'||a.options[0].text===a.options[1].text||
+  a.options.some(o=>o.text?.length<75)||!['A','B'].includes(a.preferredId))
+  throw Error('Unanchored M31 G03 attachment '+s.id+':'+a.id);
+  attachmentTypes.add(a.type);attachmentAnchors++;if(a.preferredId==='B')attachmentB++;
+ }
+}
+if(attachmentIds.size!==4||attachmentBands.size!==2||attachmentTopics.size!==4||attachmentTypes.size<10||
+ attachmentAnchors!==12||attachmentB<4||attachmentB>8)throw Error('Insufficient G03 syntactic attachment variety');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

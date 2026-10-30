@@ -142,7 +142,17 @@ export function collect(){
   ...s.scopes.map(c=>({id:s.id+':'+c.id,version:s.version,type:'G04_FOCUS_PARTICLE_OR_NEGATION_SCOPE',mode:'G04_SCOPE',status:s.status,authorId:s.author,prompt:c.question,quote:c.quote,paragraphId:c.paragraphId,particle:c.particle,options:c.options,preferredId:c.preferredId,model:c.model,trap:c.trap,issues:['Verify literal quote occurs once in named source paragraph','Verify truth-conditional negation scope, focus alternatives and counterexamples','Review independent document, audience revision and no automated free-writing grade','Preserve DEMO_ONLY and unreviewed rights'],independentEditorialApproval:false}))
  ]);
  if(scope.length!==manifest.scopeDraftCount*4)throw Error('Incomplete M30 G04 editorial source and anchor queue');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope],allIds=new Set();
+
+ const attachments=read(manifest.attachmentDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G03_ORIGINAL_ATTACHMENT_SOURCE',mode:'G03_ATTACHMENT',status:s.status,authorId:s.author,
+   prompt:s.title,source:s.rights.source,issues:['Independent edit of full original fictional prose and source rights','Check contextual plausibility of competing attachment readings','Human C1/C2 calibration without automatic rating','No approval or release'],independentEditorialApproval:false},
+  ...s.attachments.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G03_PREPOSITIONAL_ATTACHMENT',mode:'G03_ATTACHMENT',
+   status:s.status,authorId:s.author,prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,attachmentType:a.type,
+   options:a.options,preferredId:a.preferredId,model:a.model,trap:a.trap,
+   issues:['Verify exact single literal source anchor and two structurally plausible analyses','Check chosen attachment, an explicit alternative and independent context evidence','Verify unambiguous reformulations and audience transfer in German','No automated free-writing grade or publication'],independentEditorialApproval:false}))
+ ]);
+ if(attachments.length!==manifest.attachmentDraftCount*4)throw Error('Incomplete M31 G03 editorial sources and ambiguities');
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope,...attachments],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

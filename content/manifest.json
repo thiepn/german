@@ -69,5 +69,7 @@
   "registerResponsibilityDraftCount": 4,
   "registerResponsibilityDraftSource": "content/fixtures/g08-register-responsibility.demo.json",
   "scopeDraftCount": 4,
-  "scopeDraftSource": "content/fixtures/g04-scope.demo.json"
+  "scopeDraftSource": "content/fixtures/g04-scope.demo.json",
+  "attachmentDraftCount": 4,
+  "attachmentDraftSource": "content/fixtures/g03-attachment.demo.json"
 }
