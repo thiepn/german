@@ -33,9 +33,9 @@ async function open(ctx){
 }
 async function fill(p,i,choice){
  await p.locator('#deixis-choice').selectOption(choice);
- await p.locator('#deixis-rewrite').fill(reports[i]);
- await p.locator('#deixis-alternative').fill(misreadings[i]);
- await p.locator('#deixis-context').fill(origines[i]);
+ await p.locator('#deixis-report').fill(reports[i]);
+ await p.locator('#deixis-misreading').fill(misreadings[i]);
+ await p.locator('#deixis-origo').fill(origines[i]);
  await p.locator('#deixis-boundary').fill(boundaries[i]);
  await p.getByRole('button',{name:'Deixisbeleg speichern'}).click();
 }
@@ -47,17 +47,17 @@ async function run(width){
   assert.equal(await p.locator('.polysemy-paragraph').count(),3);
   assert.equal(await p.getByRole('button',{name:'Deixisbeleg speichern'}).isDisabled(),true);
   await p.locator('#deixis-choice').selectOption('A');
-  await p.locator('#deixis-rewrite').fill(reports[0]);
-  await p.locator('#deixis-alternative').fill(reports[0]);
-  await p.locator('#deixis-context').fill(origines[0]);
+  await p.locator('#deixis-report').fill(reports[0]);
+  await p.locator('#deixis-misreading').fill(reports[0]);
+  await p.locator('#deixis-origo').fill(origines[0]);
   await p.locator('#deixis-boundary').fill(boundaries[0]);
   assert.equal(await p.getByRole('button',{name:'Deixisbeleg speichern'}).isDisabled(),true,'duplicate independent fields prevented');
-  await p.locator('#deixis-alternative').fill(misreadings[0]);await p.getByRole('button',{name:'Deixisbeleg speichern'}).click();
+  await p.locator('#deixis-misreading').fill(misreadings[0]);await p.getByRole('button',{name:'Deixisbeleg speichern'}).click();
   await p.getByRole('heading',{name:'Deixisbeleg 2 / 3'}).waitFor();
   let stale=null;if(width===1280){stale=await open(ctx);await stale.getByRole('heading',{name:'Deixisbeleg 2 / 3'}).waitFor();}
   await fill(p,1,'B');await p.getByRole('heading',{name:'Deixisbeleg 3 / 3'}).waitFor();
   if(stale){await fill(stale,1,'B');await stale.getByRole('alert').getByText(/inzwischen|verändert|gespeichert/i).waitFor();await stale.close();}
-  await fill(p,2,'B');await p.getByRole('heading',{name:'Eigenständigen Perspektivbericht schreiben'}).waitFor();
+  await fill(p,2,'A');await p.getByRole('heading',{name:'Eigenständigen Perspektivbericht schreiben'}).waitFor();
   await p.locator('#deixis-anchor').selectOption('d1');await p.locator('#deixis-memo').fill(memo);await p.locator('#deixis-reason').fill(reason);
   await p.getByRole('button',{name:'Perspektivbericht speichern'}).click();
   await p.getByRole('heading',{name:'Adressatengerechte Revision'}).waitFor();
