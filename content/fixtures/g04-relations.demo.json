@@ -1,0 +1,378 @@
+[
+  {
+    "id": "SG-G04R-001",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Digitales Stadtmuseum: Einräumung, Ursache und Freigabebedingung",
+    "focus": "Konzessive, kausale und konditionale Verknüpfungen in einem öffentlichen Sammlungsbericht voneinander abgrenzen",
+    "brief": "Verfasse einen mehrabsätzigen eigenständigen Bericht für eine Museumsleitung, in dem du alle drei Quellenrelationen begrenzt und mit Gegenlesarten kontrastierst. Übertrage den vollständigen Text anschließend in eine verständliche Besucherinformation und überarbeite ihn substanziell.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktives Stadtmuseum veröffentlichte mehrere neu digitalisierte Sammlungen. Die Statistik der Website zeigte im ersten Monat eine deutliche Zunahme der Seitenaufrufe, doch bei einem getrennten Nutzertest fanden viele Personen bestimmte Objekte nur über Umwege. Die Redaktion hielt fest: „Obwohl die Zahl der Seitenaufrufe zunahm, blieb die Suche nach einzelnen Objekten schwierig.“ Die Formulierung sollte verhindern, dass Reichweite mit einer schon verbesserten Suchfunktion gleichgesetzt wurde. Eine Mitarbeiterin wollte die Zunahme der Zugriffe als Beleg dafür anführen, dass auch einzelne Exponate leichter zu finden seien. Die Testergebnisse gaben das nicht her. Die Museumsleitung bat darum, die positive Reichweite nicht zu unterschlagen, den weiterhin bestehenden Zugangsmangel jedoch ebenfalls deutlich zu nennen. Beide Befunde waren gleichzeitig dokumentiert, auch wenn sie unterschiedlichen Erwartungen entsprachen."
+      },
+      {
+        "id": "p2",
+        "text": "Für ein zweites Paket mit historischen Fotografien waren noch verschiedene Rechtefragen offen. Einige Bilder enthielten Aufnahmen von Objekten, deren Nutzung gesondert dokumentiert werden musste, während der technische Import abgeschlossen war. Im Tätigkeitsbericht stand: „Die Freigabe verzögerte sich, weil mehrere Bildrechte noch ungeklärt waren.“ Ein kurzes Infoblatt verwandelte diese Aussage in eine bloße zeitliche Beschreibung, nach der Rechteprüfung und Verzögerung zufällig gleichzeitig auftraten. Damit verschwand die im Bericht ausdrücklich benannte Begründung. Die zuständige Fachperson wies darauf hin, dass aus dem Satz keine genaue Dauer der weiteren Prüfung folgte. Er erläuterte lediglich, weshalb das Material bisher nicht veröffentlicht werden konnte. Die Redaktion musste die Ursache korrekt wiedergeben, ohne daraus einen bestimmten Veröffentlichungstermin oder ein allgemeines Verbot für andere Bilder abzuleiten."
+      },
+      {
+        "id": "p3",
+        "text": "Bei der Planung der nächsten Freigaben beschloss das Museum, Bildgruppen getrennt zu behandeln. Ein bereits geprüftes Objekt sollte nicht warten müssen, bis auch andere Unterlagen vollständig bearbeitet waren. In der schriftlichen Empfehlung stand: „Sofern die Rechte geklärt werden, kann der Bestand einzeln veröffentlicht werden.“ Die Formulierung setzt einen konditionalen Rahmen für einzelne Entscheidungen, ohne Zeitpunkt oder Automatismus festzulegen. Ein Mitglied des Förderkreises las daraus eine verbindliche Zusage, sämtliche Bilder würden unmittelbar nach Eingang einer letzten Unterschrift erscheinen. Die Leitung wies darauf hin, dass die Rechteklärung die Möglichkeit eröffne, während andere organisatorische Schritte noch nötig sein könnten. Für den öffentlichen Ausblick sollte weder eine unbedingte Freigabe noch eine feste Veröffentlichungsfrist behauptet werden. Die Grenze zwischen Möglichkeit und Verpflichtung blieb entscheidend."
+      }
+    ],
+    "relations": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "quote": "Obwohl die Zahl der Seitenaufrufe zunahm, blieb die Suche nach einzelnen Objekten schwierig.",
+        "relation": "KONZESSION",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die steigenden Seitenaufrufe hätten eine leichtere Nutzung vermuten lassen; trotz dieser Entwicklung blieb die Objektsuche schwierig."
+          },
+          {
+            "id": "B",
+            "text": "Die steigenden Seitenaufrufe verursachten im beschriebenen Fall nachweislich die Probleme der Objektsuche."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Obwohl räumt die positiven Nutzungszahlen ein, stellt ihnen aber einen dennoch fortbestehenden Mangel gegenüber.",
+        "trap": "Eine konzessive Relation behauptet nicht, die eingeräumte Tatsache habe den gegenteiligen Befund ausgelöst."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "quote": "Die Freigabe verzögerte sich, weil mehrere Bildrechte noch ungeklärt waren.",
+        "relation": "KAUSALITÄT",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Verzögerung selbst führte laut Bericht erst nachträglich zu den zuvor ungeklärten Bildrechten."
+          },
+          {
+            "id": "B",
+            "text": "Mehrere ungeklärte Bildrechte werden ausdrücklich als Ursache der verzögerten Freigabe genannt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Weil ordnet eine konkrete Begründung für den verzögerten Vorgang zu und kehrt die Ursache-Folge-Richtung nicht um.",
+        "trap": "Die Rechteprüfung ist hier keine bloß gleichzeitige Begleiterscheinung, und der Satz nennt keinen festen Endtermin."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "quote": "Sofern die Rechte geklärt werden, kann der Bestand einzeln veröffentlicht werden.",
+        "relation": "BEDINGUNG",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Klärung der Rechte eröffnet die Möglichkeit einzelner Freigaben, verpflichtet aber nicht automatisch zur Veröffentlichung sämtlicher Bilder."
+          },
+          {
+            "id": "B",
+            "text": "Der Satz garantiert die sofortige und unbedingte Veröffentlichung aller Bestände, auch wenn noch Rechte ungeklärt sind."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Sofern stellt einen konditionalen Rahmen bereit; kann bezeichnet eine Möglichkeit, keine zwingende Freischaltung.",
+        "trap": "Aus einer bedingten Möglichkeit wird weder eine unbedingte Erlaubnis noch eine automatische Veröffentlichungspflicht."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M32 original fictional relation-logic studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale neu verfasste fiktive Quellenfälle, nicht extern übernommen und noch nicht unabhängig geprüft"
+    }
+  },
+  {
+    "id": "SG-G04R-002",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Verkehrsversuch: Gegensatz, zusätzlicher Grund und hypothetische Einräumung",
+    "focus": "Adversative während-Strukturen, zumal als zusätzlichen Grund und selbst wenn als hypothetische Einräumung genau unterscheiden",
+    "brief": "Schreibe eine methodische Stellungnahme für einen fiktiven Verkehrsausschuss. Trenne kontrastive Beobachtung, verstärkende Begründung und konzessive Hypothese mit expliziten Quellenbelegen. Erstelle danach einen vollständigen Transfer für eine öffentliche Debatte und eine begründete Revision.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktives Verkehrsprojekt untersuchte zwei Messstellen entlang einer Umleitungsstrecke. Am selben Tag wurden die Werte für einen Tunnelausgang und eine weiter entfernte Haltestelle separat erfasst; die Geräte standen unter unterschiedlichen örtlichen Bedingungen. Im Bericht hieß es: „Während die Messwerte am Tunnel sanken, stiegen sie an der Haltestelle.“ Während konnte einen zeitlichen Bezug herstellen, in dieser Passage stand jedoch die gegensätzliche Entwicklung der Reihen im Vordergrund. Eine Kurzfassung stellte die Befunde so nebeneinander, als hätte der Rückgang am Tunnel unmittelbar den Anstieg an der Haltestelle verursacht. Für diesen Kausalmechanismus gab es keine zusätzliche Untersuchung. Die Fachgruppe verlangte daher die Benennung des Kontrasts und zugleich einen Hinweis auf noch offene Fragen zu Messbedingungen und möglichen Einflussgrößen. Die tatsächliche Ursache des unterschiedlichen Verlaufs war weiterhin ungeklärt."
+      },
+      {
+        "id": "p2",
+        "text": "Die zweite Passage behandelte die Belastbarkeit des Zwischenberichts. Die Messgeräte hatten zeitweise Datenlücken, und die Beobachtungszeiträume unterschieden sich zwischen den beiden Orten. Hinzu kam, dass für einige Tageszeiten nur wenige Werte vorlagen. Die Koordinatorin fasste die Lage zusammen: „Zumal die Stichprobe begrenzt war, blieb die Bewertung vorläufig.“ Zumal hob hier einen wichtigen weiteren Grund für die Vorsicht hervor. Es sollte die übrigen Unsicherheiten nicht aus dem Text entfernen, sondern diese ergänzen. Ein politischer Kommentar deutete den Satz allerdings als Begründung dafür, die Untersuchung nun ohne zusätzliche Prüfung abzuschließen. Die Fachgruppe stellte klar, dass die geringe Datengrundlage gerade gegen eine endgültige Bewertung sprach. Die genaue Gewichtung der verschiedenen Vorbehalte war offen, ihre gemeinsame Wirkung auf die Vorläufigkeit der Aussage jedoch nicht."
+      },
+      {
+        "id": "p3",
+        "text": "In der letzten Beratung überlegten die Beteiligten, welche Folgen ein weiteres Messfenster haben könnte. Manche erwarteten eine Bestätigung des bisherigen Trends, andere verwiesen auf Zugänglichkeit, Kosten und den Verlauf der Umleitung. Der Protokollsatz lautete: „Selbst wenn weitere Messungen dieselbe Tendenz zeigen, ist eine dauerhafte Umstellung nicht automatisch gerechtfertigt.“ Die hypothetische Wiederholung des Trends wird eingeräumt, ohne als Tatsache über kommende Messungen aufgestellt zu werden. Außerdem wird ausdrücklich bestritten, dass eine solche Bestätigung für sich allein die Entscheidung begründe. Eine Pressemitteilung formulierte daraus, alle künftigen Daten würden sicher übereinstimmen und die Umsetzung sei beschlossen. Die Verantwortlichen verlangten eine Korrektur, die sowohl die Offenheit künftiger Ergebnisse als auch den eigenständigen Entscheidungsmaßstab bewahrt. Der eigentliche Beschluss stand weiterhin aus."
+      }
+    ],
+    "relations": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "quote": "Während die Messwerte am Tunnel sanken, stiegen sie an der Haltestelle.",
+        "relation": "GEGENSATZ",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die sinkenden Werte am Tunnel werden als bewiesene Ursache für den Anstieg an der Haltestelle bezeichnet."
+          },
+          {
+            "id": "B",
+            "text": "Zwei im selben Zeitraum erfasste Messreihen entwickelten sich in gegensätzliche Richtungen, ohne einander damit ursächlich zu erklären."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Während markiert im Kontext einen Gegensatz zwischen gleichzeitig beobachteten, gegenläufigen Messreihen.",
+        "trap": "Ein zeitlich eingerahmter Gegensatz ist nicht der Nachweis, dass die Messung an einem Ort die andere verursacht hat."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "quote": "Zumal die Stichprobe begrenzt war, blieb die Bewertung vorläufig.",
+        "relation": "ZUSÄTZLICHER_GRUND",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die geringe Stichprobe ist ein zusätzlicher gewichtiger Grund, aus dem die Bewertung vorläufig blieb."
+          },
+          {
+            "id": "B",
+            "text": "Die kleine Stichprobe ermöglichte laut diesem Satz gerade eine bereits abschließend abgesicherte Bewertung."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Zumal ergänzt eine besonders relevante Begründung und verstärkt die bereits bestehenden Vorbehalte.",
+        "trap": "Ein ausdrücklich zusätzlicher Grund ersetzt weder andere Vorbehalte noch verwandelt er die Bewertung in einen Endbefund."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "quote": "Selbst wenn weitere Messungen dieselbe Tendenz zeigen, ist eine dauerhafte Umstellung nicht automatisch gerechtfertigt.",
+        "relation": "KONZESSIVE_HYPOTHESE",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Künftige Messwerte werden sicher gleich ausfallen, sodass die dauerhafte Umstellung bereits verbindlich beschlossen ist."
+          },
+          {
+            "id": "B",
+            "text": "Auch bei gleichgerichteten späteren Messergebnissen wäre eine dauerhafte Umstellung nicht schon allein dadurch gerechtfertigt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Selbst wenn nimmt eine mögliche Bestätigung hypothetisch auf und bestreitet ihren automatischen Entscheidungswert.",
+        "trap": "Die Konstruktion ist keine Vorhersage des zukünftigen Messverlaufs und keine Verpflichtung zur Umstellung."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M32 original fictional relation-logic studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale neu verfasste fiktive Quellenfälle, nicht extern übernommen und noch nicht unabhängig geprüft"
+    }
+  },
+  {
+    "id": "SG-G04R-003",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Wohnhausverwaltung: Zeitfolge, Begründung und Kontrast",
+    "focus": "Seitdem als zeitliche Einordnung von kausalem da und adversativem dagegen trennen",
+    "brief": "Verfasse für einen fiktiven Mieterrat einen vollständigen Bericht, der die zeitliche Beobachtung nicht als experimentell nachgewiesene Ursache ausgibt. Erläutere die anderen beiden Relationsarten mit Quellenbelegen und übertrage den Bericht danach in eine klare Hausmitteilung mit substanzieller Revision.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "In einem fiktiven Wohnhaus wurden beschädigte Leitungen in mehreren Wohnungen ausgetauscht. Die Hausverwaltung führte anschließend eine Statistik über Meldungen zu Heizung und Wasserdruck. Im neuen Bericht stand: „Seitdem die Leitungen ersetzt wurden, gehen weniger Störungsmeldungen ein.“ Die Aussage ordnete den Rückgang zeitlich zum Austausch ein. Sie beruhte auf den tatsächlich eingegangenen Meldungen und nicht auf einer eigenen Untersuchung aller denkbaren Ursachen. Eine Presseinformation schrieb daraus, die Anlage habe zweifelsfrei sämtliche Störungen beseitigt. Das war durch die Akten nicht bestätigt: Einzelne Probleme bestanden fort, und einige Bewohnerinnen verwendeten das Onlineformular nur unregelmäßig. Für die Versammlung sollte der zeitliche Befund unverändert bleiben, ohne eine nicht geprüfte ausschließliche Wirkung des Austauschs zu behaupten. Die Verwaltung kennzeichnete die Auswertung deshalb ausdrücklich als Beobachtung."
+      },
+      {
+        "id": "p2",
+        "text": "Im zweiten Abschnitt versuchte die Hausverwaltung, ältere Meldungen zeitlich und nach technischen Kategorien zu ordnen. Manche Hinweise waren telefonisch eingegangen, andere über ein Formular; ältere Anrufe enthielten weder einen genauen Ort noch eine Dauer. Der Bericht hielt deshalb fest: „Da die Beschwerden nicht einheitlich dokumentiert waren, ließ sich ihre Ursache nicht vollständig rekonstruieren.“ Der Kausalsatz nennt einen Mangel der vorhandenen Dokumentation als Grund der eingeschränkten Untersuchung. Er behauptet nicht, die unvollständige Erfassung sei erst als Folge der späteren Untersuchung entstanden. Ein Mitglied des Mieterrats forderte trotzdem eine eindeutige Zuschreibung sämtlicher Beschwerden an eine bestimmte technische Anlage. Die vorhandenen Informationen gaben diese Sicherheit nicht her. Die Formulierung musste deshalb sowohl den Grund der Erkenntnisgrenze als auch diese Grenze selbst ausdrücklich nennen."
+      },
+      {
+        "id": "p3",
+        "text": "Bei der abschließenden Diskussion verglich die Verwaltung Störungsmeldungen mit schriftlichen Nachfragen zum Zeitplan der Arbeiten. Die erste Kategorie war gegenüber dem Vorjahr seltener geworden, die zweite blieb nach den Eingangsbüchern weitgehend unverändert. Der Bericht ergänzte: „Dagegen blieb die Zahl der schriftlichen Nachfragen annähernd gleich.“ Dagegen stellte zwei unterschiedliche Kategorien mit abweichender Entwicklung gegenüber. Eine gekürzte Tabelle legte dennoch nahe, die gesunkene Zahl technischer Störungen habe automatisch auch die Zahl aller schriftlichen Kontakte vermindert. Die Sachbearbeitung verwies darauf, dass sich viele Nachfragen auf den Terminplan und nicht unmittelbar auf die technische Funktion bezogen. Eine präzise Mitteilung sollte den Kontrast sichtbar machen und keine gemeinsame Größenentwicklung erfinden. Das Wort annähernd blieb notwendig, weil kleinere Schwankungen dokumentiert waren."
+      }
+    ],
+    "relations": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "quote": "Seitdem die Leitungen ersetzt wurden, gehen weniger Störungsmeldungen ein.",
+        "relation": "ZEITBEZUG",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Rückgang der Meldungen wird seit dem Leitungsersatz beobachtet; der Satz beweist nicht dessen ausschließliche Ursächlichkeit."
+          },
+          {
+            "id": "B",
+            "text": "Der Satz beweist, dass einzig der Austausch der Leitungen sämtliche verbliebenen Probleme beseitigt hat."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Seitdem setzt einen zeitlichen Anfangspunkt für den beobachteten Verlauf, ohne allein einen vollständigen Wirkmechanismus zu belegen.",
+        "trap": "Die zeitliche Folge reicht nicht aus, um einen ausschließlich kausalen Erfolg des Leitungsersatzes nachzuweisen."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "quote": "Da die Beschwerden nicht einheitlich dokumentiert waren, ließ sich ihre Ursache nicht vollständig rekonstruieren.",
+        "relation": "KAUSALER_GRUND",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die unvollständige spätere Rekonstruktion wird als Ursache für die bereits vorher entstandene uneinheitliche Dokumentation genannt."
+          },
+          {
+            "id": "B",
+            "text": "Die uneinheitliche Dokumentation wird als Ursache dafür genannt, dass die Beschwerden später nicht vollständig erklärt werden konnten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Da führt eine ausdrücklich angegebene Begründung für die eingeschränkte Rekonstruktionsmöglichkeit ein.",
+        "trap": "Die Richtung der Ursache lässt sich nicht umkehren, ohne den protokollierten zeitlichen Verlauf zu verfälschen."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "quote": "Dagegen blieb die Zahl der schriftlichen Nachfragen annähernd gleich.",
+        "relation": "ADVERSATIVER_VERGLEICH",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die kaum veränderte Zahl schriftlicher Nachfragen wird den sinkenden technischen Störungsmeldungen als eigene Kategorie gegenübergestellt."
+          },
+          {
+            "id": "B",
+            "text": "Der Rückgang der Störungsmeldungen wird als Ursache eines gleich großen Rückgangs sämtlicher schriftlicher Nachfragen bezeichnet."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Dagegen stellt zwei Kategorien mit abweichender Entwicklung gegenüber, ohne einen kausalen Mechanismus zu behaupten.",
+        "trap": "Aus einem adversativen Vergleich folgt weder eine gemeinsame Ursache noch eine identische Größenentwicklung."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M32 original fictional relation-logic studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale neu verfasste fiktive Quellenfälle, nicht extern übernommen und noch nicht unabhängig geprüft"
+    }
+  },
+  {
+    "id": "SG-G04R-004",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Forschungsverbund: Methode, Referenzzeit und Übertragbarkeit",
+    "focus": "Indem als Mittel, als als vergangenen Referenzpunkt und wenngleich als konzessive Begrenzung differenzieren",
+    "brief": "Schreibe für einen fiktiven Forschungsverbund einen methodischen Bericht, der die drei Konnektoren voneinander und von ihren falschen Paraphrasen trennt. Übertrage den vollständigen Text für eine externe Förderkommission und überarbeite ihn bei erhaltenen Aussagegrenzen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktiver Forschungsverbund verglich Verwaltungsdaten aus mehreren Instituten. Zunächst benutzten die gelieferten Tabellen unterschiedliche Bezeichnungen für dieselben Messgrößen. Das Team führte gemeinsame Kategorien ein und übertrug die Werte in ein abgestimmtes Schema. Im Arbeitsbericht hieß es: „Indem die Forschenden die Erfassung vereinheitlichten, verringerten sie die Unterschiede zwischen den Tabellen.“ Indem erläuterte die eingesetzte Vorgehensweise und verband sie mit dem beschriebenen Erfolg. Eine Kurzfassung beschrieb beide Entwicklungen lediglich als zufällig gleichzeitige Geschehnisse und ließ den Mittel-Zusammenhang verschwinden. Die Leitung verlangte die Nennung des methodischen Eingriffs, ohne daraus abzuleiten, alle Datenprobleme seien nun gelöst. Einzelne nicht vergleichbare Variablen blieben weiterhin getrennt dokumentiert."
+      },
+      {
+        "id": "p2",
+        "text": "Nach mehreren Arbeitstagen waren die Datenübertragungen des fiktiven Verbunds beendet. Die Verwendung der Tabellen erforderte jedoch zusätzlich eine getrennte Prüfung durch eine Kontrollstelle. Der chronologische Vermerk lautete: „Als die Übertragung abgeschlossen war, waren die Kontrollprotokolle noch nicht freigegeben.“ Als bezeichnet einen vergangenen Referenzpunkt, zu dem ein anderer Status noch nicht erreicht war. Eine Mitarbeiterin deutete die Passage fälschlich so, als seien mit dem Ende der Übertragung automatisch auch die Kontrollen abgeschlossen gewesen. Im internen Verzeichnis stand das Gegenteil: Die Protokolle wurden erst am folgenden Tag zur Freigabe vorgelegt. Die Redaktion sollte daher Zeitfolge und jeweiligen Status ausdrücklich auseinanderhalten. Ein Arbeitsabschnitt durfte nicht als bereits erledigt erscheinen, solange sein eigener Prüfschritt noch ausstand."
+      },
+      {
+        "id": "p3",
+        "text": "Im letzten Abschnitt diskutierte der Forschungsverbund mögliche Schlussfolgerungen. Die Einträge verschiedener Teams passten innerhalb des untersuchten Datensatzes gut zusammen. Andere Einrichtungen benutzten jedoch abweichende Messverfahren und andere Zielgruppen, sodass eine direkte Verallgemeinerung unbegründet wäre. Das Fazit lautete: „Wenngleich die Ergebnisse konsistent ausfielen, ließen sie sich nicht auf andere Einrichtungen übertragen.“ Mit wenngleich wurde eine positive Eigenschaft anerkannt, ohne die methodische Grenze aufzuheben. Eine Fördermitteilung stellte daraus eine allgemeine Bestätigung der Ergebnisse für sämtliche Standorte her und ließ die Einschränkung weg. Die Fachredaktion widersprach, weil die zugestandene Konsistenz nicht dasselbe wie extern geprüfte Übertragbarkeit war. Eine neue Fassung musste Anerkennung und Begrenzung gemeinsam erhalten."
+      }
+    ],
+    "relations": [
+      {
+        "id": "r1",
+        "paragraphId": "p1",
+        "quote": "Indem die Forschenden die Erfassung vereinheitlichten, verringerten sie die Unterschiede zwischen den Tabellen.",
+        "relation": "MITTEL",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die beiden Ereignisse fanden lediglich gleichzeitig statt, ohne dass der Satz eine methodische Beziehung behauptet."
+          },
+          {
+            "id": "B",
+            "text": "Die vereinheitlichte Erfassung ist die beschriebene Vorgehensweise, durch die Unterschiede zwischen den Tabellen verringert wurden."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Indem benennt die eingesetzte Vorgehensweise als Mittel der beschriebenen Verringerung, nicht nur eine gleichzeitige Situation.",
+        "trap": "Die Mittelrelation darf nicht als zufällige Simultanität abgeschwächt oder zur vollständigen Problemlösung verstärkt werden."
+      },
+      {
+        "id": "r2",
+        "paragraphId": "p2",
+        "quote": "Als die Übertragung abgeschlossen war, waren die Kontrollprotokolle noch nicht freigegeben.",
+        "relation": "VERGANGENER_REFERENZPUNKT",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Zum Zeitpunkt des Abschlusses der Datenübertragung standen die Freigaben der Kontrollprotokolle noch aus."
+          },
+          {
+            "id": "B",
+            "text": "Bereits vor Beginn der Übertragung lagen alle Kontrollfreigaben endgültig vor, weil als eine Ursache benennen würde."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Als setzt einen vergangenen Referenzpunkt, zu dem die Freigabe der Kontrollen ausdrücklich noch ausstand.",
+        "trap": "Die zeitliche Relation ist keine Kausalerklärung und lässt die noch fehlenden Prüfungen nicht verschwinden."
+      },
+      {
+        "id": "r3",
+        "paragraphId": "p3",
+        "quote": "Wenngleich die Ergebnisse konsistent ausfielen, ließen sie sich nicht auf andere Einrichtungen übertragen.",
+        "relation": "KONZESSIVE_GRENZE",
+        "question": "Welche logische Relation stellt der hervorgehobene Konnektor her und welche vermeintliche Folgerung bleibt trotz des Satzes unbelegt?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Ergebnisse sind wegen ihrer Konsistenz automatisch für sämtliche Einrichtungen gültig und vollständig verallgemeinerbar."
+          },
+          {
+            "id": "B",
+            "text": "Die interne Konsistenz wird anerkannt, ohne dass daraus eine Übertragbarkeit auf andere Einrichtungen folgen darf."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Wenngleich räumt einen positiven Befund ein, hält aber die methodische Grenze der externen Übertragbarkeit ausdrücklich aufrecht.",
+        "trap": "Ein zugestandener Qualitätsbefund innerhalb einer Untersuchung ist kein eigenständiger Beleg für Generalisierbarkeit."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M32 original fictional relation-logic studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Originale neu verfasste fiktive Quellenfälle, nicht extern übernommen und noch nicht unabhängig geprüft"
+    }
+  }
+]
