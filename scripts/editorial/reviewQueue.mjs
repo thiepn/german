@@ -171,7 +171,17 @@ export function collect(){
    issues:['Verify exact single literal anchor in named fictional paragraph','Independently verify anchored dates, place, speaker and addressee','Audit reported rephrasing, alternate perspective, source evidence, complete transfer and revision','AI_DRAFT / ORIGINAL_DRAFT / DEMO_ONLY: no publication or automatic free-writing grade'],independentEditorialApproval:false}))
  ]);
  if(deixis.length!==manifest.deixisDraftCount*4)throw Error('Incomplete M33 G01 editorial source and anchor queue');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope,...attachments,...relations,...deixis],allIds=new Set();
+
+ const relative=read(manifest.relativeDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G02_ORIGINAL_RELATIVE_SOURCE',mode:'G02_RELATIVE',status:s.status,authorId:s.author,
+   prompt:s.title,source:s.rights.source,issues:['Independent German editorial and source rights review','Validate case valency and syntactic function of each relative pronoun in full source context','Human CEFR calibration of independent writing and transfer; no automated C1/C2 claim','No publication or approval'],independentEditorialApproval:false},
+  ...s.anchors.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G02_RELATIVE_CASE_ANCHOR',mode:'G02_RELATIVE',status:s.status,authorId:s.author,
+   prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,phenomenon:a.phenomenon,options:a.options,preferredId:a.preferredId,model:a.model,trap:a.trap,
+   issues:['Verify one exact literal quote and grammatical role independently','Check Nominativ/Dativ/Akkusativ/Genitiv, prep valency, was and free relatives against original source','Check independent full report, source reasoning, false reading, meaningful revision and audience transfer','DEMO_ONLY rights hold, no automatic grade'],independentEditorialApproval:false}))
+ ]);
+ if(relative.length!==manifest.relativeDraftCount*4)throw Error('Incomplete M34 G02 editorial queue');
+
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope,...attachments,...relations,...deixis,...relative],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

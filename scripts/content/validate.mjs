@@ -538,6 +538,28 @@ for(const s of m33){
 if(deixisIds.size!==4||deixisBands.size!==2||deixisTopics.size!==4||deixisPhenomena.size<10||
  deixisAnchors!==12||deixisB!==6)throw Error('Insufficient distinct M33 deictic centres');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,relationDrafts:m32.length,deixisDrafts:m33.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m34=read(manifest.relativeDraftSource);
+if(manifest.relativeDraftCount!==4||m34.length!==4)throw Error('M34 G02 relative-clause source count mismatch');
+const relativeIds=new Set(),relativeBands=new Set(),relativeTopics=new Set(),relativePhenomena=new Set();let relativeAnchors=0,relativeB=0;
+for(const s of m34){
+ if(!/^SG-G02R-\d{3}$/.test(s.id)||relativeIds.has(s.id)||s.version!==1||s.domain!=='G02'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified M34 source '+s.id);
+ relativeIds.add(s.id);relativeBands.add(s.band);relativeTopics.add(s.focus);
+ if(s.title?.length<42||s.focus?.length<75||s.brief?.length<180||s.paragraphs?.length!==3||s.anchors?.length!==3)throw Error('Incomplete M34 relative source '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<830)throw Error('Truncated M34 source paragraph '+s.id+':'+p.id);
+ for(const [i,a] of s.anchors.entries()){
+  const p=s.paragraphs[i],quote='„'+a.quote+'“';
+  if(a.id!=='r'+(i+1)||a.paragraphId!==p.id||a.quote?.length<50||a.quote.length>160||p.text.split(quote).length!==2||
+  a.phenomenon?.length<24||a.question?.length<135||a.model?.length<95||a.trap?.length<85||
+  a.options?.length!==2||a.options[0].id!=='A'||a.options[1].id!=='B'||a.options[0].text===a.options[1].text||
+  a.options.some(o=>o.text?.length<95)||!['A','B'].includes(a.preferredId))throw Error('Unanchored M34 relative-clause item '+s.id+':'+a.id);
+  relativePhenomena.add(a.phenomenon);relativeAnchors++;if(a.preferredId==='B')relativeB++;
+ }
+}
+if(relativeIds.size!==4||relativeBands.size!==2||relativeTopics.size!==4||relativePhenomena.size!==12||
+ relativeAnchors!==12||relativeB!==6)throw Error('Insufficient G02 relative clause variety');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,relationDrafts:m32.length,deixisDrafts:m33.length,relativeDrafts:m34.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

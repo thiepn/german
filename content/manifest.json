@@ -75,5 +75,7 @@
   "relationDraftCount": 4,
   "relationDraftSource": "content/fixtures/g04-relations.demo.json",
   "deixisDraftCount": 4,
-  "deixisDraftSource": "content/fixtures/g01-deixis.demo.json"
+  "deixisDraftSource": "content/fixtures/g01-deixis.demo.json",
+  "relativeDraftCount": 4,
+  "relativeDraftSource": "content/fixtures/g02-relative.demo.json"
 }
