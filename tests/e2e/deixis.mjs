@@ -96,9 +96,9 @@ async function run(width){
   await b.getByText('Import abgeschlossen:',{exact:false}).waitFor();
   await b.reload({waitUntil:'networkidle'});await b.getByRole('button',{name:'Lernen',exact:true}).first().click();
   await b.locator('article').filter({hasText:'Artikel und Genus'}).getByRole('button',{name:'Deiktische Zentren und Perspektivwechsel'}).click();
-  await b.getByText('öffentliche Kurzmitteilung',{exact:false}).first().waitFor();
+  await b.getByText('öffentliche Informationsseite',{exact:false}).first().waitFor();
   assert.equal(await b.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,'horizontal overflow');
-  console.log('PASS M31 G01 deixis choices, independent rewriting, stale-tab CAS, revisions, Archive and backup v3 '+width);
+  console.log('PASS M33 G01 deixis choices, independent rewriting, stale-tab CAS, revisions, Archive and backup v3 '+width);
  }finally{await ctx.close();await target.close()}
 }
 try{await run(1280);await run(360)}finally{await browser.close()}
