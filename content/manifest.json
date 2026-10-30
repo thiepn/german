@@ -77,5 +77,8 @@
   "deixisDraftCount": 4,
   "deixisDraftSource": "content/fixtures/g01-deixis.demo.json",
   "relativeDraftCount": 4,
-  "relativeDraftSource": "content/fixtures/g02-relative.demo.json"
+  "relativeDraftSource": "content/fixtures/g02-relative.demo.json",
+  "oralDraftCount": 4,
+  "oralDraftSource": "content/fixtures/g12-oral-rehearsal.demo.json",
+  "v1FeatureBoundary": "FROZEN_AFTER_M35_DRAFT_NOT_RELEASE_APPROVED"
 }

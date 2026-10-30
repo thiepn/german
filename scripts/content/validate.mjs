@@ -560,6 +560,28 @@ for(const s of m34){
 if(relativeIds.size!==4||relativeBands.size!==2||relativeTopics.size!==4||relativePhenomena.size!==12||
  relativeAnchors!==12||relativeB!==6)throw Error('Insufficient G02 relative clause variety');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,relationDrafts:m32.length,deixisDrafts:m33.length,relativeDrafts:m34.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m35=read(manifest.oralDraftSource);
+if(manifest.oralDraftCount!==4||m35.length!==4||manifest.v1FeatureBoundary!=='FROZEN_AFTER_M35_DRAFT_NOT_RELEASE_APPROVED')throw Error('M35 V1 content freeze or G12 oral case count invalid');
+const oralIds=new Set(),oralBands=new Set(),oralTopics=new Set(),oralSpeakers=new Set();let oralAnchors=0;
+for(const s of m35){
+ if(!/^SG-G12O-\d{3}$/.test(s.id)||oralIds.has(s.id)||s.version!==1||s.domain!=='G12'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())
+ throw Error('Unqualified M35 G12 oral source '+s.id);
+ oralIds.add(s.id);oralBands.add(s.band);oralTopics.add(s.focus);
+ if(s.title?.length<40||s.focus?.length<90||s.audience?.length<20||s.brief?.length<190||s.paragraphs?.length!==3||s.turns?.length!==3)
+ throw Error('Incomplete M35 G12 oral source '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<900)throw Error('Truncated M35 oral paragraph '+s.id+':'+p.id);
+ for(const [i,t] of s.turns.entries()){
+  const p=s.paragraphs[i],quote='„'+t.quote+'“';
+  if(t.id!=='t'+(i+1)||t.paragraphId!==p.id||t.speaker?.length<8||t.quote?.length<45||t.quote.length>150||p.text.split(quote).length!==2||
+   t.goal?.length<80||t.anchor?.length<65||t.limit?.length<60||t.transfer?.length<65)
+  throw Error('Unanchored M35 oral source '+s.id+':'+t.id);
+  oralSpeakers.add(t.speaker);oralAnchors++;
+ }
+}
+if(oralIds.size!==4||oralBands.size!==2||oralTopics.size!==4||oralSpeakers.size<10||oralAnchors!==12)throw Error('Incomplete G12 oral coverage and speaking contexts');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,relationDrafts:m32.length,deixisDrafts:m33.length,relativeDrafts:m34.length,oralDrafts:m35.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

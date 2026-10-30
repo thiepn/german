@@ -181,7 +181,17 @@ export function collect(){
  ]);
  if(relative.length!==manifest.relativeDraftCount*4)throw Error('Incomplete M34 G02 editorial queue');
 
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope,...attachments,...relations,...deixis,...relative],allIds=new Set();
+
+ const oral=read(manifest.oralDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G12_ORIGINAL_ORAL_SOURCE',mode:'G12_ORAL',status:s.status,authorId:s.authorship,
+   prompt:s.title,source:s.rights.source,issues:['Independent editorial and rights review of full fictional context','Validate fair speaking goal, audience, and limits without rating real pronunciation','Human C1/C2 calibration; original microphone audio is not collected','No release or independent editorial approval'],independentEditorialApproval:false},
+  ...s.turns.map(t=>({id:s.id+':'+t.id,version:s.version,type:'G12_SPOKEN_RESPONSE_ANCHOR',mode:'G12_ORAL',status:s.status,authorId:s.authorship,
+   prompt:t.goal,quote:t.quote,paragraphId:t.paragraphId,sourceAnchor:t.anchor,limit:t.limit,speaker:t.speaker,
+   issues:['Verify exactly one literal anchor in the full source','Distinguish speech content from learner-reported self-analysis without speech recognition','Evaluate acceptable oral alternatives, evidence limits, and audience transfer','Audio ephemeral, no cloud storage, NO_SCORE, rights hold'],independentEditorialApproval:false}))
+ ]);
+ if(oral.length!==manifest.oralDraftCount*4)throw Error('M35 oral editorial source and anchor worklist incomplete');
+
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope,...attachments,...relations,...deixis,...relative,...oral],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }
