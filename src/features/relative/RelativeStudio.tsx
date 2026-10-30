@@ -25,7 +25,7 @@ export default function RelativeStudio({initialSelection,onExit}:{initialSelecti
   try{
    const result=!entry?beginRelative(study,next.id,choice,transformation,counterreading,syntaxEvidence,boundary,Date.now()):appendRelative(entry,study,next.id,choice,transformation,counterreading,syntaxEvidence,boundary,crypto.randomUUID(),Date.now());
    await saveProductionEntry(result,entry?.revisions.length??0);await refresh();clear();
-  }catch(e){setError('Relativebeleg nicht gespeichert: '+String(e));await refresh().catch(()=>{})}finally{setBusy(false)}
+  }catch(e){setError('Relativbeleg nicht gespeichert: '+String(e));await refresh().catch(()=>{})}finally{setBusy(false)}
  }
  async function saveMemo(){
   if(!entry||next||busy)return;setBusy(true);setError('');
@@ -45,19 +45,19 @@ export default function RelativeStudio({initialSelection,onExit}:{initialSelecti
    {study.paragraphs.map(p=><p key={p.id} className="polysemy-paragraph"><strong>{p.id}</strong> {p.text}</p>)}
    <p className="small muted">{study.status} · {study.rights.kind} · redaktionell ungeprüft</p>
   </article>
-  {entry&&<section className="panel"><h2>Gespeicherte Relativebelege</h2>{study.anchors.map((point,i)=>{const saved=savedRelative(entry,point);if(!saved)return null;
+  {entry&&<section className="panel"><h2>Gespeicherte Relativbelege</h2>{study.anchors.map((point,i)=>{const saved=savedRelative(entry,point);if(!saved)return null;
    return <article key={point.id} className="polysemy-analysis"><h3>{i+1} · {point.phenomenon} · {point.paragraphId}</h3>
     <p><strong>Eigenständige Relativsatz-Umschreibung:</strong> <span className="written">{saved.transformation}</span></p><p><strong>Unzulässige Kasus- oder Rollenlesart:</strong> <span className="written">{saved.counterreading}</span></p>
     <p><strong>Kasus und Satzfunktion:</strong> <span className="written">{saved.syntaxEvidence}</span></p><p><strong>Nicht gedeckte Schlussfolgerung:</strong> <span className="written">{saved.boundary}</span></p>
     <details><summary>Quelle und ungeprüfte Musterdeutung</summary><p>„{point.quote}“</p><p>{point.model}</p><p>Fallstrick: {point.trap}</p><p>Gewählte Lesart: {point.options.find(o=>o.id===saved.choice)?.text}</p></details>
    </article>})}</section>}
-  {next&&<section className="panel polysemy-task"><h2>Relativebeleg {study.anchors.indexOf(next)+1} / {study.anchors.length}</h2><p><strong>{next.phenomenon} · {next.paragraphId}:</strong> „{next.quote}“</p><p>{next.question}</p>
-   <div className="field"><label htmlFor="relative-choice">Welche grammatische Rolle des Relativpronomens stützt die Originaläußerung?</label><select id="relative-choice" value={choice} disabled={busy} onChange={e=>setChoice(e.target.value as RelativeChoice|'')}><option value="">Relative wählen</option>{next.options.map(o=><option key={o.id} value={o.id}>{o.text}</option>)}</select></div>
+  {next&&<section className="panel polysemy-task"><h2>Relativbeleg {study.anchors.indexOf(next)+1} / {study.anchors.length}</h2><p><strong>{next.phenomenon} · {next.paragraphId}:</strong> „{next.quote}“</p><p>{next.question}</p>
+   <div className="field"><label htmlFor="relative-choice">Welche grammatische Rolle des Relativpronomens stützt die Originaläußerung?</label><select id="relative-choice" value={choice} disabled={busy} onChange={e=>setChoice(e.target.value as RelativeChoice|'')}><option value="">Lesart wählen</option>{next.options.map(o=><option key={o.id} value={o.id}>{o.text}</option>)}</select></div>
    <div className="field"><label htmlFor="relative-transformation">Schreibe eine syntaktisch eindeutige Eigenfassung mit korrekter Kasus- und Antezedenszuordnung</label><textarea id="relative-transformation" rows={5} maxLength={1450} value={transformation} onChange={e=>setReport(e.target.value)}/></div>
    <div className="field"><label htmlFor="relative-counterreading">Formuliere eine plausible, aber grammatisch oder semantisch falsche Kasus- und Rollenlesart</label><textarea id="relative-counterreading" rows={5} maxLength={1450} value={counterreading} onChange={e=>setMisreading(e.target.value)}/></div>
    <div className="field"><label htmlFor="relative-syntaxEvidence">Begründe Kasus, Rektion und Bezugswort anhand einer weiteren konkreten Quelleninformation</label><textarea id="relative-syntaxEvidence" rows={5} maxLength={1650} value={syntaxEvidence} onChange={e=>setOrigo(e.target.value)}/></div>
    <div className="field"><label htmlFor="relative-boundary">Welche nicht belegte Folgerung entstünde durch einen falschen Anschluss oder eine vertauschte Satzrolle?</label><textarea id="relative-boundary" rows={5} maxLength={1400} value={boundary} onChange={e=>setBoundary(e.target.value)}/></div>
-   <button className="button" type="button" disabled={busy||!choice||!independentRelative(next,transformation,counterreading,syntaxEvidence,boundary)} onClick={()=>void saveEvidence()}>Relativebeleg speichern</button>
+   <button className="button" type="button" disabled={busy||!choice||!independentRelative(next,transformation,counterreading,syntaxEvidence,boundary)} onClick={()=>void saveEvidence()}>Relativbeleg speichern</button>
   </section>}
   {entry&&!next&&<section className="panel polysemy-transfer"><h2>{latest?'Adressatengerechte Revision':'Eigenständigen Relativsatzbericht schreiben'}</h2><p>{study.brief}</p>
    {latest&&<><h3>Letzte Fassung</h3><p className="written">{latest.text}</p><button className="button outline" type="button" disabled={busy} onClick={()=>setMemo(latest.text)}>Letzte Fassung übernehmen</button></>}
