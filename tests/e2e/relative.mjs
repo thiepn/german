@@ -1,7 +1,7 @@
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {transformations,counterreadings,syntaxEvidences,boundaries,memo,reason,revised} from './fixtures/relative.mjs';
+import {transformations,counterreadings,syntaxEvidences,boundaries,memo,reason,revised} from '../fixtures/relative.mjs';
 const browser=await chromium.launch({headless:true}),origin='http://127.0.0.1:4173/';
 async function open(ctx){
  const p=await ctx.newPage();await p.goto(origin,{waitUntil:'networkidle'});
