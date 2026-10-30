@@ -35,7 +35,7 @@ test('reading-to-writing briefs are separate from writing mode and source readin
 test('editorial worklist source and manifest include all new 12 unreviewed dossiers',()=>{
  const m=JSON.parse(readFileSync('content/manifest.json','utf8'));
  assert.equal(m.demoItemCount,202);assert.equal(m.pragmaticScenarioCount,8);assert.equal(m.readingTransferCount,4);
- const queue=collect();assert.equal(queue.length,250+m.modalityDraftCount*4+m.caseTracingDraftCount*4+m.valencyDraftCount*4+m.focusDraftCount*4+m.referenceDraftCount*4+m.phraseologyDraftCount*4+m.polysemyDraftCount*4+m.stanceDraftCount*4+m.crossSourceDraftCount*4+m.compressionDraftCount*4+m.attributionDraftCount*4+m.repairDraftCount*4+m.argumentDraftCount*4+m.numericDraftCount*4+m.disclosureDraftCount*4+m.chronologyDraftCount*4+m.definitionDraftCount*4+m.scopeDraftCount*4);
+ const queue=collect();assert.equal(queue.length,250+m.modalityDraftCount*4+m.caseTracingDraftCount*4+m.valencyDraftCount*4+m.focusDraftCount*4+m.referenceDraftCount*4+m.phraseologyDraftCount*4+m.polysemyDraftCount*4+m.stanceDraftCount*4+m.crossSourceDraftCount*4+m.compressionDraftCount*4+m.attributionDraftCount*4+m.repairDraftCount*4+m.argumentDraftCount*4+m.numericDraftCount*4+m.disclosureDraftCount*4+m.chronologyDraftCount*4+m.definitionDraftCount*4+m.scopeDraftCount*4+m.attachmentDraftCount*4);
  assert.equal(queue.filter(x=>x.type==='PRAGMATIC_CHOICE').length,8);
  assert.equal(queue.filter(x=>x.type==='READING_WRITTEN_TRANSFER').length,4);
  assert.equal(queue.filter(x=>x.mode==='G05').length,m.modalityDraftCount*4);
