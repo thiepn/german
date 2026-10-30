@@ -492,6 +492,28 @@ for(const s of m31){
 if(attachmentIds.size!==4||attachmentBands.size!==2||attachmentTopics.size!==4||attachmentTypes.size<10||
  attachmentAnchors!==12||attachmentB<4||attachmentB>8)throw Error('Insufficient G03 syntactic attachment variety');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m32=read(manifest.relationDraftSource);
+if(manifest.relationDraftCount!==4||m32.length!==4)throw Error('M32 G04 relation source count mismatch');
+const relationIds=new Set(),relationBands=new Set(),relationTopics=new Set(),relationKinds=new Set();let relationAnchors=0,relationB=0;
+for(const s of m32){
+ if(!/^SG-G04R-\d{3}$/.test(s.id)||relationIds.has(s.id)||s.version!==1||s.domain!=='G04'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified M32 relation source '+s.id);
+ relationIds.add(s.id);relationBands.add(s.band);relationTopics.add(s.focus);
+ if(s.title?.length<40||s.focus?.length<75||s.brief?.length<130||s.paragraphs?.length!==3||s.relations?.length!==3)throw Error('Incomplete G04 relation dossier '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<780)throw Error('Truncated M32 source paragraph '+s.id+':'+p.id);
+ for(const [i,q] of s.relations.entries()){
+  const p=s.paragraphs[i],quote='„'+q.quote+'“';
+  if(q.id!=='r'+(i+1)||q.paragraphId!==p.id||q.quote?.length<40||q.quote.length>170||p.text.split(quote).length!==2||
+   q.relation?.length<6||q.question?.length<100||q.model?.length<80||q.trap?.length<80||
+   q.options?.length!==2||q.options[0].id!=='A'||q.options[1].id!=='B'||q.options[0].text===q.options[1].text||
+   q.options.some(o=>o.text?.length<80)||!['A','B'].includes(q.preferredId))throw Error('Unanchored M32 relation '+s.id+':'+q.id);
+  relationKinds.add(q.relation);relationAnchors++;if(q.preferredId==='B')relationB++;
+ }
+}
+if(relationIds.size!==4||relationBands.size!==2||relationTopics.size!==4||relationKinds.size<10||
+ relationAnchors!==12||relationB<4||relationB>8)throw Error('Insufficient distinct G04 connector relations');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,relationDrafts:m32.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

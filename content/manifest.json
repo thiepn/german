@@ -71,5 +71,7 @@
   "scopeDraftCount": 4,
   "scopeDraftSource": "content/fixtures/g04-scope.demo.json",
   "attachmentDraftCount": 4,
-  "attachmentDraftSource": "content/fixtures/g03-attachment.demo.json"
+  "attachmentDraftSource": "content/fixtures/g03-attachment.demo.json",
+  "relationDraftCount": 4,
+  "relationDraftSource": "content/fixtures/g04-relations.demo.json"
 }
