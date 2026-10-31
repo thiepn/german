@@ -1,0 +1,9 @@
+# M27 — G09 Verfahrensfolgen präzise darstellen
+
+## Skill and differentiation
+Source-grounded procedural chronology trains advanced readers and writers to distinguish receipt from review, planned from completed steps, necessary from sufficient conditions, deferred decisions from existing approvals, and upper versus lower time limits. Unlike M20 cross-source comparison, M25 numeracy, M26 selective disclosure, M23 conversational repair or M24 argumentative warrant, it is an end-to-end exercise in reconstructing **time and validity** from one multi-paragraph primary narrative and then producing a dependable independent procedural status memo.
+
+Original fictional cases SG-G09T-001–004 (C1 and C2) cover research-archive release, a neighborhood library opening, a system cutover with rollback condition, and a cultural-grant application. All 12 substantial source paragraphs contain exactly one individually anchored direct utterance. Learners choose a defensible interpretation, independently state the current sequence, identify the prerequisite/timepoint, reject an unearned validity claim, then draft a 480+ character multi-paragraph memo and revise with a source-specific reason. Evidence remains UNASSESSED: validation establishes provenance and completeness, not correctness of German writing.
+
+## Durable boundaries
+Reuses the original eight IndexedDB stores and transactional CAS saveProductionEntry, backup v3, first immutable production text plus append-only revisions, stable ID and version ownership, source identity, Today/Curriculum/Progress/Archive and version-diff affordances. No duplicate storage, scheduler, grader, CEFR credit, auto-approval or external legal rules. Four source and twelve anchor editorial items remain DEMO_ONLY, AI_DRAFT, ORIGINAL_DRAFT, editor unassigned and approval false. No migration, merge, publication or deployment.

@@ -1,0 +1,378 @@
+[
+  {
+    "id": "SG-G04S-001",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Förderbericht der Stadtteilredaktion: Reichweite, Bedingung und Einbezug",
+    "focus": "Quantornegation, ausschließende Fokuspartikel und additive Markierung in öffentlich formulierten Berichten sauber auseinanderhalten",
+    "brief": "Verfasse für eine Bürgerversammlung eine eigenständige mehrabsätzige Klarstellung. Erkläre, welche Schlussfolgerungen aus den drei Sätzen zulässig sind und welche scheinbar naheliegenden Verallgemeinerungen nicht folgen. Schreibe anschließend eine sorgfältig überarbeitete Fassung für die lokale Presse, ohne Ausschlüsse und Bedingungen zu verschieben.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Das Kulturamt einer fiktiven Stadt erstellte einen Überblick über kleinere Initiativen, denen im laufenden Jahr ein Zuschuss zugesprochen worden war. In der ersten internen Fassung hieß es: „Nicht alle geförderten Projekte wurden im Herbst öffentlich vorgestellt.“ Die Formulierung sollte offenlassen, wie viele Initiativen ihre Ergebnisse bereits präsentiert hatten. Eine Redakteurin wollte daraus die Schlagzeile machen, sämtliche Projekte seien unsichtbar geblieben. Ihr Kollege verwies darauf, dass damit aus einer Einschränkung der Gesamtheit ein vollständiger Ausfall gemacht würde. Bei einigen Projekten waren die Räume noch nicht freigegeben, andere hatten gerade eine Präsentation durchgeführt. Der Bericht durfte die Unterschiedlichkeit der Fälle weder verschleiern noch in einen pauschalen Vorwurf umwandeln."
+      },
+      {
+        "id": "p2",
+        "text": "Im zweiten Abschnitt erklärte die Arbeitsgruppe, wie Rückmeldungen zu einem gemeinsamen Ergebnisbericht verarbeitet würden. Die Geschäftsführung wollte nicht den Eindruck vermitteln, jede eingehende Nachricht führe automatisch zur Veröffentlichung. Ihr abgestimmter Satz lautete: „Nur nach einer schriftlichen Rückmeldung wird der Entwurf veröffentlicht.“ Damit wurde eine Voraussetzung benannt, keine Garantie für den anschließenden Schritt. Die Prüfung der Rückmeldungen, der Rechte an eingebundenen Bildern und der Zustimmung beteiligter Personen konnte weitere Bearbeitung erforderlich machen. Eine verkürzte Überschrift, die jede schriftliche Rückmeldung als ausreichenden Auslöser darstellte, würde den gemeinten Bedingungszusammenhang sprachlich umkehren. Im Beschlussprotokoll sollte dieser Unterschied ausdrücklich erkennbar bleiben."
+      },
+      {
+        "id": "p3",
+        "text": "Bei der geplanten Rücksprache darüber, wer den Schlussbericht prüfen dürfe, waren zunächst ausschließlich Mitglieder des Redaktionsteams genannt worden. Die zuständige Koordinatorin ergänzte deshalb: „Auch die beteiligten Vereine können eine Korrektur anregen.“ Das Wort auch erweitert die Gruppe der Personen mit einem Vorschlagsrecht, statt den bisherigen Kreis zu ersetzen. Im Gespräch wurde dennoch behauptet, nun könnten nur noch Vereine Änderungen verlangen und ihre Vorschläge würden automatisch übernommen. Beides stand im Widerspruch zum Ablauf: Andere Beteiligte blieben ansprechbar, während jede Änderung anhand des zugrunde liegenden Materials geprüft werden sollte. Die Redaktion musste die additive Aussage wiedergeben, ohne daraus eine ausschließliche Zuständigkeit oder eine Zusage der Übernahme zu erfinden."
+      }
+    ],
+    "scopes": [
+      {
+        "id": "s1",
+        "paragraphId": "p1",
+        "particle": "Quantornegation",
+        "quote": "Nicht alle geförderten Projekte wurden im Herbst öffentlich vorgestellt.",
+        "question": "Welche Reichweite hat die Negation über alle geförderten Projekte?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Nicht alle bedeutet, dass die Aussage über öffentliche Vorstellungen nicht auf die gesamte Projektmenge zutrifft; einige Vorstellungen können dennoch stattgefunden haben."
+          },
+          {
+            "id": "B",
+            "text": "Die Verneinung erfasst jedes einzelne Projekt, sodass nach dem Text überhaupt keine öffentliche Vorstellung stattgefunden haben kann."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Negation nimmt der Gesamtaussage ihre Geltung, verneint aber keineswegs die Existenz einzelner tatsächlich durchgeführter Präsentationen.",
+        "trap": "Wer aus nicht alle ein keines macht, verschiebt die Aussage vom teilweise nicht erfüllten Gesamtsatz zur uneingeschränkten Nullbehauptung."
+      },
+      {
+        "id": "s2",
+        "paragraphId": "p2",
+        "particle": "Fokuspartikel nur",
+        "quote": "Nur nach einer schriftlichen Rückmeldung wird der Entwurf veröffentlicht.",
+        "question": "Welche Richtung hat die in nur kodierte Bedingung?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sobald irgendjemand schriftlich antwortet, muss der Entwurf ohne weitere Prüfung veröffentlicht werden, weil die Bedingung hinreichend sei."
+          },
+          {
+            "id": "B",
+            "text": "Eine schriftliche Rückmeldung ist notwendige Voraussetzung für die geplante Veröffentlichung, aber die Formulierung garantiert nach Eingang noch keine Freigabe."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Nur begrenzt die Veröffentlichung auf Fälle mit vorheriger schriftlicher Rückmeldung; die umgekehrte Wenn-dann-Folge wird dadurch nicht versprochen.",
+        "trap": "Das Wort nur markiert hier eine notwendige Bedingung und darf nicht zu einer hinreichenden Ursache für die Veröffentlichung überhöht werden."
+      },
+      {
+        "id": "s3",
+        "paragraphId": "p3",
+        "particle": "Additives auch",
+        "quote": "Auch die beteiligten Vereine können eine Korrektur anregen.",
+        "question": "Was bleibt bei der Erweiterung des Vorschlagsrechts bestehen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Vereine treten zusätzlich zu den bislang vorgesehenen Beteiligten hinzu; ihre Anregungen bleiben prüfbedürftig und nicht automatisch verbindlich."
+          },
+          {
+            "id": "B",
+            "text": "Mit der neuen Formulierung verlieren alle bisherigen Beteiligten ihre Möglichkeit zur Korrekturanregung, und jeder Vereinswunsch wird verbindlich."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Auch fügt dem bereits vorhandenen Kreis eine weitere Gruppe hinzu, ohne einen Ausschluss der ursprünglichen Gruppe oder eine automatische Zustimmung zu behaupten.",
+        "trap": "Ein additiver Fokus schafft weder exklusive Zuständigkeit noch einen Anspruch auf die Übernahme des Vorgeschlagenen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M30 original German fictional focus/negation scope authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive zusammenhängende Fachtexte; keine Übernahme externer Werke; unabhängig redaktionell unbegutachtet"
+    }
+  },
+  {
+    "id": "SG-G04S-002",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Universitäre Feldstudie: quantitative Negation und unerwarteter Kontrast",
+    "focus": "Quantorenskopus, einschränkendes lediglich und skalare Überraschungsmarkierung bei methodischen Schlussfolgerungen voneinander trennen",
+    "brief": "Schreibe eine methodische Stellungnahme für eine universitäre Kommission, die aus den drei Originalformulierungen keine stärkeren Aussagen ableitet als der Text zulässt. Übertrage diese Stellungnahme anschließend in eine verständliche öffentliche Fassung und überarbeite sie nach einer kritischen Rückmeldung zu falschen Generalisierungen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine Arbeitsgruppe führte für eine fiktive Feldstudie Gespräche über die Nutzung gemeinschaftlich gepflegter Hochbeete. Während der Auswertung musste das Team zwischen Äußerungen zu Pflegezeiten und Anmerkungen zum Wetter oder zur Ausstattung unterscheiden. Im Protokoll stand: „Nicht jede Rückmeldung bezog sich auf die eigentliche Fragestellung.“ Die Leitung warnte davor, dies als Beleg für eine vollständig misslungene Befragung auszugeben. Ein Teil der Beiträge war sehr wohl einschlägig, andere bezogen sich nur auf Randthemen oder neue Fragen, die im ursprünglichen Leitfaden nicht vorgesehen waren. Die Menge der verwertbaren Äußerungen wurde gesondert dokumentiert. Entscheidend war die begrenzte Aussage über den Gesamtheitsanspruch, nicht eine erfundene Behauptung, alle Antworten seien am Thema vorbeigegangen."
+      },
+      {
+        "id": "p2",
+        "text": "Die zweite Passage behandelte die Auswahl des Materials und die Abgrenzung gegenüber informellen Notizen aus der Vorbereitung. Die Forschungskoordination hielt fest: „Lediglich die anonymisierten Interviews flossen in die Auswertung ein.“ Die Adverbialpartikel sollte kenntlich machen, welcher Materialtyp Eingang in die eigentliche Analyse fand. Sie besagte nicht, jedes je geführte Interview sei automatisch aufgenommen worden, und ebenso wenig, die Gesprächsnotizen hätten nie existiert. In einer Kurzfassung war daraus der Satz entstanden, nur anonymisierte Gespräche seien überhaupt geführt worden; dies hätte die Dokumentation des Erhebungsverfahrens verfälscht. Das Team erklärte zusätzlich, dass Auswahl, Erhebung und Analyse verschiedene Arbeitsschritte seien, deren Gegenstände nicht ohne Weiteres gleichgesetzt werden dürften."
+      },
+      {
+        "id": "p3",
+        "text": "Die Qualitätssicherung schloss mit einem Hinweis auf die Arbeit an offenen Feldnotizen. In einer internen Nachbesprechung stellte die Betreuerin fest: „Sogar die erfahrenen Interviewenden verwechselten gelegentlich Beobachtung und Deutung.“ Sogar markierte hier eine unerwartete Betroffenheit gerade einer Gruppe, der man besondere Sicherheit zutraute. Der Satz behauptete weder, alle Fachleute machten diesen Fehler ständig, noch, unerfahrene Personen hätten denselben Fehler sicher häufiger begangen. Die zugrunde liegenden Aufzeichnungen enthielten einzelne Beispiele, die nachträglich korrigiert wurden. Die Redaktion sollte den markierten Erwartungskontrast deutlich machen, ohne aus der Skalenmarkierung eine statistische Häufigkeitsaussage oder eine pauschale Abwertung der Beteiligten abzuleiten."
+      }
+    ],
+    "scopes": [
+      {
+        "id": "s1",
+        "paragraphId": "p1",
+        "particle": "Nicht jeder",
+        "quote": "Nicht jede Rückmeldung bezog sich auf die eigentliche Fragestellung.",
+        "question": "Wird ein universeller Befund oder ein vollständiger Ausfall zurückgewiesen?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Satz belegt, dass kein einziger Beitrag die Fragestellung berührte und die Erhebung vollständig unbrauchbar war."
+          },
+          {
+            "id": "B",
+            "text": "Die Rückmeldungen sind nicht ausnahmslos einschlägig; damit bleiben durchaus Beiträge möglich, die die Forschungsfrage direkt beantworten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Negation betrifft die uneingeschränkte Gültigkeit für alle Antworten; sie erlaubt keine Behauptung über die genaue Anzahl thematischer Beiträge.",
+        "trap": "Nicht jeder ist keine andere Schreibweise von keiner; eine Totalnegation würde den Daten einen nicht belegten Nullbefund unterstellen."
+      },
+      {
+        "id": "s2",
+        "paragraphId": "p2",
+        "particle": "Restriktives lediglich",
+        "quote": "Lediglich die anonymisierten Interviews flossen in die Auswertung ein.",
+        "question": "Was wird durch lediglich begrenzt, und was nicht?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Für die Auswertung wird der Materialtyp auf anonymisierte Interviews begrenzt; daraus folgt nicht, dass alle geführten Interviews aufgenommen wurden."
+          },
+          {
+            "id": "B",
+            "text": "Der Satz belegt, dass es während der gesamten Studie ausschließlich anonymisierte Interviews gab und keinerlei andere Notizen entstanden."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Lediglich hat hier Skopus über die Auswahl des ausgewerteten Materials; es beschreibt weder abschließend die Erhebung noch die Vollständigkeit der Auswertung.",
+        "trap": "Wer die Einschränkung der Auswertung als Aussage über das gesamte Erhebungsverfahren liest, verwischt die methodische Differenz zweier Ebenen."
+      },
+      {
+        "id": "s3",
+        "paragraphId": "p3",
+        "particle": "Skala sogar",
+        "quote": "Sogar die erfahrenen Interviewenden verwechselten gelegentlich Beobachtung und Deutung.",
+        "question": "Was signalisiert sogar über die genannte Personengruppe?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Partikel beweist, dass erfahrene Interviewende systematisch häufiger Fehler machen als Anfängerinnen und Anfänger."
+          },
+          {
+            "id": "B",
+            "text": "Die Beobachtung betrifft unerwarteterweise selbst erfahrene Personen, ohne eine Häufigkeitsverteilung oder einen Vergleich aller Gruppen festzulegen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Sogar aktiviert einen Erwartungskontrast: Eine als besonders kompetent geltende Gruppe ist nicht völlig ausgenommen; die Häufigkeit bleibt offen.",
+        "trap": "Die Skalenannahme ist keine statistische Rangfolge von Fehlerquoten und rechtfertigt keine verallgemeinernde Abwertung erfahrener Personen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M30 original German fictional focus/negation scope authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive zusammenhängende Fachtexte; keine Übernahme externer Werke; unabhängig redaktionell unbegutachtet"
+    }
+  },
+  {
+    "id": "SG-G04S-003",
+    "version": 1,
+    "domain": "G04",
+    "band": "C1",
+    "title": "Mobilitätsbericht: nicht ausschließlich, zusätzliche Fälle und prägnanter Fokus",
+    "focus": "Negation einer Ausschließlichkeit, additive Ausweitung und kontrastierende Gewichtung bei der Wiedergabe kommunaler Beobachtungen",
+    "brief": "Verfasse einen sachlichen Bericht für einen Stadtteilausschuss. Trenne in deinen Schlussfolgerungen den Bereich der beobachteten Beschwerden von einem behaupteten Ausschluss weiterer Fälle. Übertrage die Erkenntnisse anschließend in eine kurze, aber mehrabsätzige öffentliche Erläuterung mit erhaltener Aussagegrenze.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Nach einer fiktiven Bürgerbefragung zur Verkehrsführung wollte ein Bezirksbüro die freien Antworten thematisch ordnen. Eine Zusammenfassung war zunächst nur mit dem Schlagwort Autoverkehr überschrieben worden, weil viele Einsendungen Ein- und Ausfahrten erwähnten. Im überarbeiteten Bericht hieß es genauer: „Die Hinweise betrafen nicht ausschließlich den Autoverkehr.“ Gemeint war, dass auch Fußwege, Radverbindungen und die Sicht an Haltestellen eine Rolle spielten. Die Formulierung strich den Autoverkehr nicht aus dem Kreis der Themen; sie bestritt vielmehr dessen Exklusivität. Ein Leser hatte aus der Negation irrtümlich geschlossen, Hinweise zum Autoverkehr seien vollständig irrelevant gewesen. Gerade diese Verschiebung sollte durch eine textnahe Paraphrase vermieden werden, damit der Bericht nicht gegen seine Ausgangsdaten argumentierte."
+      },
+      {
+        "id": "p2",
+        "text": "In der zweiten Passage wurden Rückmeldungen nach Tageszeiten gegliedert. Mehrere Beschwerden betrafen die stark frequentierten Morgenstunden, doch einzelne Personen berichteten auch von Schwierigkeiten am späteren Abend. Der Bericht hielt ausdrücklich fest: „Auch außerhalb der Hauptverkehrszeiten gab es Beschwerden über die Querung.“ Auch fügte damit eine zeitliche Gruppe zu den schon diskutierten Fällen hinzu; die Partikel erklärte nicht, außerhalb der Stoßzeiten habe es mehr Beschwerden gegeben. Ein Entwurfsprotokoll hatte die Aussage trotzdem zu einer neuen Schwerpunktsetzung umformuliert und die Hauptverkehrszeiten als nebensächlich dargestellt. Diese Übertreibung war aus den Rückmeldungen nicht ableitbar. Der Unterschied zwischen zusätzlicher zeitlicher Reichweite und behaupteter zahlenmäßiger Dominanz musste sichtbar bleiben."
+      },
+      {
+        "id": "p3",
+        "text": "Der dritte Abschnitt behandelte, warum sich einige Wege in der Vorprüfung als schwer zu beurteilen erwiesen hatten. An auffälligen großen Kreuzungen waren viele Risiken bereits bekannt und beschrieben worden. Das Team wollte den überraschenden Befund hervorheben: „Gerade die unauffälligen Querungen erwiesen sich als problematisch.“ Gerade markierte in diesem Kontext einen Kontrast zwischen erwarteter Harmlosigkeit und tatsächlich dokumentierten Schwierigkeiten. Daraus folgte weder, dass ausnahmslos jede unauffällige Querung gefährlich sei, noch, dass die sichtbaren Hauptkreuzungen sicher wären. Der Text sollte die unerwartete Relevanz der wenig beachteten Stellen benennen, ohne andere Beobachtungsbereiche sprachlich auszuschließen. Eine solche Schwerpunktsetzung verändert die kommunikative Salienz, nicht automatisch die Gesamtverteilung aller Risiken."
+      }
+    ],
+    "scopes": [
+      {
+        "id": "s1",
+        "paragraphId": "p1",
+        "particle": "Nicht ausschließlich",
+        "quote": "Die Hinweise betrafen nicht ausschließlich den Autoverkehr.",
+        "question": "Welche Folgerung lässt die Negation der Ausschließlichkeit zu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Neben dem Autoverkehr wurden weitere Bereiche genannt; Beschwerden zum Autoverkehr selbst sind dadurch nicht ausgeschlossen."
+          },
+          {
+            "id": "B",
+            "text": "Der Bericht widerruft alle bisherigen Hinweise zum Autoverkehr und erklärt ausschließlich Fuß- und Radwege für relevant."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Nicht ausschließlich bestreitet die alleinige Geltung eines Themas, nicht dessen Zugehörigkeit zu den tatsächlich angesprochenen Bereichen.",
+        "trap": "Die Negation der Exklusivität darf nicht mit einer Negation der Beteiligung des ausdrücklich genannten Bereichs verwechselt werden."
+      },
+      {
+        "id": "s2",
+        "paragraphId": "p2",
+        "particle": "Zusätzliches auch",
+        "quote": "Auch außerhalb der Hauptverkehrszeiten gab es Beschwerden über die Querung.",
+        "question": "Was folgt aus der zeitlichen Ergänzung durch auch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Außerhalb der Hauptverkehrszeiten gab es ebenfalls Beschwerden; das Wort sagt nichts über ihren zahlenmäßigen Vorrang."
+          },
+          {
+            "id": "B",
+            "text": "Der Bericht beweist, dass Beschwerden am Abend häufiger waren als in den Morgenstunden und nun die Hauptgruppe darstellen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Auch markiert weitere zeitliche Fälle zusätzlich zu bereits bekannten Beschwerden; die Mengenrelation bleibt offen.",
+        "trap": "Aus einer additiven Erweiterung der Zeitspanne folgt kein statistischer Spitzenwert der zusätzlich genannten Gruppe."
+      },
+      {
+        "id": "s3",
+        "paragraphId": "p3",
+        "particle": "Kontrastives gerade",
+        "quote": "Gerade die unauffälligen Querungen erwiesen sich als problematisch.",
+        "question": "Was leistet gerade für die Schwerpunktsetzung des Befunds?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Partikel hebt eine entgegen der Erwartung wichtige Fallgruppe hervor, ohne andere Querungen automatisch als sicher einzustufen."
+          },
+          {
+            "id": "B",
+            "text": "Gerade behauptet, ausschließlich die unauffälligen Stellen könnten ein Problem darstellen und jede große Kreuzung sei ungefährlich."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Gerade macht die unerwartete Relevanz einer Gruppe sichtbar; es ist keine vollständige Aufzählung aller risikoreichen Stellen.",
+        "trap": "Ein pragmatischer Kontrastfokus kann nicht als Ausschließlichkeitsquantor gelesen werden, ohne zusätzliche Belege einzuführen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M30 original German fictional focus/negation scope authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive zusammenhängende Fachtexte; keine Übernahme externer Werke; unabhängig redaktionell unbegutachtet"
+    }
+  },
+  {
+    "id": "SG-G04S-004",
+    "version": 1,
+    "domain": "G04",
+    "band": "C2",
+    "title": "Museumsleihverkehr: universelles Verbot, additive Beteiligung und Erwartungsbruch",
+    "focus": "Skopus eines ausnahmslosen Verbots, koordinierende Einschlussstruktur und emphatische Überraschung in institutioneller Kommunikation",
+    "brief": "Entwirf für die Leitung eines fiktiven Museums eine mehrabsätzige Sprachprüfung der Leihverkehrsrichtlinie. Formuliere sowohl geltende Ausschlüsse als auch reine Beteiligungsangaben präzise. Übertrage die Ergebnisse in eine Mitteilung an kooperierende Häuser und überarbeite sie für ein fachfremdes Publikum.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktives Museum ordnete nach einer Bestandsprüfung seine Regeln für zeitlich befristete Leihgaben neu. Die Archivleitung stellte fest: „Kein einziges Objekt aus dem Depot durfte ohne Zustandsprotokoll verliehen werden.“ Die Formulierung verbindet einen universellen Bezug auf alle Depotobjekte mit einer negierten Erlaubnis für den Fall eines fehlenden Protokolls. Sie behauptet nicht, sämtliche Objekte seien überhaupt unverleihbar; bei vollständiger Dokumentation konnten gesonderte Entscheidungen getroffen werden. In einer Rundmail war daraus der Satz geworden, es dürfe kein Objekt mehr ausgeliehen werden. Damit ging die entscheidende Einschränkung ohne Zustandsprotokoll verloren. Die neue Mitteilung musste den Geltungsbereich des Verbots ebenso klar wie seinen dokumentationsbezogenen Vorbehalt wiedergeben, ohne sich zu einer pauschalen Dauersperre zu steigern."
+      },
+      {
+        "id": "p2",
+        "text": "Die nächste Passage beschrieb die Beratung, die einer einzelnen Leihentscheidung vorausging. Nach einer älteren Darstellung schien allein die kuratorische Sicht berücksichtigt worden zu sein. Die neue Version korrigierte dies: „Nicht nur die Kuratorinnen, sondern auch die Restauratoren wurden angehört.“ Die koordinierte Konstruktion stellte zwei ausdrücklich beteiligte Gruppen nebeneinander und erweiterte die Darstellung der Anhörung. Sie setzte aber weder voraus, beide Gruppen hätten dieselbe Entscheidungskompetenz, noch, ihre Einschätzungen seien in jedem Fall übereinstimmend ausgefallen. Eine verkürzte Pressemitteilung, die von einer gemeinsamen Zustimmung aller Fachabteilungen sprach, ginge über den tatsächlichen Inhalt hinaus. Zwischen Anhörung, Mitwirkung und abschließender Freigabe musste klar unterschieden werden."
+      },
+      {
+        "id": "p3",
+        "text": "Im letzten Abschnitt wurde ein unerwartetes Problem bei der technischen Bestandsaufnahme beschrieben. Für nicht erfasste Objekte hatte man mit zusätzlichen Nachfragen gerechnet, während katalogisierte Stücke als vergleichsweise gut dokumentiert galten. Dennoch lautete der Befund: „Ausgerechnet die bereits katalogisierten Stücke waren schwer zuzuordnen.“ Das Adverb fokussierte die Überraschung darüber, welche Gruppe Schwierigkeiten verursachte. Es behauptete nicht, jedes katalogisierte Objekt sei betroffen, und es machte auch keine systematische Aussage über die Fehlerquote nicht katalogisierter Stücke. Eine Fachredaktion wollte aus dem Satz eine grundlegende Untauglichkeit des gesamten Katalogsystems ableiten. Die Arbeitsgruppe widersprach: Der Satz beschrieb eine unerwartete Konstellation einzelner untersuchter Fälle, keine allgemein gültige Rangliste aller Bestandsgruppen."
+      }
+    ],
+    "scopes": [
+      {
+        "id": "s1",
+        "paragraphId": "p1",
+        "particle": "Universeller Negationsskopus",
+        "quote": "Kein einziges Objekt aus dem Depot durfte ohne Zustandsprotokoll verliehen werden.",
+        "question": "Was genau untersagt die Formulierung kein einziges ohne Protokoll?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Für alle Depotobjekte ist eine Ausleihe ohne Zustandsprotokoll untersagt; der Satz enthält kein generelles Leihverbot bei vorhandener Dokumentation."
+          },
+          {
+            "id": "B",
+            "text": "Depotobjekte dürfen unter keinen Umständen ausgeliehen werden; selbst ein vollständiges Zustandsprotokoll kann daran nichts ändern."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Kein einziges quantifiziert ausnahmslos über die Depotobjekte, während ohne Zustandsprotokoll die untersagte Situation spezifiziert.",
+        "trap": "Das Weglassen der ohne-Bedingung verwandelt ein ausnahmslos geltendes Dokumentationserfordernis in ein unzulässig generelles Ausleihverbot."
+      },
+      {
+        "id": "s2",
+        "paragraphId": "p2",
+        "particle": "Additive Koordination",
+        "quote": "Nicht nur die Kuratorinnen, sondern auch die Restauratoren wurden angehört.",
+        "question": "Welche Aussage über Beteiligung folgt aus nicht nur ... sondern auch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Beide ausdrücklich genannten Gruppen wurden angehört; daraus folgt weder Einigkeit noch identische Entscheidungskompetenz."
+          },
+          {
+            "id": "B",
+            "text": "Kuratorinnen wurden ausdrücklich ausgeschlossen und nur Restauratoren durften die verbindliche Entscheidung treffen."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Koordination fügt eine weitere betroffene Gruppe zur ersten hinzu, während die Qualität und Verbindlichkeit ihrer Stellungnahmen unbestimmt bleiben.",
+        "trap": "Angehört worden zu sein ist nicht logisch identisch mit zugestimmt zu haben oder rechtsverbindlich entschieden zu haben."
+      },
+      {
+        "id": "s3",
+        "paragraphId": "p3",
+        "particle": "Überraschungsfokus ausgerechnet",
+        "quote": "Ausgerechnet die bereits katalogisierten Stücke waren schwer zuzuordnen.",
+        "question": "Was wird durch ausgerechnet markiert, ohne mitbehauptet zu werden?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine angesichts der Erwartungen überraschende betroffene Gruppe wird hervorgehoben, nicht die Vollständigkeit oder Häufigkeit aller denkbaren Fehler."
+          },
+          {
+            "id": "B",
+            "text": "Die Formulierung beweist, dass jedes katalogisierte Objekt fehlerhaft erfasst war und nicht katalogisierte Stücke stets problemlos zuzuordnen waren."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Ausgerechnet hebt hervor, dass gerade eine zuvor als unproblematisch erwartete Gruppe auffällig wurde; die genaue Verteilung bleibt unerwähnt.",
+        "trap": "Die pragmatische Erwartungsabweichung allein erlaubt keine Totalaussage über alle Objekte oder über die Gegenkategorie."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M30 original German fictional focus/negation scope authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Neu verfasste fiktive zusammenhängende Fachtexte; keine Übernahme externer Werke; unabhängig redaktionell unbegutachtet"
+    }
+  }
+]

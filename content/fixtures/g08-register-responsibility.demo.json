@@ -1,0 +1,150 @@
+[
+  {
+    "id": "SG-G08R-001",
+    "version": 1,
+    "domain": "G08",
+    "band": "C1",
+    "title": "Dienstliche Absage und kooperative Anschlussfähigkeit",
+    "focus": "Pragmatische Verantwortungsübernahme, höfliche Bestimmtheit und adressatenorientierte Registerwahl",
+    "paragraphs": [
+      {
+        "id": "SG-G08R-001-P1",
+        "text": "Ein städtischer Lesesaal hatte für November eine offene Schreibwerkstatt angekündigt. Nach der Anmeldung stellte sich heraus, dass die angekündigte Gebärdensprachdolmetschung wegen eines kurzfristigen Personalengpasses nicht bereitgestellt werden konnte. Die Veranstaltungsleitung wollte die Anmeldung nicht einfach stornieren, weil die betroffene Person bereits eine Zugreise gebucht hatte."
+      },
+      {
+        "id": "SG-G08R-001-P2",
+        "text": "Die interne Notiz lautete: „Wir können die Teilnahme unter den angekündigten Bedingungen nicht gewährleisten.“ Zugleich war vermerkt, dass eine schriftliche Echtzeitübertragung mit Einwilligung der betroffenen Person geprüft werden könne. Eine Mitarbeiterin schlug vor, die Absage mit dem Satz „Leider ist Ihre Teilnahme nicht möglich“ zu beginnen. Die Teamleitung hielt diese Formulierung für zu endgültig und sachlich unzutreffend."
+      },
+      {
+        "id": "SG-G08R-001-P3",
+        "text": "Die Antwort sollte den Mangel klar benennen, keine nicht zugesagte Ersatzleistung versprechen und die betroffene Person weder zur Rechtfertigung ihrer Bedürfnisse auffordern noch auf eine unbestimmte Zukunft vertrösten. Ein konkretes Gesprächsangebot war zulässig, sofern die Entscheidung über die Ersatzform ausdrücklich bei der betroffenen Person blieb."
+      }
+    ],
+    "anchor": {
+      "paragraphId": "SG-G08R-001-P2",
+      "quote": "Wir können die Teilnahme unter den angekündigten Bedingungen nicht gewährleisten."
+    },
+    "task": "Formuliere eine adressatengerechte Absage mit überprüfbarem Grund, begrenztem Angebot und klarer Entscheidungshoheit der betroffenen Person.",
+    "transfer": "Schreibe anschließend eine neue, eigenständige Fassung für eine andere Adressatengruppe und begründe mindestens zwei registerbezogene Entscheidungen.",
+    "revision": "Überarbeite die vollständige Fassung nach einer kritischen Rückmeldung. Dokumentiere konkret, welche Implikationen du verändert hast und welche Tatsachen unverändert bleiben.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "newly authored fictional dossier"
+    }
+  },
+  {
+    "id": "SG-G08R-002",
+    "version": 1,
+    "domain": "G08",
+    "band": "C2",
+    "title": "Wissenschaftlicher Dissens ohne verdeckte Herabsetzung",
+    "focus": "Pragmatische Verantwortungsübernahme, höfliche Bestimmtheit und adressatenorientierte Registerwahl",
+    "paragraphs": [
+      {
+        "id": "SG-G08R-002-P1",
+        "text": "In einer interdisziplinären Forschungsgruppe wurde ein Bericht zur Nutzung eines städtischen Grünstreifens diskutiert. Das Projektteam hatte Interviews mit zwölf freiwillig teilnehmenden Anwohnerinnen und Anwohnern geführt und daraus Empfehlungen für die künftige Wegführung abgeleitet. Eine externe Gutachterin erkannte den Wert der Interviews an, bezweifelte aber die Reichweite der Schlussfolgerungen."
+      },
+      {
+        "id": "SG-G08R-002-P2",
+        "text": "Im Entwurf der Stellungnahme stand: „Die Behauptung einer repräsentativen Präferenz lässt sich aus dem Material nicht ableiten.“ Die Projektleitung empfand das Wort Behauptung als persönlichen Angriff und wollte stattdessen schreiben, die Studie sei „interessant, aber methodisch etwas unvollständig“. Die Gutachterin wies darauf hin, dass eine solche Abschwächung den konkreten methodischen Einwand verschleiere."
+      },
+      {
+        "id": "SG-G08R-002-P3",
+        "text": "Beide Seiten einigten sich darauf, zwischen der Qualität der erhobenen Einzelfälle und dem Anspruch auf eine Aussage über die gesamte Nachbarschaft zu unterscheiden. Die Stellungnahme sollte die Schlussfolgerung präzise begrenzen, ohne die Interviews abzuwerten oder den Autorinnen und Autoren mangelnde Sorgfalt zu unterstellen."
+      }
+    ],
+    "anchor": {
+      "paragraphId": "SG-G08R-002-P2",
+      "quote": "Die Behauptung einer repräsentativen Präferenz lässt sich aus dem Material nicht ableiten."
+    },
+    "task": "Schreibe eine fachliche Erwiderung, die den überprüfbaren Geltungsbereich der Befunde würdigt und die unzulässige Generalisierung deutlich zurückweist.",
+    "transfer": "Schreibe anschließend eine neue, eigenständige Fassung für eine andere Adressatengruppe und begründe mindestens zwei registerbezogene Entscheidungen.",
+    "revision": "Überarbeite die vollständige Fassung nach einer kritischen Rückmeldung. Dokumentiere konkret, welche Implikationen du verändert hast und welche Tatsachen unverändert bleiben.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "newly authored fictional dossier"
+    }
+  },
+  {
+    "id": "SG-G08R-003",
+    "version": 1,
+    "domain": "G08",
+    "band": "C1",
+    "title": "Nachforderung ohne Vorwurf und ohne Scheinsicherheit",
+    "focus": "Pragmatische Verantwortungsübernahme, höfliche Bestimmtheit und adressatenorientierte Registerwahl",
+    "paragraphs": [
+      {
+        "id": "SG-G08R-003-P1",
+        "text": "Eine kleine Kulturinitiative beantragte die Nutzung eines öffentlichen Raums. Die Verwaltung bestätigte den Eingang, stellte jedoch fest, dass die im Formular genannte verantwortliche Person nicht mit der unterschreibenden Person übereinstimmte. Ob dies auf einen Übertragungsfehler oder eine Änderung der Zuständigkeit zurückging, war noch ungeklärt."
+      },
+      {
+        "id": "SG-G08R-003-P2",
+        "text": "Ein erster Briefentwurf enthielt den Satz: „Sie haben widersprüchliche Angaben gemacht und müssen diese umgehend korrigieren.“ Die Sachbearbeitung konnte allerdings nicht ausschließen, dass die Abweichung durch eine ältere Formularversion verursacht worden war. Außerdem war die beantragte Nutzung noch nicht entschieden; die Klärung der Zuständigkeit war lediglich ein notwendiger Zwischenschritt."
+      },
+      {
+        "id": "SG-G08R-003-P3",
+        "text": "Die Teamleitung bat um eine neue Nachricht, die den konkreten Unterschied nachvollziehbar beschreibt, eine einfache Rückmeldung ermöglicht und keine bereits feststehende Schuld oder Ablehnung suggeriert. Eine Frist sollte nur als organisatorische Bitte bezeichnet werden, solange keine verbindliche Rechtsgrundlage dafür geprüft war."
+      }
+    ],
+    "anchor": {
+      "paragraphId": "SG-G08R-003-P2",
+      "quote": "Sie haben widersprüchliche Angaben gemacht und müssen diese umgehend korrigieren."
+    },
+    "task": "Verfasse eine Nachforderung mit sachlicher Fehlerbeschreibung, konditionaler Bitte und klarer Trennung von Klärung und Entscheidung.",
+    "transfer": "Schreibe anschließend eine neue, eigenständige Fassung für eine andere Adressatengruppe und begründe mindestens zwei registerbezogene Entscheidungen.",
+    "revision": "Überarbeite die vollständige Fassung nach einer kritischen Rückmeldung. Dokumentiere konkret, welche Implikationen du verändert hast und welche Tatsachen unverändert bleiben.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "newly authored fictional dossier"
+    }
+  },
+  {
+    "id": "SG-G08R-004",
+    "version": 1,
+    "domain": "G08",
+    "band": "C2",
+    "title": "Öffentliche Korrektur ohne rhetorische Ausflucht",
+    "focus": "Pragmatische Verantwortungsübernahme, höfliche Bestimmtheit und adressatenorientierte Registerwahl",
+    "paragraphs": [
+      {
+        "id": "SG-G08R-004-P1",
+        "text": "Ein kommunales Projektbüro hatte in einem Newsletter geschrieben, die neue Fahrradabstellanlage werde „für alle Pendelnden ab Montag verfügbar“ sein. Zwei Tage später wurde bekannt, dass die Zugangssteuerung zunächst nur mit bereits ausgegebenen Berechtigungskarten funktionierte. Die Zahl der betroffenen Personen war nicht ermittelt worden."
+      },
+      {
+        "id": "SG-G08R-004-P2",
+        "text": "Der Kommunikationsentwurf lautete: „Sollte es vereinzelt zu Unannehmlichkeiten gekommen sein, bedauern wir dies.“ Die Formulierung verschob die tatsächlich bekannte Einschränkung in eine hypothetische Möglichkeit. Zugleich schlug ein Kollege vor, pauschal zu versprechen, dass alle Zugänge innerhalb von 24 Stunden freigeschaltet würden; dafür lag keine belastbare Zusage der Technik vor."
+      },
+      {
+        "id": "SG-G08R-004-P3",
+        "text": "Die Leitung verlangte eine öffentliche Richtigstellung, die die frühere Aussage ausdrücklich korrigiert, die bestätigte Zugangsbeschränkung benennt und die noch offenen Punkte als offen kennzeichnet. Der Ton sollte Verantwortung übernehmen, ohne einzelne Mitarbeitende bloßzustellen oder eine nicht verifizierte Frist zu nennen."
+      }
+    ],
+    "anchor": {
+      "paragraphId": "SG-G08R-004-P2",
+      "quote": "Sollte es vereinzelt zu Unannehmlichkeiten gekommen sein, bedauern wir dies."
+    },
+    "task": "Verfasse eine transparente Korrektur mit eindeutiger Verantwortungsübernahme, belegter Einschränkung und begrenztem Ausblick.",
+    "transfer": "Schreibe anschließend eine neue, eigenständige Fassung für eine andere Adressatengruppe und begründe mindestens zwei registerbezogene Entscheidungen.",
+    "revision": "Überarbeite die vollständige Fassung nach einer kritischen Rückmeldung. Dokumentiere konkret, welche Implikationen du verändert hast und welche Tatsachen unverändert bleiben.",
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "newly authored fictional dossier"
+    }
+  }
+]
