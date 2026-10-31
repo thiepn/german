@@ -18,7 +18,7 @@ async function run(width){
   await p.getByRole('button',{name:'Zurück zur Übersicht'}).click();
   await p.getByRole('button',{name:'Heute',exact:true}).first().click();
   await p.getByRole('heading',{name:'Zuletzt bearbeitet'}).waitFor();
-  await p.locator('.today-continuation').getByRole('button',{name:/Satzlabor/}).click();
+  await p.locator('.today-continuation').getByRole('button',{name:/^Fortsetzen:/}).click();
   await p.getByRole('heading',{name:'Formulieren und überarbeiten'}).waitFor();
   assert.equal(await p.locator('#productionPrompt').inputValue(),'SG-P04-001');
   await p.getByText(first).first().waitFor();
