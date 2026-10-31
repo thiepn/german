@@ -59,7 +59,7 @@ export function validateM37(packet,{source=read,queue=collect()}={}){
   assert(/^content\/fixtures\/[a-z0-9-]+\.demo\.json$/.test(sourcePath),'source path outside original fixture pack');
   const studies=source(sourcePath),study=studies.find(s=>s.id===studyId);
   assert(study&&study.version===version&&study.domain===domain&&study.band===band,'source ID/version/skill mismatch '+id);
-  assert(study.status==='DEMO_ONLY'&&study.authorship==='AI_DRAFT'&&study.editorialApproval===false&&study.reviewedBy===null,'source changed review state '+id);
+  assert(study.status==='DEMO_ONLY'&&(study.authorship==='AI_DRAFT'||/^SG_AI_DRAFT/.test(study.author??''))&&study.editorialApproval===false&&study.reviewedBy===null,'source changed review state '+id);
   assert(study.rights?.kind==='ORIGINAL_DRAFT'&&study.rights.source?.trim().length>=20,'source rights provenance missing '+id);
   const key=CHILD_KEYS.find(k=>Array.isArray(study[k])&&study[k].some(x=>x.id===anchorId));
   assert(key,'anchored learning task missing '+id);
