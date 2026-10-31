@@ -52,9 +52,11 @@ test('M36 deleted/missing source data remains findable as historical work, not s
  const historical:ProductionEntry={id:relativeId(relativeStudies[0].id),kind:'RELATIVE_STUDY',itemId:relativeStudies[0].id,
  itemVersion:999,sourceId:relativeStudies[0].id,createdAt:at+500,original:'Historischer eigener Text mit einer nicht mehr lieferbaren Quellenversion.',
  revisions:[],evaluated:'UNASSESSED'};
- const rows=recentWork([historical]);assert.equal(rows.length,1);
+ const rows=archiveRows([historical],{kind:'ALL',activity:'ALL',period:'ALL',search:'',now:Date.now()});assert.equal(rows.length,1);
  assert.equal(rows[0].entry,historical);assert.equal(rows[0].kind,'G02_RELATIVE');
- assert.equal(rows[0].entry.itemVersion,999);assert.match(rows[0].context,/nicht mehr im Entwurfskatalog/);
+ assert.equal(rows[0].entry.itemVersion,999);assert.match(rows[0].context,/Quellenversion nicht verfügbar/);
+ assert.equal(rows[0].title,'Historischer Entwurf ('+historical.itemId+' · v999)');
+ assert.deepEqual(recentWork([historical]),[],'Historische nicht verfügbare Quelle bleibt im Archiv, aber darf nicht irreführend fortgesetzt werden');
 });
 test('M36 continuation selection is read-only and never modifies eight-store or historical entries',()=>{
  const a=oral(),b=writing(),before=JSON.stringify([a,b]);

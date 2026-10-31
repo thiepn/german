@@ -5,6 +5,7 @@
 1. Die Bereiche **Heute** und **Lernen** pflegten jeweils selbstständig **30** identische G01–G13-Studioziele und voneinander abweichende Labels in langen JSX-Listen. Manuelle Erweiterungen hatten bereits zu zunehmend unübersichtlichen Seiten und anfälligen Pfadkopien geführt.
 2. Die **Schreibspuren** konnten die Originalquellen zwar korrekt tief verlinken, **Heute** und die einzelnen Curriculum-Karten boten aber nach dem Speichern keinen quellengenauen Wiederaufnahmeknopf. Nutzer mussten erst `Fortschritt → Schreibspuren → Filter → Eintrag → Originalen Lernbereich` durchlaufen.
 3. Der erste M36-Browserlauf reproduzierte eine Accessibility-/Selektor-Mehrdeutigkeit: Ein neuer Fortsetzen-Button erbte die Studiobezeichnung im zugänglichen Namen und kollidierte mit den bestehenden Schnelllinks. Abhilfe: explizite eindeutige zugängliche Bezeichnung `Fortsetzen: <Quelltitel>`, ohne die visuelle Beschreibung zu verstecken.
+4. Der erste umfassende M36-Node-Lauf reproduzierte die irreführende Archivzuordnung von G02/G12-Quellen mit unverändertem Item-ID, aber nicht mehr verfügbarer Item-Version. Die Versionsauflösung zeigt für diese Fälle jetzt einen historischen Eintrag mit Hinweis auf fehlende Originalquelle; die Fortsetzen-Liste schließt diesen Eintrag aus, während die Schreibspur weiterhin archiviert bleibt.
 
 ## Implementierte Konsolidierung
 
