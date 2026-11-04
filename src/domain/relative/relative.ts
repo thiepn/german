@@ -1,5 +1,6 @@
 import raw from '../../../content/fixtures/g02-relative.demo.json';
 import type {ProductionEntry,ProductionRevision} from '../production/types';
+import {sourceEntryId,matchesSourceEntry,exactSourceForEntry} from '../content/sourceIdentity';
 
 export type RelativeChoice='A'|'B';
 export type RelativePoint={
@@ -17,10 +18,10 @@ export type RelativeEvidence={
  transformation:string;counterreading:string;syntaxEvidence:string;boundary:string;initial:boolean;
 };
 export const relativeStudies:RelativeStudy[]=raw as RelativeStudy[];
-export const relativeId=(id:string)=>'relative:'+id;
-export const isRelativeEntry=(e:ProductionEntry):boolean=>e.kind==='RELATIVE_STUDY'&&e.id===relativeId(e.itemId);
+export const relativeId=(id:string,version=1)=>sourceEntryId('relative',id,version);
+export const isRelativeEntry=(e:ProductionEntry):boolean=>matchesSourceEntry(e,'RELATIVE_STUDY','relative');
 export const relativeSource=(e:ProductionEntry):RelativeStudy|null=>
- isRelativeEntry(e)?relativeStudies.find(s=>s.id===e.itemId&&s.id===e.sourceId&&s.version===e.itemVersion)??null:null;
+ isRelativeEntry(e)?exactSourceForEntry(e,relativeStudies):null;
 const ALT='\n\nFalsche Kasuszuordnung:\n',CONTEXT='\n\nSatzinterne Begründung:\n',LIMIT='\n\nNicht gedeckter Rollenwechsel:\n';
 const markers=[ALT,CONTEXT,LIMIT];
 const norm=(x:string)=>x.trim().replace(/\s+/g,' ').toLocaleLowerCase('de-DE');
@@ -49,7 +50,7 @@ export function independentRelative(p:RelativePoint,transformation:string,counte
 export function beginRelative(s:RelativeStudy,pointId:string,choice:RelativeChoice,transformation:string,counterreading:string,syntaxEvidence:string,boundary:string,at:number):ProductionEntry{
  const source=relativeStudies.find(x=>x.id===s.id&&x.version===s.version),p=source?.anchors[0];
  if(!p||p.id!==pointId||!isChoice(p,choice)||!independentRelative(p,transformation,counterreading,syntaxEvidence,boundary)||!Number.isFinite(at))throw Error('Eigenständige Relativerekonstruktion, Gegenlesart, Quellenbeleg und Grenze erforderlich.');
- return {id:relativeId(s.id),kind:'RELATIVE_STUDY',itemId:s.id,itemVersion:s.version,sourceId:s.id,
+ return {id:relativeId(s.id,s.version),kind:'RELATIVE_STUDY',itemId:s.id,itemVersion:s.version,sourceId:s.id,
   decisionId:p.id+'|'+choice+'|'+p.paragraphId,createdAt:at,original:encoded(transformation,counterreading,syntaxEvidence,boundary),revisions:[],evaluated:'UNASSESSED'};
 }
 export function firstRelative(e:ProductionEntry):RelativeEvidence|null{
@@ -102,6 +103,6 @@ export function relativeProgress(entries:readonly ProductionEntry[]){
   revised:rows.reduce((n,x)=>n+(x.e?.revisions.filter(r=>r.questionId==='REWRITE').length??0),0),total:relativeStudies.length};
 }
 export function nextRelativeStudy(entries:readonly ProductionEntry[]):RelativeStudy{
- return relativeStudies.find(s=>entries.some(e=>isRelativeEntry(e)&&e.itemId===s.id&&!e.revisions.some(r=>r.questionId==='TRANSFER')))||
- relativeStudies.find(s=>!entries.some(e=>isRelativeEntry(e)&&e.itemId===s.id))||relativeStudies[0];
+ return relativeStudies.find(s=>entries.some(e=>isRelativeEntry(e)&&e.itemId===s.id&&e.itemVersion===s.version&&!e.revisions.some(r=>r.questionId==='TRANSFER')))||
+ relativeStudies.find(s=>!entries.some(e=>isRelativeEntry(e)&&e.itemId===s.id&&e.itemVersion===s.version))||relativeStudies[0];
 }
