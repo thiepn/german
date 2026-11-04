@@ -19,7 +19,8 @@
     "audit:m40": "node scripts/content/releaseBoundary.mjs --summary",
     "test:cross-browser": "node tests/e2e/m40-cross-browser.mjs",
     "test:offline-upgrade": "node tests/e2e/m40-offline-upgrade.mjs",
-    "audit:m41": "node scripts/content/m41Qualification.mjs --markdown"
+    "audit:m41": "node scripts/content/m41Qualification.mjs --markdown",
+    "test:rollback": "node tests/e2e/m41-offline-rollback.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

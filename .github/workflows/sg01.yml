@@ -62,3 +62,20 @@ jobs:
         run: |
           npx vite preview --host 127.0.0.1 --port 4173 > /tmp/sprachgefuehl-m40-offline.log 2>&1 &
           npm run test:offline-upgrade
+
+  rollback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-package-lock --no-audit --no-fund
+      - name: Build exact-HEAD app and stamped SW
+        run: npm run build
+      - name: Install real Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run genuine two-bundle worker upgrade and rollback test
+        run: npm run test:rollback
