@@ -24,6 +24,15 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 self.addEventListener('fetch',event=>{
  const request=event.request;if(request.method!=='GET'||new URL(request.url).origin!==self.location.origin)return;
  event.respondWith((async()=>{const cache=await caches.open(CACHE);const path=new URL(request.url).pathname;
+ // Shell navigation MUST use this active worker's own index, not a stale
+ // network/HTTP-cached prior build after upgrade or rollback. Limit this
+ // to exact scoped root/index routes: never intercept other origin routes.
+ const appRoot=new URL(self.registration.scope).pathname;
+ const shellIndex=new URL('./index.html',self.registration.scope).pathname;
+ if(request.mode==='navigate'&&(path===appRoot||path===shellIndex)){
+  const shell=await cache.match('./index.html',{ignoreVary:true});
+  if(shell)return shell;
+ }
  // Only content-hashed static JS/CSS can bypass Vary mismatches after a worker update.
  // All other requests keep strict Cache API matching to avoid wrong response variants.
  const immutableShellAsset=/\/assets\/[^/]+\.(?:js|css)$/.test(path);

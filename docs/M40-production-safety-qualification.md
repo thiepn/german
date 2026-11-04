@@ -40,3 +40,7 @@ Focus on real independent editorial approval of the 26-source packet, precise ac
 
 ## M41 reproduced two-build rollback risk
 A real Chromium A→B test using distinct bundle filenames reproduced an obsolete HTML response after B activation despite a new cache namespace. The install handler previously fetched the index with `cache:no-store` only to read asset names, then performed a second independent `cache.addAll` fetch for `./` and `./index.html`. M41 now stores the exact initially-fetched index under both shell routes, avoiding a second HTML request that could mix versions. Static JS/CSS remain no-store pre-cached by their build-specific paths. No learner DB modifications, rights gates or releases. **This mitigation is unqualified until the full exact-head CI—including actual A→B→A rollback—passes.**
+
+## M41 confirmed worker/navigation mismatch and bounded fix
+- Exact A→B browser trace at Actions #41842316278: new worker controlled the page, active B cache included B's correct `index.html`, JS and CSS, and `response.fromServiceWorker()===true`; however navigation HTTP 200 returned old A HTML. This is a reproduced cross-build mismatch, not an invented possibility.
+- M41 now serves the **currently active worker's exact pre-cached `index.html` for scoped root/index navigation**, using `ignoreVary:true`. This is restricted to the worker scope root and `index.html`, not arbitrary routes; hashed static asset matching remains scoped as before. Re-run real A→B→A rollback and existing cross-engine/full Chromium tests at exact new HEAD before claiming PASS.
