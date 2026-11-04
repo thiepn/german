@@ -25,8 +25,13 @@ test('M38 exact historical v1 sources remain untouched and version-two drafts ar
   assert.equal(source.version,1);
   assert.equal(r.draftV2.version,2);
   assert.equal(r.draftV2.status,'DEMO_ONLY');
-  assert.equal(r.draftV2.editorialApproval,false);
-  assert.equal(r.draftV2.reviewedBy,null);
+  if(r.id.startsWith('SG-M05-')){
+   assert.equal(r.draftV2.editorial?.reviewedBy,undefined);
+   assert.equal(r.draftV2.editorial?.reviewId,undefined);
+  }else{
+   assert.equal(r.draftV2.editorialApproval,false);
+   assert.equal(r.draftV2.reviewedBy,null);
+  }
  }
 });
 test('M38 corrects G02 model and both G06 semantic answer reversals in non-runtime v2 drafts',()=>{

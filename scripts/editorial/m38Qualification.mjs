@@ -60,7 +60,8 @@ export function validateM38({load=read}={}){
   const legacy=load(r.source).find(s=>s.id===r.id&&s.version===1);
   assert(legacy&&JSON.stringify(legacy)===JSON.stringify(r.legacyV1),'historical v1 changed or proposal baseline drift '+r.id);
   assert(!load(r.source).some(s=>s.id===r.id&&s.version===2),'version two unexpectedly activated in current runtime '+r.id);
-  assert(r.draftV2.id===r.id&&r.draftV2.version===2&&r.draftV2.status==='DEMO_ONLY'&&r.draftV2.editorialApproval===false&&r.draftV2.reviewedBy===null&&r.draftV2.rights.kind==='ORIGINAL_DRAFT','draft v2 claims unearned approval '+r.id);
+  const independentlyUnapproved=r.id.startsWith('SG-M05-') ? !r.draftV2.editorial?.reviewedBy && !r.draftV2.editorial?.approved && !r.draftV2.editorial?.reviewId : r.draftV2.editorialApproval===false&&r.draftV2.reviewedBy===null;
+  assert(r.draftV2.id===r.id&&r.draftV2.version===2&&r.draftV2.status==='DEMO_ONLY'&&independentlyUnapproved&&r.draftV2.rights.kind==='ORIGINAL_DRAFT','draft v2 claims unearned approval '+r.id);
   const paths=r.operations.map(op=>op.path.join('.'));
   assert(JSON.stringify([...paths].sort())===JSON.stringify([...expectedFixes[r.id]].sort()),'unreviewed changed-field scope '+r.id);
   const expected=copy(legacy);expected.version=2;
