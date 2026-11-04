@@ -30,6 +30,8 @@ export function qualifyM41({boundary=auditSourceBoundary(),review=inspectM39(),m
   if(!groups.has(group))groups.set(group,[]);
   groups.get(group).push({...ref,group});
  }
+ // A domain with zero direct imports is NOT a rights-cleared release domain.
+ for(let i=1;i<=13;i++){const key='G'+String(i).padStart(2,'0');if(!groups.has(key))groups.set(key,[])}
  const rows=[...groups].sort((a,b)=>a[0].localeCompare(b[0])).map(([domain,imports])=>({
   domain,imports,qualifiedSourceVersionCount:0,rightsApproved:false,independentEditorialApproved:false,
   cefrPerformanceQualified:false,releaseDecision:'NO_GO'

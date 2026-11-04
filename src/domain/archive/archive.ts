@@ -41,7 +41,9 @@ export type ArchiveQuery={kind:ArchiveFilter;activity:ArchiveActivity;period:Arc
 const lookup=(id:string, list:readonly {id:string;title?:string;objective?:string}[])=>list.find(x=>x.id===id);
 export function archiveKind(entry:ProductionEntry):ArchiveKind{
  if(isOralEntry(entry))return 'G12_ORAL';
- if(isRelativeEntry(entry))return 'G02_RELATIVE';
+ // Legacy records from pre-M41 can retain a v1-shaped ID with a now-missing
+ // itemVersion. Keep their category for read-only archive, never resolve v1 source.
+ if(isRelativeEntry(entry)||(entry.kind==='RELATIVE_STUDY'&&entry.id==='relative:'+entry.itemId))return 'G02_RELATIVE';
  if(isDeixisEntry(entry))return 'G01_DEIXIS';
  if(isRelationEntry(entry))return 'G04_RELATION';
  if(isAttachmentEntry(entry))return 'G03_ATTACHMENT';
@@ -57,7 +59,7 @@ export function archiveKind(entry:ProductionEntry):ArchiveKind{
  if(isCompressionEntry(entry))return 'G04_COMPRESSION';
  if(isCrossEntry(entry))return 'G09_CROSS_SOURCE';
  if(isStanceEntry(entry))return 'G08_STANCE';
- if(isPolysemyEntry(entry))return 'G06_POLYSEMY';
+ if(isPolysemyEntry(entry)||(entry.kind==='POLYSEMY_STUDY'&&entry.id==='polysemy:'+entry.itemId))return 'G06_POLYSEMY';
  if(isPhraseologyEntry(entry))return 'G07_PHRASEOLOGY';
  if(isReferenceEntry(entry))return 'G01_REFERENCE';
  if(isFocusEntry(entry))return 'G04_FOCUS';

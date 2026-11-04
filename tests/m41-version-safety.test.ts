@@ -51,6 +51,9 @@ test('M41 both v1 source records resolve exactly and future-v2 only fake records
  assert.equal(exactSourceForEntry({...a,sourceId:'wrong'},relativeStudies),null);
  assert.equal(isRelativeEntry({...v2rel,id:relativeId(rs.id)}),false);
  assert.equal(isPolysemyEntry({...v2poly,id:polysemyEntryId(ps.id)}),false);
+ // Historical legacy-shaped IDs remain discoverable, never misresolved to v1.
+ assert.equal(archiveKind({...v2rel,id:relativeId(rs.id)}),'G02_RELATIVE');
+ assert.equal(archiveKind({...v2poly,id:polysemyEntryId(ps.id)}),'G06_POLYSEMY');
 });
 test('M41 old M05 answer and explanation must never come from current same-ID version',()=>{
  const item=allItems.find(x=>x.id==='SG-M05-036')!;
