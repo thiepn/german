@@ -99,7 +99,7 @@ export function renderM38ReviewPacket(result=validateM38()){
    'Verbatim quote: '+clean(c.task.quote),'Question: '+clean(c.task.question??c.task.prompt??c.task.instruction??'UNASSESSED ORAL TASK'),
    'Stored author-preferred ID (NOT verified): '+clean(c.task.preferredId??'NONE — ungraded'),'');
   if(c.task.options)for(const o of c.task.options)out.push('Option '+o.id+': '+clean(o.text));
-  for(const k of ['alternate','model','trap','explanation','repairPrompt','action','boundary','clarified'])if(c.task[k])out.push('Draft '+k+': '+clean(c.task[k]));
+  for(const k of ['phenomenon','family','lemma','speaker','goal','anchor','limit','transfer','alternate','model','trap','explanation','repairPrompt','action','boundary','clarified'])if(c.task[k])out.push('Draft '+k+': '+clean(c.task[k]));
   out.push('','### Reviewer fields — intentionally blank','',
    '- Reviewer identity / organization: __________________',
    '- Independent of source author? Evidence: __________________',
