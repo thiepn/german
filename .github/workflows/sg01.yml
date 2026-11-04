@@ -24,3 +24,22 @@ jobs:
         run: |
           npx vite preview --host 127.0.0.1 --port 4173 > /tmp/sprachgefuehl-vite.log 2>&1 &
           npm run test:browser
+
+  cross-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-package-lock --no-audit --no-fund
+      - name: Qualify source and build
+        run: npm run check
+      - name: Install genuine Firefox and WebKit engines
+        run: npx playwright install --with-deps firefox webkit
+      - name: Firefox and WebKit desktop/mobile storage and learning smoke
+        run: |
+          npx vite preview --host 127.0.0.1 --port 4173 > /tmp/sprachgefuehl-crossbrowser.log 2>&1 &
+          npm run test:cross-browser

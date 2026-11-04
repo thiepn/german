@@ -1,4 +1,4 @@
-const CACHE='sprachgefuehl-shell-0.1';
+const CACHE='sprachgefuehl-shell-__SG_BUILD_FINGERPRINT__';
 const APP_SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 function bundledAssets(html){
  const assets=[];
