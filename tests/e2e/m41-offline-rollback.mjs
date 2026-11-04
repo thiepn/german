@@ -49,7 +49,8 @@ const errors=[];page.on('pageerror',e=>errors.push(e.message));
 async function waitCache(expected,old){
  await page.waitForFunction(async({expected,old})=>{
   const keys=(await caches.keys()).filter(k=>k.startsWith('sprachgefuehl-shell-'));
-  return keys.length===1&&keys[0]===expected&&!keys.includes(old)&&!!navigator.serviceWorker?.controller;
+  return keys.length===1&&keys[0]===expected&&!keys.includes(old)&&!!navigator.serviceWorker?.controller&&
+   (!window.__m41PriorController||navigator.serviceWorker.controller!==window.__m41PriorController);
  },{expected,old},{timeout:30000});
 }
 async function snapshot(){
@@ -70,6 +71,8 @@ async function assertOffline(expected,old,expectedSuffix){
  const cacheHtml=await page.evaluate(async name=>{const c=await caches.open(name),r=await c.match('./index.html');return r?await r.text():null},expected);
  const observed={build:serving,expectedSuffix,loadedB:html.includes('-m41b.js'),cachedB:cacheHtml?.includes('-m41b.js'),
    servedIndexB:readFileSync(join(serving==='A'?rootA:rootB,'index.html'),'utf8').includes('-m41b.js'),
+   controllerChanged:await page.evaluate(()=>navigator.serviceWorker.controller!==window.__m41PriorController),
+   cachedRequests:await page.evaluate(async name=>(await (await caches.open(name)).keys()).map(x=>x.url),expected),
    htmlSrc:html.match(/src="([^"]+\.js)"/)?.[1],cacheSrc:cacheHtml?.match(/src="([^"]+\.js)"/)?.[1]};
  console.log('M41 rollback diagnostic: '+JSON.stringify(observed));
  assert.equal(html.includes('-m41b.js'),expectedSuffix,'SW must load the build-specific script: '+JSON.stringify(observed));
@@ -84,11 +87,11 @@ try{
  const initial=await snapshot();
  assert.equal(initial.settings?.id,'local');assert.equal(initial.stores.length,8);
  serving='B';
- await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();if(!reg)throw Error('missing registration');await reg.update()});
+ await page.evaluate(async()=>{window.__m41PriorController=navigator.serviceWorker.controller;const reg=await navigator.serviceWorker.getRegistration();if(!reg)throw Error('missing registration');await reg.update()});
  const afterB=await assertOffline(buildB,buildA,true);
  assert.deepEqual(afterB,initial,'A→B must not change learner data or eight stores');
  serving='A';
- await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();if(!reg)throw Error('missing registration');await reg.update()});
+ await page.evaluate(async()=>{window.__m41PriorController=navigator.serviceWorker.controller;const reg=await navigator.serviceWorker.getRegistration();if(!reg)throw Error('missing registration');await reg.update()});
  const afterA=await assertOffline(buildA,buildB,false);
  assert.deepEqual(afterA,initial,'B→A rollback must not change learner data or eight stores');
  assert.deepEqual(errors,[],'no page exceptions during rollback');
