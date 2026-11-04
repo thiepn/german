@@ -43,3 +43,22 @@ jobs:
         run: |
           npx vite preview --host 127.0.0.1 --port 4173 > /tmp/sprachgefuehl-crossbrowser.log 2>&1 &
           npm run test:cross-browser
+
+  offline-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-package-lock --no-audit --no-fund
+      - name: Build exact-HEAD stamped offline shell
+        run: npm run build
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Real Chromium cache-upgrade and offline recovery regression
+        run: |
+          npx vite preview --host 127.0.0.1 --port 4173 > /tmp/sprachgefuehl-m40-offline.log 2>&1 &
+          npm run test:offline-upgrade

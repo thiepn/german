@@ -7,13 +7,20 @@ try{
  // Delay only the test page's first registration, so the legacy cache really
  // precedes a new install/activate event. No app or production worker is patched.
  await ctx.addInitScript(()=>{
+  // Preserve native registration after the one deliberately staged initial load.
+  if(location.origin!=='http://127.0.0.1:4173'||sessionStorage.getItem('m40-sw-deferred')==='1')return;
+  sessionStorage.setItem('m40-sw-deferred','1');
   const sw=navigator.serviceWorker;
   const nativeRegister=sw.register.bind(sw);
   sw.register=(...args)=>new Promise((resolve,reject)=>{
    window.__m40InstallNewWorker=()=>nativeRegister(...args).then(resolve,reject);
   });
  });
- const page=await ctx.newPage();await page.goto(url,{waitUntil:'networkidle'});
+ const page=await ctx.newPage();
+ const clientErrors=[];
+ page.on('pageerror',error=>clientErrors.push('pageerror: '+error.message));
+ page.on('requestfailed',request=>clientErrors.push('requestfailed: '+request.url()+' '+request.failure()));
+ await page.goto(url,{waitUntil:'networkidle'});
  await page.getByRole('button',{name:'Mit dem Lernen beginnen'}).click();
  const before=await page.evaluate(async()=>{
   const db=await new Promise((res,rej)=>{const q=indexedDB.open('sprachgefuehl-learning-v1',4);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)});
@@ -38,9 +45,25 @@ try{
  await page.waitForFunction(()=>!!navigator.serviceWorker.controller,null,{timeout:20000});
  const current=(await page.evaluate(()=>caches.keys())).filter(k=>/^sprachgefuehl-shell-[a-f0-9]{20}$/.test(k));
  assert.equal(current.length,1,'new build-fingerprinted shell installed; legacy shell removed by real activation');
+ const shell=await page.evaluate(async()=>{
+  const name=(await caches.keys()).find(k=>/^sprachgefuehl-shell-[a-f0-9]{20}$/.test(k));
+  const cache=await caches.open(name);
+  const index=await cache.match('./index.html');
+  if(!index)return {index:false,missing:['index.html']};
+  const html=await index.text();
+  const assets=[...html.matchAll(/(?:src|href)=\"([^\"]+)\"/g)].map(x=>x[1]).filter(x=>x.includes('/assets/')||x.startsWith('./assets/'));
+  const missing=[];for(const asset of assets)if(!await cache.match(asset))missing.push(asset);
+  return {index:true,assetCount:assets.length,missing};
+ });
+ assert.ok(shell.index&&shell.assetCount>0&&shell.missing.length===0,'offline shell and all assets were cached before disconnect: '+JSON.stringify(shell));
  await ctx.setOffline(true);
- await page.reload({waitUntil:'domcontentloaded'});
- await page.getByRole('navigation',{name:'Hauptnavigation'}).first().waitFor();
+ const response=await page.reload({waitUntil:'domcontentloaded'});
+ try{await page.getByRole('navigation',{name:'Hauptnavigation'}).first().waitFor({timeout:10000})}
+ catch(error){
+  const html=(await page.content()).slice(0,1500);
+  const details=await page.evaluate(async()=>({url:location.href,controller:!!navigator.serviceWorker?.controller,keys:await caches.keys()})).catch(e=>({error:String(e)}));
+  throw new Error('M40 offline reload failed: status='+response?.status()+' shell='+JSON.stringify(shell)+' details='+JSON.stringify(details)+' html='+html+' errors='+clientErrors.join(' | ')+' cause='+String(error));
+ }
  const after=await page.evaluate(async()=>{
   const db=await new Promise((res,rej)=>{const q=indexedDB.open('sprachgefuehl-learning-v1',4);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)});
   const stores=[...db.objectStoreNames];
