@@ -67,7 +67,12 @@ async function assertOffline(expected,old,expectedSuffix){
  assert.equal(nav?.status(),200,'offline navigation served from shell cache');
  await page.getByRole('navigation',{name:'Hauptnavigation'}).first().waitFor({timeout:15000});
  const html=await page.content();
- assert.equal(html.includes('-m41b.js'),expectedSuffix,'SW must load the build-specific script');
+ const cacheHtml=await page.evaluate(async name=>{const c=await caches.open(name),r=await c.match('./index.html');return r?await r.text():null},expected);
+ const observed={build:serving,expectedSuffix,loadedB:html.includes('-m41b.js'),cachedB:cacheHtml?.includes('-m41b.js'),
+   servedIndexB:readFileSync(join(serving==='A'?rootA:rootB,'index.html'),'utf8').includes('-m41b.js'),
+   htmlSrc:html.match(/src="([^"]+\.js)"/)?.[1],cacheSrc:cacheHtml?.match(/src="([^"]+\.js)"/)?.[1]};
+ console.log('M41 rollback diagnostic: '+JSON.stringify(observed));
+ assert.equal(html.includes('-m41b.js'),expectedSuffix,'SW must load the build-specific script: '+JSON.stringify(observed));
  await ctx.setOffline(false);
  return snapshot();
 }
