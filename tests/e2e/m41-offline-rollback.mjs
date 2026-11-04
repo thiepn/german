@@ -68,11 +68,15 @@ async function assertOffline(expected,old,expectedSuffix){
  assert.equal(nav?.status(),200,'offline navigation served from shell cache');
  await page.getByRole('navigation',{name:'Hauptnavigation'}).first().waitFor({timeout:15000});
  const html=await page.content();
+ const navResponse=await nav.text();
  const cacheHtml=await page.evaluate(async name=>{const c=await caches.open(name),r=await c.match('./index.html');return r?await r.text():null},expected);
  const observed={build:serving,expectedSuffix,loadedB:html.includes('-m41b.js'),cachedB:cacheHtml?.includes('-m41b.js'),
    servedIndexB:readFileSync(join(serving==='A'?rootA:rootB,'index.html'),'utf8').includes('-m41b.js'),
    controllerChanged:await page.evaluate(()=>navigator.serviceWorker.controller!==window.__m41PriorController),
    cachedRequests:await page.evaluate(async name=>(await (await caches.open(name)).keys()).map(x=>x.url),expected),
+   cachedRootSrc:await page.evaluate(async name=>{const c=await caches.open(name),r=await c.match('./',{ignoreVary:true});return (await r?.text())?.match(/src="([^"]+\.js)"/)?.[1]},expected),
+   navigationFromWorker:nav.fromServiceWorker(),navResponseStatus:nav.status(),
+   navigationResponseB:navResponse.includes('-m41b.js'),navigationResponseSrc:navResponse.match(/src="([^"]+\.js)"/)?.[1],
    htmlSrc:html.match(/src="([^"]+\.js)"/)?.[1],cacheSrc:cacheHtml?.match(/src="([^"]+\.js)"/)?.[1]};
  console.log('M41 rollback diagnostic: '+JSON.stringify(observed));
  assert.equal(html.includes('-m41b.js'),expectedSuffix,'SW must load the build-specific script: '+JSON.stringify(observed));
