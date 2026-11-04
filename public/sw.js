@@ -7,8 +7,16 @@ function bundledAssets(html){
 }
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const html=await fetch('./index.html',{cache:'no-store'});if(!html.ok)throw Error('offline shell unavailable');
- const assets=bundledAssets(await html.text());
- const cache=await caches.open(CACHE);await cache.addAll([...APP_SHELL,...assets]);await self.skipWaiting();
+ const htmlText=await html.text(),assets=bundledAssets(htmlText);
+ // Cache exactly the index fetched for THIS worker build; cache.addAll on
+ // shell HTML could re-fetch a previously installed index across upgrades.
+ const headers=new Headers(html.headers);headers.delete('vary');headers.delete('content-length');
+ const fresh=new Response(htmlText,{status:html.status,statusText:html.statusText,headers});
+ const cache=await caches.open(CACHE);
+ await cache.addAll(['./manifest.webmanifest','./icon.svg',...assets].map(url=>new Request(url,{cache:'no-store'})));
+ await cache.put('./index.html',fresh.clone());
+ await cache.put('./',fresh.clone());
+ await self.skipWaiting();
 })()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
  const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('sprachgefuehl-shell-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim();
