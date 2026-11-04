@@ -16,6 +16,7 @@ async function exercise(browserType,name,width){
   for(const store of ['attempts','cards','reviewEvents','settings','drafts','diagnosticSessions','productionEntries','missions'])assert.ok(stores.includes(store),name+' store '+store);
   assert.equal(stores.length,8,name+' must retain exactly eight stores');
   await p.getByRole('button',{name:'Jetzt trainieren'}).click();
+  await p.locator('.exercise input[required]').first().waitFor({state:'visible',timeout:20000});
   const fields=await p.locator('.exercise input[required]').all();
   assert.ok(fields.length>0,name+' objective exercise present');
   for(const f of fields)await f.fill('unpassend');
