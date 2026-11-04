@@ -15,7 +15,11 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 })()));
 self.addEventListener('fetch',event=>{
  const request=event.request;if(request.method!=='GET'||new URL(request.url).origin!==self.location.origin)return;
- event.respondWith((async()=>{const cache=await caches.open(CACHE);const cached=await cache.match(request);if(cached)return cached;
+ event.respondWith((async()=>{const cache=await caches.open(CACHE);const path=new URL(request.url).pathname;
+ // Only content-hashed static JS/CSS can bypass Vary mismatches after a worker update.
+ // All other requests keep strict Cache API matching to avoid wrong response variants.
+ const immutableShellAsset=/\/assets\/[^/]+\.(?:js|css)$/.test(path);
+ const cached=await cache.match(request,immutableShellAsset?{ignoreVary:true}:undefined);if(cached)return cached;
  try{const response=await fetch(request);if(response.ok&&response.type==='basic')await cache.put(request,response.clone());return response;}
  catch{if(request.mode==='navigate'){const fallback=await cache.match('./index.html');if(fallback)return fallback;}return new Response('Offline nicht verfügbar',{status:503});}})());
 });

@@ -31,3 +31,9 @@
 
 ## M41 only if M40 technical CI is fully green
 Focus on real independent editorial approval of the 26-source packet, precise accepted-alternatives adjudication, content ownership/rights evidence, and actual C1/C2 learner calibration. In parallel, prepare a version-aware source loader preserving historical entries, qualified approved-only content for every shipped G01–G13 studio, reversible offline cache upgrades, and independent physical-device/accessibility validation. Do not reopen feature expansion or alter learner data; M41 continuation requires explicit next task.
+
+
+## M40 reproduced offline-upgrade defect (post-qualification finding)
+- The real changed-script SW update on Chromium returned cached index.html (HTTP 200), and the actual build's two hashed JS/CSS files were present in Cache Storage; nevertheless their offline subresource requests failed with `net::ERR_ABORTED` after a worker update. Reproduced by focused Actions #41823201400, not a simulated or assumed failure.
+- A minimal static-shell fix changes Cache API matching ONLY for immutable hashed `/assets/*.js` and `/assets/*.css` to use `ignoreVary:true`. Other same-origin requests remain strictly matched to avoid accidentally returning a different authenticated/variant response. The existing cache namespace, install/activate semantics and IndexedDB are unchanged.
+- **Qualification required:** independently rerun the focused real Chromium offline-upgrade job and the full exact-head Chromium/Firefox/WebKit suites. No PASS claim until all finish. Different Vary headers are a plausible cause, not independently proven without response-level header inspection.
