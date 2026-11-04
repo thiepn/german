@@ -63,12 +63,29 @@ async function snapshot(){
 }
 async function assertOffline(expected,old,expectedSuffix){
  await waitCache(expected,old);
+ // Worker activation/clients.claim may precede old worker shutdown. Wait for
+ // the registration to settle before testing OFFLINE navigation.
+ await page.waitForFunction(async()=>{
+  const r=await navigator.serviceWorker.getRegistration();
+  return !!r?.active&&r.active.state==='activated'&&r.active===navigator.serviceWorker.controller&&!r.installing&&!r.waiting;
+ },null,{timeout:15000});
+ await page.waitForTimeout(700);
+ await waitCache(expected,old);
+ const beforeOffline=await page.evaluate(async name=>{
+  const cache=await caches.open(name),index=await cache.match('./index.html',{ignoreVary:true});
+  return {keys:await caches.keys(),root:(await cache.match('./',{ignoreVary:true}))?.status,
+    index:(await index?.text())?.match(/src="([^"]+\\.js)"/)?.[1],
+    controller:navigator.serviceWorker.controller?.scriptURL};
+ },expected);
+ console.log('M41 rollback before offline: '+JSON.stringify({expected,beforeOffline}));
  await ctx.setOffline(true);
  const nav=await page.reload({waitUntil:'domcontentloaded'});
  assert.equal(nav?.status(),200,'offline navigation served from shell cache');
  await page.getByRole('navigation',{name:'Hauptnavigation'}).first().waitFor({timeout:15000});
  const html=await page.content();
  const navResponse=await nav.text();
+ const afterOffline=await page.evaluate(async()=>({keys:await caches.keys(),controller:navigator.serviceWorker.controller?.scriptURL,reg:(await navigator.serviceWorker.getRegistration())?.active?.scriptURL}));
+ console.log('M41 rollback after offline: '+JSON.stringify(afterOffline));
  const cacheHtml=await page.evaluate(async name=>{const c=await caches.open(name),r=await c.match('./index.html');return r?await r.text():null},expected);
  const observed={build:serving,expectedSuffix,loadedB:html.includes('-m41b.js'),cachedB:cacheHtml?.includes('-m41b.js'),
    servedIndexB:readFileSync(join(serving==='A'?rootA:rootB,'index.html'),'utf8').includes('-m41b.js'),
