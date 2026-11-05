@@ -29,3 +29,6 @@ For an actual approval, obtain independently rated C1 and C2 learner responses t
 4. Keep the existing `RELEASE_CANDIDATE` + `releaseStudiosQualified` + 350 items/10 lessons + version-qualified independently authored ledger thresholds unchanged. Maintain G10 audio hold and diagnostic/holdout barriers.
 
 **Prohibited:** approving sources via author-generated metadata, fabricating editor identity or CEFR certification, migration, main merge, public launch, signing, tagging or deployment. M42 is a read-only source audit with a detached author-draft proposal bundle; rights/linguistic/CEFR/release remain NO_GO.
+
+### G07 historical source/version compatibility
+M42 extends the existing M41 migration-free `sourceEntryId` / `matchesSourceEntry` contract to G07. Historical `phraseology:<id>` v1 records remain exactly unchanged; future version 2 would use `phraseology:<id>:v2`, and absent versions display as *historical* rather than borrowing v1 content. Nothing activates the unapproved v2 pack. Explicit browser/storage/CAS regressions are required at exact final HEAD.
