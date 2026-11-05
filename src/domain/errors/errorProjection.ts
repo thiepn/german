@@ -12,7 +12,7 @@ export type ErrorCluster={
 export function projectErrors(attempts:Attempt[],byId:Map<string,Exercise>){
  return attempts.filter(a=>a.result==='INCORRECT'||a.result==='PARTIAL')
   .sort((a,b)=>b.at-a.at||a.id.localeCompare(b.id))
-  .map(a=>({attempt:a,item:byId.get(a.itemId)}));
+  .map(a=>{const item=byId.get(a.itemId);return {attempt:a,item:item?.version===a.itemVersion?item:undefined};});
 }
 
 export function buildErrorClusters(attempts:readonly Attempt[],byId:ReadonlyMap<string,Exercise>):ErrorCluster[]{

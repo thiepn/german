@@ -124,7 +124,74 @@ export function collect(){
   ...s.decisions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G13_DISCLOSURE_DECISION',mode:'G13_DISCLOSURE',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,paragraphId:d.paragraphId,options:d.options,preferredId:d.preferredId,action:d.action,boundary:d.boundary,issues:['Check direct source quotation, action and fictional restricted token','Check limited disclosure without unnecessary detail and no invented approval','Check independent public/internal versions and meaningful revisions; no automatic grades'],independentEditorialApproval:false}))
  ]);
  if(disclosure.length!==manifest.disclosureDraftCount*4)throw Error('Incomplete G13 disclosure editorial worklist');
- const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure],allIds=new Set();
+
+ const chronology=read(manifest.chronologyDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G09_ORIGINAL_PROCEDURAL_SOURCE',mode:'G09_CHRONOLOGY',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently verify original full-length German fictional source and source rights','Assess whether chronology and approval logic are linguistically plausible rather than legal advice','Maintain DEMO_ONLY, with no approval, grade or publication'],independentEditorialApproval:false},
+  ...s.claims.map(t=>({id:s.id+':'+t.id,version:s.version,type:'G09_CONDITIONAL_CHRONOLOGY',mode:'G09_CHRONOLOGY',status:s.status,authorId:s.author,prompt:t.question,quote:t.quote,paragraphId:t.paragraphId,options:t.options,preferredId:t.preferredId,model:t.model,trap:t.trap,issues:['Check literal quotation exactly once in named paragraph','Verify temporal markers, precedence and conditional or postponed effects','Verify independent three-field German response and transfer memo are source-appropriate','Human editorial approval only; never infer proficiency from writing lengths'],independentEditorialApproval:false}))
+ ]);
+ if(chronology.length!==manifest.chronologyDraftCount*4)throw Error('Incomplete G09 chronology editorial queue');
+
+ const definitions=read(manifest.definitionDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G06_ORIGINAL_CONCEPT_DEFINITION_SOURCE',mode:'G06_DEFINITION',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independently review complete original German prose, fictional domain scope and rights','Check consistency of the document-specific definitions, without claiming universal technical definitions','Preserve DEMO_ONLY, AI_DRAFT and no independent approval, CEFR grade or publication'],independentEditorialApproval:false},
+  ...s.distinctions.map(d=>({id:s.id+':'+d.id,version:s.version,type:'G06_OPERATIONAL_DEFINITION_BOUNDARY',mode:'G06_DEFINITION',status:s.status,authorId:s.author,prompt:d.question,quote:d.quote,paragraphId:d.paragraphId,term:d.term,nearTerm:d.nearTerm,options:d.options,preferredId:d.preferredId,model:d.model,trap:d.trap,issues:['Match the quotation literally to exactly one source paragraph','Check term, adjacent concept, excluded inference and substantive boundary example','Review independent multi-paragraph terminological memo and meaningful revisions without auto-grading','No editorial approval or publication until independently assessed'],independentEditorialApproval:false}))
+ ]);
+ if(definitions.length!==manifest.definitionDraftCount*4)throw Error('Incomplete M28 G06 editorial sources and anchors');
+
+ const scope=read(manifest.scopeDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G04_ORIGINAL_SCOPE_SOURCE',mode:'G04_SCOPE',status:s.status,authorId:s.author,prompt:s.title,source:s.rights.source,issues:['Independent edit of original German, scope and rights','Review C1/C2 calibration without claiming automated CEFR measurement','No publication or approval until independently reviewed'],independentEditorialApproval:false},
+  ...s.scopes.map(c=>({id:s.id+':'+c.id,version:s.version,type:'G04_FOCUS_PARTICLE_OR_NEGATION_SCOPE',mode:'G04_SCOPE',status:s.status,authorId:s.author,prompt:c.question,quote:c.quote,paragraphId:c.paragraphId,particle:c.particle,options:c.options,preferredId:c.preferredId,model:c.model,trap:c.trap,issues:['Verify literal quote occurs once in named source paragraph','Verify truth-conditional negation scope, focus alternatives and counterexamples','Review independent document, audience revision and no automated free-writing grade','Preserve DEMO_ONLY and unreviewed rights'],independentEditorialApproval:false}))
+ ]);
+ if(scope.length!==manifest.scopeDraftCount*4)throw Error('Incomplete M30 G04 editorial source and anchor queue');
+
+ const attachments=read(manifest.attachmentDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G03_ORIGINAL_ATTACHMENT_SOURCE',mode:'G03_ATTACHMENT',status:s.status,authorId:s.author,
+   prompt:s.title,source:s.rights.source,issues:['Independent edit of full original fictional prose and source rights','Check contextual plausibility of competing attachment readings','Human C1/C2 calibration without automatic rating','No approval or release'],independentEditorialApproval:false},
+  ...s.attachments.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G03_PREPOSITIONAL_ATTACHMENT',mode:'G03_ATTACHMENT',
+   status:s.status,authorId:s.author,prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,attachmentType:a.type,
+   options:a.options,preferredId:a.preferredId,model:a.model,trap:a.trap,
+   issues:['Verify exact single literal source anchor and two structurally plausible analyses','Check chosen attachment, an explicit alternative and independent context evidence','Verify unambiguous reformulations and audience transfer in German','No automated free-writing grade or publication'],independentEditorialApproval:false}))
+ ]);
+ if(attachments.length!==manifest.attachmentDraftCount*4)throw Error('Incomplete M31 G03 editorial sources and ambiguities');
+
+ const relations=read(manifest.relationDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G04_ORIGINAL_RELATION_SOURCE',mode:'G04_RELATION',status:s.status,authorId:s.author,
+   prompt:s.title,source:s.rights.source,issues:['Independent review of fictional German source and rights','Validate that each claimed relation is linguistically defensible in its full context','Review C1/C2 calibration without claiming a machine CEFR assessment','No publication without human approval'],independentEditorialApproval:false},
+  ...s.relations.map(q=>({id:s.id+':'+q.id,version:s.version,type:'G04_CONNECTOR_RELATION',mode:'G04_RELATION',
+   status:s.status,authorId:s.author,prompt:q.question,quote:q.quote,paragraphId:q.paragraphId,relation:q.relation,
+   options:q.options,preferredId:q.preferredId,model:q.model,trap:q.trap,
+   issues:['Verify exact source quotation occurs once and is anchored to the named paragraph','Review concessive, causal, temporal, conditional, contrastive or instrumental relation direction','Review learner-generated counter-reading, evidence, independent full document and audience revision','Unapproved DEMO_ONLY; no automatic free-writing grade'],independentEditorialApproval:false}))
+ ]);
+ if(relations.length!==manifest.relationDraftCount*4)throw Error('Incomplete M32 relation editorial queue');
+
+ const deixis=read(manifest.deixisDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G01_ORIGINAL_DEICTIC_SOURCE',mode:'G01_DEIXIS',status:s.status,authorId:s.author,
+   prompt:s.title,source:s.rights.source,issues:['Independent German copyedit and source rights review','Verify source dates, speaker, addressee, place and retrospective time reference','Human C1/C2 calibration without automatic proficiency grade','No publication until independent approval'],independentEditorialApproval:false},
+  ...s.anchors.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G01_DEICTIC_CENTRE_ANCHOR',mode:'G01_DEIXIS',status:s.status,authorId:s.author,
+   prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,phenomenon:a.phenomenon,options:a.options,preferredId:a.preferredId,model:a.model,trap:a.trap,
+   issues:['Verify exact single literal anchor in named fictional paragraph','Independently verify anchored dates, place, speaker and addressee','Audit reported rephrasing, alternate perspective, source evidence, complete transfer and revision','AI_DRAFT / ORIGINAL_DRAFT / DEMO_ONLY: no publication or automatic free-writing grade'],independentEditorialApproval:false}))
+ ]);
+ if(deixis.length!==manifest.deixisDraftCount*4)throw Error('Incomplete M33 G01 editorial source and anchor queue');
+
+ const relative=read(manifest.relativeDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G02_ORIGINAL_RELATIVE_SOURCE',mode:'G02_RELATIVE',status:s.status,authorId:s.author,
+   prompt:s.title,source:s.rights.source,issues:['Independent German editorial and source rights review','Validate case valency and syntactic function of each relative pronoun in full source context','Human CEFR calibration of independent writing and transfer; no automated C1/C2 claim','No publication or approval'],independentEditorialApproval:false},
+  ...s.anchors.map(a=>({id:s.id+':'+a.id,version:s.version,type:'G02_RELATIVE_CASE_ANCHOR',mode:'G02_RELATIVE',status:s.status,authorId:s.author,
+   prompt:a.question,quote:a.quote,paragraphId:a.paragraphId,phenomenon:a.phenomenon,options:a.options,preferredId:a.preferredId,model:a.model,trap:a.trap,
+   issues:['Verify one exact literal quote and grammatical role independently','Check Nominativ/Dativ/Akkusativ/Genitiv, prep valency, was and free relatives against original source','Check independent full report, source reasoning, false reading, meaningful revision and audience transfer','DEMO_ONLY rights hold, no automatic grade'],independentEditorialApproval:false}))
+ ]);
+ if(relative.length!==manifest.relativeDraftCount*4)throw Error('Incomplete M34 G02 editorial queue');
+
+
+ const oral=read(manifest.oralDraftSource).flatMap(s=>[
+  {id:s.id,version:s.version,type:'G12_ORIGINAL_ORAL_SOURCE',mode:'G12_ORAL',status:s.status,authorId:s.authorship,
+   prompt:s.title,source:s.rights.source,issues:['Independent editorial and rights review of full fictional context','Validate fair speaking goal, audience, and limits without rating real pronunciation','Human C1/C2 calibration; original microphone audio is not collected','No release or independent editorial approval'],independentEditorialApproval:false},
+  ...s.turns.map(t=>({id:s.id+':'+t.id,version:s.version,type:'G12_SPOKEN_RESPONSE_ANCHOR',mode:'G12_ORAL',status:s.status,authorId:s.authorship,
+   prompt:t.goal,quote:t.quote,paragraphId:t.paragraphId,sourceAnchor:t.anchor,limit:t.limit,speaker:t.speaker,
+   issues:['Verify exactly one literal anchor in the full source','Distinguish speech content from learner-reported self-analysis without speech recognition','Evaluate acceptable oral alternatives, evidence limits, and audience transfer','Audio ephemeral, no cloud storage, NO_SCORE, rights hold'],independentEditorialApproval:false}))
+ ]);
+ if(oral.length!==manifest.oralDraftCount*4)throw Error('M35 oral editorial source and anchor worklist incomplete');
+
+ const result=[...existing,...reading,...pragmatic,...transfers,...modality,...caseTracing,...valency,...focus,...reference,...phraseology,...polysemy,...stance,...cross,...compression,...attribution,...repair,...argument,...numeric,...disclosure,...chronology,...definitions,...scope,...attachments,...relations,...deixis,...relative,...oral],allIds=new Set();
  for(const x of result){if(allIds.has(x.id)||x.status!=='DEMO_ONLY'||x.independentEditorialApproval!==false)throw Error('Invalid editorial worklist member '+x.id);allIds.add(x.id);}
  return result.sort((a,b)=>a.id.localeCompare(b.id));
 }

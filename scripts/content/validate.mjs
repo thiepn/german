@@ -408,6 +408,180 @@ for(const s of m26){
 }
 if(disclosureIds.size!==4||disclosureBands.size!==2||disclosureRestricted.size!==12||disclosureAnchors!==12||disclosureB<4)throw Error('Insufficient G13 disclosure coverage');
 
-const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
+
+const m27=read(manifest.chronologyDraftSource);
+if(manifest.chronologyDraftCount!==4||m27.length!==4)throw Error('M27 chronology source count mismatch');
+const chronologyIds=new Set(),chronologyBands=new Set(),chronologyTopics=new Set();let chronologyAnchors=0,chronologyPreferredB=0;
+for(const s of m27){
+ if(!/^SG-G09T-\d{3}$/.test(s.id)||chronologyIds.has(s.id)||s.version!==1||s.domain!=='G09'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified M27 chronology source '+s.id);
+ chronologyIds.add(s.id);chronologyBands.add(s.band);chronologyTopics.add(s.focus);
+ if(s.focus?.length<35||s.brief?.length<110||s.paragraphs?.length!==3||s.claims?.length!==3)throw Error('Incomplete chronology dossier '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<600)throw Error('Truncated chronology source '+s.id+':'+p.id);
+ for(const [i,t] of s.claims.entries()){
+  const p=s.paragraphs[i],quoted='„'+t.quote+'“';
+  if(t.id!=='t'+(i+1)||t.paragraphId!==p.id||t.quote?.length<40||t.quote.length>145||!p.text.includes(quoted)||p.text.split(quoted).length!==2||
+  !t.question?.trim()||t.model?.length<90||t.trap?.length<65||t.options?.length!==2||t.options[0].id!=='A'||t.options[1].id!=='B'||t.options[0].text===t.options[1].text||
+  t.options.some(o=>o.text?.length<90)||!['A','B'].includes(t.preferredId))throw Error('Unanchored chronology interpretation '+s.id+':'+t.id);
+  chronologyAnchors++;if(t.preferredId==='B')chronologyPreferredB++;
+ }
+}
+if(chronologyIds.size!==4||chronologyBands.size!==2||chronologyTopics.size!==4||chronologyAnchors!==12||chronologyPreferredB<4)throw Error('Insufficient distinct C1-C2 chronology coverage');
+
+
+const m28=read(manifest.definitionDraftSource);
+if(manifest.definitionDraftCount!==4||m28.length!==4)throw Error('M28 G06 definition dossier count mismatch');
+const definitionIds=new Set(),definitionBands=new Set(),definitionTopics=new Set(),definitionTerms=new Set();let definitionAnchors=0,definitionB=0;
+for(const s of m28){
+ if(!/^SG-G06B-\d{3}$/.test(s.id)||definitionIds.has(s.id)||s.version!==1||s.domain!=='G06'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified G06 terminology source '+s.id);
+ definitionIds.add(s.id);definitionBands.add(s.band);definitionTopics.add(s.focus);
+ if(s.title?.length<35||s.focus?.length<55||s.brief?.length<110||s.paragraphs?.length!==3||s.distinctions?.length!==3)throw Error('Incomplete original G06 dossier '+s.id);
+ const localTerms=new Set();
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<750)throw Error('Incomplete G06 source paragraph '+s.id+':'+p.id);
+ for(const [i,d] of s.distinctions.entries()){
+  const p=s.paragraphs[i],quoted='„'+d.quote+'“';
+  if(d.id!=='d'+(i+1)||d.paragraphId!==p.id||d.quote?.length<38||d.quote.length>150||!p.text.includes(quoted)||p.text.split(quoted).length!==2||
+   d.term?.length<7||d.nearTerm?.length<7||d.term===d.nearTerm||localTerms.has(d.term)||d.question?.length<60||
+   d.model?.length<85||d.trap?.length<75||d.options?.length!==2||d.options[0].id!=='A'||d.options[1].id!=='B'||d.options[0].text===d.options[1].text||
+   d.options.some(o=>o.text?.length<95)||!['A','B'].includes(d.preferredId))throw Error('Unanchored G06 conceptual boundary '+s.id+':'+d.id);
+  localTerms.add(d.term);definitionTerms.add(d.term);definitionAnchors++;if(d.preferredId==='B')definitionB++;
+ }
+}
+if(definitionIds.size!==4||definitionBands.size!==2||definitionTopics.size!==4||definitionAnchors!==12||definitionTerms.size<10||definitionB<4)throw Error('Insufficient G06 definition-boundary diversity');
+
+
+const m30=read(manifest.scopeDraftSource);
+if(manifest.scopeDraftCount!==4||m30.length!==4)throw Error('M30 G04 scope dossier count mismatch');
+const scopeIds=new Set(),scopeBands=new Set(),scopeFoci=new Set(),scopeParticles=new Set();let scopeAnchors=0,scopeB=0;
+for(const s of m30){
+ if(!/^SG-G04S-\d{3}$/.test(s.id)||scopeIds.has(s.id)||s.version!==1||s.domain!=='G04'||!['C1','C2'].includes(s.band)||s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified M30 scope source '+s.id);
+ scopeIds.add(s.id);scopeBands.add(s.band);scopeFoci.add(s.focus);
+ if(s.title?.length<35||s.focus?.length<65||s.brief?.length<125||s.paragraphs?.length!==3||s.scopes?.length!==3)throw Error('Incomplete G04 scope dossier '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<650)throw Error('Incomplete G04 scope source paragraph '+s.id+':'+p.id);
+ for(const [i,c] of s.scopes.entries()){
+  const p=s.paragraphs[i],quoted='„'+c.quote+'“';
+  if(c.id!=='s'+(i+1)||c.paragraphId!==p.id||c.quote?.length<30||c.quote.length>145||!p.text.includes(quoted)||p.text.split(quoted).length!==2||
+   c.particle?.length<5||c.question?.length<45||c.model?.length<80||c.trap?.length<70||c.options?.length!==2||c.options[0].id!=='A'||c.options[1].id!=='B'||c.options[0].text===c.options[1].text||
+   c.options.some(o=>o.text?.length<90)||!['A','B'].includes(c.preferredId))throw Error('Unanchored M30 scope interpretation '+s.id+':'+c.id);
+  scopeAnchors++;scopeParticles.add(c.particle);if(c.preferredId==='B')scopeB++;
+ }
+}
+if(scopeIds.size!==4||scopeBands.size!==2||scopeFoci.size!==4||scopeAnchors!==12||scopeParticles.size<10||scopeB<4)throw Error('Insufficient distinct G04 focus/negation scope coverage');
+
+
+const m31=read(manifest.attachmentDraftSource);
+if(manifest.attachmentDraftCount!==4||m31.length!==4)throw Error('M31 G03 attachment source count mismatch');
+const attachmentIds=new Set(),attachmentBands=new Set(),attachmentTopics=new Set(),attachmentTypes=new Set();let attachmentAnchors=0,attachmentB=0;
+for(const s of m31){
+ if(!/^SG-G03A-\d{3}$/.test(s.id)||attachmentIds.has(s.id)||s.version!==1||s.domain!=='G03'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())
+ throw Error('Unqualified M31 G03 source '+s.id);
+ attachmentIds.add(s.id);attachmentBands.add(s.band);attachmentTopics.add(s.focus);
+ if(s.title?.length<35||s.focus?.length<70||s.brief?.length<145||s.paragraphs?.length!==3||s.attachments?.length!==3)
+ throw Error('Incomplete M31 G03 source '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<900)throw Error('Truncated original M31 G03 paragraph '+s.id+':'+p.id);
+ for(const [i,a] of s.attachments.entries()){
+  const p=s.paragraphs[i],quote='„'+a.quote+'“';
+  if(a.id!=='a'+(i+1)||a.paragraphId!==p.id||a.quote?.length<45||a.quote.length>145||!p.text.includes(quote)||p.text.split(quote).length!==2||
+  a.type?.length<20||a.question?.length<100||a.model?.length<80||a.trap?.length<80||
+  a.options?.length!==2||a.options[0].id!=='A'||a.options[1].id!=='B'||a.options[0].text===a.options[1].text||
+  a.options.some(o=>o.text?.length<75)||!['A','B'].includes(a.preferredId))
+  throw Error('Unanchored M31 G03 attachment '+s.id+':'+a.id);
+  attachmentTypes.add(a.type);attachmentAnchors++;if(a.preferredId==='B')attachmentB++;
+ }
+}
+if(attachmentIds.size!==4||attachmentBands.size!==2||attachmentTopics.size!==4||attachmentTypes.size<10||
+ attachmentAnchors!==12||attachmentB<4||attachmentB>8)throw Error('Insufficient G03 syntactic attachment variety');
+
+
+const m32=read(manifest.relationDraftSource);
+if(manifest.relationDraftCount!==4||m32.length!==4)throw Error('M32 G04 relation source count mismatch');
+const relationIds=new Set(),relationBands=new Set(),relationTopics=new Set(),relationKinds=new Set();let relationAnchors=0,relationB=0;
+for(const s of m32){
+ if(!/^SG-G04R-\d{3}$/.test(s.id)||relationIds.has(s.id)||s.version!==1||s.domain!=='G04'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified M32 relation source '+s.id);
+ relationIds.add(s.id);relationBands.add(s.band);relationTopics.add(s.focus);
+ if(s.title?.length<40||s.focus?.length<75||s.brief?.length<130||s.paragraphs?.length!==3||s.relations?.length!==3)throw Error('Incomplete G04 relation dossier '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<780)throw Error('Truncated M32 source paragraph '+s.id+':'+p.id);
+ for(const [i,q] of s.relations.entries()){
+  const p=s.paragraphs[i],quote='„'+q.quote+'“';
+  if(q.id!=='r'+(i+1)||q.paragraphId!==p.id||q.quote?.length<40||q.quote.length>170||p.text.split(quote).length!==2||
+   q.relation?.length<6||q.question?.length<100||q.model?.length<80||q.trap?.length<80||
+   q.options?.length!==2||q.options[0].id!=='A'||q.options[1].id!=='B'||q.options[0].text===q.options[1].text||
+   q.options.some(o=>o.text?.length<80)||!['A','B'].includes(q.preferredId))throw Error('Unanchored M32 relation '+s.id+':'+q.id);
+  relationKinds.add(q.relation);relationAnchors++;if(q.preferredId==='B')relationB++;
+ }
+}
+if(relationIds.size!==4||relationBands.size!==2||relationTopics.size!==4||relationKinds.size<10||
+ relationAnchors!==12||relationB<4||relationB>8)throw Error('Insufficient distinct G04 connector relations');
+
+
+const m33=read(manifest.deixisDraftSource);
+if(manifest.deixisDraftCount!==4||m33.length!==4)throw Error('M33 G01 deictic source count mismatch');
+const deixisIds=new Set(),deixisBands=new Set(),deixisTopics=new Set(),deixisPhenomena=new Set();let deixisAnchors=0,deixisB=0;
+for(const s of m33){
+ if(!/^SG-G01D-\d{3}$/.test(s.id)||deixisIds.has(s.id)||s.version!==1||s.domain!=='G01'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())
+ throw Error('Unqualified M33 G01 source '+s.id);
+ deixisIds.add(s.id);deixisBands.add(s.band);deixisTopics.add(s.focus);
+ if(s.title?.length<40||s.focus?.length<70||s.brief?.length<140||s.paragraphs?.length!==3||s.anchors?.length!==3)throw Error('Incomplete M33 deictic dossier '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<820)throw Error('Truncated M33 source paragraph '+s.id+':'+p.id);
+ for(const [i,a] of s.anchors.entries()){
+  const p=s.paragraphs[i],quote='„'+a.quote+'“';
+  if(a.id!=='d'+(i+1)||a.paragraphId!==p.id||a.quote?.length<30||a.quote.length>130||p.text.split(quote).length!==2||
+  a.phenomenon?.length<24||a.question?.length<110||a.model?.length<90||a.trap?.length<90||
+  a.options?.length!==2||a.options[0].id!=='A'||a.options[1].id!=='B'||a.options[0].text===a.options[1].text||
+  a.options.some(o=>o.text?.length<100)||!['A','B'].includes(a.preferredId))
+  throw Error('Unanchored M33 deictic centre '+s.id+':'+a.id);
+  deixisPhenomena.add(a.phenomenon);deixisAnchors++;if(a.preferredId==='B')deixisB++;
+ }
+}
+if(deixisIds.size!==4||deixisBands.size!==2||deixisTopics.size!==4||deixisPhenomena.size<10||
+ deixisAnchors!==12||deixisB!==6)throw Error('Insufficient distinct M33 deictic centres');
+
+
+const m34=read(manifest.relativeDraftSource);
+if(manifest.relativeDraftCount!==4||m34.length!==4)throw Error('M34 G02 relative-clause source count mismatch');
+const relativeIds=new Set(),relativeBands=new Set(),relativeTopics=new Set(),relativePhenomena=new Set();let relativeAnchors=0,relativeB=0;
+for(const s of m34){
+ if(!/^SG-G02R-\d{3}$/.test(s.id)||relativeIds.has(s.id)||s.version!==1||s.domain!=='G02'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())throw Error('Unqualified M34 source '+s.id);
+ relativeIds.add(s.id);relativeBands.add(s.band);relativeTopics.add(s.focus);
+ if(s.title?.length<42||s.focus?.length<75||s.brief?.length<180||s.paragraphs?.length!==3||s.anchors?.length!==3)throw Error('Incomplete M34 relative source '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<830)throw Error('Truncated M34 source paragraph '+s.id+':'+p.id);
+ for(const [i,a] of s.anchors.entries()){
+  const p=s.paragraphs[i],quote='„'+a.quote+'“';
+  if(a.id!=='r'+(i+1)||a.paragraphId!==p.id||a.quote?.length<50||a.quote.length>160||p.text.split(quote).length!==2||
+  a.phenomenon?.length<24||a.question?.length<135||a.model?.length<95||a.trap?.length<85||
+  a.options?.length!==2||a.options[0].id!=='A'||a.options[1].id!=='B'||a.options[0].text===a.options[1].text||
+  a.options.some(o=>o.text?.length<95)||!['A','B'].includes(a.preferredId))throw Error('Unanchored M34 relative-clause item '+s.id+':'+a.id);
+  relativePhenomena.add(a.phenomenon);relativeAnchors++;if(a.preferredId==='B')relativeB++;
+ }
+}
+if(relativeIds.size!==4||relativeBands.size!==2||relativeTopics.size!==4||relativePhenomena.size!==12||
+ relativeAnchors!==12||relativeB!==6)throw Error('Insufficient G02 relative clause variety');
+
+
+const m35=read(manifest.oralDraftSource);
+if(manifest.oralDraftCount!==4||m35.length!==4||manifest.v1FeatureBoundary!=='FROZEN_AFTER_M35_DRAFT_NOT_RELEASE_APPROVED')throw Error('M35 V1 content freeze or G12 oral case count invalid');
+const oralIds=new Set(),oralBands=new Set(),oralTopics=new Set(),oralSpeakers=new Set();let oralAnchors=0;
+for(const s of m35){
+ if(!/^SG-G12O-\d{3}$/.test(s.id)||oralIds.has(s.id)||s.version!==1||s.domain!=='G12'||!['C1','C2'].includes(s.band)||
+ s.status!=='DEMO_ONLY'||s.authorship!=='AI_DRAFT'||s.reviewedBy!==null||s.editorialApproval!==false||s.rights?.kind!=='ORIGINAL_DRAFT'||!s.rights.source?.trim())
+ throw Error('Unqualified M35 G12 oral source '+s.id);
+ oralIds.add(s.id);oralBands.add(s.band);oralTopics.add(s.focus);
+ if(s.title?.length<40||s.focus?.length<90||s.audience?.length<20||s.brief?.length<190||s.paragraphs?.length!==3||s.turns?.length!==3)
+ throw Error('Incomplete M35 G12 oral source '+s.id);
+ for(const [i,p] of s.paragraphs.entries())if(p.id!=='p'+(i+1)||p.text?.length<900)throw Error('Truncated M35 oral paragraph '+s.id+':'+p.id);
+ for(const [i,t] of s.turns.entries()){
+  const p=s.paragraphs[i],quote='„'+t.quote+'“';
+  if(t.id!=='t'+(i+1)||t.paragraphId!==p.id||t.speaker?.length<8||t.quote?.length<45||t.quote.length>150||p.text.split(quote).length!==2||
+   t.goal?.length<80||t.anchor?.length<65||t.limit?.length<60||t.transfer?.length<65)
+  throw Error('Unanchored M35 oral source '+s.id+':'+t.id);
+  oralSpeakers.add(t.speaker);oralAnchors++;
+ }
+}
+if(oralIds.size!==4||oralBands.size!==2||oralTopics.size!==4||oralSpeakers.size<10||oralAnchors!==12)throw Error('Incomplete G12 oral coverage and speaking contexts');
+
+const result={valid:true,demo:demo.length,readingUnits:reading.length,readingQuestions:questionCount,pragmaticScenarios:pragmatic.length,readingTransfers:transfers.length,modalityDrafts:m12.length,caseTracingDrafts:m13.length,valencyDrafts:m14.length,focusDrafts:m15.length,referenceDrafts:m16.length,phraseologyDrafts:m17.length,polysemyDrafts:m18.length,stanceDrafts:m19.length,crossSourceDrafts:m20.length,compressionDrafts:m21.length,attributionDrafts:m22.length,repairDrafts:m23.length,argumentDrafts:m24.length,numericDrafts:m25.length,disclosureDrafts:m26.length,chronologyDrafts:m27.length,definitionDrafts:m28.length,scopeDrafts:m30.length,attachmentDrafts:m31.length,relationDrafts:m32.length,deixisDrafts:m33.length,relativeDrafts:m34.length,oralDrafts:m35.length,productionPrompts:production.length,reviewed:approved.length,counts,diagnosticApproved:0,targetP1:350,releaseReady:approved.length>=350};
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--release')&&!result.releaseReady){console.error('RELEASE_BLOCKED: fewer than 350 independently approved exercises.');process.exitCode=1}

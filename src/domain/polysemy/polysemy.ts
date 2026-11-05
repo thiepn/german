@@ -1,14 +1,15 @@
 import original from '../../../content/fixtures/g06-polysemy.demo.json';
 import type {ProductionEntry,ProductionRevision} from '../production/types';
+import {sourceEntryId,matchesSourceEntry,exactSourceForEntry} from '../content/sourceIdentity';
 
 export type PolysemyChoice='A'|'B';
 export type PolysemyDecision={id:string;paragraphId:string;family:string;lemma:string;quote:string;alternate:string;question:string;options:{id:PolysemyChoice;text:string}[];preferredId:PolysemyChoice;explanation:string;repairPrompt:string};
 export type PolysemyStudy={id:string;version:1;domain:'G06';band:'C1'|'C2';title:string;focus:string;paragraphs:{id:string;text:string}[];decisions:PolysemyDecision[];transfer:string;status:'DEMO_ONLY';authorship:'AI_DRAFT';author:string;reviewedBy:null;editorialApproval:false;rights:{kind:'ORIGINAL_DRAFT';source:string}};
 export const polysemyStudies:PolysemyStudy[]=original as PolysemyStudy[];
-export const polysemyEntryId=(id:string)=>'polysemy:'+id;
-export const isPolysemyEntry=(e:ProductionEntry):boolean=>e.kind==='POLYSEMY_STUDY'&&e.id===polysemyEntryId(e.itemId);
+export const polysemyEntryId=(id:string,version=1)=>sourceEntryId('polysemy',id,version);
+export const isPolysemyEntry=(e:ProductionEntry):boolean=>matchesSourceEntry(e,'POLYSEMY_STUDY','polysemy');
 export function polysemySource(e:ProductionEntry):PolysemyStudy|null{
- return isPolysemyEntry(e)?polysemyStudies.find(s=>s.id===e.itemId&&s.id===e.sourceId&&s.version===e.itemVersion)??null:null;
+ return isPolysemyEntry(e)?exactSourceForEntry(e,polysemyStudies):null;
 }
 const separator='\n\nAusgeschlossene Lesart: ';
 const valid=(x:string,min:number,max:number)=>typeof x==='string'&&x.trim().length>=min&&x.length<=max;
@@ -46,7 +47,7 @@ export function beginPolysemy(s:PolysemyStudy,id:string,choice:PolysemyChoice,te
  const originalSource=polysemyStudies.find(x=>x.id===s.id&&x.version===s.version),d=originalSource?.decisions[0];
  const combined=text.trim()+separator+boundary.trim();
  if(!originalSource||!d||d.id!==id||!acceptable(d,choice)||!independentPolysemyRewrite(d,text)||!valid(text,50,1800)||!valid(boundary,20,900)||combined.length>3000||!Number.isFinite(at))throw Error('Eigenständige Bedeutungsparaphrase und Kontextabgrenzung erforderlich.');
- return {id:polysemyEntryId(s.id),itemId:s.id,itemVersion:s.version,kind:'POLYSEMY_STUDY',sourceId:s.id,decisionId:id+'|'+choice+'|'+d.paragraphId,createdAt:at,original:combined,revisions:[],evaluated:'UNASSESSED'};
+ return {id:polysemyEntryId(s.id,s.version),itemId:s.id,itemVersion:s.version,kind:'POLYSEMY_STUDY',sourceId:s.id,decisionId:id+'|'+choice+'|'+d.paragraphId,createdAt:at,original:combined,revisions:[],evaluated:'UNASSESSED'};
 }
 export function appendPolysemyDecision(e:ProductionEntry,s:PolysemyStudy,id:string,choice:PolysemyChoice,text:string,boundary:string,revisionId:string,at:number):ProductionEntry{
  const source=polysemySource(e),d=source?.decisions.find(x=>x.id===id);
@@ -75,6 +76,6 @@ export function polysemyProgress(entries:readonly ProductionEntry[]){
  rewritten:rows.reduce((n,x)=>n+(x.e?.revisions.filter(r=>r.questionId==='REWRITE').length??0),0),total:polysemyStudies.length};
 }
 export function nextPolysemyStudy(entries:readonly ProductionEntry[]):PolysemyStudy{
- return polysemyStudies.find(s=>{const e=entries.find(e=>isPolysemyEntry(e)&&e.itemId===s.id);return e&&!e.revisions.some(r=>r.questionId==='TRANSFER')})??
- polysemyStudies.find(s=>!entries.some(e=>isPolysemyEntry(e)&&e.itemId===s.id))??polysemyStudies[0];
+ return polysemyStudies.find(s=>{const e=entries.find(e=>isPolysemyEntry(e)&&e.itemId===s.id&&e.itemVersion===s.version);return e&&!e.revisions.some(r=>r.questionId==='TRANSFER')})??
+ polysemyStudies.find(s=>!entries.some(e=>isPolysemyEntry(e)&&e.itemId===s.id&&e.itemVersion===s.version))??polysemyStudies[0];
 }

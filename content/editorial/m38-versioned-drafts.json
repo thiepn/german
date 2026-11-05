@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 1,
+  "phase": "M38",
+  "purpose": "STAGED_VERSIONED_EDITORIAL_CORRECTIONS_NOT_LOADED_IN_RUNTIME",
+  "authoringOnly": true,
+  "editorialApproval": false,
+  "releaseApproval": false,
+  "reviewInstruction": "Review full source, answer alternatives and rights independently; do not activate these v2 drafts until human review and version-safe runtime/archive integration are verified.",
+  "revisions": [
+    {
+      "id": "SG-G02R-002",
+      "source": "content/fixtures/g02-relative.demo.json",
+      "versionFrom": 1,
+      "versionTo": 2,
+      "rationale": "The feminine noun die Finanzierung cannot be introduced as das substantivierte Finanzierung; correct the grammatical explanation without changing the source quote or learner evidence.",
+      "operations": [
+        {
+          "path": [
+            "anchors",
+            0,
+            "model"
+          ],
+          "to": "Dessen ist ein Genitivanschluss zum sächlichen Bezugswort Vorhaben und kennzeichnet die zugehörige Finanzierung. Im Relativsatz ist die Finanzierung das Subjekt von war.",
+          "from": "Dessen ist das Genitivattribut zum neutralen Antezedens Vorhaben und markiert Zugehörigkeit; das substantivierte Finanzierung ist Subjekt von war."
+        }
+      ],
+      "legacyV1": {
+        "id": "SG-G02R-002",
+        "version": 1,
+        "domain": "G02",
+        "band": "C2",
+        "title": "Forschungsförderung: Genitivbezüge und rektionale Relativanschlüsse",
+        "focus": "Possessive dessen/deren bei unterschiedlich numerischen Bezugswörtern sowie Dativanschluss an Präpositionen quellengebunden umformen",
+        "brief": "Schreibe eine präzise Stellungnahme für eine fiktive Förderkommission, in der du bei jedem Bezug die syntaktische Rolle des Bezugsworts sowie die Genitiv- oder Präpositionsfunktion innerhalb des Relativsatzes begründest. Übertrage den Text in einen Förderbescheid und revidiere ihn, ohne Zuständigkeit, Besitzverhältnis oder Prüfstatus zu verändern.",
+        "paragraphs": [
+          {
+            "id": "p1",
+            "text": "Ein fiktiver Forschungsrat prüfte mehrere Anträge auf Förderung gemeinsamer Messinfrastruktur. Bei einem Vorhaben fehlten noch verbindliche Nachweise darüber, welche Einrichtung welche Kosten tragen sollte. Der Entwurf war fachlich ausgearbeitet, wurde aber noch nicht in einen endgültigen Förderbescheid überführt. In der Übersicht stand: „Das Vorhaben, dessen Finanzierung noch ungeklärt war, blieb im Entwurfsstatus.“ Der Satz bezieht den offenen Finanzierungsstand auf das Vorhaben; dessen ist kein Hinweis auf einen Empfänger der Förderung, sondern ein Genitivanschluss. Eine gekürzte Fassung stellte die Finanzierungsfrage so dar, als sei lediglich die Zuständigkeit der Förderkommission unklar. Die Unterlagen zeigten jedoch, dass die Aufteilung der Mittel zwischen den beteiligten Einrichtungen offen war. Der Forschungsrat bestätigte deshalb nur den Entwurfsstatus und vertagte die Entscheidung über eine endgültige Förderung. Die sprachliche Revision musste die Zugehörigkeit der Finanzierung zu diesem Vorhaben und die weiterhin offene Prüfung ausdrücklich erhalten."
+          },
+          {
+            "id": "p2",
+            "text": "Ein zweites Kapitel dokumentierte die Behandlung der beteiligten Arbeitsgruppen. Die zentrale Prüfstelle verglich Messreihen aus drei Teams, die unterschiedliche Versuchsaufbauten genutzt hatten. Die Prüfstelle übersandte ihre Beobachtungen anschließend einzeln an jede Arbeitsgruppe. In der Niederschrift stand: „Die Teams, deren Messreihen geprüft wurden, erhielten getrennte Rückmeldungen.“ Das Relativpronomen deren verknüpft die geprüften Daten mit den Teams im Plural; es bezeichnet keine zusätzlich eingeführte Stelle. Ein Entwurf deutete das passive geprüft wurden hingegen so, als hätten die Teams selbst die Prüfung durchgeführt. Damit wurden geprüfte Objekte und Prüfende ohne Grundlage vertauscht. Der Prüfplan wies die zentrale Stelle als verantwortliche Prüferin aus, während die Teams die Herkunft der Messreihen bestimmten. Im Bescheid sollten die Zuordnung der Daten und die Rückmeldung an jedes Team erhalten bleiben, ohne eine Selbstprüfung oder eine bereits erfolgte Freigabe sämtlicher Ergebnisse zu behaupten."
+          },
+          {
+            "id": "p3",
+            "text": "Vor dem Abschluss der Akte prüften mehrere wissenschaftliche und administrative Stellen einen gemeinsam erarbeiteten Vorschlag. Jede von ihnen brachte Änderungen ein, die am Ende in einen Beschlussentwurf eingingen. Die Geschäftsstelle notierte: „Der Beschluss, an dem mehrere Stellen mitwirkten, wurde am Freitag protokolliert.“ Mehrere Beteiligte arbeiteten an diesem Beschluss; das Relativpronomen steht im Dativ nach an, weil mitwirken an eine Beteiligung an einer Sache beschreibt. Die Erstfassung verwendete an den, offenbar in Anlehnung an Richtungsangaben wie an den Tisch gehen. Das war hier eine andere Konstruktion. Der Sitzungsnachweis bestätigte nur, dass der Beschluss am Freitag protokolliert wurde, nicht dass alle beteiligten Stellen damit schon eine eigene rechtliche Freigabe erteilt hätten. Für die Förderakte musste die Mitwirkung korrekt wiedergegeben und von späteren Entscheidungen deutlich getrennt werden."
+          }
+        ],
+        "anchors": [
+          {
+            "id": "r1",
+            "paragraphId": "p1",
+            "phenomenon": "Genitiv des sächlichen Bezugsworts dessen",
+            "quote": "Das Vorhaben, dessen Finanzierung noch ungeklärt war, blieb im Entwurfsstatus.",
+            "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Dessen ist hier Dativ und bezeichnet die Förderkommission als Empfängerin; der Finanzierungsstand des Vorhabens wird dadurch nicht beschrieben."
+              },
+              {
+                "id": "B",
+                "text": "Das neutrale Vorhaben ist Subjekt des Hauptsatzes; dessen verbindet die Finanzierung possessiv mit diesem Vorhaben, während Finanzierung im Relativsatz Subjekt ist."
+              }
+            ],
+            "preferredId": "B",
+            "model": "Dessen ist das Genitivattribut zum neutralen Antezedens Vorhaben und markiert Zugehörigkeit; das substantivierte Finanzierung ist Subjekt von war.",
+            "trap": "Der Genitiv des Relativpronomens zeigt die Zuordnung einer Größe zu einem Referenten, nicht einen Dativempfänger im Hauptsatz."
+          },
+          {
+            "id": "r2",
+            "paragraphId": "p2",
+            "phenomenon": "Genitiv pluralischer Besitzrelation deren",
+            "quote": "Die Teams, deren Messreihen geprüft wurden, erhielten getrennte Rückmeldungen.",
+            "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die Teams sind Pluralsubjekt des Hauptsatzes; deren ist Genitivattribut und weist die im Relativsatz geprüften Messreihen den jeweiligen Teams zu."
+              },
+              {
+                "id": "B",
+                "text": "Deren bezeichnet hier eine einzelne Kommission im Dativ, während die Teams die fremden Messreihen selbst prüften."
+              }
+            ],
+            "preferredId": "A",
+            "model": "Deren gehört zum pluralischen Antezedens die Teams und markiert die Besitz- beziehungsweise Zuordnungsrelation der Messreihen; geprüft wurden die Messreihen im Passiv.",
+            "trap": "Ein passiver Prüfvorgang benennt nicht automatisch die Teams als Prüfende; deren sagt nur, wessen Messreihen betroffen waren."
+          },
+          {
+            "id": "r3",
+            "paragraphId": "p3",
+            "phenomenon": "Rektion an mitwirkend verlangt an plus Dativ",
+            "quote": "Der Beschluss, an dem mehrere Stellen mitwirkten, wurde am Freitag protokolliert.",
+            "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Weil der Beschluss Subjekt ist, muss der heißen; außerdem regiert mitwirken an grundsätzlich den Akkusativ an den."
+              },
+              {
+                "id": "B",
+                "text": "Beschluss ist Nominativsubjekt der Passivaussage; im Relativsatz regiert mitwirken an den Dativ und verlangt daher an dem."
+              }
+            ],
+            "preferredId": "B",
+            "model": "An einem Beschluss mitwirken fordert Präposition an mit Dativ. Der Antezedens-Kasus im passiven Hauptsatz liefert dafür keine Kasusvorgabe.",
+            "trap": "Die Präposition und das Verb im Relativsatz bilden ein rektionales Gefüge, dessen Kasus nicht aus dem Hauptsatz abgeschrieben werden darf."
+          }
+        ],
+        "status": "DEMO_ONLY",
+        "authorship": "AI_DRAFT",
+        "author": "M34 original fictional relative-clause syntax studies",
+        "reviewedBy": null,
+        "editorialApproval": false,
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "Eigenständig verfasste fiktive Quellen, keine fremden Originaldokumente; sprachliche, CEFR- und redaktionelle Freigabe ausstehend"
+        }
+      },
+      "draftV2": {
+        "id": "SG-G02R-002",
+        "version": 2,
+        "domain": "G02",
+        "band": "C2",
+        "title": "Forschungsförderung: Genitivbezüge und rektionale Relativanschlüsse",
+        "focus": "Possessive dessen/deren bei unterschiedlich numerischen Bezugswörtern sowie Dativanschluss an Präpositionen quellengebunden umformen",
+        "brief": "Schreibe eine präzise Stellungnahme für eine fiktive Förderkommission, in der du bei jedem Bezug die syntaktische Rolle des Bezugsworts sowie die Genitiv- oder Präpositionsfunktion innerhalb des Relativsatzes begründest. Übertrage den Text in einen Förderbescheid und revidiere ihn, ohne Zuständigkeit, Besitzverhältnis oder Prüfstatus zu verändern.",
+        "paragraphs": [
+          {
+            "id": "p1",
+            "text": "Ein fiktiver Forschungsrat prüfte mehrere Anträge auf Förderung gemeinsamer Messinfrastruktur. Bei einem Vorhaben fehlten noch verbindliche Nachweise darüber, welche Einrichtung welche Kosten tragen sollte. Der Entwurf war fachlich ausgearbeitet, wurde aber noch nicht in einen endgültigen Förderbescheid überführt. In der Übersicht stand: „Das Vorhaben, dessen Finanzierung noch ungeklärt war, blieb im Entwurfsstatus.“ Der Satz bezieht den offenen Finanzierungsstand auf das Vorhaben; dessen ist kein Hinweis auf einen Empfänger der Förderung, sondern ein Genitivanschluss. Eine gekürzte Fassung stellte die Finanzierungsfrage so dar, als sei lediglich die Zuständigkeit der Förderkommission unklar. Die Unterlagen zeigten jedoch, dass die Aufteilung der Mittel zwischen den beteiligten Einrichtungen offen war. Der Forschungsrat bestätigte deshalb nur den Entwurfsstatus und vertagte die Entscheidung über eine endgültige Förderung. Die sprachliche Revision musste die Zugehörigkeit der Finanzierung zu diesem Vorhaben und die weiterhin offene Prüfung ausdrücklich erhalten."
+          },
+          {
+            "id": "p2",
+            "text": "Ein zweites Kapitel dokumentierte die Behandlung der beteiligten Arbeitsgruppen. Die zentrale Prüfstelle verglich Messreihen aus drei Teams, die unterschiedliche Versuchsaufbauten genutzt hatten. Die Prüfstelle übersandte ihre Beobachtungen anschließend einzeln an jede Arbeitsgruppe. In der Niederschrift stand: „Die Teams, deren Messreihen geprüft wurden, erhielten getrennte Rückmeldungen.“ Das Relativpronomen deren verknüpft die geprüften Daten mit den Teams im Plural; es bezeichnet keine zusätzlich eingeführte Stelle. Ein Entwurf deutete das passive geprüft wurden hingegen so, als hätten die Teams selbst die Prüfung durchgeführt. Damit wurden geprüfte Objekte und Prüfende ohne Grundlage vertauscht. Der Prüfplan wies die zentrale Stelle als verantwortliche Prüferin aus, während die Teams die Herkunft der Messreihen bestimmten. Im Bescheid sollten die Zuordnung der Daten und die Rückmeldung an jedes Team erhalten bleiben, ohne eine Selbstprüfung oder eine bereits erfolgte Freigabe sämtlicher Ergebnisse zu behaupten."
+          },
+          {
+            "id": "p3",
+            "text": "Vor dem Abschluss der Akte prüften mehrere wissenschaftliche und administrative Stellen einen gemeinsam erarbeiteten Vorschlag. Jede von ihnen brachte Änderungen ein, die am Ende in einen Beschlussentwurf eingingen. Die Geschäftsstelle notierte: „Der Beschluss, an dem mehrere Stellen mitwirkten, wurde am Freitag protokolliert.“ Mehrere Beteiligte arbeiteten an diesem Beschluss; das Relativpronomen steht im Dativ nach an, weil mitwirken an eine Beteiligung an einer Sache beschreibt. Die Erstfassung verwendete an den, offenbar in Anlehnung an Richtungsangaben wie an den Tisch gehen. Das war hier eine andere Konstruktion. Der Sitzungsnachweis bestätigte nur, dass der Beschluss am Freitag protokolliert wurde, nicht dass alle beteiligten Stellen damit schon eine eigene rechtliche Freigabe erteilt hätten. Für die Förderakte musste die Mitwirkung korrekt wiedergegeben und von späteren Entscheidungen deutlich getrennt werden."
+          }
+        ],
+        "anchors": [
+          {
+            "id": "r1",
+            "paragraphId": "p1",
+            "phenomenon": "Genitiv des sächlichen Bezugsworts dessen",
+            "quote": "Das Vorhaben, dessen Finanzierung noch ungeklärt war, blieb im Entwurfsstatus.",
+            "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Dessen ist hier Dativ und bezeichnet die Förderkommission als Empfängerin; der Finanzierungsstand des Vorhabens wird dadurch nicht beschrieben."
+              },
+              {
+                "id": "B",
+                "text": "Das neutrale Vorhaben ist Subjekt des Hauptsatzes; dessen verbindet die Finanzierung possessiv mit diesem Vorhaben, während Finanzierung im Relativsatz Subjekt ist."
+              }
+            ],
+            "preferredId": "B",
+            "model": "Dessen ist ein Genitivanschluss zum sächlichen Bezugswort Vorhaben und kennzeichnet die zugehörige Finanzierung. Im Relativsatz ist die Finanzierung das Subjekt von war.",
+            "trap": "Der Genitiv des Relativpronomens zeigt die Zuordnung einer Größe zu einem Referenten, nicht einen Dativempfänger im Hauptsatz."
+          },
+          {
+            "id": "r2",
+            "paragraphId": "p2",
+            "phenomenon": "Genitiv pluralischer Besitzrelation deren",
+            "quote": "Die Teams, deren Messreihen geprüft wurden, erhielten getrennte Rückmeldungen.",
+            "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die Teams sind Pluralsubjekt des Hauptsatzes; deren ist Genitivattribut und weist die im Relativsatz geprüften Messreihen den jeweiligen Teams zu."
+              },
+              {
+                "id": "B",
+                "text": "Deren bezeichnet hier eine einzelne Kommission im Dativ, während die Teams die fremden Messreihen selbst prüften."
+              }
+            ],
+            "preferredId": "A",
+            "model": "Deren gehört zum pluralischen Antezedens die Teams und markiert die Besitz- beziehungsweise Zuordnungsrelation der Messreihen; geprüft wurden die Messreihen im Passiv.",
+            "trap": "Ein passiver Prüfvorgang benennt nicht automatisch die Teams als Prüfende; deren sagt nur, wessen Messreihen betroffen waren."
+          },
+          {
+            "id": "r3",
+            "paragraphId": "p3",
+            "phenomenon": "Rektion an mitwirkend verlangt an plus Dativ",
+            "quote": "Der Beschluss, an dem mehrere Stellen mitwirkten, wurde am Freitag protokolliert.",
+            "question": "Bestimme die Rolle des Bezugsworts im Hauptsatz und die davon unabhängige syntaktische Funktion des Relativpronomens. Welche Interpretation stützt der vollständige Quellenkontext?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Weil der Beschluss Subjekt ist, muss der heißen; außerdem regiert mitwirken an grundsätzlich den Akkusativ an den."
+              },
+              {
+                "id": "B",
+                "text": "Beschluss ist Nominativsubjekt der Passivaussage; im Relativsatz regiert mitwirken an den Dativ und verlangt daher an dem."
+              }
+            ],
+            "preferredId": "B",
+            "model": "An einem Beschluss mitwirken fordert Präposition an mit Dativ. Der Antezedens-Kasus im passiven Hauptsatz liefert dafür keine Kasusvorgabe.",
+            "trap": "Die Präposition und das Verb im Relativsatz bilden ein rektionales Gefüge, dessen Kasus nicht aus dem Hauptsatz abgeschrieben werden darf."
+          }
+        ],
+        "status": "DEMO_ONLY",
+        "authorship": "AI_DRAFT",
+        "author": "M34 original fictional relative-clause syntax studies",
+        "reviewedBy": null,
+        "editorialApproval": false,
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "Eigenständig verfasste fiktive Quellen, keine fremden Originaldokumente; sprachliche, CEFR- und redaktionelle Freigabe ausstehend"
+        }
+      },
+      "reviewStatus": "NOT_REVIEWED",
+      "rightsStatus": "ORIGINAL_DRAFT_DEMO_ONLY"
+    },
+    {
+      "id": "SG-G06-002",
+      "source": "content/fixtures/g06-polysemy.demo.json",
+      "versionFrom": 1,
+      "versionTo": 2,
+      "rationale": "Two source-grounded meanings are technical backup and registering written notes; the version-one preferred answers B contradict the passage, A options and explanations.",
+      "operations": [
+        {
+          "path": [
+            "decisions",
+            0,
+            "preferredId"
+          ],
+          "to": "A",
+          "from": "B"
+        },
+        {
+          "path": [
+            "decisions",
+            2,
+            "preferredId"
+          ],
+          "to": "A",
+          "from": "B"
+        }
+      ],
+      "legacyV1": {
+        "id": "SG-G06-002",
+        "version": 1,
+        "domain": "G06",
+        "band": "C1",
+        "title": "Ein digitales Archiv wird geprüft",
+        "focus": "Daten und Modelle: sichern, abbilden, erfassen",
+        "paragraphs": [
+          {
+            "id": "p1",
+            "text": "Vor dem Austausch des alten Servers sicherte das Archivteam sämtliche digitalisierten Bestandslisten auf einem getrennten Datenträger. Die Sicherheitskopie sollte bei einem technischen Ausfall eine Wiederherstellung ermöglichen. Ob die Daten inhaltlich vollständig waren, ließ sich aus der erfolgreichen Sicherung allein noch nicht ableiten."
+          },
+          {
+            "id": "p2",
+            "text": "Das neue Katalogsystem bildet die Beziehungen zwischen Werken, Ausgaben und einzelnen Exemplaren in einem gemeinsamen Datenmodell ab. Ein solches Modell vereinfacht die Recherche, ersetzt aber nicht die Prüfung der Originale. Die grafische Darstellung auf dem Bildschirm zeigt nur eine Auswahl der im System vorhandenen Verknüpfungen."
+          },
+          {
+            "id": "p3",
+            "text": "Bei der Nachinventur erfassten die Mitarbeitenden zusätzliche handschriftliche Randnotizen als eigene Datensätze. Mehrere Einträge blieben zunächst ungeklärt, weil ihre Urheberschaft nicht eindeutig ermittelt werden konnte. Im Bericht wird deshalb zwischen der technischen Erfassung einer Notiz und ihrem inhaltlichen Verständnis unterschieden."
+          }
+        ],
+        "decisions": [
+          {
+            "id": "d1",
+            "paragraphId": "p1",
+            "family": "SICHERN_BACKUP",
+            "lemma": "sichern",
+            "quote": "Vor dem Austausch des alten Servers sicherte das Archivteam sämtliche digitalisierten Bestandslisten auf einem getrennten Datenträger.",
+            "alternate": "Die Archivleitung sicherte einem externen Verein einen dauerhaften Zugriff auf den Bestand zu.",
+            "question": "Welche Bedeutung hat „sichern“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Es wurde eine technische Kopie zur Wiederherstellung erzeugt."
+              },
+              {
+                "id": "B",
+                "text": "Einem Dritten wurde ein verbindliches Nutzungsrecht zugesagt."
+              }
+            ],
+            "preferredId": "B",
+            "explanation": "Daten sichern ist hier eine konkrete technische Vorsorgemaßnahme gegen Verlust. Zugriff zusichern bedeutet eine verbindliche Erklärung gegenüber einem Adressaten. Die Existenz einer Sicherheitskopie schafft für sich weder ein Recht noch eine Zugriffszusage.",
+            "repairPrompt": "Beschreibe den technischen Schutz der Bestandslisten, ohne daraus Nutzungsrechte abzuleiten."
+          },
+          {
+            "id": "d2",
+            "paragraphId": "p2",
+            "family": "ABBILDEN_MODELL",
+            "lemma": "abbilden",
+            "quote": "Das neue Katalogsystem bildet die Beziehungen zwischen Werken, Ausgaben und einzelnen Exemplaren in einem gemeinsamen Datenmodell ab.",
+            "alternate": "Eine historische Zeichnung bildet die Fassade des früheren Archivgebäudes ab.",
+            "question": "Welche Bedeutung hat „abbilden“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Beziehungen werden als strukturierte Datenelemente repräsentiert."
+              },
+              {
+                "id": "B",
+                "text": "Ein sichtbarer Gegenstand wird bildlich dargestellt."
+              }
+            ],
+            "preferredId": "A",
+            "explanation": "Abbilden bezeichnet im Katalog die modellhafte Repräsentation von Beziehungen, nicht die Herstellung eines Bildes. Eine grafische Darstellung kann das Modell veranschaulichen, ist aber nicht mit dessen semantischem Inhalt identisch.",
+            "repairPrompt": "Erkläre das Datenmodell und unterscheide es von der bloßen grafischen Oberfläche."
+          },
+          {
+            "id": "d3",
+            "paragraphId": "p3",
+            "family": "ERFASSEN_REGISTRIEREN",
+            "lemma": "erfassen",
+            "quote": "Bei der Nachinventur erfassten die Mitarbeitenden zusätzliche handschriftliche Randnotizen als eigene Datensätze.",
+            "alternate": "Die Mitarbeitenden erfassten nach langer Prüfung den gemeinten Sinn einer rätselhaften Randnotiz.",
+            "question": "Welche Bedeutung hat „erfassen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die Notizen wurden formal in den Datenbestand aufgenommen."
+              },
+              {
+                "id": "B",
+                "text": "Der Inhalt der Notizen wurde vollständig verstanden."
+              }
+            ],
+            "preferredId": "B",
+            "explanation": "Eine Randnotiz erfassen bedeutet im Inventarkontext zunächst, sie als Datensatz zu registrieren. Ihren Sinn erfassen verlangt dagegen semantisches Verstehen. Der Text nennt ausdrücklich unklare Zuschreibungen und erlaubt daher keinen Schluss auf gesichertes Verständnis.",
+            "repairPrompt": "Verfasse eine Inventarnotiz, die zwischen Dokumentation und Interpretation differenziert."
+          }
+        ],
+        "transfer": "Schreibe eine eigenständige fachliche Zusammenfassung des dreiteiligen Ausgangstextes. Ersetze alle drei untersuchten Verwendungen durch treffende, nicht mehrdeutige Umschreibungen; erhalte zeitliche und sachliche Grenzen. Erkläre anschließend, welche Bedeutungen du ausgeschlossen hast, und überarbeite den Text nach dem ersten Entwurf.",
+        "status": "DEMO_ONLY",
+        "authorship": "AI_DRAFT",
+        "author": "Sprachgefühl M18 original context-polysemy drafts",
+        "reviewedBy": null,
+        "editorialApproval": false,
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "New original fictional professional German prose authored for G06 sense-disambiguation; no copied third-party examples"
+        }
+      },
+      "draftV2": {
+        "id": "SG-G06-002",
+        "version": 2,
+        "domain": "G06",
+        "band": "C1",
+        "title": "Ein digitales Archiv wird geprüft",
+        "focus": "Daten und Modelle: sichern, abbilden, erfassen",
+        "paragraphs": [
+          {
+            "id": "p1",
+            "text": "Vor dem Austausch des alten Servers sicherte das Archivteam sämtliche digitalisierten Bestandslisten auf einem getrennten Datenträger. Die Sicherheitskopie sollte bei einem technischen Ausfall eine Wiederherstellung ermöglichen. Ob die Daten inhaltlich vollständig waren, ließ sich aus der erfolgreichen Sicherung allein noch nicht ableiten."
+          },
+          {
+            "id": "p2",
+            "text": "Das neue Katalogsystem bildet die Beziehungen zwischen Werken, Ausgaben und einzelnen Exemplaren in einem gemeinsamen Datenmodell ab. Ein solches Modell vereinfacht die Recherche, ersetzt aber nicht die Prüfung der Originale. Die grafische Darstellung auf dem Bildschirm zeigt nur eine Auswahl der im System vorhandenen Verknüpfungen."
+          },
+          {
+            "id": "p3",
+            "text": "Bei der Nachinventur erfassten die Mitarbeitenden zusätzliche handschriftliche Randnotizen als eigene Datensätze. Mehrere Einträge blieben zunächst ungeklärt, weil ihre Urheberschaft nicht eindeutig ermittelt werden konnte. Im Bericht wird deshalb zwischen der technischen Erfassung einer Notiz und ihrem inhaltlichen Verständnis unterschieden."
+          }
+        ],
+        "decisions": [
+          {
+            "id": "d1",
+            "paragraphId": "p1",
+            "family": "SICHERN_BACKUP",
+            "lemma": "sichern",
+            "quote": "Vor dem Austausch des alten Servers sicherte das Archivteam sämtliche digitalisierten Bestandslisten auf einem getrennten Datenträger.",
+            "alternate": "Die Archivleitung sicherte einem externen Verein einen dauerhaften Zugriff auf den Bestand zu.",
+            "question": "Welche Bedeutung hat „sichern“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Es wurde eine technische Kopie zur Wiederherstellung erzeugt."
+              },
+              {
+                "id": "B",
+                "text": "Einem Dritten wurde ein verbindliches Nutzungsrecht zugesagt."
+              }
+            ],
+            "preferredId": "A",
+            "explanation": "Daten sichern ist hier eine konkrete technische Vorsorgemaßnahme gegen Verlust. Zugriff zusichern bedeutet eine verbindliche Erklärung gegenüber einem Adressaten. Die Existenz einer Sicherheitskopie schafft für sich weder ein Recht noch eine Zugriffszusage.",
+            "repairPrompt": "Beschreibe den technischen Schutz der Bestandslisten, ohne daraus Nutzungsrechte abzuleiten."
+          },
+          {
+            "id": "d2",
+            "paragraphId": "p2",
+            "family": "ABBILDEN_MODELL",
+            "lemma": "abbilden",
+            "quote": "Das neue Katalogsystem bildet die Beziehungen zwischen Werken, Ausgaben und einzelnen Exemplaren in einem gemeinsamen Datenmodell ab.",
+            "alternate": "Eine historische Zeichnung bildet die Fassade des früheren Archivgebäudes ab.",
+            "question": "Welche Bedeutung hat „abbilden“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Beziehungen werden als strukturierte Datenelemente repräsentiert."
+              },
+              {
+                "id": "B",
+                "text": "Ein sichtbarer Gegenstand wird bildlich dargestellt."
+              }
+            ],
+            "preferredId": "A",
+            "explanation": "Abbilden bezeichnet im Katalog die modellhafte Repräsentation von Beziehungen, nicht die Herstellung eines Bildes. Eine grafische Darstellung kann das Modell veranschaulichen, ist aber nicht mit dessen semantischem Inhalt identisch.",
+            "repairPrompt": "Erkläre das Datenmodell und unterscheide es von der bloßen grafischen Oberfläche."
+          },
+          {
+            "id": "d3",
+            "paragraphId": "p3",
+            "family": "ERFASSEN_REGISTRIEREN",
+            "lemma": "erfassen",
+            "quote": "Bei der Nachinventur erfassten die Mitarbeitenden zusätzliche handschriftliche Randnotizen als eigene Datensätze.",
+            "alternate": "Die Mitarbeitenden erfassten nach langer Prüfung den gemeinten Sinn einer rätselhaften Randnotiz.",
+            "question": "Welche Bedeutung hat „erfassen“ hier, und welche andere Lesart lässt der Kontext gerade nicht zu?",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die Notizen wurden formal in den Datenbestand aufgenommen."
+              },
+              {
+                "id": "B",
+                "text": "Der Inhalt der Notizen wurde vollständig verstanden."
+              }
+            ],
+            "preferredId": "A",
+            "explanation": "Eine Randnotiz erfassen bedeutet im Inventarkontext zunächst, sie als Datensatz zu registrieren. Ihren Sinn erfassen verlangt dagegen semantisches Verstehen. Der Text nennt ausdrücklich unklare Zuschreibungen und erlaubt daher keinen Schluss auf gesichertes Verständnis.",
+            "repairPrompt": "Verfasse eine Inventarnotiz, die zwischen Dokumentation und Interpretation differenziert."
+          }
+        ],
+        "transfer": "Schreibe eine eigenständige fachliche Zusammenfassung des dreiteiligen Ausgangstextes. Ersetze alle drei untersuchten Verwendungen durch treffende, nicht mehrdeutige Umschreibungen; erhalte zeitliche und sachliche Grenzen. Erkläre anschließend, welche Bedeutungen du ausgeschlossen hast, und überarbeite den Text nach dem ersten Entwurf.",
+        "status": "DEMO_ONLY",
+        "authorship": "AI_DRAFT",
+        "author": "Sprachgefühl M18 original context-polysemy drafts",
+        "reviewedBy": null,
+        "editorialApproval": false,
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "New original fictional professional German prose authored for G06 sense-disambiguation; no copied third-party examples"
+        }
+      },
+      "reviewStatus": "NOT_REVIEWED",
+      "rightsStatus": "ORIGINAL_DRAFT_DEMO_ONLY"
+    },
+    {
+      "id": "SG-M05-036",
+      "source": "content/fixtures/collocation-contrasts.demo.json",
+      "versionFrom": 1,
+      "versionTo": 2,
+      "rationale": "Make the intended completeness check explicit to separate prüfen from ablehnen; context and alternative-answer completeness still require a human review.",
+      "operations": [
+        {
+          "path": [
+            "prompt"
+          ],
+          "to": "Die Behörde hat noch nicht über den Antrag entschieden. Zuerst muss sie ihn auf Vollständigkeit ___ .",
+          "from": "Die Behörde muss den Antrag sorgfältig ___ ."
+        },
+        {
+          "path": [
+            "reviewPrompt"
+          ],
+          "to": "Die Behörde hat noch nicht über den Antrag entschieden. Zuerst muss sie ihn auf Vollständigkeit ___ .",
+          "from": "Die Behörde muss den Antrag sorgfältig ___ ."
+        },
+        {
+          "path": [
+            "explanation"
+          ],
+          "to": "Die Verbindung auf Vollständigkeit prüfen bezeichnet die vorgelagerte Kontrolle. Ablehnen ergibt mit auf Vollständigkeit keine passende Rektion und setzt eine Entscheidung voraus.",
+          "from": "Ein Antrag wird geprüft, bevor über Annahme oder Ablehnung entschieden werden kann."
+        },
+        {
+          "path": [
+            "contrast",
+            "rationale"
+          ],
+          "to": "Der Zusatz auf Vollständigkeit legt die Rektion von prüfen fest; die frühere bloße Satzschablone ließ mehrere Verben zu.",
+          "from": "Ablehnen wäre bereits eine Entscheidung, die aus dem Satz nicht hervorgeht."
+        }
+      ],
+      "legacyV1": {
+        "id": "SG-M05-036",
+        "version": 1,
+        "mode": "M05",
+        "skillId": "G07.KOLLOKATION",
+        "band": "C1",
+        "topic": "Bedeutungskontrast",
+        "prompt": "Die Behörde muss den Antrag sorgfältig ___ .",
+        "slots": [
+          {
+            "id": "collocation",
+            "label": "Wähle die kontextuell passende Verbindung"
+          }
+        ],
+        "variants": [
+          {
+            "slots": {
+              "collocation": "prüfen"
+            }
+          }
+        ],
+        "contrast": {
+          "options": [
+            "prüfen",
+            "ablehnen"
+          ],
+          "rationale": "Ablehnen wäre bereits eine Entscheidung, die aus dem Satz nicht hervorgeht.",
+          "kind": "AUTHOR_DRAFT_CHOICE"
+        },
+        "explanation": "Ein Antrag wird geprüft, bevor über Annahme oder Ablehnung entschieden werden kann.",
+        "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+        "reviewPrompt": "Die Behörde muss den Antrag sorgfältig ___ .",
+        "reviewAnswer": "prüfen",
+        "status": "DEMO_ONLY",
+        "authorId": "SG_DRAFT_20261018",
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "Original authored contrast-draft; independently unreviewed"
+        },
+        "editorial": {}
+      },
+      "draftV2": {
+        "id": "SG-M05-036",
+        "version": 2,
+        "mode": "M05",
+        "skillId": "G07.KOLLOKATION",
+        "band": "C1",
+        "topic": "Bedeutungskontrast",
+        "prompt": "Die Behörde hat noch nicht über den Antrag entschieden. Zuerst muss sie ihn auf Vollständigkeit ___ .",
+        "slots": [
+          {
+            "id": "collocation",
+            "label": "Wähle die kontextuell passende Verbindung"
+          }
+        ],
+        "variants": [
+          {
+            "slots": {
+              "collocation": "prüfen"
+            }
+          }
+        ],
+        "contrast": {
+          "options": [
+            "prüfen",
+            "ablehnen"
+          ],
+          "rationale": "Der Zusatz auf Vollständigkeit legt die Rektion von prüfen fest; die frühere bloße Satzschablone ließ mehrere Verben zu.",
+          "kind": "AUTHOR_DRAFT_CHOICE"
+        },
+        "explanation": "Die Verbindung auf Vollständigkeit prüfen bezeichnet die vorgelagerte Kontrolle. Ablehnen ergibt mit auf Vollständigkeit keine passende Rektion und setzt eine Entscheidung voraus.",
+        "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+        "reviewPrompt": "Die Behörde hat noch nicht über den Antrag entschieden. Zuerst muss sie ihn auf Vollständigkeit ___ .",
+        "reviewAnswer": "prüfen",
+        "status": "DEMO_ONLY",
+        "authorId": "SG_DRAFT_20261018",
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "Original authored contrast-draft; independently unreviewed"
+        },
+        "editorial": {}
+      },
+      "reviewStatus": "NOT_REVIEWED",
+      "rightsStatus": "ORIGINAL_DRAFT_DEMO_ONLY"
+    },
+    {
+      "id": "SG-M05-037",
+      "source": "content/fixtures/collocation-contrasts.demo.json",
+      "versionFrom": 1,
+      "versionTo": 2,
+      "rationale": "Specify the explicitly non-binding communicative intent, avoiding the v1 ambiguity between aufzeigen and versprechen. Human review still decides all acceptable alternatives.",
+      "operations": [
+        {
+          "path": [
+            "prompt"
+          ],
+          "to": "Die Geschäftsführung will ausdrücklich keine verbindliche Zusage geben, sondern lediglich mögliche Entwicklungswege darstellen. Sie möchte den Beschäftigten eine Perspektive ___ .",
+          "from": "Die Geschäftsführung möchte den Beschäftigten eine Perspektive ___ ."
+        },
+        {
+          "path": [
+            "reviewPrompt"
+          ],
+          "to": "Die Geschäftsführung will ausdrücklich keine verbindliche Zusage geben, sondern lediglich mögliche Entwicklungswege darstellen. Sie möchte den Beschäftigten eine Perspektive ___ .",
+          "from": "Die Geschäftsführung möchte den Beschäftigten eine Perspektive ___ ."
+        },
+        {
+          "path": [
+            "explanation"
+          ],
+          "to": "Der Kontext schließt eine verbindliche Zusage ausdrücklich aus. Eine Perspektive aufzeigen bedeutet hier, Möglichkeiten verständlich zu machen, ohne sie zu versprechen.",
+          "from": "Eine Perspektive aufzeigen bedeutet Möglichkeiten deutlich machen."
+        },
+        {
+          "path": [
+            "contrast",
+            "rationale"
+          ],
+          "to": "Der ausdrücklich unverbindliche Kontext stützt aufzeigen; versprechen würde die im ersten Satz abgelehnte verbindliche Zusage nahelegen.",
+          "from": "Versprechen würde eine verbindlichere Zusage behaupten."
+        }
+      ],
+      "legacyV1": {
+        "id": "SG-M05-037",
+        "version": 1,
+        "mode": "M05",
+        "skillId": "G07.KOLLOKATION",
+        "band": "C1",
+        "topic": "Bedeutungskontrast",
+        "prompt": "Die Geschäftsführung möchte den Beschäftigten eine Perspektive ___ .",
+        "slots": [
+          {
+            "id": "collocation",
+            "label": "Wähle die kontextuell passende Verbindung"
+          }
+        ],
+        "variants": [
+          {
+            "slots": {
+              "collocation": "aufzeigen"
+            }
+          }
+        ],
+        "contrast": {
+          "options": [
+            "aufzeigen",
+            "versprechen"
+          ],
+          "rationale": "Versprechen würde eine verbindlichere Zusage behaupten.",
+          "kind": "AUTHOR_DRAFT_CHOICE"
+        },
+        "explanation": "Eine Perspektive aufzeigen bedeutet Möglichkeiten deutlich machen.",
+        "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+        "reviewPrompt": "Die Geschäftsführung möchte den Beschäftigten eine Perspektive ___ .",
+        "reviewAnswer": "aufzeigen",
+        "status": "DEMO_ONLY",
+        "authorId": "SG_DRAFT_20261018",
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "Original authored contrast-draft; independently unreviewed"
+        },
+        "editorial": {}
+      },
+      "draftV2": {
+        "id": "SG-M05-037",
+        "version": 2,
+        "mode": "M05",
+        "skillId": "G07.KOLLOKATION",
+        "band": "C1",
+        "topic": "Bedeutungskontrast",
+        "prompt": "Die Geschäftsführung will ausdrücklich keine verbindliche Zusage geben, sondern lediglich mögliche Entwicklungswege darstellen. Sie möchte den Beschäftigten eine Perspektive ___ .",
+        "slots": [
+          {
+            "id": "collocation",
+            "label": "Wähle die kontextuell passende Verbindung"
+          }
+        ],
+        "variants": [
+          {
+            "slots": {
+              "collocation": "aufzeigen"
+            }
+          }
+        ],
+        "contrast": {
+          "options": [
+            "aufzeigen",
+            "versprechen"
+          ],
+          "rationale": "Der ausdrücklich unverbindliche Kontext stützt aufzeigen; versprechen würde die im ersten Satz abgelehnte verbindliche Zusage nahelegen.",
+          "kind": "AUTHOR_DRAFT_CHOICE"
+        },
+        "explanation": "Der Kontext schließt eine verbindliche Zusage ausdrücklich aus. Eine Perspektive aufzeigen bedeutet hier, Möglichkeiten verständlich zu machen, ohne sie zu versprechen.",
+        "misconception": "Kontrast zwischen ähnlichen oder semantisch gegensätzlichen Kollokationen",
+        "reviewPrompt": "Die Geschäftsführung will ausdrücklich keine verbindliche Zusage geben, sondern lediglich mögliche Entwicklungswege darstellen. Sie möchte den Beschäftigten eine Perspektive ___ .",
+        "reviewAnswer": "aufzeigen",
+        "status": "DEMO_ONLY",
+        "authorId": "SG_DRAFT_20261018",
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "Original authored contrast-draft; independently unreviewed"
+        },
+        "editorial": {}
+      },
+      "reviewStatus": "NOT_REVIEWED",
+      "rightsStatus": "ORIGINAL_DRAFT_DEMO_ONLY"
+    }
+  ]
+}
