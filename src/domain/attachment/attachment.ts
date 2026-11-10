@@ -1,5 +1,6 @@
 import raw from '../../../content/fixtures/g03-attachment.demo.json';
 import type {ProductionEntry,ProductionRevision} from '../production/types';
+import {sourceEntryId,matchesSourceEntry,exactSourceForEntry} from '../content/sourceIdentity';
 
 export type AttachmentChoice='A'|'B';
 export type AttachmentPoint={
@@ -17,10 +18,10 @@ export type AttachmentEvidence={
  rewrite:string;alternative:string;context:string;boundary:string;initial:boolean;
 };
 export const attachmentStudies:AttachmentStudy[]=raw as AttachmentStudy[];
-export const attachmentId=(id:string)=>'attachment:'+id;
-export const isAttachmentEntry=(e:ProductionEntry):boolean=>e.kind==='ATTACHMENT_STUDY'&&e.id===attachmentId(e.itemId);
+export const attachmentId=(id:string,version=1)=>sourceEntryId('attachment',id,version);
+export const isAttachmentEntry=(e:ProductionEntry):boolean=>matchesSourceEntry(e,'ATTACHMENT_STUDY','attachment');
 export const attachmentSource=(e:ProductionEntry):AttachmentStudy|null=>
- isAttachmentEntry(e)?attachmentStudies.find(s=>s.id===e.itemId&&s.id===e.sourceId&&s.version===e.itemVersion)??null:null;
+ isAttachmentEntry(e)?exactSourceForEntry(e,attachmentStudies):null;
 const ALT='\n\nAlternative Anbindung:\n',CONTEXT='\n\nQuellenkontext:\n',LIMIT='\n\nNicht belegte Folgerung:\n';
 const markers=[ALT,CONTEXT,LIMIT];
 const norm=(x:string)=>x.trim().replace(/\s+/g,' ').toLocaleLowerCase('de-DE');
@@ -49,7 +50,7 @@ export function independentAttachment(p:AttachmentPoint,rewrite:string,alternati
 export function beginAttachment(s:AttachmentStudy,pointId:string,choice:AttachmentChoice,rewrite:string,alternative:string,context:string,boundary:string,at:number):ProductionEntry{
  const source=attachmentStudies.find(x=>x.id===s.id&&x.version===s.version),p=source?.attachments[0];
  if(!p||p.id!==pointId||!isChoice(p,choice)||!independentAttachment(p,rewrite,alternative,context,boundary)||!Number.isFinite(at))throw Error('Eigenständige Anbindungsanalyse, Gegenlesart, Quellenbeleg und Grenze erforderlich.');
- return {id:attachmentId(s.id),kind:'ATTACHMENT_STUDY',itemId:s.id,itemVersion:s.version,sourceId:s.id,
+ return {id:attachmentId(s.id,s.version),kind:'ATTACHMENT_STUDY',itemId:s.id,itemVersion:s.version,sourceId:s.id,
   decisionId:p.id+'|'+choice+'|'+p.paragraphId,createdAt:at,original:encoded(rewrite,alternative,context,boundary),revisions:[],evaluated:'UNASSESSED'};
 }
 export function firstAttachment(e:ProductionEntry):AttachmentEvidence|null{
@@ -68,7 +69,7 @@ export function savedAttachment(e:ProductionEntry,p:AttachmentPoint):AttachmentE
 }
 export function nextAttachment(s:AttachmentStudy,e:ProductionEntry|null):AttachmentPoint|null{
  if(!e)return s.attachments[0]??null;
- if(attachmentSource(e)?.id!==s.id||!firstAttachment(e))return null;
+ if(attachmentSource(e)?.id!==s.id||attachmentSource(e)?.version!==s.version||!firstAttachment(e))return null;
  return s.attachments.find(p=>!savedAttachment(e,p))??null;
 }
 export function appendAttachment(e:ProductionEntry,s:AttachmentStudy,pointId:string,choice:AttachmentChoice,rewrite:string,alternative:string,context:string,boundary:string,revisionId:string,at:number):ProductionEntry{
@@ -102,6 +103,6 @@ export function attachmentProgress(entries:readonly ProductionEntry[]){
   revised:rows.reduce((n,x)=>n+(x.e?.revisions.filter(r=>r.questionId==='REWRITE').length??0),0),total:attachmentStudies.length};
 }
 export function nextAttachmentStudy(entries:readonly ProductionEntry[]):AttachmentStudy{
- return attachmentStudies.find(s=>entries.some(e=>isAttachmentEntry(e)&&e.itemId===s.id&&!e.revisions.some(r=>r.questionId==='TRANSFER')))||
- attachmentStudies.find(s=>!entries.some(e=>isAttachmentEntry(e)&&e.itemId===s.id))||attachmentStudies[0];
+ return attachmentStudies.find(s=>entries.some(e=>isAttachmentEntry(e)&&e.itemId===s.id&&e.itemVersion===s.version&&!e.revisions.some(r=>r.questionId==='TRANSFER')))||
+ attachmentStudies.find(s=>!entries.some(e=>isAttachmentEntry(e)&&e.itemId===s.id&&e.itemVersion===s.version))||attachmentStudies[0];
 }

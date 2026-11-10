@@ -5,7 +5,7 @@ import {readFileSync} from 'node:fs';
 import {validateM43,renderM43} from '../scripts/editorial/m43Review.mjs';
 import {validateM38} from '../scripts/editorial/m38Qualification.mjs';
 import {validateM42} from '../scripts/editorial/m42Review.mjs';
-import {attachmentStudies,attachmentSource} from '../src/domain/attachment/attachment.ts';
+import {attachmentStudies,attachmentSource,attachmentId,isAttachmentEntry,attachmentProgress,nextAttachmentStudy} from '../src/domain/attachment/attachment.ts';
 import {archiveKind,archiveRow} from '../src/domain/archive/archive.ts';
 import type {ProductionEntry} from '../src/domain/production/types.ts';
 const read=(p:string)=>JSON.parse(readFileSync(p,'utf8'));
@@ -49,4 +49,25 @@ test('M43 rejects fabricated human approval, altered previous text and unreviewe
  bad(p=>p.cases[0].draftV2.attachments[1].preferredId='B');
  bad(p=>p.cases[0].operations[0].to=p.cases[0].operations[0].from);
  assert.equal(JSON.stringify(read('content/editorial/m43-versioned-drafts.json')),before);
+});
+
+test('M43 future attachment ID versions cannot collide with historical v1 archive/progress',()=>{
+ const s=attachmentStudies.find(x=>x.id==='SG-G03A-002')!;
+ const v1:ProductionEntry={id:attachmentId(s.id),itemId:s.id,itemVersion:1,sourceId:s.id,kind:'ATTACHMENT_STUDY',createdAt:11,original:'Historical immutable text',revisions:[],evaluated:'UNASSESSED'};
+ const v2:ProductionEntry={...v1,id:attachmentId(s.id,2),itemVersion:2};
+ assert.equal(attachmentId(s.id),'attachment:'+s.id);
+ assert.equal(attachmentId(s.id,2),'attachment:'+s.id+':v2');
+ assert.equal(isAttachmentEntry(v1),true);
+ assert.equal(isAttachmentEntry(v2),true);
+ assert.equal(attachmentSource(v1)?.version,1);
+ assert.equal(attachmentSource(v2),null,'unapproved v2 must not resolve against v1 source');
+ assert.equal(archiveKind(v2),'G03_ATTACHMENT');
+ assert.match(archiveRow(v2).context,/Quellenversion nicht verfügbar/);
+ assert.deepEqual(attachmentProgress([v2]),attachmentProgress([]));
+ assert.equal(nextAttachmentStudy([v2]).id,attachmentStudies[0].id);
+ const legacyV1IdWithV2Version={...v2,id:attachmentId(s.id)};
+ assert.equal(isAttachmentEntry(legacyV1IdWithV2Version),false);
+ assert.equal(archiveKind(legacyV1IdWithV2Version),'G03_ATTACHMENT');
+ assert.match(archiveRow(legacyV1IdWithV2Version).context,/Quellenversion nicht verfügbar/);
+ assert.throws(()=>attachmentId(s.id,0),/Ungültige/);
 });

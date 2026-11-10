@@ -46,7 +46,7 @@ export function archiveKind(entry:ProductionEntry):ArchiveKind{
  if(isRelativeEntry(entry)||(entry.kind==='RELATIVE_STUDY'&&entry.id==='relative:'+entry.itemId))return 'G02_RELATIVE';
  if(isDeixisEntry(entry))return 'G01_DEIXIS';
  if(isRelationEntry(entry))return 'G04_RELATION';
- if(isAttachmentEntry(entry))return 'G03_ATTACHMENT';
+ if(isAttachmentEntry(entry)||(entry.kind==='ATTACHMENT_STUDY'&&entry.id==='attachment:'+entry.itemId))return 'G03_ATTACHMENT';
  if(isScopeEntry(entry))return 'G04_SCOPE';
  if(isRegisterEntry(entry))return 'G08_REGISTER_RESPONSIBILITY';
  if(isDefinitionEntry(entry))return 'G06_DEFINITION';
@@ -90,7 +90,8 @@ export function archiveRow(entry:ProductionEntry):ArchiveRow{
  const exactSource=kind==='G12_ORAL'?oralStudies.some(s=>s.id===entry.itemId&&s.version===entry.itemVersion&&entry.sourceId===s.id):
   kind==='G02_RELATIVE'?relativeStudies.some(s=>s.id===entry.itemId&&s.version===entry.itemVersion&&entry.sourceId===s.id):
    kind==='G06_POLYSEMY'?polysemyStudies.some(s=>s.id===entry.itemId&&s.version===entry.itemVersion&&entry.sourceId===s.id):
-   kind==='G07_PHRASEOLOGY'?phraseologyStudies.some(s=>s.id===entry.itemId&&s.version===entry.itemVersion&&entry.sourceId===s.id):true;
+   kind==='G07_PHRASEOLOGY'?phraseologyStudies.some(s=>s.id===entry.itemId&&s.version===entry.itemVersion&&entry.sourceId===s.id):
+   kind==='G03_ATTACHMENT'?attachmentStudies.some(s=>s.id===entry.itemId&&s.version===entry.itemVersion&&entry.sourceId===s.id):true;
  const lastAt=Math.max(entry.createdAt,...entry.revisions.map(r=>r.at).filter(n=>Number.isFinite(n)));
  return {entry,kind,title:exactSource?(title??'Historischer Entwurf ('+entry.itemId+')'):'Historischer Entwurf ('+entry.itemId+' · v'+entry.itemVersion+')',context:exactSource?(context??'Originalinhalt inzwischen nicht mehr im Entwurfskatalog.'):'Originalinhalt inzwischen nicht mehr im Entwurfskatalog (Quellenversion nicht verfügbar).',description,scope:kind==='G12_ORAL'?'G12':kind==='G02_RELATIVE'?'G02':kind==='G01_DEIXIS'?'G01':kind==='G04_RELATION'?'G04':kind==='G03_ATTACHMENT'?'G03':kind==='G04_SCOPE'?'G04':kind==='G08_REGISTER_RESPONSIBILITY'?'G08':kind==='G06_DEFINITION'?'G06':kind==='G09_CHRONOLOGY'?'G09':kind==='G13_DISCLOSURE'?'G13':kind==='G09_NUMERIC'?'G09':kind==='G11_ARGUMENT'?'G11':kind==='G12_REPAIR'?'G12':kind==='G11_ATTRIBUTION'?'G11':kind==='G04_COMPRESSION'?'G04':kind==='G09_CROSS_SOURCE'?'G09':kind==='G08_STANCE'?'G08':kind==='G06_POLYSEMY'?'G06':kind==='G07_PHRASEOLOGY'?'G07':kind==='G01_REFERENCE'?'G01':kind==='G04_FOCUS'?'G04':kind==='G03_VALENCY'?'G03':kind==='G02_CASE_TRACING'?'G02':kind==='G05_MODALITY'?'G05':kind==='G11_EDITORIAL'?'G11':kind==='G12_INTERACTION'?'G12':kind==='G13_MEDIATION'?'G13':kind==='G10_LISTENING'?'G10':kind==='M04'?'G04':kind==='G08'?'G08':'G09',lastAt,revisions:entry.revisions.length};
 }
