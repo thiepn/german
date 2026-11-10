@@ -52,7 +52,16 @@ test('M42 v2 author proposal cannot be interpreted as activated G06/G07 learner 
 });
 test('M42 review packet names every sample source, disputed option, CEFR mapping and independent signoff field',()=>{
  const r=validateM42(),md=renderM42(r);
- assert.equal(r.sample.length,26);assert.equal(r.inventory.length,13);
+ assert.equal(r.sample.length,26);
+ // All thirteen G01–G13 studio groups are mandatory, but cross-cutting
+ // objective content and unmapped source imports MUST remain in the release hold
+ // inventory rather than being silently dropped to make its length equal 13.
+ const expectedDomains=Array.from({length:13},(_,i)=>'G'+String(i+1).padStart(2,'0'));
+ const groupedDomains=r.inventory.map((x:any)=>x.domain);
+ assert.deepEqual(groupedDomains.filter((d:string)=>/^G(?:0[1-9]|1[0-3])$/.test(d)).sort(),expectedDomains);
+ assert.ok(groupedDomains.includes('M01–M07'),'objective fixture hold must remain visible');
+ assert.ok(groupedDomains.includes('UNMAPPED_HOLD'),'unmapped demo references must fail closed');
+ assert.equal(new Set(groupedDomains).size,r.inventory.length);
  assert.equal(r.inventory.reduce((n:number,x:any)=>n+x.directDemoImports,0),38);
  assert.ok(md.includes('SG-G03A-002:a1')&&md.includes('SG-G07-003:d1'));
  assert.ok(md.includes('SG-G06-006:d3')&&md.includes('SG-G07-006:d3'));
