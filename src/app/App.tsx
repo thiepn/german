@@ -17,6 +17,7 @@ import Curriculum from '../features/curriculum/Curriculum';
 import PracticeRunner from '../features/practice/PracticeRunner';
 import ErrorArchive from '../features/errors/ErrorArchive';
 import {failedDelayedCaseForAttempt} from '../domain/errors/delayedFailure';
+import {exhaustedContrastPlans} from '../domain/errors/exhaustedContrast';
 import ReviewQueue from '../features/review/ReviewQueue';
 import Progress from '../features/progress/Progress';
 import DataManagement from '../features/data/DataManagement';
@@ -156,6 +157,29 @@ export default function App(){
   setItem(null);setFeedback(null);setShowData(false);
   setShowProduction(kind==='M04');setShowPragmatics(kind==='G08');setShowReading(kind==='G09_READING'||kind==='G09_TRANSFER');setShowListening(kind==='G10_LISTENING');setShowMediation(kind==='G13_MEDIATION');setShowInteraction(kind==='G12_INTERACTION');setShowEditorial(kind==='G11_EDITORIAL');setShowModality(kind==='G05_MODALITY');setShowCaseTracing(kind==='G02_CASE_TRACING');setShowValency(kind==='G03_VALENCY');setShowFocus(kind==='G04_FOCUS');setShowReference(kind==='G01_REFERENCE');setShowPhraseology(kind==='G07_PHRASEOLOGY');setShowPolysemy(kind==='G06_POLYSEMY');setShowStance(kind==='G08_STANCE');setShowCrossSource(kind==='G09_CROSS_SOURCE');setShowCompression(kind==='G04_COMPRESSION');setShowAttribution(kind==='G11_ATTRIBUTION');setShowRepair(kind==='G12_REPAIR');setShowArgument(kind==='G11_ARGUMENT');setShowNumeracy(kind==='G09_NUMERIC');setShowDisclosure(kind==='G13_DISCLOSURE');setShowChronology(kind==='G09_CHRONOLOGY');setShowDefinition(kind==='G06_DEFINITION');setShowRegister(kind==='G08_REGISTER_RESPONSIBILITY');setShowScope(kind==='G04_SCOPE');setShowAttachment(kind==='G03_ATTACHMENT');setShowRelation(kind==='G04_RELATION');setShowDeixis(kind==='G01_DEIXIS');setShowRelative(kind==='G02_RELATIVE');setShowOral(kind==='G12_ORAL');
   setTab(kind==='M04'?'Trainieren':'Lernen');
+ }
+ async function startExhaustedDue(key:string,id:string){
+  setError('');
+  try{
+   const snap=await loadSnapshot(),now=Date.now();
+   const plan=exhaustedContrastPlans(now,snap.attempts,allItems,snap.cards).find(x=>x.key===key);
+   if(!plan||plan.dueItem?.id!==id)throw Error('Dieser genaue Kontrast oder die fällige Karte ist nicht mehr gültig.');
+   start(plan.dueItem.mode,plan.dueItem.id,true);
+  }catch(e){setError('Kontrastübung: '+String(e));await refresh().catch(()=>{})}
+ }
+ function openExhaustedSource(skillId:string){
+  if(mission&&mission.phase!=='COMPLETE'){setError('Zuerst die offene Tagesmission fortsetzen oder abschließen.');return;}
+  const domain=skillId.slice(0,3);
+  selectTab('Lernen');
+  if(domain==='G01')setShowReference(true);
+  else if(domain==='G02')setShowCaseTracing(true);
+  else if(domain==='G03')setShowValency(true);
+  else if(domain==='G04')setShowRelation(true);
+  else if(domain==='G05')setShowModality(true);
+  else if(domain==='G06')setShowDefinition(true);
+  else if(domain==='G07')setShowPhraseology(true);
+  // Unmapped domains land in the normal Curriculum; do not substitute
+  // a studio that supposedly validates the same author topic.
  }
  async function startReconstructionPractice(failedAttemptId:string,kind:'DUE'|'FRESH'){
   setError('');
@@ -307,6 +331,7 @@ export default function App(){
  </div>:null;
 })()}</>:reviewPage?<ReviewQueue cards={cards} events={reviews} attempts={attempts} byId={itemById} onTransfer={(event,id)=>void beginReviewTransfer(event,id)} onStart={id=>{const i=itemById.get(id);if(i)start(i.mode,id,true)}}/>:<section><h1 className="page-title">Trainieren</h1><div className="grid">{availableModes.map(m=><article className="panel" key={m}><div className="kicker">{m}</div><h2>{labels[m]}</h2><p className="muted">{itemsForMode(m).length} Aufgaben</p><button className="button" onClick={()=>start(m)}>Übung starten</button></article>)}</div><div className="buttonrow"><button className="button outline" onClick={()=>setReviewPage(true)}>Fällige Wiederholungen ({dueReviewCards(cards,Date.now()).length})</button></div><div className="grid" style={{marginTop:18}}><article className="panel"><h2>Satzlabor · Schreibwerkstatt</h2><button className="button outline" onClick={()=>setShowProduction(true)}>Schreibwerkstatt öffnen</button></article><article className="panel"><h2>Kontrastduell</h2><button className="button outline" onClick={()=>{const first=itemsForMode('M05').find(i=>i.contrast);if(first)start('M05',first.id)}}>Kontrast üben</button></article><article className="panel"><h2>Wörterbuchgestützte Nuancen</h2><button className="button outline" onClick={()=>{const first=itemsForMode('M05').find(i=>!!i.lexicalAuthority);if(first)start('M05',first.id)}}>Beleggestützte Wendungen üben</button></article></div></section>)}
   {tab==='Fehler'&&<ErrorArchive attempts={attempts} byId={itemById} cards={cards} preferredFailedAttemptId={focusedFailedAttemptId}
+   onExhaustedDue={(key,id)=>void startExhaustedDue(key,id)} onExhaustedSource={openExhaustedSource}
    onRecoveryPractice={(id,kind)=>void startReconstructionPractice(id,kind)}
    onRetry={id=>{const i=itemById.get(id);if(i)start(i.mode,id)}}/>}
   {tab==='Fortschritt'&&(showArchive?<WritingArchive entries={productions} onOpen={openArchived} onExit={()=>setShowArchive(false)}/>:<Progress links={links} focusChoice={focusChoice} onEvidencePractice={()=>{if(delayedBlocked||!recommended||focusChoice.reason!=='FRESH_CONTEXT')return;start(recommended.mode,recommended.id,false)}} delayed={delayed} delayedBlocked={delayedBlocked} onDelayedWriting={openDelayed} cycle={cycle} onToday={()=>selectTab('Heute')} attempts={attempts} cards={cards} reviews={reviews} productions={productions} onContinue={row=>openArchived(row.kind,row.entry)} onData={()=>setShowData(true)} onArchive={()=>{void refresh().catch(e=>setError(String(e)));setShowArchive(true)}} onMediation={()=>{setShowArchive(false);setShowMediation(true);setTab('Lernen')}} onInteraction={()=>{setShowArchive(false);setShowInteraction(true);setTab('Lernen')}} onEditorial={()=>{setShowArchive(false);setShowEditorial(true);setTab('Lernen')}} onModality={()=>{setShowArchive(false);setShowModality(true);setTab('Lernen')}} onCaseTracing={()=>{setShowArchive(false);setShowCaseTracing(true);setTab('Lernen')}} onValency={()=>{setShowArchive(false);setShowValency(true);setTab('Lernen')}} onFocus={()=>{setShowArchive(false);setShowFocus(true);setTab('Lernen')}} onReference={()=>{setShowArchive(false);setShowReference(true);setTab('Lernen')}} onPhraseology={()=>{setShowArchive(false);setShowPhraseology(true);setTab('Lernen')}} onPolysemy={()=>{setShowArchive(false);setShowPolysemy(true);setTab('Lernen')}} onStance={()=>{setShowArchive(false);setShowStance(true);setTab('Lernen')}} onCrossSource={()=>{setShowArchive(false);setShowCrossSource(true);setTab('Lernen')}} onCompression={()=>{setShowArchive(false);setShowCompression(true);setTab('Lernen')}} onAttribution={()=>{setShowArchive(false);setShowAttribution(true);setTab('Lernen')}} onRepair={()=>{setShowArchive(false);setShowRepair(true);setTab('Lernen')}} onArgument={()=>{setShowArchive(false);setShowArgument(true);setTab('Lernen')}} onNumeracy={()=>{setShowArchive(false);setShowNumeracy(true);setTab('Lernen')}} onDisclosure={()=>{setShowArchive(false);setShowDisclosure(true);setTab('Lernen')}} onChronology={()=>{setShowArchive(false);setShowChronology(true);setTab('Lernen')}} onDefinition={()=>{setShowArchive(false);setShowDefinition(true);setTab('Lernen')}} onRegister={()=>{setShowArchive(false);setShowRegister(true);setTab('Lernen')}} onScope={()=>{setShowArchive(false);setShowScope(true);setTab('Lernen')}} onAttachment={()=>{setShowArchive(false);setShowAttachment(true);setTab('Lernen')}} onRelation={()=>{setShowArchive(false);setShowRelation(true);setTab('Lernen')}} onDeixis={()=>{setShowArchive(false);setShowDeixis(true);setTab('Lernen')}} onRelative={()=>{setShowArchive(false);setShowRelative(true);setTab('Lernen')}} onOral={()=>{setShowArchive(false);setShowOral(true);setTab('Lernen')}}/>)}
