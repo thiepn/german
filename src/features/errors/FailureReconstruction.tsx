@@ -2,8 +2,10 @@ import {useState} from 'react';
 import type {FailedDelayedCase,VerifiableStep} from '../../domain/errors/delayedFailure';
 
 const normalize=(s:string)=>s.trim().toLocaleLowerCase('de-DE').replace(/\s+/g,' ');
-const ownWords=(a:string,b:string)=>new Set((normalize(a).match(/[\p{L}\p{N}]+/gu)??[])
- .filter(x=>!(normalize(b).match(/[\p{L}\p{N}]+/gu)??[]).includes(x))).size>=5;
+const ownWords=(a:string,b:string)=>{
+ const compare=new Set<string>(normalize(b).match(/[\p{L}\p{N}]+/gu)??[]);
+ return new Set<string>((normalize(a).match(/[\p{L}\p{N}]+/gu)??[]).filter(x=>!compare.has(x))).size>=5;
+};
 function preservedAnswer(step:VerifiableStep){
  return step.item.slots.map(s=>step.attempt.slots[s.id]?.trim()||'—').join(' · ');
 }

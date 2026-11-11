@@ -16,7 +16,7 @@ import Today from '../features/today/Today';
 import Curriculum from '../features/curriculum/Curriculum';
 import PracticeRunner from '../features/practice/PracticeRunner';
 import ErrorArchive from '../features/errors/ErrorArchive';
-import {failedDelayedCaseForAttempt,failedDelayedCases} from '../domain/errors/delayedFailure';
+import {failedDelayedCaseForAttempt} from '../domain/errors/delayedFailure';
 import ReviewQueue from '../features/review/ReviewQueue';
 import Progress from '../features/progress/Progress';
 import DataManagement from '../features/data/DataManagement';

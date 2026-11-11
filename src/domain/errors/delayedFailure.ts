@@ -50,7 +50,7 @@ export function failedDelayedCases(now:number,attempts:readonly Attempt[],items:
   found.push({key,mode:latest.item.mode,skillId:latest.item.skillId,topic:latest.item.topic,
    earlierError,firstTransfer,delayedFailure:latest,nextItem});
  }
- return found.sort((a,b)=>b.delayedFailure.attempt.at-a.delayedFailure.at||
+ return found.sort((a,b)=>b.delayedFailure.attempt.at-a.delayedFailure.attempt.at||
   a.key.localeCompare(b.key));
 }
 export function failedDelayedCaseForAttempt(now:number,attempts:readonly Attempt[],items:readonly Exercise[],id:string):FailedDelayedCase|null{
