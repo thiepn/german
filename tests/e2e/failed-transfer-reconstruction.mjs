@@ -42,7 +42,7 @@ async function scenario(width){
   await entry.getByRole('button',{name:'Fehler rekonstruieren'}).click();
   await p.getByRole('heading',{name:'Fehlerarchiv'}).waitFor();
   const review=p.getByRole('region',{name:'Fehlerrekonstruktion SG-M04-003'});
-  await review.getByText('Die Kommission erklärte',{exact:false}).first().waitFor();
+  await review.getByText(byId.get('SG-M04-003').prompt,{exact:false}).first().waitFor();
   assert.equal(await review.getByRole('heading',{name:'1 · Erster unsicherer Kontext',exact:false}).count(),0);
   await review.getByLabel('Welche Regel oder Unterscheidung hätte die Antwort bestimmen müssen? (mindestens 85 Zeichen)').fill(rule);
   await review.getByLabel('Worin könnte sich dieser Fall vom zuvor richtig gelösten unterscheiden? (mindestens 60 Zeichen)').fill(difference);
