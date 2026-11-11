@@ -5,7 +5,7 @@ import {relativeSource} from '../relative/relative';
 import {attachmentSource} from '../attachment/attachment';
 import {phraseologySource} from '../phraseology/phraseology';
 import {definitionSource} from '../definition/definition';
-import {disclosureSource} from '../disclosure/disclosure';
+import {disclosureSource,hasRestricted} from '../disclosure/disclosure';
 
 // Deliberately narrow version-safe vertical slice. Never resolve a historical source
 // by title or silently substitute a newer fixture for an old saved entry.
@@ -17,6 +17,9 @@ const DAY=86400000;
 const DELAYS:Readonly<Record<Round,number>>={1:DAY,2:7*DAY,3:21*DAY};
 const norm=(s:string)=>s.trim().replace(/\s+/g,' ').toLocaleLowerCase('de-DE');
 const safe=(s:string,min:number,max:number)=>typeof s==='string'&&s.trim().length>=min&&s.length<=max;
+// Mechanical guard against token-identical or punctuation-only edits; not a correctness grade.
+const substantive=(a:string,b:string)=>{const x=new Set(norm(a).match(/[\p{L}\p{N}]+/gu)??[]),y=new Set(norm(b).match(/[\p{L}\p{N}]+/gu)??[]);return [...x].filter(w=>!y.has(w)).length+[...y].filter(w=>!x.has(w)).length>=8;};
+const restricted=(e:ProductionEntry,...fields:string[])=>{const s=disclosureSource(e);return !!s&&hasRestricted(s,fields.join(' '));};
 const tag=(stage:'RECALL'|'REPAIR',round:Round)=>'SG_DELAYED_'+stage+':'+round;
 const last=(entry:ProductionEntry,check:(r:ProductionRevision)=>boolean)=>[...entry.revisions].reverse().find(check)??null;
 export type DelayedCandidate={
@@ -90,7 +93,7 @@ function assertCurrent(entry:ProductionEntry,c:DelayedCandidate,now:number){
 export function saveColdRecall(entry:ProductionEntry,c:DelayedCandidate,text:string,uncertainty:string,revisionId:string,now:number):ProductionEntry{
  const current=assertCurrent(entry,c,now);
  if(current.recall||!safe(text,150,2600)||!safe(uncertainty,60,850)||norm(text)===norm(current.baseline.text)||
- norm(text)===norm(uncertainty)||!revisionId||entry.revisions.some(r=>r.id===revisionId))throw Error('Eigenständiger, ungestützter Abruf und offene Unsicherheit erforderlich.');
+ norm(text)===norm(uncertainty)||restricted(entry,text,uncertainty)||!revisionId||entry.revisions.some(r=>r.id===revisionId))throw Error('Eigenständiger, ungestützter Abruf und offene Unsicherheit erforderlich.');
  const revision:ProductionRevision={id:revisionId,at:now,text:text.trim(),reflection:uncertainty.trim(),
   questionId:tag('RECALL',c.round),lens:'BEDEUTUNG',selfChecks:['BASELINE:'+current.baseline.id]};
  return {...entry,revisions:[...entry.revisions,revision]};
@@ -99,7 +102,7 @@ export function saveSourceRepair(entry:ProductionEntry,c:DelayedCandidate,text:s
  const current=assertCurrent(entry,c,now);
  if(!current.pendingRepair||!current.recall||!current.source.paragraphs.some(p=>p.id===paragraphId)||
  !safe(text,170,2600)||!safe(reason,90,1000)||norm(text)===norm(current.recall.text)||
- norm(text)===norm(current.baseline.text)||norm(text)===norm(reason)||
+ norm(text)===norm(current.baseline.text)||norm(text)===norm(reason)||!substantive(current.recall.text,text)||restricted(entry,text,reason)||
  !revisionId||entry.revisions.some(r=>r.id===revisionId)||now<current.recall.at)
  throw Error('Quellenbeleg und substanzielle Korrektur mit Begründung fehlen.');
  const revision:ProductionRevision={id:revisionId,at:now,text:text.trim(),reflection:reason.trim(),paragraphId,

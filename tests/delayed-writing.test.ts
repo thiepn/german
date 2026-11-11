@@ -33,6 +33,7 @@ test('cold reconstruction stays separate from source-based correction and requir
  const state=delayedWritingSummary(at+DAY,[after]);assert.equal(state.pending,1);assert.equal(state.due,0);assert.equal(state.selected?.baseline.id,'transfer-1');
  assert.throws(()=>saveColdRecall(after,state.selected!,reconstructed,uncertainty,'again',at+DAY),/ungestützter/);
  assert.throws(()=>saveSourceRepair(after,state.selected!,reconstructed,reason,'p1','repair',at+DAY),/Quellenbeleg/);
+ assert.throws(()=>saveSourceRepair(after,state.selected!,reconstructed+' Eine völlig kleine Änderung.',reason,'p1','too-small',at+DAY),/Quellenbeleg/);
  assert.throws(()=>saveSourceRepair(after,state.selected!,corrected,reason,'not-a-paragraph','repair',at+DAY),/Quellenbeleg/);
  after=saveSourceRepair(after,state.selected!,corrected,reason,referenceStudies[0].paragraphs[0].id,'repair-1',at+DAY+1);
  assert.equal(delayedWritingSummary(at+DAY+1,[after]).finished,1);
@@ -60,6 +61,8 @@ test('wrong-version, foreign source id and absent transfer never become a due re
 test('G13 audience writing is recognized; previously unreviewed versions and different tracks stay separate',()=>{
  const e=saved('DISCLOSURE_STUDY');
  assert.equal(delayedWritingSummary(at+DAY,[e]).selected?.row.kind,'G13_DISCLOSURE');
+ const dc=delayedWritingSummary(at+DAY,[e]).selected!;
+ assert.throws(()=>saveColdRecall(e,dc,reconstructed+' '+disclosureStudies[0].decisions[0].restricted,uncertainty,'restricted',at+DAY),/ungestützter/);
  const d=saved('DEFINITION_STUDY');
  const summary=delayedWritingSummary(at+DAY,[e,d]);assert.equal(summary.due,2);
  assert.equal(candidateFor(d,at+DAY)?.candidate?.row.kind,'G06_DEFINITION');

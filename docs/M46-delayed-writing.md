@@ -15,7 +15,7 @@ Fixed *practice reminders*, not FSRS/CEFR/stability estimates:
 
 ## Technical contracts
 - \`SG_DELAYED_RECALL:<round>\`: append-only unassisted reconstruction with explicit uncertainty and frozen baseline revision ID, **before** revealing prior text or source.
-- \`SG_DELAYED_REPAIR:<round>\`: append-only materially different source-grounded rewritten statement with a real paragraph ID, correction rationale and a pointer back to the matching cold record. There is no automatic grading, answer verification, forced AI feedback or evidence of learning gains.
+- \`SG_DELAYED_REPAIR:<round>\`: append-only materially different source-grounded rewritten statement with a real paragraph ID, correction rationale and a pointer back to the matching cold record. There is no automatic grading, answer verification, forced AI feedback or evidence of learning gains. A mechanical threshold (eight distinct changed word forms) rejects punctuation-only edits; this is not evidence that the correction is linguistically sound. For G13, original source privacy exclusions apply to both new steps.
 - Existing \`saveProductionEntry(entry,expectedRevisionCount)\` transactional CAS and immutable original text are reused. No IndexedDB version change, new ID scheme for first drafts, migrations, account/network dependency, or new object store.
 - Backup v1/v2/v3 compatibility remains; new record text/reflection lengths stay within backup validation caps. Existing learner records, older revisions and inactive v2 study proposals remain unchanged.
 - Today surfaces due/pending cold and source-correction stages. Progress counts *complete pairs*, not the validity/quality of answers. Open missions prevent the new shortcut from displacing the current objective session.
