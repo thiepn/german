@@ -141,7 +141,8 @@ export default function App(){
  return ()=>{alive=false};},[]);
  const now=Date.now();
  const links=buildLearningLinks(now,attempts,allItems,productions);
- const focusChoice=chooseEvidenceFocus(now,allItems,cards,chooseSession(allItems,attempts,cards,now,1)[0],links);
+ const availableForNewPractice=allItems.filter(i=>!links.waitingTopics.some(x=>x.mode===i.mode&&x.skillId===i.skillId&&x.topic===i.topic));
+ const focusChoice=chooseEvidenceFocus(now,allItems,cards,chooseSession(availableForNewPractice,attempts,cards,now,1)[0],links);
  const recommended=focusChoice.item;
  const cycle=dailyLearningCycle(now,attempts,reviews,cards,productions,recommended,links.priority);
  const delayed=delayedWritingSummary(now,productions);

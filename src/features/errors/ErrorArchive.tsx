@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import type {Attempt,Exercise} from '../../domain/content/types';
-import {buildErrorClusters,type ErrorClusterStatus} from '../../domain/errors/errorProjection';
+import {buildErrorClusters,independentTransferState,type ErrorClusterStatus} from '../../domain/errors/errorProjection';
 import {availableModes,modes} from '../../domain/content/modes';
 
 const statusLabel:Record<ErrorClusterStatus,string>={
@@ -22,13 +22,16 @@ export default function ErrorArchive({attempts,byId,onRetry}:{attempts:Attempt[]
   <div className="stack">
    {visible.map(cluster=>{
     const open=expanded===cluster.key;
+    const transfer=independentTransferState(cluster,Date.now());
     return <article className="panel error-cluster" key={cluster.key}>
      <div className="kicker">{cluster.skillId} · {modes[cluster.mode].label}</div>
      <h2>{cluster.topic}</h2>
      <p className="muted small">{cluster.failures.length} unsichere Erstversuche in {cluster.distinctFailureItems} Aufgaben · zuletzt {new Date(cluster.lastFailureAt).toLocaleDateString('de-DE')}</p>
-     <p className="small"><strong>Verlauf:</strong> {statusLabel[cluster.status]}. {cluster.laterCorrect.length} spätere korrekte Antworten in anderen Aufgaben.</p>
+     <p className="small"><strong>Verlauf:</strong> {statusLabel[cluster.status]}. {cluster.laterCorrect.length} spätere korrekte unabhängige Erstantworten in anderen Aufgaben; {transfer.spacedCorrect} davon im Abstand von mindestens 24 Stunden dokumentiert.</p>
+     {transfer.phase==='WAITING'&&<p className="small muted">Ein anderer Kontext wurde bereits ungestützt richtig beantwortet. Den nächsten neuen Kontext frühestens ab {new Date(transfer.nextEligibleAt!).toLocaleString('de-DE')} versuchen. Fällige Wiederholungskarten sind davon unabhängig.</p>}
+     {transfer.phase==='OBSERVED'&&<p className="small muted">Mindestens zwei neue Kontexte mit richtigen Erstversuchen im zeitlichen Abstand dokumentiert – keine Garantie für nachhaltige Beherrschung.</p>}
      <div className="buttonrow">
-      {cluster.freshContextId&&<button type="button" className="button" onClick={()=>onRetry(cluster.freshContextId!)}>Neuen Kontext üben</button>}
+      {cluster.freshContextId&&<button type="button" className="button" disabled={transfer.phase==='WAITING'} onClick={()=>onRetry(cluster.freshContextId!)}>Neuen Kontext üben</button>}
       {cluster.repeatItemId&&<button type="button" className="button outline" onClick={()=>onRetry(cluster.repeatItemId!)}>Originalaufgabe erneut üben</button>}
       <button type="button" className="button outline" aria-expanded={open} onClick={()=>setExpanded(open?null:cluster.key)}>{open?'Details schließen':'Originalantworten & Regeln'}</button>
      </div>

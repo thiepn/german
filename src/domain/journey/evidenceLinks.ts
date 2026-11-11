@@ -1,6 +1,6 @@
-import type {Attempt,Exercise,ReviewCard} from '../content/types';
+import type {Attempt,Exercise,ReviewCard,Mode} from '../content/types';
 import type {ProductionEntry} from '../production/types';
-import {buildErrorClusters,type ErrorCluster} from '../errors/errorProjection';
+import {buildErrorClusters,independentTransferState,type ErrorCluster,type IndependentTransferState} from '../errors/errorProjection';
 import {candidateFor} from './delayedWriting';
 import {archiveRow} from '../archive/archive';
 import {DAILY_SOURCE_TRACKS} from './dailyCycle';
@@ -12,6 +12,8 @@ export type EvidenceTopic={
 export type LearningLinks={
  unresolvedTopics:number;recurringTopics:number;historicalTopics:number;
  firstAttemptsWithErrors:number;newContextTopics:number;
+ waitingTopics:readonly {mode:Mode;skillId:string;topic:string;nextEligibleAt:number}[];
+ observedSpacedTopics:number;priorityTransfer:IndependentTransferState|null;
  priority:EvidenceTopic|null;practice: {item:Exercise;topic:EvidenceTopic}|null;
  relatedWriting:{completedPairs:number;pendingRepairs:number;dueRecalls:number};
 };
@@ -42,8 +44,12 @@ export function buildLearningLinks(now:number,attempts:readonly Attempt[],items:
    c.failures.some(a=>{const item=byId.get(a.itemId);return !!item&&item.version===a.itemVersion&&item.status!=='WITHDRAWN';})).sort(ranked);
  const repeated=current.filter(c=>c.distinctFailureItems>=2);
  const priority=repeated.length?toTopic(repeated[0]):null;
+ const waitingTopics=current.flatMap(c=>{
+  const state=independentTransferState(c,now);
+  return state.phase==='WAITING'&&state.nextEligibleAt!==null?[{mode:c.mode,skillId:c.skillId,topic:c.topic,nextEligibleAt:state.nextEligibleAt}]:[];
+ });
  const firstFresh=current.find(c=>{
-  if(!c.freshContextId)return false;
+  if(!c.freshContextId||independentTransferState(c,now).phase==='WAITING')return false;
   const item=byId.get(c.freshContextId);
   return !!item&&item.status!=='WITHDRAWN'&&item.skillId===c.skillId&&item.mode===c.mode&&item.topic===c.topic;
  });
@@ -59,6 +65,8 @@ export function buildLearningLinks(now:number,attempts:readonly Attempt[],items:
  return {unresolvedTopics:unresolved.length,recurringTopics:repeated.length,historicalTopics:clusters.filter(c=>!c.sourceCurrent).length,
   firstAttemptsWithErrors:attempts.filter(a=>Number.isFinite(a.at)&&a.at<=now&&(a.result==='INCORRECT'||a.result==='PARTIAL')).length,
   newContextTopics:current.filter(c=>!!c.freshContextId).length,
+  waitingTopics,observedSpacedTopics:clusters.filter(c=>c.status==='WIEDER_ANGEWENDET').length,
+  priorityTransfer:repeated.length?independentTransferState(repeated[0],now):null,
   priority,practice:selected&&firstFresh?{item:selected,topic:toTopic(firstFresh)}:null,
   relatedWriting:{completedPairs,pendingRepairs,dueRecalls}};
 }
