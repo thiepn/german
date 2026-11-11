@@ -2,6 +2,7 @@ import type {Attempt,Exercise,ReviewCard,ReviewEvent} from '../content/types';
 import type {ProductionEntry,ProductionRevision} from '../production/types';
 import {archiveRows,type ArchiveKind,type ArchiveRow} from '../archive/archive';
 import {STUDIO_LINKS,type StudioAction} from './catalog';
+import type {EvidenceTopic} from './evidenceLinks';
 
 // Reuses existing source-writing studios. G10 requires learner-owned audio and cannot
 // truthfully satisfy the same source -> written transfer -> revision contract.
@@ -34,7 +35,7 @@ export const DAILY_SOURCE_TRACKS:readonly DailySourceTrack[]=[
 ];
 export type DailyLearningCycle={
  start:number;end:number;objectiveToday:number;retrievalToday:number;due:number;unresolvedErrors:number;
- source:{track:DailySourceTrack;row:ArchiveRow|null;title:string;workedToday:boolean;transferred:boolean;rewritten:boolean};
+ source:{track:DailySourceTrack;row:ArchiveRow|null;title:string;workedToday:boolean;transferred:boolean;rewritten:boolean;link:EvidenceTopic|null};
  completed:number;total:4;
 };
 const inDay=(at:number,start:number,end:number)=>Number.isFinite(at)&&at>=start&&at<end;
@@ -47,7 +48,7 @@ const hasRewrite=(row:ArchiveRow)=>row.entry.revisions.some(r=>rewrite(r,row.kin
 const domainOf=(skill:string|undefined)=>/^G(?:0[1-9]|1[0-3])(?:\.|$)/.exec(skill??'')?.[0].slice(0,3)??null;
 
 /** A read-only journey based on real saved actions. No new session IDs, inferred grades or CEFR claims. */
-export function dailyLearningCycle(now:number,attempts:readonly Attempt[],reviews:readonly ReviewEvent[],cards:readonly ReviewCard[],entries:readonly ProductionEntry[],recommended:Exercise|undefined):DailyLearningCycle{
+export function dailyLearningCycle(now:number,attempts:readonly Attempt[],reviews:readonly ReviewEvent[],cards:readonly ReviewCard[],entries:readonly ProductionEntry[],recommended:Exercise|undefined,priority:EvidenceTopic|null=null):DailyLearningCycle{
  if(!Number.isFinite(now))throw Error('Daily cycle requires a finite clock');
  const day=new Date(now);day.setHours(0,0,0,0);
  const start=day.getTime(),tomorrow=new Date(day);tomorrow.setDate(tomorrow.getDate()+1);
@@ -70,6 +71,14 @@ export function dailyLearningCycle(now:number,attempts:readonly Attempt[],review
   DAILY_SOURCE_TRACKS.some(track=>track.kind===row.kind));
  const row=rows.find(r=>inDay(r.lastAt,start,end))??rows.find(r=>!hasTransfer(r))??rows.find(r=>!hasRewrite(r))??null;
  let track=row?DAILY_SOURCE_TRACKS.find(t=>t.kind===row.kind):undefined;
+ let linked:EvidenceTopic|null=null;
+ if(!track&&priority){
+  const candidates=DAILY_SOURCE_TRACKS.filter(t=>t.domain===priority.domain);
+  if(candidates.length){
+   track=[...candidates].sort((a,b)=>rows.filter(r=>r.kind===a.kind).length-rows.filter(r=>r.kind===b.kind).length||a.action.localeCompare(b.action))[0];
+   linked=priority;
+  }
+ }
  if(!track){
   const counts=DAILY_SOURCE_TRACKS.map(t=>rows.filter(r=>r.kind===t.kind).length);
   const minimum=Math.min(...counts);
@@ -83,6 +92,6 @@ export function dailyLearningCycle(now:number,attempts:readonly Attempt[],review
  const transferred=!!row&&hasTransfer(row),rewritten=!!row&&hasRewrite(row);
  const title=row?.title??STUDIO_LINKS.find(link=>link.action===track.action)?.today??track.domain;
  return {start,end,objectiveToday,retrievalToday,due,unresolvedErrors,
-  source:{track,row,title,workedToday:!!row&&inDay(row.lastAt,start,end),transferred,rewritten},
+  source:{track,row,title,workedToday:!!row&&inDay(row.lastAt,start,end),transferred,rewritten,link:linked},
   completed:Number(objectiveToday>0)+Number(!!row)+Number(transferred)+Number(rewritten),total:4};
 }
