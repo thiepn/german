@@ -33,7 +33,7 @@ export default function Today(props:TodayProps){
   <details className="today-explain"><summary>Warum diese Übungen?</summary><p>{due>0?`${due} Wiederholungen sind fällig. `:''}{weak>0?`${weak} bisherige Antworten waren unsicher. `:''}{recommended?modes[recommended.mode].label+' · '+focus:'Noch keine geeignete Aufgabe verfügbar.'}</p></details>
   <section className="today-focus" aria-labelledby="focusHeading"><h2 id="focusHeading">Heute im Fokus</h2>
    <button type="button" className="today-action" disabled={!recommended||focusBlocked} onClick={onFocus}><span><strong>{focus}</strong><small>{recommended?modes[recommended.mode].label+' · gezielt üben':'Keine Aufgabe verfügbar'}</small></span><span aria-hidden="true">→</span></button>
-   {focusBlocked&&<p className="muted small">Während einer offenen Tagesmission zuerst die Mission fortsetzen oder abschließen. So bleibt die laufende Aufgabe erhalten.</p>
+   {focusBlocked&&<p className="muted small">Während einer offenen Tagesmission zuerst die Mission fortsetzen oder abschließen. So bleibt die laufende Aufgabe erhalten.</p>}
    <button type="button" className="today-action" disabled={!due} onClick={onReview}><span><strong>Fällige Wiederholungen</strong><small>{due} fällig</small></span><span aria-hidden="true">→</span></button>
    <button type="button" className="today-action" onClick={onOpenErrors}><span><strong>Fehler verstehen</strong><small>{weak} unsichere Antworten</small></span><span aria-hidden="true">→</span></button>
   </section>
