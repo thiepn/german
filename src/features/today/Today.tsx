@@ -5,9 +5,10 @@ import type {ProductionEntry} from '../../domain/production/types';
 import type {ArchiveRow} from '../../domain/archive/archive';
 import {STUDIO_LINKS,type LearningCallbacks} from '../../domain/journey/catalog';
 import {recentWork} from '../../domain/journey/continuation';
-type TodayProps=LearningCallbacks & {attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];productions:ProductionEntry[];onStart:()=>void;onRecommendedExercise:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void;onContinue:(row:ArchiveRow)=>void;onCurriculum:()=>void;onArchive:()=>void};
+import type {DailyLearningCycle} from '../../domain/journey/dailyCycle';
+type TodayProps=LearningCallbacks & {cycle:DailyLearningCycle;attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];productions:ProductionEntry[];onStart:()=>void;onRecommendedExercise:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void;onContinue:(row:ArchiveRow)=>void;onCurriculum:()=>void;onProgress:()=>void;onArchive:()=>void};
 export default function Today(props:TodayProps){
- const {attempts,cards,recommended,mission,dailyMinutes,productions,onStart,onRecommendedExercise,onReview,onOpenErrors,onDiagnostic,onProduction,onData,onContinue,onCurriculum,onArchive}=props;
+ const {cycle,attempts,cards,recommended,mission,dailyMinutes,productions,onStart,onRecommendedExercise,onReview,onOpenErrors,onDiagnostic,onProduction,onData,onContinue,onCurriculum,onProgress,onArchive}=props;
  const due=cards.filter(c=>c.dueAt<=Date.now()).length;
  const weak=attempts.filter(a=>a.result==='INCORRECT'||a.result==='PARTIAL').length;
  const focus=recommended?.topic??'Noch keine Empfehlung';
@@ -19,6 +20,8 @@ export default function Today(props:TodayProps){
  const sessionProgress=visibleMission?.index??0;
  const sessionTotal=visibleMission?.steps.length??0;
  const recent=recentWork(productions,3);
+ const missionActive=!!mission&&mission.phase!=='COMPLETE';
+ const openSource=()=>{if(missionActive)return;if(cycle.source.row)onContinue(cycle.source.row);else props[cycle.source.track.action]()};
  return <section>
   <header className="today-hero"><h1 className="page-title">Heute</h1></header>
   <section className="panel today-mission" aria-labelledby="todayMissionTitle">
@@ -36,6 +39,19 @@ export default function Today(props:TodayProps){
    {focusBlocked&&<p className="muted small">Während einer offenen Tagesmission zuerst die Mission fortsetzen oder abschließen. So bleibt die laufende Aufgabe erhalten.</p>}
    <button type="button" className="today-action" disabled={!due} onClick={onReview}><span><strong>Fällige Wiederholungen</strong><small>{due} fällig</small></span><span aria-hidden="true">→</span></button>
    <button type="button" className="today-action" onClick={onOpenErrors}><span><strong>Fehler verstehen</strong><small>{weak} unsichere Antworten</small></span><span aria-hidden="true">→</span></button>
+  </section>
+  <section className="panel daily-cycle" aria-labelledby="dailyCycleTitle">
+   <h2 id="dailyCycleTitle">C1–C2-Lernweg</h2>
+   <p className="muted small">{cycle.completed} von {cycle.total} Schritten mit gespeicherter Lernhandlung. Quelle und Text können über mehrere Tage entstehen; nur die Übung zählt ausdrücklich für heute. Keine Sprachnote.</p>
+   <ol className="stack">
+    <li><strong>Präzision und Abruf</strong><p className="muted small">{cycle.objectiveToday?cycle.objectiveToday+' Übungsversuche heute dokumentiert'+(cycle.retrievalToday?' · '+cycle.retrievalToday+' verzögerte Abrufe':''):'Heute noch keine Übung dokumentiert.'} {cycle.unresolvedErrors?'Offene Korrekturen: '+cycle.unresolvedErrors+'.':''}</p><div className="buttonrow"><button className="button outline" type="button" onClick={missionActive||!cycle.due?onStart:onReview}>{missionActive?'Tagesmission fortsetzen':cycle.due?'Fälliges abrufen':'Präzision trainieren'}</button>{cycle.unresolvedErrors>0&&<button className="button outline" type="button" onClick={onOpenErrors}>Fehler gezielt klären</button>}</div></li>
+    <li><strong>Quellenanalyse · {cycle.source.track.domain}</strong><p className="muted small">{cycle.source.title} · {cycle.source.row?'Erster Quellenbeleg gespeichert'+(cycle.source.workedToday?' · heute bearbeitet':' · früher begonnen'):'Noch kein Quellenbeleg gespeichert'}.</p><button className="button outline" type="button" disabled={missionActive} onClick={openSource}>Quelle analysieren oder fortsetzen</button></li>
+    <li><strong>Eigenständiger Transfertext</strong><p className="muted small">{cycle.source.transferred?'Eigener Text gespeichert.':'Nach den Quellenbelegen einen vollständigen eigenen Text verfassen. Die Quellstudie führt durch die erforderlichen Analysen.'}</p><button className="button outline" type="button" disabled={missionActive||!cycle.source.row} onClick={openSource}>Eigenen Text verfassen oder öffnen</button></li>
+    <li><strong>Quellengebunden überarbeiten</strong><p className="muted small">{cycle.source.rewritten?'Eine nachfolgende Textüberarbeitung gespeichert.':'Ausgehend vom eigenen Text eine begründete inhaltliche oder sprachliche Revision verfassen.'}</p><button className="button outline" type="button" disabled={missionActive||!cycle.source.transferred} onClick={openSource}>Text überarbeiten oder erneut prüfen</button></li>
+   </ol>
+   {missionActive&&<p className="muted small">Eine Tagesmission ist noch offen. Zuerst fortsetzen oder abschließen, damit ihre gespeicherte Aufgabe nicht verdrängt wird.</p>}
+   <div className="buttonrow"><button className="button text" type="button" onClick={onProgress}>Lernhandlungen in Fortschritt ansehen</button><button className="button text" type="button" onClick={onCurriculum}>Anderen Lernbereich wählen</button></div>
+   <p className="muted small">G10 bleibt eine freiwillige Übung mit eigener Audiodatei. Kein vorgeblicher Hörtest und keine automatische C1/C2-Einstufung.</p>
   </section>
   {recent.length>0&&<section className="panel today-continuation" aria-labelledby="todayContinueTitle"><h2 id="todayContinueTitle">Zuletzt bearbeitet</h2><div className="today-focus">{recent.map(row=><button type="button" className="today-action" key={row.entry.id} aria-label={'Fortsetzen: '+row.title} onClick={()=>onContinue(row)}><span><strong>{row.title}</strong><small>{row.description} · {row.revisions?row.revisions+' weitere Fassungen':'Erstfassung'}</small></span><span aria-hidden="true">→</span></button>)}</div><button className="button outline" type="button" onClick={onArchive}>Alle Schreibspuren öffnen</button></section>}
   <div className="today-secondary"><button className="button outline" onClick={onDiagnostic}>Diagnostik A · Status ansehen</button><button className="button outline" onClick={onProduction}>Schreibwerkstatt öffnen</button>{STUDIO_LINKS.map(link=><button className="button outline" key={link.action} onClick={props[link.action]}>{link.today}</button>)}<button className="button outline" onClick={onCurriculum}>Alle Lernbereiche öffnen</button><button className="button outline" onClick={onData}>Backup und Wiederherstellung</button></div>
