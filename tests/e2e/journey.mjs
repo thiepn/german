@@ -9,6 +9,15 @@ async function run(width){
   const p=await context.newPage();await p.goto(origin,{waitUntil:'networkidle'});
   if(await p.getByRole('button',{name:'Mit dem Lernen beginnen'}).count())await p.getByRole('button',{name:'Mit dem Lernen beginnen'}).click();
   assert.equal(await p.getByRole('heading',{name:'Zuletzt bearbeitet'}).count(),0);
+  // The recommended focus action must open its exact exercise, not start a daily mission.
+  const focused=p.locator('.today-focus button.today-action').first();
+  const topic=await focused.locator('strong').innerText();
+  assert.notEqual(topic,'Noch keine Empfehlung');
+  await focused.click();
+  const exercise=await p.locator('.exercise .tag').innerText();
+  assert.ok(exercise.includes(topic),'focus action must open its actual recommended topic');
+  await p.getByRole('button',{name:'Training verlassen'}).click();
+  assert.equal(await p.getByText('Mission läuft',{exact:true}).count(),0,'single focus training must not create a mission');
   // Earlier native M04 writing must still resume on the Trainieren tab.
   await p.getByRole('button',{name:'Schreibwerkstatt öffnen'}).click();
   const first='Die Befragung stützt nur eine eng begrenzte Aussage über die drei untersuchten Orte. Eine allgemeine Übertragung bedarf weiterer Belege.';
