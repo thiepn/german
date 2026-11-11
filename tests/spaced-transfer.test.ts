@@ -32,7 +32,9 @@ test('a correct first answer to a new context pauses additional same-topic conte
 });
 test('crossing midnight without 24h elapsed is insufficient evidence of spaced transfer',()=>{
  const at=Date.UTC(2026,10,10,23,58);
- const a=[attempt(same[0],at-2000,'INCORRECT'),attempt(same[1],at,'CORRECT'),attempt(same[2],at+4*60000,'CORRECT')];
+ const wide=allItems.filter(x=>x.mode==='M04'&&x.skillId==='G04.SYNTAX'&&x.topic==='Indirekte Rede').sort((a,b)=>a.id.localeCompare(b.id));
+ assert.ok(wide.length>=4,'test requires a fourth genuinely unused context');
+ const a=[attempt(wide[0],at-2000,'INCORRECT'),attempt(wide[1],at,'CORRECT'),attempt(wide[2],at+4*60000,'CORRECT')];
  const c=cluster(a);assert.equal(c.status,'ERNEUT_UNSICHER');assert.equal(c.laterCorrect.length,2);
  assert.equal(independentTransferState(c,at+5*60000).phase,'WAITING');
  assert.equal(independentTransferState(c,at+DAY+1).phase,'SPACED_CONTEXT_DUE');
