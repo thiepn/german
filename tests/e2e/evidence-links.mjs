@@ -20,6 +20,14 @@ async function run(width){
    await p.getByRole('button',{name:'Antwort prüfen'}).click();
    await p.getByRole('button',{name:'Zur Übersicht'}).click();
    attempts.push(id);
+   // Incorrect first attempts create cards due immediately. Respect the existing
+   // objective review scheduler before suggesting a separate unseen context.
+   await focus.getByText('fällige Wiederholung',{exact:false}).waitFor();
+   await focus.click();
+   assert.equal(await p.locator('.exercise .prompt').innerText(),byId.get(id).prompt,'the actual due review must precede optional new context');
+   await p.getByLabel('Artikel',{exact:true}).fill('die');
+   await p.getByRole('button',{name:'Antwort prüfen'}).click();
+   await p.getByRole('button',{name:'Zur Übersicht'}).click();
   }
   await p.locator('.daily-cycle').getByText('2 unterschiedliche Aufgaben',{exact:false}).waitFor();
   await p.getByRole('button',{name:'Fortschritt',exact:true}).first().click();
@@ -40,7 +48,9 @@ async function run(width){
     r.onerror=()=>reject(r.error);r.onsuccess=()=>{const db=r.result,tx=db.transaction('attempts','readonly'),q=tx.objectStore('attempts').getAll();
      q.onsuccess=()=>{db.close();resolve(q.result)};q.onerror=()=>reject(q.error);}
   }));
-  assert.deepEqual(rows.map(x=>x.itemId).sort(),attempts.sort(),'original failed attempts retained; no recommendation stored as attempt');
+  assert.deepEqual(rows.filter(x=>x.result==='INCORRECT').map(x=>x.itemId).sort(),attempts.sort(),'original failed answers retained');
+  assert.equal(rows.length,4,'two actual due-review answers exist; recommendation itself never creates an attempt');
+  assert.equal(rows.filter(x=>x.result==='CORRECT').length,2,'genuine review answers remain in learner history');
   assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
   console.log('PASS M47 exact failed-topic contextual recommendation, linked source, truthful Progress, reload '+width);
  }finally{await context.close()}
