@@ -2,13 +2,22 @@ import {useState} from 'react';
 import type {Attempt,Exercise} from '../../domain/content/types';
 import {buildErrorClusters,independentTransferState,type ErrorClusterStatus} from '../../domain/errors/errorProjection';
 import {availableModes,modes} from '../../domain/content/modes';
+import type {ReviewCard} from '../../domain/content/types';
+import {failedDelayedCases} from '../../domain/errors/delayedFailure';
+import FailureReconstruction from './FailureReconstruction';
 
 const statusLabel:Record<ErrorClusterStatus,string>={
  OFFEN:'Noch offen',ERNEUT_UNSICHER:'Weiter beobachten',WIEDER_ANGEWENDET:'Erneut angewendet'
 };
-export default function ErrorArchive({attempts,byId,onRetry}:{attempts:Attempt[];byId:Map<string,Exercise>;onRetry:(id:string)=>void}){
+export default function ErrorArchive({attempts,byId,cards,onRetry,onRecoveryPractice,preferredFailedAttemptId}:{
+ attempts:Attempt[];byId:Map<string,Exercise>;cards:ReviewCard[];
+ onRetry:(id:string)=>void;onRecoveryPractice:(failedAttemptId:string,kind:'DUE'|'FRESH')=>void;
+ preferredFailedAttemptId?:string|null;
+}){
  const [mode,setMode]=useState('all'),[filter,setFilter]=useState('all'),[expanded,setExpanded]=useState<string|null>(null);
  const all=buildErrorClusters(attempts,byId);
+ const cases=failedDelayedCases(Date.now(),attempts,[...byId.values()]);
+ const [openedCase,setOpenedCase]=useState<string|null>(()=>cases.find(c=>c.delayedFailure.attempt.id===preferredFailedAttemptId)?.key??null);
  const visible=all.filter(x=>(mode==='all'||x.mode===mode)&&(filter==='all'||filter===x.status));
  return <section className="error-archive">
   <h1 className="page-title">Fehlerarchiv</h1>
@@ -23,6 +32,9 @@ export default function ErrorArchive({attempts,byId,onRetry}:{attempts:Attempt[]
    {visible.map(cluster=>{
     const open=expanded===cluster.key;
     const transfer=independentTransferState(cluster,Date.now());
+    const caseData=cases.find(c=>c.key===cluster.key)??null;
+    const isCaseOpen=caseData!==null&&openedCase===cluster.key;
+    const hasDue=!!caseData&&cards.some(c=>c.itemId===caseData.delayedFailure.item.id&&c.itemVersion===caseData.delayedFailure.item.version&&c.dueAt<=Date.now());
     return <article className="panel error-cluster" key={cluster.key}>
      <div className="kicker">{cluster.skillId} · {modes[cluster.mode].label}</div>
      <h2>{cluster.topic}</h2>
@@ -31,10 +43,13 @@ export default function ErrorArchive({attempts,byId,onRetry}:{attempts:Attempt[]
      {transfer.phase==='WAITING'&&<p className="small muted">Ein anderer Kontext wurde bereits ungestützt richtig beantwortet. Den nächsten neuen Kontext frühestens ab {new Date(transfer.nextEligibleAt!).toLocaleString('de-DE')} versuchen. Fällige Wiederholungskarten sind davon unabhängig.</p>}
      {transfer.phase==='OBSERVED'&&<p className="small muted">Mindestens zwei neue Kontexte mit richtigen Erstversuchen im zeitlichen Abstand dokumentiert – keine Garantie für nachhaltige Beherrschung.</p>}
      <div className="buttonrow">
+      {caseData&&<button type="button" className="button" aria-expanded={isCaseOpen} onClick={()=>{setExpanded(null);setOpenedCase(isCaseOpen?null:cluster.key)}}>{isCaseOpen?'Rekonstruktion verbergen':'Verzögerten Fehler rekonstruieren'}</button>}
       {cluster.freshContextId&&<button type="button" className="button" disabled={transfer.phase==='WAITING'} onClick={()=>onRetry(cluster.freshContextId!)}>Neuen Kontext üben</button>}
       {cluster.repeatItemId&&<button type="button" className="button outline" onClick={()=>onRetry(cluster.repeatItemId!)}>Originalaufgabe erneut üben</button>}
       <button type="button" className="button outline" aria-expanded={open} onClick={()=>setExpanded(open?null:cluster.key)}>{open?'Details schließen':'Originalantworten & Regeln'}</button>
      </div>
+     {caseData&&isCaseOpen&&<FailureReconstruction key={caseData.delayedFailure.attempt.id} caseData={caseData}
+       hasDue={hasDue} onPractice={kind=>onRecoveryPractice(caseData.delayedFailure.attempt.id,kind)} onClose={()=>setOpenedCase(null)}/>}
      {!cluster.freshContextId&&<p className="small muted">{cluster.sourceCurrent?'Kein unversuchter Kontext zu genau diesem Thema vorhanden.':'Frühere Aufgabenfassung: ohne unveränderte Regelversion kein neuer Kontext verfügbar.'}</p>}
      {open&&<div className="error-history"><h3>Unveränderte erste Antworten</h3>{cluster.failures.map(a=>{
       const item=byId.get(a.itemId),matching=item&&item.version===a.itemVersion;
