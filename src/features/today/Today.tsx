@@ -5,9 +5,9 @@ import type {ProductionEntry} from '../../domain/production/types';
 import type {ArchiveRow} from '../../domain/archive/archive';
 import {STUDIO_LINKS,type LearningCallbacks} from '../../domain/journey/catalog';
 import {recentWork} from '../../domain/journey/continuation';
-type TodayProps=LearningCallbacks & {attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];productions:ProductionEntry[];onStart:()=>void;onFocus:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void;onContinue:(row:ArchiveRow)=>void;onCurriculum:()=>void;onArchive:()=>void};
+type TodayProps=LearningCallbacks & {attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];productions:ProductionEntry[];onStart:()=>void;onRecommendedExercise:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void;onContinue:(row:ArchiveRow)=>void;onCurriculum:()=>void;onArchive:()=>void};
 export default function Today(props:TodayProps){
- const {attempts,cards,recommended,mission,dailyMinutes,productions,onStart,onFocus,onReview,onOpenErrors,onDiagnostic,onProduction,onData,onContinue,onCurriculum,onArchive}=props;
+ const {attempts,cards,recommended,mission,dailyMinutes,productions,onStart,onRecommendedExercise,onReview,onOpenErrors,onDiagnostic,onProduction,onData,onContinue,onCurriculum,onArchive}=props;
  const due=cards.filter(c=>c.dueAt<=Date.now()).length;
  const weak=attempts.filter(a=>a.result==='INCORRECT'||a.result==='PARTIAL').length;
  const focus=recommended?.topic??'Noch keine Empfehlung';
@@ -32,7 +32,7 @@ export default function Today(props:TodayProps){
   </section>
   <details className="today-explain"><summary>Warum diese Übungen?</summary><p>{due>0?`${due} Wiederholungen sind fällig. `:''}{weak>0?`${weak} bisherige Antworten waren unsicher. `:''}{recommended?modes[recommended.mode].label+' · '+focus:'Noch keine geeignete Aufgabe verfügbar.'}</p></details>
   <section className="today-focus" aria-labelledby="focusHeading"><h2 id="focusHeading">Heute im Fokus</h2>
-   <button type="button" className="today-action" disabled={!recommended||focusBlocked} onClick={onFocus}><span><strong>{focus}</strong><small>{recommended?modes[recommended.mode].label+' · gezielt üben':'Keine Aufgabe verfügbar'}</small></span><span aria-hidden="true">→</span></button>
+   <button type="button" className="today-action" disabled={!recommended||focusBlocked} onClick={onRecommendedExercise}><span><strong>{focus}</strong><small>{recommended?modes[recommended.mode].label+' · gezielt üben':'Keine Aufgabe verfügbar'}</small></span><span aria-hidden="true">→</span></button>
    {focusBlocked&&<p className="muted small">Während einer offenen Tagesmission zuerst die Mission fortsetzen oder abschließen. So bleibt die laufende Aufgabe erhalten.</p>}
    <button type="button" className="today-action" disabled={!due} onClick={onReview}><span><strong>Fällige Wiederholungen</strong><small>{due} fällig</small></span><span aria-hidden="true">→</span></button>
    <button type="button" className="today-action" onClick={onOpenErrors}><span><strong>Fehler verstehen</strong><small>{weak} unsichere Antworten</small></span><span aria-hidden="true">→</span></button>
