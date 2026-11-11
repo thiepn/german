@@ -37,7 +37,9 @@ async function run(width){
   assert.equal(await evidence.getByRole('button',{name:'Neuen Übungskontext starten'}).isEnabled(),true);
   await evidence.getByRole('button',{name:'Neuen Übungskontext starten'}).click();
   assert.equal(await p.locator('.exercise .prompt').innerText(),byId.get('SG-M01-009').prompt);
-  await p.getByRole('button',{name:'Zur Übersicht'}).click();
+  // A newly opened unanswered context has the pre-answer exit action.
+  // Leaving it must not invent an attempt, review, or successful transfer.
+  await p.getByRole('button',{name:'Training verlassen'}).click();
   await p.getByRole('button',{name:'Fortschritt',exact:true}).first().click();
   await evidence.getByText('1 davon mit unsicheren Antworten',{exact:false}).waitFor();
   await p.reload({waitUntil:'networkidle'});
