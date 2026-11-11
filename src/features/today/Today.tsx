@@ -6,9 +6,10 @@ import type {ArchiveRow} from '../../domain/archive/archive';
 import {STUDIO_LINKS,type LearningCallbacks} from '../../domain/journey/catalog';
 import {recentWork} from '../../domain/journey/continuation';
 import type {DailyLearningCycle} from '../../domain/journey/dailyCycle';
-type TodayProps=LearningCallbacks & {cycle:DailyLearningCycle;attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];productions:ProductionEntry[];onStart:()=>void;onRecommendedExercise:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void;onContinue:(row:ArchiveRow)=>void;onCurriculum:()=>void;onProgress:()=>void;onArchive:()=>void};
+import type {DelayedSummary} from '../../domain/journey/delayedWriting';
+type TodayProps=LearningCallbacks & {cycle:DailyLearningCycle;delayed:DelayedSummary;delayedBlocked:boolean;onDelayedWriting:()=>void;attempts:Attempt[];cards:ReviewCard[];recommended:Exercise|undefined;mission:Mission|null;dailyMinutes:LearnerSettings['dailyMinutes'];productions:ProductionEntry[];onStart:()=>void;onRecommendedExercise:()=>void;onReview:()=>void;onOpenErrors:()=>void;onDiagnostic:()=>void;onProduction:()=>void;onData:()=>void;onContinue:(row:ArchiveRow)=>void;onCurriculum:()=>void;onProgress:()=>void;onArchive:()=>void};
 export default function Today(props:TodayProps){
- const {cycle,attempts,cards,recommended,mission,dailyMinutes,productions,onStart,onRecommendedExercise,onReview,onOpenErrors,onDiagnostic,onProduction,onData,onContinue,onCurriculum,onProgress,onArchive}=props;
+ const {cycle,delayed,delayedBlocked,onDelayedWriting,attempts,cards,recommended,mission,dailyMinutes,productions,onStart,onRecommendedExercise,onReview,onOpenErrors,onDiagnostic,onProduction,onData,onContinue,onCurriculum,onProgress,onArchive}=props;
  const due=cards.filter(c=>c.dueAt<=Date.now()).length;
  const weak=attempts.filter(a=>a.result==='INCORRECT'||a.result==='PARTIAL').length;
  const focus=recommended?.topic??'Noch keine Empfehlung';
@@ -52,6 +53,13 @@ export default function Today(props:TodayProps){
    {missionActive&&<p className="muted small">Eine Tagesmission ist noch offen. Zuerst fortsetzen oder abschließen, damit ihre gespeicherte Aufgabe nicht verdrängt wird.</p>}
    <div className="buttonrow"><button className="button text" type="button" onClick={onProgress}>Lernhandlungen in Fortschritt ansehen</button><button className="button text" type="button" onClick={onCurriculum}>Anderen Lernbereich wählen</button></div>
    <p className="muted small">G10 bleibt eine freiwillige Übung mit eigener Audiodatei. Kein vorgeblicher Hörtest und keine automatische C1/C2-Einstufung.</p>
+  </section>
+  <section className="panel delayed-summary" aria-label="Späterer Textabruf">
+   <h2>Späterer Textabruf</h2>
+   <p className="muted small">{delayed.finished} abgeschlossen · {delayed.pending} Quellenabgleiche offen · {delayed.due} weitere Abrufe fällig. Wiederholte Textarbeit nach 1, 7 und 21 Tagen, ohne automatische Benotung.</p>
+   {delayed.selected?<><p><strong>{delayed.selected.source.title}</strong> · {delayed.selected.row.scope} · {delayed.selected.pendingRepair?'Quellenabgleich ausstehend':'Abruf ohne Vorlage fällig'}</p>
+    <button type="button" className="button" disabled={delayedBlocked} onClick={onDelayedWriting}>{delayed.selected.pendingRepair?'Gespeicherten Abruf korrigieren':'Jetzt ungestützt abrufen'}</button></>:<p className="muted small">Noch kein späterer Textabruf fällig. {delayed.upcomingAt?'Nächster Zeitpunkt: '+new Date(delayed.upcomingAt).toLocaleDateString('de-DE')+'.':'Zunächst einen eigenen vollständigen Transfertext schreiben.'}</p>}
+   {delayedBlocked&&<p className="muted small">Zuerst die offene Tagesmission fortsetzen oder abschließen.</p>}
   </section>
   {recent.length>0&&<section className="panel today-continuation" aria-labelledby="todayContinueTitle"><h2 id="todayContinueTitle">Zuletzt bearbeitet</h2><div className="today-focus">{recent.map(row=><button type="button" className="today-action" key={row.entry.id} aria-label={'Fortsetzen: '+row.title} onClick={()=>onContinue(row)}><span><strong>{row.title}</strong><small>{row.description} · {row.revisions?row.revisions+' weitere Fassungen':'Erstfassung'}</small></span><span aria-hidden="true">→</span></button>)}</div><button className="button outline" type="button" onClick={onArchive}>Alle Schreibspuren öffnen</button></section>}
   <div className="today-secondary"><button className="button outline" onClick={onDiagnostic}>Diagnostik A · Status ansehen</button><button className="button outline" onClick={onProduction}>Schreibwerkstatt öffnen</button>{STUDIO_LINKS.map(link=><button className="button outline" key={link.action} onClick={props[link.action]}>{link.today}</button>)}<button className="button outline" onClick={onCurriculum}>Alle Lernbereiche öffnen</button><button className="button outline" onClick={onData}>Backup und Wiederherstellung</button></div>
