@@ -8,7 +8,7 @@ const why='Die Quelle nennt einen Prüfauftrag und dokumentiert nur den Eingang 
 async function run(width){
  const ctx=await browser.newContext({viewport:{width,height:850},serviceWorkers:'allow'});
  try{
-  const p=await ctx.newPage();await p.clock.install({time:new Date('2026-11-11T12:00:00+01:00')});
+  const p=await ctx.newPage();
   await p.goto(origin,{waitUntil:'networkidle'});
   if(await p.getByRole('button',{name:'Mit dem Lernen beginnen'}).count())await p.getByRole('button',{name:'Mit dem Lernen beginnen'}).click();
   await p.getByRole('button',{name:'Referenz und Determination · G01'}).click();
@@ -30,7 +30,25 @@ async function run(width){
   await p.getByRole('button',{name:'Zurück zum Curriculum'}).click();
   await p.getByRole('button',{name:'Heute',exact:true}).first().click();
   assert.equal(await p.locator('.delayed-summary').getByText('Noch kein späterer Textabruf fällig').count(),1);
-  await p.clock.fastForward(86400001);
+  // Isolated test fixture: backdate only the newly authored local source record.
+  // Do not replace browser timers or use wall-clock waits for the 24-hour eligibility gate.
+  await p.evaluate(async()=>new Promise((resolve,reject)=>{
+   const request=indexedDB.open('sprachgefuehl-learning-v1');
+   request.onerror=()=>reject(request.error);
+   request.onsuccess=()=>{
+    const db=request.result,tx=db.transaction('productionEntries','readwrite'),store=tx.objectStore('productionEntries'),all=store.getAll();
+    all.onerror=()=>reject(all.error);
+    all.onsuccess=()=>{
+     const entry=all.result.find(e=>e.kind==='REFERENCE_STUDY');
+     if(!entry){tx.abort();reject(Error('Missing original reference source for the test'));return;}
+     entry.createdAt-=86400001;
+     entry.revisions=entry.revisions.map(r=>({...r,at:r.at-86400001}));
+     store.put(entry);
+    };
+    tx.oncomplete=()=>{db.close();resolve();};
+    tx.onabort=()=>{db.close();reject(tx.error??Error('Failed to age isolated fixture'))};
+   };
+  }));
   await p.reload({waitUntil:'networkidle'});
   await p.getByRole('button',{name:'Heute',exact:true}).first().click();
   await p.locator('.delayed-summary').getByRole('button',{name:'Jetzt ungestützt abrufen'}).click();
