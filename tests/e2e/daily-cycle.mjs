@@ -36,7 +36,7 @@ async function run(width){
    await p.getByLabel('Bezug im Ausgangstext').selectOption(choice);
    await p.getByLabel('Formuliere den Inhalt mit eindeutigem Referenzbezug neu').fill(rewrite);
    await p.getByLabel('Begründe, welche Personen, Dinge oder Mengen gemeint sind und welche Alternative etwas anderes behauptet').fill(reason);
-   await p.getByRole('button',{name:'Referenzanalyse unveränderlich speichern'}).count()===0&&await p.getByRole('button',{name:'Referenzanalyse speichern'}).click();
+   await p.getByRole('button',{name:'Referenzanalyse unveränderlich speichern'}).click();
   };
   // Subsequent analyses use the existing exact-version persistence/CAS path.
   await record('A','Die bereits bestellte Gutachterin überprüfte danach die Berechnungen; die Kommission forderte sie zusätzlich zur Erläuterung der Unsicherheit auf.','Die bestimmte Nominalgruppe knüpft an dieselbe Person an, statt eine weitere Fachfrau einzuführen.');
