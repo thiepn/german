@@ -61,6 +61,9 @@ async function scenario(width){
   await p.getByRole('button',{name:'Nächste Aufgabe'}).click();
   await p.getByText('Tagesmission · Aufgabe 2 /',{exact:false}).waitFor();
   await p.getByRole('button',{name:'Training verlassen'}).click();
+  // onExit persists a PAUSED mission under CAS before returning to Today.
+  // Do not race that IndexedDB transaction with a reload.
+  await p.getByRole('button',{name:'Mission fortsetzen'}).waitFor();
   await p.reload({waitUntil:'networkidle'});
   await p.getByRole('button',{name:'Mission fortsetzen'}).click();
   await p.getByText('Tagesmission · Aufgabe 2 /',{exact:false}).waitFor();
