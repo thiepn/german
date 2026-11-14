@@ -1,5 +1,6 @@
 import type {Attempt,Exercise,LearnerSettings,ReviewCard} from '../content/types';
 import {buildErrorClusters,independentTransferState} from '../errors/errorProjection';
+import {eligibleForTopicLink} from '../content/topicIntegrity';
 
 export type MissionKind='REVIEW'|'REPAIR'|'EXPLORE'|'TRANSFER';
 export type MissionStep={itemId:string;itemVersion:number;kind:MissionKind};
@@ -41,7 +42,7 @@ export function planMission(id:string,items:readonly Exercise[],attempts:readonl
   .sort((a,b)=>b.at-a.at||a.id.localeCompare(b.id)).map(a=>a.itemId);
  const groups=buildErrorClusters(chronological,byId);
  const waiting=new Set(groups.filter(c=>c.sourceCurrent&&independentTransferState(c,now).phase==='WAITING').map(c=>c.key));
- const fresh=eligible.filter(i=>!seenEarlier.has(i.id)&&!cardByItem.has(i.id)&&!waiting.has(topicKey(i)));
+ const fresh=eligible.filter(i=>eligibleForTopicLink(i)&&!seenEarlier.has(i.id)&&!cardByItem.has(i.id)&&!waiting.has(topicKey(i)));
  const freshById=new Map(fresh.map(i=>[i.id,i]));
  const transfer=groups.filter(c=>c.sourceCurrent&&c.freshContextId&&
     ['FIRST_CONTEXT','SPACED_CONTEXT_DUE'].includes(independentTransferState(c,now).phase))
