@@ -31,7 +31,7 @@ export default function Today(props:TodayProps){
    {visibleMission&&<div className="mission-completion" role="status">
      <strong>{doneToday?'Mission abgeschlossen':visibleMission.phase==='PAUSED'?'Mission pausiert':'Mission läuft'}</strong>
      <progress aria-label="Fortschritt dieser Mission" value={sessionProgress} max={sessionTotal}/>
-     <span className="muted small">{doneToday?`${firstCorrect} von ${sessionTotal} Erstversuchen korrekt · DEMO_ONLY`:`${sessionTotal-sessionProgress} Aufgaben verbleiben.`}</span>
+     <span className="muted small">{doneToday?`${firstCorrect} von ${sessionTotal} Antworten korrekt · DEMO_ONLY`:`${sessionTotal-sessionProgress} Aufgaben verbleiben.`}</span>
    </div>}
    <button type="button" className="button" disabled={!recommended&&!visibleMission} onClick={onStart}>{doneToday?'Weitere Mission starten':visibleMission?'Mission fortsetzen':'Jetzt trainieren'}</button>
   </section>

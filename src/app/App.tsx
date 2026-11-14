@@ -225,8 +225,12 @@ export default function App(){
  async function beginMission(){
   setError('');
   try{
-   const proposed=planMission(crypto.randomUUID(),allItems,attempts,cards,settings?.dailyMinutes??30,Date.now());
-   const current=await startOrResumeMission(proposed,Date.now());
+   // A saved mission must remain resumable even when every other authored task
+   // is exhausted. New plans read the latest persisted first attempts and cards.
+   const existing=await loadLatestMission(),snap=await loadSnapshot(),now=Date.now();
+   const proposed=existing&&existing.phase!=='COMPLETE'?existing:
+    planMission(crypto.randomUUID(),allItems,snap.attempts,snap.cards,snap.settings?.dailyMinutes??30,now);
+   const current=await startOrResumeMission(proposed,now);
    const step=missionStep(current);
    if(!step)throw Error('Die Mission ist bereits abgeschlossen.');
    const target=itemById.get(step.itemId);

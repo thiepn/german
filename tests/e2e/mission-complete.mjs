@@ -17,7 +17,7 @@ try{
    await page.getByRole('button',{name:'Nächste Aufgabe'}).click();
   }
   await page.getByText('Mission abgeschlossen').waitFor();
-  await page.getByText('0 von 8 Erstversuchen korrekt',{exact:false}).waitFor();
+  await page.getByText('0 von 8 Antworten korrekt',{exact:false}).waitFor();
   await page.reload({waitUntil:'networkidle'});
   await page.getByText('Mission abgeschlossen').waitFor();
   await page.getByRole('button',{name:'Weitere Mission starten'}).click();
