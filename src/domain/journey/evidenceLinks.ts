@@ -10,7 +10,7 @@ export type EvidenceTopic={
  status:ErrorCluster['status'];freshContextId:string|null;lastFailureAt:number;
 };
 export type LearningLinks={
- unresolvedTopics:number;recurringTopics:number;historicalTopics:number;
+ unresolvedTopics:number;recurringTopics:number;historicalTopics:number;sourceTopicMismatches:number;
  firstAttemptsWithErrors:number;newContextTopics:number;
  waitingTopics:readonly {mode:Mode;skillId:string;topic:string;nextEligibleAt:number}[];
  observedSpacedTopics:number;priorityTransfer:IndependentTransferState|null;
@@ -39,7 +39,8 @@ export function buildLearningLinks(now:number,attempts:readonly Attempt[],items:
  if(!Number.isFinite(now))throw Error('Invalid evidence clock');
  const byId=new Map(items.map(x=>[x.id,x] as const));
  const clusters=buildErrorClusters([...attempts].filter(a=>Number.isFinite(a.at)&&a.at<=now),byId);
- const unresolved=clusters.filter(c=>c.status!=='WIEDER_ANGEWENDET');
+ const unresolved=clusters.filter(c=>c.status!=='WIEDER_ANGEWENDET'&&c.topicComparable);
+ const mismatched=clusters.filter(c=>c.sourceCurrent&&!c.topicComparable);
  const current=unresolved.filter(c=>c.sourceCurrent&&support.has(domain(c.skillId)??'')&&
    c.failures.some(a=>{const item=byId.get(a.itemId);return !!item&&item.version===a.itemVersion&&item.status!=='WITHDRAWN';})).sort(ranked);
  const repeated=current.filter(c=>c.distinctFailureItems>=2);
@@ -62,7 +63,7 @@ export function buildLearningLinks(now:number,attempts:readonly Attempt[],items:
   if(result.candidate?.pendingRepair)pendingRepairs++;
   else if(result.candidate?.due)dueRecalls++;
  }
- return {unresolvedTopics:unresolved.length,recurringTopics:repeated.length,historicalTopics:clusters.filter(c=>!c.sourceCurrent).length,
+ return {unresolvedTopics:unresolved.length,recurringTopics:repeated.length,historicalTopics:clusters.filter(c=>!c.sourceCurrent).length,sourceTopicMismatches:mismatched.length,
   firstAttemptsWithErrors:attempts.filter(a=>Number.isFinite(a.at)&&a.at<=now&&(a.result==='INCORRECT'||a.result==='PARTIAL')).length,
   newContextTopics:current.filter(c=>!!c.freshContextId).length,
   waitingTopics,observedSpacedTopics:clusters.filter(c=>c.status==='WIEDER_ANGEWENDET').length,
