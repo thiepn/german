@@ -1,5 +1,6 @@
 import type {Attempt,Exercise} from '../content/types';
 import {INDEPENDENT_TRANSFER_DELAY_MS} from './errorProjection';
+import {eligibleForTopicLink} from '../content/topicIntegrity';
 
 export type VerifiableStep={attempt:Attempt;item:Exercise};
 export type FailedDelayedCase={
@@ -28,7 +29,7 @@ export function failedDelayedCases(now:number,attempts:readonly Attempt[],items:
  const groups=new Map<string,VerifiableStep[]>();
  for(const a of firstByItem.values()){
   const item=byId.get(a.itemId);
-  if(!item||item.status==='WITHDRAWN'||item.version!==a.itemVersion||!item.variants.length||
+  if(!item||!eligibleForTopicLink(item)||item.version!==a.itemVersion||!item.variants.length||
    item.mode!==a.mode||item.skillId!==a.skillId)continue;
   const key=keyOf(item);
   const list=groups.get(key)??[];list.push({attempt:a,item});groups.set(key,list);
@@ -45,7 +46,7 @@ export function failedDelayedCases(now:number,attempts:readonly Attempt[],items:
   if(!earlierError||earlierError.attempt.itemId===latest.attempt.itemId||
    earlierError.attempt.itemId===firstTransfer.attempt.itemId||
    latest.attempt.itemId===firstTransfer.attempt.itemId)continue;
-  const nextItem=[...items].filter(i=>i.status!=='WITHDRAWN'&&i.variants.length>0&&!attemptedIds.has(i.id)&&
+  const nextItem=[...items].filter(i=>eligibleForTopicLink(i)&&i.variants.length>0&&!attemptedIds.has(i.id)&&
    keyOf(i)===key).sort((a,b)=>a.id.localeCompare(b.id))[0]??null;
   found.push({key,mode:latest.item.mode,skillId:latest.item.skillId,topic:latest.item.topic,
    earlierError,firstTransfer,delayedFailure:latest,nextItem});
