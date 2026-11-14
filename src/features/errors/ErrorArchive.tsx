@@ -7,6 +7,7 @@ import {failedDelayedCases} from '../../domain/errors/delayedFailure';
 import FailureReconstruction from './FailureReconstruction';
 import {exhaustedContrastPlans} from '../../domain/errors/exhaustedContrast';
 import ExhaustedContrast from './ExhaustedContrast';
+import {topicMismatchReason} from '../../domain/content/topicIntegrity';
 
 const statusLabel:Record<ErrorClusterStatus,string>={
  OFFEN:'Noch offen',ERNEUT_UNSICHER:'Weiter beobachten',WIEDER_ANGEWENDET:'Erneut angewendet'
@@ -27,7 +28,7 @@ export default function ErrorArchive({attempts,byId,cards,onRetry,onRecoveryPrac
  return <section className="error-archive">
   <h1 className="page-title">Fehlerarchiv</h1>
   
-  <div className="error-summary" role="status">{all.length} Themen mit unsicheren Erstversuchen · {all.filter(x=>x.freshContextId).length} mit neuen Übungskontexten</div>
+  <div className="error-summary" role="status">{all.length} Fehlerverläufe mit unsicheren Antworten · {all.filter(x=>x.freshContextId).length} mit neuen Übungskontexten · {all.filter(x=>x.sourceCurrent&&!x.topicComparable).length} mit widersprüchlicher Entwurfs-Themenzuordnung</div>
   <div className="error-filters">
    <div className="field"><label htmlFor="errorMode">Übungsmodus</label><select id="errorMode" value={mode} onChange={e=>setMode(e.target.value)}><option value="all">Alle Modi</option>{availableModes.map(m=><option key={m} value={m}>{modes[m].label}</option>)}</select></div>
    <div className="field"><label htmlFor="errorStatus">Verlauf</label><select id="errorStatus" value={filter} onChange={e=>setFilter(e.target.value)}><option value="all">Alle Verläufe</option><option value="OFFEN">Noch offen</option><option value="ERNEUT_UNSICHER">Weiter beobachten</option><option value="WIEDER_ANGEWENDET">In neuen Aufgaben angewendet</option></select></div>
@@ -45,8 +46,9 @@ export default function ErrorArchive({attempts,byId,cards,onRetry,onRecoveryPrac
     return <article className="panel error-cluster" key={cluster.key}>
      <div className="kicker">{cluster.skillId} · {modes[cluster.mode].label}</div>
      <h2>{cluster.topic}</h2>
-     <p className="muted small">{cluster.failures.length} unsichere Erstversuche in {cluster.distinctFailureItems} Aufgaben · zuletzt {new Date(cluster.lastFailureAt).toLocaleDateString('de-DE')}</p>
+     <p className="muted small">{cluster.failures.length} unsichere Antworten in {cluster.distinctFailureItems} Aufgaben · zuletzt {new Date(cluster.lastFailureAt).toLocaleDateString('de-DE')}</p>
      <p className="small"><strong>Verlauf:</strong> {statusLabel[cluster.status]}. {cluster.laterCorrect.length} spätere korrekte unabhängige Erstantworten in anderen Aufgaben; {transfer.spacedCorrect} davon im Abstand von mindestens 24 Stunden dokumentiert.</p>
+     {!cluster.topicComparable&&cluster.sourceCurrent&&<p className="small muted">Themenzuordnung im DEMO_ONLY-Entwurf widerspricht dem Aufgabeninhalt: {topicMismatchReason(byId.get(cluster.failures[0].itemId)!)??'Quellenzuordnung nicht gesichert'}. Gespeicherte Antworten bleiben erhalten, werden aber nicht mit anderen Aufgaben als thematischer Transfer verrechnet.</p>}
      {transfer.phase==='WAITING'&&<p className="small muted">Ein anderer Kontext wurde bereits ungestützt richtig beantwortet. Den nächsten neuen Kontext frühestens ab {new Date(transfer.nextEligibleAt!).toLocaleString('de-DE')} versuchen. Fällige Wiederholungskarten sind davon unabhängig.</p>}
      {transfer.phase==='OBSERVED'&&<p className="small muted">Mindestens zwei neue Kontexte mit richtigen Erstversuchen im zeitlichen Abstand dokumentiert – keine Garantie für nachhaltige Beherrschung.</p>}
      <div className="buttonrow">
@@ -60,8 +62,8 @@ export default function ErrorArchive({attempts,byId,cards,onRetry,onRecoveryPrac
        onDue={id=>onExhaustedDue(existingContrast.key,id)} onSource={onExhaustedSource} onClose={()=>setOpenExhausted(null)}/>}
      {caseData&&isCaseOpen&&<FailureReconstruction key={caseData.delayedFailure.attempt.id} caseData={caseData}
        hasDue={hasDue} onPractice={kind=>onRecoveryPractice(caseData.delayedFailure.attempt.id,kind)} onClose={()=>setOpenedCase(null)}/>}
-     {!cluster.freshContextId&&<p className="small muted">{cluster.sourceCurrent?'Kein unversuchter Kontext zu genau diesem Thema vorhanden. '+(existingContrast?'Die bekannten Aufgaben können ohne neue Transferbehauptung verglichen werden.':'Ohne passende validierte Antwortkontraste keine neue unabhängige Aufgabenprüfung.'):'Frühere Aufgabenfassung: ohne unveränderte Regelversion kein neuer Kontext verfügbar.'}</p>}
-     {open&&<div className="error-history"><h3>Unveränderte erste Antworten</h3>{cluster.failures.map(a=>{
+     {!cluster.freshContextId&&<p className="small muted">{cluster.sourceCurrent?(!cluster.topicComparable?'Keine automatische neue Kontextfolge aufgrund widersprüchlicher Entwurfszuordnung. Originalaufgabe bleibt einzeln verfügbar.':'Kein unversuchter Kontext zu genau diesem Thema vorhanden. '+(existingContrast?'Die bekannten Aufgaben können ohne neue Transferbehauptung verglichen werden.':'Ohne passende validierte Antwortkontraste keine neue unabhängige Aufgabenprüfung.')):'Frühere Aufgabenfassung: ohne unveränderte Regelversion kein neuer Kontext verfügbar.'}</p>}
+     {open&&<div className="error-history"><h3>Unveränderte unsichere Antworten</h3>{cluster.failures.map(a=>{
       const item=byId.get(a.itemId),matching=item&&item.version===a.itemVersion;
       return <div className="listitem" key={a.id}>
        <div className="status">{new Date(a.at).toLocaleString('de-DE')} · {a.itemId} · v{a.itemVersion}</div>
