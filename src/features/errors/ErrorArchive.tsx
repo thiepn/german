@@ -28,7 +28,7 @@ export default function ErrorArchive({attempts,byId,cards,onRetry,onRecoveryPrac
  return <section className="error-archive">
   <h1 className="page-title">Fehlerarchiv</h1>
   
-  <div className="error-summary" role="status">{all.length} Fehlerverläufe mit unsicheren Antworten · {all.filter(x=>x.freshContextId).length} mit neuen Übungskontexten · {all.filter(x=>x.sourceCurrent&&!x.topicComparable).length} mit widersprüchlicher Entwurfs-Themenzuordnung</div>
+  <div className="error-summary" role="status">{all.length} {all.length===1?'Fehlerverlauf':'Fehlerverläufe'} mit unsicheren Antworten · {all.filter(x=>x.freshContextId).length} mit neuen Übungskontexten · {all.filter(x=>x.sourceCurrent&&!x.topicComparable).length} mit widersprüchlicher Entwurfs-Themenzuordnung</div>
   <div className="error-filters">
    <div className="field"><label htmlFor="errorMode">Übungsmodus</label><select id="errorMode" value={mode} onChange={e=>setMode(e.target.value)}><option value="all">Alle Modi</option>{availableModes.map(m=><option key={m} value={m}>{modes[m].label}</option>)}</select></div>
    <div className="field"><label htmlFor="errorStatus">Verlauf</label><select id="errorStatus" value={filter} onChange={e=>setFilter(e.target.value)}><option value="all">Alle Verläufe</option><option value="OFFEN">Noch offen</option><option value="ERNEUT_UNSICHER">Weiter beobachten</option><option value="WIEDER_ANGEWENDET">In neuen Aufgaben angewendet</option></select></div>
@@ -46,7 +46,7 @@ export default function ErrorArchive({attempts,byId,cards,onRetry,onRecoveryPrac
     return <article className="panel error-cluster" key={cluster.key}>
      <div className="kicker">{cluster.skillId} · {modes[cluster.mode].label}</div>
      <h2>{cluster.topic}</h2>
-     <p className="muted small">{cluster.failures.length} unsichere Antworten in {cluster.distinctFailureItems} Aufgaben · zuletzt {new Date(cluster.lastFailureAt).toLocaleDateString('de-DE')}</p>
+     <p className="muted small">{cluster.failures.length} {cluster.failures.length===1?'unsichere Antwort':'unsichere Antworten'} in {cluster.distinctFailureItems} {cluster.distinctFailureItems===1?'Aufgabe':'Aufgaben'} · zuletzt {new Date(cluster.lastFailureAt).toLocaleDateString('de-DE')}</p>
      <p className="small"><strong>Verlauf:</strong> {statusLabel[cluster.status]}. {cluster.laterCorrect.length} spätere korrekte unabhängige Erstantworten in anderen Aufgaben; {transfer.spacedCorrect} davon im Abstand von mindestens 24 Stunden dokumentiert.</p>
      {!cluster.topicComparable&&cluster.sourceCurrent&&<p className="small muted">Themenzuordnung im DEMO_ONLY-Entwurf widerspricht dem Aufgabeninhalt: {topicMismatchReason(byId.get(cluster.failures[0].itemId)!)??'Quellenzuordnung nicht gesichert'}. Gespeicherte Antworten bleiben erhalten, werden aber nicht mit anderen Aufgaben als thematischer Transfer verrechnet.</p>}
      {transfer.phase==='WAITING'&&<p className="small muted">Ein anderer Kontext wurde bereits ungestützt richtig beantwortet. Den nächsten neuen Kontext frühestens ab {new Date(transfer.nextEligibleAt!).toLocaleString('de-DE')} versuchen. Fällige Wiederholungskarten sind davon unabhängig.</p>}
