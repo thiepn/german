@@ -10,6 +10,7 @@ const now=Date.UTC(2026,10,11,12);
 const group=(mode:string,skill:string,topic:string)=>allItems.filter(x=>x.mode===mode&&x.skillId===skill&&x.topic===topic).sort((a,b)=>a.id.localeCompare(b.id));
 const g01=group('M01','G01.GENUS','Gesellschaft');
 const g07=group('M05','G07.KOLLOKATION','Indirekte Rede');
+const g04=group('M04','G04.SYNTAX','Indirekte Rede');
 const attempt=(item:Exercise,at:number,result:Attempt['result']='INCORRECT'):Attempt=>({
  id:item.id+':'+at,sessionId:item.id+':session:'+at,itemId:item.id,itemVersion:item.version,mode:item.mode,skillId:item.skillId,
  at,slots:{},score:result==='CORRECT'?1:0,correct:result==='CORRECT',hinted:false,result,variantIndex:null
@@ -25,13 +26,13 @@ test('current exact-version failure offers unused same-topic exercise; no unobse
  const choice=chooseEvidenceFocus(now,allItems,[],g01[2],x);
  assert.equal(choice.reason,'FRESH_CONTEXT');assert.equal(choice.item?.id,g01[1].id);
 });
-test('two distinct failed exercises connect to same-domain source, not to a manufactured grade',()=>{
- const a=[attempt(g07[0],now-5000),attempt(g07[1],now-3000)];
+test('two genuinely coherent failed exercises connect to their own source domain without inventing a grade',()=>{
+ const a=[attempt(g04[0],now-5000),attempt(g04[1],now-3000)];
  const x=links(a);
- assert.equal(x.recurringTopics,1);assert.equal(x.priority?.domain,'G07');
- assert.equal(x.priority?.distinctFailureItems,2);assert.equal(x.practice?.item.id,g07[2].id);
+ assert.equal(x.recurringTopics,1);assert.equal(x.priority?.domain,'G04');
+ assert.equal(x.priority?.distinctFailureItems,2);assert.equal(x.practice?.item.id,g04[2].id);
  const cycle=dailyLearningCycle(now,a,[],[],[],x.practice?.item,x.priority);
- assert.equal(cycle.source.track.domain,'G07');assert.equal(cycle.source.link?.topic,'Indirekte Rede');
+ assert.equal(cycle.source.track.domain,'G04');assert.equal(cycle.source.link?.topic,'Indirekte Rede');
  assert.equal(cycle.source.row,null);
 });
 test('repeated attempts of the same item never count as repeated independent contexts',()=>{
