@@ -18,6 +18,7 @@ import PracticeRunner from '../features/practice/PracticeRunner';
 import ErrorArchive from '../features/errors/ErrorArchive';
 import {failedDelayedCaseForAttempt} from '../domain/errors/delayedFailure';
 import {exhaustedContrastPlans} from '../domain/errors/exhaustedContrast';
+import {eligibleForTopicLink} from '../domain/content/topicIntegrity';
 import ReviewQueue from '../features/review/ReviewQueue';
 import Progress from '../features/progress/Progress';
 import DataManagement from '../features/data/DataManagement';
@@ -152,7 +153,7 @@ export default function App(){
  return ()=>{alive=false};},[]);
  const now=Date.now();
  const links=buildLearningLinks(now,attempts,allItems,productions);
- const availableForNewPractice=allItems.filter(i=>!links.waitingTopics.some(x=>x.mode===i.mode&&x.skillId===i.skillId&&x.topic===i.topic));
+ const availableForNewPractice=allItems.filter(i=>eligibleForTopicLink(i)&&!links.waitingTopics.some(x=>x.mode===i.mode&&x.skillId===i.skillId&&x.topic===i.topic));
  const focusChoice=chooseEvidenceFocus(now,allItems,cards,chooseSession(availableForNewPractice,attempts,cards,now,1)[0],links);
  const recommended=focusChoice.item;
  const cycle=dailyLearningCycle(now,attempts,reviews,cards,productions,recommended,links.priority);
