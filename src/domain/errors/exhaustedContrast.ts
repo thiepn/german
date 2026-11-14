@@ -1,5 +1,6 @@
 import type {Attempt,Exercise,ReviewCard,Mode} from '../content/types';
 import {buildErrorClusters} from './errorProjection';
+import {eligibleForTopicLink} from '../content/topicIntegrity';
 
 export type AuthoredContext={item:Exercise;first:Attempt};
 export type ExhaustedContrastPlan={
@@ -25,10 +26,10 @@ export function exhaustedContrastPlans(now:number,attempts:readonly Attempt[],it
   .sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id));
  const first=new Map<string,Attempt>();
  for(const a of prior)if(!first.has(a.itemId))first.set(a.itemId,a);
- const clusters=buildErrorClusters(prior,byId).filter(c=>c.sourceCurrent&&c.status!=='WIEDER_ANGEWENDET'&&!c.freshContextId);
+ const clusters=buildErrorClusters(prior,byId).filter(c=>c.sourceCurrent&&c.topicComparable&&c.status!=='WIEDER_ANGEWENDET'&&!c.freshContextId);
  const plans:ExhaustedContrastPlan[]=[];
  for(const cluster of clusters){
-  const sources=items.filter(x=>x.status!=='WITHDRAWN'&&x.variants.length>0&&x.slots.length>0&&
+  const sources=items.filter(x=>eligibleForTopicLink(x)&&x.variants.length>0&&x.slots.length>0&&
    x.mode===cluster.mode&&x.skillId===cluster.skillId&&x.topic===cluster.topic).sort((a,b)=>a.id.localeCompare(b.id));
   if(sources.length<2)continue;
   // A prior encounter with a withdrawn or changed version must not be silently
