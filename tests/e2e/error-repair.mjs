@@ -15,7 +15,7 @@ async function run(width){
   await page.getByRole('button',{name:'Zur Übersicht'}).click();
   await page.getByRole('button',{name:'Fehler',exact:true}).first().click();
   await page.getByRole('heading',{name:'Fehlerarchiv'}).waitFor();
-  await page.getByText('1 Themen mit unsicheren Erstversuchen',{exact:false}).waitFor();
+  await page.getByText('1 Fehlerverläufe mit unsicheren Antworten',{exact:false}).waitFor();
   await page.getByRole('button',{name:'Originalantworten & Regeln'}).click();
   await page.getByText('Deine Antwort:').first().waitFor();
   await page.getByText(first).waitFor();
@@ -31,7 +31,7 @@ async function run(width){
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
   await page.reload({waitUntil:'networkidle'});
   await page.getByRole('button',{name:'Fehler',exact:true}).first().click();
-  await page.getByText('1 Themen mit unsicheren Erstversuchen',{exact:false}).waitFor();
+  await page.getByText('1 Fehlerverläufe mit unsicheren Antworten',{exact:false}).waitFor();
  }finally{await ctx.close()}
 }
 try{await run(1280);await run(360);console.log('PASS: clustered errors, immutable first attempt, unseen contextual transfer, reload, desktop/mobile');}finally{await browser.close()}
