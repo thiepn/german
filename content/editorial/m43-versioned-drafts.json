@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "phase": "M43",
+  "purpose": "AUTHOR_DRAFT_SOURCE_ATTACHMENT_DISAMBIGUATION",
+  "authoringOnly": true,
+  "independentApproval": false,
+  "rightsApproval": false,
+  "cefrCalibration": false,
+  "releaseApproval": false,
+  "reviewer": null,
+  "cases": [
+    {
+      "id": "SG-G03A-002",
+      "source": "content/fixtures/g03-attachment.demo.json",
+      "versionFrom": 1,
+      "versionTo": 2,
+      "risk": "The phrase im Nebenraum supports adverbial and NP-attributive readings. The v1 task does not clearly separate syntax from source-grounded interpretation.",
+      "provenance": "AUTHOR_CLAIM_NOT_INDEPENDENTLY_CHECKED",
+      "draftDecision": "NOT_REVIEWED",
+      "independentGrammar": "NOT_REVIEWED",
+      "alternativeAnswers": "NOT_ADJUDICATED",
+      "rights": "NOT_VERIFIED",
+      "cefr": "NOT_CALIBRATED",
+      "operations": [
+        {
+          "path": [
+            "attachments",
+            0,
+            "question"
+          ],
+          "to": "Welche zwei syntaktischen Anbindungen von „im Nebenraum“ sind im isolierten Satz möglich? Welche Lesart stützen erst die übrigen Dokumente? Formuliere anschließend Prüfungsort und früheren Lagerort eindeutig.",
+          "from": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung."
+        },
+        {
+          "path": [
+            "attachments",
+            0,
+            "options",
+            1,
+            "text"
+          ],
+          "to": "„Im Nebenraum“ kann die Nominalgruppe „die Proben“ attributiv näher bestimmen. Die Proben waren zuvor dort gelagert; die eigentliche Überprüfung fand laut Ablaufplan im zentralen Labor statt.",
+          "from": "Die untersuchten Proben waren zuvor im Nebenraum aufbewahrt worden; die eigentliche Prüfung fand im zentralen Labor statt."
+        },
+        {
+          "path": [
+            "attachments",
+            0,
+            "model"
+          ],
+          "to": "Ohne weiteren Kontext lässt „Die Projektgruppe überprüfte die Proben im Nebenraum“ zwei Anbindungen zu: adverbial zum Verb überprüfte (Ort der Prüfung) oder attributiv zu die Proben (Lokalisierung der Proben). Erst Ablaufplan, Geräteprotokoll und Fotos stützen hier den früheren Lagerort im Nebenraum und die Prüfung im zentralen Labor. Eindeutig: „Die Projektgruppe überprüfte im zentralen Labor die zuvor im Nebenraum gelagerten Proben.“",
+          "from": "Laborfotos und die getrennte Lagerliste zeigen, dass der Nebenraum die Proben und nicht die Prüfung lokalisiert."
+        },
+        {
+          "path": [
+            "attachments",
+            0,
+            "trap"
+          ],
+          "to": "Die unmittelbar nach dem Objekt stehende Präpositionalgruppe ist syntaktisch nicht allein durch ihre Position eindeutig zugeordnet. Eine adverbiale Lesart behauptet hier einen Prüfungsort, der den übrigen Dokumenten widerspricht; die attributive Lesart muss anhand des Quellenkontexts begründet werden.",
+          "from": "Eine lokale Gruppe nach dem Objekt benennt nicht zwingend den Handlungsort und darf die dokumentierte Verlagerung nicht verdecken."
+        }
+      ],
+      "legacyV1": {
+        "id": "SG-G03A-002",
+        "version": 1,
+        "domain": "G03",
+        "band": "C2",
+        "title": "Wissenschaftliche Feldstudie: Lagerort, Erklärmittel und Datenherkunft",
+        "focus": "Lokale und instrumentale Präpositionalgruppen sowie Herkunftsattribution in methodischen Fachtexten quellengestützt disambiguieren",
+        "brief": "Schreibe eine vollständige methodische Klarstellung für eine fiktive Forschungsgruppe. Begründe an drei Ankern, woran sich die Präpositionalgruppe bindet, und benenne die jeweils nicht belegte Lesart. Übertrage deine Klärung in einen eigenständigen Text für ein fachfremdes Gremium und überarbeite sie mit vollständig erhaltenen methodischen Grenzen.",
+        "paragraphs": [
+          {
+            "id": "p1",
+            "text": "Für eine fiktive Forschungsstudie wurden Bodenproben aus einem Gemeinschaftsgarten in einer Universität untersucht. Die verschlossenen Behälter waren nach dem Transport vorübergehend im Nebenraum gelagert worden. Für die eigentliche Sichtprüfung brachte die Gruppe sie jedoch in das zentrale Labor, dessen Arbeitstisch und Beleuchtung im Geräteprotokoll dokumentiert waren. Der Zwischenbericht enthielt trotzdem den Satz: „Die Projektgruppe überprüfte die Proben im Nebenraum.“ Die lokale Ergänzung kann an das Überprüfen als Handlung oder an die Proben als Gegenstände anschließen. Im Audit fragte die Gutachterin nach, ob die Behälter schon im Nebenraum geöffnet worden seien. Weder der Ablaufplan noch die Fotos stützten das. Die Redaktion sollte klarstellen, dass die Proben zuvor dort standen, während die Untersuchung an einem anderen Ort durchgeführt wurde. Ein pauschales Streichen des Ortsnamens hätte die Lagergeschichte unsichtbar gemacht und den Ablauf schwerer rekonstruierbar gelassen."
+          },
+          {
+            "id": "p2",
+            "text": "In einer Besprechung zu zwei Messreihen hatte die Forschungsleiterin mehrere Diagramme vorbereitet, die unterschiedliche Zeitachsen sichtbar machen sollten. Sie projizierte diese Grafiken auf eine Leinwand und erklärte daran einen bereits ausgewerteten Befund einer Kollegin. Die spätere Zusammenfassung lautete: „Die Wissenschaftlerin erläuterte den Befund der Kollegin mit den Diagrammen.“ Die Wortgruppe mit den Diagrammen kann sich als Instrument der Erläuterung auf die Handlung beziehen oder attributiv eine Person beziehungsweise den Befund näher charakterisieren. Ein Berichtsteilnehmer schrieb die Grafiken daraufhin irrtümlich der Kollegin zu, obwohl die Vorbereitungsdateien bei der erklärenden Wissenschaftlerin lagen. Die gemeinsame Sitzung diente der verständlichen Darstellung einer schon bestehenden Analyse, nicht der Durchführung einer neuen Messung. Für die Veröffentlichung musste erkennbar sein, wer den Befund geliefert hatte, wer erläuterte und wozu die Diagramme eingesetzt wurden. Alle drei Funktionen sollten grammatisch klar getrennt bleiben."
+          },
+          {
+            "id": "p3",
+            "text": "Für den letzten Abschnitt wurden Feldnotizen und Messreihen aus mehreren Standorten zusammengeführt. Eine mobile Station hatte zwei Tage lang im Außenlabor Daten gesammelt, während die zuständigen Forschenden im zentralen Institut beschäftigt waren. Die Leitung dokumentierte den Vergleich in einer knappen Formulierung: „Die Leitung dokumentierte die Beobachtungen der Forschenden aus dem Außenlabor.“ Die Herkunftsangabe kann die Beobachtungsdaten bezeichnen oder die Forschenden selbst als Mitglieder einer Außeneinrichtung charakterisieren. Eine externe Stelle nahm fälschlich an, das gesamte Forschungsteam habe im Außenlabor gearbeitet. Die unterschriebenen Dienstpläne widerlegten die Vermutung; nur das Messgerät war dorthin gebracht worden. In der überarbeiteten Darstellung sollte eindeutig zwischen Ort der Datenerhebung, Dienstort der Fachleute und Ort der späteren Auswertung unterschieden werden. Der Bericht durfte weder die fremde Einrichtung als Arbeitgeberin ausgeben noch den Messort aus dem Quellennachweis streichen."
+          }
+        ],
+        "attachments": [
+          {
+            "id": "a1",
+            "paragraphId": "p1",
+            "type": "Handlungsort versus Lagerort des Gegenstands",
+            "quote": "Die Projektgruppe überprüfte die Proben im Nebenraum.",
+            "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die eigentliche Überprüfung wurde im Nebenraum durchgeführt; die Präpositionalgruppe bestimmt den Ort der Prüfhandlung."
+              },
+              {
+                "id": "B",
+                "text": "Die untersuchten Proben waren zuvor im Nebenraum aufbewahrt worden; die eigentliche Prüfung fand im zentralen Labor statt."
+              }
+            ],
+            "preferredId": "B",
+            "model": "Laborfotos und die getrennte Lagerliste zeigen, dass der Nebenraum die Proben und nicht die Prüfung lokalisiert.",
+            "trap": "Eine lokale Gruppe nach dem Objekt benennt nicht zwingend den Handlungsort und darf die dokumentierte Verlagerung nicht verdecken."
+          },
+          {
+            "id": "a2",
+            "paragraphId": "p2",
+            "type": "Erklärmittel versus attributive Zuordnung",
+            "quote": "Die Wissenschaftlerin erläuterte den Befund der Kollegin mit den Diagrammen.",
+            "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die Wissenschaftlerin nutzte die vorbereiteten Diagramme als Mittel der Erklärung eines Befunds, den eine Kollegin geliefert hatte."
+              },
+              {
+                "id": "B",
+                "text": "Die erwähnte Kollegin wird als Person mit den Diagrammen charakterisiert, nicht die Erläuterung als Handlung."
+              }
+            ],
+            "preferredId": "A",
+            "model": "Projektion und Vorbereitungsdateien zeigen, dass die Diagramme das Mittel der Erläuterung waren.",
+            "trap": "Die unmittelbare Nähe zu Kollegin reicht nicht aus, um die Verfügbarkeit der Diagramme dieser Person zuzuschreiben."
+          },
+          {
+            "id": "a3",
+            "paragraphId": "p3",
+            "type": "Datenherkunft versus institutionelle Zuordnung",
+            "quote": "Die Leitung dokumentierte die Beobachtungen der Forschenden aus dem Außenlabor.",
+            "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die Beobachtungen wurden im Außenlabor gewonnen, während die Forschenden laut Dienstplan im zentralen Institut arbeiteten."
+              },
+              {
+                "id": "B",
+                "text": "Die Forschenden gehörten als Beschäftigte zum Außenlabor und hatten die Beobachtungen an ihrer eigenen Einrichtung gemacht."
+              }
+            ],
+            "preferredId": "A",
+            "model": "Die mobilen Gerätewege dokumentieren Datenherkunft im Außenlabor, die Dienstpläne den Arbeitsplatz im zentralen Institut.",
+            "trap": "Eine Herkunftsangabe zu Daten darf nicht ohne weitere Belege als institutionelle Zugehörigkeit der Forschenden gelesen werden."
+          }
+        ],
+        "status": "DEMO_ONLY",
+        "authorship": "AI_DRAFT",
+        "author": "M31 original fictional syntactic-attachment studies",
+        "reviewedBy": null,
+        "editorialApproval": false,
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "Vier eigens verfasste fiktive Originalberichte, unabhängig redaktionell unbegutachtet; keine externen Textquellen"
+        }
+      },
+      "draftV2": {
+        "id": "SG-G03A-002",
+        "version": 2,
+        "domain": "G03",
+        "band": "C2",
+        "title": "Wissenschaftliche Feldstudie: Lagerort, Erklärmittel und Datenherkunft",
+        "focus": "Lokale und instrumentale Präpositionalgruppen sowie Herkunftsattribution in methodischen Fachtexten quellengestützt disambiguieren",
+        "brief": "Schreibe eine vollständige methodische Klarstellung für eine fiktive Forschungsgruppe. Begründe an drei Ankern, woran sich die Präpositionalgruppe bindet, und benenne die jeweils nicht belegte Lesart. Übertrage deine Klärung in einen eigenständigen Text für ein fachfremdes Gremium und überarbeite sie mit vollständig erhaltenen methodischen Grenzen.",
+        "paragraphs": [
+          {
+            "id": "p1",
+            "text": "Für eine fiktive Forschungsstudie wurden Bodenproben aus einem Gemeinschaftsgarten in einer Universität untersucht. Die verschlossenen Behälter waren nach dem Transport vorübergehend im Nebenraum gelagert worden. Für die eigentliche Sichtprüfung brachte die Gruppe sie jedoch in das zentrale Labor, dessen Arbeitstisch und Beleuchtung im Geräteprotokoll dokumentiert waren. Der Zwischenbericht enthielt trotzdem den Satz: „Die Projektgruppe überprüfte die Proben im Nebenraum.“ Die lokale Ergänzung kann an das Überprüfen als Handlung oder an die Proben als Gegenstände anschließen. Im Audit fragte die Gutachterin nach, ob die Behälter schon im Nebenraum geöffnet worden seien. Weder der Ablaufplan noch die Fotos stützten das. Die Redaktion sollte klarstellen, dass die Proben zuvor dort standen, während die Untersuchung an einem anderen Ort durchgeführt wurde. Ein pauschales Streichen des Ortsnamens hätte die Lagergeschichte unsichtbar gemacht und den Ablauf schwerer rekonstruierbar gelassen."
+          },
+          {
+            "id": "p2",
+            "text": "In einer Besprechung zu zwei Messreihen hatte die Forschungsleiterin mehrere Diagramme vorbereitet, die unterschiedliche Zeitachsen sichtbar machen sollten. Sie projizierte diese Grafiken auf eine Leinwand und erklärte daran einen bereits ausgewerteten Befund einer Kollegin. Die spätere Zusammenfassung lautete: „Die Wissenschaftlerin erläuterte den Befund der Kollegin mit den Diagrammen.“ Die Wortgruppe mit den Diagrammen kann sich als Instrument der Erläuterung auf die Handlung beziehen oder attributiv eine Person beziehungsweise den Befund näher charakterisieren. Ein Berichtsteilnehmer schrieb die Grafiken daraufhin irrtümlich der Kollegin zu, obwohl die Vorbereitungsdateien bei der erklärenden Wissenschaftlerin lagen. Die gemeinsame Sitzung diente der verständlichen Darstellung einer schon bestehenden Analyse, nicht der Durchführung einer neuen Messung. Für die Veröffentlichung musste erkennbar sein, wer den Befund geliefert hatte, wer erläuterte und wozu die Diagramme eingesetzt wurden. Alle drei Funktionen sollten grammatisch klar getrennt bleiben."
+          },
+          {
+            "id": "p3",
+            "text": "Für den letzten Abschnitt wurden Feldnotizen und Messreihen aus mehreren Standorten zusammengeführt. Eine mobile Station hatte zwei Tage lang im Außenlabor Daten gesammelt, während die zuständigen Forschenden im zentralen Institut beschäftigt waren. Die Leitung dokumentierte den Vergleich in einer knappen Formulierung: „Die Leitung dokumentierte die Beobachtungen der Forschenden aus dem Außenlabor.“ Die Herkunftsangabe kann die Beobachtungsdaten bezeichnen oder die Forschenden selbst als Mitglieder einer Außeneinrichtung charakterisieren. Eine externe Stelle nahm fälschlich an, das gesamte Forschungsteam habe im Außenlabor gearbeitet. Die unterschriebenen Dienstpläne widerlegten die Vermutung; nur das Messgerät war dorthin gebracht worden. In der überarbeiteten Darstellung sollte eindeutig zwischen Ort der Datenerhebung, Dienstort der Fachleute und Ort der späteren Auswertung unterschieden werden. Der Bericht durfte weder die fremde Einrichtung als Arbeitgeberin ausgeben noch den Messort aus dem Quellennachweis streichen."
+          }
+        ],
+        "attachments": [
+          {
+            "id": "a1",
+            "paragraphId": "p1",
+            "type": "Handlungsort versus Lagerort des Gegenstands",
+            "quote": "Die Projektgruppe überprüfte die Proben im Nebenraum.",
+            "question": "Welche zwei syntaktischen Anbindungen von „im Nebenraum“ sind im isolierten Satz möglich? Welche Lesart stützen erst die übrigen Dokumente? Formuliere anschließend Prüfungsort und früheren Lagerort eindeutig.",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die eigentliche Überprüfung wurde im Nebenraum durchgeführt; die Präpositionalgruppe bestimmt den Ort der Prüfhandlung."
+              },
+              {
+                "id": "B",
+                "text": "„Im Nebenraum“ kann die Nominalgruppe „die Proben“ attributiv näher bestimmen. Die Proben waren zuvor dort gelagert; die eigentliche Überprüfung fand laut Ablaufplan im zentralen Labor statt."
+              }
+            ],
+            "preferredId": "B",
+            "model": "Ohne weiteren Kontext lässt „Die Projektgruppe überprüfte die Proben im Nebenraum“ zwei Anbindungen zu: adverbial zum Verb überprüfte (Ort der Prüfung) oder attributiv zu die Proben (Lokalisierung der Proben). Erst Ablaufplan, Geräteprotokoll und Fotos stützen hier den früheren Lagerort im Nebenraum und die Prüfung im zentralen Labor. Eindeutig: „Die Projektgruppe überprüfte im zentralen Labor die zuvor im Nebenraum gelagerten Proben.“",
+            "trap": "Die unmittelbar nach dem Objekt stehende Präpositionalgruppe ist syntaktisch nicht allein durch ihre Position eindeutig zugeordnet. Eine adverbiale Lesart behauptet hier einen Prüfungsort, der den übrigen Dokumenten widerspricht; die attributive Lesart muss anhand des Quellenkontexts begründet werden."
+          },
+          {
+            "id": "a2",
+            "paragraphId": "p2",
+            "type": "Erklärmittel versus attributive Zuordnung",
+            "quote": "Die Wissenschaftlerin erläuterte den Befund der Kollegin mit den Diagrammen.",
+            "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die Wissenschaftlerin nutzte die vorbereiteten Diagramme als Mittel der Erklärung eines Befunds, den eine Kollegin geliefert hatte."
+              },
+              {
+                "id": "B",
+                "text": "Die erwähnte Kollegin wird als Person mit den Diagrammen charakterisiert, nicht die Erläuterung als Handlung."
+              }
+            ],
+            "preferredId": "A",
+            "model": "Projektion und Vorbereitungsdateien zeigen, dass die Diagramme das Mittel der Erläuterung waren.",
+            "trap": "Die unmittelbare Nähe zu Kollegin reicht nicht aus, um die Verfügbarkeit der Diagramme dieser Person zuzuschreiben."
+          },
+          {
+            "id": "a3",
+            "paragraphId": "p3",
+            "type": "Datenherkunft versus institutionelle Zuordnung",
+            "quote": "Die Leitung dokumentierte die Beobachtungen der Forschenden aus dem Außenlabor.",
+            "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+            "options": [
+              {
+                "id": "A",
+                "text": "Die Beobachtungen wurden im Außenlabor gewonnen, während die Forschenden laut Dienstplan im zentralen Institut arbeiteten."
+              },
+              {
+                "id": "B",
+                "text": "Die Forschenden gehörten als Beschäftigte zum Außenlabor und hatten die Beobachtungen an ihrer eigenen Einrichtung gemacht."
+              }
+            ],
+            "preferredId": "A",
+            "model": "Die mobilen Gerätewege dokumentieren Datenherkunft im Außenlabor, die Dienstpläne den Arbeitsplatz im zentralen Institut.",
+            "trap": "Eine Herkunftsangabe zu Daten darf nicht ohne weitere Belege als institutionelle Zugehörigkeit der Forschenden gelesen werden."
+          }
+        ],
+        "status": "DEMO_ONLY",
+        "authorship": "AI_DRAFT",
+        "author": "M31 original fictional syntactic-attachment studies",
+        "reviewedBy": null,
+        "editorialApproval": false,
+        "rights": {
+          "kind": "ORIGINAL_DRAFT",
+          "source": "Vier eigens verfasste fiktive Originalberichte, unabhängig redaktionell unbegutachtet; keine externen Textquellen"
+        }
+      }
+    }
+  ]
+}

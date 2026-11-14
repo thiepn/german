@@ -1,5 +1,6 @@
 import raw from '../../../content/fixtures/g07-phraseology.demo.json';
 import type {ProductionEntry,ProductionRevision} from '../production/types';
+import {sourceEntryId,matchesSourceEntry,exactSourceForEntry} from '../content/sourceIdentity';
 
 export type PhraseologyChoice='A'|'B';
 export type PhraseologyDecision={
@@ -12,10 +13,10 @@ export type PhraseologyStudy={
  editorialApproval:false;rights:{kind:'ORIGINAL_DRAFT';source:string};
 };
 export const phraseologyStudies:PhraseologyStudy[]=raw as PhraseologyStudy[];
-export const phraseologyEntryId=(id:string)=>'phraseology:'+id;
-export const isPhraseologyEntry=(e:ProductionEntry):boolean=>e.kind==='PHRASEOLOGY_STUDY'&&e.id===phraseologyEntryId(e.itemId);
+export const phraseologyEntryId=(id:string,version=1)=>sourceEntryId('phraseology',id,version);
+export const isPhraseologyEntry=(e:ProductionEntry):boolean=>matchesSourceEntry(e,'PHRASEOLOGY_STUDY','phraseology');
 export function phraseologySource(e:ProductionEntry):PhraseologyStudy|null{
- return isPhraseologyEntry(e)?phraseologyStudies.find(s=>s.id===e.itemId&&s.id===e.sourceId&&s.version===e.itemVersion)??null:null;
+ return isPhraseologyEntry(e)?exactSourceForEntry(e,phraseologyStudies):null;
 }
 const separator='\n\nBedeutungsgrenze: ';
 const valid=(s:string,min:number,max:number)=>typeof s==='string'&&s.trim().length>=min&&s.length<=max;
@@ -57,7 +58,7 @@ export function beginPhraseology(study:PhraseologyStudy,id:string,choice:Phraseo
  const original=text.trim()+separator+limit.trim();
  if(!s||!d||d.id!==id||!validChoice(d,choice)||!independentPhraseologyText(d,text)||!valid(text,50,1800)||!valid(limit,20,850)||original.length>3000||!Number.isFinite(at))
   throw Error('Quellenbezogene Wortverbindung, eigene Fassung und Bedeutungsgrenze erforderlich.');
- return {id:phraseologyEntryId(s.id),itemId:s.id,itemVersion:s.version,kind:'PHRASEOLOGY_STUDY',sourceId:s.id,
+ return {id:phraseologyEntryId(s.id,s.version),itemId:s.id,itemVersion:s.version,kind:'PHRASEOLOGY_STUDY',sourceId:s.id,
  decisionId:d.id+'|'+choice+'|'+d.paragraphId,createdAt:at,original,revisions:[],evaluated:'UNASSESSED'};
 }
 export function appendPhraseologyDecision(entry:ProductionEntry,study:PhraseologyStudy,id:string,choice:PhraseologyChoice,text:string,limit:string,revisionId:string,at:number):ProductionEntry{
@@ -89,6 +90,6 @@ export function phraseologyProgress(entries:readonly ProductionEntry[]){
  total:phraseologyStudies.length};
 }
 export function nextPhraseologyStudy(entries:readonly ProductionEntry[]):PhraseologyStudy{
- return phraseologyStudies.find(s=>{const e=entries.find(e=>isPhraseologyEntry(e)&&e.itemId===s.id);return e&&!e.revisions.some(r=>r.questionId==='TRANSFER')})??
- phraseologyStudies.find(s=>!entries.some(e=>isPhraseologyEntry(e)&&e.itemId===s.id))??phraseologyStudies[0];
+ return phraseologyStudies.find(s=>{const e=entries.find(e=>isPhraseologyEntry(e)&&e.itemId===s.id&&e.itemVersion===s.version);return e&&!e.revisions.some(r=>r.questionId==='TRANSFER')})??
+ phraseologyStudies.find(s=>!entries.some(e=>isPhraseologyEntry(e)&&e.itemId===s.id&&e.itemVersion===s.version))??phraseologyStudies[0];
 }

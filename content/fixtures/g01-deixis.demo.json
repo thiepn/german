@@ -1,0 +1,378 @@
+[
+  {
+    "id": "SG-G01D-001",
+    "version": 1,
+    "domain": "G01",
+    "band": "C1",
+    "title": "Stadtteilzentrum: Ort, Redetag und angesprochene Personen",
+    "focus": "Sprecherbezogene Zeit- und Ortsdeixis in mündlichen Terminankündigungen mit nachvollziehbaren Äußerungskontexten auflösen",
+    "brief": "Erstelle einen eigenständigen mehrabsätzigen Bericht für die Verwaltung des fiktiven Stadtteilzentrums. Rechne alle deiktischen Ausdrücke vom ursprünglichen Sprechzeitpunkt aus um, unterscheide ausdrücklich die Sprecher- und Empfängerrollen und übertrage den Bericht dann für eine aktuelle öffentliche Information. Schreibe eine substanzielle Revision, ohne alte Termine als neue Ankündigungen auszugeben.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Am Montag, dem 3. März 2025, meldete die Koordinatorin das Vorhaben einer kleinen Arbeitsgruppe persönlich am Empfang des Stadtteilzentrums Lindenfeld. Der Antrag war in der Mappe dieser Arbeitsgruppe, und die Abgabe sollte am selben Empfang stattfinden. Im Gespräch sagte die Koordinatorin: „Wir geben den Antrag morgen hier ab.“ Die Mitarbeiterin vermerkte ausdrücklich, dass weder das Bezirksamt noch ein anderes Vereinsbüro als Abgabeort vorgesehen war. Der Eintrag wurde erst im April 2025 in einen Jahresbericht übernommen. Dort ließ sich die wörtliche Rede nicht als Ankündigung für einen Tag nach der späteren Veröffentlichung verwenden: Das Wort morgen bezog sich ausschließlich auf die ursprüngliche Äußerung am 3. März. Wir schloss die Mitglieder der antragstellenden Arbeitsgruppe ein, nicht sämtliche Besucherinnen des Zentrums. Eine neutrale Wiedergabe musste daher das Datum 4. März, die handelnde Gruppe und den Empfang als Ortsbezug ausdrücklich benennen."
+      },
+      {
+        "id": "p2",
+        "text": "Noch am Montag, dem 3. März 2025, wurde die nächste Beratung für Mittwoch, den 12. März, geplant. Die Koordinatorin stand dabei weiterhin am Empfang des Hauptgebäudes; zuvor hatte sie auf den Nebenbau West gezeigt, wo der Beratungsraum reserviert war. Anschließend sagte sie: „Die Beratung findet nächste Woche dort statt.“ In einem späteren Auszug fehlten die Angaben zur Reservierung, sodass dort irrtümlich auf die Empfangshalle oder auf einen Ort nahe der Leserin bezogen wurde. Die Gesprächsnotiz bestätigte aber, dass der Nebenbau West gemeint war. Nächste Woche bezog sich auf die Kalenderwoche nach derjenigen des 3. März und nicht auf die Woche nach der späteren Veröffentlichung. Der ausdrücklich reservierte Mittwoch gab zusätzlich ein eindeutiges Datum. Bei der schriftlichen Wiedergabe sollte diese zeitliche und räumliche Deixis aufgelöst werden, ohne die Beratung nachträglich in ein anderes Gebäude zu verlegen."
+      },
+      {
+        "id": "p3",
+        "text": "Am Donnerstag, dem 6. März 2025, rief die Vorsitzende des Stadtteilbeirats eine namentlich im Gesprächsprotokoll bezeichnete Vertreterin der Anwohnergruppe an. Sie wollte nachfragen, ob eine zuvor versandte Unterlagenmappe angekommen sei. Die Vorsitzende sagte während des Telefonats: „Ich habe Ihnen gestern die Unterlagen geschickt.“ Der Ausgangsvermerk der Beiratsgeschäftsstelle trug das Datum 5. März 2025. In einer späteren Rundmail wurde der Satz ohne Sprecherangabe weitergeleitet, worauf einige Empfänger die Absenderrolle fälschlich auf die Person übertrugen, die die Rundmail verschickt hatte. Auch Ihnen wurde irrtümlich als Anrede aller Leser verstanden. Tatsächlich bezog sich das Wort auf die eine angerufene Vertreterin, und gestern auf den Vortag des Telefonats. Für die Akte war deshalb eine eindeutige indirekte Darstellung mit Absenderrolle, konkretem Versandtag und ursprünglicher Empfängerin erforderlich."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "phenomenon": "Sprechzeit, Sprechergruppe und hier",
+        "quote": "Wir geben den Antrag morgen hier ab.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Koordinatorin kündigte am 3. März 2025 an, ihre Arbeitsgruppe werde den Antrag am 4. März am Empfang des Stadtteilzentrums Lindenfeld einreichen."
+          },
+          {
+            "id": "B",
+            "text": "Das Wort morgen meint den Tag nach Erscheinen des im April verfassten Jahresberichts und hier das Büro der späteren Leserin."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Quelle benennt den Montag, 3. März 2025, als Äußerungstag und den Empfang in Lindenfeld als tatsächlichen Ort der geplanten Abgabe.",
+        "trap": "Das deiktische morgen darf beim Erzählen nicht an den Erscheinungstag des späteren Berichts verschoben werden."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "phenomenon": "Zukünftiger Zeitraum und distaler Ortsbezug",
+        "quote": "Die Beratung findet nächste Woche dort statt.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Dort bezeichnet den Empfang des Hauptgebäudes, und nächste Woche wird relativ zum Datum einer späteren digitalen Kopie berechnet."
+          },
+          {
+            "id": "B",
+            "text": "Die Koordinatorin erklärte am 3. März 2025, die Beratung werde am Mittwoch, dem 12. März, im Nebenbau West stattfinden."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Gesprächsnotiz enthält die Reservierung des Nebenbaus West für Mittwoch, den 12. März, und das Zeigen auf diesen Nebenbau.",
+        "trap": "Der deiktisch entfernte Ort und die zukünftige Woche sind vom damaligen Sprechkontext abhängig, nicht vom Standort späterer Leser."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "phenomenon": "Rollenwechsel und vergangener Tagesbezug",
+        "quote": "Ich habe Ihnen gestern die Unterlagen geschickt.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Beiratsvorsitzende teilte der angerufenen Vertreterin am 6. März 2025 mit, sie habe ihr die Unterlagen am 5. März geschickt."
+          },
+          {
+            "id": "B",
+            "text": "Ich ist die Person, die die spätere Rundmail verschickt, Ihnen sind alle Leser dieser Rundmail, und gestern deren Vortag."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das Telefonprotokoll weist die Beiratsvorsitzende als Sprecherin und die Vertreterin als Adressatin aus; der Ausgangsvermerk datiert vom 5. März.",
+        "trap": "Deiktische Personalpronomen und gestern gehören zum ursprünglichen Telefonat, nicht zu späteren Weiterleitungen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M33 originally authored deictic-centre and perspective-shift source cases",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier vollständig neu verfasste fiktive Quellenkonstellationen; keine Übernahme realer Dokumente; unabhängige sprachliche und rechtliche Redaktion steht aus"
+    }
+  },
+  {
+    "id": "SG-G01D-002",
+    "version": 1,
+    "domain": "G01",
+    "band": "C2",
+    "title": "Feldforschung: mobile Ortsdeixis und spätere Berichtszeit",
+    "focus": "Hier, dort, übermorgen und jetzt in mehrstufiger Feldkommunikation anhand von Standort-, Rollen- und Datumswechseln interpretieren",
+    "brief": "Verfasse einen methodischen Rekonstruktionsbericht für eine fiktive Forschungseinrichtung. Weise bei jedem Zitat den deiktischen Nullpunkt und die späteren Perspektivwechsel nach. Übertrage die Rekonstruktion in einen Bericht für eine externe Prüfung und überarbeite ihn so, dass Feld- und Laborstandorte nicht verwechselt werden.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Am Montag, dem 9. Juni 2025, schickte die Leiterin einer fiktiven Küstenstudie vom mobilen Messsteg Süd aus eine Sprachnachricht an das zentrale Labor. Die Forschenden standen auf diesem Steg und verglichen gerade die zweite Messreihe mit den Aufzeichnungen vom Vortag. In der Aufnahme hieß es: „Hier prüfen wir heute die zweite Messreihe.“ In der transkribierten Laborakte wurde die Nachricht erst Anfang Juli abgelegt. Eine Bearbeiterin setzte das hier deshalb irrtümlich mit dem zentralen Labor gleich und verstand heute als den Tag der Archivierung. Die Standortliste der Messgeräte und der Zeitstempel der Originalaufnahme schlossen diese Verschiebung aus. Wir meinte die damals am Messsteg arbeitende Feldgruppe, nicht die später den Bericht prüfende Laborgruppe. Für eine verlässliche Rekonstruktion musste die Perspektive der sprechenden Feldleiterin erhalten bleiben, obwohl der Satz nun in einer institutionellen Dokumentation erschien."
+      },
+      {
+        "id": "p2",
+        "text": "Am Dienstag, dem 10. Juni 2025, stand der stellvertretende Leiter der Feldgruppe auf einem Forschungsschiff und blickte auf die östliche Messplattform. Die Logistiknotiz enthielt die Information, dass das Team erst am folgenden Tag dorthin übersetzen und zwei Tage nach der ursprünglichen Nachricht zum Hafen zurückkehren sollte. In der Funkverbindung sagte er: „Von dort aus kehren wir übermorgen zurück.“ Dort bezog sich auf die östliche Plattform, nicht auf den Ort des Funkspruchs an Bord des Schiffes. Übermorgen bezeichnete den 12. Juni 2025, selbst wenn die später daraus erstellte Rückschau erst im Juli verfasst wurde. Ein überarbeiteter Text hatte fälschlich das Schiff als Rückkehrort ausgewiesen und damit Ausgangspunkt und Ziel vertauscht. Die Datums- und Ortsangaben im Logbuch waren allerdings ausreichend, um den tatsächlich gemeinten Rückweg klar zu beschreiben. Die neue Formulierung sollte den geplanten Ablauf ohne solche Perspektivfehler wiedergeben."
+      },
+      {
+        "id": "p3",
+        "text": "Am Dienstag, dem 1. Juli 2025, berichtete die Laborleiterin in einer internen Sitzung über den inzwischen abgeschlossenen Transport der Messproben. Sie saß während der Sitzung im zentralen Labor; die Originalbehälter waren dort am Vortag registriert worden. Ihre Aussage lautete: „Jetzt liegt das Material bei uns.“ Im Forschungsbericht, der einige Monate später erstellt wurde, wirkten sowohl jetzt als auch bei uns ohne erklärten Sprechkontext mehrdeutig. Feldmitglieder hatten im Juni mit wir ihre eigene Gruppe bezeichnet, während das neue uns nun ausdrücklich die Beschäftigten des zentralen Labors meinte. Die Aussage war eine Statusmeldung zum 1. Juli und kein Nachweis, das Material befinde sich noch an jedem späteren Berichtstag in derselben Einrichtung. Die Redaktion entschied sich deshalb für einen datierten Satz, der die damalige Lagerung und die Sprechergruppe benennt. Die weiteren Bewegungen der Proben sollten nur insoweit dargestellt werden, wie das Registrierungsbuch sie tatsächlich belegte."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "phenomenon": "Origo im Feld und taggenaue Referenz",
+        "quote": "Hier prüfen wir heute die zweite Messreihe.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Hier bezeichnet das zentrale Labor, heute den Tag der Archivierung im Juli, und wir sämtliche späteren Bearbeiterinnen."
+          },
+          {
+            "id": "B",
+            "text": "Die Feldleiterin berichtete am 9. Juni 2025 vom Messsteg Süd, dass die dort tätige Gruppe an diesem Tag die zweite Messreihe prüfe."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der Originalzeitstempel ist der 9. Juni 2025 und die Standortliste verortet Sprecherin und Geräte auf dem Messsteg Süd.",
+        "trap": "Eine nachträgliche Laborablage verschiebt weder den Äußerungsort noch den Tag der ursprünglichen Nachricht."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "phenomenon": "Entfernter Ausgangsort und übermorgen",
+        "quote": "Von dort aus kehren wir übermorgen zurück.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der stellvertretende Leiter kündigte am 10. Juni 2025 an, die Feldgruppe werde am 12. Juni von der östlichen Messplattform zum Hafen zurückkehren."
+          },
+          {
+            "id": "B",
+            "text": "Dort ist das Schiff, von dem gefunkt wurde; übermorgen bezieht sich auf den Juli-Bericht und meint nicht den 12. Juni."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Das Logbuch nennt die östliche Messplattform als vorgesehenen Startpunkt der Rückfahrt und den 12. Juni als Rückkehrdatum.",
+        "trap": "Der Ausgangsort der Rückkehr und der zeitliche Nullpunkt des Funkspruchs dürfen beim indirekten Bericht nicht vertauscht werden."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "phenomenon": "Erneute Origo im zentralen Labor",
+        "quote": "Jetzt liegt das Material bei uns.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Jetzt meint die spätere Veröffentlichung und uns die im Juni vom Forschungsschiff aus sprechende Feldgruppe."
+          },
+          {
+            "id": "B",
+            "text": "Die Laborleiterin stellte am 1. Juli 2025 fest, dass die Proben zu diesem Zeitpunkt im Besitz des zentralen Laborteams seien."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das Registrierungsbuch bestätigt die Ankunft am zentralen Labor am 30. Juni 2025; die Sitzung fand dort am 1. Juli statt.",
+        "trap": "Ein Wechsel der sprechenden Gruppe ändert die Bedeutung von uns, und jetzt darf nicht dauerhaft fortgeschrieben werden."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M33 originally authored deictic-centre and perspective-shift source cases",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier vollständig neu verfasste fiktive Quellenkonstellationen; keine Übernahme realer Dokumente; unabhängige sprachliche und rechtliche Redaktion steht aus"
+    }
+  },
+  {
+    "id": "SG-G01D-003",
+    "version": 1,
+    "domain": "G01",
+    "band": "C1",
+    "title": "Schulplattform: digitale Ortsangaben und wechselnde Adressaten",
+    "focus": "Deixis in Bildschirmhinweisen, Gruppenpronomen und Terminankündigungen bei institutionellen Rollenwechseln nachvollziehen",
+    "brief": "Verfasse eine eigenständige Chronik für den Schulausschuss, die digitale Ortsbezüge und wechselnde Anredeformen ohne falsche Zuständigkeitszuschreibung klärt. Erstelle anschließend eine öffentliche Fassung für Eltern und Schülerinnen und Schüler und begründe die Revision.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Am Montag, dem 15. September 2025, führte die Sekretärin einer fiktiven Schule eine Videokonferenz mit den Lehrkräften. Während sie den Bildschirm teilte, zeigte sie den passwortgeschützten Ordner Unterrichtsmaterialien auf der Schulplattform. Sie sagte: „Ihr findet die korrigierte Fassung ab morgen hier.“ Die überarbeitete Datei sollte am Dienstag, dem 16. September, in genau diesem Ordner bereitstehen. Der Ausschnitt wurde später auf einer allgemeinen Schulwebseite zitiert, ohne die Bildschirmfreigabe zu dokumentieren. Dadurch nahmen manche Eltern an, hier bezeichne die öffentlich erreichbare Webseite und ihr meine alle Familien. Beides entsprach nicht dem ursprünglichen Kontext: Die Anrede galt nur den teilnehmenden Lehrkräften, und der gezeigte Speicherort lag im geschützten Plattformbereich. Ein korrekter Bericht musste den digitalen Referenzort ebenso wie den Beginn der Bereitstellung und die ursprünglich angesprochene Gruppe ausdrücklich nennen."
+      },
+      {
+        "id": "p2",
+        "text": "Am Mittwoch, dem 17. September 2025, sprach ein Mitglied des schulischen Verwaltungsteams mit drei Klassensprecherinnen und -sprechern über eine korrigierte Terminliste. Die Mitarbeitenden hatten den Klassensprechergruppen am Dienstag, dem 16. September, einen gesonderten Zugang freigeschaltet. Im Gespräch sagte die Person: „Wir haben euch die neue Liste gestern freigeschaltet.“ Wir bezeichnete das zuständige Verwaltungsteam; euch war ausschließlich auf die Klassensprechergruppe gerichtet. In einer späteren Elterninformation wurde die Äußerung so übernommen, dass Eltern sich selbst als direkt angesprochene Gruppe verstanden und einen Zugang für alle Haushalte erwarteten. Das Freigabeprotokoll bestätigte jedoch nur die geschlossene Empfängergruppe. Auch gestern ließ sich nur vom 17. September aus auf den 16. September beziehen. Die Redaktion sollte die konkrete Rollenverteilung wiedergeben und keine zusätzliche Freischaltung für andere Gruppen behaupten, die im System nicht dokumentiert war."
+      },
+      {
+        "id": "p3",
+        "text": "Am Donnerstag, dem 18. September 2025, fand im Verwaltungsbüro der Schule eine interne Abstimmung statt. Die stellvertretende Schulleiterin kündigte für Montag, den 22. September, ein Gespräch mit zwei Vertretern des Elternrats in der Schulbibliothek an, deren Raum bereits reserviert war. Sie sagte: „Nächsten Montag sprechen wir dort mit ihnen.“ Die Gesprächsteilnehmenden des Verwaltungsteams waren mit wir gemeint, die Elternratsvertreter mit ihnen, und dort bezeichnete die zuvor genannte Schulbibliothek. Ein im Oktober verfasster Bericht ließ das Datum weg und erweckte den Eindruck, der kommende Montag nach seiner Veröffentlichung sei gemeint. Zusätzlich wurde ihnen auf Lehrkräfte bezogen, weil diese im unmittelbar davorstehenden Absatz erwähnt worden waren. Das Sitzungsprotokoll und die Raumreservierung lösten die Bezüge jedoch eindeutig auf. Die neue Mitteilung musste den ursprünglichen Sprechkontext und den konkreten Termin trennen, ohne die geplante Unterredung als schon durchgeführten Beschluss zu behandeln."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "phenomenon": "Digitale Deixis und kollektiv adressiertes ihr",
+        "quote": "Ihr findet die korrigierte Fassung ab morgen hier.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Sekretärin informierte am 15. September 2025 die Lehrkräfte, dass die Datei ab 16. September im geschützten Ordner Unterrichtsmaterialien verfügbar sein werde."
+          },
+          {
+            "id": "B",
+            "text": "Ihr bezeichnet sämtliche Eltern auf der späteren Webseite, hier die öffentliche Startseite, und morgen deren nächsten Besuchstag."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Videoaufzeichnung dokumentiert die Bildschirmfreigabe des geschützten Unterrichtsordners sowie die Konferenz ausschließlich mit Lehrkräften.",
+        "trap": "Digitale Ortsdeixis bezeichnet den angezeigten Plattformbereich, nicht automatisch den Ort einer späteren Veröffentlichung."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "phenomenon": "Sprecherkollektiv, Empfängerkollektiv und retrospektiver Tagesbezug",
+        "quote": "Wir haben euch die neue Liste gestern freigeschaltet.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Wir meint die Elternvertretung, euch sämtliche späteren Leserinnen, und gestern den Vortag der Veröffentlichung im Elternportal."
+          },
+          {
+            "id": "B",
+            "text": "Ein Verwaltungsmitglied erklärte am 17. September 2025, das Team habe die neue Terminliste am 16. September für die Klassensprecher freigeschaltet."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Empfängerliste des Zugangsprotokolls nennt die Klassensprechergruppe und datiert die Freischaltung auf den 16. September.",
+        "trap": "Die Pronomen dürfen beim Wechsel des Publikums keine Rechte an Gruppen vergeben, denen ursprünglich nichts freigeschaltet wurde."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "phenomenon": "Wochenbezug, Ort und indirekter Empfängerbezug",
+        "quote": "Nächsten Montag sprechen wir dort mit ihnen.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die stellvertretende Schulleiterin kündigte am 18. September ein Gespräch des Verwaltungsteams mit dem Elternrat am 22. September 2025 in der Schulbibliothek an."
+          },
+          {
+            "id": "B",
+            "text": "Nächsten Montag ist der Montag nach der Oktober-Veröffentlichung, dort das Verwaltungsbüro und ihnen die Lehrkräfte aus einem anderen Absatz."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Reservierung weist den 22. September 2025 und die Schulbibliothek aus; das Protokoll nennt Elternratsvertreter als Gesprächspartner.",
+        "trap": "Ein relativer Wochentag und entfernte Personalpronomen müssen an ihrem ursprünglichen Äußerungskontext verankert bleiben."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M33 originally authored deictic-centre and perspective-shift source cases",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier vollständig neu verfasste fiktive Quellenkonstellationen; keine Übernahme realer Dokumente; unabhängige sprachliche und rechtliche Redaktion steht aus"
+    }
+  },
+  {
+    "id": "SG-G01D-004",
+    "version": 1,
+    "domain": "G01",
+    "band": "C2",
+    "title": "Archivkorrespondenz: historischer Nullpunkt und Rückblicksrede",
+    "focus": "Dieses Jahr, nächsten Freitag und damals in mehrschichtigen Archivdokumenten ohne anachronistische Sprecherverlagerung auflösen",
+    "brief": "Verfasse für die fiktive Archivleitung einen quellenkritischen mehrabsätzigen Bericht, der historisches Schreibdatum, Archivort und rückblickende Rede datiert. Übertrage die Erläuterung anschließend in einen modernen Ausstellungstext und überarbeite ihn ohne anachronistische Gegenwartsbehauptungen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktives Stadtarchiv übernahm im Jahr 2026 eine Mappe mit Korrespondenz aus dem Jahr 1998. In einem Brief vom 24. November 1998 schrieb die damalige Magazinleiterin vom Altstadtdepot aus über den Platzmangel in genau diesem Gebäude. Ihr Satz lautete: „In diesem Jahr ist unser Magazin hier vollständig belegt.“ Dieses Jahr bezeichnete somit das Jahr 1998; hier war das damals genutzte Altstadtdepot, und unser bezog sich auf die damaligen Magazinbeschäftigten. In der gegenwärtigen Ausstellung wurde der Satz isoliert zitiert, worauf Besucher ihn als Aussage über die Platzsituation im Jahr 2026 verstanden. Der moderne Archivstandort lag jedoch in einem anderen Gebäude. Die kuratorische Redaktion musste deshalb den historischen Nullpunkt sichtbar machen und den damaligen Lagerzustand nicht als aktuelle Kapazitätsmeldung ausgeben. Ob auch das neue Depot im Jahr 2026 voll belegt war, ließ sich aus dem alten Brief keineswegs ableiten."
+      },
+      {
+        "id": "p2",
+        "text": "Die Mappe enthielt außerdem eine Notiz vom Mittwoch, dem 25. November 1998, über den Transport einer noch ungeöffneten Holzkiste. Die Notiz wurde im Altstadtdepot verfasst, während sich die Kiste im externen Zwischenlager Nord befand. Die zuständige Archivarin hatte dem Transportdienst den Satz geschrieben: „Bis nächsten Freitag bleibt die Kiste dort.“ Gemeint war der unmittelbar folgende Freitag, der 27. November 1998, und mit dort das Zwischenlager Nord. Der Brief wurde Jahrzehnte später ohne Datum neben ein Foto des neuen Depots gestellt. Dadurch entstand der Eindruck, die Kiste müsse am Freitag nach dem Besuch der Ausstellung noch an einem heutigen Ort liegen. Das Transportjournal hielt dagegen ausdrücklich fest, dass die betreffende Lagerfrist für 1998 galt. Eine verantwortliche Wiedergabe musste daher den historischen Freitag und das externe Zwischenlager benennen. Der spätere tatsächliche Transport konnte nur anhand eigener Journalangaben rekonstruiert werden."
+      },
+      {
+        "id": "p3",
+        "text": "In einer dritten Quelle blickte der nachfolgende Archivleiter am 12. Dezember 2004 auf den Zustand der Sammlung im Jahr 1998 zurück. Er beschrieb, dass wegen fehlender Findmittel mehrere Kisten damals noch nicht vollständig überprüft werden konnten. In seiner Stellungnahme stand: „Damals konnten wir diesen Bestand noch nicht prüfen.“ Das damals bezeichnete die frühere Arbeitssituation 1998, während wir aus der Perspektive des im Jahr 2004 schreibenden Archivleiters seine damalige Archivorganisation einschloss. Eine moderne Objektbeschriftung gab die Äußerung so wieder, als würde die heutige Ausstellungskommission im Jahr 2026 von einem aktuellen Prüfproblem sprechen. Diese Verschiebung verwischte den Abstand zwischen dem ursprünglichen Mangel und der späteren rückblickenden Einordnung. Der Bericht sollte deshalb das Datum der retrospektiven Quelle und den Bezug auf die Situation von 1998 ausdrücklich auseinanderhalten. Aus der Aussage folgte nicht, dass die Bestände auch heute ungeprüft geblieben seien."
+      }
+    ],
+    "anchors": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "phenomenon": "Historische Gegenwart und lokaler Nullpunkt",
+        "quote": "In diesem Jahr ist unser Magazin hier vollständig belegt.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "In diesem Jahr bezeichnet 2026, unser die heutigen Mitarbeitenden, und hier den modernen Standort der Ausstellung."
+          },
+          {
+            "id": "B",
+            "text": "Die Magazinleiterin berichtete am 24. November 1998, dass das Altstadtdepot des damaligen Archivs im Jahr 1998 vollständig belegt gewesen sei."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Briefdatum und Absenderanschrift verorten die Äußerung im November 1998 am damaligen Altstadtdepot.",
+        "trap": "Die Präsensform und die deiktische Jahresangabe im historischen Brief dürfen nicht als heutige Standortmeldung verstanden werden."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "phenomenon": "Fristanker und entfernter Lagerort",
+        "quote": "Bis nächsten Freitag bleibt die Kiste dort.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Archivarin teilte am 25. November 1998 mit, die Kiste werde bis Freitag, den 27. November, im Zwischenlager Nord verbleiben."
+          },
+          {
+            "id": "B",
+            "text": "Nächsten Freitag ist der Freitag nach dem heutigen Besuch im Archiv, und dort bezeichnet den gegenwärtigen Ausstellungsraum."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Notiz ist auf Mittwoch, den 25. November 1998, datiert und nennt das Zwischenlager Nord als damaligen Aufbewahrungsort.",
+        "trap": "Historische relative Fristen dürfen weder in einen heutigen Kalender noch an den Standort der gegenwärtigen Betrachter verschoben werden."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "phenomenon": "Retrospektive Deixis und Wechsel des Sprecherkollektivs",
+        "quote": "Damals konnten wir diesen Bestand noch nicht prüfen.",
+        "question": "Wie sind die deiktischen Personen-, Orts- oder Zeitangaben im damaligen Äußerungskontext verankert, und welche Übertragung in einen späteren Bericht wäre falsch?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Damals bezeichnet das Jahr 2004 und wir die heutige Ausstellungskommission, die im Jahr 2026 noch immer nicht prüfen konnte."
+          },
+          {
+            "id": "B",
+            "text": "Der Archivleiter hielt im Dezember 2004 rückblickend fest, dass sein Archiv den betreffenden Bestand im Jahr 1998 noch nicht habe prüfen können."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Stellungnahme wurde im Dezember 2004 verfasst und bezieht damals ausdrücklich auf die fehlenden Findmittel im Jahr 1998.",
+        "trap": "Eine retrospektive Deixis ist weder eine Behauptung über den Schreibzeitpunkt allein noch eine aktuelle Aussage über heutige Prüfungen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M33 originally authored deictic-centre and perspective-shift source cases",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier vollständig neu verfasste fiktive Quellenkonstellationen; keine Übernahme realer Dokumente; unabhängige sprachliche und rechtliche Redaktion steht aus"
+    }
+  }
+]

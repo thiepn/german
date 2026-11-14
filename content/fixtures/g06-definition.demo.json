@@ -1,0 +1,390 @@
+[
+  {
+    "id": "SG-G06B-001",
+    "version": 1,
+    "domain": "G06",
+    "band": "C2",
+    "title": "KI-Verwaltung: Transparenz, Nachvollziehbarkeit und Erklärung",
+    "focus": "Projektinterne Begriffsdefinitionen sauber trennen, statt Dokumentation, Prüfbarkeit und kausale Erklärung gleichzusetzen",
+    "brief": "Verfasse für den kommunalen Digitalausschuss einen kohärenten Begriffsvermerk. Definiere Transparenz, Nachvollziehbarkeit und Erklärbarkeit so, wie sie im vorliegenden Projektbericht verwendet werden, und korrigiere eine unzulässige Gleichsetzung mit einem konkreten Fall.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Stadtverwaltung legte einen ersten Bericht zu einem automatisierten System vor, das Anfragen nach Zuständigkeiten vorsortieren soll. Gleich zu Beginn wurde eine ausdrücklich projektbezogene Arbeitsdefinition eingeführt: „Transparenz bedeutet hier, dass die eingesetzten Regeln offengelegt werden.“ Damit meinte die Arbeitsgruppe, dass Bürgerinnen und Bürger erfahren können, welche Merkmale eine Weiterleitung grundsätzlich beeinflussen und an welche Stelle sich Rückfragen richten lassen. Ob sich eine konkrete Einzelentscheidung mit den protokollierten Eingaben später rekonstruieren lässt, bleibt nach dieser Definition eine weitere Frage. Bei einer internen Vorstellung hatte ein Mitglied des Ausschusses dennoch behauptet, eine veröffentlichte Regelübersicht belege bereits die lückenlose Prüfbarkeit jeder Entscheidung. Der Bericht widersprach dieser Schlussfolgerung und führte eine getrennte Prüfschicht ein."
+      },
+      {
+        "id": "p2",
+        "text": "Im zweiten Abschnitt beschrieb die Projektgruppe, wie Beschwerden über falsche Zuständigkeiten bearbeitet werden sollen. Für diesen Zweck hielt sie den Eingabezeitpunkt, die verwendete Regelversion und die jeweils ausgewählte Stelle in einem internen Vorgangsprotokoll fest. Der Bericht formulierte den Maßstab so: „Nachvollziehbar ist eine Zuordnung nur mit den zugehörigen Fallprotokollen.“ Ein solches Protokoll könne zeigen, welcher Schritt unter den dokumentierten Bedingungen erfolgt sei. Es müsse aber nicht in jedem Fall verständlich machen, warum gerade diese Regel für eine einzelne Person angemessen war oder ob eine abweichende Zuordnung sinnvoller gewesen wäre. In einer Entwurfsfassung wurde das Wort nachvollziehbar dennoch durch selbsterklärend ersetzt; diese Verschiebung beanstandete die Redaktion, weil sie dem protokollierten Ablauf eine noch nicht geprüfte Verständlichkeit unterstellte."
+      },
+      {
+        "id": "p3",
+        "text": "Der abschließende Abschnitt widmete sich den Auskünften, die nach einer bestrittenen Weiterleitung erteilt werden können. Die Projektgruppe beschrieb ihr Ziel folgendermaßen: „Eine Erklärung muss die entscheidende Regel am konkreten Fall verständlich machen.“ Zu diesem Zweck sollte eine Sachbearbeiterin die maßgebliche Eingabe, das angewandte Kriterium und mögliche Korrekturschritte in einem adressatengerechten Text verbinden. Dafür reicht nach der projektinternen Definition eine allgemeine Liste von Kriterien allein nicht aus. Auch eine gut verständliche Erläuterung ersetzt allerdings nicht die Prüfung, ob die ursprüngliche Entscheidung inhaltlich richtig war. Der Bericht wollte dadurch verhindern, dass die Begriffe Transparenz, Nachvollziehbarkeit und Erklärbarkeit in der öffentlichen Kommunikation als austauschbare Gütesiegel benutzt werden."
+      }
+    ],
+    "distinctions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "term": "Transparenz",
+        "nearTerm": "Nachvollziehbarkeit",
+        "quote": "Transparenz bedeutet hier, dass die eingesetzten Regeln offengelegt werden.",
+        "question": "Welche Wiedergabe grenzt „Transparenz“ im Dokument korrekt von „Nachvollziehbarkeit“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die veröffentlichte Regelübersicht erfüllt die projektbezogene Anforderung der Transparenz, garantiert aber noch nicht die Rekonstruktion einer einzelnen Weiterleitung."
+          },
+          {
+            "id": "B",
+            "text": "Die öffentliche Regelübersicht beweist ohne weitere Protokolle, dass jede einzelne Weiterleitung bereits vollständig nachprüfbar und korrekt ist."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Offenlegung von Kriterien beschreibt in diesem Dossier Transparenz; Nachvollziehbarkeit einer einzelnen Entscheidung benötigt zusätzlich konkrete Fallprotokolle.",
+        "trap": "Die Eigenschaft einer öffentlich sichtbaren Regel darf nicht stillschweigend in eine Garantie vollständiger Fallrekonstruktion umgedeutet werden."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "term": "Nachvollziehbarkeit",
+        "nearTerm": "Erklärbarkeit",
+        "quote": "Nachvollziehbar ist eine Zuordnung nur mit den zugehörigen Fallprotokollen.",
+        "question": "Welche Wiedergabe grenzt „Nachvollziehbarkeit“ im Dokument korrekt von „Erklärbarkeit“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sobald ein Fallprotokoll vorliegt, ist die Entscheidung für alle Betroffenen vollständig selbsterklärend und zweifelsfrei angemessen."
+          },
+          {
+            "id": "B",
+            "text": "Mit Fallprotokollen kann der tatsächliche Zuordnungsweg nachvollzogen werden, ohne dass seine sachliche Angemessenheit damit schon erklärt oder bewiesen wäre."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Fallrekonstruktion ist der dokumentierte Verfahrensweg; eine für Adressaten tragfähige Begründung ist ein anderer anspruchsvoller kommunikativer Schritt.",
+        "trap": "Ein archivierter Ablauf ist weder automatisch eine überzeugende Erklärung noch eine unabhängige Rechtfertigung des verwendeten Kriteriums."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "term": "Erklärbarkeit",
+        "nearTerm": "Transparenz",
+        "quote": "Eine Erklärung muss die entscheidende Regel am konkreten Fall verständlich machen.",
+        "question": "Welche Wiedergabe grenzt „Erklärbarkeit“ im Dokument korrekt von „Transparenz“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Eine konkrete, adressatengerechte Begründung erfüllt das hier erklärte Ziel der Erklärbarkeit; sie setzt weder die Richtigkeit aller Entscheidungen noch bloße Regeloffenlegung gleich."
+          },
+          {
+            "id": "B",
+            "text": "Eine einmal veröffentlichte Liste technischer Regeln genügt in jedem Fall als persönliche Erklärung und beweist automatisch die materielle Richtigkeit der Zuordnung."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Erklärbarkeit verlangt hier einen fallbezogenen Verständnisschritt, während Transparenz die allgemeine Sichtbarkeit von Regeln bezeichnet.",
+        "trap": "Eine nachvollziehbare Erklärung für einen Einzelfall ist noch keine pauschale Qualitätsgarantie für sämtliche Entscheidungen des Systems."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M28 original fictional expert-terminology source authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier neu verfasste fiktive Fachberichte, keine externen Werke; Definitionen gelten ausschließlich im beschriebenen Dokument; unabhängige Redaktion ausstehend"
+    }
+  },
+  {
+    "id": "SG-G06B-002",
+    "version": 1,
+    "domain": "G06",
+    "band": "C2",
+    "title": "Museumswerkstatt: Konservierung, Restaurierung, Rekonstruktion",
+    "focus": "Materialerhaltung, Eingriff am Original und hypothetische Neuschöpfung fachsprachlich auseinanderhalten",
+    "brief": "Schreibe eine präzise Vermittlungsnotiz für die Ausstellung. Stelle die drei im Werkstattprotokoll verwendeten Eingriffsarten dar, erläutere die Grenzen ihrer Austauschbarkeit und verbessere eine zu weitgehende Beschriftung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Für eine Sonderausstellung untersuchte die Werkstatt eine beschädigte bemalte Holztafel, deren Farbschichten sich an einzelnen Stellen lösten. Der erste Abschnitt des Werkstattprotokolls definierte den unmittelbaren Auftrag: „Die Konservierung soll das vorhandene Material stabilisieren.“ Die Fachleute planten, lose Schichten zu sichern und eine weitere Ablösung zu verhindern; sie versprachen ausdrücklich nicht, sämtliche fehlenden Bereiche farblich zu ergänzen. Bei einer Besprechung wurde diese Maßnahme dennoch als vollständige Wiederherstellung des früheren Erscheinungsbilds angekündigt. Die leitende Restauratorin hielt dagegen fest, dass eine Stabilisierung zunächst nur den Erhalt des vorgefundenen Bestands betreffe. Über eine ästhetische Ergänzung müsse getrennt entschieden werden, weil sie zusätzliche fachliche und ethische Fragen aufwerfe."
+      },
+      {
+        "id": "p2",
+        "text": "Nach der Sicherung des Holzes prüfte die Werkstatt vorsichtig, welche älteren Farbspuren unter späteren Übermalungen noch sichtbar waren. Im Bericht stand die Leitlinie: „Eine Restaurierung bleibt an erhaltene Spuren des Originals gebunden.“ Fachlich vertretbare Ergänzungen sollten sich deshalb an dokumentierten Befunden orientieren und als spätere Eingriffe erkennbar bleiben. Für eine große fehlende Ecke fanden die Fachleute hingegen keine belastbaren Farbspuren. Eine Besuchergruppe schlug vor, die gesamte Ecke nach einem vergleichbaren Bild frei nachzumalen und das Ergebnis als authentisch restaurierten Zustand zu präsentieren. Die Werkstatt lehnte diese Bezeichnung ab: Eine unbelegte Ergänzung nach Analogie würde die Grenze zur hypothetischen Rekonstruktion überschreiten und dürfe nicht als gesicherter Originalbefund ausgegeben werden."
+      },
+      {
+        "id": "p3",
+        "text": "Für die pädagogische Station entwickelte die Werkstatt schließlich eine digitale Variante der Holztafel. Anders als am Original durfte die fehlende Ecke dort nach Vergleichsstücken anschaulich ergänzt werden, solange ihre Unsicherheit offen erklärt wurde. Der Projekttext hielt ausdrücklich fest: „Die Rekonstruktion macht fehlende Teile als Hypothese sichtbar.“ Die digitale Ansicht sollte Besucherinnen und Besuchern mehrere mögliche Erscheinungsformen zeigen und ließ sich deshalb per Schaltfläche zwischen Befund und Annahme umstellen. In einem frühen Werbeentwurf hieß es, die digitale Rekonstruktion habe das originale Objekt physisch gerettet. Die Werkstatt korrigierte diese Aussage: Ein digitales Modell kann Vermittlung und Forschung unterstützen, führt aber selbst keine konservatorische Stabilisierung am Holz durch."
+      }
+    ],
+    "distinctions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "term": "Konservierung",
+        "nearTerm": "Restaurierung",
+        "quote": "Die Konservierung soll das vorhandene Material stabilisieren.",
+        "question": "Welche Wiedergabe grenzt „Konservierung“ im Dokument korrekt von „Restaurierung“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Konservierung stellt automatisch alle fehlenden Farben wieder her und garantiert den ursprünglichen Eindruck der gesamten Holztafel."
+          },
+          {
+            "id": "B",
+            "text": "Die geplante Konservierung sichert gefährdetes Originalmaterial, enthält aber noch keine verbindliche Aussage über farbliche Ergänzungen oder vollständige Wiederherstellung."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Konservierung hat im Protokoll zunächst eine erhaltende Funktion; Restaurierung kann darüber hinaus Eingriffe in das Erscheinungsbild umfassen.",
+        "trap": "Das Verhindern weiterer Schäden ist nicht gleichbedeutend mit dem Ergänzen verlorener Gestaltungselemente oder einer Rückkehr zum Urzustand."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "term": "Restaurierung",
+        "nearTerm": "Rekonstruktion",
+        "quote": "Eine Restaurierung bleibt an erhaltene Spuren des Originals gebunden.",
+        "question": "Welche Wiedergabe grenzt „Restaurierung“ im Dokument korrekt von „Rekonstruktion“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Restaurierung kann dokumentierte Spuren vorsichtig ergänzen; die frei erfundene Ecke wäre nach den Protokollregeln keine belegte Wiederherstellung des Originals."
+          },
+          {
+            "id": "B",
+            "text": "Jede nach einem anderen Bild frei ergänzte Stelle gilt automatisch als authentische Restaurierung des gesicherten Originalzustands."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Restaurierung folgt hier erhaltenen Spuren, Rekonstruktion erschließt fehlende Teile hypothetisch; beide verlangen verschiedene Kennzeichnungen.",
+        "trap": "Eine ästhetisch plausible Ergänzung besitzt ohne Originalspuren keine gesicherte Herkunft und darf nicht als Originalbefund erscheinen."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "term": "Rekonstruktion",
+        "nearTerm": "Konservierung",
+        "quote": "Die Rekonstruktion macht fehlende Teile als Hypothese sichtbar.",
+        "question": "Welche Wiedergabe grenzt „Rekonstruktion“ im Dokument korrekt von „Konservierung“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Das digitale Ergänzen einer fehlenden Ecke konserviert automatisch die reale Holztafel und stellt ihren belegten ursprünglichen Zustand her."
+          },
+          {
+            "id": "B",
+            "text": "Die digitale Rekonstruktion kennzeichnet hypothetisch ergänzte Partien und vermittelt mögliche Ansichten; sie stabilisiert nicht das materielle Original."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Rekonstruktion formuliert eine überprüfbare, sichtbar unsichere Annahme über Fehlendes und ersetzt keine materielle Erhaltungsmaßnahme.",
+        "trap": "Die Sichtbarmachung eines hypothetischen Zustands ist keine physische Bearbeitung des erhaltenen Objekts."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M28 original fictional expert-terminology source authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier neu verfasste fiktive Fachberichte, keine externen Werke; Definitionen gelten ausschließlich im beschriebenen Dokument; unabhängige Redaktion ausstehend"
+    }
+  },
+  {
+    "id": "SG-G06B-003",
+    "version": 1,
+    "domain": "G06",
+    "band": "C1",
+    "title": "Datenschutzwerkstatt: anonymisiert, pseudonymisiert, aggregiert",
+    "focus": "Personenbezug, Ersetzung von Identifikatoren und Gruppenstatistik als drei unterschiedliche Datenoperationen",
+    "brief": "Verfasse einen vorsichtigen internen Glossareintrag für ein fiktives Bürgerbefragungsprojekt. Trenne die drei beschriebenen Datenformen, begründe die Grenzen ihrer Weitergabe und überarbeite einen missverständlichen Abschnitt.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktives Forschungsbüro bereitete die Auswertung einer freiwilligen Befragung zur Nutzung kommunaler Angebote vor. Das Team entfernte Namen aus der Arbeitstabelle und verwendete für jede teilnehmende Person stattdessen einen zufällig vergebenen Kenncode. Die Arbeitsanweisung erklärte: „Bei der Pseudonymisierung wird der Name durch einen Code ersetzt.“ Die gesondert verwahrte Zuordnungsliste blieb im Projekt verfügbar, um nachträgliche Rückfragen zu ermöglichen. Daraus folgte gerade nicht, dass eine Person unter allen Umständen unerkennbar geworden wäre. In einem Protokollentwurf wurde die Tabelle trotzdem als vollständig anonym bezeichnet. Das Datenschutzteam korrigierte den Text, weil die mögliche Rückverknüpfung und der sonstige Inhalt der Antworten weiterhin berücksichtigt werden mussten."
+      },
+      {
+        "id": "p2",
+        "text": "Für eine spätere öffentliche Demonstration wollte das Projektteam einen gesonderten Datenbestand erstellen, aus dem keine Personenbezüge mehr vernünftigerweise abgeleitet werden könnten. In der Vorbereitung stand deshalb: „Anonymisierung verlangt die Prüfung verbleibender Zuordnungsmöglichkeiten.“ Die Verantwortlichen planten, neben Namen auch seltene Merkmalskombinationen, genaue Zeitpunkte und Freitextstellen auf indirekte Identifizierbarkeit zu untersuchen. Ein automatisch ausgeführtes Löschen der Kenncodes sollte nicht bereits als ausreichender Nachweis gelten. Im Bericht wurde außerdem festgehalten, dass die Belastbarkeit einer solchen Prüfung vom Kontext und den verfügbaren Zusatzinformationen abhängt. Erst nach dieser gesonderten Risikoabwägung sollte über die Nutzung der öffentlich vorgesehenen Datei entschieden werden."
+      },
+      {
+        "id": "p3",
+        "text": "Im dritten Schritt erstellte das Forschungsteam eine Tabelle mit zusammengefassten Antworten nach größeren Stadtteilen. Der Auswertungsvermerk beschrieb das Vorgehen so: „Aggregierte Angaben fassen mehrere Antworten zu einer Gruppe zusammen.“ Eine solche Zahl konnte etwa ausweisen, wie viele Antworten zu einer bestimmten Kategorie gehörten, ohne jede Einzelaussage im Detail zu zeigen. Allerdings gab es in einem kleinen Randgebiet nur sehr wenige Teilnehmende, sodass eine einzelne auffällige Gruppenzelle Rückschlüsse nahelegen konnte. Das Team prüfte deshalb Mindestgruppengrößen und Kombinationen der veröffentlichten Merkmale, statt jede aggregierte Zahl automatisch für ungefährlich zu erklären. Auch die Zusammenfassung nach Gruppen sollte die eigenständige Prüfung auf identifizierbare Einzelpersonen nicht ersetzen."
+      }
+    ],
+    "distinctions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "term": "Pseudonymisierung",
+        "nearTerm": "Anonymisierung",
+        "quote": "Bei der Pseudonymisierung wird der Name durch einen Code ersetzt.",
+        "question": "Welche Wiedergabe grenzt „Pseudonymisierung“ im Dokument korrekt von „Anonymisierung“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Kenncodes ersetzen direkte Namen, doch eine getrennte Zuordnungsliste erlaubt weiterhin einen Personenbezug; vollständig anonym ist die Tabelle damit nicht."
+          },
+          {
+            "id": "B",
+            "text": "Sobald ein Name durch einen Code ersetzt wird, können die Angaben grundsätzlich niemals wieder einer bestimmten Person zugeordnet werden."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Pseudonymisierung reduziert unmittelbare Identifizierbarkeit, beseitigt aber eine im Dossier ausdrücklich vorhandene Zuordnungsmöglichkeit nicht.",
+        "trap": "Ein ausgetauschter Identifikator allein beweist keine unumkehrbare Aufhebung aller Personenbezüge."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "term": "Anonymisierung",
+        "nearTerm": "Pseudonymisierung",
+        "quote": "Anonymisierung verlangt die Prüfung verbleibender Zuordnungsmöglichkeiten.",
+        "question": "Welche Wiedergabe grenzt „Anonymisierung“ im Dokument korrekt von „Pseudonymisierung“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Wer die Kenncodes löscht, hat ohne weitere Prüfung sämtliche indirekten Zuordnungsmöglichkeiten zuverlässig ausgeschlossen."
+          },
+          {
+            "id": "B",
+            "text": "Zur angestrebten Anonymisierung müssen auch indirekte Zuordnungen durch seltene Merkmale oder Zusatzwissen geprüft werden; das Entfernen von Codes genügt allein nicht."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Anonymisierung bezeichnet hier einen gesondert zu prüfenden Zustand ohne praktisch relevante Personenbezüge, nicht bloß eine einzelne Löschhandlung.",
+        "trap": "Die Bezeichnung anonym darf nicht vorwegnehmen, dass eine notwendige Kontextprüfung bereits bestanden wurde."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "term": "Aggregation",
+        "nearTerm": "Anonymisierung",
+        "quote": "Aggregierte Angaben fassen mehrere Antworten zu einer Gruppe zusammen.",
+        "question": "Welche Wiedergabe grenzt „Aggregation“ im Dokument korrekt von „Anonymisierung“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Aggregation fasst Antworten nach Gruppen zusammen, beseitigt aber bei sehr kleinen Zellen nicht zwangsläufig alle Risiken indirekter Zuordnung."
+          },
+          {
+            "id": "B",
+            "text": "Jede Gruppensumme ist ohne Prüfung der Gruppengröße garantiert anonym und darf daher in jedem Kontext unbeschränkt veröffentlicht werden."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Aggregation ist zunächst eine Darstellungs- und Rechenoperation; Anonymität ist eine eigene, kontextabhängig zu prüfende Eigenschaft.",
+        "trap": "Ein Bericht darf nicht aus dem bloßen Wort aggregiert einen bereits nachgewiesenen vollständigen Datenschutzstatus ableiten."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M28 original fictional expert-terminology source authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier neu verfasste fiktive Fachberichte, keine externen Werke; Definitionen gelten ausschließlich im beschriebenen Dokument; unabhängige Redaktion ausstehend"
+    }
+  },
+  {
+    "id": "SG-G06B-004",
+    "version": 1,
+    "domain": "G06",
+    "band": "C1",
+    "title": "Forschungspraxis: Reproduzierbarkeit, Replikation und Übertragbarkeit",
+    "focus": "Gleiche Daten erneut auswerten, neue Daten erheben und Ergebnisse in einem anderen Kontext prüfen",
+    "brief": "Erstelle einen präzisen Forschungsleitfaden für Studierende. Gib die im fiktiven Projekt festgelegten Bedeutungen der drei Begriffe wieder, benenne Verwechslungen und verbessere die Formulierungen in einem zweiten Entwurf.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine fiktive universitäre Arbeitsgruppe dokumentierte ein Projekt zur Nutzung von Lernräumen und legte zu Beginn ihre eigenen Begriffskonventionen offen. Der Methodenbericht stellte fest: „Reproduzierbarkeit meint hier die erneute Berechnung mit denselben Daten.“ Wer Zugang zum bereinigten Datensatz und zum Rechenskript hatte, sollte die Tabellen unter den angegebenen Annahmen erneut erzeugen können. Das Team stellte dafür die verwendeten Variablendefinitionen und Versionsnummern zusammen. Es betonte allerdings, dass eine identische Neuberechnung nicht automatisch belegt, ob die ursprünglichen Fragen an eine neue Studierendengruppe dieselben Antworten liefern würden. Ein Tutor hatte beides zunächst unter Replikation zusammengefasst; die Redaktion bat ausdrücklich darum, den im Projekt vereinbarten Unterschied beizubehalten."
+      },
+      {
+        "id": "p2",
+        "text": "Für das folgende Semester entwarf die Gruppe eine weitere Befragungsrunde mit neuen Teilnehmenden. Dabei sollte derselbe Fragenkatalog möglichst ähnlich eingesetzt werden, obwohl die Personen nicht identisch waren. Die interne Definition lautete: „Eine Replikation erhebt in unserem Projekt neue Daten nach vergleichbarem Plan.“ Die Arbeitsgruppe wollte so prüfen, ob ein Befund unter vergleichbaren Bedingungen erneut beobachtbar war. Daraus folgt noch nicht, dass das Ergebnis ohne Anpassung auf Universitäten mit völlig anderem Raumangebot übertragen werden könnte. In einer Projektpräsentation hatte eine Studentin die geplante zweite Runde bereits als Nachweis allgemeiner Gültigkeit bezeichnet; die Betreuung verwies darauf, dass die zweite Erhebung zunächst durchgeführt und anschließend ausgewertet werden müsse."
+      },
+      {
+        "id": "p3",
+        "text": "Eine Partnerhochschule interessierte sich für das Projekt, verfügte aber über andere Raumtypen, Öffnungszeiten und Zugangsvoraussetzungen. Der Abschlussbericht verlangte deshalb: „Für Übertragbarkeit müssen Unterschiede zwischen den Lernorten geprüft werden.“ Die Arbeitsgruppe plante, relevante Bedingungen vor einem Vergleich ausdrücklich zu benennen und gegebenenfalls die Fragestellung anzupassen. Selbst wenn die bisherigen Ergebnisse vollständig reproduzierbar wären und eine zweite Befragung an derselben Hochschule ähnliche Zahlen lieferte, bliebe der Unterschied zum Partnerstandort erklärungsbedürftig. Die Autoren lehnten die Behauptung ab, ein technischer Nachvollzug der Berechnung legitimiere schon eine allgemeingültige Empfehlung für alle Lernorte. Stattdessen wurde eine begrenzte, bedingte Übertragbarkeit zur Diskussion gestellt."
+      }
+    ],
+    "distinctions": [
+      {
+        "id": "d1",
+        "paragraphId": "p1",
+        "term": "Reproduzierbarkeit",
+        "nearTerm": "Replikation",
+        "quote": "Reproduzierbarkeit meint hier die erneute Berechnung mit denselben Daten.",
+        "question": "Welche Wiedergabe grenzt „Reproduzierbarkeit“ im Dokument korrekt von „Replikation“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Das erneute Ausführen des Skripts mit denselben Daten beweist bereits, dass eine neue Befragung unter anderen Bedingungen dasselbe Resultat erzielen wird."
+          },
+          {
+            "id": "B",
+            "text": "In diesem Projekt heißt Reproduzierbarkeit, dieselben Ergebnisse aus denselben Daten und dokumentierten Berechnungsschritten erneut zu erhalten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Reproduzierbarkeit ist hier eine Eigenschaft der wiederholbaren Auswertung vorhandener Daten und keine neue empirische Untersuchung.",
+        "trap": "Die erfolgreiche Wiederholung eines Rechenwegs ersetzt keine zweite Datenerhebung und prüft damit keine neue Untersuchungssituation."
+      },
+      {
+        "id": "d2",
+        "paragraphId": "p2",
+        "term": "Replikation",
+        "nearTerm": "Übertragbarkeit",
+        "quote": "Eine Replikation erhebt in unserem Projekt neue Daten nach vergleichbarem Plan.",
+        "question": "Welche Wiedergabe grenzt „Replikation“ im Dokument korrekt von „Übertragbarkeit“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Replikation bezeichnet hier eine neue Erhebung nach vergleichbarem Verfahren; ein universeller Befund für andere Hochschulen ist damit nicht bereits gesichert."
+          },
+          {
+            "id": "B",
+            "text": "Die nur geplante zweite Befragung beweist schon vor der Erhebung, dass die Ergebnisse an jeder beliebigen Hochschule unverändert gelten."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Replikation verlangt nach dieser Projektkonvention unabhängige neue Daten bei ähnlichem Design; Übertragbarkeit auf andere Kontexte ist eine zusätzliche Frage.",
+        "trap": "Ein noch nicht durchgeführter neuer Versuch und ein Geltungsanspruch für fremde Situationen dürfen nicht zusammenfallen."
+      },
+      {
+        "id": "d3",
+        "paragraphId": "p3",
+        "term": "Übertragbarkeit",
+        "nearTerm": "Reproduzierbarkeit",
+        "quote": "Für Übertragbarkeit müssen Unterschiede zwischen den Lernorten geprüft werden.",
+        "question": "Welche Wiedergabe grenzt „Übertragbarkeit“ im Dokument korrekt von „Reproduzierbarkeit“ ab?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Weil die ursprünglichen Tabellen rechnerisch reproduzierbar sind, sind die Ergebnisse ohne Kontextprüfung an sämtlichen Lernorten gültig."
+          },
+          {
+            "id": "B",
+            "text": "Eine Übertragung auf die Partnerhochschule verlangt die Prüfung abweichender Rahmenbedingungen; identische Berechnungen allein genügen nicht."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Übertragbarkeit bedeutet hier die begründete Anwendbarkeit in einem anderen Kontext und setzt dessen relevante Unterschiede voraus.",
+        "trap": "Methodische Wiederholbarkeit innerhalb eines Projekts ist keine automatische Evidenz für die Reichweite seiner Schlussfolgerungen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M28 original fictional expert-terminology source authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier neu verfasste fiktive Fachberichte, keine externen Werke; Definitionen gelten ausschließlich im beschriebenen Dokument; unabhängige Redaktion ausstehend"
+    }
+  }
+]
