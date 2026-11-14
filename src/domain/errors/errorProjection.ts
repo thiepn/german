@@ -1,4 +1,5 @@
 import type {Attempt,Exercise,Mode} from '../content/types';
+import {eligibleForTopicLink} from '../content/topicIntegrity';
 
 /** Heuristic training topics, not linguistic diagnosis or proficiency certification. */
 export type ErrorClusterStatus='OFFEN'|'WIEDER_ANGEWENDET'|'ERNEUT_UNSICHER';
@@ -6,7 +7,7 @@ export const INDEPENDENT_TRANSFER_DELAY_MS=86400000;
 export type ErrorCluster={
  key:string; skillId:string; topic:string; mode:Mode; status:ErrorClusterStatus;
  failures:Attempt[]; laterCorrect:Attempt[]; lastFailureAt:number; distinctFailureItems:number;
- freshContextId:string|null; repeatItemId:string|null; sourceCurrent:boolean;
+ freshContextId:string|null; repeatItemId:string|null; sourceCurrent:boolean; topicComparable:boolean;
 };
 
 /**
@@ -48,9 +49,12 @@ export function buildErrorClusters(attempts:readonly Attempt[],byId:ReadonlyMap<
  // Use skill and author topic only: never claim a clinically validated misconception diagnosis.
  for(const a of current){
   const source=byId.get(a.itemId);
-  const key=source&&source.version===a.itemVersion
+  const exact=Boolean(source&&source.version===a.itemVersion&&source.status!=='WITHDRAWN');
+  // An exercise with a demonstrably mismatched author-topic label is still
+  // viewable individually, but cannot establish cross-item learning transfer.
+  const key=exact&&source&&eligibleForTopicLink(source)
    ?[a.mode,a.skillId,source.topic].join('::')
-   :[a.mode,a.skillId,'HISTORISCH',a.itemId,a.itemVersion].join('::');
+   :[a.mode,a.skillId,exact?'THEMENZUORDNUNG_UNGEPRUEFT':'HISTORISCH',a.itemId,a.itemVersion].join('::');
   if(!groups.has(key))groups.set(key,[]);
   groups.get(key)!.push(a);
  }
@@ -63,19 +67,20 @@ export function buildErrorClusters(attempts:readonly Attempt[],byId:ReadonlyMap<
   if(!failures.length)continue;
   const lastFailure=failures[0];
   const item=byId.get(lastFailure.itemId);
-  const sourceCurrent=Boolean(item&&item.version===lastFailure.itemVersion);
+  const sourceCurrent=Boolean(item&&item.version===lastFailure.itemVersion&&item.status!=='WITHDRAWN');
+  const topicComparable=Boolean(sourceCurrent&&item&&eligibleForTopicLink(item));
   const failedIds=new Set(failures.map(a=>a.itemId));
-  const laterCorrect=history.filter(a=>a.result==='CORRECT'&&!a.hinted&&a.at>lastFailure.at&&
+  const laterCorrect=history.filter(a=>topicComparable&&a.result==='CORRECT'&&!a.hinted&&a.at>lastFailure.at&&
    !failedIds.has(a.itemId)&&firstAttemptById.get(a.itemId)?.id===a.id&&
    byId.get(a.itemId)?.version===a.itemVersion&&byId.get(a.itemId)?.status!=='WITHDRAWN')
    .sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id));
   const status:ErrorClusterStatus=spacedIndependent(laterCorrect).length>=2?'WIEDER_ANGEWENDET':laterCorrect.length?'ERNEUT_UNSICHER':'OFFEN';
-  const alternatives=sourceCurrent?[...byId.values()].filter(x=>x.status!=='WITHDRAWN'&&x.version>=1&&x.skillId===lastFailure.skillId&&x.mode===lastFailure.mode&&x.topic===item!.topic&&!attempted.has(x.id)&&x.id!==lastFailure.itemId).sort((a,b)=>a.id.localeCompare(b.id)):[];
+  const alternatives=topicComparable?[...byId.values()].filter(x=>eligibleForTopicLink(x)&&x.version>=1&&x.skillId===lastFailure.skillId&&x.mode===lastFailure.mode&&x.topic===item!.topic&&!attempted.has(x.id)&&x.id!==lastFailure.itemId).sort((a,b)=>a.id.localeCompare(b.id)):[];
   const repeat=failures.find(a=>{const x=byId.get(a.itemId);return x&&x.version===a.itemVersion&&x.status!=='WITHDRAWN'});
   clusters.push({
    key,skillId:lastFailure.skillId,topic:sourceCurrent?item!.topic:'Historische Aufgabenfassung',mode:lastFailure.mode,status,
    failures,laterCorrect,lastFailureAt:lastFailure.at,distinctFailureItems:new Set(failures.map(a=>a.itemId)).size,
-   freshContextId:alternatives[0]?.id??null,repeatItemId:repeat?.itemId??null,sourceCurrent
+   freshContextId:alternatives[0]?.id??null,repeatItemId:repeat?.itemId??null,sourceCurrent,topicComparable
   });
  }
  return clusters.sort((a,b)=>b.lastFailureAt-a.lastFailureAt||a.key.localeCompare(b.key));
