@@ -1,0 +1,378 @@
+[
+  {
+    "id": "SG-G03A-001",
+    "version": 1,
+    "domain": "G03",
+    "band": "C1",
+    "title": "Kommunale Bauprüfung: Instrument, Zeitraum und markierte Akten",
+    "focus": "Instrumentale versus attributive Anbindung, Ereigniszeit versus Maßnahmezeit und Eigenschaft von Dokumenten klar voneinander unterscheiden",
+    "brief": "Erstelle einen begründeten Fachvermerk für eine kommunale Prüfstelle. Analysiere alle drei syntaktischen Mehrdeutigkeiten an den wörtlichen Quellen, erkläre eine plausible andere Lesart und formuliere eindeutige Ersatzsätze. Übertrage den vollständigen Text anschließend in eine öffentliche Mitteilung und dokumentiere eine substanzielle Überarbeitung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Prüfung eines fiktiven Bauprojekts begann an einer provisorischen Baustellentür. Die Gutachterin hatte ein Teleobjektiv aus einem verschlossenen Materialkoffer genommen und unmittelbar vor der Dokumentation an ihrer eigenen Kamera befestigt. Im Kurzprotokoll stand jedoch der doppeldeutige Satz: „Die Gutachterin fotografierte die Technikerin mit dem Teleobjektiv.“ Ohne die übrigen Angaben könnte das Objektiv entweder das Mittel der Fotografie oder ein Gegenstand bei der Technikerin sein. Auf den übrigen Aufnahmen führte diese einen Messstab, während die Gutachterin die Kamera bediente. Die Schriftführerin wollte vermeiden, dass der Eindruck entstand, die fotografierte Person habe selbst mit der Kamera gearbeitet. Deshalb sollten die Funktion des Geräts und die Rollen der beiden Personen im Satz eigens benannt werden. Die Akte ließ offen, welche sonstige Ausrüstung die Technikerin an anderen Tagen benutzt hatte; daraus durfte kein neuer Sachverhalt erfunden werden."
+      },
+      {
+        "id": "p2",
+        "text": "Im zweiten Abschnitt fasste die Verwaltung eine Sitzung des Bauausschusses zusammen, die tatsächlich bereits im November stattgefunden hatte. Für die Sanierung der Sporthalle war hingegen ein Bauzeitraum im März und April des nächsten Jahres vorgesehen. Die kurze Ergebnisnotiz lautete: „Der Ausschuss besprach die Sanierung der Sporthalle im Frühjahr.“ Die abschließende Präpositionalgruppe kann die Zeit der Besprechung oder den Zeitpunkt der Sanierungsarbeiten bezeichnen. Eine Mitarbeiterin führte die ungenaue Formulierung in eine Bürgerinformation ein und löste damit die unzutreffende Vermutung aus, der Ausschuss werde erst im Frühjahr beraten. Im Sitzungsregister waren Datum, Tagesordnung und Teilnahme der Mitglieder jedoch eindeutig verzeichnet. Die Redaktion beschloss, sowohl die tatsächliche Beratung im November als auch den vorgesehenen Ausführungszeitraum in zwei klar gegliederten Teilsätzen wiederzugeben. Dadurch blieb die Planung erkennbar, ohne eine bereits erfolgte Aussprache in die Zukunft zu verschieben."
+      },
+      {
+        "id": "p3",
+        "text": "Zuletzt musste die Verwaltung für ein Anhörungsverfahren die von Sachverständigen erstellten Unterlagen weitergeben. Vor dem Versand hatten mehrere Fachpersonen ihre gedruckten Exemplare mit handschriftlichen Markierungen versehen. Die annotierten Seiten lagen danach in einem gemeinsamen Ordner, der unverändert an die beteiligten Stellen geschickt wurde. In der Versandnotiz stand: „Die Verwaltung versandte die Unterlagen der Sachverständigen mit den Markierungen.“ Die Präpositionalgruppe konnte als Eigenschaft der Unterlagen verstanden werden, aber ebenso als Art und Weise des Versendens. Ein Leser vermutete aufgrund der zweiten Möglichkeit, das Sekretariat habe die Markierungen erst während des Versands hergestellt. Das Versandregister wies jedoch keinen solchen zusätzlichen Arbeitsschritt aus. Der Bericht sollte den vorhandenen Zustand der Dokumente benennen und die Herstellung der Anmerkungen nicht einer anderen Person zuschreiben. Eine eindeutige Umstellung hätte zugleich das Eigentum an den Unterlagen und ihren bearbeiteten Zustand erhalten."
+      }
+    ],
+    "attachments": [
+      {
+        "id": "a1",
+        "paragraphId": "p1",
+        "type": "Instrument versus Personenattribut",
+        "quote": "Die Gutachterin fotografierte die Technikerin mit dem Teleobjektiv.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Gutachterin nutzte das an ihrer Kamera befestigte Teleobjektiv als Werkzeug beim Fotografieren; mit dem Teleobjektiv ergänzt das Verb."
+          },
+          {
+            "id": "B",
+            "text": "Die Technikerin führte das Teleobjektiv bei sich; mit dem Teleobjektiv beschreibt die abgebildete Person und nicht das Werkzeug der Gutachterin."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die dokumentierte Entnahme aus dem Gerätekoffer und die eigene Kamera stützen die instrumentale Anbindung an die Fotoaufnahme.",
+        "trap": "Wortstellung und Nähe zur Technikerin allein rechtfertigen keine Zuschreibung des Geräts an die fotografierte Person."
+      },
+      {
+        "id": "a2",
+        "paragraphId": "p2",
+        "type": "Zeit der Besprechung versus Zeit der Sanierung",
+        "quote": "Der Ausschuss besprach die Sanierung der Sporthalle im Frühjahr.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Ausschussberatung selbst fand im Frühjahr statt, während der Zeitraum der Arbeiten durch den Satz nicht zusätzlich benannt wird."
+          },
+          {
+            "id": "B",
+            "text": "Die Sanierungsarbeiten waren für das Frühjahr geplant, obwohl der Ausschuss bereits im November über sie gesprochen hatte."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die datierte Novembersitzung und der erst für März geplante Bauzeitraum stützen die Anbindung der Zeitangabe an die Sanierung.",
+        "trap": "Die Nähe zur Nominalgruppe und die fehlende Kommasetzung ersetzen keine Prüfung der ausdrücklich dokumentierten Termine."
+      },
+      {
+        "id": "a3",
+        "paragraphId": "p3",
+        "type": "Dokumentattribut versus Versandmittel",
+        "quote": "Die Verwaltung versandte die Unterlagen der Sachverständigen mit den Markierungen.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Verwaltung setzte Markierungen als zusätzliches Hilfsmittel des Versands ein und führte damit einen neuen Arbeitsschritt aus."
+          },
+          {
+            "id": "B",
+            "text": "Die Verwaltung verschickte bereits handschriftlich markierte Unterlagen; die Wortgruppe kennzeichnet die vorhandenen Dokumente."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Anmerkungen bestanden nach den Akten schon vor dem Versand und gehören daher zu den verschickten Unterlagen.",
+        "trap": "Eine attributive Präpositionalgruppe darf keine nachträglich ausgeführte, im Protokoll unbelegte Versandhandlung erzeugen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M31 original fictional syntactic-attachment studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier eigens verfasste fiktive Originalberichte, unabhängig redaktionell unbegutachtet; keine externen Textquellen"
+    }
+  },
+  {
+    "id": "SG-G03A-002",
+    "version": 1,
+    "domain": "G03",
+    "band": "C2",
+    "title": "Wissenschaftliche Feldstudie: Lagerort, Erklärmittel und Datenherkunft",
+    "focus": "Lokale und instrumentale Präpositionalgruppen sowie Herkunftsattribution in methodischen Fachtexten quellengestützt disambiguieren",
+    "brief": "Schreibe eine vollständige methodische Klarstellung für eine fiktive Forschungsgruppe. Begründe an drei Ankern, woran sich die Präpositionalgruppe bindet, und benenne die jeweils nicht belegte Lesart. Übertrage deine Klärung in einen eigenständigen Text für ein fachfremdes Gremium und überarbeite sie mit vollständig erhaltenen methodischen Grenzen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Für eine fiktive Forschungsstudie wurden Bodenproben aus einem Gemeinschaftsgarten in einer Universität untersucht. Die verschlossenen Behälter waren nach dem Transport vorübergehend im Nebenraum gelagert worden. Für die eigentliche Sichtprüfung brachte die Gruppe sie jedoch in das zentrale Labor, dessen Arbeitstisch und Beleuchtung im Geräteprotokoll dokumentiert waren. Der Zwischenbericht enthielt trotzdem den Satz: „Die Projektgruppe überprüfte die Proben im Nebenraum.“ Die lokale Ergänzung kann an das Überprüfen als Handlung oder an die Proben als Gegenstände anschließen. Im Audit fragte die Gutachterin nach, ob die Behälter schon im Nebenraum geöffnet worden seien. Weder der Ablaufplan noch die Fotos stützten das. Die Redaktion sollte klarstellen, dass die Proben zuvor dort standen, während die Untersuchung an einem anderen Ort durchgeführt wurde. Ein pauschales Streichen des Ortsnamens hätte die Lagergeschichte unsichtbar gemacht und den Ablauf schwerer rekonstruierbar gelassen."
+      },
+      {
+        "id": "p2",
+        "text": "In einer Besprechung zu zwei Messreihen hatte die Forschungsleiterin mehrere Diagramme vorbereitet, die unterschiedliche Zeitachsen sichtbar machen sollten. Sie projizierte diese Grafiken auf eine Leinwand und erklärte daran einen bereits ausgewerteten Befund einer Kollegin. Die spätere Zusammenfassung lautete: „Die Wissenschaftlerin erläuterte den Befund der Kollegin mit den Diagrammen.“ Die Wortgruppe mit den Diagrammen kann sich als Instrument der Erläuterung auf die Handlung beziehen oder attributiv eine Person beziehungsweise den Befund näher charakterisieren. Ein Berichtsteilnehmer schrieb die Grafiken daraufhin irrtümlich der Kollegin zu, obwohl die Vorbereitungsdateien bei der erklärenden Wissenschaftlerin lagen. Die gemeinsame Sitzung diente der verständlichen Darstellung einer schon bestehenden Analyse, nicht der Durchführung einer neuen Messung. Für die Veröffentlichung musste erkennbar sein, wer den Befund geliefert hatte, wer erläuterte und wozu die Diagramme eingesetzt wurden. Alle drei Funktionen sollten grammatisch klar getrennt bleiben."
+      },
+      {
+        "id": "p3",
+        "text": "Für den letzten Abschnitt wurden Feldnotizen und Messreihen aus mehreren Standorten zusammengeführt. Eine mobile Station hatte zwei Tage lang im Außenlabor Daten gesammelt, während die zuständigen Forschenden im zentralen Institut beschäftigt waren. Die Leitung dokumentierte den Vergleich in einer knappen Formulierung: „Die Leitung dokumentierte die Beobachtungen der Forschenden aus dem Außenlabor.“ Die Herkunftsangabe kann die Beobachtungsdaten bezeichnen oder die Forschenden selbst als Mitglieder einer Außeneinrichtung charakterisieren. Eine externe Stelle nahm fälschlich an, das gesamte Forschungsteam habe im Außenlabor gearbeitet. Die unterschriebenen Dienstpläne widerlegten die Vermutung; nur das Messgerät war dorthin gebracht worden. In der überarbeiteten Darstellung sollte eindeutig zwischen Ort der Datenerhebung, Dienstort der Fachleute und Ort der späteren Auswertung unterschieden werden. Der Bericht durfte weder die fremde Einrichtung als Arbeitgeberin ausgeben noch den Messort aus dem Quellennachweis streichen."
+      }
+    ],
+    "attachments": [
+      {
+        "id": "a1",
+        "paragraphId": "p1",
+        "type": "Handlungsort versus Lagerort des Gegenstands",
+        "quote": "Die Projektgruppe überprüfte die Proben im Nebenraum.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die eigentliche Überprüfung wurde im Nebenraum durchgeführt; die Präpositionalgruppe bestimmt den Ort der Prüfhandlung."
+          },
+          {
+            "id": "B",
+            "text": "Die untersuchten Proben waren zuvor im Nebenraum aufbewahrt worden; die eigentliche Prüfung fand im zentralen Labor statt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Laborfotos und die getrennte Lagerliste zeigen, dass der Nebenraum die Proben und nicht die Prüfung lokalisiert.",
+        "trap": "Eine lokale Gruppe nach dem Objekt benennt nicht zwingend den Handlungsort und darf die dokumentierte Verlagerung nicht verdecken."
+      },
+      {
+        "id": "a2",
+        "paragraphId": "p2",
+        "type": "Erklärmittel versus attributive Zuordnung",
+        "quote": "Die Wissenschaftlerin erläuterte den Befund der Kollegin mit den Diagrammen.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Wissenschaftlerin nutzte die vorbereiteten Diagramme als Mittel der Erklärung eines Befunds, den eine Kollegin geliefert hatte."
+          },
+          {
+            "id": "B",
+            "text": "Die erwähnte Kollegin wird als Person mit den Diagrammen charakterisiert, nicht die Erläuterung als Handlung."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Projektion und Vorbereitungsdateien zeigen, dass die Diagramme das Mittel der Erläuterung waren.",
+        "trap": "Die unmittelbare Nähe zu Kollegin reicht nicht aus, um die Verfügbarkeit der Diagramme dieser Person zuzuschreiben."
+      },
+      {
+        "id": "a3",
+        "paragraphId": "p3",
+        "type": "Datenherkunft versus institutionelle Zuordnung",
+        "quote": "Die Leitung dokumentierte die Beobachtungen der Forschenden aus dem Außenlabor.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Beobachtungen wurden im Außenlabor gewonnen, während die Forschenden laut Dienstplan im zentralen Institut arbeiteten."
+          },
+          {
+            "id": "B",
+            "text": "Die Forschenden gehörten als Beschäftigte zum Außenlabor und hatten die Beobachtungen an ihrer eigenen Einrichtung gemacht."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die mobilen Gerätewege dokumentieren Datenherkunft im Außenlabor, die Dienstpläne den Arbeitsplatz im zentralen Institut.",
+        "trap": "Eine Herkunftsangabe zu Daten darf nicht ohne weitere Belege als institutionelle Zugehörigkeit der Forschenden gelesen werden."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M31 original fictional syntactic-attachment studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier eigens verfasste fiktive Originalberichte, unabhängig redaktionell unbegutachtet; keine externen Textquellen"
+    }
+  },
+  {
+    "id": "SG-G03A-003",
+    "version": 1,
+    "domain": "G03",
+    "band": "C1",
+    "title": "Bibliotheksbericht: Kameras, Chronik und Restaurierung",
+    "focus": "Instrument versus mitgeführter Gegenstand, Ereignisdatierung und Gesprächspartner bei nominalisierten Handlungen unterscheiden",
+    "brief": "Verfasse für die Leitung einer fiktiven Bibliothek eine nachvollziehbare Korrektur dreier mehrdeutiger Protokollsätze. Übertrage deinen vollständigen Bericht in eine allgemein verständliche Besucherinformation und dokumentiere eine durchgreifende sprachliche Revision ohne erfundene Beobachtungen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine fiktive Stadtbibliothek dokumentierte den Ablauf während einer Fotoausstellung. Ein Gast trug eine analoge Kamera über der Schulter und blieb kurz vor einer gesperrten Tür stehen. Die Aufsichtsperson beobachtete ihn vom Lesetisch aus mit bloßem Auge. Im Bericht stand später: „Die Bibliothekarin beobachtete den Besucher mit der Kamera.“ Dieser Satz erlaubt sowohl die Deutung einer kameragestützten Beobachtung durch die Bibliothekarin als auch die nähere Bestimmung eines Besuchers, der eine Kamera mitführte. Zwar gab es im Gebäude eine fest installierte Überwachungsanlage, aber laut Dienstbuch hatte die Mitarbeiterin diese zum fraglichen Zeitpunkt nicht eingeschaltet. Die zweite Deutung wurde durch den sichtbaren Trageriemen und weitere Zeugennotizen gestützt. Eine Kurzfassung, die aus beobachtete ein filmte machte, hätte der Aufsicht eine nicht belegte Aufnahmehandlung zugeschrieben. Ebenso wenig durfte aus dem Mitführen eines Fotoapparats ein Regelverstoß abgeleitet werden."
+      },
+      {
+        "id": "p2",
+        "text": "Die Bibliothek hatte ihre digitale Suchansicht bereits im August aktualisiert und die neue Version durch einen Änderungsbericht freigegeben. Erst im Oktober diskutierte ein Redaktionsteam darüber, wie diese Umstellung in einem Begleittext erklärt werden sollte. Der Kurzbericht enthielt den Satz: „Die Redaktion kommentierte die Änderungen am Katalog im Oktober.“ Die Zeitangabe kann sich auf das Kommentieren oder auf die Katalogänderungen selbst beziehen. Ein Mitglied des Leitungsgremiums verstand den Satz im zweiten Sinn und erklärte, das technische Update habe erst im Oktober stattgefunden. Die Versionshistorie widersprach dem eindeutig. Für die öffentliche Chronik war sowohl der August als Zeitpunkt der technischen Umstellung als auch der Oktober als Datum der redaktionellen Besprechung relevant. Eine sprachliche Vereinfachung, die eines der beiden Daten strich, wäre sachlich unvollständig gewesen. Deshalb wurde eine neue Satzfassung verlangt, in der die beiden Ereignisse auch beim flüchtigen Lesen nicht verwechselt werden konnten."
+      },
+      {
+        "id": "p3",
+        "text": "Zum Abschluss einer Ausstellung musste die Bibliothek die Rückgabe ausgeliehener historischer Bände abstimmen. Die Direktorin lud die Restauratorinnen zu einem Gespräch ein, um den Zustand der Einbände gemeinsam zu beurteilen. Die tatsächliche Übergabe der Bücher sollte eine andere Arbeitsgruppe organisieren. Im Protokoll lautete der Satz: „Die Direktorin besprach die Rückgabe der Leihgaben mit den Restauratorinnen.“ Mit den Restauratorinnen könnte die Gesprächspartnerinnen beim Besprechen nennen oder auf die Beteiligten an der Rückgabe selbst bezogen werden. Die Sitzungsunterlagen belegten allerdings, dass die Fachleute nur an der Beratung teilnahmen und die spätere Transportzuständigkeit gesondert vergeben wurde. Eine Zusammenfassung, wonach die Restauratorinnen die Bücher selbst zurückgaben, wäre also unzutreffend. Der Bericht sollte die Anwesenheit der Gesprächspartnerinnen ausdrücklich machen und die spätere praktische Übergabe nur so weit beschreiben, wie die Akten sie tatsächlich regelten."
+      }
+    ],
+    "attachments": [
+      {
+        "id": "a1",
+        "paragraphId": "p1",
+        "type": "Kamerainstrument versus Gegenstand beim Besucher",
+        "quote": "Die Bibliothekarin beobachtete den Besucher mit der Kamera.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Bibliothekarin beobachtete den Gast durch eine Kamera und die Präpositionalgruppe benennt ihr Beobachtungsinstrument."
+          },
+          {
+            "id": "B",
+            "text": "Der beobachtete Besucher trug selbst eine Kamera; die Bibliothekarin nahm ihn ohne dieses Instrument wahr."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Der Tragevermerk und das nicht genutzte Überwachungssystem stützen die attributive Anbindung an den Besucher.",
+        "trap": "Der Satz belegt weder eine Aufnahmehandlung der Bibliothekarin noch einen fotografischen Regelverstoß des Besuchers."
+      },
+      {
+        "id": "a2",
+        "paragraphId": "p2",
+        "type": "Zeit des Kommentars versus Zeit des Updates",
+        "quote": "Die Redaktion kommentierte die Änderungen am Katalog im Oktober.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Kommentar der Redaktion entstand im Oktober; die besprochenen Katalogänderungen waren schon im August abgeschlossen."
+          },
+          {
+            "id": "B",
+            "text": "Die technischen Änderungen des Katalogs fanden im Oktober statt und wurden im selben Bericht lediglich erwähnt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Versionsbericht und Redaktionsprotokoll zeigen, dass im Oktober das Kommentieren und nicht die Katalogänderung datiert ist.",
+        "trap": "Eine unbestimmte temporale Anbindung kann den Zeitpunkt eines bereits abgeschlossenen technischen Updates verfälschen."
+      },
+      {
+        "id": "a3",
+        "paragraphId": "p3",
+        "type": "Gesprächspartnerinnen versus Rückgabeakteurinnen",
+        "quote": "Die Direktorin besprach die Rückgabe der Leihgaben mit den Restauratorinnen.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Restauratorinnen nahmen an der Besprechung mit der Direktorin teil; die Präpositionalgruppe ergänzt das Besprechen."
+          },
+          {
+            "id": "B",
+            "text": "Die Restauratorinnen waren selbst mit der Rückgabe der Leihgaben beauftragt; die Wortgruppe bestimmt die Rückgabehandlung."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Einladung und gesonderter Übergabeplan stützen die Deutung als Gesprächspartnerinnen, nicht als Durchführende.",
+        "trap": "Eine syntaktisch mögliche nominale Anbindung darf den Fachleuten keine undokumentierte Transportaufgabe zuweisen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M31 original fictional syntactic-attachment studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier eigens verfasste fiktive Originalberichte, unabhängig redaktionell unbegutachtet; keine externen Textquellen"
+    }
+  },
+  {
+    "id": "SG-G03A-004",
+    "version": 1,
+    "domain": "G03",
+    "band": "C2",
+    "title": "Technischer Bericht: Messorte, beschriftete Akten und Standortangaben",
+    "focus": "Herkunft versus Gerätestandort, Dokumentmerkmal versus Prüfmethode und lokales Attribut präzise unterscheiden",
+    "brief": "Erstelle für eine fiktive technische Prüfstelle eine mehrabsätzige Klarstellung dreier grammatischer Fehlzuordnungen. Erarbeite eine eigenständige zweite Fassung für die Öffentlichkeit und begründe substanzielle Änderungen, ohne neue Messungen oder Beschwerden zu behaupten.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine fiktive technische Prüfstelle verglich Luftmesswerte aus mehreren Bereichen eines Gebäudes. Die stationäre Messanlage befand sich nach der Wartungsliste unverändert auf dem Dach. Für eine Gegenprobe wurden zusätzlich Daten eines mobilen Sensors aus dem Keller erhoben. In der ersten Fassung stand: „Die Analystin verglich die Messungen der Station aus dem Keller.“ Die Ortsgruppe kann als Herkunftsangabe zu den zum Vergleich herangezogenen Messwerten oder als Standorthinweis auf die Station gelesen werden. Ein Bearbeiter vermutete deshalb, die Dachstation sei vorübergehend in den Keller verlegt worden. Dafür gab es keinen Beleg; nur der tragbare Sensor war dort eingesetzt worden. Die endgültige Darstellung musste zwischen festem Stationsstandort und Ort der zusätzlichen Messungen unterscheiden. Eine irrtümliche räumliche Zuordnung hätte die zeitliche Vergleichbarkeit der Datensätze erschwert und den Eindruck erzeugt, ein Gerät sei an zwei verschiedenen Orten gleichzeitig betrieben worden."
+      },
+      {
+        "id": "p2",
+        "text": "Vor der Abschlussbesprechung bekam der Projektleiter mehrere gedruckte Prüfberichte. Auf deren Seiten befanden sich bereits ältere handschriftliche Kommentare, die bei vorherigen Sitzungen direkt neben die Textabschnitte geschrieben worden waren. Ein eigener Notizblock wurde bei der aktuellen Prüfung nicht verwendet. Dennoch lautete die Kurzfassung: „Der Projektleiter prüfte die Berichte mit den handschriftlichen Notizen.“ Die Präpositionalgruppe kann die Berichte als mit Anmerkungen versehene Gegenstände kennzeichnen oder das Mittel beschreiben, mit dem der Leiter prüfte. Ein Leser unterstellte daraufhin, bei dieser Prüfung seien neue handschriftliche Notizen entstanden. Die Aktenliste konnte nur die vorbestehenden Anmerkungen belegen, nicht einen weiteren Schreibvorgang. Die Redaktion wollte klarstellen, dass der Projektleiter bereits kommentierte Exemplare durchsah. Der Satz sollte also die Eigenschaft der Dokumente erhalten und zugleich jede zusätzliche, unbelegte Arbeitshandlung vermeiden."
+      },
+      {
+        "id": "p3",
+        "text": "Die technische Anlage stand auf einem umzäunten Gelände, das während einer Bauphase nur eingeschränkt zugänglich war. Beschwerden über ihren Betrieb gingen vor allem über ein öffentliches Onlineformular ein; ein persönlicher Besuch am Standort war dazu nicht erforderlich. Der Entwurf enthielt den Satz: „Die Redaktion beschrieb die Beschwerden über die Anlage auf dem Gelände.“ Der lokale Zusatz kann den Standort der Anlage bestimmen oder den Ort charakterisieren, an dem Beschwerden geäußert beziehungsweise aufgenommen wurden. Eine Kollegin interpretierte ihn als Beleg dafür, dass alle Rückmeldungen bei einer Begehung des Geländes erfasst worden seien. Das Eingangsregister dokumentierte jedoch überwiegend digitale Meldungen von außerhalb. Die neue Fassung sollte deshalb Standort und Kommunikationsweg deutlich voneinander trennen. Sie durfte weder eine Vor-Ort-Befragung erfinden noch aus einer beiläufigen Ortsangabe eine Behauptung über die Zahl oder Herkunft der Beschwerden ableiten."
+      }
+    ],
+    "attachments": [
+      {
+        "id": "a1",
+        "paragraphId": "p1",
+        "type": "Messdatenherkunft versus Gerätestandort",
+        "quote": "Die Analystin verglich die Messungen der Station aus dem Keller.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Analystin bezog die Gegenproben aus dem Keller in den Vergleich ein; aus dem Keller benennt die Herkunft von Messungen."
+          },
+          {
+            "id": "B",
+            "text": "Die Dachstation selbst befand sich im Keller; die Ortsgruppe bestimmt den Standort der stationären Anlage."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die Wartungsunterlagen halten die Dachposition fest und belegen eine gesonderte mobile Kellerreihe.",
+        "trap": "Aus der Wortstellung darf keine im technischen Protokoll ausdrücklich ausgeschlossene Verlegung der Station erschlossen werden."
+      },
+      {
+        "id": "a2",
+        "paragraphId": "p2",
+        "type": "Eigenschaft der Berichte versus gesondertes Prüfmittel",
+        "quote": "Der Projektleiter prüfte die Berichte mit den handschriftlichen Notizen.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Leiter benutzte gesonderte handschriftliche Notizen als Hilfsmittel bei der Prüfung der Berichte."
+          },
+          {
+            "id": "B",
+            "text": "Der Leiter prüfte jene gedruckten Berichte, die schon vor der Prüfung handschriftliche Kommentare enthielten."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Die Aktenliste weist ältere Annotationen unmittelbar auf den geprüften Berichtsseiten aus.",
+        "trap": "Aus einem Attribut der Dokumente darf kein zusätzlicher, späterer Schreibvorgang des Projektleiters werden."
+      },
+      {
+        "id": "a3",
+        "paragraphId": "p3",
+        "type": "Standort der Anlage versus Ort des Beschwerdevorgangs",
+        "quote": "Die Redaktion beschrieb die Beschwerden über die Anlage auf dem Gelände.",
+        "question": "Welche syntaktische Anbindung wird durch den vollständigen Quellenkontext gestützt? Erläutere beide Lesarten und formuliere eine eindeutige Ersatzfassung.",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Beschwerden wurden unmittelbar auf dem Gelände erhoben; die Präpositionalgruppe bestimmt ihren Entstehungsort."
+          },
+          {
+            "id": "B",
+            "text": "Die Anlage befindet sich auf dem Gelände, während die Beschwerden überwiegend auf digitalem Weg eingingen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Standortplan und digitale Eingangslisten stützen die lokale Anbindung an die Anlage statt an die Beschwerdehandlung.",
+        "trap": "Die Lage einer technischen Anlage liefert keinen Beleg, dass die beschwerdeführenden Personen sich am Standort aufgehalten haben."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M31 original fictional syntactic-attachment studies",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Vier eigens verfasste fiktive Originalberichte, unabhängig redaktionell unbegutachtet; keine externen Textquellen"
+    }
+  }
+]

@@ -1,0 +1,366 @@
+[
+  {
+    "id": "SG-G09T-001",
+    "version": 1,
+    "domain": "G09",
+    "band": "C2",
+    "title": "Forschungsarchiv: Abgabe, Prüfung und Freigabe",
+    "focus": "Vorläufige Annahme und nachgelagerte Geltung institutioneller Entscheidungen",
+    "brief": "Verfasse einen chronologisch eindeutigen Vermerk für ein fachfremdes Forschungsteam: Welche Unterlagen liegen vor, welche Geltung wurde gerade nicht erreicht und wann wäre eine Veröffentlichung zulässig? Überarbeite einen zu weitgehenden Schluss.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Am Montagmorgen übermittelte das Projektteam die Dokumentation einer gemeinsamen Erhebung an das Forschungsarchiv. Die Geschäftsstelle bestätigte den technischen Eingang und versah die Dateien mit einem Zeitstempel. In ihrem Protokoll stellte sie fest: „Die Unterlagen gingen am Montag ein, galten damit aber noch nicht als geprüft.“ Der Eingang belegte weder die Vollständigkeit der Daten noch die Rechteklärung; beide Prüfungen sollten durch unterschiedliche Stellen erfolgen. Eine im Begleitschreiben genannte Veröffentlichung am Freitag war deshalb lediglich ein geplanter Termin, keine bereits zugesagte Freigabe. Zusätzlich war eine Liste fehlender Einwilligungsnachweise vermerkt."
+      },
+      {
+        "id": "p2",
+        "text": "Am Dienstag wurde die inhaltliche Prüfung abgeschlossen, wobei zwei Bilddateien für eine genauere Herkunftsklärung zurückgestellt wurden. Die Rechteprüfung war hingegen am Mittwochabend noch offen, weil eine Rückfrage an einen externen Partner unbeantwortet blieb. Die Verfahrensanweisung lautete: „Erst nachdem beide Prüfvermerke vorliegen, darf die Freigaberunde beginnen.“ Die Fachabteilung schlug vor, schon vorab eine Pressemitteilung zu entwerfen; ausdrücklich ausgeschlossen blieb ihre Versendung ohne abschließende Freigaberunde. Dass ein Teil der Unterlagen geprüft war, änderte die Bedingung für den Beginn des entscheidenden Gremiums nicht. Eine vorzeitige Veröffentlichung hätte die vereinbarte Reihenfolge umgekehrt."
+      },
+      {
+        "id": "p3",
+        "text": "Für Donnerstagmittag war ursprünglich die Freigaberunde angesetzt. Weil der offene Nachweis weiterhin fehlte, behandelte das Gremium nur die möglichen Folgen einer Verschiebung und vermerkte: „Die angekündigte Entscheidung wurde auf die nächste Sitzung vertagt.“ Ein Datum für diese Folgesitzung wurde noch nicht bestätigt. Das Projektteam durfte zwar die bereits überprüften Metadaten intern aktualisieren, eine externe Veröffentlichung war ausdrücklich zurückgestellt. Eine Mitteilung, die den ursprünglichen Freitagstermin als beschlossen bezeichnet hätte, wäre damit sachlich falsch. Die weitere Terminplanung hängt von der Klärung des Nachweises und einer neuen Einladung ab."
+      }
+    ],
+    "claims": [
+      {
+        "id": "t1",
+        "paragraphId": "p1",
+        "quote": "Die Unterlagen gingen am Montag ein, galten damit aber noch nicht als geprüft.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der technische Eingang am Montag eröffnete erst das Prüfverfahren; eine inhaltliche Freigabe oder Zusage für Freitag lag zu diesem Zeitpunkt nicht vor."
+          },
+          {
+            "id": "B",
+            "text": "Weil die Dateien am Montag ankamen, waren sie ab diesem Zeitpunkt fachlich und rechtlich freigegeben und mussten am Freitag veröffentlicht werden."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Eingang und Prüfung sind verschiedene Verfahrensschritte; der Zeitstempel verleiht der Einreichung keine Freigabewirkung.",
+        "trap": "Ein dokumentiertes Ereignis darf nicht sprachlich zu einer bereits abgeschlossenen, später erst vorgesehenen Entscheidung werden."
+      },
+      {
+        "id": "t2",
+        "paragraphId": "p2",
+        "quote": "Erst nachdem beide Prüfvermerke vorliegen, darf die Freigaberunde beginnen.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die bereits am Dienstag abgeschlossene Teilprüfung erlaubt die sofortige Freigaberunde, unabhängig vom noch fehlenden Rechtsvermerk."
+          },
+          {
+            "id": "B",
+            "text": "Die Freigaberunde kann erst nach dem inhaltlichen und dem rechtlichen Prüfvermerk beginnen; der fertige Entwurf einer Mitteilung erfüllt diese Bedingung nicht."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Das Adverb erst und die Konstruktion nachdem verlangen den Abschluss beider Vorbedingungen vor dem Beginn der Freigaberunde.",
+        "trap": "Eine notwendige Vorbedingung kann nicht durch eine nur vorbereitende Handlung oder einen einzelnen Teilnachweis ersetzt werden."
+      },
+      {
+        "id": "t3",
+        "paragraphId": "p3",
+        "quote": "Die angekündigte Entscheidung wurde auf die nächste Sitzung vertagt.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die zunächst für Donnerstag vorgesehene Freigabe ist nicht erfolgt; ohne neue Sitzung und abschließende Entscheidung besteht kein bestätigter Veröffentlichungstermin."
+          },
+          {
+            "id": "B",
+            "text": "Die Vertagung bestätigte rückwirkend die Veröffentlichung für Freitag, weil die Sitzung ursprünglich am Donnerstag geplant war."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Eine Vertagung ist die Nichtentscheidung zum vorgesehenen Zeitpunkt; sie bestätigt weder den ursprünglichen Termin noch eine rückwirkende Wirksamkeit.",
+        "trap": "Die Vergangenheitsform von angekündigt belegt nur einen Plan, nicht die spätere Durchführung oder Geltung."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M27 original fictitious procedural chronology authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasste fiktive Verfahrensfälle für Deutsch C1–C2; keine realen Fristregelungen, Genehmigungen oder übernommenen Fremdtexte"
+    }
+  },
+  {
+    "id": "SG-G09T-002",
+    "version": 1,
+    "domain": "G09",
+    "band": "C1",
+    "title": "Quartiersbibliothek: Eröffnung unter Vorbehalt",
+    "focus": "Frist, Probephase und noch ausstehende Betriebsgenehmigung",
+    "brief": "Schreibe eine verlässliche Information für Anwohnende über die tatsächliche Reihenfolge der Gebäudenutzung. Unterscheide angekündigte Termine von geprüften Bedingungen und korrigiere eine vorschnelle Eröffnungszusage.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Am Mittwoch erhielt die Stadtteilinitiative die Schlüssel für die renovierten Räume einer ehemaligen Ladenfläche. Im Übergabeprotokoll stand: „Die Schlüsselübergabe erfolgte vor Abschluss der Sicherheitsbegehung.“ Mitarbeitende konnten danach Regale aufbauen und Bücher katalogisieren, durften aber noch keine öffentlichen Veranstaltungen durchführen. Die für Freitag angekündigte Begehung sollte prüfen, ob die Fluchtwege benutzbar und die Räume angemessen ausgeschildert waren. Eine Nachbarschaftsgruppe verstand die Übergabe zunächst als formelle Eröffnung, obwohl das Protokoll diese Folgerung ausdrücklich ausschloss. Die Verantwortlichen mussten deshalb den Unterschied zwischen Zugang für Vorbereitungen und Publikumsbetrieb erklären."
+      },
+      {
+        "id": "p2",
+        "text": "Für Freitagmorgen war eine gemeinsame Begehung durch die Gebäudeverwaltung und den Trägerverein vorgesehen. Der abgestimmte Terminplan enthielt ausdrücklich die Bedingung: „Sofern die Begehung ohne Auflagen endet, beginnt am Samstag die Testöffnung.“ Der Verein hatte zwar Einladungen für einen kleinen Besucherkreis vorbereitet, diese aber noch nicht verschickt. Sollte die Begehung Nachbesserungen verlangen, müsste der Samstagstermin ausfallen oder erneut bestätigt werden. Auch ein reibungsloser Test am Samstag würde zunächst nur die vereinbarte Probephase betreffen. Eine unbefristete reguläre Öffnung blieb Gegenstand einer späteren Entscheidung."
+      },
+      {
+        "id": "p3",
+        "text": "Im anschließenden Bericht beschrieb die Initiative das geplante Vorgehen nach einer möglichen Testöffnung. Die Besucherzahlen, Raumauslastung und Rückmeldungen des Personals sollten während einer zweiwöchigen Erprobung gesammelt werden. Dazu hieß es: „Die Entscheidung über den Regelbetrieb fällt frühestens nach der zweiwöchigen Erprobung.“ Ein fester Tag für diese Entscheidung war nicht bestimmt, weil zunächst die Auswertung abgeschlossen sein musste. Mitglieder des Vereins durften daher vor Ende der Testphase nicht von einer bereits bewilligten Daueröffnung sprechen. Für die öffentliche Kommunikation wurde empfohlen, nur den bestätigten Status und die noch anstehenden Schritte zu nennen."
+      }
+    ],
+    "claims": [
+      {
+        "id": "t1",
+        "paragraphId": "p1",
+        "quote": "Die Schlüsselübergabe erfolgte vor Abschluss der Sicherheitsbegehung.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Schlüsselübergabe war bereits die verbindliche öffentliche Eröffnung, sodass alle Besucher am selben Tag eingelassen werden mussten."
+          },
+          {
+            "id": "B",
+            "text": "Mit der Schlüsselübergabe begann lediglich die interne Einrichtung; die Öffentlichkeit durfte die Räume vor der Sicherheitsbegehung noch nicht nutzen."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Vor Abschluss legt die zeitliche Unabgeschlossenheit der Sicherheitsprüfung fest; Zugang zu Räumen ist nicht gleich Zugang für die Öffentlichkeit.",
+        "trap": "Ein früheres Ereignis kann organisatorisch wichtig sein, ohne den späteren Zulässigkeitsschritt zu ersetzen."
+      },
+      {
+        "id": "t2",
+        "paragraphId": "p2",
+        "quote": "Sofern die Begehung ohne Auflagen endet, beginnt am Samstag die Testöffnung.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Testöffnung am Samstag ist bedingt durch eine beanstandungsfreie Begehung; selbst bei Erfolg beginnt noch kein unbefristeter Regelbetrieb."
+          },
+          {
+            "id": "B",
+            "text": "Der Samstagstermin steht ohne jede Voraussetzung fest und eröffnet automatisch den dauerhaften Regelbetrieb der Bibliothek."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Sofern markiert eine notwendige Bedingung; die Probephase darf nicht stillschweigend in eine dauerhaft genehmigte Nutzung umgedeutet werden.",
+        "trap": "Eine bedingte Zukunftsplanung ist nicht als bereits verbindlich feststehendes Ereignis zu formulieren."
+      },
+      {
+        "id": "t3",
+        "paragraphId": "p3",
+        "quote": "Die Entscheidung über den Regelbetrieb fällt frühestens nach der zweiwöchigen Erprobung.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Regelbetrieb ist schon vor der Probephase endgültig beschlossen und beginnt exakt vierzehn Tage nach der Schlüsselübergabe."
+          },
+          {
+            "id": "B",
+            "text": "Über eine dauerhafte Öffnung kann frühestens nach einer zweiwöchigen Probephase entschieden werden; ein genaues Beschlussdatum liegt noch nicht vor."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Frühestens setzt eine Untergrenze für den möglichen Entscheidungstermin und garantiert weder einen genauen Tag noch das positive Ergebnis.",
+        "trap": "Ein Mindestabstand ist keine feste Zusage; die Auswertung bleibt eine selbstständige Entscheidungsbedingung."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M27 original fictitious procedural chronology authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasste fiktive Verfahrensfälle für Deutsch C1–C2; keine realen Fristregelungen, Genehmigungen oder übernommenen Fremdtexte"
+    }
+  },
+  {
+    "id": "SG-G09T-003",
+    "version": 1,
+    "domain": "G09",
+    "band": "C2",
+    "title": "Softwareumstellung: Bereitschaft, Rücknahme und Zuständigkeit",
+    "focus": "Reihenfolge technischer Freigaben und Wirkung eines Rückfallvorbehalts",
+    "brief": "Verfasse eine Statusnotiz für ein ressortübergreifendes Leitungsteam. Markiere zuverlässig, welche Tests abgeschlossen sind, welche Freigaben fehlen und wodurch ein geplanter Übergang ausgesetzt werden kann.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein kommunales Dienstleistungszentrum testete am Montag den Austausch seines internen Fallbearbeitungssystems in einer isolierten Umgebung. Der Abgleich von Beispieldaten und Berechtigungen verlief ohne neu festgestellte Fehler. In der Ergebnisnotiz stand: „Die technische Probe war erfolgreich, die Freigabe zum Echtbetrieb stand jedoch aus.“ Die Sicherheitsstelle hatte ihre Prüfung der Schnittstellen noch nicht beendet, und die Fachabteilung musste die Auswirkungen auf laufende Fälle separat bewerten. Eine interne Präsentation, die den Test als abgeschlossene Produktivumstellung bezeichnete, wurde deshalb korrigiert. Der positive Test war nur eine notwendige Vorarbeit, kein wirksamer Freigabebeschluss."
+      },
+      {
+        "id": "p2",
+        "text": "Am Dienstag besprach die Übergangsgruppe die vorläufige Behandlung neuer Vorgänge. Obwohl mehrere Beschäftigte schon an der neuen Oberfläche geschult worden waren, sollten alle rechtswirksamen Bearbeitungsschritte vorerst im bisherigen System dokumentiert bleiben. Das Übergangsprotokoll stellte fest: „Bis zur schriftlichen Bestätigung bleibt das bisherige System maßgeblich.“ Die Bestätigung sollte erst versendet werden, wenn Sicherheitsstelle und Fachbereich ihre Prüfungen beendet hätten. Eine Schulung wurde ausdrücklich nicht als Freigabeersatz anerkannt. Die Verantwortlichen wollten damit verhindern, dass unterschiedliche Teams vor dem offiziellen Übergang widersprüchliche Datensätze erzeugen."
+      },
+      {
+        "id": "p3",
+        "text": "Für Donnerstag war eine weitere Sitzung mit einer abschließenden Synchronisationsprüfung vorgesehen. Die Verantwortlichen vereinbarten eine Rückfallregel: „Wird der Abgleich am Übergangstag nicht bestätigt, ist die Umschaltung auszusetzen.“ Eine ausgesetzte Umschaltung sollte keine Daten im bisherigen System löschen; die Teams sollten bis zu einer neuen Entscheidung wie gewohnt weiterarbeiten. Der Plan enthielt noch kein alternatives fixes Datum, da dieses von einer neuerlichen Prüfung abhängen würde. Erst nach positivem Abgleich und schriftlicher Entscheidung sollte der Übergang tatsächlich stattfinden. Der Ausdruck Umschalttermin durfte daher nicht als garantiertes Inkrafttreten verstanden werden."
+      }
+    ],
+    "claims": [
+      {
+        "id": "t1",
+        "paragraphId": "p1",
+        "quote": "Die technische Probe war erfolgreich, die Freigabe zum Echtbetrieb stand jedoch aus.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der erfolgreiche isolierte Test bestätigt nur die technische Probe; der reale Betrieb bleibt bis zu den gesonderten Freigaben ausgeschlossen."
+          },
+          {
+            "id": "B",
+            "text": "Mit dem erfolgreichen Test am Montag war das neue System bereits vollständig und verbindlich in den laufenden Echtbetrieb überführt."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Jedoch trennt positive Vorleistung und ausstehenden Beschluss; ein technischer Test hat keine automatische Freigabewirkung.",
+        "trap": "Die Erfüllung einer technischen Voraussetzung ersetzt keine organisatorische Entscheidung über produktive Nutzung."
+      },
+      {
+        "id": "t2",
+        "paragraphId": "p2",
+        "quote": "Bis zur schriftlichen Bestätigung bleibt das bisherige System maßgeblich.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Bereits mit Beginn der Schulung wechselte die maßgebliche Dokumentation automatisch in das neue System, auch ohne die ausstehende Bestätigung."
+          },
+          {
+            "id": "B",
+            "text": "Solange die schriftliche Bestätigung fehlt, bleibt das alte System für die reguläre Bearbeitung verbindlich; die Schulung ändert daran nichts."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Bis zur formuliert einen fortdauernden bisherigen Zustand mit einer klaren zeitlichen Endbedingung.",
+        "trap": "Vorbereitung und verbindlicher Systemwechsel dürfen auch bei nahezu abgeschlossener Schulung nicht gleichgesetzt werden."
+      },
+      {
+        "id": "t3",
+        "paragraphId": "p3",
+        "quote": "Wird der Abgleich am Übergangstag nicht bestätigt, ist die Umschaltung auszusetzen.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Der Donnerstag bleibt ein geplanter Prüfungstermin; ohne bestätigten Abgleich muss die Umschaltung ausgesetzt und später neu entschieden werden."
+          },
+          {
+            "id": "B",
+            "text": "Die Umschaltung wird am Donnerstag in jedem Fall wirksam, auch wenn der abschließende Abgleich ausdrücklich nicht bestätigt wird."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Die vorangestellte Konditionalstruktur wird ... nicht, ist ... beschreibt einen Ausschlussmechanismus, nicht bloß eine unverbindliche Empfehlung.",
+        "trap": "Ein geplanter Termin mit Abbruchbedingung ist sprachlich nicht als automatisch eintretende Freigabe darzustellen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M27 original fictitious procedural chronology authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasste fiktive Verfahrensfälle für Deutsch C1–C2; keine realen Fristregelungen, Genehmigungen oder übernommenen Fremdtexte"
+    }
+  },
+  {
+    "id": "SG-G09T-004",
+    "version": 1,
+    "domain": "G09",
+    "band": "C1",
+    "title": "Kulturförderung: Fristwahrung und spätere Entscheidung",
+    "focus": "Rechtzeitiger Antrag, Nachforderung und voneinander getrennte Entscheidungsphasen",
+    "brief": "Schreibe für einen fiktiven Kulturverein eine eindeutige Verfahrensübersicht. Benenne den Status der Einreichung, offene Unterlagen und den Zeitpunkt einer möglichen Förderung, ohne eine Bewilligung vorwegzunehmen.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein gemeinnütziger Theaterverein reichte am letzten Tag der örtlich festgelegten Antragsfrist seine Projektbeschreibung und einen vorläufigen Kostenplan ein. Die Förderstelle bestätigte den digitalen Eingang noch am selben Abend. In der Eingangsbestätigung hieß es: „Der Antrag wurde fristgerecht eingereicht, aber noch nicht vollständig bewertet.“ Die fristgerechte Übermittlung sicherte in diesem fiktiven Verfahren lediglich die Teilnahme am weiteren Auswahlprozess. Weder war die Finanzierung schon zugesagt noch eine Rangfolge der Bewerbungen erstellt. Der Vereinsvorstand wollte deshalb für externe Partner ausdrücklich zwischen rechtzeitigem Antrag und bewilligtem Projekt unterscheiden."
+      },
+      {
+        "id": "p2",
+        "text": "In der Vorprüfung bemerkte die Förderstelle zwei fehlende Kostenpositionen und bat um eine nachvollziehbare Aufstellung. Die Nachforderung formulierte die zeitliche Bedingung: „Die ergänzten Zahlen sind spätestens am Donnerstag vorzulegen.“ Am Dienstag erhielt der Verein eine Erinnerung; sie verschob die genannte Frist ausdrücklich nicht. Die Schatzmeisterin wollte die Angaben bereits am Mittwoch schicken und konnte dies auch tun, ohne die letztmögliche Abgabe bis Donnerstag auszuschöpfen. Nach Fristablauf würde die Stelle im fiktiven Auswahlverfahren mit den tatsächlich vorliegenden Unterlagen weiterarbeiten. Ein am Mittwoch versendeter Entwurf allein galt jedoch noch nicht als eingegangene Nachreichung."
+      },
+      {
+        "id": "p3",
+        "text": "Für die folgende Woche plante die Förderstelle die Sitzung eines unabhängigen Bewertungsgremiums. Der Vereinskasse wurde mitgeteilt: „Über die Zuwendung wird erst nach der Sitzung des Bewertungsgremiums entschieden.“ Selbst wenn sämtliche Unterlagen vorher vorlägen, sollte die Mittelvergabe nicht durch eine einzelne Sachbearbeitung vorweggenommen werden. Das Gremium würde Empfehlungen abgeben, die zuständige Stelle anschließend eine gesonderte Entscheidung treffen. Ein Termin für die Bekanntgabe war noch nicht bestätigt. Die Vorsitzende des Vereins wurde daher gebeten, gegenüber den Mitwirkenden nur von einer beantragten Förderung und nicht von bereits verfügbaren Mitteln zu sprechen."
+      }
+    ],
+    "claims": [
+      {
+        "id": "t1",
+        "paragraphId": "p1",
+        "quote": "Der Antrag wurde fristgerecht eingereicht, aber noch nicht vollständig bewertet.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die rechtzeitige Einreichung bewirkt bereits eine verbindliche Bewilligung aller beantragten Fördermittel ohne weitere Bewertung."
+          },
+          {
+            "id": "B",
+            "text": "Der Verein hat die Eingangsfrist eingehalten und nimmt am Verfahren teil; die fachliche Prüfung und Entscheidung stehen noch aus."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Aber unterscheidet zwei verschiedene Verfahrensstände: erfolgreiche Übermittlung und noch nicht abgeschlossene fachliche Prüfung.",
+        "trap": "Eine Frist kann eingehalten sein, ohne dass daraus eine positive Sachentscheidung folgt."
+      },
+      {
+        "id": "t2",
+        "paragraphId": "p2",
+        "quote": "Die ergänzten Zahlen sind spätestens am Donnerstag vorzulegen.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die fehlenden Kostenangaben müssen bis einschließlich Donnerstag eingehen; eine frühere Einreichung ist möglich, eine Erinnerung verschiebt die Frist nicht."
+          },
+          {
+            "id": "B",
+            "text": "Die Unterlagen dürfen erst nach Donnerstag abgegeben werden, weil spätestens eine frühere Übersendung ausdrücklich verbietet."
+          }
+        ],
+        "preferredId": "A",
+        "model": "Spätestens benennt den letzten vorgesehenen Zeitpunkt, nicht den frühesten; die Erinnerung setzt ohne ausdrückliche Änderung keine neue Frist.",
+        "trap": "Die obere zeitliche Grenze ist nicht mit einer Wartepflicht bis nach der Grenze zu verwechseln."
+      },
+      {
+        "id": "t3",
+        "paragraphId": "p3",
+        "quote": "Über die Zuwendung wird erst nach der Sitzung des Bewertungsgremiums entschieden.",
+        "question": "Welche Verfahrensfolge und Geltungsgrenze lässt sich aus der zitierten Zeitbestimmung ableiten?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Die Nachreichung der Zahlen führt automatisch noch vor der Bewertungssitzung zur endgültigen Auszahlung aller beantragten Mittel."
+          },
+          {
+            "id": "B",
+            "text": "Auch nach vollständig eingereichten Unterlagen bleibt die Entscheidung über die Förderung bis nach der Gremiumssitzung offen; ein Bekanntgabetermin ist nicht bestätigt."
+          }
+        ],
+        "preferredId": "B",
+        "model": "Erst nach legt die Reihenfolge der Schritte fest; weder die Vollständigkeit der Unterlagen noch eine Empfehlung ersetzt die gesonderte Entscheidung.",
+        "trap": "Eine Bewertungssitzung und eine spätere Förderentscheidung sind eigenständige Phasen, selbst wenn sie zeitlich nah beieinanderliegen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "author": "M27 original fictitious procedural chronology authoring",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Original verfasste fiktive Verfahrensfälle für Deutsch C1–C2; keine realen Fristregelungen, Genehmigungen oder übernommenen Fremdtexte"
+    }
+  }
+]

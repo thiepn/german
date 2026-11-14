@@ -1,0 +1,258 @@
+[
+  {
+    "id": "SG-G12O-001",
+    "version": 1,
+    "domain": "G12",
+    "band": "C1",
+    "title": "Stadtteilversammlung: allgemeine Behauptung, Freigabevorbehalt und offene Aufgaben",
+    "focus": "Quellengebundene mündliche Nachfragen, respektvolle Begrenzung pauschaler Aussagen und überprüfbare Sitzungsabschlüsse gestalten",
+    "audience": "Fiktive Stadtteilversammlung",
+    "brief": "Erstelle aus den drei mündlichen Proben einen vollständigen mehrabsätzigen eigenständigen Bericht mit konkreten Quellenbelegen und offenen Grenzen. Überarbeite anschließend die gesamte Darstellung für ein neutrales Sitzungsprotokoll mit einer schriftlich begründeten Änderung.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Die Stadtteilversammlung einer fiktiven Kommune diskutierte einen geänderten Busfahrplan. Die Verwaltung hatte bisher nur Fahrzeiten für drei ausgewählte Haltestellen veröffentlicht; eine repräsentative Erhebung aller Fahrgäste lag nicht vor. Einzelne Personen berichteten über erhebliche Verzögerungen, andere über kaum veränderte Wege. Die Sprecherin einer Bürgerinitiative sagte: „Die neuen Fahrpläne haben unsere Wege nachweislich für alle verdoppelt.“ Die Moderation sollte konkrete Erfahrungen ernst nehmen, ohne aus einer kleinen Auswahl einen allgemeingültigen Nachweis zu machen. Sie konnte nach den gemessenen Strecken, der Vergleichsperiode und der Zahl der betroffenen Personen fragen. Ein Sitzungsprotokoll durfte weder individuelle Probleme bestreiten noch eine belegte Verdopplung sämtlicher Wege behaupten. Zusätzliche Daten waren noch nicht erhoben worden, und eine Entscheidung über eine erneute Streckenführung stand aus."
+      },
+      {
+        "id": "p2",
+        "text": "Eine Verwaltungsvertreterin erläuterte später den Umbau einer Haltestelle. Der Entwurf sollte am Folgetag technisch geprüft werden, aber eine Freigabe erforderte zusätzlich die Genehmigung durch eine andere zuständige Stelle. Die Vertreterin sagte: „Wenn der Entwurf morgen geprüft wird, können wir die Haltestelle nächste Woche freigeben.“ Einige Anwesende leiteten daraus einen verbindlichen Eröffnungstermin ab und verbreiteten diese Deutung weiter. Das konnte die Verwaltung nach Aktenlage jedoch nicht zusagen. Die technische Prüfung war eine Voraussetzung, während die rechtliche Freigabe noch ausstand und kein konkretes Entscheidungsdatum vorlag. Die Moderation musste die bedingte Möglichkeit in verständlicher Form wiedergeben, die zuständige Stelle benennen und um einen überprüfbaren Informationsweg bitten. Aus einer denkbaren Freigabe durfte keine bereits genehmigte Eröffnung oder verbindliche Wochenfrist werden."
+      },
+      {
+        "id": "p3",
+        "text": "Am Ende derselben Versammlung sollte die Sitzungsleitung einen überprüfbaren Zwischenstand festhalten. Auf dem Protokollbogen standen drei getrennte Arbeitsaufträge: zusätzliche Fahrzeitdaten einholen, den technischen Prüftermin dokumentieren und den Weg zur Freigabe mit der zuständigen Behörde abstimmen. Die Leiterin erklärte: „Wir halten heute fest, was geklärt ist, und benennen für den Rest die zuständige Stelle.“ Ein Teil der Zuhörer deutete das als endgültigen Beschluss über sämtliche Fahrplanfragen. Tatsächlich waren weder alle Beschwerdefälle bearbeitet noch feste Fristen vereinbart worden. Die mündliche Schlussrede sollte zwischen dokumentierter Information, offenen Prüfungen und zukünftigen Entscheidungen unterscheiden. Sie durfte Verantwortlichkeiten nur dort nennen, wo sie tatsächlich im Protokoll standen. Eine sachliche Zusammenfassung konnte die drei Aufgaben nennen und zugleich klarstellen, dass ihre Erledigung noch nicht nachgewiesen war."
+      }
+    ],
+    "turns": [
+      {
+        "id": "t1",
+        "paragraphId": "p1",
+        "speaker": "Bürgerinitiative",
+        "quote": "Die neuen Fahrpläne haben unsere Wege nachweislich für alle verdoppelt.",
+        "goal": "Eine angemessen respektvolle Nachfrage nach der Datengrundlage und dem geprüften Personenkreis formulieren.",
+        "anchor": "Amtlich erfasste Fahrzeiten liegen nur für drei Haltestellen vor; die gesamte Fahrgastpopulation wurde nicht untersucht.",
+        "limit": "Eine individuelle Belastung ist keine gesicherte Aussage über alle Personen, aber auch nicht bedeutungslos.",
+        "transfer": "Verfasse eine sachliche Nachfrage für den öffentlichen Sitzungsbericht."
+      },
+      {
+        "id": "t2",
+        "paragraphId": "p2",
+        "speaker": "Verwaltungsvertretung",
+        "quote": "Wenn der Entwurf morgen geprüft wird, können wir die Haltestelle nächste Woche freigeben.",
+        "goal": "Die Bedingung der möglichen Freigabe erklären und einen noch erforderlichen Entscheidungsweg offen benennen.",
+        "anchor": "Die technische Vorprüfung ist geplant; die spätere Freigabeentscheidung durch eine andere Stelle liegt noch nicht vor.",
+        "limit": "Die Möglichkeit nach einer Prüfung garantiert weder einen Eröffnungstermin noch die Erteilung einer Genehmigung.",
+        "transfer": "Erkläre den Unterschied zwischen Vorprüfung und Freigabe für Zuhörende ohne Fachkenntnisse."
+      },
+      {
+        "id": "t3",
+        "paragraphId": "p3",
+        "speaker": "Sitzungsleitung",
+        "quote": "Wir halten heute fest, was geklärt ist, und benennen für den Rest die zuständige Stelle.",
+        "goal": "Die Ergebnisse und noch offenen Zuständigkeiten in einer präzisen mündlichen Schlussrede unterscheiden.",
+        "anchor": "Drei konkrete Aufgaben sind dokumentiert, doch eine vollständige Entscheidung über die Fahrpläne steht aus.",
+        "limit": "Aus einem Arbeitsauftrag darf kein bereits erledigter Beschluss oder eine neue Frist abgeleitet werden.",
+        "transfer": "Fasse die drei offenen Prüfungen in einer neutralen öffentlichen Schlussrede zusammen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigenständig verfasste fiktive G12-Quelldokumente, keine realen Dialogaufnahmen; unabhängige Sprach-/Rechteprüfung ausstehend."
+    }
+  },
+  {
+    "id": "SG-G12O-002",
+    "version": 1,
+    "domain": "G12",
+    "band": "C2",
+    "title": "Forschungsausschuss: externe Gültigkeit, Alternativhypothese und begrenzter Konsens",
+    "focus": "Methodische Vorbehalte in einem mündlichen Fachgespräch präzise begründen und Schlussfolgerungen ohne falsche Gewissheit abgrenzen",
+    "audience": "Fiktiver interdisziplinärer Forschungsausschuss",
+    "brief": "Verfasse nach der mündlichen Erprobung eine unabhängige fachliche Stellungnahme zu den drei dokumentierten Quellenankern. Übertrage den mehrabsätzigen Bericht anschließend für ein fachfremdes Gremium und überarbeite ihn mit ausdrücklichem methodischem Geltungsbereich.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Ein fiktiver Forschungsausschuss beurteilte die Auswertung kommunaler Umweltdaten. Die Projektleitung hatte drei Datensätze aus Einrichtungen verglichen, deren Geräte und Betriebsbedingungen einander stark ähnelten. Die Reihen zeigten übereinstimmende Tendenzen. Die Leiterin folgerte: „Die Übereinstimmung unserer drei Datensätze beweist, dass das Verfahren überall zuverlässig arbeitet.“ Für diesen Schluss fehlte allerdings eine unabhängige Untersuchung mit anderen Geräten, Regionen und Zielgruppen. Die anwesenden Fachleute wollten die interne Konsistenz nicht bestreiten, aber deren Reichweite eindeutig abgrenzen. Eine gute mündliche Nachfrage sollte daher benennen, welche Orte tatsächlich untersucht wurden und was für die Generalisierbarkeit noch fehlte. Es bestand kein Grund, ein vollständiges Scheitern der Methode zu behaupten; ebenso wenig war ein universeller Funktionsnachweis erbracht. Das Ergebnis war ein positiver Teilbefund mit noch offenem externem Prüfbedarf."
+      },
+      {
+        "id": "p2",
+        "text": "Die Prüferin stellte eine Abweichung in einer zusätzlichen Messreihe vor. Manche Geräte hatten tagsüber, andere nachts Daten erhoben. Dadurch war eine zeitliche Ursache denkbar, doch die Geräte selbst waren nicht getrennt unter einheitlichen Bedingungen getestet worden. Sie sagte: „Die Abweichung kann von der Messzeit stammen; wir haben die Geräte aber nicht getrennt getestet.“ Die Aussage war als Hypothese mit ausdrücklicher methodischer Grenze formuliert. Ein Teilnehmer gab sie jedoch als gesicherten Nachweis wieder, alle Geräte seien fehlerfrei und nur die Uhrzeit erkläre die Differenz. Eine sachgerechte Replik sollte die mögliche Zeitwirkung nicht ausschließen, aber eine separate Gerätekontrolle als nächsten methodischen Schritt vorschlagen. Für diese Prüfung waren noch keine zusätzlichen Mittel bewilligt. Die mündliche Antwort durfte deshalb weder eine sichere Ursache noch einen finanzierten Prüfauftrag unterstellen."
+      },
+      {
+        "id": "p3",
+        "text": "Im letzten Abschnitt des Ausschusses bestand Einigkeit darüber, dass drei Datensätze ähnliche Trends zeigten und eine zusätzliche Reihe erklärungsbedürftig war. Die Beteiligten stritten aber über die Reichweite dieser Befunde und die möglichen Ursachen der Abweichung. Die Vorsitzperson fasste zusammen: „Wir teilen die Beobachtung, nicht aber die uneingeschränkte Schlussfolgerung.“ Eine externe Kurzmeldung machte daraus die vollständige Ablehnung des Projekts. Das entsprach der Sitzung nicht: Die interne Übereinstimmung wurde ausdrücklich als Ergebnis anerkannt, nur die Verallgemeinerung blieb offen. Als nächste Schritte wurden weitere Messungen erörtert, aber keine Finanzierung beschlossen. Eine präzise mündliche Zusammenfassung sollte den Konsens über die tatsächlichen Daten nennen, den Dissens klar markieren und eine methodische Empfehlung ohne falsche Entscheidungsbehauptung formulieren. Die unterschiedlichen Positionen durften nicht in eine künstliche Einigkeit oder eine pauschale Absage verwandelt werden."
+      }
+    ],
+    "turns": [
+      {
+        "id": "t1",
+        "paragraphId": "p1",
+        "speaker": "Projektleitung",
+        "quote": "Die Übereinstimmung unserer drei Datensätze beweist, dass das Verfahren überall zuverlässig arbeitet.",
+        "goal": "Interne Übereinstimmung anerkennen und zugleich eine evidenzgebundene Frage nach der externen Übertragbarkeit stellen.",
+        "anchor": "Drei ähnlich ausgestattete Institute wurden verglichen; eine unabhängige externe Prüfung steht aus.",
+        "limit": "Interne Konsistenz ist kein Nachweis für alle denkbaren Einrichtungen und Bedingungen.",
+        "transfer": "Formuliere die Frage nach der Generalisierbarkeit für eine externe Fachöffentlichkeit."
+      },
+      {
+        "id": "t2",
+        "paragraphId": "p2",
+        "speaker": "Methodenprüferin",
+        "quote": "Die Abweichung kann von der Messzeit stammen; wir haben die Geräte aber nicht getrennt getestet.",
+        "goal": "Eine plausible Erklärung prüfen und durch ein konstruktives, in seinen Grenzen benanntes Untersuchungsziel ergänzen.",
+        "anchor": "Messzeit und Geräteeigenschaft wurden noch nicht unabhängig voneinander kontrolliert.",
+        "limit": "Eine plausible Erklärung darf weder als bewiesene Ursache noch als technische Freigabe gelten.",
+        "transfer": "Empfiehl eine kontrollierte nächste Untersuchung und markiere ihren organisatorischen Status."
+      },
+      {
+        "id": "t3",
+        "paragraphId": "p3",
+        "speaker": "Ausschussvorsitz",
+        "quote": "Wir teilen die Beobachtung, nicht aber die uneingeschränkte Schlussfolgerung.",
+        "goal": "Gesicherte Beobachtung, verbleibenden Dissens und realistische Prüfungsvorschläge in einer neutralen Schlussrede trennen.",
+        "anchor": "Der Ausschuss teilt den beobachteten Trend, nicht die allgemeine Gültigkeit oder die Kausalerklärung.",
+        "limit": "Methodische Zweifel sind weder ein vollständiger Projektstopp noch eine universelle Bestätigung.",
+        "transfer": "Fasse Beobachtung, Dissens und vorgeschlagene nächste Prüfung protokollfest zusammen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigenständig verfasste fiktive G12-Quelldokumente, keine realen Dialogaufnahmen; unabhängige Sprach-/Rechteprüfung ausstehend."
+    }
+  },
+  {
+    "id": "SG-G12O-003",
+    "version": 1,
+    "domain": "G12",
+    "band": "C1",
+    "title": "Bibliotheksservice: Pauschalbeschwerde, bedingte Hilfe und überprüfbarer Abschluss",
+    "focus": "Eine berechtigte Beschwerde höflich aufnehmen und konkrete Hilfeschritte ohne überzogene Servicezusage mündlich erklären",
+    "audience": "Nutzerinnen einer fiktiven Stadtbibliothek",
+    "brief": "Schreibe über drei mündliche Gesprächsproben einen vollständigen und nachvollziehbaren Servicebericht. Übertrage die Darstellung in verständliche Hinweise für Besucherinnen und überarbeite die Wortwahl samt Grenzen der tatsächlichen Zuständigkeit.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "Eine fiktive Bibliothek wechselte auf ein neues digitales Ausleihsystem. Einige Gäste konnten die Verlängerungsfunktion nicht sofort finden, während andere weiterhin am Selbstbedienungsterminal verlängerten. Für bestimmte Medienarten waren Verlängerungen auch zuvor nicht vorgesehen. Am Schalter beschwerte sich ein Gast: „Seit der Umstellung kann hier niemand mehr ein ausgeliehenes Buch verlängern.“ Die Mitarbeiterin wusste, dass die Behauptung in dieser allgemeinen Form nicht stimmte, aber die mehrfach fehlgeschlagenen Versuche des Gastes waren nachvollziehbar. Ihre mündliche Antwort sollte das konkrete Problem ernst nehmen, nach Medienart und Fehlermeldung fragen und die Möglichkeit einer Einzelfallprüfung erklären. Weder eine belehrende Zurückweisung noch eine pauschale Verlängerungszusage wäre sachgerecht gewesen. Der Status des Benutzerkontos und die für das betroffene Medium geltenden Regeln mussten erst festgestellt werden."
+      },
+      {
+        "id": "p2",
+        "text": "Die Mitarbeiterin prüfte einen Nutzerausweis und bemerkte, dass das Onlinekonto noch nicht mit dem neuen System verbunden war. Bei geeigneten Medien sollte eine Verlängerungsoption nach der Freischaltung üblicherweise angezeigt werden; weitere technische Fehler blieben möglich. Eine Kollegin formulierte: „Wenn das Konto freigeschaltet ist, sollte die Verlängerung im Portal erscheinen.“ Der Gast verstand sollte als Garantie, das Problem werde binnen Minuten auf jeden Fall behoben. Eine feste Bearbeitungsdauer gab es nicht. Die Antwort musste zunächst die Kontoanbindung als nächsten prüfbaren Schritt benennen, danach auf die medienbezogenen Ausnahmen verweisen und bei anhaltendem Fehler einen neuen Kontakt ermöglichen. Die Mitarbeiterinnen durften keine allgemeine Änderung der Leihregeln versprechen und auch eine zunächst gesperrte Verlängerung nicht als bereits erfolgreich ausgeführt darstellen. Die bedingte Hilfe musste im Gespräch ausdrücklich als solche erkennbar bleiben."
+      },
+      {
+        "id": "p3",
+        "text": "Zum Ende des Gesprächs übernahm die Teamleitung die weitere Klärung. Sie konnte den Onlinezugang prüfen und anschließend nachsehen, ob die konkrete Leihfrist verlängert werden durfte. Der Gast sorgte sich, dass durch die Verzögerung Gebühren entstehen könnten. Die Teamleitung sagte: „Wir klären zuerst den Zugang und prüfen anschließend, ob für dieses Medium eine Verlängerung vorgesehen ist.“ Damit sagte sie zwei Prüfungen zu, nicht aber eine bereits erteilte Verlängerung oder den Erlass möglicher Mahngebühren. Ein interner Entwurf gab die Aussage trotzdem als erfolgreich abgeschlossene Verlängerung wieder. Die korrigierte mündliche Antwort musste die Sorge aufgreifen, einen Rückmeldeweg am Schalter nennen und die eigenen Zuständigkeitsgrenzen sichtbar machen. Über tatsächliche Friständerungen oder Erstattungen war noch nichts entschieden. Das Gespräch endete mit einer Arbeitszusage zur Prüfung, nicht mit einem bestätigten Ergebnis."
+      }
+    ],
+    "turns": [
+      {
+        "id": "t1",
+        "paragraphId": "p1",
+        "speaker": "Bibliotheksgast",
+        "quote": "Seit der Umstellung kann hier niemand mehr ein ausgeliehenes Buch verlängern.",
+        "goal": "Die Verärgerung respektieren und zugleich die pauschale Annahme anhand des konkreten Leihfalls höflich überprüfen.",
+        "anchor": "Manche Verlängerungen funktionieren, bestimmte Medienarten bleiben jedoch ausgeschlossen.",
+        "limit": "Sorge nicht abwerten und keine Verlängerung für sämtliche Medien zusagen.",
+        "transfer": "Gib eine hilfreiche, nicht belehrende mündliche Nachfrage am Schalter wieder."
+      },
+      {
+        "id": "t2",
+        "paragraphId": "p2",
+        "speaker": "Serviceteam",
+        "quote": "Wenn das Konto freigeschaltet ist, sollte die Verlängerung im Portal erscheinen.",
+        "goal": "Eine sachlich bedingte Unterstützung mit realistischer Erwartung und offenem Rückmeldeweg erklären.",
+        "anchor": "Die Freischaltung ist eine Voraussetzung; die Funktion bleibt vom Medium und technischen Zustand abhängig.",
+        "limit": "Keine garantierte Sofortlösung oder universelle Verlängerbarkeit behaupten.",
+        "transfer": "Erkläre dem Gast die nächste Handlung und was bei einem weiteren Fehler geschieht."
+      },
+      {
+        "id": "t3",
+        "paragraphId": "p3",
+        "speaker": "Teamleitung",
+        "quote": "Wir klären zuerst den Zugang und prüfen anschließend, ob für dieses Medium eine Verlängerung vorgesehen ist.",
+        "goal": "Nächste Schritte und verbleibende Entscheidungsgrenzen im Schlussbeitrag eindeutig darstellen.",
+        "anchor": "Zugangsprüfung und medienbezogene Prüfung wurden zugesagt; Verlängerung und Gebühr bleiben offen.",
+        "limit": "Prüfauftrag nicht als bereits wirksame Verlängerung oder Gebührenerstattung darstellen.",
+        "transfer": "Formuliere eine kurze, klare Abschlussauskunft mit Rückfragemöglichkeit."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigenständig verfasste fiktive G12-Quelldokumente, keine realen Dialogaufnahmen; unabhängige Sprach-/Rechteprüfung ausstehend."
+    }
+  },
+  {
+    "id": "SG-G12O-004",
+    "version": 1,
+    "domain": "G12",
+    "band": "C2",
+    "title": "Öffentliche Anhörung: Grundpauschale, Rechnungsprüfung und Zuständigkeit",
+    "focus": "In einer formalen Anhörung Gleichheitsbehauptungen differenzieren, Teilbefunde unter Vorbehalt nutzen und eine institutionell saubere Schlussrede vortragen",
+    "audience": "Fiktive Anhörung zur öffentlichen Forschungsfinanzierung",
+    "brief": "Verfasse eine vollständige eigene Schlussstellungnahme zu den drei Quellenbeiträgen, erläutere deren Evidenzgrenzen und übertrage den Text in eine allgemeinverständliche öffentliche Zusammenfassung. Überarbeite die gesamte Fassung, ohne einen Freigabebeschluss zu erfinden.",
+    "paragraphs": [
+      {
+        "id": "p1",
+        "text": "In einer fiktiven Anhörung wurde ein Entwurf zur Forschungsförderung diskutiert. Jede Einrichtung sollte dieselbe Grundpauschale erhalten, obwohl sich Größe, Aufgaben und Betriebskosten deutlich unterschieden. Eine Interessenvertretung sagte: „Die neue Verteilung behandelt alle Einrichtungen gleich, weil jede dieselbe Pauschale erhält.“ Der nominal gleiche Betrag war belegt; seine gleiche Wirkung auf die sehr verschiedenen Einrichtungen war dagegen nicht untersucht. Eine Ausschussteilnehmerin wollte deshalb nach den berücksichtigten Bedarfsindikatoren fragen. Sie durfte weder automatisch eine gerechte Verteilung als bewiesen noch eine bestimmte Benachteiligung als sicher feststellen. Die mündliche Nachfrage musste den formal identischen Betrag anerkennen und den ungeprüften Wirkungsschluss sachlich begrenzen. Ein gemeinsamer Prüfmaßstab für unterschiedliche Einrichtungen war noch nicht beschlossen. Die Äußerung war daher Anlass für Klärung, kein fertiges Urteil über die Finanzierung."
+      },
+      {
+        "id": "p2",
+        "text": "Die Finanzkontrolle berichtete, dass für bestimmte Posten vollständige Nachweise fehlten. Andere Ausgaben waren bereits durch Rechnungen und Leistungsnachweise geprüft und als nachvollziehbar bestätigt worden. Die Vertreterin formulierte: „Solange nicht jede Rechnung geprüft ist, darf aus keinem Zahlenwert eine Entscheidung folgen.“ Die Aussage betonte die berechtigte Vorsicht bei offenen Posten, formulierte jedoch ein sehr weites Entscheidungsverbot. Eine mündliche Replik sollte nach dem Umfang und der Entscheidungsrelevanz der unklaren Positionen fragen, ohne die gesicherten Teilbefunde zu leugnen. Gleichzeitig durfte sie eine vollständige Bewilligung nicht aus den vorhandenen Belegen ableiten. Das Gremium musste erst entscheiden, wie mit den offenen Beträgen umgegangen werden sollte. Eine konstruktive Antwort konnte eine getrennte Auswertung anregen und den rechtlich zuständigen Entscheidungsträger benennen. Es lag keine Genehmigung für die noch ungeprüften Ausgaben vor."
+      },
+      {
+        "id": "p3",
+        "text": "Zum Schluss der fiktiven Anhörung stellte das Sekretariat den Zwischenstand dar. Identische Grundbeträge und unterschiedliche Aufgaben der Einrichtungen waren im Gremium angesprochen worden. Einige Kostenpositionen waren weiterhin offen, und die endgültige Mittelverteilung stand noch nicht fest. Die Protokollführung sagte: „Wir nehmen die Unterschiede zur Kenntnis und legen die noch offenen Bewertungen der zuständigen Stelle vor.“ Ein Gast verstand die Aussage als bereits genehmigte Neuregelung mit unmittelbar beginnender Auszahlung. Das war durch die Sitzung nicht gedeckt. Die Schlussrede sollte die unterschiedlichen Bedarfe, offenen Rechnungen und vorgesehenen Folgeschritte wiedergeben, ohne den Entscheidungsbereich der zuständigen Stelle zu überschreiten. Auch eine abschließende Bewertung der Verteilungsgerechtigkeit war nicht beschlossen worden. Die mündliche Zusammenfassung musste das vorläufige Verfahren ebenso deutlich nennen wie die konkreten Prüffragen für die nächste Sitzung."
+      }
+    ],
+    "turns": [
+      {
+        "id": "t1",
+        "paragraphId": "p1",
+        "speaker": "Interessenvertretung",
+        "quote": "Die neue Verteilung behandelt alle Einrichtungen gleich, weil jede dieselbe Pauschale erhält.",
+        "goal": "Eine quellenbezogene Nachfrage nach der Wirkung gleicher Geldbeträge auf unterschiedliche Einrichtungsbedarfe stellen.",
+        "anchor": "Identische Grundbeträge und unterschiedliche Kostenprofile sind dokumentiert; Wirkungsdaten fehlen.",
+        "limit": "Betragsgleichheit nicht mit gleicher Wirkung und mögliche Unterschiede nicht mit bewiesener Benachteiligung verwechseln.",
+        "transfer": "Frage nach den Bedarfsindikatoren, ohne die Förderentscheidung vorwegzunehmen."
+      },
+      {
+        "id": "t2",
+        "paragraphId": "p2",
+        "speaker": "Finanzkontrolle",
+        "quote": "Solange nicht jede Rechnung geprüft ist, darf aus keinem Zahlenwert eine Entscheidung folgen.",
+        "goal": "Eine legitime Prüfgrenze anerkennen, aber nachvollziehbar geprüfte Teilbefunde nicht ohne Begründung pauschal verwerfen.",
+        "anchor": "Einige Posten sind geprüft; andere sind offen und könnten für eine Gesamtentscheidung bedeutsam sein.",
+        "limit": "Weder alle Zahlen entwerten noch alle offenen Positionen vorab freigeben.",
+        "transfer": "Formuliere eine ausgewogene Rückfrage zu gesicherten und offenen Kosten."
+      },
+      {
+        "id": "t3",
+        "paragraphId": "p3",
+        "speaker": "Ausschusssekretariat",
+        "quote": "Wir nehmen die Unterschiede zur Kenntnis und legen die noch offenen Bewertungen der zuständigen Stelle vor.",
+        "goal": "Offene Bewertungsfragen, institutionelle Verantwortung und nächsten Verfahrensschritt korrekt zusammenfassen.",
+        "anchor": "Die Anhörung hat offene Bewertungsfragen dokumentiert; eine endgültige Bewilligung steht noch aus.",
+        "limit": "Eine Kenntnisnahme nicht als verbindliche Auszahlung oder Gerechtigkeitsentscheidung ausgeben.",
+        "transfer": "Fasse für die Öffentlichkeit den offenen Beschlussweg und die Zuständigkeit zusammen."
+      }
+    ],
+    "status": "DEMO_ONLY",
+    "authorship": "AI_DRAFT",
+    "reviewedBy": null,
+    "editorialApproval": false,
+    "rights": {
+      "kind": "ORIGINAL_DRAFT",
+      "source": "Eigenständig verfasste fiktive G12-Quelldokumente, keine realen Dialogaufnahmen; unabhängige Sprach-/Rechteprüfung ausstehend."
+    }
+  }
+]
