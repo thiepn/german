@@ -120,7 +120,15 @@ export default function App(){
  const [mission,setMission]=useState<Mission|null>(null);
  const busyRef=useRef(false);
  const refresh=async()=>{const [s,p,m]=await Promise.all([loadSnapshot(),loadProductionEntries(),loadLatestMission()]);setMission(m);setAttempts(s.attempts);setCards(s.cards);setReviews(s.reviewEvents);setSettings(s.settings);setProductions(p);};
- useEffect(()=>{let alive=true;loadSnapshot().then(s=>{if(!alive)return;setAttempts(s.attempts);setCards(s.cards);setReviews(s.reviewEvents);setSettings(s.settings);if(s.draft&&itemById.has(s.draft.itemId)){setSessionId(s.draft.sessionId);setMode(s.draft.mode);setItem(itemById.get(s.draft.itemId)!);setValues(s.draft.slots);setTab('Trainieren');}}).catch(e=>{if(alive)setError('Lokales Speichern ist nicht verfügbar: '+String(e))}).finally(()=>{if(alive)setLoading(false)});
+ useEffect(()=>{let alive=true;loadSnapshot().then(async s=>{if(!alive)return;setAttempts(s.attempts);setCards(s.cards);setReviews(s.reviewEvents);setSettings(s.settings);if(s.draft&&itemById.has(s.draft.itemId)){
+  // Paused/completed mission drafts are NOT editable sessions. The user must
+  // explicitly resume the immutable mission first; otherwise submit would hit
+  // a CAS rejection after the app misleadingly reopened the exercise.
+  const current=await loadLatestMission();
+  if(!alive)return;
+  if(current?.id===s.draft.sessionId&&current.phase!=='IN_PROGRESS')return;
+  setSessionId(s.draft.sessionId);setMode(s.draft.mode);setItem(itemById.get(s.draft.itemId)!);setValues(s.draft.slots);setTab('Trainieren');
+ }}).catch(e=>{if(alive)setError('Lokales Speichern ist nicht verfügbar: '+String(e))}).finally(()=>{if(alive)setLoading(false)});
  void loadProductionEntries().then(p=>{if(alive)setProductions(p)}).catch(e=>{if(alive)setError(String(e))});
  void loadLatestMission().then(async m=>{
   if(!alive)return;setMission(m);
